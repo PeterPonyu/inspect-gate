@@ -1,0 +1,604 @@
+{
+  "patchcore": {
+    "per_seed_per_category_auroc": {
+      "0": {
+        "bottle": 1.0,
+        "cable": 0.9896926536731634,
+        "capsule": 0.9920223374551257,
+        "carpet": 0.9863563402889246,
+        "grid": 0.9899749373433584,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 0.9990224828934506,
+        "pill": 0.9399890889252591,
+        "screw": 0.9631071940971511,
+        "tile": 1.0,
+        "toothbrush": 0.9166666666666666,
+        "transistor": 0.9891666666666666,
+        "wood": 0.9850877192982456,
+        "zipper": 0.9779411764705882
+      },
+      "1": {
+        "bottle": 1.0,
+        "cable": 0.9857571214392804,
+        "capsule": 0.9936178699641005,
+        "carpet": 0.9871589085072231,
+        "grid": 0.9866332497911445,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 0.9975562072336266,
+        "pill": 0.9446262956901255,
+        "screw": 0.9585980733756917,
+        "tile": 1.0,
+        "toothbrush": 0.9138888888888889,
+        "transistor": 0.99625,
+        "wood": 0.9850877192982456,
+        "zipper": 0.9774159663865546
+      },
+      "2": {
+        "bottle": 1.0,
+        "cable": 0.9880059970014993,
+        "capsule": 0.9908256880733946,
+        "carpet": 0.9859550561797753,
+        "grid": 0.9849624060150376,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 0.9980449657869013,
+        "pill": 0.9459901800327333,
+        "screw": 0.9647468743594999,
+        "tile": 0.9992784992784993,
+        "toothbrush": 0.9138888888888889,
+        "transistor": 0.9925,
+        "wood": 0.9859649122807017,
+        "zipper": 0.975577731092437
+      },
+      "3": {
+        "bottle": 1.0,
+        "cable": 0.9846326836581709,
+        "capsule": 0.9920223374551257,
+        "carpet": 0.985553772070626,
+        "grid": 0.9891395154553049,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 0.9980449657869013,
+        "pill": 0.9487179487179487,
+        "screw": 0.9694609551137529,
+        "tile": 0.9996392496392497,
+        "toothbrush": 0.9138888888888889,
+        "transistor": 0.9945833333333334,
+        "wood": 0.9868421052631579,
+        "zipper": 0.9771533613445378
+      },
+      "4": {
+        "bottle": 1.0,
+        "cable": 0.988568215892054,
+        "capsule": 0.9932189868368568,
+        "carpet": 0.9867576243980738,
+        "grid": 0.9874686716791979,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 0.9990224828934506,
+        "pill": 0.944899072558647,
+        "screw": 0.9620823939331831,
+        "tile": 1.0,
+        "toothbrush": 0.9111111111111111,
+        "transistor": 0.9954166666666666,
+        "wood": 0.9868421052631579,
+        "zipper": 0.9742647058823529
+      }
+    },
+    "pairwise_seed0_diff": {
+      "bottle_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.05410081148147583
+      },
+      "bottle_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.043221622705459595
+      },
+      "bottle_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.02618160843849182
+      },
+      "bottle_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.031731605529785156
+      },
+      "cable_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08105742931365967
+      },
+      "cable_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07012462615966797
+      },
+      "cable_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06341397762298584
+      },
+      "cable_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06516474485397339
+      },
+      "capsule_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06309962272644043
+      },
+      "capsule_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.037203192710876465
+      },
+      "capsule_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.05603969097137451
+      },
+      "capsule_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.061039239168167114
+      },
+      "carpet_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.042622923851013184
+      },
+      "carpet_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.03412473201751709
+      },
+      "carpet_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.0436728298664093
+      },
+      "carpet_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.027125775814056396
+      },
+      "grid_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09979629516601562
+      },
+      "grid_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08089834451675415
+      },
+      "grid_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.092487633228302
+      },
+      "grid_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.11527547240257263
+      },
+      "hazelnut_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07361561059951782
+      },
+      "hazelnut_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07652395963668823
+      },
+      "hazelnut_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07032585144042969
+      },
+      "hazelnut_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.04252356290817261
+      },
+      "leather_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.02691650390625
+      },
+      "leather_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.03839385509490967
+      },
+      "leather_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.029726088047027588
+      },
+      "leather_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.027292907238006592
+      },
+      "metal_nut_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08580833673477173
+      },
+      "metal_nut_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.0807303786277771
+      },
+      "metal_nut_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09704017639160156
+      },
+      "metal_nut_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08566677570343018
+      },
+      "pill_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.13416337966918945
+      },
+      "pill_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08702969551086426
+      },
+      "pill_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.11464613676071167
+      },
+      "pill_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.10755464434623718
+      },
+      "screw_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.12950032949447632
+      },
+      "screw_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.10916733741760254
+      },
+      "screw_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.10377776622772217
+      },
+      "screw_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08841347694396973
+      },
+      "tile_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.03731107711791992
+      },
+      "tile_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.10045170783996582
+      },
+      "tile_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.03352093696594238
+      },
+      "tile_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.030380070209503174
+      },
+      "toothbrush_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.05271428823471069
+      },
+      "toothbrush_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.051484107971191406
+      },
+      "toothbrush_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09039038419723511
+      },
+      "toothbrush_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08294212818145752
+      },
+      "transistor_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.1532943844795227
+      },
+      "transistor_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.1469554901123047
+      },
+      "transistor_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.12530937790870667
+      },
+      "transistor_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.1506856083869934
+      },
+      "wood_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.03785973787307739
+      },
+      "wood_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.12031441926956177
+      },
+      "wood_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09420281648635864
+      },
+      "wood_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.11003619432449341
+      },
+      "zipper_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.03958451747894287
+      },
+      "zipper_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.0463293194770813
+      },
+      "zipper_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.04342341423034668
+      },
+      "zipper_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06326663494110107
+      }
+    },
+    "n_bit_identical_pairs": 0,
+    "n_pairs_checked": 60
+  },
+  "dinomaly": {
+    "per_seed_per_category_auroc": {
+      "0": {
+        "bottle": 1.0,
+        "cable": 1.0,
+        "capsule": 0.9824491424012765,
+        "carpet": 0.9987961476725522,
+        "grid": 0.9991645781119465,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 1.0,
+        "pill": 0.9926350245499181,
+        "screw": 0.986472637835622,
+        "tile": 1.0,
+        "toothbrush": 1.0,
+        "transistor": 0.9895833333333334,
+        "wood": 0.9982456140350877,
+        "zipper": 1.0
+      },
+      "1": {
+        "bottle": 1.0,
+        "cable": 1.0,
+        "capsule": 0.9812524930195453,
+        "carpet": 0.9983948635634029,
+        "grid": 0.9983291562238931,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 1.0,
+        "pill": 0.9907255864702673,
+        "screw": 0.9848329575732732,
+        "tile": 1.0,
+        "toothbrush": 1.0,
+        "transistor": 0.9879166666666667,
+        "wood": 0.9991228070175439,
+        "zipper": 1.0
+      },
+      "2": {
+        "bottle": 1.0,
+        "cable": 1.0,
+        "capsule": 0.9764658954926206,
+        "carpet": 0.9983948635634029,
+        "grid": 0.9974937343358395,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 1.0,
+        "pill": 0.9912711402073104,
+        "screw": 0.9866775978684157,
+        "tile": 1.0,
+        "toothbrush": 1.0,
+        "transistor": 0.99,
+        "wood": 0.9991228070175439,
+        "zipper": 1.0
+      },
+      "3": {
+        "bottle": 1.0,
+        "cable": 1.0,
+        "capsule": 0.9780614280015956,
+        "carpet": 0.9983948635634029,
+        "grid": 0.9974937343358395,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 1.0,
+        "pill": 0.9918166939443536,
+        "screw": 0.9856527977044476,
+        "tile": 1.0,
+        "toothbrush": 1.0,
+        "transistor": 0.9891666666666666,
+        "wood": 0.9991228070175439,
+        "zipper": 1.0
+      },
+      "4": {
+        "bottle": 1.0,
+        "cable": 1.0,
+        "capsule": 0.9772636617471081,
+        "carpet": 0.9975922953451043,
+        "grid": 0.9974937343358395,
+        "hazelnut": 1.0,
+        "leather": 1.0,
+        "metal_nut": 1.0,
+        "pill": 0.9923622476813966,
+        "screw": 0.9848329575732732,
+        "tile": 1.0,
+        "toothbrush": 1.0,
+        "transistor": 0.9866666666666667,
+        "wood": 0.9991228070175439,
+        "zipper": 1.0
+      }
+    },
+    "per_category_seed_spread": {
+      "bottle": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "cable": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "capsule": {
+        "mean": 0.9790985241324293,
+        "std": 0.002609561584969484,
+        "min": 0.9764658954926206,
+        "max": 0.9824491424012765,
+        "range": 0.005983246908655815
+      },
+      "carpet": {
+        "mean": 0.9983146067415729,
+        "std": 0.00043958471709887634,
+        "min": 0.9975922953451043,
+        "max": 0.9987961476725522,
+        "range": 0.0012038523274479074
+      },
+      "grid": {
+        "mean": 0.9979949874686718,
+        "std": 0.0007472240526315148,
+        "min": 0.9974937343358395,
+        "max": 0.9991645781119465,
+        "range": 0.001670843776106934
+      },
+      "hazelnut": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "leather": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "metal_nut": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "pill": {
+        "mean": 0.9917621385706491,
+        "std": 0.0007811140787384662,
+        "min": 0.9907255864702673,
+        "max": 0.9926350245499181,
+        "range": 0.001909438079650827
+      },
+      "screw": {
+        "mean": 0.9856937897110063,
+        "std": 0.0008743893833860262,
+        "min": 0.9848329575732732,
+        "max": 0.9866775978684157,
+        "range": 0.00184464029514253
+      },
+      "tile": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "toothbrush": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "transistor": {
+        "mean": 0.9886666666666667,
+        "std": 0.001362952269483003,
+        "min": 0.9866666666666667,
+        "max": 0.99,
+        "range": 0.0033333333333332993
+      },
+      "wood": {
+        "mean": 0.9989473684210527,
+        "std": 0.0003922926276315433,
+        "min": 0.9982456140350877,
+        "max": 0.9991228070175439,
+        "range": 0.0008771929824561431
+      },
+      "zipper": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      }
+    },
+    "mean_iauroc_across_seeds": {
+      "values": [
+        0.9964897651959824,
+        0.9960383020356395,
+        0.9959617358990089,
+        0.99598059941559,
+        0.9956889580244622
+      ],
+      "mean": 0.9960318721141366,
+      "std": 0.00028932916785155276,
+      "min": 0.9956889580244622,
+      "max": 0.9964897651959824
+    }
+  }
+}

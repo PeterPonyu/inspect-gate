@@ -1,0 +1,537 @@
+{
+  "certifiability_floors": {
+    "bottle": {
+      "n_cal_defect": 32,
+      "n_cal_good": 10,
+      "alpha_min_g1": 0.030303030303030304,
+      "alpha_min_g2": 0.09090909090909091,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "cable": {
+      "n_cal_defect": 46,
+      "n_cal_good": 29,
+      "alpha_min_g1": 0.02127659574468085,
+      "alpha_min_g2": 0.03333333333333333,
+      "g1_certified": true,
+      "g2_certified": true
+    },
+    "capsule": {
+      "n_cal_defect": 54,
+      "n_cal_good": 12,
+      "alpha_min_g1": 0.01818181818181818,
+      "alpha_min_g2": 0.07692307692307693,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "carpet": {
+      "n_cal_defect": 44,
+      "n_cal_good": 14,
+      "alpha_min_g1": 0.022222222222222223,
+      "alpha_min_g2": 0.06666666666666667,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "grid": {
+      "n_cal_defect": 28,
+      "n_cal_good": 10,
+      "alpha_min_g1": 0.034482758620689655,
+      "alpha_min_g2": 0.09090909090909091,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "hazelnut": {
+      "n_cal_defect": 35,
+      "n_cal_good": 20,
+      "alpha_min_g1": 0.027777777777777776,
+      "alpha_min_g2": 0.047619047619047616,
+      "g1_certified": true,
+      "g2_certified": true
+    },
+    "leather": {
+      "n_cal_defect": 46,
+      "n_cal_good": 16,
+      "alpha_min_g1": 0.02127659574468085,
+      "alpha_min_g2": 0.058823529411764705,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "metal_nut": {
+      "n_cal_defect": 46,
+      "n_cal_good": 11,
+      "alpha_min_g1": 0.02127659574468085,
+      "alpha_min_g2": 0.08333333333333333,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "pill": {
+      "n_cal_defect": 70,
+      "n_cal_good": 13,
+      "alpha_min_g1": 0.014084507042253521,
+      "alpha_min_g2": 0.07142857142857142,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "screw": {
+      "n_cal_defect": 60,
+      "n_cal_good": 20,
+      "alpha_min_g1": 0.01639344262295082,
+      "alpha_min_g2": 0.047619047619047616,
+      "g1_certified": true,
+      "g2_certified": true
+    },
+    "tile": {
+      "n_cal_defect": 42,
+      "n_cal_good": 16,
+      "alpha_min_g1": 0.023255813953488372,
+      "alpha_min_g2": 0.058823529411764705,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "toothbrush": {
+      "n_cal_defect": 15,
+      "n_cal_good": 6,
+      "alpha_min_g1": 0.0625,
+      "alpha_min_g2": 0.14285714285714285,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "transistor": {
+      "n_cal_defect": 20,
+      "n_cal_good": 30,
+      "alpha_min_g1": 0.047619047619047616,
+      "alpha_min_g2": 0.03225806451612903,
+      "g1_certified": true,
+      "g2_certified": true
+    },
+    "wood": {
+      "n_cal_defect": 30,
+      "n_cal_good": 10,
+      "alpha_min_g1": 0.03225806451612903,
+      "alpha_min_g2": 0.09090909090909091,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "zipper": {
+      "n_cal_defect": 60,
+      "n_cal_good": 16,
+      "alpha_min_g1": 0.01639344262295082,
+      "alpha_min_g2": 0.058823529411764705,
+      "g1_certified": true,
+      "g2_certified": false
+    }
+  },
+  "v1": {
+    "alpha_miss": 0.1,
+    "alpha_fr": 0.05,
+    "tolerance_pp": 0.03,
+    "confidence": 0.95,
+    "per_category": {
+      "bottle": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.09032258064516129,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 620,
+          "n_eval_good_total": 200,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.09032258064516129,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.11155022310928339,
+          "false_reject_ub_1sided": 0.014867039231272054,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.6878048780487804
+      },
+      "cable": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 920,
+          "n_eval_good_total": 580,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.0032509349624755325,
+          "false_reject_ub_1sided": 0.005151739679918468,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.076
+      },
+      "capsule": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.07999999999999999,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 1100,
+          "n_eval_good_total": 220,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.08,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.09476180035700534,
+          "false_reject_ub_1sided": 0.013524673398400562,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.7795454545454545
+      },
+      "carpet": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.10555555555555556,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 900,
+          "n_eval_good_total": 280,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.10555555555555556,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.12392963348546229,
+          "false_reject_ub_1sided": 0.010642012638938061,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.6822033898305084
+      },
+      "grid": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.06896551724137931,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 580,
+          "n_eval_good_total": 220,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.06896551724137931,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.08883159543807825,
+          "false_reject_ub_1sided": 0.013524673398400562,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.6749999999999999
+      },
+      "hazelnut": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 700,
+          "n_eval_good_total": 400,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.0042704730201890894,
+          "false_reject_ub_1sided": 0.007461355528799602,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.08727272727272725
+      },
+      "leather": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.06956521739130436,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 920,
+          "n_eval_good_total": 320,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.06956521739130435,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.08496029492803439,
+          "false_reject_ub_1sided": 0.009317979408884071,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.6903225806451614
+      },
+      "metal_nut": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.07234042553191487,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 940,
+          "n_eval_good_total": 220,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.07234042553191489,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.08779386255202597,
+          "false_reject_ub_1sided": 0.013524673398400562,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.7517241379310344
+      },
+      "pill": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.10633802816901408,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 1420,
+          "n_eval_good_total": 260,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.10633802816901408,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.12075626507981538,
+          "false_reject_ub_1sided": 0.01145592262723522,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.7553571428571428
+      },
+      "screw": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.07542372881355931,
+          "mean_false_reject_rate": 0.011904761904761904,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 1180,
+          "n_eval_good_total": 420,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.07542372881355933,
+          "pooled_false_reject_rate": 0.011904761904761904,
+          "escaped_ub_1sided": 0.08929643660990513,
+          "false_reject_ub_1sided": 0.024867040961755422,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.043125
+      },
+      "tile": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.09285714285714285,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 840,
+          "n_eval_good_total": 340,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.09285714285714286,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.11100550277836584,
+          "false_reject_ub_1sided": 0.008772274368443987,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.6457627118644068
+      },
+      "toothbrush": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.05,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 300,
+          "n_eval_good_total": 120,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.05,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.07594869829959539,
+          "false_reject_ub_1sided": 0.024655401055656376,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.6785714285714285
+      },
+      "transistor": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.05750000000000001,
+          "mean_false_reject_rate": 0.021666666666666667,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 400,
+          "n_eval_good_total": 600,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0575,
+          "pooled_false_reject_rate": 0.021666666666666667,
+          "escaped_ub_1sided": 0.0804818997406526,
+          "false_reject_ub_1sided": 0.03422732160092388,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.11200000000000002
+      },
+      "wood": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.08333333333333334,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 600,
+          "n_eval_good_total": 180,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.08333333333333333,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.10429533402824814,
+          "false_reject_ub_1sided": 0.016505228195662733,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.7051282051282051
+      },
+      "zipper": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0847457627118644,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 1180,
+          "n_eval_good_total": 320,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0847457627118644,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.09928831686438525,
+          "false_reject_ub_1sided": 0.009317979408884071,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.72
+      }
+    }
+  },
+  "k1": {
+    "n_violations": 0,
+    "n_cells": 15,
+    "max_violations": 5,
+    "k1_tripped": false
+  },
+  "k2": {
+    "n_vacuous_categories": 0,
+    "n_categories": 15,
+    "threshold": 0.8,
+    "min_categories": 8,
+    "k2_tripped": false
+  },
+  "median_deferral_by_category": {
+    "bottle": 0.6951219512195121,
+    "cable": 0.06666666666666667,
+    "capsule": 0.7727272727272727,
+    "carpet": 0.6779661016949152,
+    "grid": 0.675,
+    "hazelnut": 0.08181818181818182,
+    "leather": 0.6935483870967742,
+    "metal_nut": 0.7586206896551724,
+    "pill": 0.7619047619047619,
+    "screw": 0.0375,
+    "tile": 0.6440677966101694,
+    "toothbrush": 0.7142857142857143,
+    "transistor": 0.11000000000000001,
+    "wood": 0.717948717948718,
+    "zipper": 0.7133333333333334
+  }
+}

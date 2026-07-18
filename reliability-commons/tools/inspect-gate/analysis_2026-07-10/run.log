@@ -1,0 +1,32 @@
+[21:37:42] Stage 1: reproduction gate (per backbone x seed)
+[21:37:43]   wrote /home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/analysis_2026-07-10/reproduction/reproduction_gate.json
+[21:37:43] Stage 2: cross-seed stability
+[21:37:43]   wrote /home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/analysis_2026-07-10/seed_stability/seed_stability.json  (patchcore bit-identical pairs: 0/60)
+[21:37:43] Stage 3: gate calibration (patchcore, R=20, primary protocol)
+[21:37:43]   seed 0: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:43]   seed 1: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:43]   seed 2: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:43]   seed 3: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:43]   seed 4: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:43] Stage 3: gate calibration (dinomaly, R=20, primary protocol)
+[21:37:44]   seed 0: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:44]   seed 1: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:44]   seed 2: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:44]   seed 3: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:44]   seed 4: k1_tripped=False (0/15) k2_tripped=False (0/15) [0.2s]
+[21:37:44] Stage 4: exploratory per-cell audit (patchcore, n_perm=2000)
+[21:37:46]   seed 0 done [1.1s]
+[21:37:47]   seed 1 done [1.1s]
+[21:37:48]   seed 2 done [1.1s]
+[21:37:49]   seed 3 done [1.1s]
+[21:37:50]   seed 4 done [1.1s]
+[21:37:50] Stage 4: exploratory per-cell audit (dinomaly, n_perm=2000)
+[21:37:51]   seed 0 done [1.1s]
+[21:37:52]   seed 1 done [1.1s]
+[21:37:53]   seed 2 done [1.1s]
+[21:37:54]   seed 3 done [1.1s]
+[21:37:55]   seed 4 done [1.1s]
+[21:37:55] Cross-check: certifiability floors vs PREREG §3 table
+[21:37:55]   n_cal-count mismatches across seeds (within backbone): 0
+[21:37:55] wrote /home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/analysis_2026-07-10/SUMMARY.json
+[21:37:55] ALL STAGES COMPLETE

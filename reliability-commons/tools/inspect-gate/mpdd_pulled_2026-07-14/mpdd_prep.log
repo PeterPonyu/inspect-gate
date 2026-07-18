@@ -1,0 +1,9 @@
+mpdd_prep: 6 categories, train-good=888, test=458 (both match expected 888/458)
+  bracket_black: train/good=289 test/good=32 test/defect=47 defect_types=['hole', 'scratches']
+  bracket_brown: train/good=185 test/good=26 test/defect=51 defect_types=['bend_and_parts_mismatch', 'parts_mismatch']
+  bracket_white: train/good=110 test/good=30 test/defect=30 defect_types=['defective_painting', 'scratches']
+  connector: train/good=128 test/good=30 test/defect=14 defect_types=['parts_mismatch']
+  metal_plate: train/good=54 test/good=26 test/defect=71 defect_types=['major_rust', 'scratches', 'total_rust']
+  tubes: train/good=122 test/good=32 test/defect=69 defect_types=['anomalous']
+mpdd_prep: manifest -> /root/autodl-tmp/mpdd_brancha/mpdd_split_manifest.json
+MPDD_PREP_OK

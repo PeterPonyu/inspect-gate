@@ -1,0 +1,67 @@
+Wrote /home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/opcost_analysis_2026-07-16/results.json
+
+=== MPDD ===
+  gate rates: escaped=0.0663 fr=0.0000 defer=0.7309
+  crc  rates: escaped=0.0663 fr=0.3685 defer=0.0000
+  [Low-volume precision line] X=100/hr
+    gate: reviewer_load=73.1/hr (FTE=0.609), total_cost=$33181.24/hr
+    crc:  reviewer_load=0/hr, total_cost=$38681.67/hr
+    gate savings vs crc: $5500.44/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $0.74 (scenario assumes $150)
+    breakeven review cost/part: $75.6295 (scenario actual $0.3750, headroom 201.7x)
+  [Mid-volume general industrial line] X=600/hr
+    gate: reviewer_load=438.5/hr (FTE=1.827), total_cost=$11990.20/hr
+    crc:  reviewer_load=0/hr, total_cost=$15252.09/hr
+    gate savings vs crc: $3261.89/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $0.25 (scenario assumes $15)
+    breakeven review cost/part: $7.5629 (scenario actual $0.1250, headroom 60.5x)
+  [High-volume commodity line] X=3000/hr
+    gate: reviewer_load=2192.7/hr (FTE=4.873), total_cost=$5099.77/hr
+    crc:  reviewer_load=0/hr, total_cost=$7184.21/hr
+    gate savings vs crc: $2084.45/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $0.11 (scenario assumes $2)
+    breakeven review cost/part: $1.0084 (scenario actual $0.0578, headroom 17.5x)
+
+=== VisA ===
+  gate rates: escaped=0.0764 fr=0.0296 defer=0.1639
+  crc  rates: escaped=0.0949 fr=0.1624 defer=0.0000
+  [Low-volume precision line] X=100/hr
+    gate: reviewer_load=16.4/hr (FTE=0.137), total_cost=$38633.12/hr
+    crc:  reviewer_load=0/hr, total_cost=$49894.32/hr
+    gate savings vs crc: $11261.20/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $-697.83 (scenario assumes $150)
+    breakeven review cost/part: $687.2652 (scenario actual $0.3750, headroom 1832.7x)
+  [Mid-volume general industrial line] X=600/hr
+    gate: reviewer_load=98.4/hr (FTE=0.410), total_cost=$14024.48/hr
+    crc:  reviewer_load=0/hr, total_cost=$18546.59/hr
+    gate savings vs crc: $4522.11/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $-41.74 (scenario assumes $15)
+    breakeven review cost/part: $46.0969 (scenario actual $0.1250, headroom 368.8x)
+  [High-volume commodity line] X=3000/hr
+    gate: reviewer_load=491.8/hr (FTE=1.093), total_cost=$5933.37/hr
+    crc:  reviewer_load=0/hr, total_cost=$8093.15/hr
+    gate savings vs crc: $2159.77/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $-3.42 (scenario assumes $2)
+    breakeven review cost/part: $4.4490 (scenario actual $0.0578, headroom 77.0x)
+
+=== MVTec-AD ===
+  gate rates: escaped=0.0725 fr=0.0046 defer=0.5436
+  crc  rates: escaped=0.0855 fr=0.0306 defer=0.0000
+  [Low-volume precision line] X=100/hr
+    gate: reviewer_load=54.4/hr (FTE=0.453), total_cost=$36345.70/hr
+    crc:  reviewer_load=0/hr, total_cost=$43196.63/hr
+    gate savings vs crc: $6850.93/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $-2483.93 (scenario assumes $150)
+    breakeven review cost/part: $126.4101 (scenario actual $0.3750, headroom 337.1x)
+  [Mid-volume general industrial line] X=600/hr
+    gate: reviewer_load=326.1/hr (FTE=1.359), total_cost=$13134.30/hr
+    crc:  reviewer_load=0/hr, total_cost=$15660.84/hr
+    gate savings vs crc: $2526.54/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $-146.89 (scenario assumes $15)
+    breakeven review cost/part: $7.8717 (scenario actual $0.1250, headroom 63.0x)
+  [High-volume commodity line] X=3000/hr
+    gate: reviewer_load=1630.7/hr (FTE=3.624), total_cost=$5560.12/hr
+    crc:  reviewer_load=0/hr, total_cost=$6594.13/hr
+    gate savings vs crc: $1034.02/hr (gate cheaper: True)
+    breakeven false-reject unit cost: $-11.25 (scenario assumes $2)
+    breakeven review cost/part: $0.6919 (scenario actual $0.0578, headroom 12.0x)

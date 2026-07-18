@@ -1,0 +1,57 @@
+{
+  "holdout_frac": 0.2,
+  "holdout_seed": 0,
+  "holdout_ids_by_category": {
+    "bracket_brown": [
+      "bracket_brown_train_good_010",
+      "bracket_brown_train_good_018",
+      "bracket_brown_train_good_024",
+      "bracket_brown_train_good_025",
+      "bracket_brown_train_good_035",
+      "bracket_brown_train_good_037",
+      "bracket_brown_train_good_052",
+      "bracket_brown_train_good_055",
+      "bracket_brown_train_good_064",
+      "bracket_brown_train_good_066",
+      "bracket_brown_train_good_072",
+      "bracket_brown_train_good_077",
+      "bracket_brown_train_good_079",
+      "bracket_brown_train_good_080",
+      "bracket_brown_train_good_084",
+      "bracket_brown_train_good_090",
+      "bracket_brown_train_good_091",
+      "bracket_brown_train_good_098",
+      "bracket_brown_train_good_103",
+      "bracket_brown_train_good_107",
+      "bracket_brown_train_good_111",
+      "bracket_brown_train_good_113",
+      "bracket_brown_train_good_120",
+      "bracket_brown_train_good_122",
+      "bracket_brown_train_good_124",
+      "bracket_brown_train_good_129",
+      "bracket_brown_train_good_130",
+      "bracket_brown_train_good_133",
+      "bracket_brown_train_good_136",
+      "bracket_brown_train_good_141",
+      "bracket_brown_train_good_143",
+      "bracket_brown_train_good_149",
+      "bracket_brown_train_good_154",
+      "bracket_brown_train_good_158",
+      "bracket_brown_train_good_161",
+      "bracket_brown_train_good_171",
+      "bracket_brown_train_good_176"
+    ]
+  },
+  "provenance": {
+    "script": "/root/reliability-commons/tools/inspect-gate/orchestration/score_patchcore.py",
+    "timestamp_utc": "2026-07-14T07:59:27.020219+00:00",
+    "seeds": [
+      0
+    ],
+    "python_version": "3.12.3",
+    "numpy_version": "2.3.2",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+    "git_sha": null,
+    "git_dirty": null
+  }
+}

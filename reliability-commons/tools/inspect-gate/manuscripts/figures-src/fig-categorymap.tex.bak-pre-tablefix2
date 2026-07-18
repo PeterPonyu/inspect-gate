@@ -1,0 +1,99 @@
+% Standalone figure: per-category certification/coverage map.
+% Two certificates (G1 escaped-defect, G2 false-reject) x three benchmarks
+% (MPDD, VisA, MVTec AD), all categories. Cell color = observed rate (pooled
+% mean over 5 seeds x 2 backbones, matching manuscripts Table \ref{tab:floors}
+% and the crc-baseline pooling convention); hatched gray = refused (not
+% certifiable at the frozen alpha_miss=0.10 / alpha_fr=0.05 rates).
+% source data: data/categorymap_{mvtec,visa,mpdd}.csv <-
+%   analysis_2026-07-10/gate_calibration, visa_results_2026-07-12/gate_calibration,
+%   mpdd_results_2026-07-13/gate_calibration (v1_*_seed*.json, primary protocol,
+%   both backbones, five seeds each; certifiability_floors + v1.per_category.tier1).
+% Compile: pdflatex fig-categorymap.tex (see Makefile)
+\documentclass[border=1pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{pgf}
+\usetikzlibrary{patterns,patterns.meta,calc}
+\usepackage{xcolor}
+
+\definecolor{cLow}{HTML}{F3F7FB}
+\definecolor{cHigh}{HTML}{1B4F72}
+\definecolor{cRefuseBG}{HTML}{E7E7E7}
+\definecolor{cRefuseHatch}{HTML}{9A9A9A}
+
+\input{data/categorymap_mvtec.tex}
+\input{data/categorymap_visa.tex}
+\input{data/categorymap_mpdd.tex}
+
+\newcommand{\maxrate}{11}
+\newcommand{\panelwidth}{14.2}
+\newcommand{\rowh}{0.68}
+
+% Draw one data cell. #1 x  #2 y  #3 w  #4 h  #5 certified(0/1)  #6 rate(pct)
+\newcommand{\datacell}[6]{%
+  \pgfmathsetmacro{\mixp}{max(0,min(100,100*(#6)/\maxrate))}%
+  \ifnum#5=1
+    \colorlet{tmpcellcolor}{cHigh!\mixp!cLow}%
+    \fill[tmpcellcolor] (#1,#2) rectangle ++(#3,#4);%
+  \else
+    \fill[cRefuseBG] (#1,#2) rectangle ++(#3,#4);%
+    \fill[pattern={Lines[angle=45,distance=2.6pt,line width=0.35pt]}, pattern color=cRefuseHatch] (#1,#2) rectangle ++(#3,#4);%
+  \fi
+  \draw[white, line width=0.55pt] (#1,#2) rectangle ++(#3,#4);%
+  \node[font=\fontsize{6.8}{7.2}\selectfont, text=black!75] at ($(#1,#2)+(#3/2,#4/2)$) {\pgfmathprintnumber[fixed,fixed zerofill,precision=1]{#6}};%
+}
+
+% Draw one full benchmark panel. #1=list  #2=ncat  #3=ytop  #4=title
+% Layout (y increases upward): G1 row occupies [ytop, ytop+rowh]; G2 row
+% occupies [ytop-rowh, ytop]; category labels hang below ytop-rowh.
+\newcommand{\drawpanel}[4]{%
+  \pgfmathsetmacro{\colw}{\panelwidth/(#2)}%
+  \pgfmathsetmacro{\ytoprow}{#3}%
+  \pgfmathsetmacro{\ybotrow}{#3-\rowh}%
+  \pgfmathsetmacro{\ylabel}{#3-\rowh-0.12}%
+  % panel title, above the G1 row
+  \node[anchor=south west, font=\bfseries\fontsize{8.6}{9.6}\selectfont] at (0,\ytoprow+\rowh+0.13) {#4};%
+  % row-label gutter
+  \node[anchor=east, font=\fontsize{7.4}{8}\selectfont, align=right] at (-0.20,\ytoprow+\rowh/2) {G1\\[-2pt]escaped};%
+  \node[anchor=east, font=\fontsize{7.4}{8}\selectfont, align=right] at (-0.20,\ybotrow+\rowh/2) {G2\\[-2pt]false-rej.};%
+  \foreach \lbl/\gone/\goner/\gtwo/\gtwor [count=\ni from 0] in #1 {%
+    \pgfmathsetmacro{\cx}{\ni*\colw}%
+    \datacell{\cx}{\ytoprow}{\colw}{\rowh}{\gone}{\goner}%
+    \datacell{\cx}{\ybotrow}{\colw}{\rowh}{\gtwo}{\gtwor}%
+    \node[rotate=55, anchor=north east, inner sep=1.4pt, font=\fontsize{7.6}{8.2}\selectfont]
+      at ($(\cx+\colw/2,\ylabel)$) {\lbl};%
+  }%
+  \draw[black!55, line width=0.6pt] (0,\ybotrow) rectangle ++(\panelwidth,2*\rowh);%
+  \draw[black!35, line width=0.5pt] (0,\ytoprow) -- ++(\panelwidth,0);%
+}
+
+\begin{document}
+\begin{tikzpicture}[font=\fontsize{8.5}{9.5}\selectfont]
+
+\drawpanel{\mpddlist}{6}{11.55}{MPDD (6 categories)}
+\drawpanel{\visalist}{12}{7.15}{VisA (12 categories)}
+\drawpanel{\mvteclist}{15}{2.75}{MVTec AD (15 categories)}
+
+% ---- Shared legend: color scale (line 1) + refused hatch (line 2), stacked,
+% left-aligned with the panels, both lines within \panelwidth.
+\pgfmathsetmacro{\legyone}{-1.55}
+\pgfmathsetmacro{\legytwo}{-2.55}
+\pgfmathsetmacro{\swatchw}{0.60}
+\pgfmathsetmacro{\swatchh}{0.34}
+\pgfmathsetmacro{\swatchx}{5.9}
+\node[anchor=west, font=\fontsize{7.8}{8.6}\selectfont] at (0,\legyone+\swatchh/2) {Observed rate (\%), certified cell:};
+\foreach \p [count=\pi from 0] in {0,20,40,60,80,100}{
+  \pgfmathsetmacro{\lx}{\swatchx+\pi*\swatchw}
+  \colorlet{tmpleg}{cHigh!\p!cLow}
+  \fill[tmpleg] (\lx,\legyone) rectangle ++(\swatchw,\swatchh);
+  \draw[white,line width=0.4pt] (\lx,\legyone) rectangle ++(\swatchw,\swatchh);
+}
+\node[anchor=north west, font=\fontsize{7.2}{7.8}\selectfont] at (\swatchx,\legyone-0.06) {$0$};
+\node[anchor=north east, font=\fontsize{7.2}{7.8}\selectfont] at (\swatchx+6*\swatchw,\legyone-0.06) {$\geq\!11\%$};
+\node[anchor=west, font=\fontsize{7.8}{8.6}\selectfont] at (0,\legytwo+\swatchh/2) {Refused (not certifiable at the frozen rate):};
+\fill[cRefuseBG] (\swatchx,\legytwo) rectangle ++(\swatchw,\swatchh);
+\fill[pattern={Lines[angle=45,distance=2.6pt,line width=0.35pt]}, pattern color=cRefuseHatch] (\swatchx,\legytwo) rectangle ++(\swatchw,\swatchh);
+\draw[white,line width=0.4pt] (\swatchx,\legytwo) rectangle ++(\swatchw,\swatchh);
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,416 @@
+{
+  "reproduction": {
+    "patchcore": {
+      "0": {
+        "backbone": "patchcore",
+        "target": null,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9713,
+          "capsules": 0.7516666666666667,
+          "cashew": 0.9586,
+          "chewinggum": 0.9914,
+          "fryum": 0.9534,
+          "macaroni1": 0.812,
+          "macaroni2": 0.665,
+          "pcb1": 0.9337,
+          "pcb2": 0.9245,
+          "pcb3": 0.9226732673267327,
+          "pcb4": 0.9858415841584158,
+          "pipe_fryum": 0.9942
+        },
+        "mean_auroc": 0.9053567931793179,
+        "min_auroc": 0.665,
+        "n_categories": 12,
+        "pass": null,
+        "note": "descriptive only: no repo-confirmed published PatchCore-on-VisA image-AUROC (K6 rescan covers MVTec only); per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+      },
+      "1": {
+        "backbone": "patchcore",
+        "target": null,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9701,
+          "capsules": 0.7483333333333333,
+          "cashew": 0.9618,
+          "chewinggum": 0.9924,
+          "fryum": 0.9502,
+          "macaroni1": 0.8115,
+          "macaroni2": 0.6573,
+          "pcb1": 0.9312,
+          "pcb2": 0.9298,
+          "pcb3": 0.9277227722772278,
+          "pcb4": 0.9876237623762376,
+          "pipe_fryum": 0.995
+        },
+        "mean_auroc": 0.9052483223322332,
+        "min_auroc": 0.6573,
+        "n_categories": 12,
+        "pass": null,
+        "note": "descriptive only: no repo-confirmed published PatchCore-on-VisA image-AUROC (K6 rescan covers MVTec only); per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+      },
+      "2": {
+        "backbone": "patchcore",
+        "target": null,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9737,
+          "capsules": 0.7453333333333333,
+          "cashew": 0.9584,
+          "chewinggum": 0.9924,
+          "fryum": 0.9542,
+          "macaroni1": 0.8135,
+          "macaroni2": 0.656,
+          "pcb1": 0.9337,
+          "pcb2": 0.9237,
+          "pcb3": 0.9288118811881189,
+          "pcb4": 0.9859405940594059,
+          "pipe_fryum": 0.9936
+        },
+        "mean_auroc": 0.9049404840484049,
+        "min_auroc": 0.656,
+        "n_categories": 12,
+        "pass": null,
+        "note": "descriptive only: no repo-confirmed published PatchCore-on-VisA image-AUROC (K6 rescan covers MVTec only); per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+      },
+      "3": {
+        "backbone": "patchcore",
+        "target": null,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9704,
+          "capsules": 0.723,
+          "cashew": 0.9626,
+          "chewinggum": 0.9918,
+          "fryum": 0.961,
+          "macaroni1": 0.8059,
+          "macaroni2": 0.6581,
+          "pcb1": 0.9331,
+          "pcb2": 0.9217,
+          "pcb3": 0.9327722772277228,
+          "pcb4": 0.9853465346534653,
+          "pipe_fryum": 0.9938
+        },
+        "mean_auroc": 0.9032932343234323,
+        "min_auroc": 0.6581,
+        "n_categories": 12,
+        "pass": null,
+        "note": "descriptive only: no repo-confirmed published PatchCore-on-VisA image-AUROC (K6 rescan covers MVTec only); per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+      },
+      "4": {
+        "backbone": "patchcore",
+        "target": null,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9751,
+          "capsules": 0.7695,
+          "cashew": 0.965,
+          "chewinggum": 0.993,
+          "fryum": 0.9538,
+          "macaroni1": 0.812,
+          "macaroni2": 0.6575,
+          "pcb1": 0.9354,
+          "pcb2": 0.9259,
+          "pcb3": 0.9306930693069307,
+          "pcb4": 0.987029702970297,
+          "pipe_fryum": 0.9948
+        },
+        "mean_auroc": 0.9083102310231023,
+        "min_auroc": 0.6575,
+        "n_categories": 12,
+        "pass": null,
+        "note": "descriptive only: no repo-confirmed published PatchCore-on-VisA image-AUROC (K6 rescan covers MVTec only); per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+      }
+    },
+    "dinomaly": {
+      "0": {
+        "backbone": "dinomaly",
+        "target": 0.987,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9872,
+          "capsules": 0.9848333333333333,
+          "cashew": 0.987,
+          "chewinggum": 0.9972,
+          "fryum": 0.9872,
+          "macaroni1": 0.9819,
+          "macaroni2": 0.9557,
+          "pcb1": 0.9899,
+          "pcb2": 0.9917,
+          "pcb3": 0.9879207920792079,
+          "pcb4": 0.9977227722772277,
+          "pipe_fryum": 0.9926
+        },
+        "mean_auroc": 0.9867397414741474,
+        "min_auroc": 0.9557,
+        "n_categories": 12,
+        "pass": true
+      },
+      "1": {
+        "backbone": "dinomaly",
+        "target": 0.987,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9861,
+          "capsules": 0.9851666666666666,
+          "cashew": 0.9858,
+          "chewinggum": 0.9978,
+          "fryum": 0.9896,
+          "macaroni1": 0.9792,
+          "macaroni2": 0.9595,
+          "pcb1": 0.9893,
+          "pcb2": 0.9917,
+          "pcb3": 0.9902970297029703,
+          "pcb4": 0.9981188118811881,
+          "pipe_fryum": 0.9916
+        },
+        "mean_auroc": 0.987015209020902,
+        "min_auroc": 0.9595,
+        "n_categories": 12,
+        "pass": true
+      },
+      "2": {
+        "backbone": "dinomaly",
+        "target": 0.987,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9869,
+          "capsules": 0.9825,
+          "cashew": 0.985,
+          "chewinggum": 0.9972,
+          "fryum": 0.9896,
+          "macaroni1": 0.9802,
+          "macaroni2": 0.9596,
+          "pcb1": 0.9895,
+          "pcb2": 0.9921,
+          "pcb3": 0.9882178217821782,
+          "pcb4": 0.9979207920792079,
+          "pipe_fryum": 0.9904
+        },
+        "mean_auroc": 0.9865948844884489,
+        "min_auroc": 0.9596,
+        "n_categories": 12,
+        "pass": true
+      },
+      "3": {
+        "backbone": "dinomaly",
+        "target": 0.987,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.986,
+          "capsules": 0.9831666666666666,
+          "cashew": 0.9866,
+          "chewinggum": 0.9976,
+          "fryum": 0.987,
+          "macaroni1": 0.9809,
+          "macaroni2": 0.9661,
+          "pcb1": 0.9901,
+          "pcb2": 0.9932,
+          "pcb3": 0.9913861386138614,
+          "pcb4": 0.997029702970297,
+          "pipe_fryum": 0.9924
+        },
+        "mean_auroc": 0.9876235423542354,
+        "min_auroc": 0.9661,
+        "n_categories": 12,
+        "pass": true
+      },
+      "4": {
+        "backbone": "dinomaly",
+        "target": 0.987,
+        "tolerance": 0.02,
+        "per_category": {
+          "candle": 0.9854,
+          "capsules": 0.9858333333333333,
+          "cashew": 0.9854,
+          "chewinggum": 0.9968,
+          "fryum": 0.987,
+          "macaroni1": 0.9809,
+          "macaroni2": 0.9575,
+          "pcb1": 0.991,
+          "pcb2": 0.9915,
+          "pcb3": 0.9877227722772277,
+          "pcb4": 0.9976237623762376,
+          "pipe_fryum": 0.9954
+        },
+        "mean_auroc": 0.9868399889988999,
+        "min_auroc": 0.9575,
+        "n_categories": 12,
+        "pass": true
+      }
+    }
+  },
+  "seed_stability_summary": {
+    "patchcore_bit_identical_pairs": "0/48",
+    "dinomaly_mean_iauroc_across_seeds": {
+      "values": [
+        0.9867397414741474,
+        0.987015209020902,
+        0.9865948844884489,
+        0.9876235423542354,
+        0.9868399889988999
+      ],
+      "mean": 0.9869626732673268,
+      "std": 0.0003998520212007424,
+      "min": 0.9865948844884489,
+      "max": 0.9876235423542354
+    }
+  },
+  "gate_calibration_k1_k2": {
+    "patchcore": {
+      "0": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      },
+      "1": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      },
+      "2": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 1,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      },
+      "3": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      },
+      "4": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      }
+    },
+    "dinomaly": {
+      "0": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      },
+      "1": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      },
+      "2": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      },
+      "3": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      },
+      "4": {
+        "k1": {
+          "n_violations": 0,
+          "n_cells": 12,
+          "max_violations": 5,
+          "k1_tripped": false
+        },
+        "k2": {
+          "n_vacuous_categories": 0,
+          "n_categories": 12,
+          "threshold": 0.8,
+          "min_categories": 8,
+          "k2_tripped": false
+        }
+      }
+    }
+  },
+  "n_cal_count_mismatches_across_seeds": 0
+}

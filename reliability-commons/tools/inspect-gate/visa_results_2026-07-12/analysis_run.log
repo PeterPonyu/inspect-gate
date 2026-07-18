@@ -1,0 +1,37 @@
+[20:29:36] Stage 1: reproduction gate (per backbone x seed)
+[20:29:36]   seed 0: dinomaly mean=0.9867 pass=True | patchcore mean=0.9054 (descriptive)
+[20:29:36]   seed 1: dinomaly mean=0.9870 pass=True | patchcore mean=0.9052 (descriptive)
+[20:29:36]   seed 2: dinomaly mean=0.9866 pass=True | patchcore mean=0.9049 (descriptive)
+[20:29:36]   seed 3: dinomaly mean=0.9876 pass=True | patchcore mean=0.9033 (descriptive)
+[20:29:36]   seed 4: dinomaly mean=0.9868 pass=True | patchcore mean=0.9083 (descriptive)
+[20:29:36]   wrote /home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/visa_results_2026-07-12/reproduction/reproduction_gate.json
+[20:29:36] Stage 2: cross-seed stability
+[20:29:36]   wrote /home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/visa_results_2026-07-12/seed_stability/seed_stability.json  (patchcore bit-identical pairs: 0/48)
+[20:29:36] Stage 3: gate calibration (patchcore, R=20, primary protocol)
+[20:29:36]   seed 0: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:36]   seed 1: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:36]   seed 2: k1_tripped=False (0/12) k2_tripped=False (1/12) [0.2s]
+[20:29:36]   seed 3: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:37]   seed 4: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:37] Stage 3: gate calibration (dinomaly, R=20, primary protocol)
+[20:29:37]   seed 0: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:37]   seed 1: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:37]   seed 2: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:37]   seed 3: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:37]   seed 4: k1_tripped=False (0/12) k2_tripped=False (0/12) [0.2s]
+[20:29:37] Stage 4: exploratory per-cell audit (patchcore, n_perm=2000)
+[20:29:38]   seed 0 done [0.8s]
+[20:29:39]   seed 1 done [0.8s]
+[20:29:40]   seed 2 done [0.8s]
+[20:29:41]   seed 3 done [0.8s]
+[20:29:41]   seed 4 done [0.8s]
+[20:29:41] Stage 4: exploratory per-cell audit (dinomaly, n_perm=2000)
+[20:29:42]   seed 0 done [0.8s]
+[20:29:43]   seed 1 done [0.8s]
+[20:29:44]   seed 2 done [0.8s]
+[20:29:44]   seed 3 done [0.8s]
+[20:29:45]   seed 4 done [0.8s]
+[20:29:45] Cross-check: certifiability floors invariant across seeds (within backbone)
+[20:29:45]   n_cal-count mismatches across seeds (within backbone): 0
+[20:29:45] wrote /home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/visa_results_2026-07-12/SUMMARY.json
+[20:29:45] ALL STAGES COMPLETE

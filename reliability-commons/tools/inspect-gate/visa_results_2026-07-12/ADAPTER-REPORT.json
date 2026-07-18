@@ -1,0 +1,437 @@
+{
+  "csv": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/visa_staging/1cls.csv",
+  "official_test_counts": {
+    "candle": 200,
+    "capsules": 160,
+    "cashew": 150,
+    "chewinggum": 150,
+    "fryum": 150,
+    "macaroni1": 200,
+    "macaroni2": 200,
+    "pcb1": 200,
+    "pcb2": 200,
+    "pcb3": 201,
+    "pcb4": 201,
+    "pipe_fryum": 150
+  },
+  "auroc_xcheck_tolerance": 0.001,
+  "dinomaly": {
+    "0": {
+      "n_records": 2162,
+      "auroc_xcheck": {
+        "candle": {
+          "recomputed": 0.9872,
+          "box_log": 0.9872,
+          "abs_diff": 0.0
+        },
+        "capsules": {
+          "recomputed": 0.984833,
+          "box_log": 0.9848,
+          "abs_diff": 3.3e-05
+        },
+        "cashew": {
+          "recomputed": 0.987,
+          "box_log": 0.987,
+          "abs_diff": 0.0
+        },
+        "chewinggum": {
+          "recomputed": 0.9972,
+          "box_log": 0.9972,
+          "abs_diff": 0.0
+        },
+        "fryum": {
+          "recomputed": 0.9872,
+          "box_log": 0.9872,
+          "abs_diff": 0.0
+        },
+        "macaroni1": {
+          "recomputed": 0.9819,
+          "box_log": 0.9819,
+          "abs_diff": 0.0
+        },
+        "macaroni2": {
+          "recomputed": 0.9557,
+          "box_log": 0.9557,
+          "abs_diff": 0.0
+        },
+        "pcb1": {
+          "recomputed": 0.9899,
+          "box_log": 0.9899,
+          "abs_diff": 0.0
+        },
+        "pcb2": {
+          "recomputed": 0.9917,
+          "box_log": 0.9917,
+          "abs_diff": 0.0
+        },
+        "pcb3": {
+          "recomputed": 0.987921,
+          "box_log": 0.9879,
+          "abs_diff": 2.1e-05
+        },
+        "pcb4": {
+          "recomputed": 0.997723,
+          "box_log": 0.9977,
+          "abs_diff": 2.3e-05
+        },
+        "pipe_fryum": {
+          "recomputed": 0.9926,
+          "box_log": 0.9926,
+          "abs_diff": 0.0
+        }
+      },
+      "max_abs_diff": 3.3e-05
+    },
+    "1": {
+      "n_records": 2162,
+      "auroc_xcheck": {
+        "candle": {
+          "recomputed": 0.9861,
+          "box_log": 0.9861,
+          "abs_diff": 0.0
+        },
+        "capsules": {
+          "recomputed": 0.985167,
+          "box_log": 0.9852,
+          "abs_diff": 3.3e-05
+        },
+        "cashew": {
+          "recomputed": 0.9858,
+          "box_log": 0.9858,
+          "abs_diff": 0.0
+        },
+        "chewinggum": {
+          "recomputed": 0.9978,
+          "box_log": 0.9978,
+          "abs_diff": 0.0
+        },
+        "fryum": {
+          "recomputed": 0.9896,
+          "box_log": 0.9896,
+          "abs_diff": 0.0
+        },
+        "macaroni1": {
+          "recomputed": 0.9792,
+          "box_log": 0.9792,
+          "abs_diff": 0.0
+        },
+        "macaroni2": {
+          "recomputed": 0.9595,
+          "box_log": 0.9595,
+          "abs_diff": 0.0
+        },
+        "pcb1": {
+          "recomputed": 0.9893,
+          "box_log": 0.9893,
+          "abs_diff": 0.0
+        },
+        "pcb2": {
+          "recomputed": 0.9917,
+          "box_log": 0.9917,
+          "abs_diff": 0.0
+        },
+        "pcb3": {
+          "recomputed": 0.990297,
+          "box_log": 0.9903,
+          "abs_diff": 3e-06
+        },
+        "pcb4": {
+          "recomputed": 0.998119,
+          "box_log": 0.9981,
+          "abs_diff": 1.9e-05
+        },
+        "pipe_fryum": {
+          "recomputed": 0.9916,
+          "box_log": 0.9916,
+          "abs_diff": 0.0
+        }
+      },
+      "max_abs_diff": 3.3e-05
+    },
+    "2": {
+      "n_records": 2162,
+      "auroc_xcheck": {
+        "candle": {
+          "recomputed": 0.9869,
+          "box_log": 0.9869,
+          "abs_diff": 0.0
+        },
+        "capsules": {
+          "recomputed": 0.9825,
+          "box_log": 0.9825,
+          "abs_diff": 0.0
+        },
+        "cashew": {
+          "recomputed": 0.985,
+          "box_log": 0.985,
+          "abs_diff": 0.0
+        },
+        "chewinggum": {
+          "recomputed": 0.9972,
+          "box_log": 0.9972,
+          "abs_diff": 0.0
+        },
+        "fryum": {
+          "recomputed": 0.9896,
+          "box_log": 0.9896,
+          "abs_diff": 0.0
+        },
+        "macaroni1": {
+          "recomputed": 0.9802,
+          "box_log": 0.9802,
+          "abs_diff": 0.0
+        },
+        "macaroni2": {
+          "recomputed": 0.9596,
+          "box_log": 0.9596,
+          "abs_diff": 0.0
+        },
+        "pcb1": {
+          "recomputed": 0.9895,
+          "box_log": 0.9895,
+          "abs_diff": 0.0
+        },
+        "pcb2": {
+          "recomputed": 0.9921,
+          "box_log": 0.9921,
+          "abs_diff": 0.0
+        },
+        "pcb3": {
+          "recomputed": 0.988218,
+          "box_log": 0.9882,
+          "abs_diff": 1.8e-05
+        },
+        "pcb4": {
+          "recomputed": 0.997921,
+          "box_log": 0.9979,
+          "abs_diff": 2.1e-05
+        },
+        "pipe_fryum": {
+          "recomputed": 0.9904,
+          "box_log": 0.9904,
+          "abs_diff": 0.0
+        }
+      },
+      "max_abs_diff": 2.1e-05
+    },
+    "3": {
+      "n_records": 2162,
+      "auroc_xcheck": {
+        "candle": {
+          "recomputed": 0.986,
+          "box_log": 0.986,
+          "abs_diff": 0.0
+        },
+        "capsules": {
+          "recomputed": 0.983167,
+          "box_log": 0.9832,
+          "abs_diff": 3.3e-05
+        },
+        "cashew": {
+          "recomputed": 0.9866,
+          "box_log": 0.9866,
+          "abs_diff": 0.0
+        },
+        "chewinggum": {
+          "recomputed": 0.9976,
+          "box_log": 0.9976,
+          "abs_diff": 0.0
+        },
+        "fryum": {
+          "recomputed": 0.987,
+          "box_log": 0.987,
+          "abs_diff": 0.0
+        },
+        "macaroni1": {
+          "recomputed": 0.9809,
+          "box_log": 0.9809,
+          "abs_diff": 0.0
+        },
+        "macaroni2": {
+          "recomputed": 0.9661,
+          "box_log": 0.9661,
+          "abs_diff": 0.0
+        },
+        "pcb1": {
+          "recomputed": 0.9901,
+          "box_log": 0.9901,
+          "abs_diff": 0.0
+        },
+        "pcb2": {
+          "recomputed": 0.9932,
+          "box_log": 0.9932,
+          "abs_diff": 0.0
+        },
+        "pcb3": {
+          "recomputed": 0.991386,
+          "box_log": 0.9914,
+          "abs_diff": 1.4e-05
+        },
+        "pcb4": {
+          "recomputed": 0.99703,
+          "box_log": 0.997,
+          "abs_diff": 3e-05
+        },
+        "pipe_fryum": {
+          "recomputed": 0.9924,
+          "box_log": 0.9924,
+          "abs_diff": 0.0
+        }
+      },
+      "max_abs_diff": 3.3e-05
+    },
+    "4": {
+      "n_records": 2162,
+      "auroc_xcheck": {
+        "candle": {
+          "recomputed": 0.9854,
+          "box_log": 0.9854,
+          "abs_diff": 0.0
+        },
+        "capsules": {
+          "recomputed": 0.985833,
+          "box_log": 0.9858,
+          "abs_diff": 3.3e-05
+        },
+        "cashew": {
+          "recomputed": 0.9854,
+          "box_log": 0.9854,
+          "abs_diff": 0.0
+        },
+        "chewinggum": {
+          "recomputed": 0.9968,
+          "box_log": 0.9968,
+          "abs_diff": 0.0
+        },
+        "fryum": {
+          "recomputed": 0.987,
+          "box_log": 0.987,
+          "abs_diff": 0.0
+        },
+        "macaroni1": {
+          "recomputed": 0.9809,
+          "box_log": 0.9809,
+          "abs_diff": 0.0
+        },
+        "macaroni2": {
+          "recomputed": 0.9575,
+          "box_log": 0.9575,
+          "abs_diff": 0.0
+        },
+        "pcb1": {
+          "recomputed": 0.991,
+          "box_log": 0.991,
+          "abs_diff": 0.0
+        },
+        "pcb2": {
+          "recomputed": 0.9915,
+          "box_log": 0.9915,
+          "abs_diff": 0.0
+        },
+        "pcb3": {
+          "recomputed": 0.987723,
+          "box_log": 0.9877,
+          "abs_diff": 2.3e-05
+        },
+        "pcb4": {
+          "recomputed": 0.997624,
+          "box_log": 0.9976,
+          "abs_diff": 2.4e-05
+        },
+        "pipe_fryum": {
+          "recomputed": 0.9954,
+          "box_log": 0.9954,
+          "abs_diff": 0.0
+        }
+      },
+      "max_abs_diff": 3.3e-05
+    }
+  },
+  "patchcore": {
+    "0": {
+      "n_records": 2162,
+      "per_category_auroc_descriptive": {
+        "candle": 0.9713,
+        "capsules": 0.751667,
+        "cashew": 0.9586,
+        "chewinggum": 0.9914,
+        "fryum": 0.9534,
+        "macaroni1": 0.812,
+        "macaroni2": 0.665,
+        "pcb1": 0.9337,
+        "pcb2": 0.9245,
+        "pcb3": 0.922673,
+        "pcb4": 0.985842,
+        "pipe_fryum": 0.9942
+      }
+    },
+    "1": {
+      "n_records": 2162,
+      "per_category_auroc_descriptive": {
+        "candle": 0.9701,
+        "capsules": 0.748333,
+        "cashew": 0.9618,
+        "chewinggum": 0.9924,
+        "fryum": 0.9502,
+        "macaroni1": 0.8115,
+        "macaroni2": 0.6573,
+        "pcb1": 0.9312,
+        "pcb2": 0.9298,
+        "pcb3": 0.927723,
+        "pcb4": 0.987624,
+        "pipe_fryum": 0.995
+      }
+    },
+    "2": {
+      "n_records": 2162,
+      "per_category_auroc_descriptive": {
+        "candle": 0.9737,
+        "capsules": 0.745333,
+        "cashew": 0.9584,
+        "chewinggum": 0.9924,
+        "fryum": 0.9542,
+        "macaroni1": 0.8135,
+        "macaroni2": 0.656,
+        "pcb1": 0.9337,
+        "pcb2": 0.9237,
+        "pcb3": 0.928812,
+        "pcb4": 0.985941,
+        "pipe_fryum": 0.9936
+      }
+    },
+    "3": {
+      "n_records": 2162,
+      "per_category_auroc_descriptive": {
+        "candle": 0.9704,
+        "capsules": 0.723,
+        "cashew": 0.9626,
+        "chewinggum": 0.9918,
+        "fryum": 0.961,
+        "macaroni1": 0.8059,
+        "macaroni2": 0.6581,
+        "pcb1": 0.9331,
+        "pcb2": 0.9217,
+        "pcb3": 0.932772,
+        "pcb4": 0.985347,
+        "pipe_fryum": 0.9938
+      }
+    },
+    "4": {
+      "n_records": 2162,
+      "per_category_auroc_descriptive": {
+        "candle": 0.9751,
+        "capsules": 0.7695,
+        "cashew": 0.965,
+        "chewinggum": 0.993,
+        "fryum": 0.9538,
+        "macaroni1": 0.812,
+        "macaroni2": 0.6575,
+        "pcb1": 0.9354,
+        "pcb2": 0.9259,
+        "pcb3": 0.930693,
+        "pcb4": 0.98703,
+        "pipe_fryum": 0.9948
+      }
+    }
+  }
+}

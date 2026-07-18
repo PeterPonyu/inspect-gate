@@ -1,0 +1,416 @@
+{
+ "summary": {
+  "0": {
+   "n_g2_certified": 13,
+   "n_ks_fallback": 1,
+   "k1_tripped": false
+  },
+  "1": {
+   "n_g2_certified": 13,
+   "n_ks_fallback": 1,
+   "k1_tripped": false
+  },
+  "2": {
+   "n_g2_certified": 13,
+   "n_ks_fallback": 1,
+   "k1_tripped": false
+  },
+  "3": {
+   "n_g2_certified": 13,
+   "n_ks_fallback": 1,
+   "k1_tripped": false
+  },
+  "4": {
+   "n_g2_certified": 12,
+   "n_ks_fallback": 2,
+   "k1_tripped": false
+  }
+ },
+ "compare": {
+  "0": {
+   "bottle": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "cable": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "capsule": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "carpet": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "grid": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "hazelnut": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "leather": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "audited-not-certified"
+   },
+   "metal_nut": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "pill": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "screw": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "tile": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "toothbrush": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "train-holdout"
+   },
+   "transistor": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "wood": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "zipper": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   }
+  },
+  "1": {
+   "bottle": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "cable": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "capsule": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "carpet": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "grid": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "hazelnut": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "leather": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "audited-not-certified"
+   },
+   "metal_nut": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "pill": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "screw": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "tile": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "toothbrush": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "train-holdout"
+   },
+   "transistor": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "wood": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "zipper": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   }
+  },
+  "2": {
+   "bottle": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "cable": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "capsule": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "carpet": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "grid": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "hazelnut": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "leather": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "audited-not-certified"
+   },
+   "metal_nut": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "pill": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "screw": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "tile": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "toothbrush": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "train-holdout"
+   },
+   "transistor": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "wood": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "zipper": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   }
+  },
+  "3": {
+   "bottle": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "cable": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "capsule": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "carpet": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "grid": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "hazelnut": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "leather": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "audited-not-certified"
+   },
+   "metal_nut": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "pill": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "screw": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "tile": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "toothbrush": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "train-holdout"
+   },
+   "transistor": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "wood": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "zipper": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   }
+  },
+  "4": {
+   "bottle": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "cable": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "capsule": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "carpet": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "grid": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "hazelnut": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "leather": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "audited-not-certified"
+   },
+   "metal_nut": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "pill": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "screw": {
+    "primary_g2": true,
+    "promoted_g2": false,
+    "g2_mode": "audited-not-certified"
+   },
+   "tile": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "toothbrush": {
+    "primary_g2": false,
+    "promoted_g2": false,
+    "g2_mode": "train-holdout"
+   },
+   "transistor": {
+    "primary_g2": true,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "wood": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   },
+   "zipper": {
+    "primary_g2": false,
+    "promoted_g2": true,
+    "g2_mode": "train-holdout"
+   }
+  }
+ }
+}

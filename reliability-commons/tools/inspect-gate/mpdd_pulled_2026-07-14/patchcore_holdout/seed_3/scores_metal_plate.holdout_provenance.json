@@ -1,0 +1,31 @@
+{
+  "holdout_frac": 0.2,
+  "holdout_seed": 0,
+  "holdout_ids_by_category": {
+    "metal_plate": [
+      "metal_plate_train_good_002",
+      "metal_plate_train_good_016",
+      "metal_plate_train_good_019",
+      "metal_plate_train_good_022",
+      "metal_plate_train_good_024",
+      "metal_plate_train_good_025",
+      "metal_plate_train_good_026",
+      "metal_plate_train_good_030",
+      "metal_plate_train_good_031",
+      "metal_plate_train_good_032",
+      "metal_plate_train_good_048"
+    ]
+  },
+  "provenance": {
+    "script": "/root/reliability-commons/tools/inspect-gate/orchestration/score_patchcore.py",
+    "timestamp_utc": "2026-07-14T08:01:12.166398+00:00",
+    "seeds": [
+      0
+    ],
+    "python_version": "3.12.3",
+    "numpy_version": "2.3.2",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+    "git_sha": null,
+    "git_dirty": null
+  }
+}

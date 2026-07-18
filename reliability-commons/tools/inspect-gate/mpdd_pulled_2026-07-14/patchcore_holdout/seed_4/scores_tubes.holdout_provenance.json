@@ -1,0 +1,44 @@
+{
+  "holdout_frac": 0.2,
+  "holdout_seed": 0,
+  "holdout_ids_by_category": {
+    "tubes": [
+      "tubes_train_good_005",
+      "tubes_train_good_012",
+      "tubes_train_good_017",
+      "tubes_train_good_027",
+      "tubes_train_good_033",
+      "tubes_train_good_036",
+      "tubes_train_good_038",
+      "tubes_train_good_045",
+      "tubes_train_good_049",
+      "tubes_train_good_051",
+      "tubes_train_good_053",
+      "tubes_train_good_061",
+      "tubes_train_good_062",
+      "tubes_train_good_064",
+      "tubes_train_good_065",
+      "tubes_train_good_074",
+      "tubes_train_good_079",
+      "tubes_train_good_096",
+      "tubes_train_good_097",
+      "tubes_train_good_100",
+      "tubes_train_good_103",
+      "tubes_train_good_106",
+      "tubes_train_good_108",
+      "tubes_train_good_113"
+    ]
+  },
+  "provenance": {
+    "script": "/root/reliability-commons/tools/inspect-gate/orchestration/score_patchcore.py",
+    "timestamp_utc": "2026-07-14T08:06:21.031382+00:00",
+    "seeds": [
+      0
+    ],
+    "python_version": "3.12.3",
+    "numpy_version": "2.3.2",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+    "git_sha": null,
+    "git_dirty": null
+  }
+}

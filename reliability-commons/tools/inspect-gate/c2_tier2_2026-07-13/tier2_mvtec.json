@@ -1,0 +1,2825 @@
+{
+  "benchmark": "MVTec-AD",
+  "n_cells_total": 150,
+  "escaped_axis": {
+    "fail": {
+      "count": 115,
+      "cells": [
+        "dinomaly|bottle|seed0",
+        "dinomaly|bottle|seed1",
+        "dinomaly|bottle|seed2",
+        "dinomaly|bottle|seed3",
+        "dinomaly|bottle|seed4",
+        "dinomaly|capsule|seed0",
+        "dinomaly|capsule|seed1",
+        "dinomaly|capsule|seed2",
+        "dinomaly|capsule|seed3",
+        "dinomaly|capsule|seed4",
+        "dinomaly|carpet|seed0",
+        "dinomaly|carpet|seed1",
+        "dinomaly|carpet|seed2",
+        "dinomaly|carpet|seed3",
+        "dinomaly|carpet|seed4",
+        "dinomaly|grid|seed0",
+        "dinomaly|grid|seed1",
+        "dinomaly|grid|seed2",
+        "dinomaly|grid|seed3",
+        "dinomaly|grid|seed4",
+        "dinomaly|leather|seed0",
+        "dinomaly|leather|seed1",
+        "dinomaly|leather|seed2",
+        "dinomaly|leather|seed3",
+        "dinomaly|leather|seed4",
+        "dinomaly|metal_nut|seed0",
+        "dinomaly|metal_nut|seed1",
+        "dinomaly|metal_nut|seed2",
+        "dinomaly|metal_nut|seed3",
+        "dinomaly|metal_nut|seed4",
+        "dinomaly|pill|seed0",
+        "dinomaly|pill|seed1",
+        "dinomaly|pill|seed2",
+        "dinomaly|pill|seed3",
+        "dinomaly|pill|seed4",
+        "dinomaly|screw|seed0",
+        "dinomaly|screw|seed1",
+        "dinomaly|screw|seed2",
+        "dinomaly|screw|seed3",
+        "dinomaly|screw|seed4",
+        "dinomaly|tile|seed0",
+        "dinomaly|tile|seed1",
+        "dinomaly|tile|seed2",
+        "dinomaly|tile|seed3",
+        "dinomaly|tile|seed4",
+        "dinomaly|wood|seed0",
+        "dinomaly|wood|seed1",
+        "dinomaly|wood|seed2",
+        "dinomaly|wood|seed3",
+        "dinomaly|wood|seed4",
+        "dinomaly|zipper|seed0",
+        "dinomaly|zipper|seed1",
+        "dinomaly|zipper|seed2",
+        "dinomaly|zipper|seed3",
+        "dinomaly|zipper|seed4",
+        "patchcore|bottle|seed0",
+        "patchcore|bottle|seed1",
+        "patchcore|bottle|seed2",
+        "patchcore|bottle|seed3",
+        "patchcore|bottle|seed4",
+        "patchcore|cable|seed0",
+        "patchcore|cable|seed1",
+        "patchcore|cable|seed2",
+        "patchcore|cable|seed3",
+        "patchcore|cable|seed4",
+        "patchcore|capsule|seed0",
+        "patchcore|capsule|seed1",
+        "patchcore|capsule|seed2",
+        "patchcore|capsule|seed3",
+        "patchcore|capsule|seed4",
+        "patchcore|carpet|seed0",
+        "patchcore|carpet|seed1",
+        "patchcore|carpet|seed2",
+        "patchcore|carpet|seed3",
+        "patchcore|carpet|seed4",
+        "patchcore|grid|seed0",
+        "patchcore|grid|seed1",
+        "patchcore|grid|seed2",
+        "patchcore|grid|seed3",
+        "patchcore|grid|seed4",
+        "patchcore|leather|seed0",
+        "patchcore|leather|seed1",
+        "patchcore|leather|seed2",
+        "patchcore|leather|seed3",
+        "patchcore|leather|seed4",
+        "patchcore|metal_nut|seed0",
+        "patchcore|metal_nut|seed1",
+        "patchcore|metal_nut|seed2",
+        "patchcore|metal_nut|seed3",
+        "patchcore|metal_nut|seed4",
+        "patchcore|pill|seed0",
+        "patchcore|pill|seed1",
+        "patchcore|pill|seed2",
+        "patchcore|pill|seed3",
+        "patchcore|pill|seed4",
+        "patchcore|screw|seed0",
+        "patchcore|screw|seed1",
+        "patchcore|screw|seed2",
+        "patchcore|screw|seed3",
+        "patchcore|screw|seed4",
+        "patchcore|tile|seed0",
+        "patchcore|tile|seed1",
+        "patchcore|tile|seed2",
+        "patchcore|tile|seed3",
+        "patchcore|tile|seed4",
+        "patchcore|wood|seed0",
+        "patchcore|wood|seed1",
+        "patchcore|wood|seed2",
+        "patchcore|wood|seed3",
+        "patchcore|wood|seed4",
+        "patchcore|zipper|seed0",
+        "patchcore|zipper|seed1",
+        "patchcore|zipper|seed2",
+        "patchcore|zipper|seed3",
+        "patchcore|zipper|seed4"
+      ]
+    },
+    "pass": {
+      "count": 15,
+      "cells": [
+        "dinomaly|cable|seed0",
+        "dinomaly|cable|seed1",
+        "dinomaly|cable|seed2",
+        "dinomaly|cable|seed3",
+        "dinomaly|cable|seed4",
+        "dinomaly|hazelnut|seed0",
+        "dinomaly|hazelnut|seed1",
+        "dinomaly|hazelnut|seed2",
+        "dinomaly|hazelnut|seed3",
+        "dinomaly|hazelnut|seed4",
+        "patchcore|hazelnut|seed0",
+        "patchcore|hazelnut|seed1",
+        "patchcore|hazelnut|seed2",
+        "patchcore|hazelnut|seed3",
+        "patchcore|hazelnut|seed4"
+      ]
+    },
+    "underpowered-excluded": {
+      "count": 20,
+      "cells": [
+        "dinomaly|toothbrush|seed0",
+        "dinomaly|toothbrush|seed1",
+        "dinomaly|toothbrush|seed2",
+        "dinomaly|toothbrush|seed3",
+        "dinomaly|toothbrush|seed4",
+        "dinomaly|transistor|seed0",
+        "dinomaly|transistor|seed1",
+        "dinomaly|transistor|seed2",
+        "dinomaly|transistor|seed3",
+        "dinomaly|transistor|seed4",
+        "patchcore|toothbrush|seed0",
+        "patchcore|toothbrush|seed1",
+        "patchcore|toothbrush|seed2",
+        "patchcore|toothbrush|seed3",
+        "patchcore|toothbrush|seed4",
+        "patchcore|transistor|seed0",
+        "patchcore|transistor|seed1",
+        "patchcore|transistor|seed2",
+        "patchcore|transistor|seed3",
+        "patchcore|transistor|seed4"
+      ]
+    }
+  },
+  "false_reject_axis": {
+    "G2-REFUSED-excluded": {
+      "count": 110,
+      "cells": [
+        "dinomaly|bottle|seed0",
+        "dinomaly|bottle|seed1",
+        "dinomaly|bottle|seed2",
+        "dinomaly|bottle|seed3",
+        "dinomaly|bottle|seed4",
+        "dinomaly|capsule|seed0",
+        "dinomaly|capsule|seed1",
+        "dinomaly|capsule|seed2",
+        "dinomaly|capsule|seed3",
+        "dinomaly|capsule|seed4",
+        "dinomaly|carpet|seed0",
+        "dinomaly|carpet|seed1",
+        "dinomaly|carpet|seed2",
+        "dinomaly|carpet|seed3",
+        "dinomaly|carpet|seed4",
+        "dinomaly|grid|seed0",
+        "dinomaly|grid|seed1",
+        "dinomaly|grid|seed2",
+        "dinomaly|grid|seed3",
+        "dinomaly|grid|seed4",
+        "dinomaly|leather|seed0",
+        "dinomaly|leather|seed1",
+        "dinomaly|leather|seed2",
+        "dinomaly|leather|seed3",
+        "dinomaly|leather|seed4",
+        "dinomaly|metal_nut|seed0",
+        "dinomaly|metal_nut|seed1",
+        "dinomaly|metal_nut|seed2",
+        "dinomaly|metal_nut|seed3",
+        "dinomaly|metal_nut|seed4",
+        "dinomaly|pill|seed0",
+        "dinomaly|pill|seed1",
+        "dinomaly|pill|seed2",
+        "dinomaly|pill|seed3",
+        "dinomaly|pill|seed4",
+        "dinomaly|tile|seed0",
+        "dinomaly|tile|seed1",
+        "dinomaly|tile|seed2",
+        "dinomaly|tile|seed3",
+        "dinomaly|tile|seed4",
+        "dinomaly|toothbrush|seed0",
+        "dinomaly|toothbrush|seed1",
+        "dinomaly|toothbrush|seed2",
+        "dinomaly|toothbrush|seed3",
+        "dinomaly|toothbrush|seed4",
+        "dinomaly|wood|seed0",
+        "dinomaly|wood|seed1",
+        "dinomaly|wood|seed2",
+        "dinomaly|wood|seed3",
+        "dinomaly|wood|seed4",
+        "dinomaly|zipper|seed0",
+        "dinomaly|zipper|seed1",
+        "dinomaly|zipper|seed2",
+        "dinomaly|zipper|seed3",
+        "dinomaly|zipper|seed4",
+        "patchcore|bottle|seed0",
+        "patchcore|bottle|seed1",
+        "patchcore|bottle|seed2",
+        "patchcore|bottle|seed3",
+        "patchcore|bottle|seed4",
+        "patchcore|capsule|seed0",
+        "patchcore|capsule|seed1",
+        "patchcore|capsule|seed2",
+        "patchcore|capsule|seed3",
+        "patchcore|capsule|seed4",
+        "patchcore|carpet|seed0",
+        "patchcore|carpet|seed1",
+        "patchcore|carpet|seed2",
+        "patchcore|carpet|seed3",
+        "patchcore|carpet|seed4",
+        "patchcore|grid|seed0",
+        "patchcore|grid|seed1",
+        "patchcore|grid|seed2",
+        "patchcore|grid|seed3",
+        "patchcore|grid|seed4",
+        "patchcore|leather|seed0",
+        "patchcore|leather|seed1",
+        "patchcore|leather|seed2",
+        "patchcore|leather|seed3",
+        "patchcore|leather|seed4",
+        "patchcore|metal_nut|seed0",
+        "patchcore|metal_nut|seed1",
+        "patchcore|metal_nut|seed2",
+        "patchcore|metal_nut|seed3",
+        "patchcore|metal_nut|seed4",
+        "patchcore|pill|seed0",
+        "patchcore|pill|seed1",
+        "patchcore|pill|seed2",
+        "patchcore|pill|seed3",
+        "patchcore|pill|seed4",
+        "patchcore|tile|seed0",
+        "patchcore|tile|seed1",
+        "patchcore|tile|seed2",
+        "patchcore|tile|seed3",
+        "patchcore|tile|seed4",
+        "patchcore|toothbrush|seed0",
+        "patchcore|toothbrush|seed1",
+        "patchcore|toothbrush|seed2",
+        "patchcore|toothbrush|seed3",
+        "patchcore|toothbrush|seed4",
+        "patchcore|wood|seed0",
+        "patchcore|wood|seed1",
+        "patchcore|wood|seed2",
+        "patchcore|wood|seed3",
+        "patchcore|wood|seed4",
+        "patchcore|zipper|seed0",
+        "patchcore|zipper|seed1",
+        "patchcore|zipper|seed2",
+        "patchcore|zipper|seed3",
+        "patchcore|zipper|seed4"
+      ]
+    },
+    "underpowered-excluded": {
+      "count": 40,
+      "cells": [
+        "dinomaly|cable|seed0",
+        "dinomaly|cable|seed1",
+        "dinomaly|cable|seed2",
+        "dinomaly|cable|seed3",
+        "dinomaly|cable|seed4",
+        "dinomaly|hazelnut|seed0",
+        "dinomaly|hazelnut|seed1",
+        "dinomaly|hazelnut|seed2",
+        "dinomaly|hazelnut|seed3",
+        "dinomaly|hazelnut|seed4",
+        "dinomaly|screw|seed0",
+        "dinomaly|screw|seed1",
+        "dinomaly|screw|seed2",
+        "dinomaly|screw|seed3",
+        "dinomaly|screw|seed4",
+        "dinomaly|transistor|seed0",
+        "dinomaly|transistor|seed1",
+        "dinomaly|transistor|seed2",
+        "dinomaly|transistor|seed3",
+        "dinomaly|transistor|seed4",
+        "patchcore|cable|seed0",
+        "patchcore|cable|seed1",
+        "patchcore|cable|seed2",
+        "patchcore|cable|seed3",
+        "patchcore|cable|seed4",
+        "patchcore|hazelnut|seed0",
+        "patchcore|hazelnut|seed1",
+        "patchcore|hazelnut|seed2",
+        "patchcore|hazelnut|seed3",
+        "patchcore|hazelnut|seed4",
+        "patchcore|screw|seed0",
+        "patchcore|screw|seed1",
+        "patchcore|screw|seed2",
+        "patchcore|screw|seed3",
+        "patchcore|screw|seed4",
+        "patchcore|transistor|seed0",
+        "patchcore|transistor|seed1",
+        "patchcore|transistor|seed2",
+        "patchcore|transistor|seed3",
+        "patchcore|transistor|seed4"
+      ]
+    }
+  },
+  "per_cell": {
+    "patchcore|bottle|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06612903225806452,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.18946446742553866,
+        "ub_1sided_pooled_SECONDARY": 0.08495032096642834,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|cable|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07173913043478261,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.08732503735493173,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|capsule|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10272727272727272,
+        "per_repeat_k": 6,
+        "ub_1sided_perrepeat_PRIMARY": 0.20400104369637223,
+        "ub_1sided_pooled_SECONDARY": 0.11903760070684571,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|carpet|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.1,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.19197631701164247,
+        "ub_1sided_pooled_SECONDARY": 0.11799151101192316,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|grid|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.056896551724137934,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.0753428205387805,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|hazelnut|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|leather|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07282608695652174,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.08850602427488001,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|metal_nut|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08085106382978724,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18426498527352642,
+        "ub_1sided_pooled_SECONDARY": 0.09700671677405275,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|pill|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10422535211267606,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.17721773623619297,
+        "ub_1sided_pooled_SECONDARY": 0.11852867764281029,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|screw|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.11779661016949153,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.21132541122343432,
+        "ub_1sided_pooled_SECONDARY": 0.134368484464495,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|tile|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08095238095238096,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1743915478447116,
+        "ub_1sided_pooled_SECONDARY": 0.09814755624085078,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|toothbrush|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|transistor|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|wood|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.10063591688268929,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|zipper|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10847457627118644,
+        "per_repeat_k": 6,
+        "ub_1sided_perrepeat_PRIMARY": 0.19087892314984226,
+        "ub_1sided_pooled_SECONDARY": 0.12452074125691523,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|bottle|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07096774193548387,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.18946446742553866,
+        "ub_1sided_pooled_SECONDARY": 0.09031133312640287,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|cable|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06956521739130435,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.08496029492803439,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|capsule|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09727272727272727,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.1816898948464404,
+        "ub_1sided_pooled_SECONDARY": 0.11323498297094904,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|carpet|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09777777777777778,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.19197631701164247,
+        "ub_1sided_pooled_SECONDARY": 0.1156119902679157,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|grid|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.05172413793103448,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.06950549350326414,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|hazelnut|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|leather|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07608695652173914,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18804182938649258,
+        "ub_1sided_pooled_SECONDARY": 0.09204366963970181,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|metal_nut|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08617021276595745,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18426498527352642,
+        "ub_1sided_pooled_SECONDARY": 0.10274027063269565,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|pill|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.1056338028169014,
+        "per_repeat_k": 8,
+        "ub_1sided_perrepeat_PRIMARY": 0.1941314182708814,
+        "ub_1sided_pooled_SECONDARY": 0.12001392144896703,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|screw|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.1211864406779661,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.21132541122343432,
+        "ub_1sided_pooled_SECONDARY": 0.1379416695285322,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|tile|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08095238095238096,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1743915478447116,
+        "ub_1sided_pooled_SECONDARY": 0.09814755624085078,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|toothbrush|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|transistor|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|wood|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.10063591688268929,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|zipper|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10932203389830508,
+        "per_repeat_k": 6,
+        "ub_1sided_perrepeat_PRIMARY": 0.19087892314984226,
+        "ub_1sided_pooled_SECONDARY": 0.1254173524052803,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|bottle|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07096774193548387,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.18946446742553866,
+        "ub_1sided_pooled_SECONDARY": 0.09031133312640287,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|cable|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0782608695652174,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18804182938649258,
+        "ub_1sided_pooled_SECONDARY": 0.0943978423449771,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|capsule|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09545454545454546,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.1816898948464404,
+        "ub_1sided_pooled_SECONDARY": 0.11129770937308102,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|carpet|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09888888888888889,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.19197631701164247,
+        "ub_1sided_pooled_SECONDARY": 0.11680206473346483,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|grid|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.05172413793103448,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.06950549350326414,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|hazelnut|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|leather|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07608695652173914,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18804182938649258,
+        "ub_1sided_pooled_SECONDARY": 0.09204366963970181,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|metal_nut|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07765957446808511,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18426498527352642,
+        "ub_1sided_pooled_SECONDARY": 0.09355782270317255,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|pill|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09647887323943662,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.17721773623619297,
+        "ub_1sided_pooled_SECONDARY": 0.11034599812210671,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|screw|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.1211864406779661,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.21132541122343432,
+        "ub_1sided_pooled_SECONDARY": 0.1379416695285322,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|tile|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08214285714285714,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1743915478447116,
+        "ub_1sided_pooled_SECONDARY": 0.09943744344903375,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|toothbrush|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|transistor|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|wood|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07666666666666666,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.09696736897677158,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|zipper|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.1152542372881356,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.21132541122343432,
+        "ub_1sided_pooled_SECONDARY": 0.1316859306544144,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|bottle|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07096774193548387,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.18946446742553866,
+        "ub_1sided_pooled_SECONDARY": 0.09031133312640287,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|cable|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07391304347826087,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.08968611342056804,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|capsule|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10727272727272727,
+        "per_repeat_k": 6,
+        "ub_1sided_perrepeat_PRIMARY": 0.20400104369637223,
+        "ub_1sided_pooled_SECONDARY": 0.1238631007912401,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|carpet|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.1,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.19197631701164247,
+        "ub_1sided_pooled_SECONDARY": 0.11799151101192316,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|grid|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.05862068965517241,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.07728046569207714,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|hazelnut|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|leather|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07717391304347826,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18804182938649258,
+        "ub_1sided_pooled_SECONDARY": 0.09322117078122544,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|metal_nut|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08191489361702127,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18426498527352642,
+        "ub_1sided_pooled_SECONDARY": 0.0981548535735013,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|pill|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09295774647887324,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.17721773623619297,
+        "ub_1sided_pooled_SECONDARY": 0.10661840802194393,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|screw|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.11949152542372882,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.21132541122343432,
+        "ub_1sided_pooled_SECONDARY": 0.13615557683486942,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|tile|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09166666666666666,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.20483056992239726,
+        "ub_1sided_pooled_SECONDARY": 0.10972360463842497,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|toothbrush|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|transistor|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|wood|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07833333333333334,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.09880281671284556,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|zipper|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.11779661016949153,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.21132541122343432,
+        "ub_1sided_pooled_SECONDARY": 0.134368484464495,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|bottle|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07258064516129033,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.18946446742553866,
+        "ub_1sided_pooled_SECONDARY": 0.0920932818980026,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|cable|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07173913043478261,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.08732503735493173,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|capsule|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09727272727272727,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.1816898948464404,
+        "ub_1sided_pooled_SECONDARY": 0.11323498297094904,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|carpet|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.1,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.19197631701164247,
+        "ub_1sided_pooled_SECONDARY": 0.11799151101192316,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|grid|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.05,
+        "per_repeat_k": 1,
+        "ub_1sided_perrepeat_PRIMARY": 0.1533920245261827,
+        "ub_1sided_pooled_SECONDARY": 0.06755097079207617,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|hazelnut|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|leather|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07608695652173914,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18804182938649258,
+        "ub_1sided_pooled_SECONDARY": 0.09204366963970181,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|metal_nut|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07872340425531915,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18426498527352642,
+        "ub_1sided_pooled_SECONDARY": 0.09470821492410325,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|pill|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09718309859154929,
+        "per_repeat_k": 7,
+        "ub_1sided_perrepeat_PRIMARY": 0.17721773623619297,
+        "ub_1sided_pooled_SECONDARY": 0.11109088219167061,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|screw|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10677966101694915,
+        "per_repeat_k": 6,
+        "ub_1sided_perrepeat_PRIMARY": 0.19087892314984226,
+        "ub_1sided_pooled_SECONDARY": 0.12272666594304685,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|tile|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08095238095238096,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1743915478447116,
+        "ub_1sided_pooled_SECONDARY": 0.09814755624085078,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|toothbrush|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|transistor|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "patchcore|wood|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07833333333333334,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.09880281671284556,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "patchcore|zipper|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09491525423728814,
+        "per_repeat_k": 6,
+        "ub_1sided_perrepeat_PRIMARY": 0.19087892314984226,
+        "ub_1sided_pooled_SECONDARY": 0.11013428954297914,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|bottle|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07419354838709677,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.18946446742553866,
+        "ub_1sided_pooled_SECONDARY": 0.0938728307089904,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|cable|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.06304930167405448,
+        "ub_1sided_pooled_SECONDARY": 0.0032509349624755325,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|capsule|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08272727272727273,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.1816898948464404,
+        "ub_1sided_pooled_SECONDARY": 0.09768956529570846,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|carpet|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10444444444444445,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.21953609544733202,
+        "ub_1sided_pooled_SECONDARY": 0.12274319480286668,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|grid|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06724137931034482,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.086914656387415,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|hazelnut|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|leather|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06630434782608696,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.08140595828060425,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|metal_nut|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07340425531914893,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1567918247469451,
+        "ub_1sided_pooled_SECONDARY": 0.08894830627902266,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|pill|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10845070422535211,
+        "per_repeat_k": 8,
+        "ub_1sided_perrepeat_PRIMARY": 0.1941314182708814,
+        "ub_1sided_pooled_SECONDARY": 0.1229822021127541,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|screw|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07966101694915254,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.09384459442782653,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|tile|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09642857142857143,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.20483056992239726,
+        "ub_1sided_pooled_SECONDARY": 0.11484638683521252,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|toothbrush|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|transistor|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|wood|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.10063591688268929,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|zipper|seed0": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08644067796610169,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.10109968359825779,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|bottle|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09032258064516129,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.23150297514336832,
+        "ub_1sided_pooled_SECONDARY": 0.11155022310928339,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|cable|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.06304930167405448,
+        "ub_1sided_pooled_SECONDARY": 0.0032509349624755325,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|capsule|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.15874747980677806,
+        "ub_1sided_pooled_SECONDARY": 0.09476180035700534,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|carpet|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10555555555555556,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.21953609544733202,
+        "ub_1sided_pooled_SECONDARY": 0.12392963348546229,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|grid|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06896551724137931,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.08883159543807825,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|hazelnut|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|leather|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06956521739130435,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.08496029492803439,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|metal_nut|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07234042553191489,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1567918247469451,
+        "ub_1sided_pooled_SECONDARY": 0.08779386255202597,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|pill|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10633802816901408,
+        "per_repeat_k": 8,
+        "ub_1sided_perrepeat_PRIMARY": 0.1941314182708814,
+        "ub_1sided_pooled_SECONDARY": 0.12075626507981538,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|screw|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07542372881355933,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.14846360146715348,
+        "ub_1sided_pooled_SECONDARY": 0.08929643660990513,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|tile|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09285714285714286,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.20483056992239726,
+        "ub_1sided_pooled_SECONDARY": 0.11100550277836584,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|toothbrush|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|transistor|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|wood|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08333333333333333,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.10429533402824814,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|zipper|seed1": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0847457627118644,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.09928831686438525,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|bottle|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08064516129032258,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.18946446742553866,
+        "ub_1sided_pooled_SECONDARY": 0.1009683840001625,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|cable|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.06304930167405448,
+        "ub_1sided_pooled_SECONDARY": 0.0032509349624755325,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|capsule|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09090909090909091,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.1816898948464404,
+        "ub_1sided_pooled_SECONDARY": 0.10644744111381993,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|carpet|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10111111111111111,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.21953609544733202,
+        "ub_1sided_pooled_SECONDARY": 0.11918033831361215,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|grid|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06724137931034482,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.086914656387415,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|hazelnut|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|leather|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06086956521739131,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.0754613084824251,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|metal_nut|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07659574468085106,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18426498527352642,
+        "ub_1sided_pooled_SECONDARY": 0.09240665074437704,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|pill|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.10774647887323943,
+        "per_repeat_k": 8,
+        "ub_1sided_perrepeat_PRIMARY": 0.1941314182708814,
+        "ub_1sided_pooled_SECONDARY": 0.12224040384162661,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|screw|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08559322033898305,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.10019419437598442,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|tile|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09047619047619047,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.20483056992239726,
+        "ub_1sided_pooled_SECONDARY": 0.10844088168367039,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|toothbrush|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|transistor|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|wood|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08333333333333333,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.10429533402824814,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|zipper|seed2": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08389830508474576,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.09838204581526487,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|bottle|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08387096774193549,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.23150297514336832,
+        "ub_1sided_pooled_SECONDARY": 0.10450343355173379,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|cable|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.06304930167405448,
+        "ub_1sided_pooled_SECONDARY": 0.0032509349624755325,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|capsule|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08363636363636363,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.1816898948464404,
+        "ub_1sided_pooled_SECONDARY": 0.09866450880356899,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|carpet|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.1,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.19197631701164247,
+        "ub_1sided_pooled_SECONDARY": 0.11799151101192316,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|grid|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06551724137931035,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.08499457658312995,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|hazelnut|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|leather|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0641304347826087,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.07903133173905137,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|metal_nut|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07553191489361702,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.18426498527352642,
+        "ub_1sided_pooled_SECONDARY": 0.09125468428931693,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|pill|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.11267605633802817,
+        "per_repeat_k": 8,
+        "ub_1sided_perrepeat_PRIMARY": 0.1941314182708814,
+        "ub_1sided_pooled_SECONDARY": 0.12742929125451322,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|screw|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08559322033898305,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.10019419437598442,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|tile|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09166666666666666,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.20483056992239726,
+        "ub_1sided_pooled_SECONDARY": 0.10972360463842497,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|toothbrush|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|transistor|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|wood|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08166666666666667,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.10246673517513163,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|zipper|seed3": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07711864406779662,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.09111703502618186,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|bottle|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 31.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07580645161290323,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.18946446742553866,
+        "ub_1sided_pooled_SECONDARY": 0.0956500500935982,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 10.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|cable|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.06304930167405448,
+        "ub_1sided_pooled_SECONDARY": 0.0032509349624755325,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 29.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|capsule|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 55.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07909090909090909,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.15874747980677806,
+        "ub_1sided_pooled_SECONDARY": 0.0937848755783714,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|carpet|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 45.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09777777777777778,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.19197631701164247,
+        "ub_1sided_pooled_SECONDARY": 0.1156119902679157,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 14.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|grid|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 29.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06379310344827586,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.20156058792150391,
+        "ub_1sided_pooled_SECONDARY": 0.08307124265060782,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|hazelnut|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 35.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.0,
+        "per_repeat_k": 0,
+        "ub_1sided_perrepeat_PRIMARY": 0.08203163585667045,
+        "ub_1sided_pooled_SECONDARY": 0.0042704730201890894,
+        "threshold": 0.13,
+        "verdict": "pass"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 20.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|leather|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 46.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.07065217391304347,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1600222779823712,
+        "ub_1sided_pooled_SECONDARY": 0.08614313402068824,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|metal_nut|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 47.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.06914893617021277,
+        "per_repeat_k": 3,
+        "ub_1sided_perrepeat_PRIMARY": 0.1567918247469451,
+        "ub_1sided_pooled_SECONDARY": 0.08432530702689614,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 11.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|pill|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 71.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.11267605633802817,
+        "per_repeat_k": 8,
+        "ub_1sided_perrepeat_PRIMARY": 0.1941314182708814,
+        "ub_1sided_pooled_SECONDARY": 0.12742929125451322,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 13.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|screw|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08644067796610169,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.10109968359825779,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 21.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|tile|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 42.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.09285714285714286,
+        "per_repeat_k": 4,
+        "ub_1sided_perrepeat_PRIMARY": 0.20483056992239726,
+        "ub_1sided_pooled_SECONDARY": 0.11100550277836584,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 17.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|toothbrush|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 15.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 6.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|transistor|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 20.0,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 30.0,
+        "g2_certified": true,
+        "powered": false,
+        "verdict": "underpowered-excluded"
+      }
+    },
+    "dinomaly|wood|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 30.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08333333333333333,
+        "per_repeat_k": 2,
+        "ub_1sided_perrepeat_PRIMARY": 0.19532604365492595,
+        "ub_1sided_pooled_SECONDARY": 0.10429533402824814,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 9.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    },
+    "dinomaly|zipper|seed4": {
+      "escaped": {
+        "per_repeat_n_eval_def": 59.0,
+        "powered": true,
+        "pooled_escaped_rate": 0.08220338983050847,
+        "per_repeat_k": 5,
+        "ub_1sided_perrepeat_PRIMARY": 0.16996255552575096,
+        "ub_1sided_pooled_SECONDARY": 0.09656830145504247,
+        "threshold": 0.13,
+        "verdict": "fail"
+      },
+      "false_reject": {
+        "per_repeat_n_eval_good": 16.0,
+        "g2_certified": false,
+        "verdict": "G2-REFUSED-excluded"
+      }
+    }
+  }
+}

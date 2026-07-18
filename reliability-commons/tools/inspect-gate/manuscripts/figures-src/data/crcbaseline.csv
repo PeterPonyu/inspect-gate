@@ -1,0 +1,9 @@
+# source: baseline_comparison_2026-07-15/results.json (benchmarks.{MPDD,VisA,MVTec-AD}.{our_gate_published,crc_baseline}, pooled over both backbones and five seeds)
+# rates in percent; deferral_pct is 0 for CRC by construction (no defer option)
+benchmark,method,escaped_pct,false_reject_pct,deferral_pct
+MPDD,gate,6.63,0.00,73.09
+MPDD,crc,6.63,36.85,0.00
+VisA,gate,7.64,2.96,16.39
+VisA,crc,9.49,16.24,0.00
+MVTec,gate,7.25,0.46,54.36
+MVTec,crc,8.55,3.06,0.00

@@ -1,0 +1,46 @@
+{
+  "holdout_frac": 0.2,
+  "holdout_seed": 0,
+  "holdout_ids_by_category": {
+    "connector": [
+      "connector_train_good_005",
+      "connector_train_good_012",
+      "connector_train_good_017",
+      "connector_train_good_027",
+      "connector_train_good_032",
+      "connector_train_good_033",
+      "connector_train_good_036",
+      "connector_train_good_038",
+      "connector_train_good_045",
+      "connector_train_good_051",
+      "connector_train_good_053",
+      "connector_train_good_061",
+      "connector_train_good_062",
+      "connector_train_good_064",
+      "connector_train_good_065",
+      "connector_train_good_074",
+      "connector_train_good_079",
+      "connector_train_good_096",
+      "connector_train_good_097",
+      "connector_train_good_098",
+      "connector_train_good_100",
+      "connector_train_good_102",
+      "connector_train_good_106",
+      "connector_train_good_109",
+      "connector_train_good_113",
+      "connector_train_good_117"
+    ]
+  },
+  "provenance": {
+    "script": "/root/reliability-commons/tools/inspect-gate/orchestration/score_patchcore.py",
+    "timestamp_utc": "2026-07-14T07:51:31.820309+00:00",
+    "seeds": [
+      0
+    ],
+    "python_version": "3.12.3",
+    "numpy_version": "2.3.2",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+    "git_sha": null,
+    "git_dirty": null
+  }
+}

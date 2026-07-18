@@ -1,0 +1,872 @@
+{
+  "label": "EXPLORATORY / POST-HOC external-baseline comparison (WORKLOAD-BENCHMARK-2026-07-15.md #2). Not confirmatory; edits no manuscript.",
+  "protocol": {
+    "alpha_miss": 0.1,
+    "alpha_fr": 0.05,
+    "n_repeats": 20,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tolerance_pp": 0.03,
+    "confidence": 0.95,
+    "backbones": [
+      "patchcore",
+      "dinomaly"
+    ],
+    "splits": "inspect_gate.splits.repeated_stratified_splits (identical to run_*_analysis.py)"
+  },
+  "baselines": {
+    "CRC": "Angelopoulos et al., Conformal Risk Control (ICLR 2024, arXiv:2208.02814); single-threshold escaped-defect risk control at alpha_miss; == our G1 split-conformal threshold for the 0/1 miss loss (proved in gate.py); no defer.",
+    "selective_prediction": "Geifman & El-Yaniv 2017 selective classification; per-category best-F1 threshold + margin (|score-thr|) abstention risk-coverage curve."
+  },
+  "provenance": {
+    "published_gate_numbers": "READ from gate_calibration/v1_<backbone>_seed<seed>.json (frozen; not recomputed).",
+    "baseline_numbers": "computed here from canonical score dumps via the same inspect_gate io/splits/gate/certify/baselines code paths."
+  },
+  "benchmarks": {
+    "MPDD": {
+      "n_categories": 6,
+      "our_gate_published": {
+        "per_backbone": {
+          "patchcore": {
+            "n_cells": 30,
+            "g1_certified_cells": 25,
+            "g2_certified_cells": 0,
+            "tier2_escaped_pass_cells": 26,
+            "mean_escaped_defect_rate": 0.07140124223602486,
+            "mean_false_reject_rate": 0.0,
+            "mean_deferral_rate": 0.7505816795004101
+          },
+          "dinomaly": {
+            "n_cells": 30,
+            "g1_certified_cells": 25,
+            "g2_certified_cells": 0,
+            "tier2_escaped_pass_cells": 28,
+            "mean_escaped_defect_rate": 0.06121407867494825,
+            "mean_false_reject_rate": 0.0,
+            "mean_deferral_rate": 0.7112407815352862
+          }
+        },
+        "n_cells": 60,
+        "g1_certified_cells": 50,
+        "g2_certified_cells": 0,
+        "tier2_escaped_pass_cells": 54,
+        "mean_escaped_defect_rate": 0.06630766045548654,
+        "mean_false_reject_rate": 0.0,
+        "mean_deferral_rate": 0.7309112305178483
+      },
+      "crc_baseline": {
+        "per_backbone": {
+          "patchcore": {
+            "n_cells": 30,
+            "g1_certified_cells": 25,
+            "tier2_escaped_pass_cells": 26,
+            "g2_certified_cells": 0,
+            "mean_escaped_defect_rate": 0.07140124223602486,
+            "mean_false_reject_rate": 0.41884027777777777,
+            "mean_deferral_rate": 0.0
+          },
+          "dinomaly": {
+            "n_cells": 30,
+            "g1_certified_cells": 25,
+            "tier2_escaped_pass_cells": 28,
+            "g2_certified_cells": 0,
+            "mean_escaped_defect_rate": 0.06121407867494825,
+            "mean_false_reject_rate": 0.3182056623931624,
+            "mean_deferral_rate": 0.0
+          }
+        },
+        "n_cells": 60,
+        "g1_certified_cells": 50,
+        "g2_certified_cells": 0,
+        "tier2_escaped_pass_cells": 54,
+        "mean_escaped_defect_rate": 0.06630766045548654,
+        "mean_false_reject_rate": 0.3685229700854701,
+        "mean_deferral_rate": 0.0
+      },
+      "selective_baseline": {
+        "per_backbone": {
+          "patchcore": {
+            "aurc": 0.03154760608147849,
+            "full_coverage_risk": 0.11052631578947368,
+            "risk_at_coverage": [
+              {
+                "coverage": 1.0,
+                "selective_risk": 0.11052631578947368,
+                "n_retained": 1140
+              },
+              {
+                "coverage": 0.95,
+                "selective_risk": 0.0951061865189289,
+                "n_retained": 1083
+              },
+              {
+                "coverage": 0.9,
+                "selective_risk": 0.07797270955165692,
+                "n_retained": 1026
+              },
+              {
+                "coverage": 0.85,
+                "selective_risk": 0.07120743034055728,
+                "n_retained": 969
+              },
+              {
+                "coverage": 0.8,
+                "selective_risk": 0.0625,
+                "n_retained": 912
+              },
+              {
+                "coverage": 0.75,
+                "selective_risk": 0.047953216374269005,
+                "n_retained": 855
+              },
+              {
+                "coverage": 0.7,
+                "selective_risk": 0.043859649122807015,
+                "n_retained": 798
+              },
+              {
+                "coverage": 0.65,
+                "selective_risk": 0.03913630229419703,
+                "n_retained": 741
+              },
+              {
+                "coverage": 0.6000000000000001,
+                "selective_risk": 0.03654970760233918,
+                "n_retained": 684
+              },
+              {
+                "coverage": 0.55,
+                "selective_risk": 0.028708133971291867,
+                "n_retained": 627
+              },
+              {
+                "coverage": 0.5,
+                "selective_risk": 0.02456140350877193,
+                "n_retained": 570
+              },
+              {
+                "coverage": 0.45000000000000007,
+                "selective_risk": 0.015594541910331383,
+                "n_retained": 513
+              },
+              {
+                "coverage": 0.4,
+                "selective_risk": 0.008771929824561403,
+                "n_retained": 456
+              },
+              {
+                "coverage": 0.3500000000000001,
+                "selective_risk": 0.010025062656641603,
+                "n_retained": 399
+              },
+              {
+                "coverage": 0.30000000000000004,
+                "selective_risk": 0.005847953216374269,
+                "n_retained": 342
+              },
+              {
+                "coverage": 0.2500000000000001,
+                "selective_risk": 0.0035087719298245615,
+                "n_retained": 285
+              },
+              {
+                "coverage": 0.20000000000000007,
+                "selective_risk": 0.0043859649122807015,
+                "n_retained": 228
+              },
+              {
+                "coverage": 0.15000000000000002,
+                "selective_risk": 0.0,
+                "n_retained": 171
+              },
+              {
+                "coverage": 0.10000000000000009,
+                "selective_risk": 0.0,
+                "n_retained": 114
+              },
+              {
+                "coverage": 0.05,
+                "selective_risk": 0.0,
+                "n_retained": 57
+              }
+            ],
+            "n_items": 1140
+          },
+          "dinomaly": {
+            "aurc": 0.00892559914903894,
+            "full_coverage_risk": 0.06666666666666667,
+            "risk_at_coverage": [
+              {
+                "coverage": 1.0,
+                "selective_risk": 0.06666666666666667,
+                "n_retained": 1140
+              },
+              {
+                "coverage": 0.95,
+                "selective_risk": 0.050784856879039705,
+                "n_retained": 1083
+              },
+              {
+                "coverage": 0.9,
+                "selective_risk": 0.037037037037037035,
+                "n_retained": 1026
+              },
+              {
+                "coverage": 0.85,
+                "selective_risk": 0.021671826625386997,
+                "n_retained": 969
+              },
+              {
+                "coverage": 0.8,
+                "selective_risk": 0.015350877192982455,
+                "n_retained": 912
+              },
+              {
+                "coverage": 0.75,
+                "selective_risk": 0.00935672514619883,
+                "n_retained": 855
+              },
+              {
+                "coverage": 0.7,
+                "selective_risk": 0.0037593984962406013,
+                "n_retained": 798
+              },
+              {
+                "coverage": 0.65,
+                "selective_risk": 0.002699055330634278,
+                "n_retained": 741
+              },
+              {
+                "coverage": 0.6000000000000001,
+                "selective_risk": 0.0029239766081871343,
+                "n_retained": 684
+              },
+              {
+                "coverage": 0.55,
+                "selective_risk": 0.001594896331738437,
+                "n_retained": 627
+              },
+              {
+                "coverage": 0.5,
+                "selective_risk": 0.0,
+                "n_retained": 570
+              },
+              {
+                "coverage": 0.45000000000000007,
+                "selective_risk": 0.0,
+                "n_retained": 513
+              },
+              {
+                "coverage": 0.4,
+                "selective_risk": 0.0,
+                "n_retained": 456
+              },
+              {
+                "coverage": 0.3500000000000001,
+                "selective_risk": 0.0,
+                "n_retained": 399
+              },
+              {
+                "coverage": 0.30000000000000004,
+                "selective_risk": 0.0,
+                "n_retained": 342
+              },
+              {
+                "coverage": 0.2500000000000001,
+                "selective_risk": 0.0,
+                "n_retained": 285
+              },
+              {
+                "coverage": 0.20000000000000007,
+                "selective_risk": 0.0,
+                "n_retained": 228
+              },
+              {
+                "coverage": 0.15000000000000002,
+                "selective_risk": 0.0,
+                "n_retained": 171
+              },
+              {
+                "coverage": 0.10000000000000009,
+                "selective_risk": 0.0,
+                "n_retained": 114
+              },
+              {
+                "coverage": 0.05,
+                "selective_risk": 0.0,
+                "n_retained": 57
+              }
+            ],
+            "n_items": 1140
+          }
+        },
+        "note": "repeat-0 eval halves pooled over seeds+categories; per-category best-F1 threshold fit on repeat-0 cal half; confidence = |score - threshold| (margin abstention)."
+      }
+    },
+    "VisA": {
+      "n_categories": 12,
+      "our_gate_published": {
+        "per_backbone": {
+          "patchcore": {
+            "n_cells": 60,
+            "g1_certified_cells": 60,
+            "g2_certified_cells": 60,
+            "tier2_escaped_pass_cells": 56,
+            "mean_escaped_defect_rate": 0.08800000000000001,
+            "mean_false_reject_rate": 0.03676013071895424,
+            "mean_deferral_rate": 0.2627247318481848
+          },
+          "dinomaly": {
+            "n_cells": 60,
+            "g1_certified_cells": 60,
+            "g2_certified_cells": 60,
+            "tier2_escaped_pass_cells": 60,
+            "mean_escaped_defect_rate": 0.06473333333333334,
+            "mean_false_reject_rate": 0.022392156862745097,
+            "mean_deferral_rate": 0.06516463833883389
+          }
+        },
+        "n_cells": 120,
+        "g1_certified_cells": 120,
+        "g2_certified_cells": 120,
+        "tier2_escaped_pass_cells": 116,
+        "mean_escaped_defect_rate": 0.07636666666666668,
+        "mean_false_reject_rate": 0.02957614379084968,
+        "mean_deferral_rate": 0.16394468509350935
+      },
+      "crc_baseline": {
+        "per_backbone": {
+          "patchcore": {
+            "n_cells": 60,
+            "g1_certified_cells": 60,
+            "tier2_escaped_pass_cells": 51,
+            "g2_certified_cells": 0,
+            "mean_escaped_defect_rate": 0.09703333333333333,
+            "mean_false_reject_rate": 0.2877901960784313,
+            "mean_deferral_rate": 0.0
+          },
+          "dinomaly": {
+            "n_cells": 60,
+            "g1_certified_cells": 60,
+            "tier2_escaped_pass_cells": 53,
+            "g2_certified_cells": 0,
+            "mean_escaped_defect_rate": 0.0928,
+            "mean_false_reject_rate": 0.037008496732026136,
+            "mean_deferral_rate": 0.0
+          }
+        },
+        "n_cells": 120,
+        "g1_certified_cells": 120,
+        "g2_certified_cells": 0,
+        "tier2_escaped_pass_cells": 104,
+        "mean_escaped_defect_rate": 0.09491666666666668,
+        "mean_false_reject_rate": 0.16239934640522874,
+        "mean_deferral_rate": 0.0
+      },
+      "selective_baseline": {
+        "per_backbone": {
+          "patchcore": {
+            "aurc": 0.08487363976401327,
+            "full_coverage_risk": 0.18280961182994454,
+            "risk_at_coverage": [
+              {
+                "coverage": 1.0,
+                "selective_risk": 0.18280961182994454,
+                "n_retained": 5410
+              },
+              {
+                "coverage": 0.95,
+                "selective_risk": 0.16614785992217898,
+                "n_retained": 5140
+              },
+              {
+                "coverage": 0.9,
+                "selective_risk": 0.15218730745532963,
+                "n_retained": 4869
+              },
+              {
+                "coverage": 0.85,
+                "selective_risk": 0.14223575467594607,
+                "n_retained": 4598
+              },
+              {
+                "coverage": 0.8,
+                "selective_risk": 0.13146950092421442,
+                "n_retained": 4328
+              },
+              {
+                "coverage": 0.75,
+                "selective_risk": 0.12173484475110892,
+                "n_retained": 4058
+              },
+              {
+                "coverage": 0.7,
+                "selective_risk": 0.11064166886717719,
+                "n_retained": 3787
+              },
+              {
+                "coverage": 0.65,
+                "selective_risk": 0.10039817974971559,
+                "n_retained": 3516
+              },
+              {
+                "coverage": 0.6000000000000001,
+                "selective_risk": 0.09088108441158349,
+                "n_retained": 3246
+              },
+              {
+                "coverage": 0.55,
+                "selective_risk": 0.08266129032258064,
+                "n_retained": 2976
+              },
+              {
+                "coverage": 0.5,
+                "selective_risk": 0.07763401109057301,
+                "n_retained": 2705
+              },
+              {
+                "coverage": 0.45000000000000007,
+                "selective_risk": 0.07392197125256673,
+                "n_retained": 2435
+              },
+              {
+                "coverage": 0.4,
+                "selective_risk": 0.06931608133086876,
+                "n_retained": 2164
+              },
+              {
+                "coverage": 0.3500000000000001,
+                "selective_risk": 0.06441393875395987,
+                "n_retained": 1894
+              },
+              {
+                "coverage": 0.30000000000000004,
+                "selective_risk": 0.05976586568083796,
+                "n_retained": 1623
+              },
+              {
+                "coverage": 0.2500000000000001,
+                "selective_risk": 0.051736881005173686,
+                "n_retained": 1353
+              },
+              {
+                "coverage": 0.20000000000000007,
+                "selective_risk": 0.03512014787430684,
+                "n_retained": 1082
+              },
+              {
+                "coverage": 0.15000000000000002,
+                "selective_risk": 0.029556650246305417,
+                "n_retained": 812
+              },
+              {
+                "coverage": 0.10000000000000009,
+                "selective_risk": 0.027726432532347505,
+                "n_retained": 541
+              },
+              {
+                "coverage": 0.05,
+                "selective_risk": 0.037037037037037035,
+                "n_retained": 270
+              }
+            ],
+            "n_items": 5410
+          },
+          "dinomaly": {
+            "aurc": 0.01388991215843913,
+            "full_coverage_risk": 0.06266173752310536,
+            "risk_at_coverage": [
+              {
+                "coverage": 1.0,
+                "selective_risk": 0.06266173752310536,
+                "n_retained": 5410
+              },
+              {
+                "coverage": 0.95,
+                "selective_risk": 0.04357976653696498,
+                "n_retained": 5140
+              },
+              {
+                "coverage": 0.9,
+                "selective_risk": 0.031628671185048265,
+                "n_retained": 4869
+              },
+              {
+                "coverage": 0.85,
+                "selective_risk": 0.022618529795563287,
+                "n_retained": 4598
+              },
+              {
+                "coverage": 0.8,
+                "selective_risk": 0.018022181146025877,
+                "n_retained": 4328
+              },
+              {
+                "coverage": 0.75,
+                "selective_risk": 0.016510596352883194,
+                "n_retained": 4058
+              },
+              {
+                "coverage": 0.7,
+                "selective_risk": 0.01637179825719567,
+                "n_retained": 3787
+              },
+              {
+                "coverage": 0.65,
+                "selective_risk": 0.017064846416382253,
+                "n_retained": 3516
+              },
+              {
+                "coverage": 0.6000000000000001,
+                "selective_risk": 0.0166358595194085,
+                "n_retained": 3246
+              },
+              {
+                "coverage": 0.55,
+                "selective_risk": 0.015456989247311828,
+                "n_retained": 2976
+              },
+              {
+                "coverage": 0.5,
+                "selective_risk": 0.015157116451016635,
+                "n_retained": 2705
+              },
+              {
+                "coverage": 0.45000000000000007,
+                "selective_risk": 0.013552361396303902,
+                "n_retained": 2435
+              },
+              {
+                "coverage": 0.4,
+                "selective_risk": 0.010628465804066543,
+                "n_retained": 2164
+              },
+              {
+                "coverage": 0.3500000000000001,
+                "selective_risk": 0.007391763463569166,
+                "n_retained": 1894
+              },
+              {
+                "coverage": 0.30000000000000004,
+                "selective_risk": 0.0018484288354898336,
+                "n_retained": 1623
+              },
+              {
+                "coverage": 0.2500000000000001,
+                "selective_risk": 0.0,
+                "n_retained": 1353
+              },
+              {
+                "coverage": 0.20000000000000007,
+                "selective_risk": 0.0,
+                "n_retained": 1082
+              },
+              {
+                "coverage": 0.15000000000000002,
+                "selective_risk": 0.0,
+                "n_retained": 812
+              },
+              {
+                "coverage": 0.10000000000000009,
+                "selective_risk": 0.0,
+                "n_retained": 541
+              },
+              {
+                "coverage": 0.05,
+                "selective_risk": 0.0,
+                "n_retained": 270
+              }
+            ],
+            "n_items": 5410
+          }
+        },
+        "note": "repeat-0 eval halves pooled over seeds+categories; per-category best-F1 threshold fit on repeat-0 cal half; confidence = |score - threshold| (margin abstention)."
+      }
+    },
+    "MVTec-AD": {
+      "n_categories": 15,
+      "our_gate_published": {
+        "per_backbone": {
+          "patchcore": {
+            "n_cells": 75,
+            "g1_certified_cells": 75,
+            "g2_certified_cells": 20,
+            "tier2_escaped_pass_cells": 69,
+            "mean_escaped_defect_rate": 0.07650744124457155,
+            "mean_false_reject_rate": 0.006563984674329502,
+            "mean_deferral_rate": 0.5481769983837051
+          },
+          "dinomaly": {
+            "n_cells": 75,
+            "g1_certified_cells": 75,
+            "g2_certified_cells": 20,
+            "tier2_escaped_pass_cells": 75,
+            "mean_escaped_defect_rate": 0.06852023849301712,
+            "mean_false_reject_rate": 0.0025555555555555553,
+            "mean_deferral_rate": 0.5389696175181165
+          }
+        },
+        "n_cells": 150,
+        "g1_certified_cells": 150,
+        "g2_certified_cells": 40,
+        "tier2_escaped_pass_cells": 144,
+        "mean_escaped_defect_rate": 0.07251383986879434,
+        "mean_false_reject_rate": 0.004559770114942529,
+        "mean_deferral_rate": 0.5435733079509109
+      },
+      "crc_baseline": {
+        "per_backbone": {
+          "patchcore": {
+            "n_cells": 75,
+            "g1_certified_cells": 75,
+            "tier2_escaped_pass_cells": 69,
+            "g2_certified_cells": 0,
+            "mean_escaped_defect_rate": 0.08384063070311107,
+            "mean_false_reject_rate": 0.05206751830544933,
+            "mean_deferral_rate": 0.0
+          },
+          "dinomaly": {
+            "n_cells": 75,
+            "g1_certified_cells": 75,
+            "tier2_escaped_pass_cells": 68,
+            "g2_certified_cells": 0,
+            "mean_escaped_defect_rate": 0.08711169373391967,
+            "mean_false_reject_rate": 0.009072638472638471,
+            "mean_deferral_rate": 0.0
+          }
+        },
+        "n_cells": 150,
+        "g1_certified_cells": 150,
+        "g2_certified_cells": 0,
+        "tier2_escaped_pass_cells": 137,
+        "mean_escaped_defect_rate": 0.08547616221851537,
+        "mean_false_reject_rate": 0.0305700783890439,
+        "mean_deferral_rate": 0.0
+      },
+      "selective_baseline": {
+        "per_backbone": {
+          "patchcore": {
+            "aurc": 0.006647359037360542,
+            "full_coverage_risk": 0.04976851851851852,
+            "risk_at_coverage": [
+              {
+                "coverage": 1.0,
+                "selective_risk": 0.04976851851851852,
+                "n_retained": 4320
+              },
+              {
+                "coverage": 0.95,
+                "selective_risk": 0.029239766081871343,
+                "n_retained": 4104
+              },
+              {
+                "coverage": 0.9,
+                "selective_risk": 0.01748971193415638,
+                "n_retained": 3888
+              },
+              {
+                "coverage": 0.85,
+                "selective_risk": 0.013616557734204794,
+                "n_retained": 3672
+              },
+              {
+                "coverage": 0.8,
+                "selective_risk": 0.009548611111111112,
+                "n_retained": 3456
+              },
+              {
+                "coverage": 0.75,
+                "selective_risk": 0.006790123456790123,
+                "n_retained": 3240
+              },
+              {
+                "coverage": 0.7,
+                "selective_risk": 0.006944444444444444,
+                "n_retained": 3024
+              },
+              {
+                "coverage": 0.65,
+                "selective_risk": 0.004985754985754986,
+                "n_retained": 2808
+              },
+              {
+                "coverage": 0.6000000000000001,
+                "selective_risk": 0.004243827160493827,
+                "n_retained": 2592
+              },
+              {
+                "coverage": 0.55,
+                "selective_risk": 0.004208754208754209,
+                "n_retained": 2376
+              },
+              {
+                "coverage": 0.5,
+                "selective_risk": 0.004629629629629629,
+                "n_retained": 2160
+              },
+              {
+                "coverage": 0.45000000000000007,
+                "selective_risk": 0.004629629629629629,
+                "n_retained": 1944
+              },
+              {
+                "coverage": 0.4,
+                "selective_risk": 0.001736111111111111,
+                "n_retained": 1728
+              },
+              {
+                "coverage": 0.3500000000000001,
+                "selective_risk": 0.0,
+                "n_retained": 1512
+              },
+              {
+                "coverage": 0.30000000000000004,
+                "selective_risk": 0.0,
+                "n_retained": 1296
+              },
+              {
+                "coverage": 0.2500000000000001,
+                "selective_risk": 0.0,
+                "n_retained": 1080
+              },
+              {
+                "coverage": 0.20000000000000007,
+                "selective_risk": 0.0,
+                "n_retained": 864
+              },
+              {
+                "coverage": 0.15000000000000002,
+                "selective_risk": 0.0,
+                "n_retained": 648
+              },
+              {
+                "coverage": 0.10000000000000009,
+                "selective_risk": 0.0,
+                "n_retained": 432
+              },
+              {
+                "coverage": 0.05,
+                "selective_risk": 0.0,
+                "n_retained": 216
+              }
+            ],
+            "n_items": 4320
+          },
+          "dinomaly": {
+            "aurc": 0.0019134071960493105,
+            "full_coverage_risk": 0.03217592592592593,
+            "risk_at_coverage": [
+              {
+                "coverage": 1.0,
+                "selective_risk": 0.03217592592592593,
+                "n_retained": 4320
+              },
+              {
+                "coverage": 0.95,
+                "selective_risk": 0.009746588693957114,
+                "n_retained": 4104
+              },
+              {
+                "coverage": 0.9,
+                "selective_risk": 0.00360082304526749,
+                "n_retained": 3888
+              },
+              {
+                "coverage": 0.85,
+                "selective_risk": 0.0027233115468409588,
+                "n_retained": 3672
+              },
+              {
+                "coverage": 0.8,
+                "selective_risk": 0.0026041666666666665,
+                "n_retained": 3456
+              },
+              {
+                "coverage": 0.75,
+                "selective_risk": 0.001851851851851852,
+                "n_retained": 3240
+              },
+              {
+                "coverage": 0.7,
+                "selective_risk": 0.0016534391534391533,
+                "n_retained": 3024
+              },
+              {
+                "coverage": 0.65,
+                "selective_risk": 0.0,
+                "n_retained": 2808
+              },
+              {
+                "coverage": 0.6000000000000001,
+                "selective_risk": 0.0,
+                "n_retained": 2592
+              },
+              {
+                "coverage": 0.55,
+                "selective_risk": 0.0,
+                "n_retained": 2376
+              },
+              {
+                "coverage": 0.5,
+                "selective_risk": 0.0,
+                "n_retained": 2160
+              },
+              {
+                "coverage": 0.45000000000000007,
+                "selective_risk": 0.0,
+                "n_retained": 1944
+              },
+              {
+                "coverage": 0.4,
+                "selective_risk": 0.0,
+                "n_retained": 1728
+              },
+              {
+                "coverage": 0.3500000000000001,
+                "selective_risk": 0.0,
+                "n_retained": 1512
+              },
+              {
+                "coverage": 0.30000000000000004,
+                "selective_risk": 0.0,
+                "n_retained": 1296
+              },
+              {
+                "coverage": 0.2500000000000001,
+                "selective_risk": 0.0,
+                "n_retained": 1080
+              },
+              {
+                "coverage": 0.20000000000000007,
+                "selective_risk": 0.0,
+                "n_retained": 864
+              },
+              {
+                "coverage": 0.15000000000000002,
+                "selective_risk": 0.0,
+                "n_retained": 648
+              },
+              {
+                "coverage": 0.10000000000000009,
+                "selective_risk": 0.0,
+                "n_retained": 432
+              },
+              {
+                "coverage": 0.05,
+                "selective_risk": 0.0,
+                "n_retained": 216
+              }
+            ],
+            "n_items": 4320
+          }
+        },
+        "note": "repeat-0 eval halves pooled over seeds+categories; per-category best-F1 threshold fit on repeat-0 cal half; confidence = |score - threshold| (margin abstention)."
+      }
+    }
+  }
+}

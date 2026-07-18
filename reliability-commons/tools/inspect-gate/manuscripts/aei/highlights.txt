@@ -1,0 +1,7 @@
+Highlights
+
+- A distribution-free gate routes inspection images to pass, reject, or defer.
+- Per-category certified escaped-defect and false-reject rates from conformal.
+- Beats single-threshold CRC on VisA (3.0% vs 16.2%); MPDD's 0.0% needs 73% deferral.
+- Refusal is a first-class output when a good-calibration pool is too small.
+- Validated on MVTec AD, VisA, and MPDD, two backbones and five seeds each.

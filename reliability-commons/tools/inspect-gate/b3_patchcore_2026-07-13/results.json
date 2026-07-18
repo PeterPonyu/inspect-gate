@@ -1,0 +1,814 @@
+{
+  "what": "B3 (train-good quantile) post-hoc completion of the C2 family's feasible half, PatchCore x 5 seeds",
+  "label": "POST-HOC (exploratory completion). Frozen 4-member per-seed Holm verdict (c2_tier2_2026-07-13) remains THE confirmatory result; B3-Dinomaly impossible (no train-side score dump).",
+  "b3_quantile": 0.95,
+  "n_perm": 2000,
+  "audit_alpha": 0.05,
+  "alpha_miss": 0.1,
+  "alpha_fr": 0.05,
+  "primary_substrate": "holdout run (train-good + eval-test share one inference pass; self-consistent)",
+  "sensitivity_substrate": "cross-run (B3 threshold from holdout train-good; eval on ig_scores_full, the frozen eval half)",
+  "per_seed_primary": {
+    "0": {
+      "seed": 0,
+      "eval_source": "holdout",
+      "target_deferral_rate": 0.5277777777777778,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.022986402070583105,
+          "excess_aurc_ci": [
+            0.012014910801885752,
+            0.0342931067769843
+          ],
+          "aurc_method": 0.005948783114602082,
+          "aurc_random": 0.028935185185185185,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5277777777777778,
+          "band_width": 0.23980105301598087,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.032721054956808424,
+          "excess_aurc_ci": [
+            0.018294151702712213,
+            0.047908385143238745
+          ],
+          "aurc_method": 0.006630796895043433,
+          "aurc_random": 0.03935185185185185,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5277777777777778,
+          "band_width": 0.242477377450669,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.0557648975742009,
+          "excess_aurc_ci": [
+            0.03482539680042648,
+            0.07753423985840854
+          ],
+          "aurc_method": 0.012522139462836129,
+          "aurc_random": 0.06828703703703703,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5277777777777778,
+          "band_width": 0.24802783473330692,
+          "n": 864
+        }
+      }
+    },
+    "1": {
+      "seed": 1,
+      "eval_source": "holdout",
+      "target_deferral_rate": 0.5277777777777778,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.024630667864566694,
+          "excess_aurc_ci": [
+            0.01040952299309197,
+            0.0409993074310674
+          ],
+          "aurc_method": 0.0066193321354333055,
+          "aurc_random": 0.03125,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5277777777777778,
+          "band_width": 0.2432326626597785,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.036135049638132355,
+          "excess_aurc_ci": [
+            0.019541784179384757,
+            0.053233812465037056
+          ],
+          "aurc_method": 0.006689024435941725,
+          "aurc_random": 0.04282407407407408,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5277777777777778,
+          "band_width": 0.24745032049889915,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.054444422684323555,
+          "excess_aurc_ci": [
+            0.03377978298344665,
+            0.07424238805924904
+          ],
+          "aurc_method": 0.012685206945306083,
+          "aurc_random": 0.06712962962962964,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5277777777777778,
+          "band_width": 0.2526968733296371,
+          "n": 864
+        }
+      }
+    },
+    "2": {
+      "seed": 2,
+      "eval_source": "holdout",
+      "target_deferral_rate": 0.5381944444444444,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.023228260620909005,
+          "excess_aurc_ci": [
+            0.011219351125377211,
+            0.034846857250879944
+          ],
+          "aurc_method": 0.006864331971683584,
+          "aurc_random": 0.03009259259259259,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5381944444444444,
+          "band_width": 0.24300208928474376,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.041771521856627594,
+          "excess_aurc_ci": [
+            0.022418405108603812,
+            0.058901104551300446
+          ],
+          "aurc_method": 0.006839589254483516,
+          "aurc_random": 0.04861111111111111,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5381944444444444,
+          "band_width": 0.25357620280618676,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.05308392190972792,
+          "excess_aurc_ci": [
+            0.031677197263555244,
+            0.07447431950181678
+          ],
+          "aurc_method": 0.012888300312494305,
+          "aurc_random": 0.06597222222222222,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5381944444444444,
+          "band_width": 0.2595381985030598,
+          "n": 864
+        }
+      }
+    },
+    "3": {
+      "seed": 3,
+      "eval_source": "holdout",
+      "target_deferral_rate": 0.5358796296296297,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.023878726909518,
+          "excess_aurc_ci": [
+            0.012209332729855181,
+            0.035926843062636195
+          ],
+          "aurc_method": 0.006213865683074593,
+          "aurc_random": 0.03009259259259259,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5358796296296297,
+          "band_width": 0.24441252599996233,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.03995794241796336,
+          "excess_aurc_ci": [
+            0.02179760024757777,
+            0.056786828455138265
+          ],
+          "aurc_method": 0.00633835387833293,
+          "aurc_random": 0.046296296296296294,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5358796296296297,
+          "band_width": 0.25946084679753767,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.05353223898055218,
+          "excess_aurc_ci": [
+            0.0293586892677747,
+            0.07625900020702754
+          ],
+          "aurc_method": 0.012439983241670043,
+          "aurc_random": 0.06597222222222222,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5358796296296297,
+          "band_width": 0.25995766723817726,
+          "n": 864
+        }
+      }
+    },
+    "4": {
+      "seed": 4,
+      "eval_source": "holdout",
+      "target_deferral_rate": 0.5300925925925926,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.02693038011286759,
+          "excess_aurc_ci": [
+            0.013200572606240519,
+            0.03921023639532881
+          ],
+          "aurc_method": 0.006634434701947227,
+          "aurc_random": 0.03356481481481482,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5300925925925926,
+          "band_width": 0.24037059340571432,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.038136884711245676,
+          "excess_aurc_ci": [
+            0.022728603013474197,
+            0.05389549410659485
+          ],
+          "aurc_method": 0.00700200417764321,
+          "aurc_random": 0.04513888888888889,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5300925925925926,
+          "band_width": 0.24242224997010453,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.05565461974883568,
+          "excess_aurc_ci": [
+            0.035591205862923594,
+            0.07464724604341154
+          ],
+          "aurc_method": 0.01263241728820135,
+          "aurc_random": 0.06828703703703703,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5300925925925926,
+          "band_width": 0.2552348439670027,
+          "n": 864
+        }
+      }
+    }
+  },
+  "per_seed_sensitivity": {
+    "0": {
+      "seed": 0,
+      "eval_source": "frozen_full",
+      "target_deferral_rate": 0.5381944444444444,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.026973444442967585,
+          "excess_aurc_ci": [
+            0.013501451384691126,
+            0.04049082851861324
+          ],
+          "aurc_method": 0.006591370371847234,
+          "aurc_random": 0.03356481481481482,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5381944444444444,
+          "band_width": 0.2447224518758162,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.045421428427594716,
+          "excess_aurc_ci": [
+            0.022325977289143192,
+            0.0688742684338972
+          ],
+          "aurc_method": 0.006661904905738618,
+          "aurc_random": 0.052083333333333336,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5381944444444444,
+          "band_width": 0.26316505347949715,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.05092384973797672,
+          "excess_aurc_ci": [
+            0.02762803600974677,
+            0.07703628781639979
+          ],
+          "aurc_method": 0.01389096507683809,
+          "aurc_random": 0.06481481481481481,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5381944444444444,
+          "band_width": 0.26721214008455263,
+          "n": 864
+        }
+      }
+    },
+    "1": {
+      "seed": 1,
+      "eval_source": "frozen_full",
+      "target_deferral_rate": 0.5173611111111112,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.023461785295987497,
+          "excess_aurc_ci": [
+            0.009978360275137427,
+            0.03836577759161038
+          ],
+          "aurc_method": 0.006630807296605092,
+          "aurc_random": 0.03009259259259259,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5173611111111112,
+          "band_width": 0.2442554457310564,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.04533336348539882,
+          "excess_aurc_ci": [
+            0.027397270273926636,
+            0.0632577337774736
+          ],
+          "aurc_method": 0.006749969847934513,
+          "aurc_random": 0.052083333333333336,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5173611111111112,
+          "band_width": 0.24916816557288257,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.04948855734228398,
+          "excess_aurc_ci": [
+            0.030538545485195998,
+            0.06709132329579666
+          ],
+          "aurc_method": 0.01185403525030861,
+          "aurc_random": 0.061342592592592594,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5173611111111112,
+          "band_width": 0.25359296153293376,
+          "n": 864
+        }
+      }
+    },
+    "2": {
+      "seed": 2,
+      "eval_source": "frozen_full",
+      "target_deferral_rate": 0.5254629629629629,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.028145803326018737,
+          "excess_aurc_ci": [
+            0.014820751636969965,
+            0.042169636784656364
+          ],
+          "aurc_method": 0.006576418896203487,
+          "aurc_random": 0.034722222222222224,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5254629629629629,
+          "band_width": 0.2398937146156186,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.045548838869877005,
+          "excess_aurc_ci": [
+            0.024483210208492125,
+            0.06518823549370356
+          ],
+          "aurc_method": 0.0065344944634563315,
+          "aurc_random": 0.052083333333333336,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5254629629629629,
+          "band_width": 0.2512892758874159,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.059206944870156465,
+          "excess_aurc_ci": [
+            0.03818072481660996,
+            0.0797105551557262
+          ],
+          "aurc_method": 0.012552314389102794,
+          "aurc_random": 0.07175925925925926,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5254629629629629,
+          "band_width": 0.24607761670813486,
+          "n": 864
+        }
+      }
+    },
+    "3": {
+      "seed": 3,
+      "eval_source": "frozen_full",
+      "target_deferral_rate": 0.5335648148148148,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.030194646850732067,
+          "excess_aurc_ci": [
+            0.016686657351786593,
+            0.04309004258269345
+          ],
+          "aurc_method": 0.005684982778897564,
+          "aurc_random": 0.03587962962962963,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5335648148148148,
+          "band_width": 0.2479244301757717,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.04367732018511756,
+          "excess_aurc_ci": [
+            0.023652492398578404,
+            0.06437281815290954
+          ],
+          "aurc_method": 0.006091198333400958,
+          "aurc_random": 0.04976851851851852,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5335648148148148,
+          "band_width": 0.2590180589725293,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.05169553902561638,
+          "excess_aurc_ci": [
+            0.029839427780958345,
+            0.07526865855376647
+          ],
+          "aurc_method": 0.013119275789198429,
+          "aurc_random": 0.06481481481481481,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5335648148148148,
+          "band_width": 0.2676923426057329,
+          "n": 864
+        }
+      }
+    },
+    "4": {
+      "seed": 4,
+      "eval_source": "frozen_full",
+      "target_deferral_rate": 0.5347222222222222,
+      "n_eval": 864,
+      "n_train_good": 726,
+      "skipped": [],
+      "practices": {
+        "fixed": {
+          "excess_aurc": 0.02630208147394413,
+          "excess_aurc_ci": [
+            0.012428661718938435,
+            0.04004146087227468
+          ],
+          "aurc_method": 0.006105325933463277,
+          "aurc_random": 0.032407407407407406,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5347222222222222,
+          "band_width": 0.24518686131489176,
+          "n": 864
+        },
+        "tuned": {
+          "excess_aurc": 0.03641898748901899,
+          "excess_aurc_ci": [
+            0.019873527719552996,
+            0.05419333220637709
+          ],
+          "aurc_method": 0.006405086585055086,
+          "aurc_random": 0.04282407407407408,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5347222222222222,
+          "band_width": 0.256820968852395,
+          "n": 864
+        },
+        "quantile": {
+          "excess_aurc": 0.04598864997419854,
+          "excess_aurc_ci": [
+            0.028253099962453995,
+            0.06595114250091129
+          ],
+          "aurc_method": 0.011881720396171832,
+          "aurc_random": 0.05787037037037037,
+          "p_value": 0.0004997501249375312,
+          "p_holm_in_3family": 0.0014992503748125937,
+          "reject_holm_in_3family": true,
+          "abstention_fraction": 0.5347222222222222,
+          "band_width": 0.25906525092352695,
+          "n": 864
+        }
+      }
+    }
+  },
+  "b3_primary_summary": {
+    "per_seed_p": [
+      0.0004997501249375312,
+      0.0004997501249375312,
+      0.0004997501249375312,
+      0.0004997501249375312,
+      0.0004997501249375312
+    ],
+    "per_seed_excess_aurc": [
+      0.0557648975742009,
+      0.054444422684323555,
+      0.05308392190972792,
+      0.05353223898055218,
+      0.05565461974883568
+    ],
+    "per_seed_excess_ci": [
+      [
+        0.03482539680042648,
+        0.07753423985840854
+      ],
+      [
+        0.03377978298344665,
+        0.07424238805924904
+      ],
+      [
+        0.031677197263555244,
+        0.07447431950181678
+      ],
+      [
+        0.0293586892677747,
+        0.07625900020702754
+      ],
+      [
+        0.035591205862923594,
+        0.07464724604341154
+      ]
+    ],
+    "seed_max_p": 0.0004997501249375312,
+    "seed_min_p": 0.0004997501249375312,
+    "seed_median_p": 0.0004997501249375312,
+    "all_ci_exclude_zero": true,
+    "excess_aurc_range": [
+      0.05308392190972792,
+      0.0557648975742009
+    ]
+  },
+  "b3_sensitivity_summary": {
+    "per_seed_p": [
+      0.0004997501249375312,
+      0.0004997501249375312,
+      0.0004997501249375312,
+      0.0004997501249375312,
+      0.0004997501249375312
+    ],
+    "per_seed_excess_aurc": [
+      0.05092384973797672,
+      0.04948855734228398,
+      0.059206944870156465,
+      0.05169553902561638,
+      0.04598864997419854
+    ],
+    "per_seed_excess_ci": [
+      [
+        0.02762803600974677,
+        0.07703628781639979
+      ],
+      [
+        0.030538545485195998,
+        0.06709132329579666
+      ],
+      [
+        0.03818072481660996,
+        0.0797105551557262
+      ],
+      [
+        0.029839427780958345,
+        0.07526865855376647
+      ],
+      [
+        0.028253099962453995,
+        0.06595114250091129
+      ]
+    ],
+    "seed_max_p": 0.0004997501249375312,
+    "seed_min_p": 0.0004997501249375312,
+    "seed_median_p": 0.0004997501249375312,
+    "all_ci_exclude_zero": true,
+    "excess_aurc_range": [
+      0.04598864997419854,
+      0.059206944870156465
+    ]
+  },
+  "combined_5member_holm_with_frozen4_POSTHOC": {
+    "0": {
+      "members": [
+        "patchcore:fixed",
+        "patchcore:tuned",
+        "dinomaly:fixed",
+        "dinomaly:tuned",
+        "patchcore:quantile(B3,post-hoc)"
+      ],
+      "p_raw": [
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312
+      ],
+      "p_holm": [
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656
+      ],
+      "reject_holm": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "family_size": 5
+    },
+    "1": {
+      "members": [
+        "patchcore:fixed",
+        "patchcore:tuned",
+        "dinomaly:fixed",
+        "dinomaly:tuned",
+        "patchcore:quantile(B3,post-hoc)"
+      ],
+      "p_raw": [
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312
+      ],
+      "p_holm": [
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656
+      ],
+      "reject_holm": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "family_size": 5
+    },
+    "2": {
+      "members": [
+        "patchcore:fixed",
+        "patchcore:tuned",
+        "dinomaly:fixed",
+        "dinomaly:tuned",
+        "patchcore:quantile(B3,post-hoc)"
+      ],
+      "p_raw": [
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312
+      ],
+      "p_holm": [
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656
+      ],
+      "reject_holm": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "family_size": 5
+    },
+    "3": {
+      "members": [
+        "patchcore:fixed",
+        "patchcore:tuned",
+        "dinomaly:fixed",
+        "dinomaly:tuned",
+        "patchcore:quantile(B3,post-hoc)"
+      ],
+      "p_raw": [
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312
+      ],
+      "p_holm": [
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656
+      ],
+      "reject_holm": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "family_size": 5
+    },
+    "4": {
+      "members": [
+        "patchcore:fixed",
+        "patchcore:tuned",
+        "dinomaly:fixed",
+        "dinomaly:tuned",
+        "patchcore:quantile(B3,post-hoc)"
+      ],
+      "p_raw": [
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312,
+        0.0004997501249375312
+      ],
+      "p_holm": [
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656,
+        0.002498750624687656
+      ],
+      "reject_holm": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "family_size": 5
+    }
+  }
+}

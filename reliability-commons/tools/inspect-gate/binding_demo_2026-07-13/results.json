@@ -1,0 +1,3952 @@
+{
+  "what": "Binding demonstration: naive fixed-threshold (B1, no deferral) realized escaped/false-reject rates vs the certified gate, per (backbone, category), on held-out eval halves.",
+  "label": "POST-HOC / EXPLORATORY (the M4 illustration; reported honestly either way, not manufactured).",
+  "alpha_miss": 0.1,
+  "alpha_fr": 0.05,
+  "tolerance_pp": 0.03,
+  "n_repeats": 20,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "binding_defn": "seed-0 mean over R=20 repeats; B1 axis rate > target AND gate axis rate <= target+tol",
+  "MVTec": {
+    "per_cell": {
+      "patchcore:bottle": {
+        "backbone": "patchcore",
+        "category": "bottle",
+        "n_eval_def_seed0_rep0": 31,
+        "n_eval_good_seed0_rep0": 10,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.06612903225806452,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.1935483870967742
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7060975609756097,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0967741935483871,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.06612903225806452,
+          0.07096774193548387,
+          0.07096774193548387,
+          0.07096774193548387,
+          0.07258064516129033
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:cable": {
+        "backbone": "patchcore",
+        "category": "cable",
+        "n_eval_def_seed0_rep0": 46,
+        "n_eval_good_seed0_rep0": 29,
+        "b1_escaped_mean_R20": 0.020652173913043477,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.043478260869565216
+        ],
+        "gate_escaped_mean_R20": 0.07173913043478261,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.17391304347826086
+        ],
+        "b1_fr_mean_R20": 0.044827586206896544,
+        "b1_fr_range_R20": [
+          0.0,
+          0.10344827586206896
+        ],
+        "gate_fr_mean_R20": 0.022413793103448276,
+        "gate_fr_range_R20": [
+          0.0,
+          0.06896551724137931
+        ],
+        "gate_deferral_mean_R20": 0.08066666666666666,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.034482758620689655,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.020652173913043477,
+          0.020652173913043477,
+          0.020652173913043477,
+          0.02934782608695652,
+          0.020652173913043477
+        ],
+        "gate_escaped_per_seed": [
+          0.07173913043478261,
+          0.06956521739130436,
+          0.07826086956521738,
+          0.07391304347826087,
+          0.07173913043478261
+        ],
+        "b1_fr_per_seed": [
+          0.044827586206896544,
+          0.06896551724137931,
+          0.06551724137931036,
+          0.044827586206896544,
+          0.044827586206896544
+        ],
+        "gate_fr_per_seed": [
+          0.022413793103448276,
+          0.025862068965517244,
+          0.02413793103448276,
+          0.02413793103448276,
+          0.022413793103448276
+        ]
+      },
+      "patchcore:capsule": {
+        "backbone": "patchcore",
+        "category": "capsule",
+        "n_eval_def_seed0_rep0": 55,
+        "n_eval_good_seed0_rep0": 11,
+        "b1_escaped_mean_R20": 0.019090909090909092,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.03636363636363636
+        ],
+        "gate_escaped_mean_R20": 0.10272727272727271,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.23636363636363636
+        ],
+        "b1_fr_mean_R20": 0.07727272727272726,
+        "b1_fr_range_R20": [
+          0.0,
+          0.18181818181818182
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7492424242424243,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.01818181818181818,
+        "gate_escaped_rep0": 0.05454545454545454,
+        "b1_fr_rep0": 0.09090909090909091,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.019090909090909092,
+          0.027272727272727275,
+          0.019090909090909092,
+          0.027272727272727275,
+          0.019090909090909092
+        ],
+        "gate_escaped_per_seed": [
+          0.10272727272727271,
+          0.09727272727272726,
+          0.09545454545454544,
+          0.10727272727272726,
+          0.09727272727272726
+        ],
+        "b1_fr_per_seed": [
+          0.07727272727272726,
+          0.031818181818181815,
+          0.08181818181818182,
+          0.031818181818181815,
+          0.031818181818181815
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:carpet": {
+        "backbone": "patchcore",
+        "category": "carpet",
+        "n_eval_def_seed0_rep0": 45,
+        "n_eval_good_seed0_rep0": 14,
+        "b1_escaped_mean_R20": 0.025555555555555554,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.044444444444444446
+        ],
+        "gate_escaped_mean_R20": 0.10000000000000002,
+        "gate_escaped_range_R20": [
+          0.022222222222222223,
+          0.2222222222222222
+        ],
+        "b1_fr_mean_R20": 0.06785714285714285,
+        "b1_fr_range_R20": [
+          0.0,
+          0.14285714285714285
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.6864406779661018,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.044444444444444446,
+        "gate_escaped_rep0": 0.08888888888888889,
+        "b1_fr_rep0": 0.14285714285714285,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.025555555555555554,
+          0.042222222222222223,
+          0.025555555555555554,
+          0.025555555555555554,
+          0.025555555555555554
+        ],
+        "gate_escaped_per_seed": [
+          0.10000000000000002,
+          0.09777777777777777,
+          0.09888888888888889,
+          0.09999999999999999,
+          0.09999999999999999
+        ],
+        "b1_fr_per_seed": [
+          0.06785714285714285,
+          0.0,
+          0.06785714285714285,
+          0.06785714285714285,
+          0.06785714285714285
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:grid": {
+        "backbone": "patchcore",
+        "category": "grid",
+        "n_eval_def_seed0_rep0": 29,
+        "n_eval_good_seed0_rep0": 11,
+        "b1_escaped_mean_R20": 0.03275862068965517,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.06896551724137931
+        ],
+        "gate_escaped_mean_R20": 0.05689655172413792,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.1724137931034483
+        ],
+        "b1_fr_mean_R20": 0.09545454545454543,
+        "b1_fr_range_R20": [
+          0.0,
+          0.18181818181818182
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.70125,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.18181818181818182,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.03275862068965517,
+          0.017241379310344827,
+          0.017241379310344827,
+          0.017241379310344827,
+          0.017241379310344827
+        ],
+        "gate_escaped_per_seed": [
+          0.05689655172413792,
+          0.05172413793103449,
+          0.05172413793103449,
+          0.058620689655172406,
+          0.05
+        ],
+        "b1_fr_per_seed": [
+          0.09545454545454543,
+          0.1545454545454545,
+          0.09545454545454543,
+          0.09545454545454543,
+          0.09545454545454543
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:hazelnut": {
+        "backbone": "patchcore",
+        "category": "hazelnut",
+        "n_eval_def_seed0_rep0": 35,
+        "n_eval_good_seed0_rep0": 20,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.0,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.06818181818181819,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:leather": {
+        "backbone": "patchcore",
+        "category": "leather",
+        "n_eval_def_seed0_rep0": 46,
+        "n_eval_good_seed0_rep0": 16,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.07282608695652174,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.1956521739130435
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.6879032258064516,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.15217391304347827,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.07282608695652174,
+          0.07608695652173914,
+          0.07608695652173914,
+          0.07717391304347826,
+          0.07608695652173914
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:metal_nut": {
+        "backbone": "patchcore",
+        "category": "metal_nut",
+        "n_eval_def_seed0_rep0": 47,
+        "n_eval_good_seed0_rep0": 11,
+        "b1_escaped_mean_R20": 0.01276595744680851,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.02127659574468085
+        ],
+        "gate_escaped_mean_R20": 0.08085106382978723,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.19148936170212766
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7448275862068966,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.10638297872340426,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.01276595744680851,
+          0.01276595744680851,
+          0.01276595744680851,
+          0.0,
+          0.01276595744680851
+        ],
+        "gate_escaped_per_seed": [
+          0.08085106382978723,
+          0.08617021276595743,
+          0.07765957446808511,
+          0.08191489361702127,
+          0.07872340425531915
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.05,
+          0.11363636363636362,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:pill": {
+        "backbone": "patchcore",
+        "category": "pill",
+        "n_eval_def_seed0_rep0": 71,
+        "n_eval_good_seed0_rep0": 13,
+        "b1_escaped_mean_R20": 0.08450704225352113,
+        "b1_escaped_range_R20": [
+          0.04225352112676056,
+          0.1267605633802817
+        ],
+        "gate_escaped_mean_R20": 0.10422535211267606,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2112676056338028
+        ],
+        "b1_fr_mean_R20": 0.11923076923076922,
+        "b1_fr_range_R20": [
+          0.0,
+          0.23076923076923078
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7827380952380952,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.09859154929577464,
+        "gate_escaped_rep0": 0.09859154929577464,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.08450704225352113,
+          0.04154929577464789,
+          0.07253521126760565,
+          0.04859154929577465,
+          0.04859154929577465
+        ],
+        "gate_escaped_per_seed": [
+          0.10422535211267606,
+          0.1056338028169014,
+          0.09647887323943663,
+          0.09295774647887324,
+          0.09718309859154928
+        ],
+        "b1_fr_per_seed": [
+          0.11923076923076922,
+          0.2730769230769231,
+          0.12307692307692306,
+          0.21153846153846154,
+          0.24615384615384617
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:screw": {
+        "backbone": "patchcore",
+        "category": "screw",
+        "n_eval_def_seed0_rep0": 59,
+        "n_eval_good_seed0_rep0": 21,
+        "b1_escaped_mean_R20": 0.03813559322033898,
+        "b1_escaped_range_R20": [
+          0.01694915254237288,
+          0.06779661016949153
+        ],
+        "gate_escaped_mean_R20": 0.11779661016949153,
+        "gate_escaped_range_R20": [
+          0.03389830508474576,
+          0.2542372881355932
+        ],
+        "b1_fr_mean_R20": 0.1952380952380952,
+        "b1_fr_range_R20": [
+          0.14285714285714285,
+          0.2857142857142857
+        ],
+        "gate_fr_mean_R20": 0.05,
+        "gate_fr_range_R20": [
+          0.0,
+          0.23809523809523808
+        ],
+        "gate_deferral_mean_R20": 0.13999999999999999,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.05084745762711865,
+        "gate_escaped_rep0": 0.15254237288135594,
+        "b1_fr_rep0": 0.14285714285714285,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.03813559322033898,
+          0.00847457627118644,
+          0.04745762711864407,
+          0.029661016949152536,
+          0.02711864406779661
+        ],
+        "gate_escaped_per_seed": [
+          0.11779661016949153,
+          0.1211864406779661,
+          0.1211864406779661,
+          0.11949152542372883,
+          0.10677966101694913
+        ],
+        "b1_fr_per_seed": [
+          0.1952380952380952,
+          0.32380952380952377,
+          0.19047619047619047,
+          0.2166666666666667,
+          0.1952380952380952
+        ],
+        "gate_fr_per_seed": [
+          0.05,
+          0.05952380952380952,
+          0.05952380952380952,
+          0.04285714285714286,
+          0.05476190476190477
+        ]
+      },
+      "patchcore:tile": {
+        "backbone": "patchcore",
+        "category": "tile",
+        "n_eval_def_seed0_rep0": 42,
+        "n_eval_good_seed0_rep0": 17,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.08095238095238094,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.16666666666666666
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.6542372881355933,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.09523809523809523,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.014285714285714285,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.08095238095238094,
+          0.08095238095238094,
+          0.08214285714285713,
+          0.09166666666666666,
+          0.08095238095238094
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.029411764705882353,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:toothbrush": {
+        "backbone": "patchcore",
+        "category": "toothbrush",
+        "n_eval_def_seed0_rep0": 15,
+        "n_eval_good_seed0_rep0": 6,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.06666666666666667,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.3333333333333333
+        ],
+        "b1_fr_mean_R20": 0.27499999999999997,
+        "b1_fr_range_R20": [
+          0.16666666666666666,
+          0.5
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7452380952380951,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.3333333333333333,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.06666666666666667,
+          0.06,
+          0.06666666666666667,
+          0.06666666666666667,
+          0.05333333333333333
+        ],
+        "b1_fr_per_seed": [
+          0.27499999999999997,
+          0.27499999999999997,
+          0.3666666666666666,
+          0.27499999999999997,
+          0.27499999999999997
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:transistor": {
+        "backbone": "patchcore",
+        "category": "transistor",
+        "n_eval_def_seed0_rep0": 20,
+        "n_eval_good_seed0_rep0": 30,
+        "b1_escaped_mean_R20": 0.0625,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.15
+        ],
+        "gate_escaped_mean_R20": 0.05750000000000001,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.02,
+        "b1_fr_range_R20": [
+          0.0,
+          0.03333333333333333
+        ],
+        "gate_fr_mean_R20": 0.026666666666666665,
+        "gate_fr_range_R20": [
+          0.0,
+          0.13333333333333333
+        ],
+        "gate_deferral_mean_R20": 0.031,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.05,
+        "gate_escaped_rep0": 0.05,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0625,
+          0.017499999999999998,
+          0.017499999999999998,
+          0.045,
+          0.017499999999999998
+        ],
+        "gate_escaped_per_seed": [
+          0.05750000000000001,
+          0.03,
+          0.04,
+          0.052500000000000005,
+          0.04
+        ],
+        "b1_fr_per_seed": [
+          0.02,
+          0.026666666666666665,
+          0.035,
+          0.02,
+          0.035
+        ],
+        "gate_fr_per_seed": [
+          0.026666666666666665,
+          0.016666666666666666,
+          0.021666666666666664,
+          0.019999999999999997,
+          0.021666666666666664
+        ]
+      },
+      "patchcore:wood": {
+        "backbone": "patchcore",
+        "category": "wood",
+        "n_eval_def_seed0_rep0": 30,
+        "n_eval_good_seed0_rep0": 9,
+        "b1_escaped_mean_R20": 0.03,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.06666666666666667
+        ],
+        "gate_escaped_mean_R20": 0.08,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.1,
+        "b1_fr_range_R20": [
+          0.0,
+          0.2222222222222222
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.717948717948718,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.03333333333333333,
+        "gate_escaped_rep0": 0.03333333333333333,
+        "b1_fr_rep0": 0.1111111111111111,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.03,
+          0.045,
+          0.013333333333333336,
+          0.013333333333333336,
+          0.013333333333333336
+        ],
+        "gate_escaped_per_seed": [
+          0.08,
+          0.08,
+          0.07666666666666667,
+          0.07833333333333334,
+          0.07833333333333334
+        ],
+        "b1_fr_per_seed": [
+          0.1,
+          0.06666666666666668,
+          0.16666666666666669,
+          0.16666666666666669,
+          0.16666666666666669
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "patchcore:zipper": {
+        "backbone": "patchcore",
+        "category": "zipper",
+        "n_eval_def_seed0_rep0": 59,
+        "n_eval_good_seed0_rep0": 16,
+        "b1_escaped_mean_R20": 0.008474576271186442,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.01694915254237288
+        ],
+        "gate_escaped_mean_R20": 0.10847457627118642,
+        "gate_escaped_range_R20": [
+          0.03389830508474576,
+          0.22033898305084745
+        ],
+        "b1_fr_mean_R20": 0.090625,
+        "b1_fr_range_R20": [
+          0.0,
+          0.1875
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7146666666666667,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0847457627118644,
+        "b1_fr_rep0": 0.125,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.008474576271186442,
+          0.008474576271186442,
+          0.008474576271186442,
+          0.008474576271186442,
+          0.01610169491525424
+        ],
+        "gate_escaped_per_seed": [
+          0.10847457627118642,
+          0.10932203389830505,
+          0.1152542372881356,
+          0.11779661016949153,
+          0.09491525423728812
+        ],
+        "b1_fr_per_seed": [
+          0.090625,
+          0.0625,
+          0.096875,
+          0.0625,
+          0.0625
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:bottle": {
+        "backbone": "dinomaly",
+        "category": "bottle",
+        "n_eval_def_seed0_rep0": 31,
+        "n_eval_good_seed0_rep0": 10,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.07419354838709676,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.1935483870967742
+        ],
+        "b1_fr_mean_R20": 0.005,
+        "b1_fr_range_R20": [
+          0.0,
+          0.1
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.07419354838709676,
+          0.09032258064516129,
+          0.08064516129032258,
+          0.08387096774193548,
+          0.07580645161290323
+        ],
+        "b1_fr_per_seed": [
+          0.005,
+          0.0,
+          0.025,
+          0.0,
+          0.01
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:cable": {
+        "backbone": "dinomaly",
+        "category": "cable",
+        "n_eval_def_seed0_rep0": 46,
+        "n_eval_good_seed0_rep0": 29,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.0,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "b1_fr_mean_R20": 0.11896551724137931,
+        "b1_fr_range_R20": [
+          0.0,
+          0.3793103448275862
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.06799999999999998,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.10344827586206896,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b1_fr_per_seed": [
+          0.11896551724137931,
+          0.1,
+          0.13620689655172416,
+          0.12068965517241378,
+          0.14137931034482756
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:capsule": {
+        "backbone": "dinomaly",
+        "category": "capsule",
+        "n_eval_def_seed0_rep0": 55,
+        "n_eval_good_seed0_rep0": 11,
+        "b1_escaped_mean_R20": 0.18909090909090912,
+        "b1_escaped_range_R20": [
+          0.10909090909090909,
+          0.2545454545454545
+        ],
+        "gate_escaped_mean_R20": 0.08272727272727272,
+        "gate_escaped_range_R20": [
+          0.01818181818181818,
+          0.14545454545454545
+        ],
+        "b1_fr_mean_R20": 0.031818181818181815,
+        "b1_fr_range_R20": [
+          0.0,
+          0.18181818181818182
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7772727272727272,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.16363636363636364,
+        "gate_escaped_rep0": 0.07272727272727272,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.18909090909090912,
+          0.17363636363636364,
+          0.16909090909090913,
+          0.21000000000000002,
+          0.2
+        ],
+        "gate_escaped_per_seed": [
+          0.08272727272727272,
+          0.07999999999999999,
+          0.0909090909090909,
+          0.08363636363636362,
+          0.07909090909090907
+        ],
+        "b1_fr_per_seed": [
+          0.031818181818181815,
+          0.013636363636363636,
+          0.06363636363636363,
+          0.05454545454545454,
+          0.045454545454545456
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:carpet": {
+        "backbone": "dinomaly",
+        "category": "carpet",
+        "n_eval_def_seed0_rep0": 45,
+        "n_eval_good_seed0_rep0": 14,
+        "b1_escaped_mean_R20": 0.003333333333333333,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.022222222222222223
+        ],
+        "gate_escaped_mean_R20": 0.10444444444444445,
+        "gate_escaped_range_R20": [
+          0.022222222222222223,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.08571428571428572,
+        "b1_fr_range_R20": [
+          0.0,
+          0.21428571428571427
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.6830508474576271,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.08888888888888889,
+        "b1_fr_rep0": 0.07142857142857142,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.003333333333333333,
+          0.0077777777777777776,
+          0.0077777777777777776,
+          0.0077777777777777776,
+          0.006666666666666666
+        ],
+        "gate_escaped_per_seed": [
+          0.10444444444444445,
+          0.10555555555555556,
+          0.10111111111111112,
+          0.1,
+          0.09777777777777777
+        ],
+        "b1_fr_per_seed": [
+          0.08571428571428572,
+          0.09285714285714283,
+          0.06071428571428571,
+          0.03214285714285714,
+          0.09999999999999998
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:grid": {
+        "backbone": "dinomaly",
+        "category": "grid",
+        "n_eval_def_seed0_rep0": 29,
+        "n_eval_good_seed0_rep0": 11,
+        "b1_escaped_mean_R20": 0.017241379310344827,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.034482758620689655
+        ],
+        "gate_escaped_mean_R20": 0.06724137931034484,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.1724137931034483
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.67625,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.017241379310344827,
+          0.017241379310344827,
+          0.017241379310344827,
+          0.017241379310344827,
+          0.017241379310344827
+        ],
+        "gate_escaped_per_seed": [
+          0.06724137931034484,
+          0.06896551724137931,
+          0.06724137931034484,
+          0.06551724137931034,
+          0.06379310344827585
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:hazelnut": {
+        "backbone": "dinomaly",
+        "category": "hazelnut",
+        "n_eval_def_seed0_rep0": 35,
+        "n_eval_good_seed0_rep0": 20,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.0,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "b1_fr_mean_R20": 0.07,
+        "b1_fr_range_R20": [
+          0.0,
+          0.15
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.08727272727272727,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.05,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "b1_fr_per_seed": [
+          0.07,
+          0.05500000000000001,
+          0.07250000000000001,
+          0.0425,
+          0.0675
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:leather": {
+        "backbone": "dinomaly",
+        "category": "leather",
+        "n_eval_def_seed0_rep0": 46,
+        "n_eval_good_seed0_rep0": 16,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.06630434782608695,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.17391304347826086
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.692741935483871,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.06521739130434782,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.06630434782608695,
+          0.06956521739130436,
+          0.0608695652173913,
+          0.0641304347826087,
+          0.07065217391304349
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:metal_nut": {
+        "backbone": "dinomaly",
+        "category": "metal_nut",
+        "n_eval_def_seed0_rep0": 47,
+        "n_eval_good_seed0_rep0": 11,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.07340425531914893,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2127659574468085
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7508620689655172,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.1276595744680851,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.07340425531914893,
+          0.07234042553191487,
+          0.07659574468085105,
+          0.075531914893617,
+          0.06914893617021277
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.004545454545454545,
+          0.0,
+          0.013636363636363636
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:pill": {
+        "backbone": "dinomaly",
+        "category": "pill",
+        "n_eval_def_seed0_rep0": 71,
+        "n_eval_good_seed0_rep0": 13,
+        "b1_escaped_mean_R20": 0.1316901408450704,
+        "b1_escaped_range_R20": [
+          0.056338028169014086,
+          0.18309859154929578
+        ],
+        "gate_escaped_mean_R20": 0.10845070422535211,
+        "gate_escaped_range_R20": [
+          0.028169014084507043,
+          0.2112676056338028
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7535714285714284,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.14084507042253522,
+        "gate_escaped_rep0": 0.14084507042253522,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.1316901408450704,
+          0.1288732394366197,
+          0.1387323943661972,
+          0.1288732394366197,
+          0.1330985915492958
+        ],
+        "gate_escaped_per_seed": [
+          0.10845070422535211,
+          0.10633802816901408,
+          0.10774647887323943,
+          0.11267605633802816,
+          0.11267605633802816
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:screw": {
+        "backbone": "dinomaly",
+        "category": "screw",
+        "n_eval_def_seed0_rep0": 59,
+        "n_eval_good_seed0_rep0": 21,
+        "b1_escaped_mean_R20": 0.24237288135593218,
+        "b1_escaped_range_R20": [
+          0.15254237288135594,
+          0.3220338983050847
+        ],
+        "gate_escaped_mean_R20": 0.07966101694915252,
+        "gate_escaped_range_R20": [
+          0.01694915254237288,
+          0.13559322033898305
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.016666666666666666,
+        "gate_fr_range_R20": [
+          0.0,
+          0.14285714285714285
+        ],
+        "gate_deferral_mean_R20": 0.03625,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.22033898305084745,
+        "gate_escaped_rep0": 0.1016949152542373,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.24237288135593218,
+          0.2483050847457627,
+          0.23728813559322032,
+          0.22627118644067798,
+          0.22796610169491527
+        ],
+        "gate_escaped_per_seed": [
+          0.07966101694915252,
+          0.07542372881355931,
+          0.08559322033898306,
+          0.08559322033898305,
+          0.08644067796610169
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.016666666666666666,
+          0.011904761904761904,
+          0.023809523809523808,
+          0.016666666666666666,
+          0.014285714285714285
+        ]
+      },
+      "dinomaly:tile": {
+        "backbone": "dinomaly",
+        "category": "tile",
+        "n_eval_def_seed0_rep0": 42,
+        "n_eval_good_seed0_rep0": 17,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.09642857142857143,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.23809523809523808
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.6432203389830509,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.07142857142857142,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.09642857142857143,
+          0.09285714285714285,
+          0.09047619047619047,
+          0.09166666666666666,
+          0.09285714285714285
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:toothbrush": {
+        "backbone": "dinomaly",
+        "category": "toothbrush",
+        "n_eval_def_seed0_rep0": 15,
+        "n_eval_good_seed0_rep0": 6,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.04666666666666667,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.275,
+        "b1_fr_range_R20": [
+          0.0,
+          0.6666666666666666
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.6809523809523809,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.6666666666666666,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.04666666666666667,
+          0.05,
+          0.04666666666666667,
+          0.04666666666666667,
+          0.04666666666666667
+        ],
+        "b1_fr_per_seed": [
+          0.275,
+          0.2333333333333333,
+          0.2833333333333333,
+          0.29166666666666663,
+          0.29166666666666663
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:transistor": {
+        "backbone": "dinomaly",
+        "category": "transistor",
+        "n_eval_def_seed0_rep0": 20,
+        "n_eval_good_seed0_rep0": 30,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.06000000000000001,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.16833333333333336,
+        "b1_fr_range_R20": [
+          0.1,
+          0.23333333333333334
+        ],
+        "gate_fr_mean_R20": 0.021666666666666667,
+        "gate_fr_range_R20": [
+          0.0,
+          0.03333333333333333
+        ],
+        "gate_deferral_mean_R20": 0.10200000000000002,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.1,
+        "b1_fr_rep0": 0.2,
+        "gate_fr_rep0": 0.03333333333333333,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.005
+        ],
+        "gate_escaped_per_seed": [
+          0.06000000000000001,
+          0.05750000000000001,
+          0.05,
+          0.05750000000000001,
+          0.06500000000000002
+        ],
+        "b1_fr_per_seed": [
+          0.16833333333333336,
+          0.125,
+          0.15333333333333332,
+          0.135,
+          0.16833333333333333
+        ],
+        "gate_fr_per_seed": [
+          0.021666666666666667,
+          0.021666666666666667,
+          0.021666666666666667,
+          0.021666666666666667,
+          0.021666666666666667
+        ]
+      },
+      "dinomaly:wood": {
+        "backbone": "dinomaly",
+        "category": "wood",
+        "n_eval_def_seed0_rep0": 30,
+        "n_eval_good_seed0_rep0": 9,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.08,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.1277777777777778,
+        "b1_fr_range_R20": [
+          0.0,
+          0.2222222222222222
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7076923076923075,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.06666666666666667,
+        "b1_fr_rep0": 0.2222222222222222,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.08,
+          0.08333333333333334,
+          0.08333333333333336,
+          0.08166666666666668,
+          0.08333333333333334
+        ],
+        "b1_fr_per_seed": [
+          0.1277777777777778,
+          0.1388888888888889,
+          0.11111111111111112,
+          0.1,
+          0.16111111111111112
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:zipper": {
+        "backbone": "dinomaly",
+        "category": "zipper",
+        "n_eval_def_seed0_rep0": 59,
+        "n_eval_good_seed0_rep0": 16,
+        "b1_escaped_mean_R20": 0.013559322033898305,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.03389830508474576
+        ],
+        "gate_escaped_mean_R20": 0.08644067796610169,
+        "gate_escaped_range_R20": [
+          0.01694915254237288,
+          0.15254237288135594
+        ],
+        "b1_fr_mean_R20": 0.0,
+        "b1_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.7186666666666667,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 0.0,
+        "b1_escaped_rep0": 0.01694915254237288,
+        "gate_escaped_rep0": 0.06779661016949153,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.013559322033898305,
+          0.016949152542372885,
+          0.01610169491525424,
+          0.005932203389830509,
+          0.011016949152542374
+        ],
+        "gate_escaped_per_seed": [
+          0.08644067796610169,
+          0.0847457627118644,
+          0.08389830508474574,
+          0.0771186440677966,
+          0.08220338983050847
+        ],
+        "b1_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "escaped_binding": [
+      {
+        "cell": "dinomaly:capsule",
+        "b1_escaped": 0.18909090909090912,
+        "gate_escaped": 0.08272727272727272,
+        "gate_deferral": 0.7772727272727272,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pill",
+        "b1_escaped": 0.1316901408450704,
+        "gate_escaped": 0.10845070422535211,
+        "gate_deferral": 0.7535714285714284,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:screw",
+        "b1_escaped": 0.24237288135593218,
+        "gate_escaped": 0.07966101694915252,
+        "gate_deferral": 0.03625,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      }
+    ],
+    "fr_binding": [
+      {
+        "cell": "patchcore:capsule",
+        "b1_fr": 0.07727272727272726,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.7492424242424243,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": false,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:carpet",
+        "b1_fr": 0.06785714285714285,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.6864406779661018,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": false,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:grid",
+        "b1_fr": 0.09545454545454543,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.70125,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pill",
+        "b1_fr": 0.11923076923076922,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.7827380952380952,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:screw",
+        "b1_fr": 0.1952380952380952,
+        "gate_fr": 0.05,
+        "gate_deferral": 0.13999999999999999,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:toothbrush",
+        "b1_fr": 0.27499999999999997,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.7452380952380951,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:wood",
+        "b1_fr": 0.1,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.717948717948718,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:zipper",
+        "b1_fr": 0.090625,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.7146666666666667,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:cable",
+        "b1_fr": 0.11896551724137931,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.06799999999999998,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:carpet",
+        "b1_fr": 0.08571428571428572,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.6830508474576271,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": false,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:hazelnut",
+        "b1_fr": 0.07,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.08727272727272727,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": false,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:toothbrush",
+        "b1_fr": 0.275,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.6809523809523809,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:transistor",
+        "b1_fr": 0.16833333333333336,
+        "gate_fr": 0.021666666666666667,
+        "gate_deferral": 0.10200000000000002,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:wood",
+        "b1_fr": 0.1277777777777778,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.7076923076923075,
+        "g2_certified_frac": 0.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      }
+    ]
+  },
+  "VisA": {
+    "per_cell": {
+      "patchcore:candle": {
+        "backbone": "patchcore",
+        "category": "candle",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.06700000000000002,
+        "b1_escaped_range_R20": [
+          0.02,
+          0.12
+        ],
+        "gate_escaped_mean_R20": 0.09000000000000001,
+        "gate_escaped_range_R20": [
+          0.02,
+          0.24
+        ],
+        "b1_fr_mean_R20": 0.081,
+        "b1_fr_range_R20": [
+          0.06,
+          0.14
+        ],
+        "gate_fr_mean_R20": 0.037000000000000005,
+        "gate_fr_range_R20": [
+          0.0,
+          0.14
+        ],
+        "gate_deferral_mean_R20": 0.1075,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.08,
+        "gate_escaped_rep0": 0.12,
+        "b1_fr_rep0": 0.06,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.06700000000000002,
+          0.02,
+          0.05900000000000001,
+          0.06600000000000002,
+          0.06400000000000002
+        ],
+        "gate_escaped_per_seed": [
+          0.09000000000000001,
+          0.09900000000000002,
+          0.09300000000000001,
+          0.08400000000000002,
+          0.09400000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.081,
+          0.13500000000000004,
+          0.083,
+          0.081,
+          0.06600000000000002
+        ],
+        "gate_fr_per_seed": [
+          0.037000000000000005,
+          0.041,
+          0.036000000000000004,
+          0.035,
+          0.036
+        ]
+      },
+      "patchcore:capsules": {
+        "backbone": "patchcore",
+        "category": "capsules",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 30,
+        "b1_escaped_mean_R20": 0.009999999999999998,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.02
+        ],
+        "gate_escaped_mean_R20": 0.07400000000000002,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.9683333333333334,
+        "b1_fr_range_R20": [
+          0.9333333333333333,
+          1.0
+        ],
+        "gate_fr_mean_R20": 0.03666666666666667,
+        "gate_fr_range_R20": [
+          0.0,
+          0.2
+        ],
+        "gate_deferral_mean_R20": 0.6475000000000001,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.02,
+        "gate_escaped_rep0": 0.2,
+        "b1_fr_rep0": 1.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.009999999999999998,
+          0.011,
+          0.05500000000000001,
+          0.021,
+          0.052000000000000005
+        ],
+        "gate_escaped_per_seed": [
+          0.07400000000000002,
+          0.084,
+          0.08499999999999999,
+          0.07400000000000002,
+          0.089
+        ],
+        "b1_fr_per_seed": [
+          0.9683333333333334,
+          0.9333333333333332,
+          0.8133333333333335,
+          0.9283333333333331,
+          0.7683333333333334
+        ],
+        "gate_fr_per_seed": [
+          0.03666666666666667,
+          0.04333333333333333,
+          0.025,
+          0.034999999999999996,
+          0.03666666666666667
+        ]
+      },
+      "patchcore:cashew": {
+        "backbone": "patchcore",
+        "category": "cashew",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 25,
+        "b1_escaped_mean_R20": 0.030000000000000006,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.06
+        ],
+        "gate_escaped_mean_R20": 0.10100000000000002,
+        "gate_escaped_range_R20": [
+          0.02,
+          0.28
+        ],
+        "b1_fr_mean_R20": 0.2740000000000001,
+        "b1_fr_range_R20": [
+          0.16,
+          0.36
+        ],
+        "gate_fr_mean_R20": 0.038,
+        "gate_fr_range_R20": [
+          0.0,
+          0.12
+        ],
+        "gate_deferral_mean_R20": 0.12333333333333334,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.04,
+        "gate_escaped_rep0": 0.08,
+        "b1_fr_rep0": 0.2,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.030000000000000006,
+          0.044000000000000004,
+          0.022000000000000002,
+          0.046000000000000006,
+          0.031000000000000007
+        ],
+        "gate_escaped_per_seed": [
+          0.10100000000000002,
+          0.10300000000000002,
+          0.099,
+          0.093,
+          0.098
+        ],
+        "b1_fr_per_seed": [
+          0.2740000000000001,
+          0.23000000000000004,
+          0.26200000000000007,
+          0.17,
+          0.22600000000000006
+        ],
+        "gate_fr_per_seed": [
+          0.038,
+          0.032,
+          0.032,
+          0.038,
+          0.036
+        ]
+      },
+      "patchcore:chewinggum": {
+        "backbone": "patchcore",
+        "category": "chewinggum",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 25,
+        "b1_escaped_mean_R20": 0.015000000000000003,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.04
+        ],
+        "gate_escaped_mean_R20": 0.038,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.1
+        ],
+        "b1_fr_mean_R20": 0.038000000000000006,
+        "b1_fr_range_R20": [
+          0.0,
+          0.08
+        ],
+        "gate_fr_mean_R20": 0.006,
+        "gate_fr_range_R20": [
+          0.0,
+          0.08
+        ],
+        "gate_deferral_mean_R20": 0.035333333333333335,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.04,
+        "gate_escaped_rep0": 0.06,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.015000000000000003,
+          0.024,
+          0.031,
+          0.031,
+          0.041
+        ],
+        "gate_escaped_per_seed": [
+          0.038,
+          0.03700000000000001,
+          0.034,
+          0.03700000000000001,
+          0.039
+        ],
+        "b1_fr_per_seed": [
+          0.038000000000000006,
+          0.038000000000000006,
+          0.022,
+          0.015999999999999997,
+          0.0
+        ],
+        "gate_fr_per_seed": [
+          0.006,
+          0.004,
+          0.004,
+          0.004,
+          0.012
+        ]
+      },
+      "patchcore:fryum": {
+        "backbone": "patchcore",
+        "category": "fryum",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 25,
+        "b1_escaped_mean_R20": 0.06500000000000002,
+        "b1_escaped_range_R20": [
+          0.02,
+          0.12
+        ],
+        "gate_escaped_mean_R20": 0.08500000000000002,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.2,
+        "b1_fr_range_R20": [
+          0.08,
+          0.32
+        ],
+        "gate_fr_mean_R20": 0.044000000000000004,
+        "gate_fr_range_R20": [
+          0.0,
+          0.24
+        ],
+        "gate_deferral_mean_R20": 0.10466666666666666,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.08,
+        "gate_escaped_rep0": 0.14,
+        "b1_fr_rep0": 0.24,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.06500000000000002,
+          0.12500000000000003,
+          0.13500000000000004,
+          0.14000000000000004,
+          0.13000000000000003
+        ],
+        "gate_escaped_per_seed": [
+          0.08500000000000002,
+          0.08300000000000002,
+          0.08600000000000001,
+          0.087,
+          0.083
+        ],
+        "b1_fr_per_seed": [
+          0.2,
+          0.042,
+          0.018,
+          0.0,
+          0.05800000000000001
+        ],
+        "gate_fr_per_seed": [
+          0.044000000000000004,
+          0.066,
+          0.06799999999999999,
+          0.046,
+          0.05800000000000001
+        ]
+      },
+      "patchcore:macaroni1": {
+        "backbone": "patchcore",
+        "category": "macaroni1",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.06200000000000001,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.1
+        ],
+        "gate_escaped_mean_R20": 0.096,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.22
+        ],
+        "b1_fr_mean_R20": 0.54,
+        "b1_fr_range_R20": [
+          0.42,
+          0.64
+        ],
+        "gate_fr_mean_R20": 0.04400000000000001,
+        "gate_fr_range_R20": [
+          0.0,
+          0.12
+        ],
+        "gate_deferral_mean_R20": 0.506,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.08,
+        "gate_escaped_rep0": 0.12,
+        "b1_fr_rep0": 0.54,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.06200000000000001,
+          0.17100000000000004,
+          0.15200000000000005,
+          0.039,
+          0.14300000000000004
+        ],
+        "gate_escaped_per_seed": [
+          0.096,
+          0.094,
+          0.095,
+          0.098,
+          0.1
+        ],
+        "b1_fr_per_seed": [
+          0.54,
+          0.353,
+          0.442,
+          0.637,
+          0.4410000000000001
+        ],
+        "gate_fr_per_seed": [
+          0.04400000000000001,
+          0.045,
+          0.045,
+          0.048,
+          0.048
+        ]
+      },
+      "patchcore:macaroni2": {
+        "backbone": "patchcore",
+        "category": "macaroni2",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.08000000000000003,
+        "b1_escaped_range_R20": [
+          0.02,
+          0.12
+        ],
+        "gate_escaped_mean_R20": 0.10500000000000001,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.3
+        ],
+        "b1_fr_mean_R20": 0.731,
+        "b1_fr_range_R20": [
+          0.66,
+          0.8
+        ],
+        "gate_fr_mean_R20": 0.04,
+        "gate_fr_range_R20": [
+          0.0,
+          0.16
+        ],
+        "gate_deferral_mean_R20": 0.7264999999999999,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.02,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.68,
+        "gate_fr_rep0": 0.04,
+        "b1_escaped_per_seed": [
+          0.08000000000000003,
+          0.023,
+          0.10100000000000002,
+          0.07100000000000002,
+          0.03200000000000001
+        ],
+        "gate_escaped_per_seed": [
+          0.10500000000000001,
+          0.09200000000000001,
+          0.098,
+          0.10100000000000002,
+          0.09600000000000002
+        ],
+        "b1_fr_per_seed": [
+          0.731,
+          0.8659999999999999,
+          0.7209999999999999,
+          0.729,
+          0.8630000000000001
+        ],
+        "gate_fr_per_seed": [
+          0.04,
+          0.044,
+          0.043000000000000003,
+          0.03400000000000001,
+          0.05
+        ]
+      },
+      "patchcore:pcb1": {
+        "backbone": "patchcore",
+        "category": "pcb1",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.08700000000000001,
+        "b1_escaped_range_R20": [
+          0.04,
+          0.12
+        ],
+        "gate_escaped_mean_R20": 0.088,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.16
+        ],
+        "b1_fr_mean_R20": 0.17800000000000002,
+        "b1_fr_range_R20": [
+          0.1,
+          0.28
+        ],
+        "gate_fr_mean_R20": 0.04700000000000001,
+        "gate_fr_range_R20": [
+          0.0,
+          0.14
+        ],
+        "gate_deferral_mean_R20": 0.2805,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.08,
+        "gate_escaped_rep0": 0.08,
+        "b1_fr_rep0": 0.14,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.08700000000000001,
+          0.08800000000000001,
+          0.016000000000000004,
+          0.013000000000000001,
+          0.018
+        ],
+        "gate_escaped_per_seed": [
+          0.088,
+          0.082,
+          0.083,
+          0.09000000000000001,
+          0.09200000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.17800000000000002,
+          0.17600000000000002,
+          0.27,
+          0.221,
+          0.257
+        ],
+        "gate_fr_per_seed": [
+          0.04700000000000001,
+          0.046000000000000006,
+          0.045000000000000005,
+          0.044000000000000004,
+          0.045000000000000005
+        ]
+      },
+      "patchcore:pcb2": {
+        "backbone": "patchcore",
+        "category": "pcb2",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.08800000000000001,
+        "b1_escaped_range_R20": [
+          0.04,
+          0.14
+        ],
+        "gate_escaped_mean_R20": 0.11100000000000002,
+        "gate_escaped_range_R20": [
+          0.02,
+          0.26
+        ],
+        "b1_fr_mean_R20": 0.252,
+        "b1_fr_range_R20": [
+          0.2,
+          0.32
+        ],
+        "gate_fr_mean_R20": 0.043,
+        "gate_fr_range_R20": [
+          0.0,
+          0.1
+        ],
+        "gate_deferral_mean_R20": 0.2805,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.06,
+        "gate_escaped_rep0": 0.02,
+        "b1_fr_rep0": 0.24,
+        "gate_fr_rep0": 0.04,
+        "b1_escaped_per_seed": [
+          0.08800000000000001,
+          0.15300000000000002,
+          0.15300000000000002,
+          0.10100000000000002,
+          0.18200000000000002
+        ],
+        "gate_escaped_per_seed": [
+          0.11100000000000002,
+          0.11900000000000002,
+          0.11600000000000002,
+          0.12600000000000003,
+          0.128
+        ],
+        "b1_fr_per_seed": [
+          0.252,
+          0.10300000000000002,
+          0.13300000000000003,
+          0.21300000000000002,
+          0.10900000000000003
+        ],
+        "gate_fr_per_seed": [
+          0.043,
+          0.036000000000000004,
+          0.043,
+          0.041999999999999996,
+          0.043
+        ]
+      },
+      "patchcore:pcb3": {
+        "backbone": "patchcore",
+        "category": "pcb3",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 51,
+        "b1_escaped_mean_R20": 0.12700000000000003,
+        "b1_escaped_range_R20": [
+          0.1,
+          0.16
+        ],
+        "gate_escaped_mean_R20": 0.085,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.18
+        ],
+        "b1_fr_mean_R20": 0.21960784313725493,
+        "b1_fr_range_R20": [
+          0.17647058823529413,
+          0.27450980392156865
+        ],
+        "gate_fr_mean_R20": 0.0323529411764706,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0784313725490196
+        ],
+        "gate_deferral_mean_R20": 0.2534653465346535,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.16,
+        "gate_escaped_rep0": 0.18,
+        "b1_fr_rep0": 0.19607843137254902,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.12700000000000003,
+          0.13400000000000004,
+          0.13000000000000003,
+          0.15600000000000003,
+          0.10500000000000002
+        ],
+        "gate_escaped_per_seed": [
+          0.085,
+          0.09100000000000001,
+          0.08900000000000001,
+          0.09300000000000001,
+          0.09000000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.21960784313725493,
+          0.1852941176470588,
+          0.18235294117647058,
+          0.1343137254901961,
+          0.20784313725490197
+        ],
+        "gate_fr_per_seed": [
+          0.0323529411764706,
+          0.037254901960784306,
+          0.025490196078431376,
+          0.03431372549019608,
+          0.036274509803921565
+        ]
+      },
+      "patchcore:pcb4": {
+        "backbone": "patchcore",
+        "category": "pcb4",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 51,
+        "b1_escaped_mean_R20": 0.02,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.04
+        ],
+        "gate_escaped_mean_R20": 0.094,
+        "gate_escaped_range_R20": [
+          0.02,
+          0.24
+        ],
+        "b1_fr_mean_R20": 0.11176470588235295,
+        "b1_fr_range_R20": [
+          0.0784313725490196,
+          0.1568627450980392
+        ],
+        "gate_fr_mean_R20": 0.045098039215686274,
+        "gate_fr_range_R20": [
+          0.0,
+          0.09803921568627451
+        ],
+        "gate_deferral_mean_R20": 0.039108910891089116,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.02,
+        "gate_escaped_rep0": 0.04,
+        "b1_fr_rep0": 0.0784313725490196,
+        "gate_fr_rep0": 0.0196078431372549,
+        "b1_escaped_per_seed": [
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02
+        ],
+        "gate_escaped_per_seed": [
+          0.094,
+          0.09,
+          0.095,
+          0.089,
+          0.098
+        ],
+        "b1_fr_per_seed": [
+          0.11176470588235295,
+          0.09411764705882353,
+          0.09411764705882353,
+          0.09411764705882353,
+          0.10392156862745099
+        ],
+        "gate_fr_per_seed": [
+          0.045098039215686274,
+          0.045098039215686274,
+          0.051960784313725486,
+          0.04803921568627451,
+          0.04705882352941177
+        ]
+      },
+      "patchcore:pipe_fryum": {
+        "backbone": "patchcore",
+        "category": "pipe_fryum",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 25,
+        "b1_escaped_mean_R20": 0.009,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.02
+        ],
+        "gate_escaped_mean_R20": 0.077,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.16
+        ],
+        "b1_fr_mean_R20": 0.06000000000000001,
+        "b1_fr_range_R20": [
+          0.0,
+          0.12
+        ],
+        "gate_fr_mean_R20": 0.016,
+        "gate_fr_range_R20": [
+          0.0,
+          0.08
+        ],
+        "gate_deferral_mean_R20": 0.04133333333333333,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.02,
+        "gate_escaped_rep0": 0.08,
+        "b1_fr_rep0": 0.0,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.009,
+          0.009,
+          0.009,
+          0.009,
+          0.009
+        ],
+        "gate_escaped_per_seed": [
+          0.077,
+          0.06700000000000002,
+          0.07900000000000001,
+          0.084,
+          0.08000000000000003
+        ],
+        "b1_fr_per_seed": [
+          0.06000000000000001,
+          0.04000000000000001,
+          0.06000000000000001,
+          0.06000000000000001,
+          0.06000000000000001
+        ],
+        "gate_fr_per_seed": [
+          0.016,
+          0.013999999999999999,
+          0.013999999999999999,
+          0.019999999999999997,
+          0.013999999999999999
+        ]
+      },
+      "dinomaly:candle": {
+        "backbone": "dinomaly",
+        "category": "candle",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.21400000000000002,
+        "b1_escaped_range_R20": [
+          0.16,
+          0.28
+        ],
+        "gate_escaped_mean_R20": 0.07900000000000001,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.14
+        ],
+        "b1_fr_mean_R20": 0.009999999999999998,
+        "b1_fr_range_R20": [
+          0.0,
+          0.02
+        ],
+        "gate_fr_mean_R20": 0.022,
+        "gate_fr_range_R20": [
+          0.0,
+          0.06
+        ],
+        "gate_deferral_mean_R20": 0.03550000000000001,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.22,
+        "gate_escaped_rep0": 0.06,
+        "b1_fr_rep0": 0.02,
+        "gate_fr_rep0": 0.04,
+        "b1_escaped_per_seed": [
+          0.21400000000000002,
+          0.22100000000000003,
+          0.229,
+          0.21600000000000003,
+          0.24300000000000002
+        ],
+        "gate_escaped_per_seed": [
+          0.07900000000000001,
+          0.09200000000000001,
+          0.07600000000000001,
+          0.08,
+          0.09000000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.009999999999999998,
+          0.009999999999999998,
+          0.009999999999999998,
+          0.009999999999999998,
+          0.009999999999999998
+        ],
+        "gate_fr_per_seed": [
+          0.022,
+          0.024,
+          0.025,
+          0.031000000000000007,
+          0.023
+        ]
+      },
+      "dinomaly:capsules": {
+        "backbone": "dinomaly",
+        "category": "capsules",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 30,
+        "b1_escaped_mean_R20": 0.092,
+        "b1_escaped_range_R20": [
+          0.02,
+          0.16
+        ],
+        "gate_escaped_mean_R20": 0.084,
+        "gate_escaped_range_R20": [
+          0.02,
+          0.18
+        ],
+        "b1_fr_mean_R20": 0.03666666666666667,
+        "b1_fr_range_R20": [
+          0.0,
+          0.1
+        ],
+        "gate_fr_mean_R20": 0.025,
+        "gate_fr_range_R20": [
+          0.0,
+          0.1
+        ],
+        "gate_deferral_mean_R20": 0.1625,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.02,
+        "gate_escaped_rep0": 0.02,
+        "b1_fr_rep0": 0.1,
+        "gate_fr_rep0": 0.1,
+        "b1_escaped_per_seed": [
+          0.092,
+          0.05700000000000001,
+          0.09300000000000001,
+          0.08100000000000002,
+          0.07700000000000001
+        ],
+        "gate_escaped_per_seed": [
+          0.084,
+          0.08800000000000001,
+          0.082,
+          0.08800000000000001,
+          0.084
+        ],
+        "b1_fr_per_seed": [
+          0.03666666666666667,
+          0.04666666666666667,
+          0.04,
+          0.043333333333333335,
+          0.04666666666666667
+        ],
+        "gate_fr_per_seed": [
+          0.025,
+          0.028333333333333332,
+          0.028333333333333332,
+          0.028333333333333332,
+          0.023333333333333334
+        ]
+      },
+      "dinomaly:cashew": {
+        "backbone": "dinomaly",
+        "category": "cashew",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 25,
+        "b1_escaped_mean_R20": 0.05700000000000001,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.16
+        ],
+        "gate_escaped_mean_R20": 0.055000000000000014,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.14
+        ],
+        "b1_fr_mean_R20": 0.084,
+        "b1_fr_range_R20": [
+          0.0,
+          0.2
+        ],
+        "gate_fr_mean_R20": 0.008,
+        "gate_fr_range_R20": [
+          0.0,
+          0.08
+        ],
+        "gate_deferral_mean_R20": 0.03866666666666667,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.02,
+        "gate_escaped_rep0": 0.1,
+        "b1_fr_rep0": 0.16,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.05700000000000001,
+          0.024,
+          0.028000000000000004,
+          0.031000000000000007,
+          0.05900000000000001
+        ],
+        "gate_escaped_per_seed": [
+          0.055000000000000014,
+          0.06700000000000002,
+          0.06000000000000001,
+          0.06900000000000002,
+          0.06400000000000002
+        ],
+        "b1_fr_per_seed": [
+          0.084,
+          0.10000000000000002,
+          0.12000000000000002,
+          0.08600000000000001,
+          0.07200000000000002
+        ],
+        "gate_fr_per_seed": [
+          0.008,
+          0.014000000000000002,
+          0.014000000000000002,
+          0.016,
+          0.022
+        ]
+      },
+      "dinomaly:chewinggum": {
+        "backbone": "dinomaly",
+        "category": "chewinggum",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 25,
+        "b1_escaped_mean_R20": 0.008999999999999998,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.04
+        ],
+        "gate_escaped_mean_R20": 0.022,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.04
+        ],
+        "b1_fr_mean_R20": 0.14,
+        "b1_fr_range_R20": [
+          0.0,
+          0.28
+        ],
+        "gate_fr_mean_R20": 0.0,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_deferral_mean_R20": 0.04933333333333333,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.04,
+        "b1_fr_rep0": 0.2,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.008999999999999998,
+          0.0,
+          0.002,
+          0.002,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.022,
+          0.022,
+          0.026999999999999996,
+          0.023,
+          0.030000000000000006
+        ],
+        "b1_fr_per_seed": [
+          0.14,
+          0.164,
+          0.13200000000000003,
+          0.15000000000000002,
+          0.13400000000000004
+        ],
+        "gate_fr_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "dinomaly:fryum": {
+        "backbone": "dinomaly",
+        "category": "fryum",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 25,
+        "b1_escaped_mean_R20": 0.035,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.08
+        ],
+        "gate_escaped_mean_R20": 0.06800000000000002,
+        "gate_escaped_range_R20": [
+          0.02,
+          0.14
+        ],
+        "b1_fr_mean_R20": 0.138,
+        "b1_fr_range_R20": [
+          0.0,
+          0.28
+        ],
+        "gate_fr_mean_R20": 0.03,
+        "gate_fr_range_R20": [
+          0.0,
+          0.12
+        ],
+        "gate_deferral_mean_R20": 0.034666666666666665,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.02,
+        "gate_escaped_rep0": 0.08,
+        "b1_fr_rep0": 0.24,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.035,
+          0.017,
+          0.028000000000000008,
+          0.029000000000000005,
+          0.03200000000000001
+        ],
+        "gate_escaped_per_seed": [
+          0.06800000000000002,
+          0.06500000000000002,
+          0.06800000000000002,
+          0.06500000000000002,
+          0.06600000000000002
+        ],
+        "b1_fr_per_seed": [
+          0.138,
+          0.09600000000000002,
+          0.12400000000000003,
+          0.12000000000000002,
+          0.10600000000000001
+        ],
+        "gate_fr_per_seed": [
+          0.03,
+          0.030000000000000006,
+          0.028000000000000004,
+          0.026000000000000002,
+          0.030000000000000006
+        ]
+      },
+      "dinomaly:macaroni1": {
+        "backbone": "dinomaly",
+        "category": "macaroni1",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.3320000000000001,
+        "b1_escaped_range_R20": [
+          0.2,
+          0.48
+        ],
+        "gate_escaped_mean_R20": 0.079,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.22
+        ],
+        "b1_fr_mean_R20": 0.007000000000000001,
+        "b1_fr_range_R20": [
+          0.0,
+          0.02
+        ],
+        "gate_fr_mean_R20": 0.030000000000000006,
+        "gate_fr_range_R20": [
+          0.0,
+          0.1
+        ],
+        "gate_deferral_mean_R20": 0.0595,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.36,
+        "gate_escaped_rep0": 0.16,
+        "b1_fr_rep0": 0.02,
+        "gate_fr_rep0": 0.02,
+        "b1_escaped_per_seed": [
+          0.3320000000000001,
+          0.32300000000000006,
+          0.32000000000000006,
+          0.30600000000000005,
+          0.31400000000000006
+        ],
+        "gate_escaped_per_seed": [
+          0.079,
+          0.09200000000000001,
+          0.085,
+          0.08700000000000001,
+          0.09000000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.007000000000000001,
+          0.007000000000000001,
+          0.01,
+          0.014000000000000002,
+          0.009
+        ],
+        "gate_fr_per_seed": [
+          0.030000000000000006,
+          0.029000000000000005,
+          0.027000000000000003,
+          0.029000000000000005,
+          0.028000000000000004
+        ]
+      },
+      "dinomaly:macaroni2": {
+        "backbone": "dinomaly",
+        "category": "macaroni2",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.48,
+        "b1_escaped_range_R20": [
+          0.3,
+          0.62
+        ],
+        "gate_escaped_mean_R20": 0.078,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.18
+        ],
+        "b1_fr_mean_R20": 0.014000000000000002,
+        "b1_fr_range_R20": [
+          0.0,
+          0.04
+        ],
+        "gate_fr_mean_R20": 0.037,
+        "gate_fr_range_R20": [
+          0.0,
+          0.2
+        ],
+        "gate_deferral_mean_R20": 0.189,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.4,
+        "gate_escaped_rep0": 0.14,
+        "b1_fr_rep0": 0.04,
+        "gate_fr_rep0": 0.04,
+        "b1_escaped_per_seed": [
+          0.48,
+          0.38100000000000006,
+          0.40700000000000003,
+          0.43199999999999994,
+          0.44299999999999995
+        ],
+        "gate_escaped_per_seed": [
+          0.078,
+          0.089,
+          0.073,
+          0.08,
+          0.08800000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.014000000000000002,
+          0.013000000000000001,
+          0.018000000000000002,
+          0.012,
+          0.009
+        ],
+        "gate_fr_per_seed": [
+          0.037,
+          0.036,
+          0.04,
+          0.03900000000000001,
+          0.037
+        ]
+      },
+      "dinomaly:pcb1": {
+        "backbone": "dinomaly",
+        "category": "pcb1",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.01,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.04
+        ],
+        "gate_escaped_mean_R20": 0.08499999999999999,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.22
+        ],
+        "b1_fr_mean_R20": 0.11800000000000002,
+        "b1_fr_range_R20": [
+          0.08,
+          0.22
+        ],
+        "gate_fr_mean_R20": 0.041,
+        "gate_fr_range_R20": [
+          0.0,
+          0.1
+        ],
+        "gate_deferral_mean_R20": 0.04000000000000001,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.18,
+        "gate_fr_rep0": 0.04,
+        "b1_escaped_per_seed": [
+          0.01,
+          0.011999999999999999,
+          0.002,
+          0.003,
+          0.015000000000000003
+        ],
+        "gate_escaped_per_seed": [
+          0.08499999999999999,
+          0.088,
+          0.087,
+          0.08499999999999999,
+          0.08600000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.11800000000000002,
+          0.11800000000000002,
+          0.11600000000000002,
+          0.14400000000000004,
+          0.09100000000000001
+        ],
+        "gate_fr_per_seed": [
+          0.041,
+          0.038,
+          0.041,
+          0.04,
+          0.03500000000000001
+        ]
+      },
+      "dinomaly:pcb2": {
+        "backbone": "dinomaly",
+        "category": "pcb2",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 50,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.05500000000000001,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.24
+        ],
+        "b1_fr_mean_R20": 0.354,
+        "b1_fr_range_R20": [
+          0.18,
+          0.54
+        ],
+        "gate_fr_mean_R20": 0.024999999999999998,
+        "gate_fr_range_R20": [
+          0.0,
+          0.04
+        ],
+        "gate_deferral_mean_R20": 0.0485,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.04,
+        "b1_fr_rep0": 0.38,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.05500000000000001,
+          0.051000000000000004,
+          0.05600000000000001,
+          0.052000000000000005,
+          0.05700000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.354,
+          0.353,
+          0.357,
+          0.36500000000000005,
+          0.293
+        ],
+        "gate_fr_per_seed": [
+          0.024999999999999998,
+          0.023999999999999997,
+          0.025999999999999995,
+          0.023,
+          0.023999999999999997
+        ]
+      },
+      "dinomaly:pcb3": {
+        "backbone": "dinomaly",
+        "category": "pcb3",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 51,
+        "b1_escaped_mean_R20": 0.007000000000000001,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.02
+        ],
+        "gate_escaped_mean_R20": 0.06400000000000002,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.2
+        ],
+        "b1_fr_mean_R20": 0.26470588235294124,
+        "b1_fr_range_R20": [
+          0.11764705882352941,
+          0.4117647058823529
+        ],
+        "gate_fr_mean_R20": 0.03235294117647059,
+        "gate_fr_range_R20": [
+          0.0,
+          0.09803921568627451
+        ],
+        "gate_deferral_mean_R20": 0.02970297029702971,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.02,
+        "b1_fr_rep0": 0.3333333333333333,
+        "gate_fr_rep0": 0.058823529411764705,
+        "b1_escaped_per_seed": [
+          0.007000000000000001,
+          0.0,
+          0.009999999999999998,
+          0.002,
+          0.015000000000000003
+        ],
+        "gate_escaped_per_seed": [
+          0.06400000000000002,
+          0.06000000000000001,
+          0.06500000000000002,
+          0.05700000000000001,
+          0.06200000000000001
+        ],
+        "b1_fr_per_seed": [
+          0.26470588235294124,
+          0.2088235294117647,
+          0.25098039215686274,
+          0.22450980392156866,
+          0.2323529411764706
+        ],
+        "gate_fr_per_seed": [
+          0.03235294117647059,
+          0.027450980392156866,
+          0.026470588235294124,
+          0.027450980392156866,
+          0.027450980392156866
+        ]
+      },
+      "dinomaly:pcb4": {
+        "backbone": "dinomaly",
+        "category": "pcb4",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 51,
+        "b1_escaped_mean_R20": 0.0,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.0
+        ],
+        "gate_escaped_mean_R20": 0.026000000000000002,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.06
+        ],
+        "b1_fr_mean_R20": 0.19117647058823528,
+        "b1_fr_range_R20": [
+          0.11764705882352941,
+          0.3137254901960784
+        ],
+        "gate_fr_mean_R20": 0.009803921568627449,
+        "gate_fr_range_R20": [
+          0.0,
+          0.0196078431372549
+        ],
+        "gate_deferral_mean_R20": 0.05247524752475248,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.0,
+        "b1_fr_rep0": 0.3137254901960784,
+        "gate_fr_rep0": 0.0196078431372549,
+        "b1_escaped_per_seed": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gate_escaped_per_seed": [
+          0.026000000000000002,
+          0.024,
+          0.026000000000000002,
+          0.034,
+          0.026000000000000002
+        ],
+        "b1_fr_per_seed": [
+          0.19117647058823528,
+          0.1892156862745098,
+          0.19901960784313727,
+          0.17058823529411762,
+          0.17941176470588235
+        ],
+        "gate_fr_per_seed": [
+          0.009803921568627449,
+          0.009803921568627449,
+          0.00784313725490196,
+          0.011764705882352943,
+          0.009803921568627449
+        ]
+      },
+      "dinomaly:pipe_fryum": {
+        "backbone": "dinomaly",
+        "category": "pipe_fryum",
+        "n_eval_def_seed0_rep0": 50,
+        "n_eval_good_seed0_rep0": 25,
+        "b1_escaped_mean_R20": 0.018000000000000002,
+        "b1_escaped_range_R20": [
+          0.0,
+          0.06
+        ],
+        "gate_escaped_mean_R20": 0.048,
+        "gate_escaped_range_R20": [
+          0.0,
+          0.1
+        ],
+        "b1_fr_mean_R20": 0.15000000000000005,
+        "b1_fr_range_R20": [
+          0.0,
+          0.28
+        ],
+        "gate_fr_mean_R20": 0.002,
+        "gate_fr_range_R20": [
+          0.0,
+          0.04
+        ],
+        "gate_deferral_mean_R20": 0.03933333333333333,
+        "g1_certified_frac_R20": 1.0,
+        "g2_certified_frac_R20": 1.0,
+        "b1_escaped_rep0": 0.0,
+        "gate_escaped_rep0": 0.08,
+        "b1_fr_rep0": 0.28,
+        "gate_fr_rep0": 0.0,
+        "b1_escaped_per_seed": [
+          0.018000000000000002,
+          0.009999999999999998,
+          0.018,
+          0.014000000000000002,
+          0.009999999999999998
+        ],
+        "gate_escaped_per_seed": [
+          0.048,
+          0.06000000000000001,
+          0.07700000000000001,
+          0.05400000000000001,
+          0.044
+        ],
+        "b1_fr_per_seed": [
+          0.15000000000000005,
+          0.14200000000000004,
+          0.15000000000000005,
+          0.13000000000000003,
+          0.14000000000000004
+        ],
+        "gate_fr_per_seed": [
+          0.002,
+          0.006,
+          0.014000000000000002,
+          0.004,
+          0.002
+        ]
+      }
+    },
+    "escaped_binding": [
+      {
+        "cell": "patchcore:pcb3",
+        "b1_escaped": 0.12700000000000003,
+        "gate_escaped": 0.085,
+        "gate_deferral": 0.2534653465346535,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:candle",
+        "b1_escaped": 0.21400000000000002,
+        "gate_escaped": 0.07900000000000001,
+        "gate_deferral": 0.03550000000000001,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:macaroni1",
+        "b1_escaped": 0.3320000000000001,
+        "gate_escaped": 0.079,
+        "gate_deferral": 0.0595,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:macaroni2",
+        "b1_escaped": 0.48,
+        "gate_escaped": 0.078,
+        "gate_deferral": 0.189,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      }
+    ],
+    "fr_binding": [
+      {
+        "cell": "patchcore:candle",
+        "b1_fr": 0.081,
+        "gate_fr": 0.037000000000000005,
+        "gate_deferral": 0.1075,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:capsules",
+        "b1_fr": 0.9683333333333334,
+        "gate_fr": 0.03666666666666667,
+        "gate_deferral": 0.6475000000000001,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:cashew",
+        "b1_fr": 0.2740000000000001,
+        "gate_fr": 0.038,
+        "gate_deferral": 0.12333333333333334,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:fryum",
+        "b1_fr": 0.2,
+        "gate_fr": 0.044000000000000004,
+        "gate_deferral": 0.10466666666666666,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": false,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:macaroni1",
+        "b1_fr": 0.54,
+        "gate_fr": 0.04400000000000001,
+        "gate_deferral": 0.506,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:macaroni2",
+        "b1_fr": 0.731,
+        "gate_fr": 0.04,
+        "gate_deferral": 0.7264999999999999,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pcb1",
+        "b1_fr": 0.17800000000000002,
+        "gate_fr": 0.04700000000000001,
+        "gate_deferral": 0.2805,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pcb2",
+        "b1_fr": 0.252,
+        "gate_fr": 0.043,
+        "gate_deferral": 0.2805,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pcb3",
+        "b1_fr": 0.21960784313725493,
+        "gate_fr": 0.0323529411764706,
+        "gate_deferral": 0.2534653465346535,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pcb4",
+        "b1_fr": 0.11176470588235295,
+        "gate_fr": 0.045098039215686274,
+        "gate_deferral": 0.039108910891089116,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pipe_fryum",
+        "b1_fr": 0.06000000000000001,
+        "gate_fr": 0.016,
+        "gate_deferral": 0.04133333333333333,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": false,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:cashew",
+        "b1_fr": 0.084,
+        "gate_fr": 0.008,
+        "gate_deferral": 0.03866666666666667,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:chewinggum",
+        "b1_fr": 0.14,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.04933333333333333,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:fryum",
+        "b1_fr": 0.138,
+        "gate_fr": 0.03,
+        "gate_deferral": 0.034666666666666665,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pcb1",
+        "b1_fr": 0.11800000000000002,
+        "gate_fr": 0.041,
+        "gate_deferral": 0.04000000000000001,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pcb2",
+        "b1_fr": 0.354,
+        "gate_fr": 0.024999999999999998,
+        "gate_deferral": 0.0485,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pcb3",
+        "b1_fr": 0.26470588235294124,
+        "gate_fr": 0.03235294117647059,
+        "gate_deferral": 0.02970297029702971,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pcb4",
+        "b1_fr": 0.19117647058823528,
+        "gate_fr": 0.009803921568627449,
+        "gate_deferral": 0.05247524752475248,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pipe_fryum",
+        "b1_fr": 0.15000000000000005,
+        "gate_fr": 0.002,
+        "gate_deferral": 0.03933333333333333,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      }
+    ]
+  },
+  "counts": {
+    "mvtec_escaped_binding": 3,
+    "mvtec_fr_binding": 14,
+    "visa_escaped_binding": 4,
+    "visa_fr_binding": 19
+  },
+  "certified_stable_binding": {
+    "note": "gate certified on that axis in ALL R=20 repeats AND bind holds in all 5 backbone seeds (B1 violates target, gate within target+tol). The strongest evidence; excludes gate-refusal cells (where the gate makes no certified claim on that axis).",
+    "mvtec_escaped": [
+      {
+        "cell": "dinomaly:capsule",
+        "b1_escaped": 0.18909090909090912,
+        "gate_escaped": 0.08272727272727272,
+        "gate_deferral": 0.7772727272727272,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pill",
+        "b1_escaped": 0.1316901408450704,
+        "gate_escaped": 0.10845070422535211,
+        "gate_deferral": 0.7535714285714284,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:screw",
+        "b1_escaped": 0.24237288135593218,
+        "gate_escaped": 0.07966101694915252,
+        "gate_deferral": 0.03625,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      }
+    ],
+    "mvtec_fr": [
+      {
+        "cell": "patchcore:screw",
+        "b1_fr": 0.1952380952380952,
+        "gate_fr": 0.05,
+        "gate_deferral": 0.13999999999999999,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:cable",
+        "b1_fr": 0.11896551724137931,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.06799999999999998,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:transistor",
+        "b1_fr": 0.16833333333333336,
+        "gate_fr": 0.021666666666666667,
+        "gate_deferral": 0.10200000000000002,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      }
+    ],
+    "visa_escaped": [
+      {
+        "cell": "patchcore:pcb3",
+        "b1_escaped": 0.12700000000000003,
+        "gate_escaped": 0.085,
+        "gate_deferral": 0.2534653465346535,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:candle",
+        "b1_escaped": 0.21400000000000002,
+        "gate_escaped": 0.07900000000000001,
+        "gate_deferral": 0.03550000000000001,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:macaroni1",
+        "b1_escaped": 0.3320000000000001,
+        "gate_escaped": 0.079,
+        "gate_deferral": 0.0595,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:macaroni2",
+        "b1_escaped": 0.48,
+        "gate_escaped": 0.078,
+        "gate_deferral": 0.189,
+        "g1_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      }
+    ],
+    "visa_fr": [
+      {
+        "cell": "patchcore:candle",
+        "b1_fr": 0.081,
+        "gate_fr": 0.037000000000000005,
+        "gate_deferral": 0.1075,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:capsules",
+        "b1_fr": 0.9683333333333334,
+        "gate_fr": 0.03666666666666667,
+        "gate_deferral": 0.6475000000000001,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:cashew",
+        "b1_fr": 0.2740000000000001,
+        "gate_fr": 0.038,
+        "gate_deferral": 0.12333333333333334,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:macaroni1",
+        "b1_fr": 0.54,
+        "gate_fr": 0.04400000000000001,
+        "gate_deferral": 0.506,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:macaroni2",
+        "b1_fr": 0.731,
+        "gate_fr": 0.04,
+        "gate_deferral": 0.7264999999999999,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pcb1",
+        "b1_fr": 0.17800000000000002,
+        "gate_fr": 0.04700000000000001,
+        "gate_deferral": 0.2805,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pcb2",
+        "b1_fr": 0.252,
+        "gate_fr": 0.043,
+        "gate_deferral": 0.2805,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pcb3",
+        "b1_fr": 0.21960784313725493,
+        "gate_fr": 0.0323529411764706,
+        "gate_deferral": 0.2534653465346535,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "patchcore:pcb4",
+        "b1_fr": 0.11176470588235295,
+        "gate_fr": 0.045098039215686274,
+        "gate_deferral": 0.039108910891089116,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:cashew",
+        "b1_fr": 0.084,
+        "gate_fr": 0.008,
+        "gate_deferral": 0.03866666666666667,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:chewinggum",
+        "b1_fr": 0.14,
+        "gate_fr": 0.0,
+        "gate_deferral": 0.04933333333333333,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:fryum",
+        "b1_fr": 0.138,
+        "gate_fr": 0.03,
+        "gate_deferral": 0.034666666666666665,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pcb1",
+        "b1_fr": 0.11800000000000002,
+        "gate_fr": 0.041,
+        "gate_deferral": 0.04000000000000001,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pcb2",
+        "b1_fr": 0.354,
+        "gate_fr": 0.024999999999999998,
+        "gate_deferral": 0.0485,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pcb3",
+        "b1_fr": 0.26470588235294124,
+        "gate_fr": 0.03235294117647059,
+        "gate_deferral": 0.02970297029702971,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pcb4",
+        "b1_fr": 0.19117647058823528,
+        "gate_fr": 0.009803921568627449,
+        "gate_deferral": 0.05247524752475248,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      },
+      {
+        "cell": "dinomaly:pipe_fryum",
+        "b1_fr": 0.15000000000000005,
+        "gate_fr": 0.002,
+        "gate_deferral": 0.03933333333333333,
+        "g2_certified_frac": 1.0,
+        "cross_seed_b1_all_violate": true,
+        "cross_seed_gate_all_hold": true
+      }
+    ],
+    "counts": {
+      "mvtec_escaped": 3,
+      "mvtec_fr": 3,
+      "visa_escaped": 4,
+      "visa_fr": 17
+    }
+  }
+}

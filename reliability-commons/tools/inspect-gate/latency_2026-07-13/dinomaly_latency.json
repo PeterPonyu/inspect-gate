@@ -1,0 +1,35 @@
+{
+  "measured": true,
+  "date": "2026-07-13",
+  "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
+  "torch": "2.12.0+cu130",
+  "backbone": "Dinomaly (DINOv2-base ViT, reg4, patch14)",
+  "checkpoint": "/home/zeyufu/Desktop/ml-reliability-research/orchestration_2026-07-12/visa_pull/root/autodl-tmp/visa_brancha/dinomaly/seed_0/run/model.pth",
+  "checkpoint_setting": "VisA branch-A unified, seed 0",
+  "images": {
+    "source": "VisA candle test images",
+    "n_images": 250,
+    "image_size": 448,
+    "crop_size": 392,
+    "score_aggregation": "top-0.01 mean of gaussian-smoothed anomaly map, resize_mask=256"
+  },
+  "n_params_millions": 148.01,
+  "peak_gpu_mem_gb": 3.735,
+  "batch1_per_image_latency_ms": {
+    "n": 250,
+    "median": 18.88058299664408,
+    "mean": 20.116469951113686,
+    "p95": 23.078794375760477,
+    "p99": 25.998924223240444,
+    "min": 16.458447033073753,
+    "max": 120.45627902261913,
+    "std": 6.557594889406283
+  },
+  "batch1_throughput_ips": 52.964466202009994,
+  "batched_throughput": {
+    "batch_size": 32,
+    "images_per_second": 58.779169151503254,
+    "amortized_ms_per_image": 17.012829790473916,
+    "n_batch_repeats": 10
+  }
+}

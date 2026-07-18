@@ -1,0 +1,6 @@
+seed 0: g2_certified=13/15 ks_fallback=1 k1_tripped=False [0.3s]
+seed 1: g2_certified=13/15 ks_fallback=1 k1_tripped=False [0.3s]
+seed 2: g2_certified=13/15 ks_fallback=1 k1_tripped=False [0.3s]
+seed 3: g2_certified=13/15 ks_fallback=1 k1_tripped=False [0.3s]
+seed 4: g2_certified=12/15 ks_fallback=2 k1_tripped=False [0.3s]
+G2_PROMOTION_DONE {"0": {"n_g2_certified": 13, "n_ks_fallback": 1, "k1_tripped": false}, "1": {"n_g2_certified": 13, "n_ks_fallback": 1, "k1_tripped": false}, "2": {"n_g2_certified": 13, "n_ks_fallback": 1, "k1_tripped": false}, "3": {"n_g2_certified": 13, "n_ks_fallback": 1, "k1_tripped": false}, "4": {"n_g2_certified": 12, "n_ks_fallback": 2, "k1_tripped": false}}

@@ -1,0 +1,93 @@
+% Standalone figure: Figure 1 method-overview schematic of the dual-gate certified
+% inspection pipeline (part image -> frozen backbone -> score -> G1/G2 certificates
+% -> three-way route). Symbolic only, no data plotted; terminology and notation
+% mirror Section~\ref{sec:gate} and Section~\ref{sec:floor} of the manuscript
+% (t_lo/t_hi, alpha_miss/alpha_fr, alpha_min = 1/(n_cal+1), audited-not-certified).
+% Compile: pdflatex fig-overview.tex  (see Makefile)
+\documentclass[border=1pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+
+% Colorblind-safe qualitative palette (Okabe-Ito subset), reused from
+% fig-crcbaseline.tex: blue <-> escaped-defect/auto-pass axis, vermillion <->
+% false-reject/auto-reject axis, bluish green <-> deferral.
+\definecolor{cEscaped}{HTML}{0072B2}
+\definecolor{cFalseReject}{HTML}{D55E00}
+\definecolor{cDeferral}{HTML}{009E73}
+
+\begin{document}
+\begin{tikzpicture}[
+    font=\fontsize{6.8}{8.1}\selectfont,
+    >={Latex[length=2mm,width=1.6mm]},
+    every node/.style={align=center},
+]
+
+% ---- main pipeline (neutral steps) ----
+\node[draw, thick, rounded corners=1.5pt, fill=black!3, minimum height=7mm,
+      text width=34mm, inner sep=2pt] (img) at (0,0) {Part image};
+
+\node[draw, thick, rounded corners=1.5pt, fill=black!3, minimum height=10mm,
+      text width=34mm, inner sep=2pt] (det) at (0,-1.75)
+      {Frozen anomaly detector\\(PatchCore / Dinomaly ---\\interchangeable backbone)};
+
+\node[draw, thick, rounded corners=1.5pt, fill=black!3, minimum height=13mm,
+      text width=38mm, inner sep=2pt] (cal) at (0,-4.35)
+      {Per-category calibration pool\\(good $+$ defective scores)\\certifiability floor
+      $\alpha_{\min}=\dfrac{1}{n_{\text{cal}}+1}$};
+
+% ---- G1 / G2 certificate gates ----
+\node[draw, thick, rounded corners=1.5pt, draw=cEscaped, fill=cEscaped!6,
+      minimum height=17mm, text width=30mm, inner sep=2pt] (g1) at (-2.35,-7.05)
+      {G1 --- escaped-defect\\negation-conformal quantile $t_{\text{lo}}(c)$\\[2pt]
+      $P(s\!\le\! t_{\text{lo}}\mid\text{defective})$\\$\le\alpha_{\text{miss}}$};
+
+\node[draw, thick, rounded corners=1.5pt, draw=cFalseReject, fill=cFalseReject!6,
+      minimum height=17mm, text width=30mm, inner sep=2pt] (g2) at (2.35,-7.05)
+      {G2 --- false-reject\\conformal upper quantile $t_{\text{hi}}(c)$\\[2pt]
+      $P(s\!\ge\! t_{\text{hi}}\mid\text{good})$\\$\le\alpha_{\text{fr}}$};
+
+% ---- refusal branch off the floor check ----
+\node[draw, thick, rounded corners=6pt, draw=black!55, fill=black!4,
+      minimum height=13mm, text width=25mm, inner sep=2pt,
+      font=\fontsize{6.2}{7.4}\selectfont] (refuse) at (5.05,-4.35)
+      {floor unmet: band $=\pm\infty$, \emph{refuse} axis --- audited-\\not-certified};
+
+% ---- three-way decision ----
+\node[draw, thick, rounded corners=1.5pt, fill=black!3, minimum height=9mm,
+      text width=46mm, inner sep=2pt] (dec) at (0,-10.05)
+      {Three-way route: compare $s_i$ to $\bigl(t_{\text{lo}}(c),\,t_{\text{hi}}(c)\bigr)$};
+
+% ---- outcomes ----
+\node[draw, thick, rounded corners=6pt, draw=cEscaped, fill=cEscaped!8,
+      minimum height=9mm, text width=21mm, inner sep=2pt,
+      font=\fontsize{6.4}{7.6}\selectfont] (pass) at (-3.3,-12.25)
+      {auto-pass\\$s_i\le t_{\text{lo}}$\\escaped-defect\\certified $\le\alpha_{\text{miss}}$};
+
+\node[draw, thick, rounded corners=6pt, draw=cDeferral, fill=cDeferral!8,
+      minimum height=9mm, text width=21mm, inner sep=2pt,
+      font=\fontsize{6.4}{7.6}\selectfont] (defer) at (0,-12.25)
+      {defer\\$t_{\text{lo}}<s_i<t_{\text{hi}}$\\to human review};
+
+\node[draw, thick, rounded corners=6pt, draw=cFalseReject, fill=cFalseReject!8,
+      minimum height=9mm, text width=21mm, inner sep=2pt,
+      font=\fontsize{6.4}{7.6}\selectfont] (reject) at (3.3,-12.25)
+      {auto-reject\\$s_i\ge t_{\text{hi}}$\\false-reject\\certified $\le\alpha_{\text{fr}}$};
+
+% ---- arrows: main pipeline ----
+\draw[->] (img) -- (det);
+\draw[->] (det) -- node[right, font=\fontsize{6.2}{7.4}\selectfont, xshift=1mm]
+      {score $s_i$\\(higher $=$ more anomalous)} (cal);
+\draw[->] (cal.south) -- ++(0,-0.35) -| (g1.north);
+\draw[->] (cal.south) -- ++(0,-0.35) -| (g2.north);
+\draw[->, black!55] (cal.east) -- (refuse.west);
+\draw[->] (g1.south) -- ++(0,-0.4) -| ($(dec.north)+(-1.4,0)$);
+\draw[->] (g2.south) -- ++(0,-0.4) -| ($(dec.north)+(1.4,0)$);
+\draw[->, black!55, dashed] (refuse.south) -- (5.05,-11.4) -- (0,-11.4) -- (defer.north);
+\draw[->] (dec.south) -- ++(0,-0.35) -| (pass.north);
+\draw[->] (dec) -- (defer);
+\draw[->] (dec.south) -- ++(0,-0.35) -| (reject.north);
+
+\end{tikzpicture}
+\end{document}

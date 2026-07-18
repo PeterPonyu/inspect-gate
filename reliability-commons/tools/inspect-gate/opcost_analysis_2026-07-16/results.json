@@ -1,0 +1,382 @@
+{
+  "label": "Deployable operating-point / human-review-cost analysis. Downstream cost-model transform of FROZEN gate_calibration + baseline_comparison_2026-07-15 rates. No frozen number recomputed or altered. Scenario parameters (throughput, unit costs, wage, reviewer throughput) are ASSUMED illustrative deployment contexts, explicitly labeled, not derived from benchmark data.",
+  "provenance": {
+    "frozen_rates_source": "baseline_comparison_2026-07-15/results.json (mean_escaped_defect_rate, mean_false_reject_rate, mean_deferral_rate; pooled over 2 backbones x 5 seeds x all categories per benchmark)",
+    "frozen_rates_upstream": "gate_calibration/v1_<backbone>_seed<seed>.json (frozen 2026-07-12/13; not touched by this script)",
+    "assumed_parameters": "scenario throughput/costs/wage/reviewer-throughput below; illustrative, not benchmark-derived"
+  },
+  "frozen_rates_used": {
+    "MPDD": {
+      "gate": {
+        "escaped": 0.06630766045548654,
+        "false_reject": 0.0,
+        "defer": 0.7309112305178483
+      },
+      "crc": {
+        "escaped": 0.06630766045548654,
+        "false_reject": 0.3685229700854701,
+        "defer": 0.0
+      },
+      "n_cells": 60
+    },
+    "VisA": {
+      "gate": {
+        "escaped": 0.07636666666666668,
+        "false_reject": 0.02957614379084968,
+        "defer": 0.16394468509350935
+      },
+      "crc": {
+        "escaped": 0.09491666666666668,
+        "false_reject": 0.16239934640522874,
+        "defer": 0.0
+      },
+      "n_cells": 120
+    },
+    "MVTec-AD": {
+      "gate": {
+        "escaped": 0.07251383986879434,
+        "false_reject": 0.004559770114942529,
+        "defer": 0.5435733079509109
+      },
+      "crc": {
+        "escaped": 0.08547616221851537,
+        "false_reject": 0.0305700783890439,
+        "defer": 0.0
+      },
+      "n_cells": 150
+    }
+  },
+  "scenarios": {
+    "low_volume_precision": {
+      "label": "Low-volume precision line",
+      "description": "ASSUMED. Small-batch precision/safety-relevant parts (e.g. aerospace or medical-device brackets). Escaped defects carry recall/liability exposure; false rejects scrap an expensive machined part.",
+      "throughput_parts_per_hour": 100,
+      "cost_per_escaped_defect_usd": 5000,
+      "cost_per_false_reject_usd": 150,
+      "reviewer_wage_usd_per_hour": 45,
+      "reviewer_throughput_parts_per_hour": 120
+    },
+    "mid_volume_general": {
+      "label": "Mid-volume general industrial line",
+      "description": "ASSUMED. Generic manufactured components (the register most MVTec-AD- and VisA-style objects sit in): moderate part value, moderate volume.",
+      "throughput_parts_per_hour": 600,
+      "cost_per_escaped_defect_usd": 300,
+      "cost_per_false_reject_usd": 15,
+      "reviewer_wage_usd_per_hour": 30,
+      "reviewer_throughput_parts_per_hour": 240
+    },
+    "high_volume_commodity": {
+      "label": "High-volume commodity line",
+      "description": "ASSUMED. Cheap, high-throughput parts (e.g. painted metal fasteners/ brackets, the MPDD real-world register). Escaped defects and false rejects are both individually cheap; economics are dominated by review-labor throughput at high volume.",
+      "throughput_parts_per_hour": 3000,
+      "cost_per_escaped_defect_usd": 25,
+      "cost_per_false_reject_usd": 2,
+      "reviewer_wage_usd_per_hour": 26,
+      "reviewer_throughput_parts_per_hour": 450
+    }
+  },
+  "benchmark_scenario_grid": {
+    "MPDD": {
+      "low_volume_precision": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 73.09112305178483,
+          "reviewer_fte_required": 0.6090926920982069,
+          "escaped_defects_per_hour": 6.630766045548654,
+          "false_rejects_per_hour": 0.0,
+          "escaped_cost_usd_per_hour": 33153.830227743274,
+          "false_reject_cost_usd_per_hour": 0.0,
+          "review_labor_cost_usd_per_hour": 27.40917114441931,
+          "total_cost_usd_per_hour": 33181.239398887694
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 6.630766045548654,
+          "false_rejects_per_hour": 36.852297008547005,
+          "escaped_cost_usd_per_hour": 33153.830227743274,
+          "false_reject_cost_usd_per_hour": 5527.844551282051,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 38681.67477902533
+        },
+        "gate_savings_usd_per_hour_vs_crc": 5500.435380137635,
+        "gate_cheaper": true
+      },
+      "mid_volume_general": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 438.54673831070903,
+          "reviewer_fte_required": 1.827278076294621,
+          "escaped_defects_per_hour": 39.784596273291925,
+          "false_rejects_per_hour": 0.0,
+          "escaped_cost_usd_per_hour": 11935.378881987577,
+          "false_reject_cost_usd_per_hour": 0.0,
+          "review_labor_cost_usd_per_hour": 54.81834228883863,
+          "total_cost_usd_per_hour": 11990.197224276415
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 39.784596273291925,
+          "false_rejects_per_hour": 221.11378205128204,
+          "escaped_cost_usd_per_hour": 11935.378881987577,
+          "false_reject_cost_usd_per_hour": 3316.7067307692305,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 15252.085612756808
+        },
+        "gate_savings_usd_per_hour_vs_crc": 3261.8883884803927,
+        "gate_cheaper": true
+      },
+      "high_volume_commodity": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 2192.733691553545,
+          "reviewer_fte_required": 4.872741536785656,
+          "escaped_defects_per_hour": 198.92298136645962,
+          "false_rejects_per_hour": 0.0,
+          "escaped_cost_usd_per_hour": 4973.07453416149,
+          "false_reject_cost_usd_per_hour": 0.0,
+          "review_labor_cost_usd_per_hour": 126.69127995642705,
+          "total_cost_usd_per_hour": 5099.765814117917
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 198.92298136645962,
+          "false_rejects_per_hour": 1105.5689102564102,
+          "escaped_cost_usd_per_hour": 4973.07453416149,
+          "false_reject_cost_usd_per_hour": 2211.1378205128203,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 7184.2123546743105
+        },
+        "gate_savings_usd_per_hour_vs_crc": 2084.4465405563933,
+        "gate_cheaper": true
+      }
+    },
+    "VisA": {
+      "low_volume_precision": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 16.394468509350936,
+          "reviewer_fte_required": 0.13662057091125782,
+          "escaped_defects_per_hour": 7.636666666666668,
+          "false_rejects_per_hour": 2.957614379084968,
+          "escaped_cost_usd_per_hour": 38183.333333333336,
+          "false_reject_cost_usd_per_hour": 443.6421568627452,
+          "review_labor_cost_usd_per_hour": 6.147925691006601,
+          "total_cost_usd_per_hour": 38633.123415887094
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 9.491666666666667,
+          "false_rejects_per_hour": 16.239934640522875,
+          "escaped_cost_usd_per_hour": 47458.333333333336,
+          "false_reject_cost_usd_per_hour": 2435.9901960784314,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 49894.32352941177
+        },
+        "gate_savings_usd_per_hour_vs_crc": 11261.200113524676,
+        "gate_cheaper": true
+      },
+      "mid_volume_general": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 98.3668110561056,
+          "reviewer_fte_required": 0.40986171273377336,
+          "escaped_defects_per_hour": 45.82000000000001,
+          "false_rejects_per_hour": 17.745686274509808,
+          "escaped_cost_usd_per_hour": 13746.000000000002,
+          "false_reject_cost_usd_per_hour": 266.1852941176471,
+          "review_labor_cost_usd_per_hour": 12.2958513820132,
+          "total_cost_usd_per_hour": 14024.481145499663
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 56.95,
+          "false_rejects_per_hour": 97.43960784313724,
+          "escaped_cost_usd_per_hour": 17085.0,
+          "false_reject_cost_usd_per_hour": 1461.5941176470585,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 18546.59411764706
+        },
+        "gate_savings_usd_per_hour_vs_crc": 4522.112972147395,
+        "gate_cheaper": true
+      },
+      "high_volume_commodity": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 491.83405528052805,
+          "reviewer_fte_required": 1.0929645672900623,
+          "escaped_defects_per_hour": 229.10000000000005,
+          "false_rejects_per_hour": 88.72843137254904,
+          "escaped_cost_usd_per_hour": 5727.500000000001,
+          "false_reject_cost_usd_per_hour": 177.45686274509808,
+          "review_labor_cost_usd_per_hour": 28.41707874954162,
+          "total_cost_usd_per_hour": 5933.37394149464
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 284.75000000000006,
+          "false_rejects_per_hour": 487.1980392156862,
+          "escaped_cost_usd_per_hour": 7118.750000000002,
+          "false_reject_cost_usd_per_hour": 974.3960784313724,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 8093.146078431374
+        },
+        "gate_savings_usd_per_hour_vs_crc": 2159.7721369367337,
+        "gate_cheaper": true
+      }
+    },
+    "MVTec-AD": {
+      "low_volume_precision": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 54.35733079509109,
+          "reviewer_fte_required": 0.45297775662575906,
+          "escaped_defects_per_hour": 7.251383986879434,
+          "false_rejects_per_hour": 0.4559770114942529,
+          "escaped_cost_usd_per_hour": 36256.91993439717,
+          "false_reject_cost_usd_per_hour": 68.39655172413794,
+          "review_labor_cost_usd_per_hour": 20.383999048159158,
+          "total_cost_usd_per_hour": 36345.700485169466
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 8.547616221851536,
+          "false_rejects_per_hour": 3.05700783890439,
+          "escaped_cost_usd_per_hour": 42738.08110925768,
+          "false_reject_cost_usd_per_hour": 458.5511758356585,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 43196.632285093336
+        },
+        "gate_savings_usd_per_hour_vs_crc": 6850.93179992387,
+        "gate_cheaper": true
+      },
+      "mid_volume_general": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 326.1439847705465,
+          "reviewer_fte_required": 1.3589332698772771,
+          "escaped_defects_per_hour": 43.50830392127661,
+          "false_rejects_per_hour": 2.7358620689655173,
+          "escaped_cost_usd_per_hour": 13052.491176382982,
+          "false_reject_cost_usd_per_hour": 41.03793103448276,
+          "review_labor_cost_usd_per_hour": 40.767998096318316,
+          "total_cost_usd_per_hour": 13134.297105513784
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 51.28569733110922,
+          "false_rejects_per_hour": 18.34204703342634,
+          "escaped_cost_usd_per_hour": 15385.709199332765,
+          "false_reject_cost_usd_per_hour": 275.1307055013951,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 15660.83990483416
+        },
+        "gate_savings_usd_per_hour_vs_crc": 2526.5427993203757,
+        "gate_cheaper": true
+      },
+      "high_volume_commodity": {
+        "gate": {
+          "reviewer_workload_parts_per_hour": 1630.7199238527326,
+          "reviewer_fte_required": 3.6238220530060725,
+          "escaped_defects_per_hour": 217.54151960638302,
+          "false_rejects_per_hour": 13.679310344827586,
+          "escaped_cost_usd_per_hour": 5438.537990159575,
+          "false_reject_cost_usd_per_hour": 27.358620689655172,
+          "review_labor_cost_usd_per_hour": 94.21937337815788,
+          "total_cost_usd_per_hour": 5560.115984227388
+        },
+        "crc": {
+          "reviewer_workload_parts_per_hour": 0.0,
+          "reviewer_fte_required": 0.0,
+          "escaped_defects_per_hour": 256.4284866555461,
+          "false_rejects_per_hour": 91.7102351671317,
+          "escaped_cost_usd_per_hour": 6410.712166388653,
+          "false_reject_cost_usd_per_hour": 183.4204703342634,
+          "review_labor_cost_usd_per_hour": 0.0,
+          "total_cost_usd_per_hour": 6594.132636722916
+        },
+        "gate_savings_usd_per_hour_vs_crc": 1034.0166524955275,
+        "gate_cheaper": true
+      }
+    }
+  },
+  "breakeven_false_reject_cost_usd": {
+    "MPDD": {
+      "low_volume_precision": {
+        "breakeven_cost_per_false_reject_usd": 0.7437574688509216,
+        "scenario_assumed_cost_per_false_reject_usd": 150,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 75.62949261794199,
+        "scenario_actual_review_cost_per_part_usd": 0.375,
+        "review_cost_headroom_multiple": 201.67864698117864
+      },
+      "mid_volume_general": {
+        "breakeven_cost_per_false_reject_usd": 0.24791915628364053,
+        "scenario_assumed_cost_per_false_reject_usd": 15,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 7.562949261794199,
+        "scenario_actual_review_cost_per_part_usd": 0.125,
+        "review_cost_headroom_multiple": 60.503594094353595
+      },
+      "high_volume_commodity": {
+        "breakeven_cost_per_false_reject_usd": 0.11459374334888274,
+        "scenario_assumed_cost_per_false_reject_usd": 2,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 1.0083932349058933,
+        "scenario_actual_review_cost_per_part_usd": 0.057777777777777775,
+        "review_cost_headroom_multiple": 17.45295983490969
+      }
+    },
+    "VisA": {
+      "low_volume_precision": {
+        "breakeven_cost_per_false_reject_usd": -697.833804024356,
+        "scenario_assumed_cost_per_false_reject_usd": 150,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 687.2652219734426,
+        "scenario_actual_review_cost_per_part_usd": 0.375,
+        "review_cost_headroom_multiple": 1832.707258595847
+      },
+      "mid_volume_general": {
+        "breakeven_cost_per_false_reject_usd": -41.74351171504638,
+        "scenario_assumed_cost_per_false_reject_usd": 15,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 46.096938335666024,
+        "scenario_actual_review_cost_per_part_usd": 0.125,
+        "review_cost_headroom_multiple": 368.7755066853282
+      },
+      "high_volume_commodity": {
+        "breakeven_cost_per_false_reject_usd": -3.420167798059408,
+        "scenario_assumed_cost_per_false_reject_usd": 2,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 4.449039655129602,
+        "scenario_actual_review_cost_per_part_usd": 0.057777777777777775,
+        "review_cost_headroom_multiple": 77.00260941570465
+      }
+    },
+    "MVTec-AD": {
+      "low_volume_precision": {
+        "breakeven_cost_per_false_reject_usd": -2483.9294896959727,
+        "scenario_assumed_cost_per_false_reject_usd": 150,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 126.41010326416857,
+        "scenario_actual_review_cost_per_part_usd": 0.375,
+        "review_cost_headroom_multiple": 337.09360870444954
+      },
+      "mid_volume_general": {
+        "breakeven_cost_per_false_reject_usd": -146.89368542497397,
+        "scenario_assumed_cost_per_false_reject_usd": 15,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 7.871709788616486,
+        "scenario_actual_review_cost_per_part_usd": 0.125,
+        "review_cost_headroom_multiple": 62.97367830893189
+      },
+      "high_volume_commodity": {
+        "breakeven_cost_per_false_reject_usd": -11.251369951724161,
+        "scenario_assumed_cost_per_false_reject_usd": 2,
+        "gate_cheaper_at_assumed_cost": true,
+        "breakeven_review_cost_per_part_usd": 0.6918637648138372,
+        "scenario_actual_review_cost_per_part_usd": 0.057777777777777775,
+        "review_cost_headroom_multiple": 11.97456516023949
+      }
+    }
+  }
+}

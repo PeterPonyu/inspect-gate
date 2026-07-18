@@ -1,0 +1,528 @@
+{
+  "floors": {
+    "bottle": {
+      "n_cal_defect": 32,
+      "n_cal_good": 42,
+      "alpha_min_g1": 0.030303030303030304,
+      "alpha_min_g2": 0.023255813953488372,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "cable": {
+      "n_cal_defect": 46,
+      "n_cal_good": 45,
+      "alpha_min_g1": 0.02127659574468085,
+      "alpha_min_g2": 0.021739130434782608,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "capsule": {
+      "n_cal_defect": 54,
+      "n_cal_good": 44,
+      "alpha_min_g1": 0.01818181818181818,
+      "alpha_min_g2": 0.022222222222222223,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "carpet": {
+      "n_cal_defect": 44,
+      "n_cal_good": 56,
+      "alpha_min_g1": 0.022222222222222223,
+      "alpha_min_g2": 0.017543859649122806,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "grid": {
+      "n_cal_defect": 28,
+      "n_cal_good": 53,
+      "alpha_min_g1": 0.034482758620689655,
+      "alpha_min_g2": 0.018518518518518517,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "hazelnut": {
+      "n_cal_defect": 35,
+      "n_cal_good": 78,
+      "alpha_min_g1": 0.027777777777777776,
+      "alpha_min_g2": 0.012658227848101266,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "leather": {
+      "n_cal_defect": 46,
+      "n_cal_good": 16,
+      "alpha_min_g1": 0.02127659574468085,
+      "alpha_min_g2": 0.058823529411764705,
+      "g1_certified": true,
+      "g2_certified": false,
+      "g2_mode": "audited-not-certified"
+    },
+    "metal_nut": {
+      "n_cal_defect": 46,
+      "n_cal_good": 44,
+      "alpha_min_g1": 0.02127659574468085,
+      "alpha_min_g2": 0.022222222222222223,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "pill": {
+      "n_cal_defect": 70,
+      "n_cal_good": 53,
+      "alpha_min_g1": 0.014084507042253521,
+      "alpha_min_g2": 0.018518518518518517,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "screw": {
+      "n_cal_defect": 60,
+      "n_cal_good": 20,
+      "alpha_min_g1": 0.01639344262295082,
+      "alpha_min_g2": 0.047619047619047616,
+      "g1_certified": true,
+      "g2_certified": false,
+      "g2_mode": "audited-not-certified"
+    },
+    "tile": {
+      "n_cal_defect": 42,
+      "n_cal_good": 46,
+      "alpha_min_g1": 0.023255813953488372,
+      "alpha_min_g2": 0.02127659574468085,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "toothbrush": {
+      "n_cal_defect": 15,
+      "n_cal_good": 12,
+      "alpha_min_g1": 0.0625,
+      "alpha_min_g2": 0.07692307692307693,
+      "g1_certified": true,
+      "g2_certified": false,
+      "g2_mode": "train-holdout"
+    },
+    "transistor": {
+      "n_cal_defect": 20,
+      "n_cal_good": 43,
+      "alpha_min_g1": 0.047619047619047616,
+      "alpha_min_g2": 0.022727272727272728,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "wood": {
+      "n_cal_defect": 30,
+      "n_cal_good": 49,
+      "alpha_min_g1": 0.03225806451612903,
+      "alpha_min_g2": 0.02,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "zipper": {
+      "n_cal_defect": 60,
+      "n_cal_good": 48,
+      "alpha_min_g1": 0.01639344262295082,
+      "alpha_min_g2": 0.02040816326530612,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    }
+  },
+  "v1": {
+    "alpha_miss": 0.1,
+    "alpha_fr": 0.05,
+    "tolerance_pp": 0.03,
+    "confidence": 0.95,
+    "per_category": {
+      "bottle": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0032258064516129032,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 620,
+          "n_eval_good_total": 200,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0032258064516129032,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.010119384284199024,
+          "false_reject_ub_1sided": 0.014867039231272054,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.08780487804878048
+      },
+      "cable": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.075,
+          "mean_false_reject_rate": 0.032758620689655175,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 920,
+          "n_eval_good_total": 580,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.075,
+          "pooled_false_reject_rate": 0.032758620689655175,
+          "escaped_ub_1sided": 0.0908653227634632,
+          "false_reject_ub_1sided": 0.0476987843487544,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.03333333333333333
+      },
+      "capsule": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.09,
+          "mean_false_reject_rate": 0.031818181818181815,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 1100,
+          "n_eval_good_total": 220,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.09,
+          "pooled_false_reject_rate": 0.031818181818181815,
+          "escaped_ub_1sided": 0.10547613024594081,
+          "false_reject_ub_1sided": 0.05893088104413358,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.028030303030303027
+      },
+      "carpet": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.04444444444444445,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 900,
+          "n_eval_good_total": 280,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.044444444444444446,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.05746452503269675,
+          "false_reject_ub_1sided": 0.010642012638938061,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.37542372881355934
+      },
+      "grid": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.03275862068965517,
+          "mean_false_reject_rate": 0.06818181818181818,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 580,
+          "n_eval_good_total": 220,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.032758620689655175,
+          "pooled_false_reject_rate": 0.06818181818181818,
+          "escaped_ub_1sided": 0.0476987843487544,
+          "false_reject_ub_1sided": 0.10304784199423171,
+          "pass_escaped": true,
+          "pass_false_reject": false
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.03
+      },
+      "hazelnut": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 700,
+          "n_eval_good_total": 400,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.0042704730201890894,
+          "false_reject_ub_1sided": 0.007461355528799602,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.049090909090909095
+      },
+      "leather": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.07717391304347826,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 920,
+          "n_eval_good_total": 320,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.07717391304347826,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.09322117078122544,
+          "false_reject_ub_1sided": 0.009317979408884071,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.6846774193548388
+      },
+      "metal_nut": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.01276595744680851,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 940,
+          "n_eval_good_total": 220,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.01276595744680851,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.02060167936910906,
+          "false_reject_ub_1sided": 0.013524673398400562,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.0793103448275862
+      },
+      "pill": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.10352112676056338,
+          "mean_false_reject_rate": 0.03461538461538462,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 1420,
+          "n_eval_good_total": 260,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.10352112676056338,
+          "pooled_false_reject_rate": 0.03461538461538462,
+          "escaped_ub_1sided": 0.11778577416947236,
+          "false_reject_ub_1sided": 0.05962635642157573,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.1351190476190476
+      },
+      "screw": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.10084745762711864,
+          "mean_false_reject_rate": 0.1214285714285714,
+          "pass_escaped": true,
+          "pass_false_reject": false,
+          "pass_tier1": false
+        },
+        "tier2": {
+          "n_eval_def_total": 1180,
+          "n_eval_good_total": 420,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.10084745762711865,
+          "pooled_false_reject_rate": 0.12142857142857143,
+          "escaped_ub_1sided": 0.11643812608699385,
+          "false_reject_ub_1sided": 0.15084368636558598,
+          "pass_escaped": true,
+          "pass_false_reject": false
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.055625
+      },
+      "tile": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 840,
+          "n_eval_good_total": 340,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.003559996079106969,
+          "false_reject_ub_1sided": 0.008772274368443987,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.0745762711864407
+      },
+      "toothbrush": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.06666666666666667,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 300,
+          "n_eval_good_total": 120,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.06666666666666667,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.0954019763464509,
+          "false_reject_ub_1sided": 0.024655401055656376,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.7452380952380951
+      },
+      "transistor": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.05500000000000001,
+          "mean_false_reject_rate": 0.016666666666666666,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 400,
+          "n_eval_good_total": 600,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.055,
+          "pooled_false_reject_rate": 0.016666666666666666,
+          "escaped_ub_1sided": 0.07760800826856465,
+          "false_reject_ub_1sided": 0.02810635894210657,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.018
+      },
+      "wood": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.07500000000000001,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 600,
+          "n_eval_good_total": 180,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.075,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.09512950449178428,
+          "false_reject_ub_1sided": 0.016505228195662733,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.3782051282051282
+      },
+      "zipper": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.02542372881355932,
+          "mean_false_reject_rate": 0.053125,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 1180,
+          "n_eval_good_total": 320,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.025423728813559324,
+          "pooled_false_reject_rate": 0.053125,
+          "escaped_ub_1sided": 0.03432680833531675,
+          "false_reject_ub_1sided": 0.07862309585199512,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.22866666666666666
+      }
+    }
+  },
+  "k1": {
+    "n_violations": 0,
+    "n_cells": 15,
+    "max_violations": 5,
+    "k1_tripped": false
+  }
+}

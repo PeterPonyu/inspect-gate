@@ -1,0 +1,493 @@
+{
+  "patchcore": {
+    "per_seed_per_category_auroc": {
+      "0": {
+        "candle": 0.9713,
+        "capsules": 0.7516666666666667,
+        "cashew": 0.9586,
+        "chewinggum": 0.9914,
+        "fryum": 0.9534,
+        "macaroni1": 0.812,
+        "macaroni2": 0.665,
+        "pcb1": 0.9337,
+        "pcb2": 0.9245,
+        "pcb3": 0.9226732673267327,
+        "pcb4": 0.9858415841584158,
+        "pipe_fryum": 0.9942
+      },
+      "1": {
+        "candle": 0.9701,
+        "capsules": 0.7483333333333333,
+        "cashew": 0.9618,
+        "chewinggum": 0.9924,
+        "fryum": 0.9502,
+        "macaroni1": 0.8115,
+        "macaroni2": 0.6573,
+        "pcb1": 0.9312,
+        "pcb2": 0.9298,
+        "pcb3": 0.9277227722772278,
+        "pcb4": 0.9876237623762376,
+        "pipe_fryum": 0.995
+      },
+      "2": {
+        "candle": 0.9737,
+        "capsules": 0.7453333333333333,
+        "cashew": 0.9584,
+        "chewinggum": 0.9924,
+        "fryum": 0.9542,
+        "macaroni1": 0.8135,
+        "macaroni2": 0.656,
+        "pcb1": 0.9337,
+        "pcb2": 0.9237,
+        "pcb3": 0.9288118811881189,
+        "pcb4": 0.9859405940594059,
+        "pipe_fryum": 0.9936
+      },
+      "3": {
+        "candle": 0.9704,
+        "capsules": 0.723,
+        "cashew": 0.9626,
+        "chewinggum": 0.9918,
+        "fryum": 0.961,
+        "macaroni1": 0.8059,
+        "macaroni2": 0.6581,
+        "pcb1": 0.9331,
+        "pcb2": 0.9217,
+        "pcb3": 0.9327722772277228,
+        "pcb4": 0.9853465346534653,
+        "pipe_fryum": 0.9938
+      },
+      "4": {
+        "candle": 0.9751,
+        "capsules": 0.7695,
+        "cashew": 0.965,
+        "chewinggum": 0.993,
+        "fryum": 0.9538,
+        "macaroni1": 0.812,
+        "macaroni2": 0.6575,
+        "pcb1": 0.9354,
+        "pcb2": 0.9259,
+        "pcb3": 0.9306930693069307,
+        "pcb4": 0.987029702970297,
+        "pipe_fryum": 0.9948
+      }
+    },
+    "pairwise_seed0_diff": {
+      "candle_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07332026958465576
+      },
+      "candle_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09336507320404053
+      },
+      "candle_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09594744443893433
+      },
+      "candle_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09264552593231201
+      },
+      "capsules_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.13446277379989624
+      },
+      "capsules_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.15228933095932007
+      },
+      "capsules_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.12039422988891602
+      },
+      "capsules_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.14561259746551514
+      },
+      "cashew_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.05070233345031738
+      },
+      "cashew_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06409519910812378
+      },
+      "cashew_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06184673309326172
+      },
+      "cashew_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.04970961809158325
+      },
+      "chewinggum_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.0546535849571228
+      },
+      "chewinggum_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09398013353347778
+      },
+      "chewinggum_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07159256935119629
+      },
+      "chewinggum_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.17224323749542236
+      },
+      "fryum_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09846034646034241
+      },
+      "fryum_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.10403507947921753
+      },
+      "fryum_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.12217152118682861
+      },
+      "fryum_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09898090362548828
+      },
+      "macaroni1_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.13467425107955933
+      },
+      "macaroni1_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.12154412269592285
+      },
+      "macaroni1_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.1300690770149231
+      },
+      "macaroni1_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09500941634178162
+      },
+      "macaroni2_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.21742576360702515
+      },
+      "macaroni2_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.1818556785583496
+      },
+      "macaroni2_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.20796668529510498
+      },
+      "macaroni2_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.2564805746078491
+      },
+      "pcb1_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09004658460617065
+      },
+      "pcb1_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.1196470558643341
+      },
+      "pcb1_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.11098989844322205
+      },
+      "pcb1_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09230336546897888
+      },
+      "pcb2_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08839032053947449
+      },
+      "pcb2_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07992985844612122
+      },
+      "pcb2_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.04995614290237427
+      },
+      "pcb2_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07753711938858032
+      },
+      "pcb3_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.053049296140670776
+      },
+      "pcb3_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08177363872528076
+      },
+      "pcb3_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06733068823814392
+      },
+      "pcb3_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08345061540603638
+      },
+      "pcb4_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06713581085205078
+      },
+      "pcb4_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07214522361755371
+      },
+      "pcb4_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09014707803726196
+      },
+      "pcb4_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.04920127987861633
+      },
+      "pipe_fryum_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.0524078905582428
+      },
+      "pipe_fryum_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.04586511850357056
+      },
+      "pipe_fryum_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.05675119161605835
+      },
+      "pipe_fryum_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.04361462593078613
+      }
+    },
+    "n_bit_identical_pairs": 0,
+    "n_pairs_checked": 48
+  },
+  "dinomaly": {
+    "per_seed_per_category_auroc": {
+      "0": {
+        "candle": 0.9872,
+        "capsules": 0.9848333333333333,
+        "cashew": 0.987,
+        "chewinggum": 0.9972,
+        "fryum": 0.9872,
+        "macaroni1": 0.9819,
+        "macaroni2": 0.9557,
+        "pcb1": 0.9899,
+        "pcb2": 0.9917,
+        "pcb3": 0.9879207920792079,
+        "pcb4": 0.9977227722772277,
+        "pipe_fryum": 0.9926
+      },
+      "1": {
+        "candle": 0.9861,
+        "capsules": 0.9851666666666666,
+        "cashew": 0.9858,
+        "chewinggum": 0.9978,
+        "fryum": 0.9896,
+        "macaroni1": 0.9792,
+        "macaroni2": 0.9595,
+        "pcb1": 0.9893,
+        "pcb2": 0.9917,
+        "pcb3": 0.9902970297029703,
+        "pcb4": 0.9981188118811881,
+        "pipe_fryum": 0.9916
+      },
+      "2": {
+        "candle": 0.9869,
+        "capsules": 0.9825,
+        "cashew": 0.985,
+        "chewinggum": 0.9972,
+        "fryum": 0.9896,
+        "macaroni1": 0.9802,
+        "macaroni2": 0.9596,
+        "pcb1": 0.9895,
+        "pcb2": 0.9921,
+        "pcb3": 0.9882178217821782,
+        "pcb4": 0.9979207920792079,
+        "pipe_fryum": 0.9904
+      },
+      "3": {
+        "candle": 0.986,
+        "capsules": 0.9831666666666666,
+        "cashew": 0.9866,
+        "chewinggum": 0.9976,
+        "fryum": 0.987,
+        "macaroni1": 0.9809,
+        "macaroni2": 0.9661,
+        "pcb1": 0.9901,
+        "pcb2": 0.9932,
+        "pcb3": 0.9913861386138614,
+        "pcb4": 0.997029702970297,
+        "pipe_fryum": 0.9924
+      },
+      "4": {
+        "candle": 0.9854,
+        "capsules": 0.9858333333333333,
+        "cashew": 0.9854,
+        "chewinggum": 0.9968,
+        "fryum": 0.987,
+        "macaroni1": 0.9809,
+        "macaroni2": 0.9575,
+        "pcb1": 0.991,
+        "pcb2": 0.9915,
+        "pcb3": 0.9877227722772277,
+        "pcb4": 0.9976237623762376,
+        "pipe_fryum": 0.9954
+      }
+    },
+    "per_category_seed_spread": {
+      "candle": {
+        "mean": 0.9863200000000001,
+        "std": 0.0007259476565152374,
+        "min": 0.9854,
+        "max": 0.9872,
+        "range": 0.0017999999999999128
+      },
+      "capsules": {
+        "mean": 0.9843,
+        "std": 0.0014063348739819237,
+        "min": 0.9825,
+        "max": 0.9858333333333333,
+        "range": 0.0033333333333332993
+      },
+      "cashew": {
+        "mean": 0.9859600000000001,
+        "std": 0.0008294576541331057,
+        "min": 0.985,
+        "max": 0.987,
+        "range": 0.0020000000000000018
+      },
+      "chewinggum": {
+        "mean": 0.99732,
+        "std": 0.0003898717737923697,
+        "min": 0.9968,
+        "max": 0.9978,
+        "range": 0.0010000000000000009
+      },
+      "fryum": {
+        "mean": 0.9880800000000001,
+        "std": 0.0013899640283115534,
+        "min": 0.987,
+        "max": 0.9896,
+        "range": 0.0026000000000000467
+      },
+      "macaroni1": {
+        "mean": 0.98062,
+        "std": 0.0009984988733093454,
+        "min": 0.9792,
+        "max": 0.9819,
+        "range": 0.0027000000000000357
+      },
+      "macaroni2": {
+        "mean": 0.95968,
+        "std": 0.0039321749706746085,
+        "min": 0.9557,
+        "max": 0.9661,
+        "range": 0.010399999999999965
+      },
+      "pcb1": {
+        "mean": 0.98996,
+        "std": 0.0006618156843109703,
+        "min": 0.9893,
+        "max": 0.991,
+        "range": 0.0017000000000000348
+      },
+      "pcb2": {
+        "mean": 0.99204,
+        "std": 0.0006841052550594545,
+        "min": 0.9915,
+        "max": 0.9932,
+        "range": 0.0016999999999999238
+      },
+      "pcb3": {
+        "mean": 0.989108910891089,
+        "std": 0.0016374094463902221,
+        "min": 0.9877227722772277,
+        "max": 0.9913861386138614,
+        "range": 0.0036633663366336666
+      },
+      "pcb4": {
+        "mean": 0.9976831683168317,
+        "std": 0.0004118145414472364,
+        "min": 0.997029702970297,
+        "max": 0.9981188118811881,
+        "range": 0.00108910891089109
+      },
+      "pipe_fryum": {
+        "mean": 0.9924799999999999,
+        "std": 0.0018471599822430034,
+        "min": 0.9904,
+        "max": 0.9954,
+        "range": 0.0050000000000000044
+      }
+    },
+    "mean_iauroc_across_seeds": {
+      "values": [
+        0.9867397414741474,
+        0.987015209020902,
+        0.9865948844884489,
+        0.9876235423542354,
+        0.9868399889988999
+      ],
+      "mean": 0.9869626732673268,
+      "std": 0.0003998520212007424,
+      "min": 0.9865948844884489,
+      "max": 0.9876235423542354
+    }
+  }
+}
