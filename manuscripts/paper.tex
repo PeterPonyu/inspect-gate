@@ -1186,28 +1186,10 @@ in all five backbone seeds (Section~\ref{sec:c2}).
 
 \section*{Data and code availability}
 MVTec AD~\citep{bergmann2019mvtec}, VisA~\citep{zou2022spot}, and
-MPDD~\citep{jezek2021mpdd} (staged from the credential-free HuggingFace mirror
-\texttt{meksamiao/mpdd}, archive sha256 \texttt{69f8da73\ldots ddd6} recorded in the frozen split
-manifest) are public benchmarks. The frozen analysis pipeline that produced every reported number
---- separate MVTec AD, G2-promotion, VisA, and MPDD (primary + train-holdout) analysis stages, each
-reading only the local score dumps and emitting a frozen result summary --- together with those
-score dumps, the frozen preregistration, and its sha256-pinned sign-off, will be archived with the
-code below. The gate is implemented in \emph{inspect-gate}, a thin wrapper over the project's
-reliability metrics library. Per Springer Nature's code-sharing policy (a bare repository link does
-not by itself carry a permanent identifier), the source will be maintained on GitHub as the
-development mirror and archived on Zenodo under a persistent DOI at submission.
-\todo{GitHub repository URL and Zenodo DOI for the frozen score dumps, analysis code, and
-preregistration archive (user credentials/deposit pending).}
-% code-archive policy: docs/records/CODE-ARCHIVE-POLICY-2026-07-16.md (JIM row: GitHub alone
-% insufficient per Springer Nature's live code policy; pair with Zenodo/Code Ocean DOI)
-% archive contents:
-%   analysis_2026-07-10/ (scripts/run_analysis.py -> SUMMARY.json, ANALYSIS-MEMO.md; MVTec AD)
-%   g2_promotion_2026-07-12/ (run_g2_promotion.py -> G2-PROMOTION-RESULT.json)
-%   visa_results_2026-07-12/ (scripts/visa_adapter.py + run_visa_analysis.py -> SUMMARY.json, MVTEC-VS-VISA.md)
-%   mpdd_results_2026-07-13/ (run_mpdd_analysis.py -> SUMMARY.json; run_mpdd_holdout_analysis.py -> HOLDOUT-RESULTS.json)
-% score dumps: fullscore_results_2026-07-10/, dinomaly_brancha_2026-07-10/canonical/,
-%   holdout_results_2026-07-10/, and the 2026-07-12 VisA pull
-% preregistration: PREREG-DRAFT-2026-07-10.md (frozen 2026-07-11)
+MPDD~\citep{jezek2021mpdd} are publicly available benchmarks. Code and supporting materials
+for this study are archived at Zenodo (concept DOI:
+\href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}};
+version~0.4.1) and maintained at \url{https://github.com/PeterPonyu/inspect-gate}.
 
 \bibliographystyle{plainnat}
 \bibliography{refs}

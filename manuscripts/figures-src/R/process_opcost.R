@@ -135,26 +135,26 @@ for (hb in HBENCH) {
             hb$color, hb$mark, paste(coords, collapse = " ")),
     sprintf("\\addlegendentry{%s}", hb$label))
 }
-# Annotate every point (compact). Offset labels horizontally by series so the
-# three benchmarks' multiplier labels never stack on the curves/each other:
-# VisA (top) label above-right, MVTec-AD (mid) below-right, MPDD (bottom)
-# below-left. Anchored so the TEXT EXTENT clears the marker. 2026-08-07 fix.
+# Annotate every point. All labels sit ABOVE their markers so the high-vol
+# floor (~12x / ~17x) never drops onto the bottom spine (ymin=0.35 in
+# fig-opcost.tex; break-even dashed line at y=1 is above the axis). Series
+# are staggered horizontally; the last column flips inward. 2026-08-09 fix.
 for (hb in HBENCH) {
   for (si in seq_along(SCEN)) {
     row <- headroom_df[headroom_df$benchmark == hb$key & headroom_df$scenario == SCEN[si], ]
     val <- round(row$headroom_multiple)
     if (hb$key == "VisA") { xoff <- 0.10; yfac <- 1.55; anch <- "west" }
-    else if (hb$key == "MVTec-AD") { xoff <- 0.12; yfac <- 1.42; anch <- "west" }
-    else { xoff <- -0.12; yfac <- 0.60; anch <- "east" }
-    # MPDD first point sits on the y-axis; put its label to the RIGHT (below the
-    # marker) so it does not collide with the "10^2" y-tick. 2026-08-07 fix.
-    if (hb$key == "MPDD" && si == 1L) { xoff <- 0.10; anch <- "west"; yfac <- 0.55 }
-    # keep end-of-line labels inside the axis: flip the last point inward and
-    # separate the MVTec/MPDD labels vertically so they don't collide at the tail
+    else if (hb$key == "MVTec-AD") { xoff <- 0.12; yfac <- 1.48; anch <- "west" }
+    else { xoff <- -0.10; yfac <- 1.42; anch <- "east" }
+    # MPDD first point is near the y-axis / panel letter: label above-right.
+    if (hb$key == "MPDD" && si == 1L) { xoff <- 0.12; anch <- "west"; yfac <- 1.40 }
+    # End-of-line: keep labels inside the axis (inward) and well above markers
+    # so the high-vol floor (~12x / ~17x) never reads as sitting on the spine
+    # or the y=1 guide; stagger MPDD / MVTec vertically.
     if (si == length(SCEN)) {
-      if (hb$key == "VisA") { xoff <- -0.10; anch <- "east"; yfac <- 1.5 }
-      else if (hb$key == "MVTec-AD") { xoff <- -0.10; anch <- "east"; yfac <- 1.7 }
-      else { xoff <- -0.10; anch <- "east"; yfac <- 0.55 }
+      if (hb$key == "VisA") { xoff <- -0.10; anch <- "east"; yfac <- 1.55 }
+      else if (hb$key == "MVTec-AD") { xoff <- 0.10; anch <- "west"; yfac <- 2.10 }
+      else { xoff <- -0.10; anch <- "east"; yfac <- 2.40 }
     }
     panel_b <- c(panel_b, sprintf(
       "\\node[font=\\fontsize{7}{8}\\selectfont, anchor=%s] at (axis cs:%s,%s) {%dx};",
@@ -162,11 +162,10 @@ for (hb in HBENCH) {
     ))
   }
 }
-panel_b <- c(panel_b,
-  "\\draw[black, dashed, line width=1pt] (axis cs:-0.2,1) -- (axis cs:2.2,1);")
-# (No in-figure "break-even" text: the caption states "break-even at 1x" and the
-# dashed y=1 line is self-evident on the log axis; an in-panel label collided
-# with the x-tick labels. 2026-08-07 fix.)
+# Break-even at 1x is the 10^0 y-tick (ymin<1). No full-width dashed guide:
+# when ymin was 1 the guide sat on the spine; a floating guide near the floor
+# also read as a second axis under the high-vol points. Caption states
+# "break-even at 1x". 2026-08-09.
 writeLines(panel_b, file.path(TEX_DIR, "opcost-panel-b.tex"), useBytes = TRUE)
 
 # Panel c: 4 methods × 3 benches at mid-vol (x = 0,1,2)

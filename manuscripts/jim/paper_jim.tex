@@ -54,8 +54,18 @@
 % and between floats removes dead white space on a page that is all floats).
 \makeatletter
 \setlength{\@fptop}{0pt}
-\setlength{\@fpsep}{12pt plus 0fil}
+\setlength{\@fpsep}{8pt plus 0fil}
+\setlength{\@fpbot}{0pt}
 \makeatother
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.70}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.65}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{2pt}
 
 % Neutralised in the submission port: all \todo disclosures were inlined into
 % Limitations as prose. This definition is a safety net so a stray \todo, if
@@ -1242,32 +1252,15 @@ non-financial interests to disclose.''}
 (MVTec AD, VisA, and MPDD) and involves no human participants, animal subjects, or personally
 identifiable data.
 
-\paragraph{Data availability.} All three benchmarks are public: MVTec AD~\citep{bergmann2019mvtec},
-VisA~\citep{zou2022spot}, and MPDD~\citep{jezek2021mpdd} (staged from the credential-free
-HuggingFace mirror \texttt{meksamiao/mpdd}, archive sha256 \texttt{69f8da73\ldots ddd6} recorded in
-the frozen split manifest). The frozen analyses that produced every reported number read only local
-score dumps and are archived together with those dumps, the frozen preregistration, and its
-sha256-pinned sign-off record. \userfill{a Zenodo DOI for the frozen score dumps and
-analysis archive will be minted at submission under the author's deposit credentials.}
-% archived score dumps: fullscore_results_2026-07-10/, dinomaly_brancha_2026-07-10/canonical/,
-%   holdout_results_2026-07-10/, and the 2026-07-12 VisA pull
-% analysis stages: analysis_2026-07-10/ -> SUMMARY.json (+ANALYSIS-MEMO.md; MVTec AD),
-%   g2_promotion_2026-07-12/ -> G2-PROMOTION-RESULT.json,
-%   visa_results_2026-07-12/ -> SUMMARY.json (+MVTEC-VS-VISA.md)
-% preregistration PREREG-DRAFT-2026-07-10.md frozen 2026-07-11 (SIGN-OFF-RECORD-2026-07-11.md)
+\paragraph{Data availability.}
+MVTec AD~\citep{bergmann2019mvtec}, VisA~\citep{zou2022spot}, and
+MPDD~\citep{jezek2021mpdd} are publicly available benchmarks. Code and supporting materials
+for this study are archived at Zenodo (concept DOI:
+\href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}};
+version~0.4.1) and maintained at \url{https://github.com/PeterPonyu/inspect-gate}.
 
-\paragraph{Code availability.} The gate is implemented in \emph{inspect-gate}, a thin wrapper
-over the project's reliability metrics library; the frozen MVTec AD, G2-promotion, and VisA
-analysis scripts that regenerate every reported summary are archived with the code. Per Springer
-Nature's code-sharing policy, a bare repository link does not by itself carry a permanent
-identifier, so the source will be maintained on GitHub as the development mirror and archived on
-Zenodo under a persistent DOI. \userfill{GitHub repository URL, Zenodo DOI, and open-source
-license to be provided at submission.}
-% analysis scripts: analysis_2026-07-10/scripts/run_analysis.py -> SUMMARY.json;
-%   g2_promotion_2026-07-12/run_g2_promotion.py -> G2-PROMOTION-RESULT.json;
-%   visa_results_2026-07-12/scripts/visa_adapter.py + run_visa_analysis.py -> SUMMARY.json, MVTEC-VS-VISA.md
-% code-archive policy: docs/records/CODE-ARCHIVE-POLICY-2026-07-16.md (JIM row: GitHub alone
-% insufficient per Springer Nature's live code policy; pair with Zenodo/Code Ocean DOI)
+\paragraph{Code availability.}
+Source code is available at the Zenodo record and GitHub repository cited under Data availability.
 
 \paragraph{Author contributions.} \userfill{e.g., ``Z.F. conceived the method, implemented the
 gate and analysis, and wrote the manuscript.'' Adjust to the final author list.}

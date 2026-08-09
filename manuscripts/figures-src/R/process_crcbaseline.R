@@ -162,8 +162,11 @@ for (bb in c("patchcore", "dinomaly")) {
 pb_lines <- c(pb_lines,
   sprintf("\\draw[gray, dashed, line width=0.9pt] (axis cs:0,%s) -- (axis cs:1.02,%s);",
           fmt4(alpha_fr), fmt4(alpha_fr)),
-  # Park under the α_fr line on the right (Dinomaly still low there).
-  sprintf("\\node[anchor=north east, font=\\fontsize{8}{9}\\selectfont, text=gray!60!black] at (axis cs:0.98,%s) {$\\alpha_{\\mathrm{fr}}=%.0f\\%%$};",
+  # Outside the right spine: in-axis NE sits on Dinomaly (cov≈1 risk>5%) and
+  # under-line placement collides with the selective-risk series.
+  sprintf(paste0("\\node[anchor=west, font=\\fontsize{8}{9}\\selectfont,",
+                 " text=gray!60!black] at (axis cs:1.05,%s)",
+                 " {$\\alpha_{\\mathrm{fr}}=%.0f\\%%$};"),
           fmt4(alpha_fr), alpha_fr))
 writeLines(pb_lines, file.path(TEX_DIR, "crcbaseline-panel-b.tex"), useBytes=TRUE)
 

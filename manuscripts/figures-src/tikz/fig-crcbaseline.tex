@@ -2,9 +2,9 @@
 % Data: R/crcbaseline_panel_[abc].csv → out/crcbaseline-panel-[abc].tex
 %
 % Chrome (axis-relative), shared:
-%   legend @ 1.28  — horizontal row, clear of the title/letter row
-%   title  @ 1.02  — tight to the axis top (b/c); panel letters sit on this
-%                    same row in the left gutter so they never meet the legend
+%   legend @ 1.14  — just above the title row / axis north
+%   title  @ 1.02  — tight to the axis top; panel letters on this row
+%                    in the left gutter so they never meet the legend
 \documentclass[border=2pt]{standalone}
 \input{inspect_style.tex}
 
@@ -27,7 +27,7 @@
   },
   crc/legend above/.style={
     legend style={
-      at={(0.5,1.30)}, anchor=south,
+      at={(0.5,1.14)}, anchor=south,
       legend columns=-1, font=\tickfont, draw=none,
       fill=white, fill opacity=0.92, text opacity=1,
       inner sep=1.5pt, /tikz/every even column/.append style={column sep=7pt},
@@ -35,7 +35,7 @@
   },
 }
 
-% Panel a: dot strip (gate hollow / CRC filled) — legend only, no title
+% Panel a: gate (hollow) vs CRC (filled) rates — title matches caption intent.
 \begin{axis}[
   inspect default,
   name=axa, width=1.75in, height=2.55in, at={(0.50in,0)},
@@ -43,14 +43,16 @@
   xlabel={rate (\%)},
   ytick={0,1,2}, yticklabels={MPDD, VisA, MVTec},
   ymajorgrids, grid style={gray!15},
+  crc/title near axis,
   crc/legend above,
+  title={gate vs.\ CRC rates},
   clip=false,
 ]
 \input{../out/crcbaseline-panel-a.tex}
 \end{axis}
 \crclabel{axa}{a}
 
-% Panel b: VisA selective-prediction risk-at-coverage
+% Panel b: selective risk-at-coverage on VisA (not “VisA” alone).
 \begin{axis}[
   inspect default,
   name=axb, width=1.55in, height=2.55in, at={(2.58in,0)},
@@ -59,14 +61,14 @@
   ylabel={selective risk (\%)},
   crc/title near axis,
   crc/legend above,
-  title={VisA},
+  title={risk--coverage (VisA)},
+  clip=false,
 ]
 \input{../out/crcbaseline-panel-b.tex}
 \end{axis}
 \crclabel{axb}{b}
 
-% Panel c: G2 certified per-backbone bars
-% Short title shares the title row with the panel letter (letter in left gutter).
+% Panel c: bars = dual-gate G2 cert.\ per backbone; dashed ticks at 0 = CRC.
 \begin{axis}[
   inspect default,
   name=axc, width=1.55in, height=2.55in, at={(4.55in,0)},
@@ -75,10 +77,9 @@
   xtick={0,1,2}, xticklabels={MPDD, VisA, MVTec},
   x tick label style={font=\tickfont, rotate=45, anchor=north east},
   ybar=2pt, bar width=5pt,
-  % Title shares the 1.02 row with the letter but is nudged right to clear it.
-  title style={at={(0.62,1.02)}, anchor=south, font=\titlefont},
+  crc/title near axis,
   crc/legend above,
-  title={CRC: 0 certified},
+  title={gate G2 certified},
   clip=false,
 ]
 \input{../out/crcbaseline-panel-c.tex}

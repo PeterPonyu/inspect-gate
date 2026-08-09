@@ -13,13 +13,14 @@
 
 \begin{tikzpicture}[font=\figfont]
 
-% Compact 2x2 gutter (~0.35in between top-bottom axis boxes).
+% Tall 2x2: ~1.2in axis-box gutter so panel-a slanted xticks + xlabel
+% clear panel-c title/legend chrome. Tops of a/b aligned.
 
 % Panel a: certification rates (grouped bars)
 \begin{axis}[
   inspect default,
   name=ax_a,
-  width=2.60in, height=1.88in, at={(0.58in,2.05in)},
+  width=2.60in, height=1.92in, at={(0.58in,3.05in)},
   ybar=2pt,
   bar width=0.13in,
   xlabel={benchmark + direction},
@@ -48,7 +49,7 @@
 \begin{axis}[
   inspect default,
   name=ax_b,
-  width=2.60in, height=2.00in, at={(3.72in,1.93in)},
+  width=2.60in, height=2.04in, at={(3.72in,2.93in)},
   xlabel={violation count},
   ylabel={transfer direction},
   xmin=0, xmax=2.55,
@@ -76,7 +77,7 @@
 \begin{axis}[
   inspect default,
   name=ax_c,
-  width=2.60in, height=1.68in, at={(0.58in,0.10in)},
+  width=2.60in, height=1.72in, at={(0.58in,0.10in)},
   xmin=-0.5, xmax=2.5,
   ymin=-0.02, ymax=1.10,
   xlabel={benchmark},
@@ -92,10 +93,10 @@
 \input{../out/xdet-panel-c.tex}
 \end{axis}
 \panellabel{ax_c}{c}
-% Horizontal PC/DM key flush above the NE frame — stays inside panel c
-% footprint (no spill into panel d), clear of letter c on the NW.
+% PC/DM key ABOVE the centered title with ~24pt clear gap (title sits
+% ~11pt above spine) — inside panel-c footprint, clear of letter c.
 \node[anchor=south east, font=\tickfont, inner sep=1pt]
-  at ([yshift=11pt] ax_c.north east)
+  at ([yshift=36pt] ax_c.north east)
   {{\color{cPatchcore}$\bullet$}~PC\quad{\color{cDinomaly}\rule[0.1ex]{1.1ex}{1.1ex}}~DM};
 
 
@@ -105,7 +106,7 @@
 \begin{axis}[
   inspect default,
   name=ax_d,
-  width=2.60in, height=1.68in, at={(3.72in,0.10in)},
+  width=2.60in, height=1.72in, at={(3.72in,0.10in)},
   xmin=-20, xmax=110,
   ymin=-14, ymax=110,
   xlabel={escaped-defect shift (pp)},

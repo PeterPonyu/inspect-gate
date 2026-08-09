@@ -6,12 +6,6 @@
 \begin{document}
 \begin{tikzpicture}[font=\figfont]
 
-% Shared legend above the grid, parked just above panel titles.
-\node[anchor=south, font=\fontsize{9.5}{11}\selectfont] (leg) at (2.97in,6.18in) {%
-  {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
-  {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%
-};
-
 % ── MVTec-AD ────────────────────────────────────────────────────────────────
 \begin{axis}[
   inspect default,
@@ -50,6 +44,14 @@
 \input{../out/alphafrontier-mvtecad-cert.tex}
 \end{axis}
 \panellabel{ax_mvtec_c}{b}
+
+% Shared legend on the a/b centerline, just above the top-row titles.
+\path (ax_mvtec_d.north) -- (ax_mvtec_c.north)
+  coordinate[pos=0.5, yshift=0.26in] (legpos);
+\node[anchor=south, font=\fontsize{9.5}{11}\selectfont] (leg) at (legpos) {%
+  {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
+  {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%
+};
 
 
 % ── VisA ────────────────────────────────────────────────────────────────────

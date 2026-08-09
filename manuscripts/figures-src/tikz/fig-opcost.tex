@@ -1,18 +1,49 @@
 % fig-opcost: deployment economics (2x2)
 % Data: R/opcost_*.csv → out/opcost-panel-[a-d].tex
+%
+% Layout (2026-08-09):
+%   - Equal panel heights; compact row gutter (no above-plot multi-row legends
+%     eating the a/b–c/d gap).
+%   - Titles near the top spine; a/b legends one-row above (SE); c legend
+%     inside NW (log headroom).
+%   - Panel a group names inside, above the x-spine.
+%   - Panel b: ymin=0.1 so high-vol floor clears the spine (break-even at
+%     10^0 is a y-tick only — no full-width guide on the floor); labels above
+%     markers.
 \documentclass[border=2pt]{standalone}
 \input{inspect_style.tex}
 
 \definecolor{cGate}{HTML}{0072B2}
 \definecolor{cBase}{HTML}{D55E00}
 
+\newcommand{\opcostlabel}[2]{%
+  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
+    at ([xshift=-16pt, yshift=5pt] #1.north west) {\textbf{#2}};%
+}
+
 \begin{document}
 \begin{tikzpicture}[font=\figfont]
+
+\pgfplotsset{
+  opcost/title near/.style={
+    title style={at={(0.5,1.02)}, anchor=south, font=\titlefont},
+  },
+  % Title @1.02; legend higher @1.24 SE so the two never share a baseline.
+  opcost/legend above se/.style={
+    legend style={
+      at={(1.0,1.24)}, anchor=south east,
+      font=\tickfont, draw=none, fill=none, inner sep=0.8pt,
+      /tikz/every even column/.append style={column sep=4pt},
+    },
+  },
+}
 
 % Panel a: total cost grid
 \begin{axis}[
   inspect default,
-  name=axa, width=2.35in, height=1.85in, at={(0.42in,2.85in)},
+  opcost/title near,
+  opcost/legend above se,
+  name=axa, width=2.42in, height=1.70in, at={(0.50in,1.88in)},
   ymode=log, ymin=800, ymax=250000,
   ylabel={total cost (USD/hr, log)},
   xtick={0,1,2,3,4,5,6,7,8},
@@ -20,45 +51,45 @@
   x tick label style={font=\tickfont, rotate=45, anchor=north east},
   ybar=0.8pt, bar width=4.5pt,
   enlarge x limits=0.06,
-  % Horizontal legend above the plot box so it never collides with panel letter a.
-  legend style={at={(0.5,1.08)}, anchor=south, legend columns=2, font=\tickfont, draw=none,
-    /tikz/every even column/.append style={column sep=6pt}},
+  legend columns=2,
   title={total hourly cost},
-  title style={yshift=11pt},
 ]
 \input{../out/opcost-panel-a.tex}
+\node[font=\tickfont, anchor=south] at (axis cs:1, 950) {MPDD};
+\node[font=\tickfont, anchor=south] at (axis cs:4, 950) {VisA};
+\node[font=\tickfont, anchor=south] at (axis cs:7, 950) {MVTec-AD};
 \end{axis}
-% Benchmark group labels below the rotated low/mid/high ticks. below=30pt so
-% the group name clears the 45-deg rotated tick TEXT extent. 2026-08-07 fix.
-\path (axa.south west) -- (axa.south east)
-  node[pos=0.16, below=30pt, font=\tickfont] {MPDD}
-  node[pos=0.50, below=30pt, font=\tickfont] {VisA}
-  node[pos=0.84, below=30pt, font=\tickfont] {MVTec-AD};
-\panellabel{axa}{a}
+\opcostlabel{axa}{a}
 
-% Panel b: headroom (taller axis + tighter title/legend pad to cut whitespace)
+% Panel b: review-cost headroom
 \begin{axis}[
   inspect default,
-  name=axb, width=2.35in, height=2.15in, at={(3.15in,2.70in)},
-  ymode=log, ymin=1, ymax=5000,
+  opcost/title near,
+  opcost/legend above se,
+  name=axb, width=2.42in, height=1.70in, at={(3.26in,1.88in)},
+  ymode=log, ymin=0.1, ymax=4000,
   ylabel={review-cost headroom (x, log)},
   xtick={0,1,2},
-  xticklabels={low-vol\\precision, mid-vol\\general, high-vol\\commodity},
-  x tick label style={font=\tickfont, align=center},
-  legend style={at={(0.5,1.06)}, anchor=south, font=\tickfont, draw=none, legend columns=3,
-    /tikz/every even column/.append style={column sep=5pt}},
+  xticklabels={low-vol, mid-vol, high-vol},
+  x tick label style={font=\tickfont},
+  legend columns=3,
   title={review-cost headroom},
-  title style={yshift=8pt},
   clip=false,
 ]
 \input{../out/opcost-panel-b.tex}
 \end{axis}
-\panellabel{axb}{b}
+% Scenario subtitles under the compact tick labels (one line, clears gutter).
+\path (axb.south west) -- (axb.south east)
+  node[pos=0.16, below=9pt, font=\fontsize{6}{7}\selectfont, text=black!70] {precision}
+  node[pos=0.50, below=9pt, font=\fontsize{6}{7}\selectfont, text=black!70] {general}
+  node[pos=0.84, below=9pt, font=\fontsize{6}{7}\selectfont, text=black!70] {commodity};
+\opcostlabel{axb}{b}
 
 % Panel c: four-method mid-vol
 \begin{axis}[
   inspect default,
-  name=axc, width=2.35in, height=1.85in, at={(0.42in,0)},
+  opcost/title near,
+  name=axc, width=2.42in, height=1.70in, at={(0.50in,0.04in)},
   ymode=log, ymin=40, ymax=80000,
   xmin=-0.55, xmax=2.55,
   ylabel={USD/hr (log, mid-vol.)},
@@ -67,24 +98,22 @@
   x tick label style={font=\tickfont},
   ybar=0pt, bar width=3.2pt,
   bar shift auto=false,
-  legend style={at={(0.5,1.10)}, anchor=south, legend columns=2, font=\tickfont, draw=none,
-    /tikz/every even column/.append style={column sep=6pt}},
+  % One-row legend above (not 2x2 in the row gutter / not over bars).
+  legend style={at={(0.5,1.14)}, anchor=south, legend columns=4, font=\tickfont,
+    draw=none, fill=none, inner sep=0.6pt,
+    /tikz/every even column/.append style={column sep=3pt}},
   title={four-method mid-vol.\ cost},
-  title style={at={(0.5,1.28)}, anchor=south, font=\titlefont},
   clip=true,
 ]
 \input{../out/opcost-panel-c.tex}
 \end{axis}
-\panellabel{axc}{c}
+\opcostlabel{axc}{c}
 
 % Panel d: routing latency on a μs log axis.
-% Root cause of the collapsed panel: ymode=log ybar defaults to log origin at y=1,
-% while values spanned 0.003–19 ms — bars grew from 1 instead of the axis floor.
-% Plotting in μs with ymin=1 keeps every bar above the log origin so they grow
-% from the baseline (same pattern as panels a/c where all values ≫ 1).
 \begin{axis}[
   inspect default,
-  name=axd, width=2.35in, height=1.85in, at={(3.15in,0)},
+  opcost/title near,
+  name=axd, width=2.42in, height=1.70in, at={(3.26in,0.04in)},
   ymode=log, ymin=1, ymax=100000,
   ytick={1,10,100,1000,10000},
   ylabel={$\mu$s per image (lower=faster)},
@@ -99,7 +128,7 @@
 ]
 \input{../out/opcost-panel-d.tex}
 \end{axis}
-\panellabel{axd}{d}
+\opcostlabel{axd}{d}
 
 \end{tikzpicture}
 \end{document}
