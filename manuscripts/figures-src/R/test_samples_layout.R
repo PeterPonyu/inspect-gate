@@ -14,7 +14,8 @@ required <- c(
   "zoom_padding_in", "zoom_offset_x_npc", "zoom_offset_y_npc",
   "zoom_label", "zoom_label_fontsize_pt", "zoom_label_offset_y_npc",
   "column_x", "label_x", "label_text_x", "panel_letter_offset_y",
-  "label_text_offset_y"
+  "label_text_offset_y", "panel_letter_fontsize_pt", "label_text_fontsize_pt",
+  "panel_letter_gap_after_title_in", "panel_letter_tile_clearance_in"
 )
 missing <- required[!vapply(required, exists, logical(1), envir = layout_env, inherits = FALSE)]
 if (length(missing)) {
@@ -63,36 +64,39 @@ if (label_clearance_from_tile_bottom + 1e-9 < 0) {
   ))
 }
 
-# Widest row annotation must clear the AUTO-PASS tile left edge.
-# Empirical width of "MPDD - defect" at 8.2 pt bold Latin Modern ≈ 0.95 in.
+# Widest row title + enlarged panel letter at its top-right must clear the
+# AUTO-PASS tile left edge. Empirical "MPDD - defect" @ 8.2 pt bold ≈ 0.95 in;
+# panel letter @ 11.5 pt bold ≈ 0.12 in.
 widest_label_in <- 0.95
+letter_w_in <- 0.22  # "(d)" @ ~12.5 pt bold
 tile_left_in <- column_x[[1]] * canvas_width_in - half_tile
-label_right_in <- label_text_x * canvas_width_in + widest_label_in
-label_tile_gap <- tile_left_in - label_right_in
-min_label_gap_in <- 0.04
+title_right_in <- label_text_x * canvas_width_in + widest_label_in
+letter_right_in <- title_right_in + panel_letter_gap_after_title_in + letter_w_in
+label_tile_gap <- tile_left_in - letter_right_in
+min_label_gap_in <- panel_letter_tile_clearance_in
 if (label_tile_gap + 1e-9 < min_label_gap_in) {
   stop(sprintf(
-    "FAIL: row label collides with AUTO-PASS tile (gap %.4f in; required %.4f in)",
+    "FAIL: title+panel-letter collides with AUTO-PASS tile (gap %.4f in; required %.4f in)",
     label_tile_gap, min_label_gap_in
-  ))
-}
-if (label_text_x + 1e-9 < label_x) {
-  stop(sprintf(
-    "FAIL: row annotation x (%.4f) must sit to the right of panel letter x (%.4f)",
-    label_text_x, label_x
   ))
 }
 if (panel_letter_offset_y + 1e-9 < label_text_offset_y) {
   stop(sprintf(
-    "FAIL: panel letter offset (%.4f) must sit above annotation offset (%.4f)",
+    "FAIL: panel letter offset (%.4f) must sit above title offset (%.4f)",
     panel_letter_offset_y, label_text_offset_y
+  ))
+}
+if (panel_letter_fontsize_pt + 1e-9 < label_text_fontsize_pt) {
+  stop(sprintf(
+    "FAIL: panel letter (%.1f pt) must be larger than title (%.1f pt)",
+    panel_letter_fontsize_pt, label_text_fontsize_pt
   ))
 }
 
 cat(sprintf(
   paste0(
     "PASS: zoom contained (%.3f in pad); GT label below inset; ",
-    "row-label/tile gap %.3f in\n"
+    "title+letter/tile gap %.3f in\n"
   ),
   zoom_padding_in, label_tile_gap
 ))

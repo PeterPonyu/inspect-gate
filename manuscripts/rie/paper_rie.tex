@@ -26,7 +26,8 @@
 % and between floats removes dead white space on a page that is all floats).
 \makeatletter
 \setlength{\@fptop}{0pt}
-\setlength{\@fpsep}{12pt plus 0fil}
+\setlength{\@fpsep}{8pt plus 0fil}
+\setlength{\@fpbot}{0pt}
 \makeatother
 % Standard float-fraction retuning (TeX FAQ remedy for "float pushed entirely
 % to the next page, stranding the current page as a near-empty block"):
@@ -35,11 +36,17 @@
 % CURRENT page when it fits there, instead of forcing a page break that
 % leaves the preceding text page mostly blank; lowering \textfraction and
 % \floatpagefraction admits the same floats without requiring a fuller page.
-% No content, size, or float placement specifier is changed by this block.
-\renewcommand{\topfraction}{0.85}
-\renewcommand{\bottomfraction}{0.65}
-\renewcommand{\textfraction}{0.10}
-\renewcommand{\floatpagefraction}{0.70}
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.70}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.65}
+% Slightly tighter float/caption gaps (still within elsarticle norms) so
+% mid-height figures leave room for following text instead of orphaning it.
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{2pt}
 % elsarticle loads natbib itself; the numbered elsarticle-num style below
 % renders \citep/\citet as bracketed numbers.
 \usepackage[hidelinks]{hyperref}
@@ -1344,7 +1351,7 @@ gate holds it, at the annotated deferral price.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{figures/fig-binding-escaped.pdf}
+\includegraphics[width=\linewidth,height=0.42\textheight,keepaspectratio]{figures/fig-binding-escaped.pdf}
 \caption{Binding cells on the escaped-defect axis (post-hoc). Per (backbone, category)
 cell: realized escaped-defect rate of the naive global best-F1 threshold (red) vs.\ the
 certified gate (blue), with the gate's deferral annotated at right; the dashed line is
@@ -1356,7 +1363,7 @@ the $\alpha_{\text{miss}}=0.10$ target. MV $=$ MVTec AD, VA $=$ VisA.}
 Figure~\ref{fig:bindingfr} reports the corresponding false-reject binding cells under the same encoding.
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=\linewidth]{figures/fig-binding-fr.pdf}
+\includegraphics[width=\linewidth,height=0.55\textheight,keepaspectratio]{figures/fig-binding-fr.pdf}
 \caption{Binding cells on the false-reject axis (post-hoc). Same encoding as
 Figure~\ref{fig:bindingesc}; the dashed line is the $\alpha_{\text{fr}}=0.05$ target.
 The VisA PatchCore capsules cell (top) is the extreme case: a global threshold
@@ -1408,9 +1415,9 @@ deferral is what the same gate, same code path, spends when the good pools are l
 certify every category.
 
 The per-repeat validity audit is shown in Figure~\ref{fig:validity}.
-\begin{figure}[htbp]
+\begin{figure}[tbp]
 \centering
-\includegraphics[width=\linewidth]{figures/fig-validity.pdf}
+\includegraphics[width=\linewidth,height=0.52\textheight,keepaspectratio]{figures/fig-validity.pdf}
 \caption{Per-repeat realized rates (frozen protocol; $6{,}400$ escaped-defect and $3{,}200$
 false-reject certified-cell measurements). \textbf{a:}~Escaped-defect rate vs.\
 $\alpha_{\text{miss}}=0.10$; \textbf{b:}~false-reject rate vs.\ $\alpha_{\text{fr}}=0.05$
@@ -1432,9 +1439,9 @@ not a validity breach (Section~\ref{sec:calfraction} shows the same invariance h
 a tenth of the calibration budget).
 
 Figure~\ref{fig:deferral} shows median deferral per category for both backbones.
-\begin{figure}[htbp]
+\begin{figure}[tbp]
 \centering
-\includegraphics[width=\linewidth]{figures/fig-deferral.pdf}
+\includegraphics[width=\linewidth,height=0.48\textheight,keepaspectratio]{figures/fig-deferral.pdf}
 \caption{Median deferral per category, seeds $0$--$4$ (dot = seed 0, shaded band = seed
 $0$--$4$ min--max; $R=20$), both backbones. \textbf{a:}~MVTec AD. \textbf{b:}~VisA.
 \textbf{c:}~MPDD. Deferral is strongly category-heterogeneous and tracks certifiability
@@ -1719,6 +1726,10 @@ $11.9\%$ (PatchCore, VisA \texttt{pcb3}, contrast level~3).
   stress evidence about this finite evaluation split, not a disproof of a finite-sample
   probabilistic guarantee.}
   \label{tab:drift}
+  % source: drift_joint_monitor_2026-08-01/results.json
+  % (KS refused = frozen_good_shift_detected pooled over 2 backbones × 33 categories;
+  %  exceedance columns = rates among accepted ∩ axis-certifiable cells).
+  % defect_drift_2026-07-29/ and drift_analysis_2026-07-XX/ retain only run.log locally.
   \begin{tabular}{@{}llccc@{}}
     \toprule
     Corruption & Severity & KS refused / $66$ & escaped $>0.10$ & FR $>0.05$ \\
@@ -1871,8 +1882,8 @@ a rank-ordering-level statistic (e.g.\ a permutation test on the gate's certifie
 itself, or an AUC-level statistic across both pools) --- which is the required direction before
 any drift-facing deployment claim (Figure~\ref{fig:jointmon}).
 
-\begin{figure}[htbp]\centering
-\includegraphics[width=0.97\linewidth]{figures/fig-jointmon.pdf}
+\begin{figure}[tbp]\centering
+\includegraphics[width=0.97\linewidth,height=0.55\textheight,keepaspectratio]{figures/fig-jointmon.pdf}
 \caption{The drift-monitor design space, tested (post-freeze exploratory, seed 0; frozen joint
 record). \textbf{a:} catch rate (filled) vs.\ false-alarm rate (open) per monitor variant and
 detector$\times$guarantee arm --- the frozen defect-marginal KS catches $5.0\%$/$2.9\%$; the
@@ -1906,8 +1917,8 @@ architecture-controlled (Dinomaly is a single multi-class model across all twelv
 PatchCore per-category), so the transfer figures there are descriptive
 (Figure~\ref{fig:xdet}).
 
-\begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth]{figures/fig-xdet.pdf}
+\begin{figure}[tbp]\centering
+\includegraphics[width=\linewidth,height=0.55\textheight,keepaspectratio]{figures/fig-xdet.pdf}
 \caption{Calibrated gates do not transfer across detectors (post-freeze exploratory,
 seed-level; frozen transfer record). \textbf{a:} certification rate, transfer vs.\
 partition-matched same-detector diagonal, per benchmark and direction --- the diagonal
@@ -1993,14 +2004,10 @@ in all five backbone seeds (Section~\ref{sec:c2}).
 
 \section*{Data availability}
 MVTec AD~\citep{bergmann2019mvtec}, VisA~\citep{zou2022spot}, and
-MPDD~\citep{jezek2021mpdd} are public benchmarks distributed through their public research
-sources. The frozen score dumps, analysis pipeline, preregistration, reproducibility manuals
-(README / DATA\_MANIFEST), paper figure PDFs, and the R/TikZ figure-generation scripts used
-for this study are preserved in the public archive record (concept DOI:
-\href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}}; current
-version 0.4.1). The gate is implemented in \emph{inspect-gate}, a thin wrapper over the
-project's reliability metrics library, and the source is maintained publicly at
-\texttt{PeterPonyu/reliability-commons} (\url{https://github.com/PeterPonyu/reliability-commons}).
+MPDD~\citep{jezek2021mpdd} are publicly available benchmarks. Code and supporting materials
+for this study are archived at Zenodo (concept DOI:
+\href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}};
+version~0.4.1) and maintained at \url{https://github.com/PeterPonyu/inspect-gate}.
 
 \section*{Declaration of competing interest}
 The author declares no known competing financial interests or personal relationships
@@ -2029,33 +2036,30 @@ curation, Writing -- original draft, Writing -- review \& editing, Visualization
 
 The three appendix tables below were moved out of the main text to keep the Results
 section readable; every main-text reference to them resolves here.
-Figure~\ref{fig:mondrian1} gives the first half of the defect-type (Mondrian)
-coverage map the main text references (MVTec AD only; VisA's public ground truth
-carries a single ``bad'' stratum per category and MPDD is reported per category).
-
-\begin{figure}[htbp]
+Figures~\ref{fig:mondrian1}--\ref{fig:mondrian2} give the defect-type (Mondrian)
+coverage map for MVTec AD (VisA's public ground truth carries a single ``bad''
+stratum per category and MPDD is reported per category).
+% Tall heatmaps are placed here ([H]) with an explicit height cap so the graphic
+% plus caption clear the folio/page number, and so orphan bridge pages are not
+% created by deferred [p] float pages.
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.86\linewidth]{figures/fig-mondrian-1.pdf}
+\includegraphics[width=\linewidth,height=0.48\textheight,keepaspectratio]{figures/fig-mondrian-1.pdf}
 \caption{Defect-type Mondrian map, part 1 (bottle--leather). Per (category,
 defect-type): realized escaped-defect (miss) rate among defective eval images
-(left column, vermillion) and deferral rate over all eval
-images (right column, blue), for both backbones at the operating point
-(seed 0, repeat 0; post-freeze exploratory). Cell shade encodes the rate; the
-underlying per-cell counts ($n_{\text{def}}$ defective images for the miss rate,
-$n$ total images for the deferral rate) are recorded in the frozen archive.
-Vermillion intensity increases with realized
-miss rate; white miss cells mean zero observed misses or an undefined rate when
-$n_{\text{def}}=0$. Residual errors concentrate in specific subtle-appearance defect types
-(e.g.\ pill::color, leather::cut) rather than uniformly --- heterogeneity the category-level
-tables hide. Horizontal separators consistently mark category boundaries in both backbone
-panels.}
+(left column, vermillion) and deferral rate over all eval images (right column,
+blue), for both backbones at the operating point (seed 0, repeat 0; post-freeze
+exploratory). Cell shade encodes the rate; per-cell counts ($n_{\text{def}}$, $n$)
+live in the frozen archive. White miss cells mean zero observed misses or an
+undefined rate when $n_{\text{def}}=0$. Residual errors concentrate in specific
+subtle-appearance defect types (e.g.\ pill::color, leather::cut) rather than
+uniformly. Horizontal separators mark category boundaries in both backbone panels.}
 \label{fig:mondrian1}
 \end{figure}
 
-Figure~\ref{fig:mondrian2} continues the defect-type coverage map for the remaining MVTec AD categories.
-\begin{figure}[htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.80\linewidth]{figures/fig-mondrian-2.pdf}
+\includegraphics[width=\linewidth,height=0.82\textheight,keepaspectratio]{figures/fig-mondrian-2.pdf}
 \caption{Defect-type Mondrian map, part 2 (metal\_nut--zipper). Encoding as in
 Figure~\ref{fig:mondrian1}.}
 \label{fig:mondrian2}

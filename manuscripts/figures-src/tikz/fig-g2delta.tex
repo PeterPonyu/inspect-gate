@@ -2,7 +2,8 @@
 % Data: R/g2delta_*.csv → out/g2delta-*.tex
 %
 % Chrome (axis-relative), shared for panels c/d — same stacking as fig-crcbaseline:
-%   legend @ 1.30  — horizontal row, clear above the title/letter row
+%   legend @ 1.16  — horizontal row, just above the title/letter row (was 1.30;
+%                    the old value floated c/d legends into a large mid-figure void)
 %   title  @ 1.02  — tight to the axis top; panel letters on this row in the gutter
 % Shared a/b tile legend is a TikZ node parked just above the top-row titles.
 % Panel-d legend images are flat squares (emitted by process_g2delta.R).
@@ -31,7 +32,7 @@
   },
   g2/legend above/.style={
     legend style={
-      at={(0.5,1.30)}, anchor=south,
+      at={(0.5,1.16)}, anchor=south,
       legend columns=-1, font=\tickfont, draw=none,
       fill=none,
       inner sep=1pt, /tikz/every even column/.append style={column sep=7pt},
@@ -40,10 +41,11 @@
 }
 
 % Panel a: MVTec tiles
-% a/b at 3.42in clears c/d legend chrome (~3.05) + rotated x-labels (~0.35).
+% a/b at 2.72in clears c/d legend chrome (~2.73 south @1.16) with ~0.25in
+% for rotated x-labels + gutter (was 3.42in / legend@1.30 → large mid void).
 \begin{axis}[
   inspect default,
-  name=axa, width=2.55in, height=1.15in, at={(0.55in,3.42in)},
+  name=axa, width=2.55in, height=1.15in, at={(0.55in,2.72in)},
   xmin=0, xmax=15, ymin=0, ymax=2,
   xtick={0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5,13.5,14.5},
   xticklabels={bot,cab,cap,car,grd,haz,lea,nut,pil,scr,til,tbr,tra,woo,zip},
@@ -64,7 +66,7 @@
 % Panel b: MPDD tiles
 \begin{axis}[
   inspect default,
-  name=axb, width=1.70in, height=1.15in, at={(3.55in,3.42in)},
+  name=axb, width=1.70in, height=1.15in, at={(3.55in,2.72in)},
   xmin=0, xmax=6, ymin=0, ymax=2,
   xtick={0.5,1.5,2.5,3.5,4.5,5.5},
   xticklabels={b-blk,b-brn,b-wht,conn,plate,tubes},
@@ -82,9 +84,9 @@
 \end{axis}
 \gtwolabel{axb}{b}
 
-% Shared tile legend — tight band just above a/b titles (not canvas-top float).
+% Shared tile legend — tight band just above a/b titles (tracks a/b drop).
 \path (axa.north east) -- (axb.north west) coordinate[midway] (abmid);
-\node[anchor=south, font=\tickfont, inner sep=1pt] at ([yshift=20pt]abmid) {%
+\node[anchor=south, font=\tickfont, inner sep=1pt] at ([yshift=16pt]abmid) {%
   {\color{cCertified}\rule{1.1ex}{1.1ex}}~G2 certified\quad
   {\color{cRefuseFloor}\rule{1.1ex}{1.1ex}}~refused (floor)\quad
   {\color{cRefuseKS}\rule{1.1ex}{1.1ex}}~refused (KS)%

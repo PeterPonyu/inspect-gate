@@ -9,80 +9,81 @@
 % rest of the paper.
 \definecolor{cGate}{HTML}{0072B2}
 
+% Unified out-of-spine legend: just right of the axis box (rel. coords),
+% never inside the plot frame. clip=false so the overhang is not swallowed.
+\pgfplotsset{
+  outlegend/.style={
+    legend style={at={(1.02,1.0)}, anchor=north west,
+                  font=\fontsize{#1}{9}\selectfont,
+                  draw=none, fill=white, fill opacity=0.92, text opacity=1,
+                  inner sep=2pt, row sep=0.5pt, legend cell align=left},
+    clip=false,
+  },
+  outlegend/.default=8,
+}
+
 \begin{document}
 \begin{tikzpicture}[font=\figfont]
 
-% Panels enlarged; legends clear of in-axis series/bars.
+% Column gutter widened (~1.1 in) so left-column legends (esp. panel c's
+% six entries) sit clear of the right-column spines.
 
 % Panel a: requirement curve + observed pools.
-% xmin below α=0.001 (full curve inside, clip on). xmax padded so band
-% labels fit inside the frame to the right of α_miss — no left spillover,
-% no bleed into panel b.
 \begin{axis}[
   inspect default,
   name=axa, width=2.70in, height=2.35in, at={(0.40in,2.75in)},
   xmode=log, ymode=log,
   xmin=0.0004, xmax=0.50, ymin=3, ymax=1200,
-  clip=false,
   xlabel={target rate $\alpha$},
   ylabel={required $n_{\mathrm{cal}}$},
-  % Outside right into the column gutter — in-axis corners all meet the curve/bands.
-  legend style={at={(1.02,0.82)}, anchor=west, font=\fontsize{8}{9}\selectfont,
-                draw=none, fill=white, fill opacity=0.92, text opacity=1,
-                inner sep=2pt, row sep=1pt},
+  outlegend=8,
   title={required pool vs.\ $\alpha$},
 ]
 \input{../out/calplanning-panel-a.tex}
 \end{axis}
 \panellabel{axa}{a}
 
-% Panel b: attainment — every in-axis corner meets a series; park legend
-% just outside the right spine (clip=false only for that overhang).
+% Panel b: attainment.
 \begin{axis}[
   inspect default,
-  name=axb, width=2.70in, height=2.35in, at={(3.85in,2.75in)},
+  name=axb, width=2.70in, height=2.35in, at={(4.55in,2.75in)},
   xmode=log, xmin=0.008, xmax=0.25, ymin=0, ymax=1.08,
-  clip=false,
   xlabel={target rate $\alpha$},
   ylabel={certifiable fraction},
-  legend style={at={(1.02,0.50)}, anchor=west, font=\fontsize{8.5}{9.5}\selectfont,
-                draw=none, fill=white, fill opacity=0.92, text opacity=1,
-                inner sep=2pt, row sep=1pt},
+  outlegend=8,
   title={certifiable fraction vs.\ $\alpha$},
 ]
 \input{../out/calplanning-panel-b.tex}
 \end{axis}
 \panellabel{axb}{b}
 
-% Panel c: shortfall — series are truncated after first zero (see R emitter),
-% so the right half stays empty for the legend.
+% Panel c: shortfall — legend outside; xmax tracks the data (no empty
+% right half reserved for an in-axis legend).
 \begin{axis}[
   inspect default,
   name=axc, width=2.70in, height=2.35in, at={(0.40in,0.05in)},
-  xmin=0, xmax=17, ymin=-0.05, ymax=1.15,
+  xmin=0, xmax=4.8, ymin=-0.05, ymax=1.15,
   xlabel={pool multiplier},
   ylabel={non-certifiable fraction},
-  legend style={at={(0.98,0.98)}, anchor=north east, font=\fontsize{8}{9}\selectfont,
-                draw=none, fill=white, fill opacity=0.92, text opacity=1,
-                legend columns=1, inner sep=2pt, row sep=0.5pt},
+  xtick={0,1,2,3,4},
+  outlegend=7.5,
   title={pool growth shortfall},
 ]
 \input{../out/calplanning-panel-c.tex}
 \end{axis}
 \panellabel{axc}{c}
 
-% Panel d: planning bars — legend NE above bar headroom.
+% Panel d: planning bars — legend outside so ymax need not reserve
+% headroom for an in-axis key.
 \begin{axis}[
   inspect default,
-  name=axd, width=2.70in, height=2.35in, at={(3.85in,0.05in)},
+  name=axd, width=2.70in, height=2.35in, at={(4.55in,0.05in)},
   ybar=2pt, bar width=6pt,
-  xmin=-0.8, xmax=5.8, ymin=0, ymax=95,
+  xmin=-0.8, xmax=5.8, ymin=0, ymax=82,
   xlabel={benchmark},
   ylabel={observed pool median},
   xtick={0,2,4}, xticklabels={MVTec, VisA, MPDD},
-  legend style={at={(0.98,0.98)}, anchor=north east, font=\fontsize{8.5}{9.5}\selectfont,
-                draw=none, fill=white, fill opacity=0.92, text opacity=1,
-                inner sep=2pt, row sep=1pt},
+  outlegend=8,
   title={planning go/no-go},
 ]
 \input{../out/calplanning-panel-d.tex}

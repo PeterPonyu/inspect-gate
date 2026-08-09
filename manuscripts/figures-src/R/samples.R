@@ -75,15 +75,36 @@ for (j in seq_along(column_x)) {
 
 for (i in seq_along(rows)) {
   row <- rows[[i]]
-  grid.text(
-    row$panel,
-    x = label_x, y = row_y[[i]] + panel_letter_offset_y, just = "left",
-    gp = gpar(fontsize = 8.2, fontface = "bold", fontfamily = font_family)
+  title_gp <- gpar(
+    fontsize = label_text_fontsize_pt, fontface = "bold", fontfamily = font_family
+  )
+  letter_gp <- gpar(
+    fontsize = panel_letter_fontsize_pt, fontface = "bold", fontfamily = font_family
   )
   grid.text(
     row$label,
     x = label_text_x, y = row_y[[i]] + label_text_offset_y, just = "left",
-    gp = gpar(fontsize = 8.2, fontface = "bold", fontfamily = font_family)
+    gp = title_gp
+  )
+  # Panel letter at the top-right of the title string; clamp so it never
+  # reaches the AUTO-PASS tile's top-left corner.
+  title_w_npc <- convertWidth(
+    grobWidth(textGrob(row$label, gp = title_gp)), "npc", valueOnly = TRUE
+  )
+  panel_tag <- sprintf("(%s)", row$panel)
+  letter_w_npc <- convertWidth(
+    grobWidth(textGrob(panel_tag, gp = letter_gp)), "npc", valueOnly = TRUE
+  )
+  tile_left_npc <- column_x[[1]] - tile_size_in / (2 * canvas_width_in)
+  letter_x <- label_text_x + title_w_npc +
+    panel_letter_gap_after_title_in / canvas_width_in
+  max_letter_x <- tile_left_npc -
+    panel_letter_tile_clearance_in / canvas_width_in - letter_w_npc
+  if (letter_x > max_letter_x) letter_x <- max_letter_x
+  grid.text(
+    panel_tag,
+    x = letter_x, y = row_y[[i]] + panel_letter_offset_y, just = "left",
+    gp = letter_gp
   )
 
   for (j in seq_along(column_x)) {

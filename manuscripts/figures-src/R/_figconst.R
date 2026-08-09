@@ -7,21 +7,20 @@
 #
 #   want to change...              edit this symbol
 #   ------------------------------------------------------------------
-#   the figure serif font          INSPECT_FONT
+#   the figure font family         INSPECT_FONT  ("" = device default)
 #   the AUTO-PASS route colour      ROUTE_PASS
 #   the DEFER route colour          ROUTE_DEFER
 #   the AUTO-REJECT route colour    ROUTE_REJECT
 #   all three, in pass/defer/reject order  ROUTE_COLORS
 #
-# NOTE: these scripts are base-R/grid + Ghostscript-normalised, NOT ggplot.
+# NOTE: these scripts are base-R/grid, NOT ggplot.
 # Only the colour/font constants are shared; each script keeps its own
-# cairo_pdf/gs render path. Output is verified pixel-equivalent to the
-# pre-refactor scripts.
+# cairo_pdf render path.
 # ==========================================================================
 
-# Serif family (LaTeX body match). Both figures render with cairo_pdf in this
-# family, then Ghostscript-normalise to Type 1 embedded fonts.
-INSPECT_FONT <- "Latin Modern Roman"
+# Generic serif for Cairo (FreeSerif). Not a figure-only face like Latin
+# Modern — TikZ/LaTeX figures use Computer Modern defaults (no lmodern).
+INSPECT_FONT <- "FreeSerif"
 
 # The three certified-triage route colours (Okabe-Ito green/orange/vermillion).
 ROUTE_PASS   <- "#009E73"  # AUTO-PASS

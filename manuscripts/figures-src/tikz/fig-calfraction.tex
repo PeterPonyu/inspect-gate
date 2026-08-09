@@ -7,12 +7,6 @@
 \begin{document}
 \begin{tikzpicture}[font=\figfont]
 
-% Shared legend parked just above the top-row titles (larger, not floating).
-\node[anchor=south, font=\fontsize{9.5}{11}\selectfont] at (2.99in,4.90in) {%
-  {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
-  {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%
-};
-
 % Panel size / gutters tightened vs the old 2.45×1.35 / 0.25–0.35 in gaps:
 %   width 2.62in, height 1.52in; ~0.10 in column gutter; ~0.12 in row gutter.
 % ── MVTec AD ────────────────────────────────────────────────────────────────
@@ -47,6 +41,14 @@
 \input{../out/calfraction-mvtecad-def.tex}
 \end{axis}
 \panellabel{ax_mvtec_def}{b}
+
+% Shared legend on the a/b column centerline (not a fixed x that drifts left/right).
+\path (ax_mvtec_cert.north) -- (ax_mvtec_def.north)
+  coordinate[pos=0.5, yshift=0.26in] (legpos);
+\node[anchor=south, font=\fontsize{9.5}{11}\selectfont] (leg) at (legpos) {%
+  {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
+  {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%
+};
 
 
 % ── VisA ────────────────────────────────────────────────────────────────────

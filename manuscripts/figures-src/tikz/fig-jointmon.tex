@@ -5,6 +5,8 @@
 % Layout (matches historical make_fig_jointmon.py science; tightened chrome):
 %   a|b top row (tight horizontal gap), c full-width middle, d full-width heatmap
 % Chrome: gutter \panellabel; shared a/b legend above titles; titles near axes.
+% Legend↔title gap uses ~30pt above axis-north (titles stay @1.015); a/b row
+% sits higher so panel-c's raised legend clears a/b bottoms.
 \documentclass[border=2pt]{standalone}
 \input{inspect_style.tex}
 \usetikzlibrary{calc}
@@ -29,7 +31,7 @@
 \begin{axis}[
   inspect default,
   name=ax_a,
-  width=2.58in, height=1.18in, at={(0.66in,3.00in)},
+  width=2.58in, height=1.18in, at={(0.66in,3.24in)},
   xmin=-0.02, xmax=1.05,
   ymin=-4.20, ymax=0.20,
   xlabel={rate},
@@ -51,7 +53,7 @@
 \begin{axis}[
   inspect default,
   name=ax_b,
-  width=2.58in, height=1.18in, at={(3.22in,3.00in)},
+  width=2.58in, height=1.18in, at={(3.22in,3.24in)},
   xmin=-0.03, xmax=1.03,
   ymin=-0.03, ymax=1.03,
   xlabel={false-alarm (non-exceeding)},
@@ -70,10 +72,10 @@
 \end{axis}
 \panellabel{ax_b}{b}
 
-% Shared a/b legend — horizontal, just above titles (clear of gutter letters).
-% Parked above the title row so it never collides with titles or gutter letters.
+% Shared a/b legend — above the title row (breathing room vs titles @1.015).
+% South anchor @30pt clears title tops (~10pt) without dropping onto the spine.
 \node[anchor=south, font=\tickfont, inner sep=0.5pt]
-  at ($(ax_a.north)!0.5!(ax_b.north)+(0,16pt)$) {%
+  at ($(ax_a.north)!0.5!(ax_b.north)+(0,30pt)$) {%
   filled\,=\,catch\quad open\,=\,FA\quad
   {\color{cG1}$\bullet$}~G1\quad
   {\color{cG2}$\bullet$}~G2\quad
@@ -104,8 +106,9 @@
 \input{../out/jointmon-panel-c.tex}
 \end{axis}
 \panellabel{ax_c}{c}
+% Same 30pt south-anchor offset as a/b shared legend (title stays near spine).
 \node[anchor=south, font=\tickfont, text=black!70, inner sep=0.5pt]
-  at ([yshift=16pt] ax_c.north) {%
+  at ([yshift=30pt] ax_c.north) {%
   {\color{cFalseAlarm}$\bullet$}~G1-exceeding accepted ($\alpha_{\mathrm{miss}}=0.10$)\quad
   {\color{black!55}$\bullet$}~certified non-exceeding%
 };

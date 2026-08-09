@@ -4,7 +4,7 @@
 # share one source of truth. Units: inches for physical sizes; npc for
 # fractional canvas coordinates (origin bottom-left).
 
-canvas_width_in <- 5.15
+canvas_width_in <- 5.25
 canvas_height_in <- 5.45
 
 # Tile / inset sizes
@@ -12,17 +12,23 @@ tile_size_in <- 0.90
 zoom_size_in <- 0.30
 zoom_padding_in <- 0.035
 
-# Column centers chosen so the AUTO-PASS tile's left edge clears the widest
-# left-margin row label ("MPDD - defect" at 8.2 pt bold ≈ 0.95 in).
+# Column centers: AUTO-PASS left edge must clear title + enlarged "(d)" tag.
 # tile left edge = column_x[1] - tile_size_in / (2 * canvas_width_in)
-column_x <- c(0.335, 0.580, 0.825)
+column_x <- c(0.355, 0.590, 0.830)
 row_y <- c(0.790, 0.590, 0.390, 0.190)
-# Panel letter (a–d) and the row annotation are drawn separately so the
-# letter can sit higher while the annotation shifts right of the letter.
-label_x <- 0.012
-label_text_x <- 0.042
-panel_letter_offset_y <- 0.034
+# Row title starts at the left margin; panel letter sits at the title's
+# top-right (after the title string, slightly above), enlarged, and must
+# clear the AUTO-PASS tile's top-left corner.
+label_text_x <- 0.012
+label_text_fontsize_pt <- 8.2
+panel_letter_fontsize_pt <- 12.5
+panel_letter_gap_after_title_in <- 0.040
+panel_letter_tile_clearance_in <- 0.045
+# Letter above the title baseline; title near the tile mid-left label band.
+panel_letter_offset_y <- 0.042
 label_text_offset_y <- -0.006
+# Kept for tests / callers that still name the old left-gutter slot.
+label_x <- label_text_x
 header_y <- 0.955
 header_rule_y <- 0.928
 score_offset_y <- -0.085

@@ -2,7 +2,6 @@
 % Width is fixed at 5.0in; generated row files carry frozen values verbatim.
 % Layout constants below MUST stay in sync with R/normalize_mondrian.R.
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usepackage{xcolor}
@@ -70,25 +69,31 @@
 
 % Legend packed in [0, \legendband): rule under grid, clearance, then ticks+swatches.
 % 0%/100% must stay strictly below the last data row (y=\legendband).
+% "rate (%)" is the colorbar title (centered over the scale), not a side axis label.
+% Row labels sit immediately left of the swatch strip (inner sep ~3pt).
+% Stroke every swatch: the 0% cell is white and otherwise looks like a gap.
+% Use \pgfmathsetmacro (not \def with +) so TikZ coordinates stay unambiguous.
 \newcommand{\drawlegend}{%
-  \def\legrowlabx{\leftgutter}%
-  \def\legswatchx{\leftgutter+0.62}%
-  \def\legswatchw{0.17}%
+  \pgfmathsetmacro{\legswatchx}{\leftgutter+0.36}%
+  \pgfmathsetmacro{\legswatchw}{0.17}%
   \pgfmathsetmacro{\legsepy}{\legendband-0.06}%
+  \pgfmathsetmacro{\legmid}{\legswatchx+3*\legswatchw}%
+  \pgfmathsetmacro{\legswatchend}{\legswatchx+6*\legswatchw}%
   \draw[black!45,line width=0.40pt] (\leftgutter,\legsepy) -- (\dataright,\legsepy);%
-  % Keep scale ticks with the swatch strip (not up against the grid).
-  \node[anchor=east,font=\rmfamily\fontsize{9.0}{9.0}\selectfont] at (\legswatchx-0.03,0.40) {0\%};%
-  \node[anchor=west,font=\rmfamily\fontsize{9.0}{9.0}\selectfont] at (\legswatchx+6*\legswatchw+0.03,0.40) {100\%};%
-  \node[anchor=east,font=\rmfamily\fontsize{10.0}{10.0}\selectfont,text=misscolor] at (\legrowlabx,0.255) {miss};%
-  \node[anchor=east,font=\rmfamily\fontsize{10.0}{10.0}\selectfont,text=defercolor] at (\legrowlabx,0.125) {defer};%
+  \node[anchor=south,font=\rmfamily\fontsize{10.0}{10.0}\selectfont] at (\legmid,0.445) {rate (\%)};%
+  \node[anchor=east,font=\rmfamily\fontsize{9.0}{9.0}\selectfont,inner sep=1pt] at (\legswatchx,0.395) {0\%};%
+  \node[anchor=west,font=\rmfamily\fontsize{9.0}{9.0}\selectfont,inner sep=1pt] at (\legswatchend,0.395) {100\%};%
+  \node[anchor=east,font=\rmfamily\fontsize{10.0}{10.0}\selectfont,text=misscolor,inner sep=3pt] at (\legswatchx,0.255) {miss};%
+  \node[anchor=east,font=\rmfamily\fontsize{10.0}{10.0}\selectfont,text=defercolor,inner sep=3pt] at (\legswatchx,0.125) {defer};%
   \foreach \p [count=\i from 0] in {0,20,40,60,80,100}{%
     \pgfmathtruncatemacro{\shade}{\p}%
     \colorlet{misslegend}{misscolor!\shade!white}%
     \colorlet{deferlegend}{defercolor!\shade!white}%
     \fill[misslegend] (\legswatchx+\i*\legswatchw,0.21) rectangle ++(\legswatchw,0.095);%
     \fill[deferlegend] (\legswatchx+\i*\legswatchw,0.08) rectangle ++(\legswatchw,0.095);%
+    \draw[black!40,line width=0.25pt] (\legswatchx+\i*\legswatchw,0.21) rectangle ++(\legswatchw,0.095);%
+    \draw[black!40,line width=0.25pt] (\legswatchx+\i*\legswatchw,0.08) rectangle ++(\legswatchw,0.095);%
   }%
-  \node[anchor=west,font=\rmfamily\fontsize{10.0}{10.0}\selectfont] at (\legswatchx+6*\legswatchw+0.42,0.19) {rate (\%)};%
 }
 
 \newcommand{\drawheaders}{%

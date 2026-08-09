@@ -45,8 +45,18 @@
 % and between floats removes dead white space on a page that is all floats).
 \makeatletter
 \setlength{\@fptop}{0pt}
-\setlength{\@fpsep}{12pt plus 0fil}
+\setlength{\@fpsep}{8pt plus 0fil}
+\setlength{\@fpbot}{0pt}
 \makeatother
+\renewcommand{\topfraction}{0.90}
+\renewcommand{\bottomfraction}{0.70}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.65}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{5pt}
+\setlength{\belowcaptionskip}{2pt}
 % elsarticle loads natbib itself; the numbered elsarticle-num style below is
 % AEI's live reference style. \citep/\citet render as bracketed numbers.
 \usepackage[hidelinks]{hyperref}
@@ -1285,26 +1295,10 @@ in all five backbone seeds (Section~\ref{sec:c2}).
 
 \section*{Data and code availability}
 MVTec AD~\citep{bergmann2019mvtec}, VisA~\citep{zou2022spot}, and
-MPDD~\citep{jezek2021mpdd} (staged from the credential-free HuggingFace mirror
-\texttt{meksamiao/mpdd}, archive sha256 \texttt{69f8da73\ldots ddd6} recorded in the frozen split
-manifest) are public benchmarks. The frozen score dumps, analysis pipeline, preregistration,
-reproducibility manuals (README / DATA\_MANIFEST), paper figure PDFs, and the R/TikZ
-figure-generation scripts are archived on Zenodo under concept DOI
-\href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}}
-(current version 0.4.1) and developed at
-\url{https://github.com/PeterPonyu/reliability-commons} (\texttt{tools/inspect-gate}).
-The gate is implemented in \emph{inspect-gate}, a thin wrapper over the project's
-reliability metrics library.
-% code-archive policy: docs/records/CODE-ARCHIVE-POLICY-2026-07-16.md (a permanent-identifier
-% archive, e.g. Zenodo/Code Ocean, pairs with the GitHub development mirror)
-% archive contents:
-%   analysis_2026-07-10/ (scripts/run_analysis.py -> SUMMARY.json, ANALYSIS-MEMO.md; MVTec AD)
-%   g2_promotion_2026-07-12/ (run_g2_promotion.py -> G2-PROMOTION-RESULT.json)
-%   visa_results_2026-07-12/ (scripts/visa_adapter.py + run_visa_analysis.py -> SUMMARY.json, MVTEC-VS-VISA.md)
-%   mpdd_results_2026-07-13/ (run_mpdd_analysis.py -> SUMMARY.json; run_mpdd_holdout_analysis.py -> HOLDOUT-RESULTS.json)
-% score dumps: fullscore_results_2026-07-10/, dinomaly_brancha_2026-07-10/canonical/,
-%   holdout_results_2026-07-10/, and the 2026-07-12 VisA pull
-% preregistration: PREREG-DRAFT-2026-07-10.md (frozen 2026-07-11)
+MPDD~\citep{jezek2021mpdd} are publicly available benchmarks. Code and supporting materials
+for this study are archived at Zenodo (concept DOI:
+\href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}};
+version~0.4.1) and maintained at \url{https://github.com/PeterPonyu/inspect-gate}.
 
 % =====================================================================
 % Elsevier mandatory declarations (AEI live guide-for-authors, verified
@@ -1327,12 +1321,11 @@ Methodology, Software, Formal analysis, Investigation, Data curation, Writing --
 Writing -- review \& editing, Visualization.''}
 
 \section*{Data availability}
-The three benchmarks are public (MVTec AD, VisA, MPDD). The frozen score dumps, analysis pipeline,
-preregistration, manuals, figure PDFs, and R/TikZ figure-generation scripts are archived on Zenodo
-under concept DOI
-\href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}}
-(current version 0.4.1) and mirrored at
-\url{https://github.com/PeterPonyu/reliability-commons} (see \emph{Data and code availability}).
+MVTec AD~\citep{bergmann2019mvtec}, VisA~\citep{zou2022spot}, and
+MPDD~\citep{jezek2021mpdd} are publicly available benchmarks. Code and supporting materials
+for this study are archived at Zenodo (concept DOI:
+\href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}};
+version~0.4.1) and maintained at \url{https://github.com/PeterPonyu/inspect-gate}.
 
 \bibliographystyle{elsarticle-num}
 \bibliography{refs}

@@ -161,10 +161,10 @@ verify: $(ALL_PDFS)
 	for pdf in $(ALL_PDFS); do \
 		fonts=$$(pdffonts "$$pdf"); \
 		printf '%s\n' "$$fonts" | awk 'NR > 2 && NF && $$(NF-4) != "yes" { print "FATAL: unembedded font in " file ": " $$0; bad=1 } END { exit bad }' file="$$pdf"; \
-		if printf '%s\n' "$$fonts" | grep -Eiq 'Type[[:space:]]+3|Noto|Nimbus'; then \
-			echo "FATAL: forbidden font in $$pdf"; exit 1; \
+		if printf '%s\n' "$$fonts" | grep -Eiq 'Type[[:space:]]+3'; then \
+			echo "FATAL: Type 3 font in $$pdf"; exit 1; \
 		fi; \
-		printf '%s\n' "$$fonts" | awk 'NR > 2 && NF { name=$$1; sub(/^[A-Z][A-Z][A-Z][A-Z][A-Z][A-Z]\+/, "", name); if (name !~ /^(LM|CM|SF|Cm)/) { print "FATAL: non-LM/CM font in " file ": " name; bad=1 } } END { exit bad }' file="$$pdf"; \
+		printf '%s\n' "$$fonts" | awk 'NR > 2 && NF { name=$$1; sub(/^[A-Z][A-Z][A-Z][A-Z][A-Z][A-Z]\+/, "", name); if (name !~ /^(LM|CM|SF|Cm|FreeSerif|FreeSans|Liberation|DejaVu)/) { print "FATAL: non-default font in " file ": " name; bad=1 } } END { exit bad }' file="$$pdf"; \
 		echo "PASS $$pdf"; \
 	done
 
@@ -178,7 +178,7 @@ sync-aei: verify
 	@mkdir -p $(AEI_FIG_DIR)
 	@for pdf in $(ALL_PDFS); do cp "$$pdf" "$(AEI_FIG_DIR)/$$pdf"; done
 	@for pdf in $(ALL_PDFS); do cmp -s "$$pdf" "$(AEI_FIG_DIR)/$$pdf" || { echo "FATAL: AEI sync mismatch for $$pdf"; exit 1; }; done
-	@echo "PASS synced 18 production PDFs to $(AEI_FIG_DIR) (papers/inspect-aei/figures)"
+	@echo "PASS synced 18 production PDFs to $(AEI_FIG_DIR) (manuscripts/aei/figures)"
 
 # Push identical bytes to both paper-facing figure dirs.
 sync-paper: sync-rie sync-aei

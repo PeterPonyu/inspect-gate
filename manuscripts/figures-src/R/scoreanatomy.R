@@ -43,7 +43,8 @@ score_limits <- function(good, defect, lo, hi) {
   c(max(0, min(values) - padding), min(1, max(values) + padding))
 }
 
-render_cell <- function(cell) {
+render_cell <- function(cell, side = c("left", "right")) {
+  side <- match.arg(side)
   good <- as.numeric(unlist(cell$eval_scores$good))
   defect <- as.numeric(unlist(cell$eval_scores$defect))
   lo <- if (is.null(cell$thresholds$t_lo)) NA_real_ else as.numeric(cell$thresholds$t_lo)
@@ -53,6 +54,19 @@ render_cell <- function(cell) {
   good_hist <- hist(good, breaks = breaks, plot = FALSE)
   defect_hist <- hist(defect, breaks = breaks, plot = FALSE)
   ymax <- max(c(good_hist$counts, defect_hist$counts, 1)) * 1.22
+
+  # Left column (a,c): tighter right margin + titles pulled left so they do not
+  # reach into the gutter where (b)/(d) panel letters sit. Right column (b,d):
+  # wider left margin so those letters clear the a/c titles.
+  if (identical(side, "left")) {
+    par(mar = c(3.1, 3.45, 3.5, 0.25))
+    title_frac <- 0.04
+    tag_adj <- 1.45
+  } else {
+    par(mar = c(3.1, 2.85, 3.5, 0.70))
+    title_frac <- 0.18
+    tag_adj <- 1.20
+  }
 
   plot(NA, xlim = limits, ylim = c(0, ymax), xlab = "anomaly score", ylab = "images",
        axes = FALSE, xaxs = "i", yaxs = "i")
@@ -80,28 +94,30 @@ render_cell <- function(cell) {
     text(hi, ymax * if (close_thresholds) 0.86 else 0.96, expression(t[hi]),
          pos = 4, offset = 0.28, cex = 1.35)
   }
-  # Status is a top sub-line so it does not overprint bottom tick labels.
-  # Panel tags sit fully left of the axes (adj=1 at usr[1]); titles start a
-  # fixed fraction into the panel so (a)/(c) never meet MVTec/MPDD.
   backbone_label <- if (is.null(cell$backbone)) "" else sprintf(" / %s", cell$backbone)
   ttl <- sprintf("%s %s%s", cell$benchmark, cell$category, backbone_label)
   dx <- diff(par("usr")[1:2])
-  # adj>1 pulls the tag further into the left oma gutter; title inset
-  # leaves room for bold Latin Modern glyphs that outspan their text box.
   mtext(sprintf("(%s)", cell$panel), side = 3, line = 2.05, font = 2, cex = 1.05,
-        at = par("usr")[1], adj = 1.5)
+        at = par("usr")[1], adj = tag_adj)
   mtext(ttl, side = 3, line = 2.05, adj = 0, cex = 0.90,
-        at = par("usr")[1] + 0.28 * dx)
+        at = par("usr")[1] + title_frac * dx)
   mtext(cell_status(cell), side = 3, line = 0.95, cex = 0.82, col = "grey35")
 }
 
 raw_pdf <- file.path(script_dir, "../review-scoreanatomy-build.pdf")
-cairo_pdf(raw_pdf, width = 5.0, height = 5.6, pointsize = 12, family = font_family)
-layout(matrix(c(1, 2, 3, 4, 5, 5), nrow = 3, byrow = TRUE), heights = c(1, 1, 0.16))
-# oma[2] holds left-of-axes panel tags; mar[2]/mar[3] for y-label and headers.
-par(oma = c(0, 1.15, 0, 0), mar = c(3.1, 3.45, 3.5, 0.8),
-    mgp = c(2.0, 0.55, 0), tcl = -0.25, family = font_family)
-for (cell in frozen$cells) render_cell(cell)
+cairo_pdf(raw_pdf, width = 5.7, height = 5.6, pointsize = 12, family = font_family)
+# Regions: 1=a 2=b 3=c 4=d 5=legend 6=column gutter (never plotted → blank gap),
+# which shifts b/d right relative to a/c.
+layout(
+  matrix(c(1, 6, 2,
+           3, 6, 4,
+           5, 5, 5), nrow = 3, byrow = TRUE),
+  widths = c(1, 0.32, 1),
+  heights = c(1, 1, 0.16)
+)
+par(oma = c(0, 1.05, 0, 0), mgp = c(2.0, 0.55, 0), tcl = -0.25, family = font_family)
+sides <- c("left", "right", "left", "right")
+for (i in seq_along(frozen$cells)) render_cell(frozen$cells[[i]], side = sides[[i]])
 par(mar = c(0, 0, 0, 0)); plot.new()
 legend("center", legend = c("good (evaluation)", "defective (evaluation)", "defer region"),
        fill = c(adjustcolor(pass_col, 0.72), adjustcolor(defect_col, 0.62), adjustcolor(defer_col, 0.15)),

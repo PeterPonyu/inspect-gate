@@ -1,10 +1,11 @@
 % Standalone Figure 1: horizontal overview of the dual-gate inspection pipeline.
 % Authored near text width with ~8 mm arrow gutters so \linewidth placement
-% keeps flow arrows visibly long. Compile: pdflatex fig-overview.tex
+% keeps flow arrows visibly long. Vertical span opened (~1.35x prior height)
+% so stage cards and outcome stack read taller when scaled to \linewidth.
+% Compile: pdflatex fig-overview.tex
+% Fonts: Computer Modern defaults (no lmodern / custom face).
 \documentclass[10pt,border=5pt]{standalone}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{fix-cm}
 \usepackage{amsmath,amssymb}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta,calc,positioning}
@@ -72,7 +73,7 @@
 \begin{document}
 \begin{tikzpicture}[
   x=1mm,y=1mm,
-  font=\rmfamily\fontsize{10}{11.5}\selectfont,
+  font=\normalsize,
   line cap=round,line join=round,
   >={Latex[length=1.55mm,width=1.05mm]},
   flow/.style={draw=FAinktwo,line width=0.5pt,-{Latex[length=1.55mm,width=1.05mm]}},
@@ -81,121 +82,96 @@
     align=center,inner sep=0pt},
   gate/.style={draw=FAgrid,line width=0.48pt,rounded corners=0.65mm,fill=white,
     align=center,inner sep=0pt},
-  heading/.style={font=\rmfamily\scshape\fontsize{9.8}{11}\selectfont,text=FAink},
-  body/.style={font=\rmfamily\fontsize{9.2}{10.5}\selectfont,text=FAinktwo},
-  strong/.style={font=\rmfamily\fontsize{9.8}{11}\selectfont,text=FAink},
-  outcome/.style={font=\rmfamily\fontsize{9.8}{11}\selectfont,text=FAink},
-  note/.style={font=\rmfamily\fontsize{11}{12.5}\selectfont,text=FAtick,
+  heading/.style={font=\bfseries\large,text=FAink},
+  body/.style={font=\normalsize,text=FAinktwo},
+  strong/.style={font=\bfseries\large,text=FAink},
+  outcome/.style={font=\bfseries\large,text=FAink},
+  note/.style={font=\large,text=FAtick,
     align=center,fill=white,inner xsep=0.6mm}
 ]
 
-% Explicit 10 mm arrow gutters. Authored ~148 mm (~420 pt); \linewidth scale
-% ≈0.86 still leaves ~8.6 mm visible shafts — much longer than the old 2 mm pack.
-% Vertical span opened (~62 mm): headings clear the stage tops, refusal and
-% audit lanes each get their own band instead of stacking against the boxes.
-\useasboundingbox (-1,-39) rectangle (158,34);
+% Width held (~158 mm); height opened to ~118 mm (h/w ≈ 0.74 vs prior ~0.46)
+% so \linewidth scaling yields a clearly taller figure.
+\useasboundingbox (-1,-56) rectangle (158,56);
 
-\node[heading] at (7,30.5) {IMAGE};
-\node[heading] at (29,30.5) {BACKBONE};
-\node[heading] at (51,30.5) {FLOOR};
-\node[heading] at (74,30.5) {CERTIFY};
-\node[heading] at (98,30.5) {ROUTE};
-\node[heading] at (130,30.5) {OUTCOME};
+\node[heading] at (7,50) {IMAGE};
+\node[heading] at (29,50) {BACKBONE};
+\node[heading] at (51,50) {FLOOR};
+\node[heading] at (74,50) {CERTIFY};
+\node[heading] at (98,50) {ROUTE};
+\node[heading] at (130,50) {OUTCOME};
 
-\node[stage,minimum width=11mm,minimum height=22mm] (image) at (7,6) {};
+\node[stage,minimum width=11mm,minimum height=36mm] (image) at (7,10) {};
 \accentbar{image}{FAblue}
-\camera{7}{12.0}
-\node[strong] at (7,5.5) {Part};
-\node[body,text=FAtick] at (7,1.2) {stream};
+\camera{7}{20.5}
+\node[strong] at (7,9.0) {Part};
+\node[body,text=FAtick] at (7,2.0) {stream};
 
-% 21 mm: the widest line (PC/Dinomaly) measures 19.4 mm, so the old 14 mm
-% box had its own labels hanging out over the inbound/outbound arrows.
-\node[stage,minimum width=21mm,minimum height=25mm] (backbone) at (29,6) {};
+\node[stage,minimum width=21mm,minimum height=40mm] (backbone) at (29,10) {};
 \accentbar{backbone}{FAaqua}
-\gear{29}{13.2}
-\node[strong] at (29,6.2) {Frozen AD};
-\node[body] at (29,2.0) {PC/Dinomaly};
-\node[body,text=FAtick] at (29,-1.5) {swappable};
+\gear{29}{22.0}
+\node[strong] at (29,10.2) {Frozen AD};
+\node[body] at (29,3.4) {PC/Dinomaly};
+\node[body,text=FAtick] at (29,-1.6) {swappable};
 
-\node[stage,minimum width=10mm,minimum height=22mm] (floor) at (51,6) {};
+\node[stage,minimum width=10mm,minimum height=36mm] (floor) at (51,10) {};
 \accentbar{floor}{FAyellow}
-\flooricon{51}{12.0}
-\node[strong] at (51,5.5) {Floor};
-\node[body] at (51,1.2) {$\alpha$-min};
+\flooricon{51}{20.5}
+\node[strong] at (51,9.0) {Floor};
+\node[body] at (51,2.0) {$\alpha$-min};
 
-% G1/G2 stacked, not side-by-side: at 7 mm each the "escaped"/"false-rej."
-% labels were wider than their own cards and ran into each other.
-% Card width 17 mm and stage 20 mm are sized to the measured label extents
-% (G1 line 14.1 mm, G2 line 15.0 mm); the old 7 mm side-by-side cards were
-% narrower than their own text, so "escaped"/"false-rej." collided.
-\node[stage,minimum width=20mm,minimum height=28mm] (certify) at (74,6) {};
+% G1/G2 stacked; taller certify stage for vertical breathing room.
+\node[stage,minimum width=20mm,minimum height=46mm] (certify) at (74,10) {};
 \accentbar{certify}{FAorange}
-\node[gate,draw=FAblue!75!black,minimum width=17mm,minimum height=9.8mm] (g1) at (74.8,13.0)
-  {\textcolor{FAblue}{\fontsize{11}{12.5}\selectfont G1}~\fontsize{11}{12.5}\selectfont escaped\\[0.6pt]\fontsize{11}{12.5}\selectfont $t$-lo$(c)$};
-\node[gate,draw=FAorange!80!black,minimum width=17mm,minimum height=9.8mm] (g2) at (74.8,-1.0)
-  {\textcolor{FAorange!85!black}{\fontsize{11}{12.5}\selectfont G2}~\fontsize{11}{12.5}\selectfont false-rej.\\[0.6pt]\fontsize{11}{12.5}\selectfont $t$-hi$(c)$};
+\node[gate,draw=FAblue!75!black,minimum width=17mm,minimum height=14.5mm] (g1) at (74.8,21.5)
+  {\textcolor{FAblue}{\large G1}~\large escaped\\[1.0pt]\large $t$-lo$(c)$};
+\node[gate,draw=FAorange!80!black,minimum width=17mm,minimum height=14.5mm] (g2) at (74.8,-1.5)
+  {\textcolor{FAorange!85!black}{\large G2}~\large false-rej.\\[1.0pt]\large $t$-hi$(c)$};
 
-\node[stage,minimum width=18mm,minimum height=22mm] (route) at (98,6) {};
+\node[stage,minimum width=18mm,minimum height=36mm] (route) at (98,10) {};
 \accentbar{route}{FAviolet}
-\routeicon{98}{12.0}
-\node[strong] at (98,5.5) {Compare};
-\node[body,align=center] at (98,1.0) {$s(i)$ vs\\band};
+\routeicon{98}{20.5}
+\node[strong] at (98,9.0) {Compare};
+\node[body,align=center] at (98,1.6) {$s(i)$ vs\\band};
 
-% Outcome stack opened vertically (centers 11.5 mm apart) so the three
-% route cards breathe; 31 mm width still clears AUTO-REJECT text extent.
-\foreach \name/\yy/\col in {pass/17.5/FApass,defer/6/FAdefer,reject/-5.5/FAreject}{
-  \node[gate,minimum width=31mm,minimum height=7.4mm] (\name) at (130,\yy) {};
+% Outcome stack: centers ~18 mm apart.
+\foreach \name/\yy/\col in {pass/28.5/FApass,defer/10/FAdefer,reject/-8.5/FAreject}{
+  \node[gate,minimum width=31mm,minimum height=11mm] (\name) at (130,\yy) {};
   \fill[\col,rounded corners=0.25mm]
-    ([xshift=-15.5mm,yshift=3.7mm]\name.center) rectangle
-    ([xshift=-14.3mm,yshift=-3.7mm]\name.center);
+    ([xshift=-15.5mm,yshift=5.5mm]\name.center) rectangle
+    ([xshift=-14.3mm,yshift=-5.5mm]\name.center);
 }
-\checkicon{117.5}{17.5}{FApass}
-\node[outcome,anchor=west] at (119.8,17.5) {AUTO-PASS};
-\clockicon{117.5}{6}{FAdefer}
-\node[outcome,anchor=west] at (119.8,6) {DEFER};
-\crossicon{117.5}{-5.5}{FAreject}
-\node[outcome,anchor=west] at (119.8,-5.5) {AUTO-REJECT};
+\checkicon{117.5}{28.5}{FApass}
+\node[outcome,anchor=west] at (119.8,28.5) {AUTO-PASS};
+\clockicon{117.5}{10}{FAdefer}
+\node[outcome,anchor=west] at (119.8,10) {DEFER};
+\crossicon{117.5}{-8.5}{FAreject}
+\node[outcome,anchor=west] at (119.8,-8.5) {AUTO-REJECT};
 
-% Solid main path with long 10 mm shafts.
 \draw[flow] (image.east) -- (backbone.west);
 \draw[flow] (backbone.east) -- (floor.west);
-\node[body] at ($(backbone.east)!0.5!(floor.west)+(0,2.6)$) {$s(i)$};
+\node[body] at ($(backbone.east)!0.5!(floor.west)+(0,3.6)$) {$s(i)$};
 \draw[flow] (floor.east) -- (certify.west);
 \draw[flow] (certify.east) -- (route.west);
-\coordinate (branch) at (109,6);
+\coordinate (branch) at (109,10);
 \draw[draw=FAinktwo,line width=0.5pt] (route.east) -- (branch);
 \draw[flow] (branch) |- (pass.west);
 \draw[flow] (branch) -- (defer.west);
 \draw[flow] (branch) |- (reject.west);
 
-% Floor refusal lane (governance), not an auto-reject data route. It enters
-% DEFER from BELOW (dead-centre into defer.south) so it occupies its own lane
-% and never shares defer.east with the audit stub -- the two dashed systems
-% (governance feedback vs audit drainage) then read as distinct, rather than
-% as one arrow family where "only the middle has a leftward head".
-% Rises at x=111.5 (left of the outcome column, whose boxes start at x=114.5)
-% and enters defer.west slightly below centre, so it shares the LEFT/routing
-% side with the forward data arrows and never crosses the reject box that sits
-% directly under defer. The audit drainage stays purely on the right.
-% Refusal bus sits below the outcome stack; riser clears AUTO-REJECT and
-% enters DEFER from the left so it stays distinct from the right-side audit.
-\coordinate (refusebus) at (109,-15.0);
+% Refusal bus below outcome stack; audit lane further below.
+\coordinate (refusebus) at (109,-22.0);
 \draw[control] (floor.south) |- (refusebus);
 \draw[control,-{Latex[length=1.3mm,width=0.9mm]}]
-  (refusebus) -- (111.5,-15.0) -- (111.5,4.5) -- ([yshift=-1.5mm]defer.west);
-\lockicon{58}{-18.5}
-\node[note,anchor=west] at (60,-18.5)
+  (refusebus) -- (111.5,-22.0) -- (111.5,7.8) -- ([yshift=-2.0mm]defer.west);
+\lockicon{58}{-26.5}
+\node[note,anchor=west] at (60,-26.5)
   {floor unmet: REFUSE \quad band $=\pm\infty$ \quad audited};
 
-% Common audit lane outside the data path. The x=155 riser is drawn EXACTLY
-% ONCE (the old code drew it three times -- once per outcome down to y=-21 --
-% and the three misaligned dash phases filled each other's gaps, so the
-% bottom-right segment rendered as a solid line). One horizontal stub per
-% outcome taps into the single riser; none of them overlap.
-\draw[control] (0,-29.5) -- (155,-29.5);
-\draw[control] (155,-29.5) -- (155,17.5);
+\draw[control] (0,-43.0) -- (155,-43.0);
+\draw[control] (155,-43.0) -- (155,28.5);
 \foreach \arm in {pass,defer,reject}{\draw[control] (\arm.east) -- (155,0 |- \arm.east);}
-\node[note] at (75,-34.5)
+\node[note] at (75,-50.0)
   {AUDIT \quad same scorecard \quad frozen operating envelope};
 
 \end{tikzpicture}
