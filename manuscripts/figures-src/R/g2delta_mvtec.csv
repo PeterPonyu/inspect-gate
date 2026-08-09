@@ -1,0 +1,16 @@
+category,short,primary_status,promoted_status
+bottle,bot,refused-floor,certified
+cable,cab,certified,certified
+capsule,cap,refused-floor,certified
+carpet,car,refused-floor,certified
+grid,grd,refused-floor,certified
+hazelnut,haz,certified,certified
+leather,lea,refused-floor,refused-KS
+metal_nut,nut,refused-floor,certified
+pill,pil,refused-floor,certified
+screw,scr,certified,certified
+tile,til,refused-floor,certified
+toothbrush,tbr,refused-floor,refused-floor
+transistor,tra,certified,certified
+wood,woo,refused-floor,certified
+zipper,zip,refused-floor,certified

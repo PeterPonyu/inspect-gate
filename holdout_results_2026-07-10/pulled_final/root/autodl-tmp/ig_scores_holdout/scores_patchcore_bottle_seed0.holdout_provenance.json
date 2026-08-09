@@ -1,0 +1,62 @@
+{
+  "holdout_frac": 0.2,
+  "holdout_seed": 0,
+  "holdout_ids_by_category": {
+    "bottle": [
+      "bottle_train_good_010",
+      "bottle_train_good_018",
+      "bottle_train_good_024",
+      "bottle_train_good_025",
+      "bottle_train_good_035",
+      "bottle_train_good_037",
+      "bottle_train_good_052",
+      "bottle_train_good_055",
+      "bottle_train_good_064",
+      "bottle_train_good_066",
+      "bottle_train_good_072",
+      "bottle_train_good_077",
+      "bottle_train_good_079",
+      "bottle_train_good_080",
+      "bottle_train_good_084",
+      "bottle_train_good_090",
+      "bottle_train_good_091",
+      "bottle_train_good_098",
+      "bottle_train_good_103",
+      "bottle_train_good_107",
+      "bottle_train_good_111",
+      "bottle_train_good_113",
+      "bottle_train_good_120",
+      "bottle_train_good_122",
+      "bottle_train_good_124",
+      "bottle_train_good_129",
+      "bottle_train_good_130",
+      "bottle_train_good_136",
+      "bottle_train_good_141",
+      "bottle_train_good_143",
+      "bottle_train_good_149",
+      "bottle_train_good_154",
+      "bottle_train_good_156",
+      "bottle_train_good_158",
+      "bottle_train_good_163",
+      "bottle_train_good_175",
+      "bottle_train_good_180",
+      "bottle_train_good_182",
+      "bottle_train_good_193",
+      "bottle_train_good_194",
+      "bottle_train_good_198",
+      "bottle_train_good_200"
+    ]
+  },
+  "provenance": {
+    "script": "/root/reliability-commons/tools/inspect-gate/orchestration/score_patchcore.py",
+    "timestamp_utc": "2026-07-10T12:15:16.034325+00:00",
+    "seeds": [
+      0
+    ],
+    "python_version": "3.12.3",
+    "numpy_version": "2.3.2",
+    "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+    "git_sha": null,
+    "git_dirty": null
+  }
+}

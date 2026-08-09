@@ -1,0 +1,271 @@
+{
+  "patchcore": {
+    "per_seed_per_category_auroc": {
+      "0": {
+        "bracket_black": 0.8843085106382979,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9144444444444444,
+        "connector": 0.9976190476190476,
+        "metal_plate": 1.0,
+        "tubes": 0.8999094202898551
+      },
+      "1": {
+        "bracket_black": 0.8756648936170213,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9188888888888889,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9044384057971014
+      },
+      "2": {
+        "bracket_black": 0.8716755319148937,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9188888888888889,
+        "connector": 0.9976190476190476,
+        "metal_plate": 1.0,
+        "tubes": 0.9003623188405797
+      },
+      "3": {
+        "bracket_black": 0.8882978723404256,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9466666666666667,
+        "connector": 0.9976190476190476,
+        "metal_plate": 1.0,
+        "tubes": 0.9080615942028986
+      },
+      "4": {
+        "bracket_black": 0.8756648936170213,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9411111111111111,
+        "connector": 0.9976190476190476,
+        "metal_plate": 1.0,
+        "tubes": 0.9039855072463768
+      }
+    },
+    "pairwise_seed0_diff": {
+      "bracket_black_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.2896469235420227
+      },
+      "bracket_black_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.30039656162261963
+      },
+      "bracket_black_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.27501994371414185
+      },
+      "bracket_black_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.3100202679634094
+      },
+      "bracket_brown_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09267038106918335
+      },
+      "bracket_brown_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.0723065733909607
+      },
+      "bracket_brown_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06371927261352539
+      },
+      "bracket_brown_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08238503336906433
+      },
+      "bracket_white_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.1056566834449768
+      },
+      "bracket_white_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.1635349690914154
+      },
+      "bracket_white_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.11923849582672119
+      },
+      "bracket_white_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.09678381681442261
+      },
+      "connector_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08475881814956665
+      },
+      "connector_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06126070022583008
+      },
+      "connector_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.08828628063201904
+      },
+      "connector_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07323911786079407
+      },
+      "metal_plate_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06866705417633057
+      },
+      "metal_plate_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.07469132542610168
+      },
+      "metal_plate_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.06401824951171875
+      },
+      "metal_plate_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.10031658411026001
+      },
+      "tubes_seed0_vs_seed1": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.25321879982948303
+      },
+      "tubes_seed0_vs_seed2": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.22874513268470764
+      },
+      "tubes_seed0_vs_seed3": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.18360960483551025
+      },
+      "tubes_seed0_vs_seed4": {
+        "same_image_ids": true,
+        "bit_identical_scores": false,
+        "max_abs_score_diff": 0.237102210521698
+      }
+    },
+    "n_bit_identical_pairs": 0,
+    "n_pairs_checked": 24
+  },
+  "dinomaly": {
+    "per_seed_per_category_auroc": {
+      "0": {
+        "bracket_black": 0.9315159574468085,
+        "bracket_brown": 0.9532428355957768,
+        "bracket_white": 0.9933333333333333,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9492753623188406
+      },
+      "1": {
+        "bracket_black": 0.9401595744680851,
+        "bracket_brown": 0.9509803921568627,
+        "bracket_white": 0.9955555555555555,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9560688405797102
+      },
+      "2": {
+        "bracket_black": 0.9295212765957447,
+        "bracket_brown": 0.9577677224736049,
+        "bracket_white": 0.9922222222222222,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9547101449275363
+      },
+      "3": {
+        "bracket_black": 0.9361702127659575,
+        "bracket_brown": 0.9547511312217195,
+        "bracket_white": 0.9944444444444445,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9433876811594203
+      },
+      "4": {
+        "bracket_black": 0.9288563829787234,
+        "bracket_brown": 0.9547511312217195,
+        "bracket_white": 0.9955555555555555,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9547101449275363
+      }
+    },
+    "per_category_seed_spread": {
+      "bracket_black": {
+        "mean": 0.9332446808510639,
+        "std": 0.0048084267903628995,
+        "min": 0.9288563829787234,
+        "max": 0.9401595744680851,
+        "range": 0.011303191489361653
+      },
+      "bracket_brown": {
+        "mean": 0.9542986425339366,
+        "std": 0.0024783826131455763,
+        "min": 0.9509803921568627,
+        "max": 0.9577677224736049,
+        "range": 0.006787330316742168
+      },
+      "bracket_white": {
+        "mean": 0.9942222222222222,
+        "std": 0.001448711645600581,
+        "min": 0.9922222222222222,
+        "max": 0.9955555555555555,
+        "range": 0.0033333333333332993
+      },
+      "connector": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "metal_plate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0,
+        "range": 0.0
+      },
+      "tubes": {
+        "mean": 0.9516304347826088,
+        "std": 0.005295234385168142,
+        "min": 0.9433876811594203,
+        "max": 0.9560688405797102,
+        "range": 0.012681159420289911
+      }
+    },
+    "mean_iauroc_across_seeds": {
+      "values": [
+        0.9712279147824598,
+        0.9737940604600355,
+        0.9723702277031846,
+        0.9714589115985902,
+        0.9723122024472558
+      ],
+      "mean": 0.9722326633983052,
+      "std": 0.001008888350025683,
+      "min": 0.9712279147824598,
+      "max": 0.9737940604600355
+    }
+  }
+}

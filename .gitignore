@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.spl
+*.nav
+*.snm
+
+# Editors / OS / agents
+.DS_Store
+.idea/
+.vscode/
+.omc/
+.omx/
+.superpowers/
+.Rhistory
+.RData
+*.bak
+*.bak-*
+*~
+
+# Multi-GB staging / weight trees (local only; not theme-tracked)
+visa_staging/
+mpdd_staging/
+dinomaly_brancha_2026-07-10/**
+!dinomaly_brancha_2026-07-10/canonical/
+!dinomaly_brancha_2026-07-10/canonical/**
+
+# Figure scratch
+manuscripts/figures-src/tikz/*.aux
+manuscripts/figures-src/tikz/*.log
+manuscripts/figures-src/review/
+manuscripts/figures-src/**/*-1.png
+
+# Local exploratory pulls (not manuscript figure SSOT)
+drift_pulled_*/
+efficientad_exploratory_pulled_*/
+x1_results_*/
+drift_analysis_*/

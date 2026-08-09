@@ -1,0 +1,362 @@
+{
+  "bracket_black": {
+    "alpha": 0.05,
+    "n_perm": 2000,
+    "backbone": "dinomaly",
+    "target_deferral_rate": 0.48717948717948717,
+    "holm_family_size": 2,
+    "results": [
+      {
+        "practice": "fixed",
+        "backbone": "dinomaly",
+        "band_width": 0.0204081071294695,
+        "n": 39,
+        "n_excluded": 0,
+        "aurc_method": 0.055467130167464455,
+        "aurc_random": 0.1794871794871795,
+        "excess_aurc": 0.12402004931971503,
+        "excess_aurc_ci": [
+          0.12402004931971503,
+          0.12402004931971503
+        ],
+        "abstention_fraction": 0.48717948717948717,
+        "p_value": 0.04597701149425287,
+        "n_perm": 2000,
+        "p_holm": 0.09195402298850575,
+        "reject_holm": false
+      },
+      {
+        "practice": "tuned",
+        "backbone": "dinomaly",
+        "band_width": 0.0204081071294695,
+        "n": 39,
+        "n_excluded": 0,
+        "aurc_method": 0.055467130167464455,
+        "aurc_random": 0.1794871794871795,
+        "excess_aurc": 0.12402004931971503,
+        "excess_aurc_ci": [
+          0.12402004931971503,
+          0.12402004931971503
+        ],
+        "abstention_fraction": 0.48717948717948717,
+        "p_value": 0.04597701149425287,
+        "n_perm": 2000,
+        "p_holm": 0.09195402298850575,
+        "reject_holm": false
+      }
+    ],
+    "skipped": [],
+    "provenance": {
+      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "timestamp_utc": "2026-07-14T08:30:05.499871+00:00",
+      "seeds": [
+        0
+      ],
+      "python_version": "3.13.7",
+      "numpy_version": "2.3.4",
+      "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+      "git_sha": "78a0bfb72d9b542f8159d64c37cef8fe36101960",
+      "git_dirty": true
+    }
+  },
+  "bracket_brown": {
+    "alpha": 0.05,
+    "n_perm": 2000,
+    "backbone": "dinomaly",
+    "target_deferral_rate": 0.7105263157894737,
+    "holm_family_size": 2,
+    "results": [
+      {
+        "practice": "fixed",
+        "backbone": "dinomaly",
+        "band_width": 0.04646859223086608,
+        "n": 38,
+        "n_excluded": 0,
+        "aurc_method": 0.008859595531116631,
+        "aurc_random": 0.07894736842105263,
+        "excess_aurc": 0.07008777288993599,
+        "excess_aurc_ci": [
+          0.07008777288993599,
+          0.07008777288993599
+        ],
+        "abstention_fraction": 0.7105263157894737,
+        "p_value": 0.3458270864567716,
+        "n_perm": 2000,
+        "p_holm": 0.6916541729135433,
+        "reject_holm": false
+      },
+      {
+        "practice": "tuned",
+        "backbone": "dinomaly",
+        "band_width": 0.04646859223086608,
+        "n": 38,
+        "n_excluded": 0,
+        "aurc_method": 0.008859595531116631,
+        "aurc_random": 0.07894736842105263,
+        "excess_aurc": 0.07008777288993599,
+        "excess_aurc_ci": [
+          0.07008777288993599,
+          0.07008777288993599
+        ],
+        "abstention_fraction": 0.7105263157894737,
+        "p_value": 0.3458270864567716,
+        "n_perm": 2000,
+        "p_holm": 0.6916541729135433,
+        "reject_holm": false
+      }
+    ],
+    "skipped": [],
+    "provenance": {
+      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "timestamp_utc": "2026-07-14T08:30:05.573961+00:00",
+      "seeds": [
+        0
+      ],
+      "python_version": "3.13.7",
+      "numpy_version": "2.3.4",
+      "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+      "git_sha": "78a0bfb72d9b542f8159d64c37cef8fe36101960",
+      "git_dirty": true
+    }
+  },
+  "bracket_white": {
+    "alpha": 0.05,
+    "n_perm": 2000,
+    "backbone": "dinomaly",
+    "target_deferral_rate": 0.5666666666666667,
+    "holm_family_size": 2,
+    "results": [
+      {
+        "practice": "fixed",
+        "backbone": "dinomaly",
+        "band_width": 0.026728749445055655,
+        "n": 30,
+        "n_excluded": 0,
+        "aurc_method": 0.01792716294940183,
+        "aurc_random": 0.06666666666666667,
+        "excess_aurc": 0.048739503717264834,
+        "excess_aurc_ci": [
+          0.048739503717264834,
+          0.048739503717264834
+        ],
+        "abstention_fraction": 0.5666666666666667,
+        "p_value": 0.303848075962019,
+        "n_perm": 2000,
+        "p_holm": 0.607696151924038,
+        "reject_holm": false
+      },
+      {
+        "practice": "tuned",
+        "backbone": "dinomaly",
+        "band_width": 0.026728749445055655,
+        "n": 30,
+        "n_excluded": 0,
+        "aurc_method": 0.01792716294940183,
+        "aurc_random": 0.06666666666666667,
+        "excess_aurc": 0.048739503717264834,
+        "excess_aurc_ci": [
+          0.048739503717264834,
+          0.048739503717264834
+        ],
+        "abstention_fraction": 0.5666666666666667,
+        "p_value": 0.303848075962019,
+        "n_perm": 2000,
+        "p_holm": 0.607696151924038,
+        "reject_holm": false
+      }
+    ],
+    "skipped": [],
+    "provenance": {
+      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "timestamp_utc": "2026-07-14T08:30:05.648057+00:00",
+      "seeds": [
+        0
+      ],
+      "python_version": "3.13.7",
+      "numpy_version": "2.3.4",
+      "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+      "git_sha": "78a0bfb72d9b542f8159d64c37cef8fe36101960",
+      "git_dirty": true
+    }
+  },
+  "connector": {
+    "alpha": 0.05,
+    "n_perm": 2000,
+    "backbone": "dinomaly",
+    "target_deferral_rate": 1.0,
+    "holm_family_size": 2,
+    "results": [
+      {
+        "practice": "fixed",
+        "backbone": "dinomaly",
+        "band_width": 0.0709952861070633,
+        "n": 22,
+        "n_excluded": 0,
+        "aurc_method": 0.0,
+        "aurc_random": 0.0,
+        "excess_aurc": 0.0,
+        "excess_aurc_ci": [
+          0.0,
+          0.0
+        ],
+        "abstention_fraction": 1.0,
+        "p_value": 0.0004997501249375312,
+        "n_perm": 2000,
+        "p_holm": 0.0009995002498750624,
+        "reject_holm": true
+      },
+      {
+        "practice": "tuned",
+        "backbone": "dinomaly",
+        "band_width": 0.0709952861070633,
+        "n": 22,
+        "n_excluded": 0,
+        "aurc_method": 0.0,
+        "aurc_random": 0.0,
+        "excess_aurc": 0.0,
+        "excess_aurc_ci": [
+          0.0,
+          0.0
+        ],
+        "abstention_fraction": 1.0,
+        "p_value": 0.0004997501249375312,
+        "n_perm": 2000,
+        "p_holm": 0.0009995002498750624,
+        "reject_holm": true
+      }
+    ],
+    "skipped": [],
+    "provenance": {
+      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "timestamp_utc": "2026-07-14T08:30:05.714654+00:00",
+      "seeds": [
+        0
+      ],
+      "python_version": "3.13.7",
+      "numpy_version": "2.3.4",
+      "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+      "git_sha": "78a0bfb72d9b542f8159d64c37cef8fe36101960",
+      "git_dirty": true
+    }
+  },
+  "metal_plate": {
+    "alpha": 0.05,
+    "n_perm": 2000,
+    "backbone": "dinomaly",
+    "target_deferral_rate": 0.5208333333333334,
+    "holm_family_size": 2,
+    "results": [
+      {
+        "practice": "fixed",
+        "backbone": "dinomaly",
+        "band_width": 0.09772785908728565,
+        "n": 48,
+        "n_excluded": 0,
+        "aurc_method": 0.0,
+        "aurc_random": 0.0,
+        "excess_aurc": 0.0,
+        "excess_aurc_ci": [
+          0.0,
+          0.0
+        ],
+        "abstention_fraction": 0.5208333333333334,
+        "p_value": 1.0,
+        "n_perm": 2000,
+        "p_holm": 1.0,
+        "reject_holm": false
+      },
+      {
+        "practice": "tuned",
+        "backbone": "dinomaly",
+        "band_width": 0.09772785908728565,
+        "n": 48,
+        "n_excluded": 0,
+        "aurc_method": 0.0,
+        "aurc_random": 0.0,
+        "excess_aurc": 0.0,
+        "excess_aurc_ci": [
+          0.0,
+          0.0
+        ],
+        "abstention_fraction": 0.5208333333333334,
+        "p_value": 1.0,
+        "n_perm": 2000,
+        "p_holm": 1.0,
+        "reject_holm": false
+      }
+    ],
+    "skipped": [],
+    "provenance": {
+      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "timestamp_utc": "2026-07-14T08:30:05.787993+00:00",
+      "seeds": [
+        0
+      ],
+      "python_version": "3.13.7",
+      "numpy_version": "2.3.4",
+      "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+      "git_sha": "78a0bfb72d9b542f8159d64c37cef8fe36101960",
+      "git_dirty": true
+    }
+  },
+  "tubes": {
+    "alpha": 0.05,
+    "n_perm": 2000,
+    "backbone": "dinomaly",
+    "target_deferral_rate": 0.7450980392156863,
+    "holm_family_size": 2,
+    "results": [
+      {
+        "practice": "fixed",
+        "backbone": "dinomaly",
+        "band_width": 0.08890695001144877,
+        "n": 51,
+        "n_excluded": 0,
+        "aurc_method": 0.009914693365629836,
+        "aurc_random": 0.058823529411764705,
+        "excess_aurc": 0.04890883604613487,
+        "excess_aurc_ci": [
+          0.04890883604613487,
+          0.04890883604613487
+        ],
+        "abstention_fraction": 0.7450980392156863,
+        "p_value": 0.4077961019490255,
+        "n_perm": 2000,
+        "p_holm": 0.815592203898051,
+        "reject_holm": false
+      },
+      {
+        "practice": "tuned",
+        "backbone": "dinomaly",
+        "band_width": 0.08890695001144877,
+        "n": 51,
+        "n_excluded": 0,
+        "aurc_method": 0.009914693365629836,
+        "aurc_random": 0.058823529411764705,
+        "excess_aurc": 0.04890883604613487,
+        "excess_aurc_ci": [
+          0.04890883604613487,
+          0.04890883604613487
+        ],
+        "abstention_fraction": 0.7450980392156863,
+        "p_value": 0.4077961019490255,
+        "n_perm": 2000,
+        "p_holm": 0.815592203898051,
+        "reject_holm": false
+      }
+    ],
+    "skipped": [],
+    "provenance": {
+      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "timestamp_utc": "2026-07-14T08:30:05.862788+00:00",
+      "seeds": [
+        0
+      ],
+      "python_version": "3.13.7",
+      "numpy_version": "2.3.4",
+      "platform": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+      "git_sha": "78a0bfb72d9b542f8159d64c37cef8fe36101960",
+      "git_dirty": true
+    }
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "manifest": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/mpdd_pulled_2026-07-14/mpdd_split_manifest.json",
+  "pull": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/mpdd_pulled_2026-07-14",
+  "official_test_counts": {
+    "bracket_black": 79,
+    "bracket_brown": 77,
+    "bracket_white": 60,
+    "connector": 44,
+    "metal_plate": 97,
+    "tubes": 101
+  },
+  "auroc_xcheck_tolerance": 0.001,
+  "dinomaly": {
+    "0": {
+      "n_records": 458,
+      "auroc_xcheck": {
+        "bracket_black": {
+          "recomputed": 0.931516,
+          "box_log": 0.9315,
+          "abs_diff": 1.6e-05
+        },
+        "bracket_brown": {
+          "recomputed": 0.953243,
+          "box_log": 0.9532,
+          "abs_diff": 4.3e-05
+        },
+        "bracket_white": {
+          "recomputed": 0.993333,
+          "box_log": 0.9933,
+          "abs_diff": 3.3e-05
+        },
+        "connector": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "metal_plate": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "tubes": {
+          "recomputed": 0.949275,
+          "box_log": 0.9493,
+          "abs_diff": 2.5e-05
+        }
+      },
+      "max_abs_diff": 4.3e-05
+    },
+    "1": {
+      "n_records": 458,
+      "auroc_xcheck": {
+        "bracket_black": {
+          "recomputed": 0.94016,
+          "box_log": 0.9402,
+          "abs_diff": 4e-05
+        },
+        "bracket_brown": {
+          "recomputed": 0.95098,
+          "box_log": 0.951,
+          "abs_diff": 2e-05
+        },
+        "bracket_white": {
+          "recomputed": 0.995556,
+          "box_log": 0.9956,
+          "abs_diff": 4.4e-05
+        },
+        "connector": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "metal_plate": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "tubes": {
+          "recomputed": 0.956069,
+          "box_log": 0.9561,
+          "abs_diff": 3.1e-05
+        }
+      },
+      "max_abs_diff": 4.4e-05
+    },
+    "2": {
+      "n_records": 458,
+      "auroc_xcheck": {
+        "bracket_black": {
+          "recomputed": 0.929521,
+          "box_log": 0.9295,
+          "abs_diff": 2.1e-05
+        },
+        "bracket_brown": {
+          "recomputed": 0.957768,
+          "box_log": 0.9578,
+          "abs_diff": 3.2e-05
+        },
+        "bracket_white": {
+          "recomputed": 0.992222,
+          "box_log": 0.9922,
+          "abs_diff": 2.2e-05
+        },
+        "connector": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "metal_plate": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "tubes": {
+          "recomputed": 0.95471,
+          "box_log": 0.9547,
+          "abs_diff": 1e-05
+        }
+      },
+      "max_abs_diff": 3.2e-05
+    },
+    "3": {
+      "n_records": 458,
+      "auroc_xcheck": {
+        "bracket_black": {
+          "recomputed": 0.93617,
+          "box_log": 0.9362,
+          "abs_diff": 3e-05
+        },
+        "bracket_brown": {
+          "recomputed": 0.954751,
+          "box_log": 0.9548,
+          "abs_diff": 4.9e-05
+        },
+        "bracket_white": {
+          "recomputed": 0.994444,
+          "box_log": 0.9944,
+          "abs_diff": 4.4e-05
+        },
+        "connector": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "metal_plate": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "tubes": {
+          "recomputed": 0.943388,
+          "box_log": 0.9434,
+          "abs_diff": 1.2e-05
+        }
+      },
+      "max_abs_diff": 4.9e-05
+    },
+    "4": {
+      "n_records": 458,
+      "auroc_xcheck": {
+        "bracket_black": {
+          "recomputed": 0.928856,
+          "box_log": 0.9289,
+          "abs_diff": 4.4e-05
+        },
+        "bracket_brown": {
+          "recomputed": 0.954751,
+          "box_log": 0.9548,
+          "abs_diff": 4.9e-05
+        },
+        "bracket_white": {
+          "recomputed": 0.995556,
+          "box_log": 0.9956,
+          "abs_diff": 4.4e-05
+        },
+        "connector": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "metal_plate": {
+          "recomputed": 1.0,
+          "box_log": 1.0,
+          "abs_diff": 0.0
+        },
+        "tubes": {
+          "recomputed": 0.95471,
+          "box_log": 0.9547,
+          "abs_diff": 1e-05
+        }
+      },
+      "max_abs_diff": 4.9e-05
+    }
+  },
+  "patchcore": {
+    "0": {
+      "n_records": 458,
+      "per_category_auroc_descriptive": {
+        "bracket_black": 0.884309,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.914444,
+        "connector": 0.997619,
+        "metal_plate": 1.0,
+        "tubes": 0.899909
+      }
+    },
+    "1": {
+      "n_records": 458,
+      "per_category_auroc_descriptive": {
+        "bracket_black": 0.875665,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.918889,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.904438
+      }
+    },
+    "2": {
+      "n_records": 458,
+      "per_category_auroc_descriptive": {
+        "bracket_black": 0.871676,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.918889,
+        "connector": 0.997619,
+        "metal_plate": 1.0,
+        "tubes": 0.900362
+      }
+    },
+    "3": {
+      "n_records": 458,
+      "per_category_auroc_descriptive": {
+        "bracket_black": 0.888298,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.946667,
+        "connector": 0.997619,
+        "metal_plate": 1.0,
+        "tubes": 0.908062
+      }
+    },
+    "4": {
+      "n_records": 458,
+      "per_category_auroc_descriptive": {
+        "bracket_black": 0.875665,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.941111,
+        "connector": 0.997619,
+        "metal_plate": 1.0,
+        "tubes": 0.903986
+      }
+    }
+  }
+}

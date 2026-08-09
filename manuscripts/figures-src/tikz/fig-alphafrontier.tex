@@ -1,0 +1,135 @@
+% fig-alphafrontier: alpha sweep deferral and certification frontiers (3x2)
+% Data: R/alphafrontier_data.csv → out/alphafrontier-*-{deferral,cert}.tex
+\documentclass[border=2pt]{standalone}
+\input{inspect_style.tex}
+
+\begin{document}
+\begin{tikzpicture}[font=\figfont]
+
+% Shared legend above the grid, parked just above panel titles.
+\node[anchor=south, font=\fontsize{9.5}{11}\selectfont] (leg) at (2.97in,6.18in) {%
+  {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
+  {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%
+};
+
+% ── MVTec-AD ────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_mvtec_d,
+  width=2.45in, height=1.75in,
+  at={(0.42in,4.35in)},
+  xmode=log, x dir=reverse,
+  xmin=0.008, xmax=0.25, ymin=0, ymax=1.0,
+  xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
+  ylabel={rate},
+  xtick={0.20,0.10,0.05,0.02,0.01},
+  xticklabels={0.2,0.1,0.05,0.02,0.01},
+  title={MVTec-AD: deferral},
+]
+\draw[black, dashed, line width=0.8pt] (axis cs:0.10,0) -- (axis cs:0.10,1.0);
+\input{../out/alphafrontier-mvtecad-deferral.tex}
+\node[anchor=north, font=\tickfont, align=center]
+  at (axis cs:0.10,0.98) {op.};
+\end{axis}
+\panellabel{ax_mvtec_d}{a}
+
+
+\begin{axis}[
+  inspect default,
+  name=ax_mvtec_c,
+  width=2.45in, height=1.75in,
+  at={(3.12in,4.35in)},
+  xmode=log, x dir=reverse,
+  xmin=0.008, xmax=0.25, ymin=0, ymax=1.02,
+  xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
+  xtick={0.20,0.10,0.05,0.02,0.01},
+  xticklabels={0.2,0.1,0.05,0.02,0.01},
+  title={MVTec-AD: both-axis certified},
+]
+\draw[black, dashed, line width=0.8pt] (axis cs:0.10,0) -- (axis cs:0.10,1.02);
+\input{../out/alphafrontier-mvtecad-cert.tex}
+\end{axis}
+\panellabel{ax_mvtec_c}{b}
+
+
+% ── VisA ────────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_visa_d,
+  width=2.45in, height=1.75in,
+  at={(0.42in,2.2in)},
+  xmode=log, x dir=reverse,
+  xmin=0.008, xmax=0.25, ymin=0, ymax=1.0,
+  xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
+  ylabel={rate},
+  xtick={0.20,0.10,0.05,0.02,0.01},
+  xticklabels={0.2,0.1,0.05,0.02,0.01},
+  title={VisA: deferral},
+]
+\draw[black, dashed, line width=0.8pt] (axis cs:0.10,0) -- (axis cs:0.10,1.0);
+\input{../out/alphafrontier-visa-deferral.tex}
+\end{axis}
+\panellabel{ax_visa_d}{c}
+
+
+\begin{axis}[
+  inspect default,
+  name=ax_visa_c,
+  width=2.45in, height=1.75in,
+  at={(3.12in,2.2in)},
+  xmode=log, x dir=reverse,
+  xmin=0.008, xmax=0.25, ymin=0, ymax=1.02,
+  xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
+  xtick={0.20,0.10,0.05,0.02,0.01},
+  xticklabels={0.2,0.1,0.05,0.02,0.01},
+  title={VisA: both-axis certified},
+]
+\draw[black, dashed, line width=0.8pt] (axis cs:0.10,0) -- (axis cs:0.10,1.02);
+\input{../out/alphafrontier-visa-cert.tex}
+\end{axis}
+\panellabel{ax_visa_c}{d}
+
+
+% ── MPDD ────────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_mpdd_d,
+  width=2.45in, height=1.75in,
+  at={(0.42in,0.05in)},
+  xmode=log, x dir=reverse,
+  xmin=0.008, xmax=0.25, ymin=0, ymax=1.0,
+  xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
+  ylabel={rate},
+  xtick={0.20,0.10,0.05,0.02,0.01},
+  xticklabels={0.2,0.1,0.05,0.02,0.01},
+  title={MPDD: deferral},
+]
+\draw[black, dashed, line width=0.8pt] (axis cs:0.10,0) -- (axis cs:0.10,1.0);
+\input{../out/alphafrontier-mpdd-deferral.tex}
+\end{axis}
+\panellabel{ax_mpdd_d}{e}
+
+
+\begin{axis}[
+  inspect default,
+  name=ax_mpdd_c,
+  width=2.45in, height=1.75in,
+  at={(3.12in,0.05in)},
+  xmode=log, x dir=reverse,
+  xmin=0.008, xmax=0.25, ymin=0, ymax=1.02,
+  xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
+  xtick={0.20,0.10,0.05,0.02,0.01},
+  xticklabels={0.2,0.1,0.05,0.02,0.01},
+  title={MPDD: both-axis certified},
+]
+\draw[black, dashed, line width=0.8pt] (axis cs:0.10,0) -- (axis cs:0.10,1.02);
+\input{../out/alphafrontier-mpdd-cert.tex}
+% Flat zero is a measured floor refusal, not a plotting failure.
+\node[anchor=west, font=\tickfont, align=left, fill=white, fill opacity=0.9, text opacity=1]
+  at (axis cs:0.04,0.55) {floor refuse:\\ both-cert.\ $=0$};
+\end{axis}
+\panellabel{ax_mpdd_c}{f}
+
+
+\end{tikzpicture}
+\end{document}

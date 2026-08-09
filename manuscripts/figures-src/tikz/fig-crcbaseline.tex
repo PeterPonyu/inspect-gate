@@ -1,0 +1,95 @@
+% fig-crcbaseline: 3-panel expanded gate vs CRC comparison
+% Data: R/crcbaseline_panel_[abc].csv → out/crcbaseline-panel-[abc].tex
+%
+% Chrome (axis-relative), shared:
+%   legend @ 1.28  — horizontal row, clear of the title/letter row
+%   title  @ 1.02  — tight to the axis top (b/c); panel letters sit on this
+%                    same row in the left gutter so they never meet the legend
+\documentclass[border=2pt]{standalone}
+\input{inspect_style.tex}
+
+\definecolor{cEscaped}{HTML}{0072B2}
+\definecolor{cFalseReject}{HTML}{D55E00}
+\definecolor{cDeferral}{HTML}{009E73}
+
+% Letter on the title row, parked in the left gutter (south-east → sits left of NW).
+\newcommand{\crclabel}[2]{%
+  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
+    at ([xshift=-16pt, yshift=11pt] #1.north west) {\textbf{#2}};%
+}
+
+\begin{document}
+\begin{tikzpicture}[font=\figfont]
+
+\pgfplotsset{
+  crc/title near axis/.style={
+    title style={at={(0.5,1.02)}, anchor=south, font=\titlefont},
+  },
+  crc/legend above/.style={
+    legend style={
+      at={(0.5,1.30)}, anchor=south,
+      legend columns=-1, font=\tickfont, draw=none,
+      fill=white, fill opacity=0.92, text opacity=1,
+      inner sep=1.5pt, /tikz/every even column/.append style={column sep=7pt},
+    },
+  },
+}
+
+% Panel a: dot strip (gate hollow / CRC filled) — legend only, no title
+\begin{axis}[
+  inspect default,
+  name=axa, width=1.75in, height=2.55in, at={(0.50in,0)},
+  xmin=-2, xmax=80, ymin=-0.55, ymax=2.55,
+  xlabel={rate (\%)},
+  ytick={0,1,2}, yticklabels={MPDD, VisA, MVTec},
+  ymajorgrids, grid style={gray!15},
+  crc/legend above,
+  clip=false,
+]
+\input{../out/crcbaseline-panel-a.tex}
+\end{axis}
+\crclabel{axa}{a}
+
+% Panel b: VisA selective-prediction risk-at-coverage
+\begin{axis}[
+  inspect default,
+  name=axb, width=1.55in, height=2.55in, at={(2.58in,0)},
+  xmin=0, xmax=1.02, ymin=0, ymax=22,
+  xlabel={coverage},
+  ylabel={selective risk (\%)},
+  crc/title near axis,
+  crc/legend above,
+  title={VisA},
+]
+\input{../out/crcbaseline-panel-b.tex}
+\end{axis}
+\crclabel{axb}{b}
+
+% Panel c: G2 certified per-backbone bars
+% Short title shares the title row with the panel letter (letter in left gutter).
+\begin{axis}[
+  inspect default,
+  name=axc, width=1.55in, height=2.55in, at={(4.55in,0)},
+  ymin=0, ymax=115, ytick={0,25,50,75,100},
+  ylabel={G2 certified (\%)},
+  xtick={0,1,2}, xticklabels={MPDD, VisA, MVTec},
+  x tick label style={font=\tickfont, rotate=45, anchor=north east},
+  ybar=2pt, bar width=5pt,
+  % Title shares the 1.02 row with the letter but is nudged right to clear it.
+  title style={at={(0.62,1.02)}, anchor=south, font=\titlefont},
+  crc/legend above,
+  title={CRC: 0 certified},
+  clip=false,
+]
+\input{../out/crcbaseline-panel-c.tex}
+\draw[black, dashed, line width=1.5pt] (axis cs:-0.23,0) -- (axis cs:-0.13,0);
+\draw[black, dashed, line width=1.5pt] (axis cs:0.13,0) -- (axis cs:0.23,0);
+\draw[black, dashed, line width=1.5pt] (axis cs:0.77,0) -- (axis cs:0.87,0);
+\draw[black, dashed, line width=1.5pt] (axis cs:1.13,0) -- (axis cs:1.23,0);
+\draw[black, dashed, line width=1.5pt] (axis cs:1.77,0) -- (axis cs:1.87,0);
+\draw[black, dashed, line width=1.5pt] (axis cs:2.13,0) -- (axis cs:2.23,0);
+\end{axis}
+\crclabel{axc}{c}
+
+\end{tikzpicture}
+\end{document}

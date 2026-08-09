@@ -1,0 +1,62 @@
+{
+  "data_root": "/root/autodl-tmp/mvtec_anomaly_detection",
+  "staging": {
+    "skipped": true
+  },
+  "category_counts": {
+    "bottle": {
+      "n_train_good": 209,
+      "n_test_good": 20,
+      "n_test_defect": 63,
+      "n_defect_types": 3,
+      "defect_type_counts": {
+        "broken_large": 20,
+        "broken_small": 22,
+        "contamination": 21
+      }
+    },
+    "screw": {
+      "n_train_good": 320,
+      "n_test_good": 41,
+      "n_test_defect": 119,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "manipulated_front": 24,
+        "scratch_head": 24,
+        "scratch_neck": 25,
+        "thread_side": 23,
+        "thread_top": 23
+      }
+    },
+    "carpet": {
+      "n_train_good": 280,
+      "n_test_good": 28,
+      "n_test_defect": 89,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "color": 19,
+        "cut": 17,
+        "hole": 17,
+        "metal_contamination": 17,
+        "thread": 19
+      }
+    }
+  },
+  "reproduction": {
+    "patchcore": {
+      "backbone": "patchcore",
+      "target": 0.991,
+      "tolerance": 0.02,
+      "per_category": {
+        "bottle": 1.0,
+        "carpet": 0.9867576243980738,
+        "screw": 0.9559335929493749
+      },
+      "mean_auroc": 0.9808970724491495,
+      "min_auroc": 0.9559335929493749,
+      "n_categories": 3,
+      "pass": true
+    }
+  },
+  "reproduction_gate_pass": true
+}

@@ -1,0 +1,4 @@
+bench,backbone,x_pos,j_offset,mean_val,marker
+MVTec AD,patchcore,0,0,0.0765074412445716,o
+VisA,patchcore,1,0,0.088,o
+MPDD,patchcore,2,0,0.0856814906832298,o

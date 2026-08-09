@@ -35,12 +35,18 @@
   \ifnum#5=1
     \colorlet{tmpcellcolor}{cHigh!\mixp!cLow}%
     \fill[tmpcellcolor] (#1,#2) rectangle ++(#3,#4);%
+    \ifdim\mixp pt>55pt\relax
+      \def\celltextcolor{white}%
+    \else
+      \def\celltextcolor{black!75}%
+    \fi
   \else
     \fill[cRefuseBG] (#1,#2) rectangle ++(#3,#4);%
     \fill[pattern={Lines[angle=45,distance=2.6pt,line width=0.35pt]}, pattern color=cRefuseHatch] (#1,#2) rectangle ++(#3,#4);%
+    \def\celltextcolor{black!75}%
   \fi
   \draw[white, line width=0.55pt] (#1,#2) rectangle ++(#3,#4);%
-  \node[font=\fontsize{9}{9.8}\selectfont, text=black!75] at ($(#1,#2)+(#3/2,#4/2)$) {\pgfmathprintnumber[fixed,fixed zerofill,precision=1]{#6}};%
+  \node[font=\fontsize{9}{9.8}\selectfont, text=\celltextcolor] at ($(#1,#2)+(#3/2,#4/2)$) {\pgfmathprintnumber[fixed,fixed zerofill,precision=1]{#6}};%
 }
 
 % Draw one full benchmark panel. #1=list  #2=ncat  #3=ytop  #4=title
@@ -54,8 +60,8 @@
   % panel title, above the G1 row
   \node[anchor=south west, font=\fontsize{9.2}{10}\selectfont] at (0,\ytoprow+\rowh+0.13) {#4};%
   % row-label gutter
-  \node[anchor=east, font=\fontsize{9}{9.8}\selectfont, align=right] at (-0.20,\ytoprow+\rowh/2) {G1\\[-2pt]escaped};%
-  \node[anchor=east, font=\fontsize{9}{9.8}\selectfont, align=right] at (-0.20,\ybotrow+\rowh/2) {G2\\[-2pt]false-rej.};%
+  \node[anchor=east, font=\fontsize{9}{10.5}\selectfont, align=right] at (-0.20,\ytoprow+\rowh/2) {G1\\[0.5pt]escaped};%
+  \node[anchor=east, font=\fontsize{9}{10.5}\selectfont, align=right] at (-0.20,\ybotrow+\rowh/2) {G2\\[0.5pt]false-rej.};%
   \foreach \lbl/\gone/\goner/\gtwo/\gtwor [count=\ni from 0] in #1 {%
     \pgfmathsetmacro{\cx}{\ni*\colw}%
     \datacell{\cx}{\ytoprow}{\colw}{\rowh}{\gone}{\goner}%
@@ -70,14 +76,14 @@
 \begin{document}
 \begin{tikzpicture}[font=\fontsize{9}{9.8}\selectfont]
 
-\drawpanel{\mpddlist}{6}{11.55}{MPDD (6 categories)}
-\drawpanel{\visalist}{12}{7.15}{VisA (12 categories)}
-\drawpanel{\mvteclist}{15}{2.75}{MVTec AD (15 categories)}
+\drawpanel{\mpddlist}{6}{7.60}{MPDD (6 categories)}
+\drawpanel{\visalist}{12}{4.45}{VisA (12 categories)}
+\drawpanel{\mvteclist}{15}{1.25}{MVTec AD (15 categories)}
 
 % ---- Shared legend: color scale (line 1) + refused hatch (line 2), stacked,
 % left-aligned with the panels, both lines within \panelwidth.
-\pgfmathsetmacro{\legyone}{-0.15}
-\pgfmathsetmacro{\legytwo}{-1.15}
+\pgfmathsetmacro{\legyone}{-1.25}
+\pgfmathsetmacro{\legytwo}{-2.25}
 \pgfmathsetmacro{\swatchw}{0.60}
 \pgfmathsetmacro{\swatchh}{0.34}
 \pgfmathsetmacro{\swatchx}{8.0}

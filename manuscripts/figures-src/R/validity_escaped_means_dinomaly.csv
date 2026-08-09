@@ -1,0 +1,4 @@
+bench,backbone,x_pos,j_offset,mean_val,marker
+MVTec AD,dinomaly,0,1,0.0685202384930171,s
+VisA,dinomaly,1,1,0.0647333333333333,s
+MPDD,dinomaly,2,1,0.0734568944099379,s

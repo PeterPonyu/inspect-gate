@@ -1,0 +1,31 @@
+"axis","multiplier","benchmark","certifiable_fraction"
+"g1_escaped_defect",1,"MVTec AD",1
+"g1_escaped_defect",1,"VisA",1
+"g1_escaped_defect",1,"MPDD",0.83333
+"g1_escaped_defect",2,"MVTec AD",1
+"g1_escaped_defect",2,"VisA",1
+"g1_escaped_defect",2,"MPDD",1
+"g1_escaped_defect",4,"MVTec AD",1
+"g1_escaped_defect",4,"VisA",1
+"g1_escaped_defect",4,"MPDD",1
+"g1_escaped_defect",8,"MVTec AD",1
+"g1_escaped_defect",8,"VisA",1
+"g1_escaped_defect",8,"MPDD",1
+"g1_escaped_defect",16,"MVTec AD",1
+"g1_escaped_defect",16,"VisA",1
+"g1_escaped_defect",16,"MPDD",1
+"g2_false_reject",1,"MVTec AD",0.26667
+"g2_false_reject",1,"VisA",1
+"g2_false_reject",1,"MPDD",0
+"g2_false_reject",2,"MVTec AD",0.93333
+"g2_false_reject",2,"VisA",1
+"g2_false_reject",2,"MPDD",1
+"g2_false_reject",4,"MVTec AD",1
+"g2_false_reject",4,"VisA",1
+"g2_false_reject",4,"MPDD",1
+"g2_false_reject",8,"MVTec AD",1
+"g2_false_reject",8,"VisA",1
+"g2_false_reject",8,"MPDD",1
+"g2_false_reject",16,"MVTec AD",1
+"g2_false_reject",16,"VisA",1
+"g2_false_reject",16,"MPDD",1

@@ -1,0 +1,13 @@
+"benchmark","method","cost"
+"MVTec AD","gate",13134.2971055138
+"MVTec AD","crc",15660.8399048342
+"MVTec AD","b1_no_defer",6180.80485510658
+"MVTec AD","all_human",75
+"MPDD","gate",11990.1972242764
+"MPDD","crc",15252.0856127568
+"MPDD","b1_no_defer",NA
+"MPDD","all_human",75
+"VisA","gate",14024.4811454997
+"VisA","crc",18546.5941176471
+"VisA","b1_no_defer",16290.4705882353
+"VisA","all_human",75

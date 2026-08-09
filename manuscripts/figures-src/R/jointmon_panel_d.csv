@@ -1,0 +1,13 @@
+corruption,level,col_idx,x_label,caught,eligible,catch_rate,fa_caught,fa_eligible,fa_rate
+brightness,level1,0,brig-1,11,15,0.733333333333333,44,49,0.897959183673469
+brightness,level2,1,brig-2,11,14,0.785714285714286,44,50,0.88
+brightness,level3,2,brig-3,13,13,1,49,51,0.96078431372549
+contrast,level1,3,cont-1,8,11,0.727272727272727,44,53,0.830188679245283
+contrast,level2,4,cont-2,20,20,1,36,44,0.818181818181818
+contrast,level3,5,cont-3,15,18,0.833333333333333,44,46,0.956521739130435
+gaussian,level1,6,gaus-1,14,14,1,46,50,0.92
+gaussian,level2,7,gaus-2,12,13,0.923076923076923,49,51,0.96078431372549
+gaussian,level3,8,gaus-3,15,16,0.9375,45,48,0.9375
+defocus,level1,9,defo-1,13,15,0.866666666666667,37,49,0.755102040816326
+defocus,level2,10,defo-2,13,13,1,49,51,0.96078431372549
+defocus,level3,11,defo-3,18,18,1,46,46,1

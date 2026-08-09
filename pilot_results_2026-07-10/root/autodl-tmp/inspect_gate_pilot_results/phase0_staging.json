@@ -1,0 +1,206 @@
+{
+  "data_root": "/root/autodl-tmp/mvtec_anomaly_detection",
+  "staging": {
+    "tarball_path": "/root/autodl-pub/mvtec_anomaly_detection.tar.xz",
+    "data_root": "/root/autodl-tmp/mvtec_anomaly_detection",
+    "already_staged": false,
+    "tarball_sha256": "cf4313b13603bec67abb49ca959488f7eedce2a9f7795ec54446c649ac98cd3d"
+  },
+  "category_counts": {
+    "bottle": {
+      "n_train_good": 209,
+      "n_test_good": 20,
+      "n_test_defect": 63,
+      "n_defect_types": 3,
+      "defect_type_counts": {
+        "broken_large": 20,
+        "broken_small": 22,
+        "contamination": 21
+      }
+    },
+    "cable": {
+      "n_train_good": 224,
+      "n_test_good": 58,
+      "n_test_defect": 92,
+      "n_defect_types": 8,
+      "defect_type_counts": {
+        "bent_wire": 13,
+        "cable_swap": 12,
+        "combined": 11,
+        "cut_inner_insulation": 14,
+        "cut_outer_insulation": 10,
+        "missing_cable": 12,
+        "missing_wire": 10,
+        "poke_insulation": 10
+      }
+    },
+    "capsule": {
+      "n_train_good": 219,
+      "n_test_good": 23,
+      "n_test_defect": 109,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "crack": 23,
+        "faulty_imprint": 22,
+        "poke": 21,
+        "scratch": 23,
+        "squeeze": 20
+      }
+    },
+    "carpet": {
+      "n_train_good": 280,
+      "n_test_good": 28,
+      "n_test_defect": 89,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "color": 19,
+        "cut": 17,
+        "hole": 17,
+        "metal_contamination": 17,
+        "thread": 19
+      }
+    },
+    "grid": {
+      "n_train_good": 264,
+      "n_test_good": 21,
+      "n_test_defect": 57,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "bent": 12,
+        "broken": 12,
+        "glue": 11,
+        "metal_contamination": 11,
+        "thread": 11
+      }
+    },
+    "hazelnut": {
+      "n_train_good": 391,
+      "n_test_good": 40,
+      "n_test_defect": 70,
+      "n_defect_types": 4,
+      "defect_type_counts": {
+        "crack": 18,
+        "cut": 17,
+        "hole": 18,
+        "print": 17
+      }
+    },
+    "leather": {
+      "n_train_good": 245,
+      "n_test_good": 32,
+      "n_test_defect": 92,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "color": 19,
+        "cut": 19,
+        "fold": 17,
+        "glue": 19,
+        "poke": 18
+      }
+    },
+    "metal_nut": {
+      "n_train_good": 220,
+      "n_test_good": 22,
+      "n_test_defect": 93,
+      "n_defect_types": 4,
+      "defect_type_counts": {
+        "bent": 25,
+        "color": 22,
+        "flip": 23,
+        "scratch": 23
+      }
+    },
+    "pill": {
+      "n_train_good": 267,
+      "n_test_good": 26,
+      "n_test_defect": 141,
+      "n_defect_types": 7,
+      "defect_type_counts": {
+        "color": 25,
+        "combined": 17,
+        "contamination": 21,
+        "crack": 26,
+        "faulty_imprint": 19,
+        "pill_type": 9,
+        "scratch": 24
+      }
+    },
+    "screw": {
+      "n_train_good": 320,
+      "n_test_good": 41,
+      "n_test_defect": 119,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "manipulated_front": 24,
+        "scratch_head": 24,
+        "scratch_neck": 25,
+        "thread_side": 23,
+        "thread_top": 23
+      }
+    },
+    "tile": {
+      "n_train_good": 230,
+      "n_test_good": 33,
+      "n_test_defect": 84,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "crack": 17,
+        "glue_strip": 18,
+        "gray_stroke": 16,
+        "oil": 18,
+        "rough": 15
+      }
+    },
+    "toothbrush": {
+      "n_train_good": 60,
+      "n_test_good": 12,
+      "n_test_defect": 30,
+      "n_defect_types": 1,
+      "defect_type_counts": {
+        "defective": 30
+      }
+    },
+    "transistor": {
+      "n_train_good": 213,
+      "n_test_good": 60,
+      "n_test_defect": 40,
+      "n_defect_types": 4,
+      "defect_type_counts": {
+        "bent_lead": 10,
+        "cut_lead": 10,
+        "damaged_case": 10,
+        "misplaced": 10
+      }
+    },
+    "wood": {
+      "n_train_good": 247,
+      "n_test_good": 19,
+      "n_test_defect": 60,
+      "n_defect_types": 5,
+      "defect_type_counts": {
+        "color": 8,
+        "combined": 11,
+        "hole": 10,
+        "liquid": 10,
+        "scratch": 21
+      }
+    },
+    "zipper": {
+      "n_train_good": 240,
+      "n_test_good": 32,
+      "n_test_defect": 119,
+      "n_defect_types": 7,
+      "defect_type_counts": {
+        "broken_teeth": 19,
+        "combined": 16,
+        "fabric_border": 17,
+        "fabric_interior": 16,
+        "rough": 17,
+        "split_teeth": 18,
+        "squeezed_teeth": 16
+      }
+    }
+  },
+  "reproduction": {},
+  "reproduction_gate_pass": null
+}

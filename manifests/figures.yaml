@@ -1,0 +1,335 @@
+schema_version: 1
+project_id: inspect-gate
+adapter_protocol_version: 1
+local_adapter: tools/inspect-gate/figure_audit_adapter.py
+figures:
+- figure_id: inspect.fig_overview
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-overview.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_overview.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-overview.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_scoreanatomy
+  builder_status: missing
+  canonical_builder: null
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_scoreanatomy.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-scoreanatomy.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_samples
+  builder_status: missing
+  canonical_builder: null
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_samples.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-samples.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_categorymap
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-categorymap.tex
+  data_inputs:
+  - tools/inspect-gate/manuscripts/figures-src/data/categorymap_mvtec.csv
+  - tools/inspect-gate/manuscripts/figures-src/data/categorymap_visa.csv
+  - tools/inspect-gate/manuscripts/figures-src/data/categorymap_mpdd.csv
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_categorymap.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-categorymap.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_alphafrontier
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-alphafrontier.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_alphafrontier.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-alphafrontier.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_calfraction
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-calfraction.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_calfraction.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-calfraction.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_calplanning
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-calplanning.tex
+  data_inputs:
+  - tools/inspect-gate/calplanning_2026-07-29/results.json
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_calplanning.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-calplanning.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_crcbaseline
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-crcbaseline.tex
+  data_inputs:
+  - tools/inspect-gate/manuscripts/figures-src/data/crcbaseline.csv
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_crcbaseline.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-crcbaseline.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_opcost
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-opcost.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_opcost.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-opcost.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_g2delta
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-g2delta.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_g2delta.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-g2delta.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_binding_escaped
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-binding-escaped.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_binding_escaped.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-binding-escaped.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_binding_fr
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-binding-fr.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_binding_fr.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-binding-fr.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_validity
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-validity.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_validity.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-validity.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_deferral
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-deferral.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_deferral.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-deferral.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_jointmon
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-jointmon.tex
+  data_inputs:
+  - tools/inspect-gate/drift_joint_monitor_2026-08-01/results.json
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_jointmon.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-jointmon.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_xdet
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-xdet.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_xdet.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-xdet.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_mondrian_1
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-mondrian-1.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_mondrian_1.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-mondrian-1.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []
+- figure_id: inspect.fig_mondrian_2
+  builder_status: registered
+  canonical_builder: tools/inspect-gate/manuscripts/figures-src/tikz/fig-mondrian-2.tex
+  data_inputs: []
+  scientific_digest_status: pending
+  scientific_digest: null
+  layout_family: unclassified
+  scientific_version: 1
+  panel_contract_status: unapproved
+  panel_layout: null
+  artifacts:
+  - artifact_id: inspect.fig_mondrian_2.existing
+    profile: existing
+    path: tools/inspect-gate/manuscripts/figures-src/fig-mondrian-2.pdf
+    measurement_status: pending
+    width_in: null
+  panels: []
+  panel_groups: []

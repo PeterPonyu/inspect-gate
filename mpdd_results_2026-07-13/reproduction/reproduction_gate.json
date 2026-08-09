@@ -1,0 +1,181 @@
+{
+  "patchcore": {
+    "0": {
+      "backbone": "patchcore",
+      "target": null,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.8843085106382979,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9144444444444444,
+        "connector": 0.9976190476190476,
+        "metal_plate": 1.0,
+        "tubes": 0.8999094202898551
+      },
+      "mean_auroc": 0.9493802371652742,
+      "min_auroc": 0.8843085106382979,
+      "n_categories": 6,
+      "pass": null,
+      "note": "descriptive only: no repo-confirmed published PatchCore-on-MPDD image-AUROC; per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+    },
+    "1": {
+      "backbone": "patchcore",
+      "target": null,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.8756648936170213,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9188888888888889,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9044384057971014
+      },
+      "mean_auroc": 0.9498320313838353,
+      "min_auroc": 0.8756648936170213,
+      "n_categories": 6,
+      "pass": null,
+      "note": "descriptive only: no repo-confirmed published PatchCore-on-MPDD image-AUROC; per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+    },
+    "2": {
+      "backbone": "patchcore",
+      "target": null,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.8716755319148937,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9188888888888889,
+        "connector": 0.9976190476190476,
+        "metal_plate": 1.0,
+        "tubes": 0.9003623188405797
+      },
+      "mean_auroc": 0.9480909645439017,
+      "min_auroc": 0.8716755319148937,
+      "n_categories": 6,
+      "pass": null,
+      "note": "descriptive only: no repo-confirmed published PatchCore-on-MPDD image-AUROC; per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+    },
+    "3": {
+      "backbone": "patchcore",
+      "target": null,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.8882978723404256,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9466666666666667,
+        "connector": 0.9976190476190476,
+        "metal_plate": 1.0,
+        "tubes": 0.9080615942028986
+      },
+      "mean_auroc": 0.9567741968048397,
+      "min_auroc": 0.8882978723404256,
+      "n_categories": 6,
+      "pass": null,
+      "note": "descriptive only: no repo-confirmed published PatchCore-on-MPDD image-AUROC; per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+    },
+    "4": {
+      "backbone": "patchcore",
+      "target": null,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.8756648936170213,
+        "bracket_brown": 1.0,
+        "bracket_white": 0.9411111111111111,
+        "connector": 0.9976190476190476,
+        "metal_plate": 1.0,
+        "tubes": 0.9039855072463768
+      },
+      "mean_auroc": 0.9530634265989262,
+      "min_auroc": 0.8756648936170213,
+      "n_categories": 6,
+      "pass": null,
+      "note": "descriptive only: no repo-confirmed published PatchCore-on-MPDD image-AUROC; per reproduction.py's no-guessed-target rule the gate does not grade this backbone."
+    }
+  },
+  "dinomaly": {
+    "0": {
+      "backbone": "dinomaly",
+      "target": 0.972,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.9315159574468085,
+        "bracket_brown": 0.9532428355957768,
+        "bracket_white": 0.9933333333333333,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9492753623188406
+      },
+      "mean_auroc": 0.9712279147824598,
+      "min_auroc": 0.9315159574468085,
+      "n_categories": 6,
+      "pass": true
+    },
+    "1": {
+      "backbone": "dinomaly",
+      "target": 0.972,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.9401595744680851,
+        "bracket_brown": 0.9509803921568627,
+        "bracket_white": 0.9955555555555555,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9560688405797102
+      },
+      "mean_auroc": 0.9737940604600355,
+      "min_auroc": 0.9401595744680851,
+      "n_categories": 6,
+      "pass": true
+    },
+    "2": {
+      "backbone": "dinomaly",
+      "target": 0.972,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.9295212765957447,
+        "bracket_brown": 0.9577677224736049,
+        "bracket_white": 0.9922222222222222,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9547101449275363
+      },
+      "mean_auroc": 0.9723702277031846,
+      "min_auroc": 0.9295212765957447,
+      "n_categories": 6,
+      "pass": true
+    },
+    "3": {
+      "backbone": "dinomaly",
+      "target": 0.972,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.9361702127659575,
+        "bracket_brown": 0.9547511312217195,
+        "bracket_white": 0.9944444444444445,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9433876811594203
+      },
+      "mean_auroc": 0.9714589115985902,
+      "min_auroc": 0.9361702127659575,
+      "n_categories": 6,
+      "pass": true
+    },
+    "4": {
+      "backbone": "dinomaly",
+      "target": 0.972,
+      "tolerance": 0.02,
+      "per_category": {
+        "bracket_black": 0.9288563829787234,
+        "bracket_brown": 0.9547511312217195,
+        "bracket_white": 0.9955555555555555,
+        "connector": 1.0,
+        "metal_plate": 1.0,
+        "tubes": 0.9547101449275363
+      },
+      "mean_auroc": 0.9723122024472558,
+      "min_auroc": 0.9288563829787234,
+      "n_categories": 6,
+      "pass": true
+    }
+  }
+}

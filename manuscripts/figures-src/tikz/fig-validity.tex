@@ -1,0 +1,142 @@
+% fig-validity: certificate validity (2x2) — per-repeat rates (a,b),
+% matched-diagonal cloud (c), transfer-violation cloud (d).
+% Data: ../R/validity_{escaped,fr}_{points,means}.csv;
+%       fragments ../out/validity-panel-{c,d}.tex (validity.R, pure R).
+%
+% Chrome (aligned with crcbaseline / g2delta):
+%   shared backbone legend just above a/b (above panel letters)
+%   c/d titles @ 1.02; horizontal legends @ 1.14 (clear of panel letters)
+\documentclass[border=2pt]{standalone}
+\input{inspect_style.tex}
+\usetikzlibrary{calc}
+
+% Letter in the left gutter on the title row; wider xshift so horizontal
+% legends starting near plot-left cannot cover it.
+\newcommand{\validitylabel}[2]{%
+  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
+    at ([xshift=-18pt, yshift=7pt] #1.north west) {\textbf{#2}};%
+}
+
+\pgfplotstableread[col sep=comma]{../R/validity_escaped_points_patchcore.csv}\escPtsPC
+\pgfplotstableread[col sep=comma]{../R/validity_escaped_points_dinomaly.csv}\escPtsDM
+\pgfplotstableread[col sep=comma]{../R/validity_fr_points_patchcore.csv}\frPtsPC
+\pgfplotstableread[col sep=comma]{../R/validity_fr_points_dinomaly.csv}\frPtsDM
+\pgfplotstableread[col sep=comma]{../R/validity_escaped_means_patchcore.csv}\escMeansPC
+\pgfplotstableread[col sep=comma]{../R/validity_escaped_means_dinomaly.csv}\escMeansDM
+\pgfplotstableread[col sep=comma]{../R/validity_fr_means_patchcore.csv}\frMeansPC
+\pgfplotstableread[col sep=comma]{../R/validity_fr_means_dinomaly.csv}\frMeansDM
+
+\begin{document}
+\begin{tikzpicture}[font=\figfont]
+
+\pgfplotsset{
+  validity/title near axis/.style={
+    title style={at={(0.5,1.02)}, anchor=south, font=\titlefont},
+  },
+  % title@1.02, legend@1.28 parked SE so the left gutter keeps the panel letter clear.
+  validity/legend above/.style={
+    legend style={
+      at={(0.98,1.28)}, anchor=south east,
+      legend columns=-1, font=\tickfont, draw=none, fill=none,
+      inner sep=1.2pt, /tikz/every even column/.append style={column sep=5pt},
+    },
+  },
+}
+
+% ── Panel a: escaped-defect rate per repeat ─────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_esc,
+  width=2.48in, height=1.72in, at={(0.58in,2.42in)},
+  xlabel={benchmark}, ylabel={realized escaped-defect rate},
+  ymin=0, ymax=0.15, xmin=-0.6, xmax=2.6,
+  xtick={0,1,2}, xticklabels={MVTec AD, VisA, MPDD},
+  clip=true,
+]
+\addplot[cPatchcore, only marks, mark=o, mark size=1.0pt, opacity=0.30, each nth point=4, filter discard warning=false, unbounded coords=discard]
+  table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=value]{\escPtsPC};
+\addplot[cDinomaly, only marks, mark=square, mark size=1.0pt, opacity=0.30, each nth point=4, filter discard warning=false, unbounded coords=discard]
+  table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=value]{\escPtsDM};
+\addplot[cPatchcore, only marks, mark=o, line width=1.0pt, mark size=2.6pt]
+  table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\escMeansPC};
+\addplot[cDinomaly, only marks, mark=square, line width=1.0pt, mark size=2.6pt]
+  table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\escMeansDM};
+\draw[black, dashed, line width=0.8pt] (axis cs:-0.6,0.10) -- (axis cs:2.6,0.10);
+\node[anchor=south east, font=\tickfont] at (axis cs:2.58,0.102) {$\alpha_{\mathrm{miss}}$};
+\end{axis}
+\validitylabel{ax_esc}{a}
+
+% ── Panel b: false-reject rate per repeat ───────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_fr,
+  width=2.48in, height=1.72in, at={(3.32in,2.42in)},
+  xlabel={benchmark}, ylabel={realized false-reject rate},
+  ymin=0, ymax=0.15, xmin=-0.6, xmax=2.6,
+  xtick={0,1,2}, xticklabels={MVTec AD, VisA, MPDD},
+  clip=true,
+]
+\addplot[cPatchcore, only marks, mark=o, mark size=1.0pt, opacity=0.30, each nth point=4, filter discard warning=false, unbounded coords=discard]
+  table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=value]{\frPtsPC};
+\addplot[cDinomaly, only marks, mark=square, mark size=1.0pt, opacity=0.30, each nth point=4, filter discard warning=false, unbounded coords=discard]
+  table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=value]{\frPtsDM};
+\addplot[cPatchcore, only marks, mark=o, line width=1.0pt, mark size=2.6pt]
+  table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\frMeansPC};
+\addplot[cDinomaly, only marks, mark=square, line width=1.0pt, mark size=2.6pt]
+  table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\frMeansDM};
+\draw[black, dashed, line width=0.8pt] (axis cs:-0.6,0.05) -- (axis cs:2.6,0.05);
+\node[anchor=south east, font=\tickfont] at (axis cs:2.58,0.052) {$\alpha_{\mathrm{fr}}$};
+\node[anchor=north east, font=\tickfont, text=black!55, align=right]
+  at (axis cs:2.55,0.145) {G2: 0/6\\refused};
+\end{axis}
+\validitylabel{ax_fr}{b}
+
+% Shared backbone legend — above panel letters (letters sit ~8pt over NW).
+\node[anchor=south, font=\tickfont] at ($(ax_esc.north)!0.5!(ax_fr.north)+(0,10pt)$) {%
+  {\color{cPatchcore}$\bullet$}~PatchCore\quad
+  {\color{cDinomaly}$\rule[0.2ex]{1.1ex}{1.1ex}$}~Dinomaly%
+};
+
+% ── Panel c: matched-diagonal validity cloud ────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_md,
+  width=2.48in, height=1.72in, at={(0.58in,0.14in)},
+  xlabel={realized escaped (\%)}, ylabel={realized false-reject (\%)},
+  xmin=-0.6, xmax=15, ymin=-0.4, ymax=8.4,
+  xtick={0,5,10,15}, ytick={0,2,4,6,8},
+  validity/title near axis,
+  validity/legend above,
+  title={matched diagonal},
+  clip=true,
+]
+\draw[black, dashed, line width=0.6pt] (axis cs:10,-0.4) -- (axis cs:10,8.4);
+\node[anchor=north, font=\tickfont, text=black!60] at (axis cs:10,7.7) {$\alpha_{\mathrm{miss}}$};
+\draw[black, dashed, line width=0.6pt] (axis cs:-0.6,5) -- (axis cs:15,5);
+\node[anchor=east, font=\tickfont, text=black!60] at (axis cs:14.7,5.35) {$\alpha_{\mathrm{fr}}$};
+\input{../out/validity-panel-c.tex}
+\end{axis}
+\validitylabel{ax_md}{c}
+
+% ── Panel d: transfer-violation cloud ───────────────────────────────────────
+% Axis padded so count-bubbles at (0,·) / (·,0) are not clipped.
+\begin{axis}[
+  inspect default,
+  name=ax_vc,
+  width=2.48in, height=1.72in, at={(3.32in,0.14in)},
+  xlabel={violation excess (pp)}, ylabel={other rate (\%)},
+  xmin=-14, xmax=110, ymin=-16, ymax=118,
+  xtick={0,50,100}, ytick={0,50,100},
+  validity/title near axis,
+  validity/legend above,
+  title={transfer violations},
+  clip=true,
+]
+\draw[gray!35, line width=0.35pt] (axis cs:-14,0) -- (axis cs:110,0);
+\draw[gray!35, line width=0.35pt] (axis cs:0,-16) -- (axis cs:0,118);
+\input{../out/validity-panel-d.tex}
+\end{axis}
+\validitylabel{ax_vc}{d}
+
+\end{tikzpicture}
+\end{document}

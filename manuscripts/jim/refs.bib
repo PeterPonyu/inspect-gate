@@ -1,0 +1,403 @@
+% Paper-specific references for the inspect-gate manuscript (skeleton).
+% Citation-verification pass run 2026-07-11 (write-geo): entries verified against
+% the K6 citation re-scan (analysis_2026-07-10/K6-CITATION-RESCAN.md) and, for the
+% items K6 left open, direct arXiv/publisher fetches. Corrections applied: Dinomaly
+% full author list; Shen & Liu published MDPI title + given names. Classical
+% statistics references (Clopper-Pearson, Holm, Vovk, Lei, Bates/RCPS, Geifman,
+% Angelopoulos gentle-intro) accepted against the known published record.
+
+% ---- Industrial anomaly detection: backbones + benchmark ----
+@inproceedings{bergmann2019mvtec,
+  title     = {{MVTec AD}--A comprehensive real-world dataset for unsupervised anomaly detection},
+  author    = {Bergmann, Paul and Fauser, Michael and Sattlegger, David and Steger, Carsten},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2019},
+}
+
+@inproceedings{roth2022patchcore,
+  title     = {Towards total recall in industrial anomaly detection},
+  author    = {Roth, Karsten and Pemula, Latha and Zepeda, Joaquin and Sch{\"o}lkopf, Bernhard and Brox, Thomas and Gehler, Peter},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2022},
+  note      = {arXiv:2106.08265},
+}
+
+% arXiv:2405.14325 confirmed by K6 re-scan; full author list verified 2026-07-11
+% against the arXiv abstract (6 authors). Published MVTec-AD figure 99.6%.
+@inproceedings{guo2025dinomaly,
+  title     = {{Dinomaly}: The Less Is More Philosophy in Multi-Class Unsupervised Anomaly Detection},
+  author    = {Guo, Jia and Lu, Shuai and Zhang, Weihang and Chen, Fang and Li, Huiqi and Liao, Hongen},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  year      = {2025},
+  note      = {arXiv:2405.14325},
+}
+
+@article{akcay2022anomalib,
+  title   = {Anomalib: A deep learning library for anomaly detection},
+  author  = {Akcay, Samet and Ameln, Dick and Vaidya, Ashwin and Lakshmanan, Barath and Ahuja, Nilesh and Genc, Utku},
+  journal = {Proc. IEEE Int. Conf. Image Processing (ICIP)},
+  year    = {2022},
+}
+
+@inproceedings{batzner2024efficientad,
+  title     = {{EfficientAD}: Accurate visual anomaly detection at millisecond-level latencies},
+  author    = {Batzner, Kilian and Heckler, Lars and K{\"o}nig, Rebecca},
+  booktitle = {Proc. IEEE/CVF Winter Conf. Applications of Computer Vision (WACV)},
+  year      = {2024},
+}
+
+% ---- Distribution-free risk control: conformal + RCPS/LTT line ----
+@book{vovk2005algorithmic,
+  title     = {Algorithmic Learning in a Random World},
+  author    = {Vovk, Vladimir and Gammerman, Alexander and Shafer, Glenn},
+  publisher = {Springer},
+  year      = {2005},
+}
+
+@article{lei2018distribution,
+  title   = {Distribution-free predictive inference for regression},
+  author  = {Lei, Jing and G'Sell, Max and Rinaldo, Alessandro and Tibshirani, Ryan J. and Wasserman, Larry},
+  journal = {Journal of the American Statistical Association},
+  volume  = {113},
+  number  = {523},
+  pages   = {1094--1111},
+  year    = {2018},
+}
+
+@article{bates2021rcps,
+  title   = {Distribution-free, risk-controlling prediction sets},
+  author  = {Bates, Stephen and Angelopoulos, Anastasios and Lei, Lihua and Malik, Jitendra and Jordan, Michael I.},
+  journal = {Journal of the ACM},
+  volume  = {68},
+  number  = {6},
+  year    = {2021},
+}
+
+% Learn then Test (Angelopoulos et al.), arXiv:2110.01052 — verified 2026-07-11.
+@article{angelopoulos2021ltt,
+  title   = {Learn then test: Calibrating predictive algorithms to achieve risk control},
+  author  = {Angelopoulos, Anastasios N. and Bates, Stephen and Cand{\`e}s, Emmanuel J. and Jordan, Michael I. and Lei, Lihua},
+  journal = {arXiv:2110.01052},
+  year    = {2021},
+}
+
+@article{angelopoulos2023gentle,
+  title   = {Conformal prediction: A gentle introduction},
+  author  = {Angelopoulos, Anastasios N. and Bates, Stephen},
+  journal = {Foundations and Trends in Machine Learning},
+  volume  = {16},
+  number  = {4},
+  pages   = {494--591},
+  year    = {2023},
+}
+
+% ---- Classical statistics used in the gate/certificates ----
+@article{clopper1934use,
+  title   = {The use of confidence or fiducial limits illustrated in the case of the binomial},
+  author  = {Clopper, Charles J. and Pearson, Egon S.},
+  journal = {Biometrika},
+  volume  = {26},
+  number  = {4},
+  pages   = {404--413},
+  year    = {1934},
+}
+
+@article{holm1979simple,
+  title   = {A simple sequentially rejective multiple test procedure},
+  author  = {Holm, Sture},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {6},
+  number  = {2},
+  pages   = {65--70},
+  year    = {1979},
+}
+
+% ---- Selective prediction / abstention (framing) ----
+@inproceedings{geifman2017selective,
+  title     = {Selective classification for deep neural networks},
+  author    = {Geifman, Yonatan and El-Yaniv, Ran},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2017},
+}
+
+% ---- Prior conformal anomaly detection / conformal-with-abstention (K6 re-scan 2026-07-11) ----
+@inproceedings{laxhammar2011sequential,
+  title     = {Sequential conformal anomaly detection in trajectories based on {Hausdorff} distance},
+  author    = {Laxhammar, Rikard and Falkman, G{\"o}ran},
+  booktitle = {Proc. 14th Int. Conf. Information Fusion (FUSION)},
+  pages     = {1--8},
+  year      = {2011},
+}
+
+@article{laxhammar2015inductive,
+  title   = {Inductive conformal anomaly detection for sequential detection of anomalous sub-trajectories},
+  author  = {Laxhammar, Rikard and Falkman, G{\"o}ran},
+  journal = {Annals of Mathematics and Artificial Intelligence},
+  volume  = {74},
+  number  = {1--2},
+  pages   = {67--94},
+  year    = {2015},
+}
+
+% Live-verified 2026-07-16: since published as a spotlight paper at ICLR 2024
+% (proceedings.iclr.cc/paper_files/paper/2024/hash/f3549ef9b5ff520a7e41ff3cc306ab2b);
+% cited by the peer-reviewed venue rather than the bare 2022 preprint.
+@inproceedings{angelopoulos2022crc,
+  title     = {Conformal risk control},
+  author    = {Angelopoulos, Anastasios N. and Bates, Stephen and Fisch, Adam and Lei, Lihua and Schuster, Tal},
+  booktitle = {Proc. Int. Conf. Learning Representations (ICLR)},
+  year      = {2024},
+  note      = {arXiv:2208.02814},
+}
+
+@article{hennhofer2026nonconform,
+  title   = {Conformal anomaly detection in {Python}: Moving beyond heuristic thresholds with \texttt{nonconform}},
+  author  = {Hennh{\"o}fer, Oliver and Kirsch, Maximilian and Preisach, Christine},
+  journal = {arXiv:2605.13642},
+  year    = {2026},
+}
+
+% Shen & Liu: PUBLISHED MDPI Mathematics version. Title + given names verified
+% 2026-07-11 against the arXiv abstract (2504.17721) and the MDPI record metadata.
+@article{shen2025conformal,
+  title   = {Conformal Segmentation in Industrial Surface Defect Detection with Statistical Guarantees},
+  author  = {Shen, Cheng and Liu, Yuewei},
+  journal = {Mathematics},
+  volume  = {13},
+  number  = {15},
+  pages   = {2430},
+  year    = {2025},
+  note    = {MDPI; DOI 10.3390/math13152430; arXiv:2504.17721},
+}
+
+@article{bai2025crcsgad,
+  title   = {{CRC-SGAD}: Conformal risk control for supervised graph anomaly detection},
+  author  = {Bai, Songran and Zheng, Xiaolong and Zeng, Daniel Dajun},
+  journal = {arXiv:2504.02248},
+  year    = {2025},
+}
+
+@inproceedings{kumar2025beyond,
+  title     = {Beyond confidence: Adaptive abstention in dual-threshold conformal prediction for autonomous system perception},
+  author    = {Kumar, Divake and Darabi, Nastaran and Tayebati, Sina and Trivedi, Amit Ranjan},
+  booktitle = {Proc. IEEE Int. Conf. Omni-layer Intelligent Systems (COINS)},
+  year      = {2025},
+  note      = {arXiv:2502.07255},
+}
+
+@inproceedings{zou2022spot,
+  title     = {SPot-the-Difference Self-supervised Pre-training for Anomaly Detection and Segmentation},
+  author    = {Zou, Yang and Jeong, Jongheon and Pemula, Latha and Zhang, Dongqing and Dabeer, Onkar},
+  booktitle = {Proc. Eur. Conf. Computer Vision (ECCV)},
+  year      = {2022},
+  note      = {VisA benchmark; arXiv:2207.14315},
+}
+
+@inproceedings{you2022unified,
+  title     = {A Unified Model for Multi-class Anomaly Detection},
+  author    = {You, Zhiyuan and Cui, Lei and Shen, Yujun and Yang, Kai and Lu, Xin and Zheng, Yu and Le, Xinyi},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2022},
+  note      = {arXiv:2206.03687},
+}
+
+@inproceedings{jezek2021mpdd,
+  title     = {Deep learning-based defect detection of metal parts: evaluating current methods in complex conditions},
+  author    = {Je{\v{z}}ek, {\v{S}}t{\v{e}}p{\'a}n and Jon{\'a}k, Martin and Burget, Radim and Dvo{\v{r}}{\'a}k, Pavel and Skot{\'a}k, Milo{\v{s}}},
+  booktitle = {Proc. 13th Int. Congr. Ultra Modern Telecommunications and Control Systems and Workshops (ICUMT)},
+  pages     = {66--71},
+  year      = {2021},
+  note      = {MPDD (Metal Parts Defect Detection) benchmark},
+}
+
+% =====================================================================
+% Reference expansion for the AEI (Advanced Engineering Informatics) port
+% (added 2026-07-16). Every entry below is live-verified against Crossref
+% (DOI) or the arXiv API on 2026-07-16 -- no fabricated identifiers. The
+% AEI in-venue industrial visual-inspection cluster (Liu et al. 2023,
+% Shang et al. 2023, Tsai & Jen 2021) is included per venue norms. These
+% entries are woven into Related Work / Discussion of paper_aei.tex; they
+% are carried (uncited) in the canonical and JIM refs.bib copies so all
+% three bibliographies stay identical supersets.
+% =====================================================================
+
+% ---- AEI in-venue industrial visual-inspection cluster ----
+@article{liu2023component,
+  title   = {Component-aware anomaly detection framework for adjustable and logical industrial visual inspection},
+  author  = {Liu, Tongkun and Li, Bing and Du, Xiao and Jiang, Bingke and Jin, Xiao and Jin, Liuyi and Zhao, Zhuo},
+  journal = {Advanced Engineering Informatics},
+  volume  = {58},
+  pages   = {102161},
+  year    = {2023},
+  note    = {DOI 10.1016/j.aei.2023.102161},
+}
+
+@article{shang2023defect,
+  title   = {Defect-aware transformer network for intelligent visual surface defect detection},
+  author  = {Shang, Hongbing and Sun, Chuang and Liu, Jinxin and Chen, Xuefeng and Yan, Ruqiang},
+  journal = {Advanced Engineering Informatics},
+  volume  = {55},
+  pages   = {101882},
+  year    = {2023},
+  note    = {DOI 10.1016/j.aei.2023.101882},
+}
+
+@article{tsai2021autoencoder,
+  title   = {Autoencoder-based anomaly detection for surface defect inspection},
+  author  = {Tsai, Du-Ming and Jen, Po-Hao},
+  journal = {Advanced Engineering Informatics},
+  volume  = {48},
+  pages   = {101272},
+  year    = {2021},
+  note    = {DOI 10.1016/j.aei.2021.101272},
+}
+
+% ---- Manufacturing / deployment framing (engineering-informatics genre) ----
+@article{tabernik2020segmentation,
+  title   = {Segmentation-based deep-learning approach for surface-defect detection},
+  author  = {Tabernik, Domen and {\v{S}}ela, Samo and Skvar{\v{c}}, Jure and Sko{\v{c}}aj, Danijel},
+  journal = {Journal of Intelligent Manufacturing},
+  volume  = {31},
+  number  = {3},
+  pages   = {759--776},
+  year    = {2020},
+  note    = {DOI 10.1007/s10845-019-01476-x},
+}
+
+@article{liu2024survey,
+  title   = {Deep Industrial Image Anomaly Detection: A Survey},
+  author  = {Liu, Jiaqi and Xie, Guoyang and Wang, Jinbao and Li, Shangnian and Wang, Chengjie and Zheng, Feng and Jin, Yaochu},
+  journal = {Machine Intelligence Research},
+  volume  = {21},
+  number  = {1},
+  pages   = {104--135},
+  year    = {2024},
+  note    = {DOI 10.1007/s11633-023-1459-z},
+}
+
+@article{czimmermann2020visual,
+  title   = {Visual-based defect detection and classification approaches for industrial applications---a survey},
+  author  = {Czimmermann, Tam{\'a}s and Ciuti, Gastone and Milazzo, Mario and Chiurazzi, Marcello and Roccella, Stefano and Oddo, Calogero Maria and Dario, Paolo},
+  journal = {Sensors},
+  volume  = {20},
+  number  = {5},
+  pages   = {1459},
+  year    = {2020},
+  note    = {DOI 10.3390/s20051459},
+}
+
+% ---- Industrial anomaly-detection backbones the gate is agnostic to ----
+@inproceedings{defard2021padim,
+  title     = {{PaDiM}: A Patch Distribution Modeling Framework for Anomaly Detection and Localization},
+  author    = {Defard, Thomas and Setkov, Aleksandr and Loesch, Angelique and Audigier, Romaric},
+  booktitle = {Proc. Int. Conf. Pattern Recognition (ICPR) Workshops},
+  year      = {2021},
+  note      = {arXiv:2011.08785},
+}
+
+@inproceedings{cohen2020spade,
+  title     = {Sub-image anomaly detection with deep pyramid correspondences},
+  author    = {Cohen, Niv and Hoshen, Yedid},
+  booktitle = {arXiv:2005.02357},
+  year      = {2020},
+  note      = {SPADE},
+}
+
+@inproceedings{bergmann2020uninformed,
+  title     = {Uninformed students: Student-teacher anomaly detection with discriminative latent embeddings},
+  author    = {Bergmann, Paul and Fauser, Michael and Sattlegger, David and Steger, Carsten},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {4183--4191},
+  year      = {2020},
+  note      = {DOI 10.1109/CVPR42600.2020.00424},
+}
+
+@inproceedings{li2021cutpaste,
+  title     = {{CutPaste}: Self-supervised learning for anomaly detection and localization},
+  author    = {Li, Chun-Liang and Sohn, Kihyuk and Yoon, Jinsung and Pfister, Tomas},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {9664--9674},
+  year      = {2021},
+  note      = {DOI 10.1109/CVPR46437.2021.00954},
+}
+
+@inproceedings{zavrtanik2021draem,
+  title     = {{DR{\AE}M}: A discriminatively trained reconstruction embedding for surface anomaly detection},
+  author    = {Zavrtanik, Vitjan and Kristan, Matej and Sko{\v{c}}aj, Danijel},
+  booktitle = {Proc. IEEE/CVF Int. Conf. Computer Vision (ICCV)},
+  pages     = {8330--8339},
+  year      = {2021},
+  note      = {DOI 10.1109/ICCV48922.2021.00822},
+}
+
+@inproceedings{yu2021fastflow,
+  title     = {{FastFlow}: Unsupervised anomaly detection and localization via 2D normalizing flows},
+  author    = {Yu, Jiawei and Zheng, Ye and Wang, Xiang and Li, Wei and Wu, Yushuang and Zhao, Rui and Wu, Liwei},
+  booktitle = {arXiv:2111.07677},
+  year      = {2021},
+}
+
+@inproceedings{deng2022reverse,
+  title     = {Anomaly detection via reverse distillation from one-class embedding},
+  author    = {Deng, Hanqiu and Li, Xingyu},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {9737--9746},
+  year      = {2022},
+  note      = {DOI 10.1109/CVPR52688.2022.00951},
+}
+
+@inproceedings{liu2023simplenet,
+  title     = {{SimpleNet}: A simple network for image anomaly detection and localization},
+  author    = {Liu, Zhikang and Zhou, Yiming and Xu, Yuansheng and Wang, Zilei},
+  booktitle = {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {20402--20411},
+  year      = {2023},
+  note      = {DOI 10.1109/CVPR52729.2023.01954},
+}
+
+% ---- Conformal prediction: inductive/split origin, set-valued and adaptive ----
+@inproceedings{papadopoulos2002inductive,
+  title     = {Inductive confidence machines for regression},
+  author    = {Papadopoulos, Harris and Proedrou, Kostas and Vovk, Volodya and Gammerman, Alex},
+  booktitle = {Proc. European Conf. Machine Learning (ECML), LNCS 2430},
+  pages     = {345--356},
+  year      = {2002},
+  publisher = {Springer},
+  note      = {DOI 10.1007/3-540-36755-1\_29},
+}
+
+@article{sadinle2019least,
+  title   = {Least ambiguous set-valued classifiers with bounded error levels},
+  author  = {Sadinle, Mauricio and Lei, Jing and Wasserman, Larry},
+  journal = {Journal of the American Statistical Association},
+  volume  = {114},
+  number  = {525},
+  pages   = {223--234},
+  year    = {2019},
+  note    = {DOI 10.1080/01621459.2017.1395341},
+}
+
+@inproceedings{romano2020aps,
+  title     = {Classification with valid and adaptive coverage},
+  author    = {Romano, Yaniv and Sesia, Matteo and Cand{\`e}s, Emmanuel J.},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2020},
+  note      = {arXiv:2006.02544},
+}
+
+@inproceedings{tibshirani2019covariate,
+  title     = {Conformal prediction under covariate shift},
+  author    = {Tibshirani, Ryan J. and Barber, Rina Foygel and Cand{\`e}s, Emmanuel J. and Ramdas, Aaditya},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2019},
+  note      = {arXiv:1904.06019},
+}
+
+% ---- Selective prediction with an integrated reject option ----
+@inproceedings{geifman2019selectivenet,
+  title     = {{SelectiveNet}: A deep neural network with an integrated reject option},
+  author    = {Geifman, Yonatan and El-Yaniv, Ran},
+  booktitle = {Proc. Int. Conf. Machine Learning (ICML)},
+  year      = {2019},
+  note      = {arXiv:1901.09192},
+}

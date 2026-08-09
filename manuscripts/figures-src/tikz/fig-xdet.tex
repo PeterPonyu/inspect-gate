@@ -1,0 +1,131 @@
+% fig-xdet: cross-detector transfer diagnostics (2x2)
+% Data: ../R/xdet_panel_{a,b,c,d}.csv → ../out/xdet-panel-{b,c,d}.tex
+% Panel letters via \panellabel after \end{axis}; titles centered over plot box.
+\documentclass[border=2pt]{standalone}
+\input{inspect_style.tex}
+\input{../out/xdet-panel-b-meta.tex}
+
+\begin{document}
+\pgfplotstableread[col sep=comma]{../R/xdet_panel_a.csv}\dataA
+\pgfplotstableread[col sep=comma]{../R/xdet_panel_b.csv}\dataB
+\pgfplotstableread[col sep=comma]{../R/xdet_panel_c.csv}\dataC
+\pgfplotstableread[col sep=comma]{../R/xdet_panel_d.csv}\dataD
+
+\begin{tikzpicture}[font=\figfont]
+
+% Compact 2x2 gutter (~0.35in between top-bottom axis boxes).
+
+% Panel a: certification rates (grouped bars)
+\begin{axis}[
+  inspect default,
+  name=ax_a,
+  width=2.60in, height=1.88in, at={(0.58in,2.05in)},
+  ybar=2pt,
+  bar width=0.13in,
+  xlabel={benchmark + direction},
+  ylabel={certified (\%)},
+  ymin=0, ymax=105,
+  xtick=data,
+  xticklabels from table={\dataA}{dir_label},
+  x tick label style={font=\tickfont, rotate=38, anchor=east},
+  ytick={0,50,100},
+  ymajorgrids, grid style={gray!15},
+  legend columns=2,
+  % Horizontal legend flush above frame, east — clear of letter a.
+  legend style={at={(1.0,1.01)}, anchor=south east, font=\tickfont,
+                fill=none, draw=none, inner sep=1pt,
+                /tikz/every even column/.append style={column sep=6pt}},
+]
+\addplot[cAccept, fill=cAccept!40] table[x expr=\coordindex, y=cert_matched]{\dataA};
+\addlegendentry{matched}
+\addplot[cDefer, fill=cDefer!40] table[x expr=\coordindex, y=cert_transfer]{\dataA};
+\addlegendentry{transfer}
+\end{axis}
+\panellabel{ax_a}{a}
+
+
+% Panel b: violation matrix (compact y from R meta; taller panel)
+\begin{axis}[
+  inspect default,
+  name=ax_b,
+  width=2.60in, height=2.00in, at={(3.72in,1.93in)},
+  xlabel={violation count},
+  ylabel={transfer direction},
+  xmin=0, xmax=2.55,
+  ymin=\xdetBYmin, ymax=\xdetBYmax,
+  xtick={0.5,1.5},
+  xticklabels={escaped,FR},
+  ytick={\xdetBYticks},
+  yticklabels from table={\dataB}{dir_label},
+  y tick label style={font=\tickfont},
+  axis lines=left,
+  clip=false,
+]
+\input{../out/xdet-panel-b.tex}
+\node[anchor=west, font=\tickfont, align=left, text=black!70]
+  at (axis cs:2.00,\xdetBGroupA) {MVTec AD};
+\node[anchor=west, font=\tickfont, align=left, text=black!70]
+  at (axis cs:2.00,\xdetBGroupB) {VisA};
+\node[anchor=west, font=\tickfont, align=left, text=black!70]
+  at (axis cs:2.00,\xdetBGroupC) {MPDD};
+\end{axis}
+\panellabel{ax_b}{b}
+
+
+% Panel c: score-scale mechanism
+\begin{axis}[
+  inspect default,
+  name=ax_c,
+  width=2.60in, height=1.68in, at={(0.58in,0.10in)},
+  xmin=-0.5, xmax=2.5,
+  ymin=-0.02, ymax=1.10,
+  xlabel={benchmark},
+  ylabel={anomaly-score support},
+  xtick={0,1,2},
+  xticklabels={MVTec AD,VisA,MPDD},
+  ytick={0,0.5,1.0},
+  ymajorgrids, grid style={gray!15},
+  title={score-scale mechanism},
+  title style={at={(0.5,1.015)}, anchor=south, font=\titlefont},
+  clip=false,
+]
+\input{../out/xdet-panel-c.tex}
+\end{axis}
+\panellabel{ax_c}{c}
+% Horizontal PC/DM key flush above the NE frame — stays inside panel c
+% footprint (no spill into panel d), clear of letter c on the NW.
+\node[anchor=south east, font=\tickfont, inner sep=1pt]
+  at ([yshift=11pt] ax_c.north east)
+  {{\color{cPatchcore}$\bullet$}~PC\quad{\color{cDinomaly}\rule[0.1ex]{1.1ex}{1.1ex}}~DM};
+
+
+% Panel d: per-cell shift against matched diagonal
+% L-shape is real (PC→DM: FR≤0 arm; DM→PC: escaped≤0 arm) — present with
+% transparency / small marks / padding; do not invent spread.
+\begin{axis}[
+  inspect default,
+  name=ax_d,
+  width=2.60in, height=1.68in, at={(3.72in,0.10in)},
+  xmin=-20, xmax=110,
+  ymin=-14, ymax=110,
+  xlabel={escaped-defect shift (pp)},
+  ylabel={false-reject shift (pp)},
+  xtick={0,50,100},
+  ytick={0,50,100},
+  xmajorgrids, ymajorgrids, grid style={gray!12},
+  title={per-cell shift vs matched},
+  title style={at={(0.5,1.015)}, anchor=south, font=\titlefont},
+  legend columns=2,
+  % Horizontal legend in the empty open quadrant of the L (no point occlusion).
+  legend style={at={(0.58,0.58)}, anchor=center, font=\tickfont,
+                fill=none, draw=none, inner sep=2pt,
+                /tikz/every even column/.append style={column sep=6pt}},
+]
+\draw[gray!35, line width=0.35pt] (axis cs:-20,0) -- (axis cs:110,0);
+\draw[gray!35, line width=0.35pt] (axis cs:0,-14) -- (axis cs:0,110);
+\input{../out/xdet-panel-d.tex}
+\end{axis}
+\panellabel{ax_d}{d}
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,70 @@
+{
+  "alpha_miss": 0.1,
+  "alpha_fr": 0.05,
+  "protocol": "primary (good-cal=test), Mondrian per-category, repeat-0 split",
+  "n_categories": 6,
+  "n_g1_certifiable": 5,
+  "n_g2_certifiable": 0,
+  "per_category": {
+    "bracket_black": {
+      "n_test_good": 32,
+      "n_test_defect": 47,
+      "n_cal_good": 16,
+      "n_cal_defect": 24,
+      "alpha_min_g1": 0.04,
+      "alpha_min_g2": 0.058823529411764705,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "bracket_brown": {
+      "n_test_good": 26,
+      "n_test_defect": 51,
+      "n_cal_good": 13,
+      "n_cal_defect": 26,
+      "alpha_min_g1": 0.037037037037037035,
+      "alpha_min_g2": 0.07142857142857142,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "bracket_white": {
+      "n_test_good": 30,
+      "n_test_defect": 30,
+      "n_cal_good": 15,
+      "n_cal_defect": 15,
+      "alpha_min_g1": 0.0625,
+      "alpha_min_g2": 0.0625,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "connector": {
+      "n_test_good": 30,
+      "n_test_defect": 14,
+      "n_cal_good": 15,
+      "n_cal_defect": 7,
+      "alpha_min_g1": 0.125,
+      "alpha_min_g2": 0.0625,
+      "g1_certified": false,
+      "g2_certified": false
+    },
+    "metal_plate": {
+      "n_test_good": 26,
+      "n_test_defect": 71,
+      "n_cal_good": 13,
+      "n_cal_defect": 36,
+      "alpha_min_g1": 0.02702702702702703,
+      "alpha_min_g2": 0.07142857142857142,
+      "g1_certified": true,
+      "g2_certified": false
+    },
+    "tubes": {
+      "n_test_good": 32,
+      "n_test_defect": 69,
+      "n_cal_good": 16,
+      "n_cal_defect": 34,
+      "alpha_min_g1": 0.02857142857142857,
+      "alpha_min_g2": 0.058823529411764705,
+      "g1_certified": true,
+      "g2_certified": false
+    }
+  }
+}

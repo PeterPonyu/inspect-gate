@@ -1,0 +1,59 @@
+% inspect_style.tex: Shared style definitions for all Inspect figures
+% Enforces uniform fonts, colors, and panel label positioning
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}  % Latin Modern for Type 1 fonts
+\usepackage{amssymb}  % \blacksquare for shared legends
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.18}
+
+% Color palette (Okabe-Ito colorblind-safe, print-safe)
+% -- Backbones (used wherever PatchCore vs Dinomaly are distinguished)
+\definecolor{cPatchcore}{HTML}{0072B2}   % blue
+\definecolor{cDinomaly}{HTML}{D55E00}    % vermillion
+% -- Decision classes / gates
+\definecolor{cAccept}{HTML}{009E73}      % green
+\definecolor{cDefer}{HTML}{E69F00}       % orange
+\definecolor{cReject}{HTML}{D55E00}      % red
+\definecolor{cControl}{HTML}{56B4E9}     % light blue
+\definecolor{cTransfer}{HTML}{CC79A7}    % pink
+% -- Benchmarks (canonical palette; used wherever MVTec/VisA/MPDD are
+%    distinguished, so benchmark colouring is uniform across all figures and
+%    never collides with the backbone blue/vermillion above)
+\definecolor{cMVTecAD}{HTML}{0072B2}     % blue
+\definecolor{cVisA}{HTML}{E69F00}        % orange
+\definecolor{cMPDD}{HTML}{009E73}        % green
+
+% Typography defaults
+\newcommand{\figfont}{\fontsize{8}{9.5}\selectfont}
+\newcommand{\axislabelfont}{\fontsize{9}{10}\selectfont}
+\newcommand{\titlefont}{\fontsize{9}{10}\selectfont}
+\newcommand{\tickfont}{\fontsize{7}{8}\selectfont}
+\newcommand{\panellabelfont}{\fontsize{9}{10}\selectfont\bfseries}
+
+% Panel label OUTSIDE the axis (axis clip would otherwise swallow it).
+% Usage after \end{axis}: \panellabel{axname}{a}
+% Parked in the left gutter at the top of the axis frame — NOT on the
+% title baseline — so titles can stay truly centered over the plot box.
+\newcommand{\panellabel}[2]{%
+  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
+    at ([xshift=-8pt, yshift=7pt] #1.north west) {\textbf{#2}};%
+}
+
+% Standard axis styles. Titles centered above the plot box only.
+\pgfplotsset{
+  inspect/centertitle/.style={
+    title style={at={(0.5,1.10)}, anchor=south, font=\titlefont},
+  },
+  inspect default/.style={
+    axis x line=bottom,
+    axis y line=left,
+    xlabel style={font=\axislabelfont},
+    ylabel style={font=\axislabelfont},
+    inspect/centertitle,
+    x tick label style={font=\tickfont},
+    y tick label style={font=\tickfont},
+    legend style={font=\tickfont, draw=none, fill=none},
+  }
+}

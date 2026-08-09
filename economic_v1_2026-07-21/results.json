@@ -1,0 +1,52 @@
+{
+  "label": "economic_v1_2026-07-21",
+  "note": "Restored minimal schema from manuscripts/figures-src/R/opcost_fourmethod.csv for figure regeneration (full upstream JSON was absent from workspace).",
+  "benchmark_scenario_grid": {
+    "MVTec": {
+      "mid_volume_general": {
+        "gate": {
+          "total_cost_usd_per_hour": 13134.2971055138
+        },
+        "crc": {
+          "total_cost_usd_per_hour": 15660.8399048342
+        },
+        "b1_no_defer": {
+          "total_cost_usd_per_hour": 6180.80485510658
+        },
+        "all_human": {
+          "total_cost_usd_per_hour": 75.0
+        }
+      }
+    },
+    "MPDD": {
+      "mid_volume_general": {
+        "gate": {
+          "total_cost_usd_per_hour": 11990.1972242764
+        },
+        "crc": {
+          "total_cost_usd_per_hour": 15252.0856127568
+        },
+        "b1_no_defer": null,
+        "all_human": {
+          "total_cost_usd_per_hour": 75.0
+        }
+      }
+    },
+    "VisA": {
+      "mid_volume_general": {
+        "gate": {
+          "total_cost_usd_per_hour": 14024.4811454997
+        },
+        "crc": {
+          "total_cost_usd_per_hour": 18546.5941176471
+        },
+        "b1_no_defer": {
+          "total_cost_usd_per_hour": 16290.4705882353
+        },
+        "all_human": {
+          "total_cost_usd_per_hour": 75.0
+        }
+      }
+    }
+  }
+}

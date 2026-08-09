@@ -1,0 +1,145 @@
+{
+  "category": "screw",
+  "backbone": "patchcore",
+  "n_repeats": 5,
+  "v1": {
+    "alpha_miss": 0.1,
+    "alpha_fr": 0.05,
+    "tolerance_pp": 0.03,
+    "confidence": 0.95,
+    "per_category": {
+      "screw": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0847457627118644,
+          "mean_false_reject_rate": 0.047619047619047616,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 295,
+          "n_eval_good_total": 105,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0847457627118644,
+          "pooled_false_reject_rate": 0.047619047619047616,
+          "escaped_ub_1sided": 0.11635224996783015,
+          "false_reject_ub_1sided": 0.09751375714586454,
+          "pass_escaped": true,
+          "pass_false_reject": false
+        },
+        "n_repeats": 5,
+        "mean_deferral_rate": 0.185
+      }
+    }
+  },
+  "audit": {
+    "alpha": 0.05,
+    "n_perm": 2000,
+    "backbone": "patchcore",
+    "target_deferral_rate": 0.25,
+    "holm_family_size": 2,
+    "results": [
+      {
+        "practice": "fixed",
+        "backbone": "patchcore",
+        "band_width": 0.08841616223872961,
+        "n": 80,
+        "n_excluded": 0,
+        "aurc_method": 0.0176261385920768,
+        "aurc_random": 0.0875,
+        "excess_aurc": 0.06987386140792319,
+        "excess_aurc_ci": [
+          0.06987386140792319,
+          0.06987386140792319
+        ],
+        "abstention_fraction": 0.25,
+        "p_value": 0.0009995002498750624,
+        "n_perm": 2000,
+        "p_holm": 0.001999000499750125,
+        "reject_holm": true
+      },
+      {
+        "practice": "tuned",
+        "backbone": "patchcore",
+        "band_width": 0.08841616223872961,
+        "n": 80,
+        "n_excluded": 0,
+        "aurc_method": 0.0176261385920768,
+        "aurc_random": 0.0875,
+        "excess_aurc": 0.06987386140792319,
+        "excess_aurc_ci": [
+          0.06987386140792319,
+          0.06987386140792319
+        ],
+        "abstention_fraction": 0.25,
+        "p_value": 0.0009995002498750624,
+        "n_perm": 2000,
+        "p_holm": 0.001999000499750125,
+        "reject_holm": true
+      }
+    ],
+    "skipped": [
+      {
+        "practice": "quantile",
+        "backbone": "patchcore",
+        "skipped_reason": "no train_good_records supplied -- B3 needs a held-out train-good pool"
+      }
+    ],
+    "provenance": {
+      "script": "/root/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "timestamp_utc": "2026-07-10T03:33:10.950771+00:00",
+      "seeds": [
+        0
+      ],
+      "python_version": "3.12.3",
+      "numpy_version": "2.3.2",
+      "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+      "git_sha": null,
+      "git_dirty": null
+    }
+  },
+  "gate_repeat0": {
+    "alpha_miss": 0.1,
+    "alpha_fr": 0.05,
+    "mondrian": "category",
+    "good_cal_mode": "test",
+    "backbone": "patchcore",
+    "categories_seen": [
+      "screw"
+    ],
+    "strata": {
+      "screw": {
+        "t_lo": 0.5094832181930542,
+        "t_hi": 0.6722987294197083,
+        "n_cal_defect": 60,
+        "n_cal_good": 20,
+        "alpha_min_g1": 0.01639344262295082,
+        "alpha_min_g2": 0.047619047619047616,
+        "g1_certified": true,
+        "g2_certified": true,
+        "g2_mode": "test"
+      }
+    },
+    "ks_gate": {},
+    "ks_alpha": 0.05,
+    "min_defect_type_n": 10,
+    "n_cal": 80,
+    "no_defective_calibration": false,
+    "input_sha256": {},
+    "provenance": {
+      "script": "/root/reliability-commons/tools/inspect-gate/inspect_gate/gate.py",
+      "timestamp_utc": "2026-07-10T03:33:10.727008+00:00",
+      "seeds": [
+        0
+      ],
+      "python_version": "3.12.3",
+      "numpy_version": "2.3.2",
+      "platform": "Linux-5.15.0-94-generic-x86_64-with-glibc2.35",
+      "git_sha": null,
+      "git_dirty": null
+    }
+  }
+}

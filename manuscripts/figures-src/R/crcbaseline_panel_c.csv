@@ -1,0 +1,7 @@
+"benchmark","backbone","gate_frac","crc_frac"
+"MPDD","patchcore",0,0
+"MPDD","dinomaly",0,0
+"VisA","patchcore",100,0
+"VisA","dinomaly",100,0
+"MVTec AD","patchcore",26.6666666666667,0
+"MVTec AD","dinomaly",26.6666666666667,0

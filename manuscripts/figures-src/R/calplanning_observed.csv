@@ -1,0 +1,4 @@
+"benchmark","n_cal_defect_lo","n_cal_defect_hi","n_cal_defect_median","n_cal_good_lo","n_cal_good_hi","n_cal_good_median"
+"MVTec AD",15,70,44,6,30,14
+"VisA",50,50,50,25,50,50
+"MPDD",7,36,25,13,16,15

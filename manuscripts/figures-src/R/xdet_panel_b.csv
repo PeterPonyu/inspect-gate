@@ -1,0 +1,7 @@
+benchmark,bench_label,direction,dir_label,n_cells,escaped_violations,fr_violations,escaped_frac,fr_frac
+mvtec,MVTec AD,patchcore->dinomaly,PC to DM,75,75,0,1,0
+mvtec,MVTec AD,dinomaly->patchcore,DM to PC,75,0,20,0,0.266666666666667
+visa,VisA,patchcore->dinomaly,PC to DM,60,60,0,1,0
+visa,VisA,dinomaly->patchcore,DM to PC,60,0,60,0,1
+mpdd,MPDD,patchcore->dinomaly,PC to DM,30,25,0,0.833333333333333,0
+mpdd,MPDD,dinomaly->patchcore,DM to PC,30,0,0,0,0

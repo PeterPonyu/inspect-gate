@@ -1,0 +1,15 @@
+% Native standalone PGF/TikZ renderer for Inspect AEI Figure 17 (Mondrian part 1).
+% Data: frozen inspect-gate/mondrian_2026-07-19/results.json, normalized by R.
+\documentclass[border=6pt]{standalone}
+\newcommand{\nrows}{42}
+\newcommand{\figureheight}{8.816}
+\input{mondrian_common.tex}
+\begin{document}
+\begin{tikzpicture}[x=1in,y=1in]
+  % Rows renew \figureheight; input first so headers/legend/bbox use the final height.
+  \input{../out/mondrian-1-rows.tex}
+  \path (0,0) rectangle (5,\figureheight);
+  \drawheaders
+  \drawlegend
+\end{tikzpicture}
+\end{document}

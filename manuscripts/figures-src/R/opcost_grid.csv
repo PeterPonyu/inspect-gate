@@ -1,0 +1,10 @@
+"benchmark","scenario","gate_cost","crc_cost"
+"MPDD","low_volume_precision",33181.2393988877,38681.6747790253
+"MPDD","mid_volume_general",11990.1972242764,15252.0856127568
+"MPDD","high_volume_commodity",5099.76581411792,7184.21235467431
+"VisA","low_volume_precision",38633.1234158871,49894.3235294118
+"VisA","mid_volume_general",14024.4811454997,18546.5941176471
+"VisA","high_volume_commodity",5933.37394149464,8093.14607843137
+"MVTec-AD","low_volume_precision",36345.7004851695,43196.6322850933
+"MVTec-AD","mid_volume_general",13134.2971055138,15660.8399048342
+"MVTec-AD","high_volume_commodity",5560.11598422739,6594.13263672292

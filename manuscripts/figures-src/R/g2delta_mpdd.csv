@@ -1,0 +1,7 @@
+category,short,primary_status,promoted_status
+bracket_black,b-blk,refused-floor,certified
+bracket_brown,b-brn,refused-floor,certified
+bracket_white,b-wht,refused-floor,certified
+connector,conn,refused-floor,certified
+metal_plate,plate,refused-floor,refused-floor
+tubes,tubes,refused-floor,refused-KS

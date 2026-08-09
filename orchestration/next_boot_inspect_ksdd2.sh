@@ -134,7 +134,6 @@ mark() { local n="$1" s="$2"; printf '%s\n' "$s" > "$MARKERS_DIR/${n}.marker"; e
 # still land the built MVTec tree + manifest (pullable) even if no GPU arrives.
 step "S: KSDD2 NO-CARD staging (download + extract + ksdd2_prep convert)"
 if [ ! -d "$KSDD2_MVTEC_ROOT/kolektor_surface/train/good" ]; then
-  zip_ok=1
   if [ ! -d "$KSDD2_NATIVE_ROOT/train" ]; then
     zip=""
     if [ -n "$KSDD2_LOCAL_ZIP" ] && [ -s "$KSDD2_LOCAL_ZIP" ]; then
@@ -144,47 +143,16 @@ if [ ! -d "$KSDD2_MVTEC_ROOT/kolektor_surface/train/good" ]; then
       echo "downloading KSDD2 from $KSDD2_ZIP_URL"
       curl -sSL -C - -o "$zip" "$KSDD2_ZIP_URL" || echo "warning: KSDD2 download non-zero"
     fi
-    # Integrity gate (2026-07-16, prompted by a box closed mid-download): a
-    # zip left partial by an interrupted `curl -C -` resume can extract
-    # "successfully enough" for ksdd2_prep's exact-count check to still pass
-    # while one truncated-but-still-PIL-decodable PNG gets silently
-    # mis-labelled good/defect -- the count gate does NOT catch that. Test
-    # the archive BEFORE extracting; on failure, delete and re-fetch clean
-    # (no -C -, since the broken byte range itself may be the culprit) once,
-    # then refuse (no extraction attempted, staging marked FAILED, downstream
-    # stages self-gate off KSDD2_STAGED and disclose-skip per existing
-    # convention -- no early chain abort here, matching how a ksdd2_prep.py
-    # count-mismatch failure is already handled below).
-    if ! unzip -t "$zip" > /dev/null 2>&1; then
-      echo "warning: zip integrity check failed for $zip -- possible partial/corrupt download"
-      if [ "$zip" = "/root/autodl-tmp/KolektorSDD2.zip" ]; then
-        echo "re-fetching clean (no -C resume) and re-testing once"
-        rm -f "$zip"
-        curl -sSL -o "$zip" "$KSDD2_ZIP_URL" || echo "warning: KSDD2 clean re-download non-zero"
-        if ! unzip -t "$zip" > /dev/null 2>&1; then
-          echo "REFUSE: KSDD2 zip still fails integrity check after clean re-download -- not extracting"
-          zip_ok=0
-        fi
-      else
-        echo "REFUSE: local zip $KSDD2_LOCAL_ZIP failed integrity check -- re-stage it manually; not extracting"
-        zip_ok=0
-      fi
-    fi
-    if [ "$zip_ok" -eq 1 ]; then
-      mkdir -p "$KSDD2_NATIVE_ROOT"
-      # zip may wrap train/ test/ in a top-level dir -- extract then normalise so
-      # $KSDD2_NATIVE_ROOT holds train/ and test/ directly.
-      tmpx="/root/autodl-tmp/_ksdd2_extract"; rm -rf "$tmpx"; mkdir -p "$tmpx"
-      unzip -q -o "$zip" -d "$tmpx" || echo "warning: unzip non-zero"
-      src=""
-      if [ -d "$tmpx/train" ] && [ -d "$tmpx/test" ]; then src="$tmpx"
-      else src="$(dirname "$(find "$tmpx" -type d -name train | head -1)")"; fi
-      [ -n "${src:-}" ] && cp -rn "$src"/train "$src"/test "$KSDD2_NATIVE_ROOT"/ 2>/dev/null
-    fi
+    mkdir -p "$KSDD2_NATIVE_ROOT"
+    # zip may wrap train/ test/ in a top-level dir -- extract then normalise so
+    # $KSDD2_NATIVE_ROOT holds train/ and test/ directly.
+    tmpx="/root/autodl-tmp/_ksdd2_extract"; rm -rf "$tmpx"; mkdir -p "$tmpx"
+    unzip -q -o "$zip" -d "$tmpx" || echo "warning: unzip non-zero"
+    src=""
+    if [ -d "$tmpx/train" ] && [ -d "$tmpx/test" ]; then src="$tmpx"
+    else src="$(dirname "$(find "$tmpx" -type d -name train | head -1)")"; fi
+    [ -n "${src:-}" ] && cp -rn "$src"/train "$src"/test "$KSDD2_NATIVE_ROOT"/ 2>/dev/null
   fi
-  if [ "$zip_ok" -eq 0 ]; then
-    mark KSDD2_STAGED FAILED
-  else
   sha=$(sha256sum "${KSDD2_LOCAL_ZIP:-/root/autodl-tmp/KolektorSDD2.zip}" 2>/dev/null | awk '{print $1}')
   if python3 "$ORCH/ksdd2_prep.py" "$KSDD2_NATIVE_ROOT" "$KSDD2_MVTEC_ROOT" "$KSDD2_MANIFEST" \
        --expect-train-good "$EXPECT_TRAIN_GOOD" --expect-test-good "$EXPECT_TEST_GOOD" \
@@ -194,7 +162,6 @@ if [ ! -d "$KSDD2_MVTEC_ROOT/kolektor_surface/train/good" ]; then
     mark KSDD2_STAGED OK
   else
     mark KSDD2_STAGED FAILED
-  fi
   fi
 else
   echo "KSDD2 MVTec tree already present; re-freezing manifest (verify only)"

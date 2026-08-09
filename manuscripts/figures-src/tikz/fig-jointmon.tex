@@ -1,0 +1,137 @@
+% fig-jointmon: drift-monitor design space (4 panels a–d)
+% Data digests: R/jointmon_panel_{a,b,c,d}.csv
+% Fragments:    out/jointmon-panel-{a,b,c,d}.tex  (emitted by R/jointmon.R)
+%
+% Layout (matches historical make_fig_jointmon.py science; tightened chrome):
+%   a|b top row (tight horizontal gap), c full-width middle, d full-width heatmap
+% Chrome: gutter \panellabel; shared a/b legend above titles; titles near axes.
+\documentclass[border=2pt]{standalone}
+\input{inspect_style.tex}
+\usetikzlibrary{calc}
+
+\definecolor{cCatch}{HTML}{009E73}
+\definecolor{cFalseAlarm}{HTML}{D55E00}
+\definecolor{cG1}{HTML}{0072B2}
+\definecolor{cG2}{HTML}{CC79A7}
+\definecolor{cHeat}{HTML}{B2182B}
+
+\begin{document}
+\begin{tikzpicture}[font=\figfont]
+
+\pgfplotsset{
+  jm/title near axis/.style={
+    title style={at={(0.5,1.015)}, anchor=south, font=\titlefont},
+  },
+}
+
+% ── Panel a: catch (filled) vs false-alarm (open) dumbbells ─────────────────
+% Compact categorical band height; within-row ARM_DY from R (±0.16).
+\begin{axis}[
+  inspect default,
+  name=ax_a,
+  width=2.58in, height=1.18in, at={(0.66in,3.00in)},
+  xmin=-0.02, xmax=1.05,
+  ymin=-4.20, ymax=0.20,
+  xlabel={rate},
+  ylabel={monitor variant},
+  ytick={0,-1,-2,-3,-4},
+  yticklabels={defect KS, paired good, paired defect, joint max (cal), joint max},
+  y tick label style={font=\tickfont},
+  xtick={0,0.25,0.5,0.75,1},
+  axis lines=left,
+  clip=false,
+  jm/title near axis,
+  title={catch vs false-alarm},
+]
+\input{../out/jointmon-panel-a.tex}
+\end{axis}
+\panellabel{ax_a}{a}
+
+% ── Panel b: operating points vs chance diagonal ────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_b,
+  width=2.58in, height=1.18in, at={(3.22in,3.00in)},
+  xmin=-0.03, xmax=1.03,
+  ymin=-0.03, ymax=1.03,
+  xlabel={false-alarm (non-exceeding)},
+  ylabel={catch (exceeding)},
+  xtick={0,0.25,0.5,0.75,1},
+  ytick={0,0.25,0.5,0.75,1},
+  axis lines=left,
+  clip=false,
+  jm/title near axis,
+  title={operating points},
+]
+\addplot[gray!55, densely dotted, line width=0.7pt, forget plot, mark=none]
+  coordinates {(0,0) (1,1)};
+\node[font=\tickfont, text=black!45, rotate=38, anchor=west] at (axis cs:0.58,0.58) {chance};
+\input{../out/jointmon-panel-b.tex}
+\end{axis}
+\panellabel{ax_b}{b}
+
+% Shared a/b legend — horizontal, just above titles (clear of gutter letters).
+% Parked above the title row so it never collides with titles or gutter letters.
+\node[anchor=south, font=\tickfont, inner sep=0.5pt]
+  at ($(ax_a.north)!0.5!(ax_b.north)+(0,16pt)$) {%
+  filled\,=\,catch\quad open\,=\,FA\quad
+  {\color{cG1}$\bullet$}~G1\quad
+  {\color{cG2}$\bullet$}~G2\quad
+  {\color{black!70}$\circ$}/{\color{black!70}$\bullet$}~PC\quad
+  {\color{black!70}\tikz[baseline=-0.15ex]\draw[line width=0.45pt] (0,0) rectangle (1.05ex,1.05ex);}/{\color{black!70}\rule[0.15ex]{1.05ex}{1.05ex}}~DM%
+};
+
+% ── Panel c: per-cell signed-rank $z$ cloud ─────────────────────────────────
+% Axis limits padded from frozen z ranges (~[-8.7,10.2] × [-8.7,8.7]).
+\begin{axis}[
+  inspect default,
+  name=ax_c,
+  width=5.14in, height=1.35in, at={(0.66in,1.30in)},
+  xmin=-9.5, xmax=11.0,
+  ymin=-9.5, ymax=9.5,
+  xlabel={$z$ defect-score shift},
+  ylabel={$z$ good-score shift},
+  xtick={-5,0,5,10},
+  ytick={-5,0,5},
+  axis lines=left,
+  xmajorgrids, ymajorgrids, grid style={gray!12},
+  clip=false,
+  jm/title near axis,
+  title={paired signed-rank $z$},
+]
+\draw[gray!45, line width=0.45pt] (axis cs:0,-9.5) -- (axis cs:0,9.5);
+\draw[gray!45, line width=0.45pt] (axis cs:-9.5,0) -- (axis cs:11.0,0);
+\input{../out/jointmon-panel-c.tex}
+\end{axis}
+\panellabel{ax_c}{c}
+\node[anchor=south, font=\tickfont, text=black!70, inner sep=0.5pt]
+  at ([yshift=16pt] ax_c.north) {%
+  {\color{cFalseAlarm}$\bullet$}~G1-exceeding accepted ($\alpha_{\mathrm{miss}}=0.10$)\quad
+  {\color{black!55}$\bullet$}~certified non-exceeding%
+};
+
+% ── Panel d: joint-max catch vs FA by corruption × severity (heatmap) ───────
+\begin{axis}[
+  inspect default,
+  name=ax_d,
+  width=5.14in, height=1.15in, at={(0.66in,0.02in)},
+  xmin=0, xmax=12, ymin=0, ymax=2,
+  xlabel={corruption + level},
+  xtick={0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5},
+  xticklabels={brig-1,brig-2,brig-3,cont-1,cont-2,cont-3,gaus-1,gaus-2,gaus-3,defo-1,defo-2,defo-3},
+  x tick label style={font=\tickfont, rotate=45, anchor=east},
+  ytick={0.5,1.5},
+  yticklabels={FA (certified), catch (exceeding)},
+  y tick label style={font=\tickfont, align=right},
+  axis line style={draw=none},
+  tick style={draw=none},
+  clip=false,
+  jm/title near axis,
+  title={joint-max catch vs false-alarm},
+]
+\input{../out/jointmon-panel-d.tex}
+\end{axis}
+\panellabel{ax_d}{d}
+
+\end{tikzpicture}
+\end{document}

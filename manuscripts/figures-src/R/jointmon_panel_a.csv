@@ -1,0 +1,21 @@
+variant,variant_key,y_pos,y_off,arm,arm_label,gate,detector,catch,false_alarm
+defect KS (frozen),frozen_defect_shift_detected,0,0.16,patchcore/g1,PatchCore G1,g1,patchcore,0.05,0.0281124497991968
+defect KS (frozen),frozen_defect_shift_detected,0,0.05,patchcore/g2,PatchCore G2,g2,patchcore,0,0.0167597765363128
+defect KS (frozen),frozen_defect_shift_detected,0,-0.05,dinomaly/g1,Dinomaly G1,g1,dinomaly,0.0294117647058824,0.117994100294985
+defect KS (frozen),frozen_defect_shift_detected,0,-0.16,dinomaly/g2,Dinomaly G2,g2,dinomaly,0,0.0215827338129496
+paired good,paired_good_detected,-1,-0.84,patchcore/g1,PatchCore G1,g1,patchcore,0.64,NA
+paired good,paired_good_detected,-1,-0.95,patchcore/g2,PatchCore G2,g2,patchcore,0.5,NA
+paired good,paired_good_detected,-1,-1.05,dinomaly/g1,Dinomaly G1,g1,dinomaly,0.617647058823529,NA
+paired good,paired_good_detected,-1,-1.16,dinomaly/g2,Dinomaly G2,g2,dinomaly,1,NA
+paired defect,paired_defect_detected,-2,-1.84,patchcore/g1,PatchCore G1,g1,patchcore,0.82,0.738955823293173
+paired defect,paired_defect_detected,-2,-1.95,patchcore/g2,PatchCore G2,g2,patchcore,0.666666666666667,0.776536312849162
+paired defect,paired_defect_detected,-2,-2.05,dinomaly/g1,Dinomaly G1,g1,dinomaly,0.764705882352941,0.743362831858407
+paired defect,paired_defect_detected,-2,-2.16,dinomaly/g2,Dinomaly G2,g2,dinomaly,1,0.669064748201439
+joint max (cal-half),cal_joint_max_detected,-3,-2.84,patchcore/g1,PatchCore G1,g1,patchcore,0.81,NA
+joint max (cal-half),cal_joint_max_detected,-3,-2.95,patchcore/g2,PatchCore G2,g2,patchcore,0.666666666666667,NA
+joint max (cal-half),cal_joint_max_detected,-3,-3.05,dinomaly/g1,Dinomaly G1,g1,dinomaly,0.647058823529412,NA
+joint max (cal-half),cal_joint_max_detected,-3,-3.16,dinomaly/g2,Dinomaly G2,g2,dinomaly,1,NA
+joint max,joint_max_detected,-4,-3.84,patchcore/g1,PatchCore G1,g1,patchcore,0.88,0.887550200803213
+joint max,joint_max_detected,-4,-3.95,patchcore/g2,PatchCore G2,g2,patchcore,0.666666666666667,0.888268156424581
+joint max,joint_max_detected,-4,-4.05,dinomaly/g1,Dinomaly G1,g1,dinomaly,0.852941176470588,0.920353982300885
+joint max,joint_max_detected,-4,-4.16,dinomaly/g2,Dinomaly G2,g2,dinomaly,1,0.906474820143885

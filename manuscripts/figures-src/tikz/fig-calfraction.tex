@@ -1,0 +1,123 @@
+% fig-calfraction: calibration budget sensitivity (3x2)
+% Data: R/calfraction_data.csv → out/calfraction-*-{cert,def}.tex
+% X positions 0..4 map to frozen fracs 0.5, 0.3, 0.2, 0.15, 0.1 (no 0.4 in sweep).
+\documentclass[border=2pt]{standalone}
+\input{inspect_style.tex}
+
+\begin{document}
+\begin{tikzpicture}[font=\figfont]
+
+% Shared legend parked just above the top-row titles (larger, not floating).
+\node[anchor=south, font=\fontsize{9.5}{11}\selectfont] at (2.99in,4.90in) {%
+  {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
+  {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%
+};
+
+% Panel size / gutters tightened vs the old 2.45×1.35 / 0.25–0.35 in gaps:
+%   width 2.62in, height 1.52in; ~0.10 in column gutter; ~0.12 in row gutter.
+% ── MVTec AD ────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_mvtec_cert,
+  width=2.62in, height=1.52in, at={(0.42in,3.32in)},
+  xmin=-0.4, xmax=4.4, ymin=-0.5, ymax=15.5,
+  ylabel={MVTec AD\\certified (of 15)},
+  ylabel style={font=\axislabelfont, align=center},
+  xtick={0,1,2,3,4}, xticklabels={0.5,0.3,0.2,0.15,0.1},
+  ytick={0,7,15},
+  ymajorgrids, grid style={gray!15},
+  title={both certificates issued},
+]
+\input{../out/calfraction-mvtecad-cert.tex}
+\end{axis}
+\panellabel{ax_mvtec_cert}{a}
+
+
+\begin{axis}[
+  inspect default,
+  name=ax_mvtec_def,
+  width=2.62in, height=1.52in, at={(3.14in,3.32in)},
+  xmin=-0.4, xmax=4.4, ymin=-0.03, ymax=1.05,
+  ylabel={mean deferral},
+  xtick={0,1,2,3,4}, xticklabels={0.5,0.3,0.2,0.15,0.1},
+  ytick={0,0.5,1.0},
+  ymajorgrids, grid style={gray!15},
+  title={deferral absorbs the budget cut},
+]
+\input{../out/calfraction-mvtecad-def.tex}
+\end{axis}
+\panellabel{ax_mvtec_def}{b}
+
+
+% ── VisA ────────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_visa_cert,
+  width=2.62in, height=1.52in, at={(0.42in,1.68in)},
+  xmin=-0.4, xmax=4.4, ymin=-0.5, ymax=12.5,
+  ylabel={VisA\\certified (of 12)},
+  ylabel style={font=\axislabelfont, align=center},
+  xtick={0,1,2,3,4}, xticklabels={0.5,0.3,0.2,0.15,0.1},
+  ytick={0,6,12},
+  ymajorgrids, grid style={gray!15},
+]
+\input{../out/calfraction-visa-cert.tex}
+\end{axis}
+\panellabel{ax_visa_cert}{c}
+
+
+\begin{axis}[
+  inspect default,
+  name=ax_visa_def,
+  width=2.62in, height=1.52in, at={(3.14in,1.68in)},
+  xmin=-0.4, xmax=4.4, ymin=-0.03, ymax=1.05,
+  ylabel={mean deferral},
+  xtick={0,1,2,3,4}, xticklabels={0.5,0.3,0.2,0.15,0.1},
+  ytick={0,0.5,1.0},
+  ymajorgrids, grid style={gray!15},
+]
+\input{../out/calfraction-visa-def.tex}
+\end{axis}
+\panellabel{ax_visa_def}{d}
+
+
+% ── MPDD ────────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_mpdd_cert,
+  width=2.62in, height=1.52in, at={(0.42in,0.05in)},
+  xmin=-0.4, xmax=4.4, ymin=-0.5, ymax=6.5,
+  ylabel={MPDD\\certified (of 6)},
+  ylabel style={font=\axislabelfont, align=center},
+  xlabel={calibration fraction},
+  xtick={0,1,2,3,4}, xticklabels={0.5,0.3,0.2,0.15,0.1},
+  ytick={0,3,6},
+  ymajorgrids, grid style={gray!15},
+]
+\input{../out/calfraction-mpdd-cert.tex}
+\node[anchor=west, font=\tickfont, align=left, fill=white, fill opacity=0.9, text opacity=1]
+  at (axis cs:0.35,3.6) {both-cert.\ $=0$\\6/6 floor-refused};
+\end{axis}
+\panellabel{ax_mpdd_cert}{e}
+
+
+\begin{axis}[
+  inspect default,
+  name=ax_mpdd_def,
+  width=2.62in, height=1.52in, at={(3.14in,0.05in)},
+  xmin=-0.4, xmax=4.4, ymin=-0.03, ymax=1.05,
+  ylabel={mean deferral},
+  xlabel={calibration fraction},
+  xtick={0,1,2,3,4}, xticklabels={0.5,0.3,0.2,0.15,0.1},
+  ytick={0,0.5,1.0},
+  ymajorgrids, grid style={gray!15},
+]
+\input{../out/calfraction-mpdd-def.tex}
+\node[anchor=west, font=\tickfont, align=left, fill=white, fill opacity=0.9, text opacity=1]
+  at (axis cs:1.6,0.38) {total refusal:\\0 silent decisions};
+\end{axis}
+\panellabel{ax_mpdd_def}{f}
+
+
+\end{tikzpicture}
+\end{document}

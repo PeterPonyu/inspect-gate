@@ -1,0 +1,10 @@
+"benchmark","scenario","headroom_multiple"
+"MPDD","low_volume_precision",201.678646981179
+"MPDD","mid_volume_general",60.5035940943536
+"MPDD","high_volume_commodity",17.4529598349097
+"VisA","low_volume_precision",1832.70725859585
+"VisA","mid_volume_general",368.775506685328
+"VisA","high_volume_commodity",77.0026094157047
+"MVTec-AD","low_volume_precision",337.09360870445
+"MVTec-AD","mid_volume_general",62.9736783089319
+"MVTec-AD","high_volume_commodity",11.9745651602395

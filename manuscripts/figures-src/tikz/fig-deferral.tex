@@ -1,0 +1,98 @@
+% fig-deferral: per-category deferral dumbbells across three benchmarks
+% Data: ../R/deferral.csv → ../out/deferral-{mvtec,visa,mpdd}.tex
+% Layout SSOT: this hand-authored TikZ file only (do not edit out/*.tex).
+\documentclass[border=2pt]{standalone}
+\input{inspect_style.tex}
+
+\begin{document}
+\begin{tikzpicture}[font=\figfont]
+
+% Geometry:
+%   axis 0.92×3.20 in at y=0.28in → axis top 3.48in
+%   left gutter 0.58in; inter-axis gap 0.66in (ytick text width 0.63in)
+% Titles / letters drawn after each axis (axis title suppressed) so they sit
+% flush on the axis frame — avoids inspect/centertitle's 1.10 float.
+% Shared legend+K2 key is placed AFTER the three title nodes, relative to them.
+
+% ── MVTec AD ────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_mvtec,
+  scale only axis,
+  width=0.92in, height=3.20in, at={(0.58in,0.28in)},
+  xmin=-0.05, xmax=1.05, ymin=0.6, ymax=15.4,
+  xlabel={deferral},
+  xtick={0,0.5,1.0}, xticklabels={0,0.5,1.0},
+  ytick={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},
+  yticklabels={zipper,wood,transistor,toothbrush,tile,screw,pill,metal nut,leather,hazelnut,grid,carpet,capsule,cable,bottle},
+  yticklabel style={font=\tickfont, text width=0.63in, align=right},
+  ymajorgrids, grid style={gray!15},
+  title={},
+  title style={at={(0.5,1.0)}, anchor=south, opacity=0, inner sep=0pt},
+]
+\draw[gray!65, dashed, line width=0.45pt] (axis cs:0.8,0.6) -- (axis cs:0.8,15.4);
+\input{../out/deferral-mvtec.tex}
+\end{axis}
+\node[anchor=south, font=\titlefont, inner sep=0.5pt, name=title_mvtec]
+  at ([yshift=2pt] ax_mvtec.north) {MVTec AD};
+\node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
+  at ([xshift=-8pt, yshift=2pt] ax_mvtec.north west) {\textbf{a}};
+
+% ── VisA ────────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_visa,
+  scale only axis,
+  width=0.92in, height=3.20in, at={(2.16in,0.28in)},
+  xmin=-0.05, xmax=1.05, ymin=0.6, ymax=12.4,
+  xlabel={deferral},
+  xtick={0,0.5,1.0}, xticklabels={0,0.5,1.0},
+  ytick={1,2,3,4,5,6,7,8,9,10,11,12},
+  yticklabels={pipe fryum,pcb4,pcb3,pcb2,pcb1,macaroni2,macaroni1,fryum,chewinggum,cashew,capsules,candle},
+  yticklabel style={font=\tickfont, text width=0.63in, align=right},
+  ymajorgrids, grid style={gray!15},
+  title={},
+  title style={at={(0.5,1.0)}, anchor=south, opacity=0, inner sep=0pt},
+]
+\draw[gray!65, dashed, line width=0.45pt] (axis cs:0.8,0.6) -- (axis cs:0.8,12.4);
+\input{../out/deferral-visa.tex}
+\end{axis}
+\node[anchor=south, font=\titlefont, inner sep=0.5pt, name=title_visa]
+  at ([yshift=2pt] ax_visa.north) {VisA};
+\node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
+  at ([xshift=-8pt, yshift=2pt] ax_visa.north west) {\textbf{b}};
+
+% ── MPDD ────────────────────────────────────────────────────────────────────
+\begin{axis}[
+  inspect default,
+  name=ax_mpdd,
+  scale only axis,
+  width=0.92in, height=3.20in, at={(3.74in,0.28in)},
+  xmin=-0.05, xmax=1.05, ymin=0.6, ymax=6.4,
+  xlabel={deferral},
+  xtick={0,0.5,1.0}, xticklabels={0,0.5,1.0},
+  ytick={1,2,3,4,5,6},
+  yticklabels={tubes,metal plate,connector,br.\ white,br.\ brown,br.\ black},
+  yticklabel style={font=\tickfont, text width=0.63in, align=right},
+  ymajorgrids, grid style={gray!15},
+  title={},
+  title style={at={(0.5,1.0)}, anchor=south, opacity=0, inner sep=0pt},
+]
+\draw[gray!65, dashed, line width=0.45pt] (axis cs:0.8,0.6) -- (axis cs:0.8,6.4);
+\input{../out/deferral-mpdd.tex}
+\end{axis}
+\node[anchor=south, font=\titlefont, inner sep=0.5pt, name=title_mpdd]
+  at ([yshift=2pt] ax_mpdd.north) {MPDD};
+\node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
+  at ([xshift=-8pt, yshift=2pt] ax_mpdd.north west) {\textbf{c}};
+
+% Shared legend just above the panel titles (LM-safe glyphs; no MSAM).
+\node[anchor=south, font=\fontsize{9.5}{11}\selectfont]
+  at ([yshift=3pt] title_visa.north) {%
+  {\color{cPatchcore}$\circ$}~PatchCore\quad
+  {\color{cDinomaly}\rule[0.28ex]{1.45ex}{1.45ex}}~Dinomaly\quad
+  {\color{gray!60}\raisebox{0.4ex}{\rule{1.35em}{0.4pt}}}~\textcolor{gray!55}{\fontsize{8}{9}\selectfont K2 vacuity 0.80}%
+};
+
+\end{tikzpicture}
+\end{document}

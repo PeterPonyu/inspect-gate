@@ -1,0 +1,14 @@
+"category","short","bench","primary_deferral","remedy_deferral"
+"bottle","bot","MVTec AD",70.2926829268293,6.07317073170732
+"capsule","cap","MVTec AD",75.0606060606061,3.89393939393939
+"carpet","car","MVTec AD",68.728813559322,45.2033898305085
+"grid","grd","MVTec AD",70.575,6.1
+"metal_nut","nut","MVTec AD",74.4655172413793,7.70689655172414
+"pill","pil","MVTec AD",78.1547619047619,13.2857142857143
+"tile","til","MVTec AD",65.2542372881356,7.52542372881356
+"wood","woo","MVTec AD",71.6410256410256,30.3589743589744
+"zipper","zip","MVTec AD",71.4133333333333,23.32
+"bracket_black","b-blk","MPDD",75.0769230769231,39.2820512820513
+"bracket_brown","b-brn","MPDD",61.0789473684211,8.13157894736842
+"bracket_white","b-wht","MPDD",67.4333333333333,36.2333333333333
+"connector","conn","MPDD",100,71.7272727272727

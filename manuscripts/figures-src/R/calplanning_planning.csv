@@ -1,0 +1,7 @@
+"axis","benchmark","min_pool_required","smallest_multiplier"
+"g1_escaped_defect","MVTec AD",9,1
+"g1_escaped_defect","VisA",9,1
+"g1_escaped_defect","MPDD",9,2
+"g2_false_reject","MVTec AD",19,4
+"g2_false_reject","VisA",19,1
+"g2_false_reject","MPDD",19,2

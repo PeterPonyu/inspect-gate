@@ -1,0 +1,40 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.spl
+*.nav
+*.snm
+*.vrb
+
+# Editor / OS / local agent debris
+.DS_Store
+.idea/
+.vscode/
+.omc/
+.superpowers/
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+*.bak
+*.bak-*
+*~
+
+# Figure build scratch
+figures-src/tikz/*.aux
+figures-src/tikz/*.log
+figures-src/**/__pycache__/
+figures-src/review/
+figures-src/**/*-1.png
+figures-src/**/fig-*.png
+
+# Keep submission packages and compiled paper PDFs tracked intentionally.
+# Ignore local one-off dumps:
+*.synctex(busy)

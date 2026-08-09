@@ -1,0 +1,1127 @@
+{
+  "patchcore": {
+    "bottle": {
+      "broken_large": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "broken_small": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "contamination": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.25,
+        "deferral_rate": 0.75
+      },
+      "good": {
+        "n": 10,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "cable": {
+      "bent_wire": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "cable_swap": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "combined": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "cut_inner_insulation": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.2
+      },
+      "cut_outer_insulation": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "missing_cable": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "missing_wire": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.25
+      },
+      "poke_insulation": {
+        "n": 1,
+        "n_def": 1,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "good": {
+        "n": 29,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.034482758620689655
+      }
+    },
+    "capsule": {
+      "crack": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "faulty_imprint": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.18181818181818182,
+        "deferral_rate": 0.8181818181818182
+      },
+      "poke": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "scratch": {
+        "n": 15,
+        "n_def": 15,
+        "miss_rate": 0.06666666666666667,
+        "deferral_rate": 0.9333333333333333
+      },
+      "squeeze": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 11,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "carpet": {
+      "color": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "cut": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "hole": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.14285714285714285,
+        "deferral_rate": 0.8571428571428571
+      },
+      "metal_contamination": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.1111111111111111,
+        "deferral_rate": 0.8888888888888888
+      },
+      "thread": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.16666666666666666,
+        "deferral_rate": 0.8333333333333334
+      },
+      "good": {
+        "n": 14,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "grid": {
+      "bent": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "broken": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "glue": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "metal_contamination": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "thread": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 11,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.18181818181818182
+      }
+    },
+    "hazelnut": {
+      "crack": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.2222222222222222
+      },
+      "cut": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.1
+      },
+      "hole": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "print": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.1
+      },
+      "good": {
+        "n": 20,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.05
+      }
+    },
+    "leather": {
+      "color": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.2,
+        "deferral_rate": 0.8
+      },
+      "cut": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.36363636363636365,
+        "deferral_rate": 0.6363636363636364
+      },
+      "fold": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "glue": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.2,
+        "deferral_rate": 0.8
+      },
+      "poke": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 16,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "metal_nut": {
+      "bent": {
+        "n": 14,
+        "n_def": 14,
+        "miss_rate": 0.07142857142857142,
+        "deferral_rate": 0.9285714285714286
+      },
+      "color": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.2222222222222222,
+        "deferral_rate": 0.7777777777777778
+      },
+      "flip": {
+        "n": 14,
+        "n_def": 14,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "scratch": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.2,
+        "deferral_rate": 0.8
+      },
+      "good": {
+        "n": 11,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "pill": {
+      "color": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.36363636363636365,
+        "deferral_rate": 0.6363636363636364
+      },
+      "combined": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "contamination": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "crack": {
+        "n": 13,
+        "n_def": 13,
+        "miss_rate": 0.23076923076923078,
+        "deferral_rate": 0.7692307692307693
+      },
+      "faulty_imprint": {
+        "n": 14,
+        "n_def": 14,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "pill_type": {
+        "n": 2,
+        "n_def": 2,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "scratch": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 13,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "screw": {
+      "manipulated_front": {
+        "n": 14,
+        "n_def": 14,
+        "miss_rate": 0.2857142857142857,
+        "deferral_rate": 0.21428571428571427
+      },
+      "scratch_head": {
+        "n": 13,
+        "n_def": 13,
+        "miss_rate": 0.15384615384615385,
+        "deferral_rate": 0.23076923076923078
+      },
+      "scratch_neck": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "thread_side": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.2727272727272727,
+        "deferral_rate": 0.2727272727272727
+      },
+      "thread_top": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "good": {
+        "n": 21,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "tile": {
+      "crack": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "glue_strip": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "gray_stroke": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.4,
+        "deferral_rate": 0.6
+      },
+      "oil": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "rough": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.25,
+        "deferral_rate": 0.75
+      },
+      "good": {
+        "n": 17,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "toothbrush": {
+      "defective": {
+        "n": 15,
+        "n_def": 15,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 6,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.3333333333333333
+      }
+    },
+    "transistor": {
+      "bent_lead": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "cut_lead": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.2
+      },
+      "damaged_case": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "misplaced": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.25,
+        "deferral_rate": 0.0
+      },
+      "good": {
+        "n": 30,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "wood": {
+      "color": {
+        "n": 3,
+        "n_def": 3,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "combined": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "hole": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "liquid": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "scratch": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.1,
+        "deferral_rate": 0.9
+      },
+      "good": {
+        "n": 9,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.1111111111111111
+      }
+    },
+    "zipper": {
+      "broken_teeth": {
+        "n": 13,
+        "n_def": 13,
+        "miss_rate": 0.23076923076923078,
+        "deferral_rate": 0.7692307692307693
+      },
+      "combined": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "fabric_border": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "fabric_interior": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "rough": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "split_teeth": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "squeezed_teeth": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.2222222222222222,
+        "deferral_rate": 0.7777777777777778
+      },
+      "good": {
+        "n": 16,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.125
+      }
+    }
+  },
+  "dinomaly": {
+    "bottle": {
+      "broken_large": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "broken_small": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "contamination": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 10,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "cable": {
+      "poke_insulation": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.2857142857142857
+      },
+      "bent_wire": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "missing_cable": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "cable_swap": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.2857142857142857
+      },
+      "combined": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "cut_inner_insulation": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "missing_wire": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.25
+      },
+      "cut_outer_insulation": {
+        "n": 1,
+        "n_def": 1,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "good": {
+        "n": 29,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.034482758620689655
+      }
+    },
+    "capsule": {
+      "crack": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.125,
+        "deferral_rate": 0.875
+      },
+      "faulty_imprint": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.18181818181818182,
+        "deferral_rate": 0.8181818181818182
+      },
+      "poke": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.1111111111111111,
+        "deferral_rate": 0.8888888888888888
+      },
+      "scratch": {
+        "n": 15,
+        "n_def": 15,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "squeeze": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 11,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.09090909090909091
+      }
+    },
+    "carpet": {
+      "color": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "cut": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "hole": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.14285714285714285,
+        "deferral_rate": 0.8571428571428571
+      },
+      "metal_contamination": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "thread": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.25,
+        "deferral_rate": 0.75
+      },
+      "good": {
+        "n": 14,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "grid": {
+      "bent": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "broken": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "glue": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "metal_contamination": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "thread": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 11,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "hazelnut": {
+      "hole": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.1111111111111111
+      },
+      "print": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.1
+      },
+      "crack": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "cut": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.4
+      },
+      "good": {
+        "n": 20,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "leather": {
+      "color": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "cut": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.09090909090909091,
+        "deferral_rate": 0.9090909090909091
+      },
+      "fold": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "glue": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.1,
+        "deferral_rate": 0.9
+      },
+      "poke": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.08333333333333333,
+        "deferral_rate": 0.9166666666666666
+      },
+      "good": {
+        "n": 16,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "metal_nut": {
+      "bent": {
+        "n": 14,
+        "n_def": 14,
+        "miss_rate": 0.07142857142857142,
+        "deferral_rate": 0.9285714285714286
+      },
+      "color": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.3333333333333333,
+        "deferral_rate": 0.6666666666666666
+      },
+      "flip": {
+        "n": 14,
+        "n_def": 14,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "scratch": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.2,
+        "deferral_rate": 0.8
+      },
+      "good": {
+        "n": 11,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "pill": {
+      "combined": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "color": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.3333333333333333,
+        "deferral_rate": 0.6666666666666666
+      },
+      "crack": {
+        "n": 13,
+        "n_def": 13,
+        "miss_rate": 0.46153846153846156,
+        "deferral_rate": 0.5384615384615384
+      },
+      "faulty_imprint": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "pill_type": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "contamination": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "scratch": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 13,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "screw": {
+      "manipulated_front": {
+        "n": 14,
+        "n_def": 14,
+        "miss_rate": 0.2857142857142857,
+        "deferral_rate": 0.0
+      },
+      "scratch_head": {
+        "n": 13,
+        "n_def": 13,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "scratch_neck": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "thread_side": {
+        "n": 11,
+        "n_def": 11,
+        "miss_rate": 0.18181818181818182,
+        "deferral_rate": 0.0
+      },
+      "thread_top": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "good": {
+        "n": 21,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "tile": {
+      "crack": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "glue_strip": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "gray_stroke": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.4,
+        "deferral_rate": 0.6
+      },
+      "oil": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "rough": {
+        "n": 8,
+        "n_def": 8,
+        "miss_rate": 0.125,
+        "deferral_rate": 0.875
+      },
+      "good": {
+        "n": 17,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "toothbrush": {
+      "defective": {
+        "n": 15,
+        "n_def": 15,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 6,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "transistor": {
+      "bent_lead": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "cut_lead": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.4,
+        "deferral_rate": 0.2
+      },
+      "damaged_case": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "misplaced": {
+        "n": 4,
+        "n_def": 4,
+        "miss_rate": 0.0,
+        "deferral_rate": 0.0
+      },
+      "good": {
+        "n": 30,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.03333333333333333
+      }
+    },
+    "wood": {
+      "hole": {
+        "n": 3,
+        "n_def": 3,
+        "miss_rate": 0.6666666666666666,
+        "deferral_rate": 0.3333333333333333
+      },
+      "liquid": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "scratch": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "color": {
+        "n": 3,
+        "n_def": 3,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "combined": {
+        "n": 6,
+        "n_def": 6,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "good": {
+        "n": 9,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    },
+    "zipper": {
+      "combined": {
+        "n": 12,
+        "n_def": 12,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "broken_teeth": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "split_teeth": {
+        "n": 10,
+        "n_def": 10,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "rough": {
+        "n": 5,
+        "n_def": 5,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "squeezed_teeth": {
+        "n": 7,
+        "n_def": 7,
+        "miss_rate": 0.2857142857142857,
+        "deferral_rate": 0.7142857142857143
+      },
+      "fabric_border": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.0,
+        "deferral_rate": 1.0
+      },
+      "fabric_interior": {
+        "n": 9,
+        "n_def": 9,
+        "miss_rate": 0.2222222222222222,
+        "deferral_rate": 0.7777777777777778
+      },
+      "good": {
+        "n": 16,
+        "n_def": 0,
+        "miss_rate": null,
+        "deferral_rate": 0.0
+      }
+    }
+  },
+  "meta": {
+    "protocol": "repeat-0 stratified split, alpha_miss=0.10, alpha_fr=0.05, category-level thresholds (frozen code path), eval-half routing",
+    "status": "post-freeze exploratory; edits no frozen result",
+    "date": "2026-07-19"
+  }
+}

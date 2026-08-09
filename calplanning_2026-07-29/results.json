@@ -1,0 +1,1382 @@
+{
+  "provenance": {
+    "script": "script.py",
+    "script_sha256": "338fc0183c0463458a76d125933695ef07438235a7d345c1ebc9db4ae9508c72",
+    "generated_utc": "2026-07-30T05:34:48.785871+00:00",
+    "python": "3.13.5",
+    "numpy": "2.2.6",
+    "label": "POST-FREEZE EXPLORATORY; derived analytically from the frozen per-category calibration pool sizes. Runs no model, edits no frozen result.",
+    "sources": {
+      "MVTec AD/patchcore": {
+        "path": "analysis_2026-07-10/gate_calibration/v1_patchcore_seed0.json",
+        "sha256": "56cfa64c03ca152bcc0ef8601a378edf4b7732597827d3d4dc379d0694aeecff"
+      },
+      "MVTec AD/dinomaly": {
+        "path": "analysis_2026-07-10/gate_calibration/v1_dinomaly_seed0.json",
+        "sha256": "62918e62deef914281c62e7d7f7a7d25e930187f5a0b15fb345c0098baf28495"
+      },
+      "VisA/patchcore": {
+        "path": "visa_results_2026-07-12/gate_calibration/v1_patchcore_seed0.json",
+        "sha256": "0a29d1aef07f2bf53308e87087ebfcad183a8004278cd43c69a7af7bc25223f5"
+      },
+      "VisA/dinomaly": {
+        "path": "visa_results_2026-07-12/gate_calibration/v1_dinomaly_seed0.json",
+        "sha256": "705f2c7ef5424652ea9762abb7d5992bd147d368010e3f72d472af199ef44033"
+      },
+      "MPDD/patchcore": {
+        "path": "mpdd_results_2026-07-13/gate_calibration/v1_patchcore_seed0.json",
+        "sha256": "91004250c88ebdd0fd6335b1569de30cd0a3fdb6e0cf30b3c89406e81c0fe95d"
+      },
+      "MPDD/dinomaly": {
+        "path": "mpdd_results_2026-07-13/gate_calibration/v1_dinomaly_seed0.json",
+        "sha256": "2d9dee8074b2be00a7c0f4d379ed68c5dfcf099648e307a6701a0f41e3411ace"
+      }
+    },
+    "alpha_miss_operating_point": 0.1,
+    "alpha_fr_operating_point": 0.05,
+    "alpha_grid": [
+      0.2,
+      0.15,
+      0.1,
+      0.05,
+      0.02,
+      0.01,
+      0.005,
+      0.001
+    ],
+    "growth_multipliers": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "floor_rule": "certifiable iff n_cal >= ceil(1/alpha) - 1, from alpha_min = 1/(n_cal+1)"
+  },
+  "requirement_curve": [
+    {
+      "alpha": 0.2,
+      "min_n_cal": 4,
+      "alpha_min_at_that_n": 0.2
+    },
+    {
+      "alpha": 0.15,
+      "min_n_cal": 6,
+      "alpha_min_at_that_n": 0.14285714285714285
+    },
+    {
+      "alpha": 0.1,
+      "min_n_cal": 9,
+      "alpha_min_at_that_n": 0.1
+    },
+    {
+      "alpha": 0.05,
+      "min_n_cal": 19,
+      "alpha_min_at_that_n": 0.05
+    },
+    {
+      "alpha": 0.02,
+      "min_n_cal": 49,
+      "alpha_min_at_that_n": 0.02
+    },
+    {
+      "alpha": 0.01,
+      "min_n_cal": 99,
+      "alpha_min_at_that_n": 0.01
+    },
+    {
+      "alpha": 0.005,
+      "min_n_cal": 199,
+      "alpha_min_at_that_n": 0.005
+    },
+    {
+      "alpha": 0.001,
+      "min_n_cal": 999,
+      "alpha_min_at_that_n": 0.001
+    }
+  ],
+  "observed_pools": {
+    "MVTec AD": {
+      "n_categories": 15,
+      "n_cal_defect_range": [
+        15,
+        70
+      ],
+      "n_cal_good_range": [
+        6,
+        30
+      ],
+      "n_cal_defect_median": 44.0,
+      "n_cal_good_median": 14.0
+    },
+    "VisA": {
+      "n_categories": 12,
+      "n_cal_defect_range": [
+        50,
+        50
+      ],
+      "n_cal_good_range": [
+        25,
+        50
+      ],
+      "n_cal_defect_median": 50.0,
+      "n_cal_good_median": 50.0
+    },
+    "MPDD": {
+      "n_categories": 6,
+      "n_cal_defect_range": [
+        7,
+        36
+      ],
+      "n_cal_good_range": [
+        13,
+        16
+      ],
+      "n_cal_defect_median": 25.0,
+      "n_cal_good_median": 15.0
+    }
+  },
+  "attainment_sweep": {
+    "g1_escaped_defect": [
+      {
+        "alpha": 0.2,
+        "axis": "g1",
+        "min_pool_required": 4,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.15,
+        "axis": "g1",
+        "min_pool_required": 6,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.1,
+        "axis": "g1",
+        "min_pool_required": 9,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 5,
+              "n_categories": 6,
+              "fraction": 0.83333
+            },
+            "dinomaly": {
+              "n_certifiable": 5,
+              "n_categories": 6,
+              "fraction": 0.83333
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.05,
+        "axis": "g1",
+        "min_pool_required": 19,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 14,
+              "n_categories": 15,
+              "fraction": 0.93333
+            },
+            "dinomaly": {
+              "n_certifiable": 14,
+              "n_categories": 15,
+              "fraction": 0.93333
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 4,
+              "n_categories": 6,
+              "fraction": 0.66667
+            },
+            "dinomaly": {
+              "n_certifiable": 4,
+              "n_categories": 6,
+              "fraction": 0.66667
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.02,
+        "axis": "g1",
+        "min_pool_required": 49,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 4,
+              "n_categories": 15,
+              "fraction": 0.26667
+            },
+            "dinomaly": {
+              "n_certifiable": 4,
+              "n_categories": 15,
+              "fraction": 0.26667
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.01,
+        "axis": "g1",
+        "min_pool_required": 99,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.005,
+        "axis": "g1",
+        "min_pool_required": 199,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.001,
+        "axis": "g1",
+        "min_pool_required": 999,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      }
+    ],
+    "g2_false_reject": [
+      {
+        "alpha": 0.2,
+        "axis": "g2",
+        "min_pool_required": 4,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.15,
+        "axis": "g2",
+        "min_pool_required": 6,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.1,
+        "axis": "g2",
+        "min_pool_required": 9,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 14,
+              "n_categories": 15,
+              "fraction": 0.93333
+            },
+            "dinomaly": {
+              "n_certifiable": 14,
+              "n_categories": 15,
+              "fraction": 0.93333
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.05,
+        "axis": "g2",
+        "min_pool_required": 19,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 4,
+              "n_categories": 15,
+              "fraction": 0.26667
+            },
+            "dinomaly": {
+              "n_certifiable": 4,
+              "n_categories": 15,
+              "fraction": 0.26667
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.02,
+        "axis": "g2",
+        "min_pool_required": 49,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 7,
+              "n_categories": 12,
+              "fraction": 0.58333
+            },
+            "dinomaly": {
+              "n_certifiable": 7,
+              "n_categories": 12,
+              "fraction": 0.58333
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.01,
+        "axis": "g2",
+        "min_pool_required": 99,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.005,
+        "axis": "g2",
+        "min_pool_required": 199,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      },
+      {
+        "alpha": 0.001,
+        "axis": "g2",
+        "min_pool_required": 999,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 15,
+              "fraction": 0.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 12,
+              "fraction": 0.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      }
+    ]
+  },
+  "pool_growth": {
+    "g1_escaped_defect": [
+      {
+        "multiplier": 1,
+        "alpha": 0.1,
+        "axis": "g1",
+        "min_pool_required": 9,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 5,
+              "n_categories": 6,
+              "fraction": 0.83333
+            },
+            "dinomaly": {
+              "n_certifiable": 5,
+              "n_categories": 6,
+              "fraction": 0.83333
+            }
+          }
+        }
+      },
+      {
+        "multiplier": 2,
+        "alpha": 0.1,
+        "axis": "g1",
+        "min_pool_required": 9,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "multiplier": 4,
+        "alpha": 0.1,
+        "axis": "g1",
+        "min_pool_required": 9,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "multiplier": 8,
+        "alpha": 0.1,
+        "axis": "g1",
+        "min_pool_required": 9,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "multiplier": 16,
+        "alpha": 0.1,
+        "axis": "g1",
+        "min_pool_required": 9,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      }
+    ],
+    "g2_false_reject": [
+      {
+        "multiplier": 1,
+        "alpha": 0.05,
+        "axis": "g2",
+        "min_pool_required": 19,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 4,
+              "n_categories": 15,
+              "fraction": 0.26667
+            },
+            "dinomaly": {
+              "n_certifiable": 4,
+              "n_categories": 15,
+              "fraction": 0.26667
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            },
+            "dinomaly": {
+              "n_certifiable": 0,
+              "n_categories": 6,
+              "fraction": 0.0
+            }
+          }
+        }
+      },
+      {
+        "multiplier": 2,
+        "alpha": 0.05,
+        "axis": "g2",
+        "min_pool_required": 19,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 14,
+              "n_categories": 15,
+              "fraction": 0.93333
+            },
+            "dinomaly": {
+              "n_certifiable": 14,
+              "n_categories": 15,
+              "fraction": 0.93333
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "multiplier": 4,
+        "alpha": 0.05,
+        "axis": "g2",
+        "min_pool_required": 19,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "multiplier": 8,
+        "alpha": 0.05,
+        "axis": "g2",
+        "min_pool_required": 19,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      },
+      {
+        "multiplier": 16,
+        "alpha": 0.05,
+        "axis": "g2",
+        "min_pool_required": 19,
+        "by_benchmark": {
+          "MVTec AD": {
+            "patchcore": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 15,
+              "n_categories": 15,
+              "fraction": 1.0
+            }
+          },
+          "VisA": {
+            "patchcore": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 12,
+              "n_categories": 12,
+              "fraction": 1.0
+            }
+          },
+          "MPDD": {
+            "patchcore": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            },
+            "dinomaly": {
+              "n_certifiable": 6,
+              "n_categories": 6,
+              "fraction": 1.0
+            }
+          }
+        }
+      }
+    ]
+  },
+  "planning_rule": {
+    "g1_escaped_defect": {
+      "MVTec AD": {
+        "alpha": 0.1,
+        "min_pool_required": 9,
+        "smallest_multiplier_certifying_all": 1,
+        "note": "already certifies all categories at 1x"
+      },
+      "VisA": {
+        "alpha": 0.1,
+        "min_pool_required": 9,
+        "smallest_multiplier_certifying_all": 1,
+        "note": "already certifies all categories at 1x"
+      },
+      "MPDD": {
+        "alpha": 0.1,
+        "min_pool_required": 9,
+        "smallest_multiplier_certifying_all": 2,
+        "note": "needs 2x the collected pool"
+      }
+    },
+    "g2_false_reject": {
+      "MVTec AD": {
+        "alpha": 0.05,
+        "min_pool_required": 19,
+        "smallest_multiplier_certifying_all": 4,
+        "note": "needs 4x the collected pool"
+      },
+      "VisA": {
+        "alpha": 0.05,
+        "min_pool_required": 19,
+        "smallest_multiplier_certifying_all": 1,
+        "note": "already certifies all categories at 1x"
+      },
+      "MPDD": {
+        "alpha": 0.05,
+        "min_pool_required": 19,
+        "smallest_multiplier_certifying_all": 2,
+        "note": "needs 2x the collected pool"
+      }
+    }
+  },
+  "verification": {
+    "operating_point_checks": [
+      {
+        "benchmark": "MVTec AD",
+        "backbone": "patchcore",
+        "g1_expected": 15,
+        "g1_computed": 15,
+        "g2_expected": 4,
+        "g2_computed": 4,
+        "pass": true
+      },
+      {
+        "benchmark": "MVTec AD",
+        "backbone": "dinomaly",
+        "g1_expected": 15,
+        "g1_computed": 15,
+        "g2_expected": 4,
+        "g2_computed": 4,
+        "pass": true
+      },
+      {
+        "benchmark": "VisA",
+        "backbone": "patchcore",
+        "g1_expected": 12,
+        "g1_computed": 12,
+        "g2_expected": 12,
+        "g2_computed": 12,
+        "pass": true
+      },
+      {
+        "benchmark": "VisA",
+        "backbone": "dinomaly",
+        "g1_expected": 12,
+        "g1_computed": 12,
+        "g2_expected": 12,
+        "g2_computed": 12,
+        "pass": true
+      },
+      {
+        "benchmark": "MPDD",
+        "backbone": "patchcore",
+        "g1_expected": 5,
+        "g1_computed": 5,
+        "g2_expected": 0,
+        "g2_computed": 0,
+        "pass": true
+      },
+      {
+        "benchmark": "MPDD",
+        "backbone": "dinomaly",
+        "g1_expected": 5,
+        "g1_computed": 5,
+        "g2_expected": 0,
+        "g2_computed": 0,
+        "pass": true
+      }
+    ],
+    "n_pass": 6,
+    "n_total": 6,
+    "all_pass": true
+  }
+}

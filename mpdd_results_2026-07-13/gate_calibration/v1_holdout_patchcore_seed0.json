@@ -1,0 +1,278 @@
+{
+  "floors": {
+    "bracket_black": {
+      "n_cal_defect": 24,
+      "n_cal_good": 58,
+      "alpha_min_g1": 0.04,
+      "alpha_min_g2": 0.01694915254237288,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "bracket_brown": {
+      "n_cal_defect": 26,
+      "n_cal_good": 37,
+      "alpha_min_g1": 0.037037037037037035,
+      "alpha_min_g2": 0.02631578947368421,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "bracket_white": {
+      "n_cal_defect": 15,
+      "n_cal_good": 22,
+      "alpha_min_g1": 0.0625,
+      "alpha_min_g2": 0.043478260869565216,
+      "g1_certified": true,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "connector": {
+      "n_cal_defect": 7,
+      "n_cal_good": 26,
+      "alpha_min_g1": 0.125,
+      "alpha_min_g2": 0.037037037037037035,
+      "g1_certified": false,
+      "g2_certified": true,
+      "g2_mode": "train-holdout"
+    },
+    "metal_plate": {
+      "n_cal_defect": 36,
+      "n_cal_good": 11,
+      "alpha_min_g1": 0.02702702702702703,
+      "alpha_min_g2": 0.08333333333333333,
+      "g1_certified": true,
+      "g2_certified": false,
+      "g2_mode": "train-holdout"
+    },
+    "tubes": {
+      "n_cal_defect": 34,
+      "n_cal_good": 16,
+      "alpha_min_g1": 0.02857142857142857,
+      "alpha_min_g2": 0.058823529411764705,
+      "g1_certified": true,
+      "g2_certified": false,
+      "g2_mode": "audited-not-certified"
+    }
+  },
+  "ks_gate": {
+    "bracket_black": {
+      "ks_statistic": 0.28663793103448276,
+      "p_value": 0.20637514950762012,
+      "p_bh": 0.6191254485228603,
+      "passed": true,
+      "reason": null
+    },
+    "bracket_brown": {
+      "ks_statistic": 0.15384615384615385,
+      "p_value": 0.9401777762605121,
+      "p_bh": 0.9401777762605121,
+      "passed": true,
+      "reason": null
+    },
+    "bracket_white": {
+      "ks_statistic": 0.17272727272727273,
+      "p_value": 0.8966486138907401,
+      "p_bh": 0.9401777762605121,
+      "passed": true,
+      "reason": null
+    },
+    "connector": {
+      "ks_statistic": 0.28205128205128205,
+      "p_value": 0.3562566791282623,
+      "p_bh": 0.7125133582565247,
+      "passed": true,
+      "reason": null
+    },
+    "metal_plate": {
+      "ks_statistic": 0.2867132867132867,
+      "p_value": 0.6076508406566288,
+      "p_bh": 0.9114762609849432,
+      "passed": true,
+      "reason": null
+    },
+    "tubes": {
+      "ks_statistic": 0.7916666666666666,
+      "p_value": 2.074966414428562e-06,
+      "p_bh": 1.244979848657137e-05,
+      "passed": false,
+      "reason": null
+    }
+  },
+  "ks_alpha": 0.05,
+  "floor_reasons": {
+    "bracket_black": "CERTIFIED: KS PASSED and n_holdout_good=58 >= 19 (floor 1/(n+1)=0.01695 <= alpha_fr=0.05)",
+    "bracket_brown": "CERTIFIED: KS PASSED and n_holdout_good=37 >= 19 (floor 1/(n+1)=0.02632 <= alpha_fr=0.05)",
+    "bracket_white": "CERTIFIED: KS PASSED and n_holdout_good=22 >= 19 (floor 1/(n+1)=0.04348 <= alpha_fr=0.05)",
+    "connector": "CERTIFIED: KS PASSED and n_holdout_good=26 >= 19 (floor 1/(n+1)=0.03704 <= alpha_fr=0.05)",
+    "metal_plate": "KS PASSED but holdout pool too small: n_holdout_good=11 < 19 (floor 1/(n+1)=0.08333 > alpha_fr=0.05)",
+    "tubes": "KS exchangeability gate FAILED (train-holdout good vs test-good, BH alpha=0.05): p_bh=1.245e-05; g2_mode=audited-not-certified (no promotion), n_holdout_good=16"
+  },
+  "v1": {
+    "alpha_miss": 0.1,
+    "alpha_fr": 0.05,
+    "tolerance_pp": 0.03,
+    "confidence": 0.95,
+    "per_category": {
+      "bracket_black": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.08043478260869565,
+          "mean_false_reject_rate": 0.1,
+          "pass_escaped": true,
+          "pass_false_reject": false,
+          "pass_tier1": false
+        },
+        "tier2": {
+          "n_eval_def_total": 460,
+          "n_eval_good_total": 320,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.08043478260869565,
+          "pooled_false_reject_rate": 0.1,
+          "escaped_ub_1sided": 0.10445856956075344,
+          "false_reject_ub_1sided": 0.1319856130353036,
+          "pass_escaped": true,
+          "pass_false_reject": false
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.4076923076923077
+      },
+      "bracket_brown": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 500,
+          "n_eval_good_total": 260,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.005973551516349557,
+          "false_reject_ub_1sided": 0.011455922627235219,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.09342105263157893
+      },
+      "bracket_white": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.09333333333333334,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 300,
+          "n_eval_good_total": 300,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.09333333333333334,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.1257230522590094,
+          "false_reject_ub_1sided": 0.009936081944457708,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.3350000000000001
+      },
+      "connector": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.0,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 140,
+          "n_eval_good_total": 300,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.0,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.021170772844868804,
+          "false_reject_ub_1sided": 0.009936081944457708,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.7090909090909091
+      },
+      "metal_plate": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.08857142857142856,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 700,
+          "n_eval_good_total": 260,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.08857142857142856,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.10826897825638995,
+          "false_reject_ub_1sided": 0.011455922627235219,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.6645833333333333
+      },
+      "tubes": {
+        "tier1": {
+          "mean_escaped_defect_rate": 0.06428571428571428,
+          "mean_false_reject_rate": 0.0,
+          "pass_escaped": true,
+          "pass_false_reject": true,
+          "pass_tier1": true
+        },
+        "tier2": {
+          "n_eval_def_total": 700,
+          "n_eval_good_total": 320,
+          "min_n_def_required": 22,
+          "min_n_good_required": 36,
+          "underpowered_escaped": false,
+          "underpowered_false_reject": false,
+          "pooled_escaped_rate": 0.06428571428571428,
+          "pooled_false_reject_rate": 0.0,
+          "escaped_ub_1sided": 0.08166677428308275,
+          "false_reject_ub_1sided": 0.009317979408884071,
+          "pass_escaped": true,
+          "pass_false_reject": true
+        },
+        "n_repeats": 20,
+        "mean_deferral_rate": 0.85
+      }
+    }
+  },
+  "k1": {
+    "n_violations": 0,
+    "n_cells": 6,
+    "max_violations": 2,
+    "k1_tripped": false
+  },
+  "n_g2_certified": 4,
+  "n_ks_fallback": 1,
+  "n_floor_short": 1
+}

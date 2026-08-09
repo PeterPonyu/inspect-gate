@@ -1,0 +1,133 @@
+% fig-g2delta: G2 train-holdout remedy (2x2)
+% Data: R/g2delta_*.csv → out/g2delta-*.tex
+%
+% Chrome (axis-relative), shared for panels c/d — same stacking as fig-crcbaseline:
+%   legend @ 1.30  — horizontal row, clear above the title/letter row
+%   title  @ 1.02  — tight to the axis top; panel letters on this row in the gutter
+% Shared a/b tile legend is a TikZ node parked just above the top-row titles.
+% Panel-d legend images are flat squares (emitted by process_g2delta.R).
+\documentclass[border=2pt]{standalone}
+\input{inspect_style.tex}
+
+\definecolor{cCertified}{HTML}{009E73}
+\definecolor{cRefuseFloor}{HTML}{999999}
+\definecolor{cRefuseKS}{HTML}{E69F00}
+\definecolor{cGate}{HTML}{0072B2}
+
+% Letter on the title row, parked in the left gutter (south-east → sits left of NW).
+% Name must not start with \g<digit> (TeX accent primitive).
+\newcommand{\gtwolabel}[2]{%
+  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
+    at ([xshift=-12pt, yshift=10pt] #1.north west) {\textbf{#2}};%
+}
+
+\begin{document}
+\begin{tikzpicture}[font=\figfont]
+\input{../out/g2delta-panel-c-meta.tex}
+
+\pgfplotsset{
+  g2/title near axis/.style={
+    title style={at={(0.5,1.02)}, anchor=south, font=\titlefont},
+  },
+  g2/legend above/.style={
+    legend style={
+      at={(0.5,1.30)}, anchor=south,
+      legend columns=-1, font=\tickfont, draw=none,
+      fill=none,
+      inner sep=1pt, /tikz/every even column/.append style={column sep=7pt},
+    },
+  },
+}
+
+% Panel a: MVTec tiles
+% a/b at 3.42in clears c/d legend chrome (~3.05) + rotated x-labels (~0.35).
+\begin{axis}[
+  inspect default,
+  name=axa, width=2.55in, height=1.15in, at={(0.55in,3.42in)},
+  xmin=0, xmax=15, ymin=0, ymax=2,
+  xtick={0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5,13.5,14.5},
+  xticklabels={bot,cab,cap,car,grd,haz,lea,nut,pil,scr,til,tbr,tra,woo,zip},
+  x tick label style={font=\tickfont, rotate=90, anchor=east},
+  ytick={0.5,1.5}, yticklabels={promoted,primary},
+  axis line style={draw=none},
+  tick style={draw=none},
+  g2/title near axis,
+  title={MVTec AD: $4/15\to13/15$},
+  clip=false,
+]
+\begin{scope}[shift={(0,0)}]
+  \input{../out/g2delta-mvtec-tiles.tex}
+\end{scope}
+\end{axis}
+\gtwolabel{axa}{a}
+
+% Panel b: MPDD tiles
+\begin{axis}[
+  inspect default,
+  name=axb, width=1.70in, height=1.15in, at={(3.55in,3.42in)},
+  xmin=0, xmax=6, ymin=0, ymax=2,
+  xtick={0.5,1.5,2.5,3.5,4.5,5.5},
+  xticklabels={b-blk,b-brn,b-wht,conn,plate,tubes},
+  x tick label style={font=\tickfont, rotate=90, anchor=east},
+  ytick={0.5,1.5}, yticklabels={promoted,primary},
+  axis line style={draw=none},
+  tick style={draw=none},
+  g2/title near axis,
+  title={MPDD: $0/6\to4/6$},
+  clip=false,
+]
+\begin{scope}
+  \input{../out/g2delta-mpdd-tiles.tex}
+\end{scope}
+\end{axis}
+\gtwolabel{axb}{b}
+
+% Shared tile legend — tight band just above a/b titles (not canvas-top float).
+\path (axa.north east) -- (axb.north west) coordinate[midway] (abmid);
+\node[anchor=south, font=\tickfont, inner sep=1pt] at ([yshift=20pt]abmid) {%
+  {\color{cCertified}\rule{1.1ex}{1.1ex}}~G2 certified\quad
+  {\color{cRefuseFloor}\rule{1.1ex}{1.1ex}}~refused (floor)\quad
+  {\color{cRefuseKS}\rule{1.1ex}{1.1ex}}~refused (KS)%
+};
+
+% Panel c: remedy deferral — ytick labels expanded from meta macros
+\begin{axis}[
+  inspect default,
+  name=axc, width=2.45in, height=2.35in, at={(0.42in,0)},
+  xmin=-2, xmax=118,
+  ymin=-0.6, ymax=\GtwoDeltaCN-0.4,
+  xlabel={deferral rate (\%)},
+  ytick={\GtwoDeltaCYtick},
+  yticklabels/.expanded={\GtwoDeltaCYticklabels},
+  g2/title near axis,
+  g2/legend above,
+  title={remedy deferral cost},
+  clip=false,
+]
+\addlegendimage{cRefuseFloor, only marks, mark=*, mark size=1.8pt}
+\addlegendentry{primary}
+\addlegendimage{cCertified, only marks, mark=square*, mark size=1.8pt}
+\addlegendentry{remedy}
+\input{../out/g2delta-panel-c.tex}
+\end{axis}
+\gtwolabel{axc}{c}
+
+% Panel d: per-seed n_G2
+\begin{axis}[
+  inspect default,
+  name=axd, width=2.45in, height=2.35in, at={(3.15in,0)},
+  ybar=2pt, bar width=6pt,
+  xmin=-0.6, xmax=4.6, ymin=-0.5, ymax=15.5,
+  xlabel={seed},
+  ylabel={$n_{\mathrm{G2\,certified}}$},
+  xtick={0,1,2,3,4},
+  g2/title near axis,
+  g2/legend above,
+  title={per-seed $n_{\mathrm{G2}}$},
+]
+\input{../out/g2delta-panel-d.tex}
+\end{axis}
+\gtwolabel{axd}{d}
+
+\end{tikzpicture}
+\end{document}
