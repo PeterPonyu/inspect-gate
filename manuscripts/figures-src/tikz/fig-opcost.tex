@@ -61,7 +61,7 @@
   inspect default,
   opcost/title near,
   opcost/legend above 1row,
-  name=axa, width=2.50in, height=1.65in, at={(1.00in,2.08in)},
+  name=axa, width=2.50in, height=1.65in, at={(1.00in,1.84in)},
   ymode=log, ymin=800, ymax=250000,
   ylabel={total cost (USD/hr, log)},
   xtick={0,1,2,3,4,5,6,7,8},
@@ -74,9 +74,11 @@
   title={total hourly cost},
 ]
 \input{../out/opcost-panel-a.tex}
-\node[font=\tickfont, text=black, anchor=south] at (axis cs:1, 950) {MPDD};
-\node[font=\tickfont, text=black, anchor=south] at (axis cs:4, 950) {VisA};
-\node[font=\tickfont, text=black, anchor=south] at (axis cs:7, 950) {MVTec-AD};
+% Group labels ABOVE the tallest bars (clear of rotated low/mid/high ticks).
+% Was y=950/2200 in the under-bar band → tick crowding. 2026-08-10.
+\node[font=\tickfont, text=black, anchor=south] at (axis cs:1, 90000) {MPDD};
+\node[font=\tickfont, text=black, anchor=south] at (axis cs:4, 90000) {VisA};
+\node[font=\tickfont, text=black, anchor=south] at (axis cs:7, 90000) {MVTec-AD};
 \end{axis}
 \opcostlabel{axa}{a}
 
@@ -86,8 +88,9 @@
   opcost/title near,
   opcost/legend above 1row,
   opcost/sq legend,
-  name=axb, width=2.50in, height=1.65in, at={(3.70in,2.08in)},
-  ymode=log, ymin=0.1, ymax=6000,
+  name=axb, width=2.50in, height=1.65in, at={(3.70in,1.84in)},
+  % ymax>6e3 parks VisA 1833x above its marker (was clipping the y-arrow).
+  ymode=log, ymin=0.1, ymax=15000,
   ylabel={review-cost headroom (x, log)},
   xtick={0,1,2},
   xticklabels={low-vol, mid-vol, high-vol},
