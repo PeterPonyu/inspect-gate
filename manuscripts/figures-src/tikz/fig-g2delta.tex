@@ -4,8 +4,8 @@
 % Chrome (jointmon-style pt offsets, not axis-relative legend@1.xx):
 %   titles @ 1.015 — tight to the axis top; panel letters on this row in the gutter
 %   c/d legends — TikZ nodes @34pt above axis.north (south-anchored); clears titles
-%   a/b shared legend — TikZ node @34pt above the a/b midline
-%   a/b row @ 3.30in — clears c/d legend tops (~2.94) + a/b rotated x-labels
+%   a/b shared legend — TikZ node @26pt above the a/b midline
+%   a/b row @ 3.20in — clears c/d legend tops (~2.94) + a/b rotated x-labels
 % Panel-d legend is a TikZ node (not pgfplots ybar legend — tall samples collided).
 \documentclass[border=2pt]{standalone}
 \input{inspect_style.tex}
@@ -25,16 +25,16 @@
 
 \pgfplotsset{
   g2/title near axis/.style={
-    title style={at={(0.5,1.015)}, anchor=south, font=\titlefont},
+    title style={at={(0.5,1.015)}, anchor=south, font=\titlefont, text=black},
   },
 }
 
 % Panel a: MVTec tiles
-% a/b at 3.30in: c/d north=2.35; legend south@34pt≈2.82; legend top≈2.96;
-% ~0.34in left for a/b rotated x-labels hanging into the row gutter.
+% a/b at 3.20in: c/d north=2.35; c/d legend south@34pt≈2.82; top≈2.96;
+% ~0.24in left for a/b rotated x-labels hanging into the row gutter.
 \begin{axis}[
   inspect default,
-  name=axa, width=2.55in, height=1.15in, at={(0.55in,3.30in)},
+  name=axa, width=2.55in, height=1.15in, at={(0.55in,3.20in)},
   xmin=0, xmax=15, ymin=0, ymax=2,
   xtick={0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5,13.5,14.5},
   xticklabels={bot,cab,cap,car,grd,haz,lea,nut,pil,scr,til,tbr,tra,woo,zip},
@@ -55,7 +55,7 @@
 % Panel b: MPDD tiles
 \begin{axis}[
   inspect default,
-  name=axb, width=1.70in, height=1.15in, at={(3.55in,3.30in)},
+  name=axb, width=1.70in, height=1.15in, at={(3.55in,3.20in)},
   xmin=0, xmax=6, ymin=0, ymax=2,
   xtick={0.5,1.5,2.5,3.5,4.5,5.5},
   xticklabels={b-blk,b-brn,b-wht,conn,plate,tubes},
@@ -73,10 +73,10 @@
 \end{axis}
 \gtwolabel{axb}{b}
 
-% Shared tile legend — 34pt south-anchor clears title tops (~10pt) with ~16pt air.
+% Shared tile legend — 26pt south-anchor clears title tops (~10pt) with ~8pt air.
 \path (axa.north east) -- (axb.north west) coordinate[midway] (abmid);
 \node[anchor=south, font=\tickfont, text=black, inner sep=0.5pt]
-  at ([yshift=34pt]abmid) {%
+  at ([yshift=26pt]abmid) {%
   {\color{cCertified}\rule{1.1ex}{1.1ex}}~G2 certified\quad
   {\color{cRefuseFloor}\rule{1.1ex}{1.1ex}}~refused (floor)\quad
   {\color{cRefuseKS}\rule{1.1ex}{1.1ex}}~refused (KS)%

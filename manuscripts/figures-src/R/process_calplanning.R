@@ -127,18 +127,17 @@ for (bench in BENCHES) {
   pa <- c(pa,
     sprintf("\\fill[%s, opacity=0.18] (axis cs:0.00055,%s) rectangle (axis cs:0.20,%s);",
             BENCH_COLORS[bench], fmt4(lo), fmt4(hi)),
-    # Inside the band on the left (log-x headroom); avoids right-edge clip
-    # when legends sit inside and xmax is not padded for external labels.
-    sprintf(paste0("\\node[anchor=west, font=\\fontsize{8}{9}\\selectfont,",
-                   " color=%s, fill=white, fill opacity=0.92, text opacity=1,",
-                   " inner sep=1pt] at (axis cs:0.0007,%s) {%s};"),
+    # Band name sits bare on the shaded range (no fill/draw box — house style).
+    # Left log-x headroom keeps labels clear of the requirement curve.
+    sprintf(paste0("\\node[anchor=west, font=\\figfont,",
+                   " text=%s, inner sep=0.5pt] at (axis cs:0.0007,%s) {%s};"),
             BENCH_COLORS[bench], fmt4(y_lab), bench))
 }
 pa <- c(pa,
   sprintf("\\draw[gray, dashed, line width=0.8pt] (axis cs:%s,3) -- (axis cs:%s,1200);",
           fmt4(ALPHA_MISS), fmt4(ALPHA_MISS)),
-  sprintf(paste0("\\node[anchor=south west, font=\\fontsize{8.5}{9.5}\\selectfont,",
-                 " color=black!60] at (axis cs:%s,700) {$\\alpha_{\\mathrm{miss}}$};"),
+  sprintf(paste0("\\node[anchor=south west, font=\\figfont,",
+                 " text=black] at (axis cs:%s,700) {$\\alpha_{\\mathrm{miss}}$};"),
           fmt4(ALPHA_MISS * 1.05)))
 writeLines(pa, file.path(TEX_DIR, "calplanning-panel-a.tex"), useBytes=TRUE)
 

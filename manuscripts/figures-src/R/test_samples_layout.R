@@ -67,8 +67,9 @@ if (label_clearance_from_tile_bottom + 1e-9 < 0) {
 }
 
 # Widest row title + panel letter at its top-right must clear the
-# AUTO-PASS tile left edge. Empirical "MPDD - defect" @ 8.2 pt bold ≈ 0.95 in;
-# panel letter @ PANEL_LABEL_PT (9 pt) bold ≈ 0.16 in.
+# AUTO-PASS tile left edge. Empirical "MPDD - defect" @ 8.2 pt plain ≈ 0.90 in;
+# keep 0.95 in as a conservative upper bound. Panel letter @ PANEL_LABEL_PT
+# (9 pt) bold ≈ 0.16 in.
 widest_label_in <- 0.95
 letter_w_in <- 0.16  # "(d)" @ 9 pt bold (house panel-label size)
 tile_left_in <- column_x[[1]] * canvas_width_in - half_tile

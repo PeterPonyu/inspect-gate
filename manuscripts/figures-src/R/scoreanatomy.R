@@ -58,19 +58,20 @@ render_cell <- function(cell, side = c("left", "right")) {
   # Left column (a,c): tighter right margin + titles pulled left so they do not
   # reach into the gutter where (b)/(d) panel letters sit. Right column (b,d):
   # wider left margin so those letters clear the a/c titles.
-  # Slightly tighter top/bottom margins: less inter-row whitespace while
-  # keeping title + status lines clear of the plot box and each other.
+  # X-axis title is drawn once per column in a dedicated strip below the grid
+  # (not via plot xlab), so descenders are never clipped by the panel cell.
   if (identical(side, "left")) {
-    par(mar = c(2.7, 3.45, 3.05, 0.25))
+    par(mar = c(1.90, 3.45, 3.05, 0.15))
     title_frac <- 0.04
     tag_adj <- 1.45
   } else {
-    par(mar = c(2.7, 2.85, 3.05, 0.70))
+    # Keep enough left margin for the "images" ylab after the narrow gutter.
+    par(mar = c(1.90, 2.55, 3.05, 0.55))
     title_frac <- 0.18
     tag_adj <- 1.20
   }
 
-  plot(NA, xlim = limits, ylim = c(0, ymax), xlab = "anomaly score", ylab = "images",
+  plot(NA, xlim = limits, ylim = c(0, ymax), xlab = "", ylab = "images",
        axes = FALSE, xaxs = "i", yaxs = "i")
   if (!is.finite(lo) && !is.finite(hi)) {
     rect(limits[[1]], 0, limits[[2]], ymax, col = adjustcolor(defer_col, 0.16), border = NA)
@@ -85,16 +86,28 @@ render_cell <- function(cell, side = c("left", "right")) {
   axis(1, cex.axis = 1.05)
   axis(2, las = 1, cex.axis = 1.05)
   box()
+  # Stack / stagger when the defer band is narrow (panel d: ~0.008 vs span).
   close_thresholds <- is.finite(lo) && is.finite(hi) && ((hi - lo) < 0.08 * diff(limits))
   if (is.finite(lo)) {
     abline(v = lo, lty = 2, lwd = 1.1)
-    text(lo, ymax * if (close_thresholds) 0.98 else 0.96, expression(t[lo]),
-         pos = 2, offset = 0.28, cex = 1.35)
+    if (close_thresholds) {
+      text(lo, ymax * 0.97, expression(t[lo]),
+           adj = c(1.35, 0.5), cex = 1.20, col = "black", xpd = NA)
+    } else {
+      text(lo, ymax * 0.96, expression(t[lo]),
+           pos = 2, offset = 0.28, cex = 1.35, col = "black")
+    }
   }
   if (is.finite(hi)) {
     abline(v = hi, lty = 3, lwd = 1.1)
-    text(hi, ymax * if (close_thresholds) 0.86 else 0.96, expression(t[hi]),
-         pos = 4, offset = 0.28, cex = 1.35)
+    if (close_thresholds) {
+      # Drop into the lower half and push right of the line to avoid collision.
+      text(hi, ymax * 0.38, expression(t[hi]),
+           adj = c(-0.30, 0.5), cex = 1.20, col = "black", xpd = NA)
+    } else {
+      text(hi, ymax * 0.96, expression(t[hi]),
+           pos = 4, offset = 0.28, cex = 1.35, col = "black")
+    }
   }
   backbone_label <- if (is.null(cell$backbone)) "" else sprintf(" / %s", cell$backbone)
   ttl <- sprintf("%s %s%s", cell$benchmark, cell$category, backbone_label)
@@ -102,31 +115,41 @@ render_cell <- function(cell, side = c("left", "right")) {
   mtext(panel_label_text(cell$panel), side = 3, line = 1.70, font = 2,
         cex = panel_label_cex(12), col = PANEL_LABEL_COLOR,
         at = par("usr")[1], adj = tag_adj)
-  mtext(ttl, side = 3, line = 1.70, adj = 0, cex = 0.90,
+  mtext(ttl, side = 3, line = 1.70, adj = 0, cex = 0.90, col = "black",
         at = par("usr")[1] + title_frac * dx)
-  mtext(cell_status(cell), side = 3, line = 0.75, cex = 0.82, col = "grey35")
+  mtext(cell_status(cell), side = 3, line = 0.75, cex = 0.82, col = "black")
 }
 
 raw_pdf <- file.path(script_dir, "../review-scoreanatomy-build.pdf")
 # Wider canvas (more landscape) + modest height trim → less vertical whitespace
 # when scaled to column width in the paper.
-cairo_pdf(raw_pdf, width = 6.3, height = 5.25, pointsize = 12, family = font_family)
-# Regions: 1=a 2=b 3=c 4=d 5=legend 6=column gutter (never plotted → blank gap),
-# which shifts b/d right relative to a/c.
+cairo_pdf(raw_pdf, width = 6.3, height = 5.55, pointsize = 12, family = font_family)
+# Regions: 1=a 2=b 3=c 4=d 5=xlab strip 6=legend;
+# 7=row spacer (never plotted); 8=column gutter (never plotted).
 layout(
-  matrix(c(1, 6, 2,
-           3, 6, 4,
-           5, 5, 5), nrow = 3, byrow = TRUE),
-  widths = c(1, 0.32, 1),
-  heights = c(1, 1, 0.14)
+  matrix(c(1, 8, 2,
+           7, 7, 7,
+           3, 8, 4,
+           5, 5, 5,
+           6, 6, 6), nrow = 5, byrow = TRUE),
+  widths = c(1, 0.05, 1),
+  heights = c(1, 0.16, 1, 0.22, 0.14)
 )
 par(oma = c(0, 1.05, 0, 0), mgp = c(2.0, 0.55, 0), tcl = -0.25, family = font_family)
 sides <- c("left", "right", "left", "right")
-for (i in seq_along(frozen$cells)) render_cell(frozen$cells[[i]], side = sides[[i]])
-par(mar = c(0, 0, 0, 0)); plot.new()
+for (i in seq_along(frozen$cells)) {
+  render_cell(frozen$cells[[i]], side = sides[[i]])
+}
+# One "anomaly score" label per column, with full descender clearance.
+par(mar = c(0, 0, 0, 0))
+plot.new()
+text(x = c(0.26, 0.78), y = 0.70, labels = c("anomaly score", "anomaly score"),
+     cex = 1.05, col = "black", xpd = NA, adj = c(0.5, 0.5))
+par(mar = c(0, 0, 0, 0))
+plot.new()
 legend("center", legend = c("good (evaluation)", "defective (evaluation)", "defer region"),
        fill = c(adjustcolor(pass_col, 0.72), adjustcolor(defect_col, 0.62), adjustcolor(defer_col, 0.15)),
-       border = NA, horiz = TRUE, bty = "n", cex = 1.0)
+       border = NA, horiz = TRUE, bty = "n", cex = 1.0, text.col = "black")
 dev.off()
 
 status <- system2("gs", c("-q", "-dSAFER", "-dBATCH", "-dNOPAUSE", "-sDEVICE=pdfwrite",

@@ -166,7 +166,7 @@ for (hb in HBENCH) {
     }
     panel_b <- c(panel_b, sprintf(
       paste0(
-        "\\node[font=\\fontsize{7}{8}\\selectfont, text=black, ",
+        "\\node[font=\\tickfont, text=black, ",
         "anchor=%s] at (axis cs:%s,%s) {%dx};"
       ),
       anch, fmt2((si - 1L) + xoff), fmt2(row$headroom_multiple * yfac), val
@@ -219,20 +219,20 @@ panel_d <- c(
     fmt3(gate_us)
   ),
   sprintf(
-    "\\node[font=\\fontsize{7}{8}\\selectfont, text=black, anchor=south] at (axis cs:0,%s) {$%.2f$ms};",
+    "\\node[font=\\tickfont, text=black, anchor=south] at (axis cs:0,%s) {$%.2f$ms};",
     fmt3(bb1_us * 1.10), lat_df$ms[1]
   ),
   sprintf(
-    "\\node[font=\\fontsize{7}{8}\\selectfont, text=black, anchor=south] at (axis cs:1,%s) {$%.2f$ms};",
+    "\\node[font=\\tickfont, text=black, anchor=south] at (axis cs:1,%s) {$%.2f$ms};",
     fmt3(bb32_us * 1.10), lat_df$ms[2]
   ),
   sprintf(
-    "\\node[font=\\fontsize{7}{8}\\selectfont, text=black, anchor=south] at (axis cs:2,%s) {$%.1f\\mu$s};",
+    "\\node[font=\\tickfont, text=black, anchor=south] at (axis cs:2,%s) {$%.1f\\mu$s};",
     fmt3(max(gate_us * 3.2, 8)), gate_us
   ),
   sprintf(
     paste0(
-      "\\node[anchor=east, font=\\fontsize{7}{8}\\selectfont, text=black, ",
+      "\\node[anchor=east, font=\\tickfont, text=black, ",
       "align=right] at (rel axis cs:0.97,0.52) {cal: $%.1f$ms\\\\(one-time)};"
     ),
     cal_ms

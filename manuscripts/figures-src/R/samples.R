@@ -63,7 +63,7 @@ tile_size <- unit(tile_size_in, "in")
 for (j in seq_along(column_x)) {
   grid.text(
     column_labels[[j]], x = column_x[[j]], y = header_y,
-    gp = gpar(fontsize = 9.2, fontface = "bold", fontfamily = font_family, col = route_colours[[j]])
+    gp = gpar(fontsize = FIG_AXIS_PT, fontface = "plain", fontfamily = font_family, col = route_colours[[j]])
   )
   grid.lines(
     x = unit(column_x[[j]] + c(-0.100, 0.100), "npc"),
@@ -74,8 +74,9 @@ for (j in seq_along(column_x)) {
 
 for (i in seq_along(rows)) {
   row <- rows[[i]]
+  # House style: only panel letters are bold; row titles stay medium/plain.
   title_gp <- gpar(
-    fontsize = label_text_fontsize_pt, fontface = "bold", fontfamily = font_family
+    fontsize = label_text_fontsize_pt, fontface = "plain", fontfamily = font_family
   )
   letter_gp <- gpar(
     fontsize = panel_letter_fontsize_pt, fontface = PANEL_LABEL_FACE,
@@ -133,20 +134,20 @@ for (i in seq_along(rows)) {
       # Label below the inset so it never occludes the GT crop.
       grid.text(
         zoom_label, x = zoom_x, y = zoom_y + zoom_label_offset_y_npc,
-        gp = gpar(fontsize = zoom_label_fontsize_pt, fontfamily = font_family, col = "gray15")
+        gp = gpar(fontsize = zoom_label_fontsize_pt, fontfamily = font_family, col = ANNOT_TEXT_COLOR)
       )
     }
 
     grid.text(
       sprintf("s = %.2f", row$scores[[j]]),
       x = column_x[[j]], y = row_y[[i]] + score_offset_y,
-      gp = gpar(fontsize = 8.2, fontfamily = font_family)
+      gp = gpar(fontsize = FIG_BODY_PT, fontface = "plain", fontfamily = font_family, col = ANNOT_TEXT_COLOR)
     )
     if (i == 1L && j == 2L) {
       grid.text(
         "floor refusal", x = column_x[[j]],
         y = row_y[[i]] + floor_refusal_offset_y,
-        gp = gpar(fontsize = 7.5, fontface = "bold", fontfamily = font_family, col = "white")
+        gp = gpar(fontsize = FIG_TICK_PT, fontface = "plain", fontfamily = font_family, col = "white")
       )
     }
   }

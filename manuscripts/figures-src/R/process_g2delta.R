@@ -160,7 +160,7 @@ for (i in seq_len(n)) {
 panel_c <- c(panel_c,
   sprintf("\\draw[black, dashed, line width=0.8pt] (axis cs:80,-0.5) -- (axis cs:80,%s);", n - 0.5),
   sprintf(paste0(
-    "\\node[anchor=west, font=\\fontsize{7}{8}\\selectfont, align=left] ",
+    "\\node[anchor=west, font=\\tickfont, text=black, align=left] ",
     "at (axis cs:82,%s) {K2 vacuity\\\\80\\%%};"
   ), fmt2((n - 1) / 2)))
 writeLines(panel_c, file.path(TEX_DIR, "g2delta-panel-c.tex"), useBytes = TRUE)

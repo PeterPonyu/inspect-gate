@@ -13,11 +13,10 @@
 \definecolor{cGate}{HTML}{0072B2}
 \definecolor{cBase}{HTML}{D55E00}
 
-% Panel letter on the title row, parked in the left gutter (clears ylabel).
-\newcommand{\opcostlabel}[2]{%
-  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt, text=black]
-    at ([xshift=-24pt, yshift=10pt] #1.north west) {\textbf{#2}};%
-}
+% Panel letter via house \panellabelshift → (a) 9pt bold black.
+% Deep left + raised park clears long rotated ylabels (esp. panel d
+% "(lower=faster)" whose top sits near axis NW).
+\newcommand{\opcostlabel}[2]{\panellabelshift{#1}{#2}{-52pt}{32pt}}
 
 \begin{document}
 \begin{tikzpicture}[font=\figfont]
@@ -35,10 +34,10 @@
       font=\titlefont, text=black,
     },
   },
-  % 1-row legend above title. Title top≈16pt; legend south@38pt → ≥20pt gap.
+  % 1-row legend above title. Title top≈16pt; legend south@42pt → clear gap.
   opcost/legend above 1row/.style={
     legend style={
-      at={(0.5,1.0)}, anchor=south, yshift=38pt,
+      at={(0.5,1.0)}, anchor=south, yshift=42pt,
       font=\tickfont, text=black, draw=none, fill=none,
       inner sep=0.6pt, cells={anchor=west},
       /tikz/every even column/.append style={column sep=5pt},
@@ -49,8 +48,7 @@
   opcost/legend inside nw/.style={
     legend style={
       at={(0.02,0.98)}, anchor=north west,
-      font=\tickfont, text=black, draw=none,
-      fill=white, fill opacity=0.94, text opacity=1,
+      font=\tickfont, text=black, draw=none, fill=none,
       inner sep=1.0pt, cells={anchor=west},
       /tikz/every even column/.append style={column sep=4pt},
       /tikz/every node/.append style={text=black},
@@ -63,7 +61,7 @@
   inspect default,
   opcost/title near,
   opcost/legend above 1row,
-  name=axa, width=2.50in, height=1.65in, at={(0.55in,2.08in)},
+  name=axa, width=2.50in, height=1.65in, at={(1.00in,2.08in)},
   ymode=log, ymin=800, ymax=250000,
   ylabel={total cost (USD/hr, log)},
   xtick={0,1,2,3,4,5,6,7,8},
@@ -88,7 +86,7 @@
   opcost/title near,
   opcost/legend above 1row,
   opcost/sq legend,
-  name=axb, width=2.50in, height=1.65in, at={(3.25in,2.08in)},
+  name=axb, width=2.50in, height=1.65in, at={(3.70in,2.08in)},
   ymode=log, ymin=0.1, ymax=6000,
   ylabel={review-cost headroom (x, log)},
   xtick={0,1,2},
@@ -101,9 +99,9 @@
 \input{../out/opcost-panel-b.tex}
 \end{axis}
 \path (axb.south west) -- (axb.south east)
-  node[pos=0.16, below=9pt, font=\fontsize{6}{7}\selectfont, text=black] {precision}
-  node[pos=0.50, below=9pt, font=\fontsize{6}{7}\selectfont, text=black] {general}
-  node[pos=0.84, below=9pt, font=\fontsize{6}{7}\selectfont, text=black] {commodity};
+  node[pos=0.16, below=9pt, font=\tickfont, text=black] {precision}
+  node[pos=0.50, below=9pt, font=\tickfont, text=black] {general}
+  node[pos=0.84, below=9pt, font=\tickfont, text=black] {commodity};
 \opcostlabel{axb}{b}
 
 % Panel c: four-method mid-vol
@@ -111,7 +109,7 @@
   inspect default,
   opcost/title near,
   opcost/legend inside nw,
-  name=axc, width=2.50in, height=1.65in, at={(0.55in,0.02in)},
+  name=axc, width=2.50in, height=1.65in, at={(1.00in,0.02in)},
   ymode=log, ymin=40, ymax=400000,
   xmin=-0.55, xmax=2.55,
   ylabel={USD/hr (log, mid-vol.)},
@@ -133,7 +131,7 @@
 \begin{axis}[
   inspect default,
   opcost/title near,
-  name=axd, width=2.50in, height=1.65in, at={(3.25in,0.02in)},
+  name=axd, width=2.50in, height=1.65in, at={(3.70in,0.02in)},
   ymode=log, ymin=1, ymax=1200000,
   ytick={1,10,100,1000,10000,100000},
   ylabel={$\mu$s per image (lower=faster)},

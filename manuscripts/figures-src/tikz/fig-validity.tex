@@ -5,8 +5,9 @@
 %
 % Chrome (aligned with crcbaseline / g2delta):
 %   shared backbone legend just above a/b (above panel letters)
-%   c/d titles @ 1.02; horizontal legends @ 1.14 (clear of panel letters)
-\documentclass[border=2pt]{standalone}
+%   c/d titles @ 1.02; horizontal legends @ 1.34 (clear of panel letters)
+%   annotation labels (α_*, G2 note) use text=black (not grey)
+\documentclass[border={2pt 2pt 2pt 10pt}]{standalone}
 \input{inspect_style.tex}
 \usetikzlibrary{calc}
 
@@ -28,13 +29,13 @@
 
 \pgfplotsset{
   validity/title near axis/.style={
-    title style={at={(0.5,1.02)}, anchor=south, font=\titlefont},
+    title style={at={(0.5,1.02)}, anchor=south, font=\titlefont, text=black},
   },
-  % title@1.02, legend@1.28 parked SE so the left gutter keeps the panel letter clear.
+  % title@1.02, legend@1.34 parked SE so the left gutter keeps the panel letter clear.
   validity/legend above/.style={
     legend style={
-      at={(0.98,1.28)}, anchor=south east,
-      legend columns=-1, font=\tickfont, draw=none, fill=none,
+      at={(0.98,1.34)}, anchor=south east,
+      legend columns=-1, font=\tickfont, text=black, draw=none, fill=none,
       inner sep=1.2pt, /tikz/every even column/.append style={column sep=5pt},
     },
   },
@@ -44,7 +45,7 @@
 \begin{axis}[
   inspect default,
   name=ax_esc,
-  width=2.48in, height=1.72in, at={(0.58in,2.42in)},
+  width=2.48in, height=1.72in, at={(0.58in,2.32in)},
   xlabel={benchmark}, ylabel={realized escaped-defect rate},
   ymin=0, ymax=0.15, xmin=-0.6, xmax=2.6,
   xtick={0,1,2}, xticklabels={MVTec AD, VisA, MPDD},
@@ -59,7 +60,7 @@
 \addplot[cDinomaly, only marks, mark=square, line width=1.0pt, mark size=2.6pt]
   table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\escMeansDM};
 \draw[black, dashed, line width=0.8pt] (axis cs:-0.6,0.10) -- (axis cs:2.6,0.10);
-\node[anchor=south east, font=\tickfont] at (axis cs:2.58,0.102) {$\alpha_{\mathrm{miss}}$};
+\node[anchor=south east, font=\tickfont, text=black] at (axis cs:2.58,0.102) {$\alpha_{\mathrm{miss}}$};
 \end{axis}
 \validitylabel{ax_esc}{a}
 
@@ -67,7 +68,7 @@
 \begin{axis}[
   inspect default,
   name=ax_fr,
-  width=2.48in, height=1.72in, at={(3.32in,2.42in)},
+  width=2.48in, height=1.72in, at={(3.32in,2.32in)},
   xlabel={benchmark}, ylabel={realized false-reject rate},
   ymin=0, ymax=0.15, xmin=-0.6, xmax=2.6,
   xtick={0,1,2}, xticklabels={MVTec AD, VisA, MPDD},
@@ -82,14 +83,14 @@
 \addplot[cDinomaly, only marks, mark=square, line width=1.0pt, mark size=2.6pt]
   table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\frMeansDM};
 \draw[black, dashed, line width=0.8pt] (axis cs:-0.6,0.05) -- (axis cs:2.6,0.05);
-\node[anchor=south east, font=\tickfont] at (axis cs:2.58,0.052) {$\alpha_{\mathrm{fr}}$};
-\node[anchor=north east, font=\tickfont, text=black!55, align=right]
+\node[anchor=south east, font=\tickfont, text=black] at (axis cs:2.58,0.052) {$\alpha_{\mathrm{fr}}$};
+\node[anchor=north east, font=\tickfont, text=black, align=right]
   at (axis cs:2.55,0.145) {G2: 0/6\\refused};
 \end{axis}
 \validitylabel{ax_fr}{b}
 
 % Shared backbone legend — above panel letters (letters sit ~8pt over NW).
-\node[anchor=south, font=\tickfont] at ($(ax_esc.north)!0.5!(ax_fr.north)+(0,10pt)$) {%
+\node[anchor=south, font=\tickfont, text=black] at ($(ax_esc.north)!0.5!(ax_fr.north)+(0,14pt)$) {%
   {\color{cPatchcore}$\bullet$}~PatchCore\quad
   {\color{cDinomaly}$\rule[0.2ex]{1.1ex}{1.1ex}$}~Dinomaly%
 };
@@ -108,9 +109,9 @@
   clip=true,
 ]
 \draw[black, dashed, line width=0.6pt] (axis cs:10,-0.4) -- (axis cs:10,8.4);
-\node[anchor=north, font=\tickfont, text=black!60] at (axis cs:10,7.7) {$\alpha_{\mathrm{miss}}$};
+\node[anchor=north, font=\tickfont, text=black] at (axis cs:10,7.7) {$\alpha_{\mathrm{miss}}$};
 \draw[black, dashed, line width=0.6pt] (axis cs:-0.6,5) -- (axis cs:15,5);
-\node[anchor=east, font=\tickfont, text=black!60] at (axis cs:14.7,5.35) {$\alpha_{\mathrm{fr}}$};
+\node[anchor=east, font=\tickfont, text=black] at (axis cs:14.7,5.35) {$\alpha_{\mathrm{fr}}$};
 \input{../out/validity-panel-c.tex}
 \end{axis}
 \validitylabel{ax_md}{c}

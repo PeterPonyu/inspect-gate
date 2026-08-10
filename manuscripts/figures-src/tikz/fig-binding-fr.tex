@@ -1,8 +1,5 @@
 \documentclass[border=1pt]{standalone}
-\usepackage[T1]{fontenc}
-\usepackage{pgfplots}
-\pgfplotsset{compat=1.18}
-\usepackage{xcolor}
+\input{inspect_style.tex}
 
 \definecolor{C_BASE}{HTML}{D55E00}
 \definecolor{C_GATE}{HTML}{009E73}
@@ -12,36 +9,35 @@
   \draw[gray!70, line width=1.1pt] (axis cs:#1,#3) -- (axis cs:#2,#3);%
   \fill[C_BASE] (axis cs:#2,#3) circle (2.2pt);%
   \fill[C_GATE] (axis cs:#1,#3) circle (2.2pt);%
-  \node[anchor=east, font=\fontsize{8.5}{9.5}\selectfont] at (axis cs:-0.02,#3) {\strut\detokenize{#4} [#5]};%
-  \node[anchor=west, font=\fontsize{8.5}{9.5}\selectfont, color=black!60] at (axis cs:1.005,#3) {#6\%};%
+  \node[anchor=east, font=\figfont, text=black] at (axis cs:-0.02,#3) {\strut\detokenize{#4} [#5]};%
+  \node[anchor=west, font=\figfont, text=black] at (axis cs:1.005,#3) {#6\%};%
 }
 
 \begin{document}
-\begin{tikzpicture}
+\begin{tikzpicture}[font=\figfont]
   \begin{axis}[
+    inspect default,
     width=3.55in,
-    height=6.70in,
+    height=7.25in,
     xmin=0, xmax=1.0,
     ymin=-0.6, ymax=32.8,
     xlabel={realized false-reject rate},
     ytick=\empty,
-    tick label style={font=\fontsize{8.5}{9.5}\selectfont},
-    label style={font=\fontsize{9.5}{10.5}\selectfont},
     axis lines*=left,
     clip=false,
   ]
     \draw[black, dashed, line width=1.0pt] (axis cs:0.05,-0.6) -- (axis cs:0.05,32.8);
-    \node[anchor=south west, font=\fontsize{8.5}{9.5}\selectfont] at (axis cs:0.05,32.55) {target 0.05};
+    \node[anchor=south west, font=\figfont, text=black] at (axis cs:0.05,32.55) {target 0.05};
 
     \input{../out/binding-fr-rows.tex}
 
-    \node[anchor=south east, font=\fontsize{8.5}{9.5}\selectfont] at (axis cs:1.0,-0.4) {
+    \node[anchor=south east, font=\figfont, text=black] at (axis cs:1.0,-0.4) {
       \begin{tabular}{l}
         \textcolor{C_BASE}{$\bullet$} naive fixed threshold (B1) \\
         \textcolor{C_GATE}{$\bullet$} certified gate
       \end{tabular}
     };
-    \node[anchor=south, font=\fontsize{8.5}{9.5}\selectfont, color=black!60] at (axis cs:1.005,32.3) {gate deferral};
+    \node[anchor=south, font=\figfont, text=black] at (axis cs:1.005,32.3) {gate deferral};
   \end{axis}
 \end{tikzpicture}
 \end{document}
