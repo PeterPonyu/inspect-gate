@@ -77,9 +77,9 @@
 \path (axa.north east) -- (axb.north west) coordinate[midway] (abmid);
 \node[anchor=south, font=\tickfont, text=black, inner sep=0.5pt]
   at ([yshift=26pt]abmid) {%
-  {\color{cCertified}\rule{1.1ex}{1.1ex}}~G2 certified\quad
-  {\color{cRefuseFloor}\rule{1.1ex}{1.1ex}}~refused (floor)\quad
-  {\color{cRefuseKS}\rule{1.1ex}{1.1ex}}~refused (KS)%
+  \textcolor{cCertified}{\rule{1.1ex}{1.1ex}}~G2 certified\quad
+  \textcolor{cRefuseFloor}{\rule{1.1ex}{1.1ex}}~refused (floor)\quad
+  \textcolor{cRefuseKS}{\rule{1.1ex}{1.1ex}}~refused (KS)%
 };
 
 % Panel c: remedy deferral — ytick labels expanded from meta macros
@@ -101,8 +101,8 @@
 % Legend as TikZ node (not pgfplots) — same 34pt offset as a/b shared key.
 \node[anchor=south, font=\tickfont, text=black, inner sep=0.5pt]
   at ([yshift=34pt] axc.north) {%
-  {\color{cRefuseFloor}$\bullet$}~primary\quad
-  {\color{cCertified}\rule{1.1ex}{1.1ex}}~remedy%
+  \textcolor{cRefuseFloor}{$\bullet$}~primary\quad
+  \textcolor{cCertified}{\rule{1.1ex}{1.1ex}}~remedy%
 };
 
 % Panel d: per-seed n_G2
@@ -125,8 +125,8 @@
 % with the title (the previous legend@1.16 + ybar image height stacked on title).
 \node[anchor=south, font=\tickfont, text=black, inner sep=0.5pt]
   at ([yshift=34pt] axd.north) {%
-  {\color{cGate}\rule{1.1ex}{1.1ex}}~MVTec AD\quad
-  {\color{cAccept}\rule{1.1ex}{1.1ex}}~MPDD%
+  \textcolor{cGate}{\rule{1.1ex}{1.1ex}}~MVTec AD\quad
+  \textcolor{cAccept}{\rule{1.1ex}{1.1ex}}~MPDD%
 };
 
 \end{tikzpicture}

@@ -83,8 +83,11 @@ render_cell <- function(cell, side = c("left", "right")) {
   }
   plot(good_hist, add = TRUE, col = adjustcolor(pass_col, 0.72), border = NA)
   plot(defect_hist, add = TRUE, col = adjustcolor(defect_col, 0.62), border = NA)
-  axis(1, cex.axis = 1.05)
-  axis(2, las = 1, cex.axis = 1.05)
+  tick_cex <- FIG_TICK_PT / 12
+  body_cex <- FIG_BODY_PT / 12
+  axis_cex <- FIG_AXIS_PT / 12
+  axis(1, cex.axis = axis_cex)
+  axis(2, las = 1, cex.axis = axis_cex)
   box()
   # Stack / stagger when the defer band is narrow (panel d: ~0.008 vs span).
   close_thresholds <- is.finite(lo) && is.finite(hi) && ((hi - lo) < 0.08 * diff(limits))
@@ -92,21 +95,21 @@ render_cell <- function(cell, side = c("left", "right")) {
     abline(v = lo, lty = 2, lwd = 1.1)
     if (close_thresholds) {
       text(lo, ymax * 0.97, expression(t[lo]),
-           adj = c(1.35, 0.5), cex = 1.20, col = "black", xpd = NA)
+           adj = c(1.45, 0.5), cex = body_cex, col = ANNOT_TEXT_COLOR, xpd = NA)
     } else {
       text(lo, ymax * 0.96, expression(t[lo]),
-           pos = 2, offset = 0.28, cex = 1.35, col = "black")
+           pos = 2, offset = 0.28, cex = axis_cex, col = ANNOT_TEXT_COLOR)
     }
   }
   if (is.finite(hi)) {
     abline(v = hi, lty = 3, lwd = 1.1)
     if (close_thresholds) {
-      # Drop into the lower half and push right of the line to avoid collision.
-      text(hi, ymax * 0.38, expression(t[hi]),
-           adj = c(-0.30, 0.5), cex = 1.20, col = "black", xpd = NA)
+      # Drop into the lower third and push right of the line to avoid collision.
+      text(hi, ymax * 0.28, expression(t[hi]),
+           adj = c(-0.35, 0.5), cex = body_cex, col = ANNOT_TEXT_COLOR, xpd = NA)
     } else {
       text(hi, ymax * 0.96, expression(t[hi]),
-           pos = 4, offset = 0.28, cex = 1.35, col = "black")
+           pos = 4, offset = 0.28, cex = axis_cex, col = ANNOT_TEXT_COLOR)
     }
   }
   backbone_label <- if (is.null(cell$backbone)) "" else sprintf(" / %s", cell$backbone)
@@ -115,9 +118,9 @@ render_cell <- function(cell, side = c("left", "right")) {
   mtext(panel_label_text(cell$panel), side = 3, line = 1.70, font = 2,
         cex = panel_label_cex(12), col = PANEL_LABEL_COLOR,
         at = par("usr")[1], adj = tag_adj)
-  mtext(ttl, side = 3, line = 1.70, adj = 0, cex = 0.90, col = "black",
+  mtext(ttl, side = 3, line = 1.70, adj = 0, cex = axis_cex, col = ANNOT_TEXT_COLOR,
         at = par("usr")[1] + title_frac * dx)
-  mtext(cell_status(cell), side = 3, line = 0.75, cex = 0.82, col = "black")
+  mtext(cell_status(cell), side = 3, line = 0.75, cex = body_cex, col = ANNOT_TEXT_COLOR)
 }
 
 raw_pdf <- file.path(script_dir, "../review-scoreanatomy-build.pdf")
@@ -144,12 +147,13 @@ for (i in seq_along(frozen$cells)) {
 par(mar = c(0, 0, 0, 0))
 plot.new()
 text(x = c(0.26, 0.78), y = 0.70, labels = c("anomaly score", "anomaly score"),
-     cex = 1.05, col = "black", xpd = NA, adj = c(0.5, 0.5))
+     cex = FIG_AXIS_PT / 12, col = ANNOT_TEXT_COLOR, xpd = NA, adj = c(0.5, 0.5))
 par(mar = c(0, 0, 0, 0))
 plot.new()
 legend("center", legend = c("good (evaluation)", "defective (evaluation)", "defer region"),
        fill = c(adjustcolor(pass_col, 0.72), adjustcolor(defect_col, 0.62), adjustcolor(defer_col, 0.15)),
-       border = NA, horiz = TRUE, bty = "n", cex = 1.0, text.col = "black")
+       border = NA, horiz = TRUE, bty = "n", cex = FIG_BODY_PT / 12,
+       text.col = ANNOT_TEXT_COLOR)
 dev.off()
 
 status <- system2("gs", c("-q", "-dSAFER", "-dBATCH", "-dNOPAUSE", "-sDEVICE=pdfwrite",

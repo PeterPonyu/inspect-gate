@@ -227,11 +227,10 @@ for (kc in list(c("escaped", "cReject"), c("fr", "cControl"))) {
     # Axis-edge bubbles: park the badge inward so it is not clipped.
     yshift <- if (agg$y[i] <= 2) 9 else if (agg$y[i] >= 100) -9 else 8
     xshift <- if (agg$x[i] <= 2) 8 else if (agg$x[i] >= 95) -8 else 0
-    # House style: count badges are medium (only panel letters are bold).
+    # House style: count badges plain black, no fill box; \tickfont (7pt).
     lines_d <- c(lines_d, sprintf(
-      paste0("\\node[font=\\fontsize{6.5}{7.5}\\selectfont, anchor=center,",
-             " fill=white, fill opacity=0.90, text opacity=1, inner sep=1pt,",
-             " text=black] at (axis cs:%.1f,%.1f)",
+      paste0("\\node[font=\\tickfont, anchor=center, text=black, inner sep=0.5pt]",
+             " at (axis cs:%.1f,%.1f)",
              " [xshift=%dpt, yshift=%dpt] {%d};"),
       agg$x[i], agg$y[i], xshift, yshift, agg$n[i]))
   }

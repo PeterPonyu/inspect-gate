@@ -53,8 +53,9 @@
 \newcommand{\panellabel}[2]{\panellabelshift{#1}{#2}{-8pt}{7pt}}
 
 % Standard axis styles. Titles centered above the plot box only.
-% Text colour policy: axis titles, tick labels, legends, and (via
-% \panellabel) panel letters default to black — never grey / muted.
+% Text colour policy: axis titles, tick labels, legend *words*, and (via
+% \panellabel) panel letters default to black — never grey / muted text.
+% Decorative markers/lines may still use muted greys or semantic colours.
 \pgfplotsset{
   inspect/centertitle/.style={
     title style={at={(0.5,1.10)}, anchor=south, font=\titlefont, text=black},

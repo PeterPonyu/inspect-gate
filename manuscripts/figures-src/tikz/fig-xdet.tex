@@ -87,7 +87,7 @@
   ytick={0,0.5,1.0},
   ymajorgrids, grid style={gray!15},
   title={score-scale mechanism},
-  title style={at={(0.5,1.015)}, anchor=south, font=\titlefont},
+  title style={at={(0.5,1.015)}, anchor=south, font=\titlefont, text=black},
   clip=false,
 ]
 \input{../out/xdet-panel-c.tex}
@@ -95,9 +95,9 @@
 \panellabel{ax_c}{c}
 % PC/DM key ABOVE the centered title with ~12pt clear gap (title sits
 % ~11pt above spine) — inside panel-c footprint, clear of letter c.
-\node[anchor=south east, font=\tickfont, inner sep=1pt]
+\node[anchor=south east, font=\tickfont, text=black, inner sep=1pt]
   at ([yshift=24pt] ax_c.north east)
-  {{\color{cPatchcore}$\bullet$}~PC\quad{\color{cDinomaly}\rule[0.1ex]{1.1ex}{1.1ex}}~DM};
+  {\textcolor{cPatchcore}{$\bullet$}~PC\quad\textcolor{cDinomaly}{\rule[0.1ex]{1.1ex}{1.1ex}}~DM};
 
 
 % Panel d: per-cell shift against matched diagonal
@@ -115,7 +115,7 @@
   ytick={0,50,100},
   xmajorgrids, ymajorgrids, grid style={gray!12},
   title={per-cell shift vs matched},
-  title style={at={(0.5,1.015)}, anchor=south, font=\titlefont},
+  title style={at={(0.5,1.015)}, anchor=south, font=\titlefont, text=black},
   legend columns=2,
   % Horizontal legend in the empty open quadrant of the L (no point occlusion).
   legend style={at={(0.58,0.58)}, anchor=center, font=\tickfont,
