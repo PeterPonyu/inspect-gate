@@ -99,12 +99,13 @@ rates. Categories whose calibration pools cannot support a requested bound are r
 operating point ($\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$), escaped-defect certification
 holds for all $15$ categories, while false-reject certification holds in only $4/15$ under the primary
 protocol; pooled false-reject is $0.5\%$ at $54.4\%$ deferral, versus $3.1\%$ false-reject with no
-deferral under a single-threshold conformal risk control (CRC) baseline. Exploratory VisA and MPDD
-checks under the same protocol tag the complementary pool-size extremes: on VisA the gate reduces
-false rejects from $16.2\%$ to $3.0\%$ relative to CRC (realized escaped-defect $7.6\%$ vs.\ $9.5\%$),
-and on MPDD it reports $0.0\%$ false-reject only by deferring $73.1\%$ of images where the false-reject
-axis is refused in all six categories ($0/6$ G2-certifiable) --- a high-review diagnostic, not a
-dual-certificate success. Escaped-defect certification also holds for all $12$ VisA categories, whereas
+deferral under a single-threshold conformal risk control (CRC) baseline (as on MPDD, refused G2
+cells contribute structural zeros to the pooled false-reject rate via an empty auto-reject band).
+Exploratory VisA and MPDD checks under the same protocol tag the complementary pool-size extremes:
+on VisA the gate reduces false rejects from $16.2\%$ to $3.0\%$ relative to CRC (realized
+escaped-defect $7.6\%$ vs.\ $9.5\%$), and on MPDD it reports $0.0\%$ false-reject only by deferring
+$73.1\%$ of images where the false-reject axis is refused in all six categories ($0/6$
+G2-certifiable) --- a high-review diagnostic, not a dual-certificate success. Escaped-defect certification also holds for all $12$ VisA categories, whereas
 all $33$ benchmark categories refuse at $\alpha_{\text{miss}}=0.01$ because none has the required $99$
 defective calibration examples. A synthetic corruption stress test finds that good-score drift screening
 misses $34\%$ of accepted PatchCore cells above the escaped-defect target; a defect-score marginal test
@@ -182,7 +183,7 @@ This framing turns a benchmark score into an auditable decision and makes three 
         the dual gate reports $0.0\%$ false-reject only by deferring $73.1\%$ of images after G2
         refusal ($0/6$ categories certifiable) --- diagnostic high-review cost, not dual-certificate
         skill. We foreground the ``no new math'' property deliberately: it is what makes the
-        guarantees finite-sample-exact and the tool a thin, testable wrapper rather than a heuristic.
+        guarantees finite-sample marginal split-conformal (conservative, non-randomized) and the tool a thin, testable wrapper rather than a heuristic.
   \item \textbf{Refusal as a first-class outcome, with teeth.} A per-category certifiability floor
         $\alpha_{\min}=1/(n_{\text{cal}}+1)$ makes ``we cannot certify this category at this rate''
         an explicit, reported state (audited-not-certified), never a silently loosened threshold.
@@ -215,14 +216,15 @@ auto-reject route.
   \caption{Horizontal method overview. A frozen, interchangeable PatchCore or Dinomaly backbone
   scores each image. Per-category calibration first checks the certifiability floor
   $\alpha_{\min}=1/(n_{\text{cal}}+1)$ (Section~\ref{sec:floor}); when met, the parallel G1 and G2
-  cards set $t_{\text{lo}}(c)$ and $t_{\text{hi}}(c)$ so that
-  $P(s\!\le\!t_{\text{lo}}\mid\text{defective})\le\alpha_{\text{miss}}$ and
-  $P(s\!\ge\!t_{\text{hi}}\mid\text{good})\le\alpha_{\text{fr}}$, respectively
-  (Section~\ref{sec:gate}). Comparing $s_i$ with this band routes the part to auto-pass, defer, or
-  auto-reject. The dashed floor-control branch is distinct from that data path: an unmet floor
-  refuses the axis (band $=\pm\infty$), records audited-not-certified, and forces defer rather than
-  auto-reject. All three outcomes feed the same audit scorecard and frozen operating envelope; the
-  schematic makes no claim that either backbone is superior.}
+  cards set $t_{\text{lo}}(c)$ and $t_{\text{hi}}(c)$ so that, under classical split conformal,
+  $\Pr\{s\!>\!t_{\text{hi}}\}\le\alpha_{\text{fr}}$ on good scores and
+  $\Pr\{s\!<\!t_{\text{lo}}\}\le\alpha_{\text{miss}}$ on defective scores (marginal over the
+  calibration--test exchangeable pool; Section~\ref{sec:gate}). Comparing $s_i$ with this band
+  routes the part to auto-pass, defer, or auto-reject. The dashed floor-control branch is distinct
+  from that data path: an unmet floor refuses the axis (band $=\pm\infty$), records
+  audited-not-certified, and forces defer rather than auto-reject. All three outcomes feed the
+  same audit scorecard and frozen operating envelope; the schematic makes no claim that either
+  backbone is superior.}
   \label{fig:overview}
 \end{figure}
 
@@ -231,10 +233,10 @@ MVTec AD is the confirmatory benchmark, while VisA and MPDD are exploratory addi
 under the same protocol. The frozen G2 train-holdout remedy is reported separately, and no
 uncomputed result is used in the claims.
 
-\subsection{A calibration/refusal protocol on academic AD benchmarks}
+\paragraph{Evidence boundary.}
 The gate's output is an auditable calibration/refusal protocol: for every product
 category it materialises explicit, machine-readable operating parameters --- the two calibrated
-thresholds $(\lambda_{\text{pass}}, \lambda_{\text{reject}})$, the certified error budgets
+thresholds $(t_{\text{lo}}, t_{\text{hi}})$, the certified error budgets
 $(\alpha_{\text{miss}}, \alpha_{\text{fr}})$ they enforce, and, where calibration data cannot
 support the request, an \emph{audited-not-certified} refusal state --- which downstream
 quality-control logic (routing, re-inspection staffing, audit trails) can consume. The
@@ -374,6 +376,13 @@ re-derivation on each reuse.
       threshold; (B3) train-good quantile threshold \\
     C2 & Confirmatory excess-AURC audit (pooled Holm family, Section~\ref{sec:c2}) \\
     CRC & Conformal Risk Control, the single-threshold conformal baseline \\
+    $t_{\text{lo}},\,t_{\text{hi}}$ & Per-category auto-pass / auto-reject thresholds (Section~\ref{sec:gate}) \\
+    $\alpha_{\text{miss}},\,\alpha_{\text{fr}}$ & Target escaped-defect / false-reject rates (frozen $0.10$ / $0.05$) \\
+    $\alpha_{\min}$ & Certifiability floor $1/(n_{\text{cal}}+1)$; axis-specific
+      $\alpha_{\min}^{\text{G1}}$ / $\alpha_{\min}^{\text{G2}}$ when both appear \\
+    $n_{\text{cal}}^{\text{def}},\,n_{\text{cal}}^{\text{good}}$ & Per-category defective / good calibration pool sizes \\
+    Mondrian & Per-category (primary) conformal stratification; per-defect-type is exploratory \\
+    BH / Holm & Benjamini--Hochberg (KS multiplicity) vs.\ Holm (C2 excess-AURC family) \\
     \bottomrule
   \end{tabular}}
 \end{table}
@@ -383,19 +392,29 @@ re-derivation on each reuse.
 \label{sec:gate}
 
 Each image $i$ in category $c$ has an anomaly score $s_i$ with the convention \emph{higher
-$=$ more anomalous}. The gate is a pair of per-category thresholds $(t_{\text{lo}}(c),
-t_{\text{hi}}(c))$ with $t_{\text{lo}} \le t_{\text{hi}}$: images with $s_i \le t_{\text{lo}}(c)$
-auto-pass, images with $s_i \ge t_{\text{hi}}(c)$ auto-reject, and the rest defer. (If a refusal or
-crossed thresholds leave the auto-reject band empty, the overlap simply defers, and both guarantees
-still hold.)
+$=$ more anomalous}. The gate is a calibrated pair of per-category thresholds
+$(t_{\text{lo}}(c), t_{\text{hi}}(c))$: when $t_{\text{lo}} < t_{\text{hi}}$ the ordered rule
+below applies; when $t_{\text{lo}} \ge t_{\text{hi}}$ (refusal or crossed thresholds) the overlap
+band always defers and both guarantees still hold because each auto-action set can only shrink
+(Section~\ref{sec:crcbaseline}).
 
-Equivalently, Equation~\eqref{eq:threewaydecision} reports the decision for image $i$:
+Equation~\eqref{eq:threewaydecision} reports the decision for image $i$, matching the
+implemented router:
 \begin{equation}
 D(s_i;c)=
 \begin{cases}
-\text{pass}, & s_i \le t_{\text{lo}}(c),\\
-\text{reject}, & s_i \ge t_{\text{hi}}(c),\\
-\text{defer}, & t_{\text{lo}}(c) < s_i < t_{\text{hi}}(c).
+\begin{aligned}
+&\text{pass if } s_i \le t_{\text{lo}}(c),\quad
+\text{reject if } s_i \ge t_{\text{hi}}(c),\\
+&\text{else defer},
+\end{aligned}
+& \text{if } t_{\text{lo}}(c) < t_{\text{hi}}(c),\\[6pt]
+\begin{aligned}
+&\text{pass if } s_i < t_{\text{hi}}(c),\quad
+\text{reject if } s_i > t_{\text{lo}}(c),\\
+&\text{else defer},
+\end{aligned}
+& \text{if } t_{\text{lo}}(c) \ge t_{\text{hi}}(c).
 \end{cases}
 \label{eq:threewaydecision}
 \end{equation}
@@ -405,37 +424,50 @@ upper quantile of the \emph{good} calibration scores at level $\alpha_{\text{fr}
 ~\citep{papadopoulos2002inductive,vovk2005algorithmic}: with
 $n_{\text{cal}}^{\text{good}}$ good calibration scores, Equation~\eqref{eq:g2quantile} sets it to
 the order statistic at rank
-$\lceil (n+1)(1-\alpha_{\text{fr}}) \rceil$, guaranteeing $P(s \ge t_{\text{hi}} \mid \text{good})
-\le \alpha_{\text{fr}}$ under exchangeability as in Equation~\eqref{eq:g2guarantee}. This is exactly
-the split-conformal upper-quantile construction applied to the good scores.
+$\lceil (n_{\text{cal}}^{\text{good}}+1)(1-\alpha_{\text{fr}}) \rceil$. Classical
+non-randomized split conformal then guarantees the open inequality in
+Equation~\eqref{eq:g2guarantee} under exchangeability of the $n_{\text{cal}}^{\text{good}}+1$
+good scores in category $c$ (the probability is \emph{marginal} over the random calibration
+split and the new score, not conditional on the realized threshold). Routing uses the closed
+comparison $s \ge t_{\text{hi}}$ (Equation~\eqref{eq:threewaydecision}); under continuous scores
+without atoms the closed and open events are measure-equivalent, and score ties are rare in
+practice. This is exactly the split-conformal upper-quantile construction applied to the good
+scores.
 \begin{equation}
 t_{\text{hi}}(c)=S^{\text{good}}_{(k_{\text{hi}})},\qquad
-k_{\text{hi}}=\left\lceil \bigl(n_{\text{cal}}^{\text{good}}+1\bigr)
-\bigl(1-\alpha_{\text{fr}}\bigr)\right\rceil ,
+k_{\text{hi}}=\left\lceil (n_{\text{cal}}^{\text{good}}+1)
+(1-\alpha_{\text{fr}})\right\rceil ,
 \label{eq:g2quantile}
 \end{equation}
 \begin{equation}
-\Pr\!\left\{s \ge t_{\text{hi}}(c)\mid \text{good},\,c\right\}
-\le \alpha_{\text{fr}} .
+\Pr\!\bigl\{s_{n+1} > t_{\text{hi}}(c)\bigr\}
+\le \alpha_{\text{fr}}
+\qquad\text{(marginal over calibration$+$test; good scores in $c$).}
 \label{eq:g2guarantee}
 \end{equation}
 % implemented by the split-conformal routine relmetrics.conformal.SplitConformal
 
-\paragraph{G1 --- certified escaped-defect, by negation.} Bounding
-$P(s \le t_{\text{lo}} \mid \text{defective})$ is the mirror image: apply the same split-conformal
+\paragraph{G1 --- certified escaped-defect, by negation.} Bounding the lower tail of defective
+scores is the mirror image: apply the same split-conformal
 construction~\citep{papadopoulos2002inductive} to the \emph{negated} defective calibration scores $Y=-X$ at level
 $\alpha_{\text{miss}}$, then map the resulting upper quantile back through the negation. The gate
-module proves the order-statistic identity in Equation~\eqref{eq:g1mirror}, and it is checked against the design's
-$\lfloor \alpha(n+1)\rfloor$ formula in the accompanying unit tests. No new
-estimator is introduced; both certificates are the same conformal quantile.
+module proves the order-statistic identity in Equation~\eqref{eq:g1mirror}, equivalently the
+design floor form $k=\lfloor\alpha_{\text{miss}}(n_{\text{cal}}^{\text{def}}+1)\rfloor$, and both
+are checked in the accompanying unit tests. No new estimator is introduced; both certificates are
+the same conformal quantile. As with G2, the classical guarantee is the open inequality below
+(marginal over calibration$+$test); closed auto-pass routing $s\le t_{\text{lo}}$ is
+measure-equivalent under continuous scores.
 \begin{equation}
 \begin{aligned}
-&t_{\text{lo}}(c)=-Y_{(k_{\text{lo}})},\qquad
-Y=-X,\qquad
-k_{\text{lo}}=\left\lceil \bigl(n_{\text{cal}}^{\text{def}}+1\bigr)
-\bigl(1-\alpha_{\text{miss}}\bigr)\right\rceil ,\\[2pt]
-&\Pr\!\left\{s \le t_{\text{lo}}(c)\mid \text{defective},\,c\right\}
-\le \alpha_{\text{miss}} .
+&t_{\text{lo}}(c)=-Y_{(k_{\text{lo}})}=X^{\text{def}}_{(k)},\qquad
+Y=-X,\\
+&k_{\text{lo}}=\left\lceil (n_{\text{cal}}^{\text{def}}+1)
+(1-\alpha_{\text{miss}})\right\rceil ,\qquad
+k=\bigl\lfloor\alpha_{\text{miss}}(n_{\text{cal}}^{\text{def}}+1)\bigr\rfloor ,\\
+&\text{refuse G1 (set $t_{\text{lo}}=-\infty$) when $k=0$},\\[2pt]
+&\Pr\!\bigl\{s_{n+1} < t_{\text{lo}}(c)\bigr\}
+\le \alpha_{\text{miss}}
+\qquad\text{(marginal over calibration$+$test; defective scores in $c$).}
 \end{aligned}
 \label{eq:g1mirror}
 \end{equation}
@@ -443,7 +475,8 @@ k_{\text{lo}}=\left\lceil \bigl(n_{\text{cal}}^{\text{def}}+1\bigr)
 
 \paragraph{Mondrian per-category stratification.} Calibration is stratified by category (a Mondrian
 conformal construction~\citep{vovk2005algorithmic}): each category gets its own $(t_{\text{lo}}, t_{\text{hi}})$, so the
-guarantee is conditional on category, not marginal. An optional finer per-defect-type
+guarantee is category-conditional (not pooled across categories); within a category it remains
+marginal over that category's calibration--test exchangeable pool. An optional finer per-defect-type
 stratification is exploratory only (Section~\ref{sec:limitations}).
 
 \paragraph{Where the labeled defectives come from.} G1 calibrates on labeled \emph{defective}
@@ -548,7 +581,7 @@ U_{\text{CP}}(k,m;\gamma)=
 \end{equation}
 
 A battery of preregistered kill-gates guards the construction: K1 (coverage sanity --- halt if
-tier-1 fails in $\ge 5$ of the $15\!\times\!B$ cells), K2 (vacuity --- kill if median deferral
+tier-1 fails in $\ge 5$ of the $15\!\times\!B$ cells, with $B=2$ backbones), K2 (vacuity --- kill if median deferral
 $>0.80$ in $\ge 8/15$ categories on all backbones), K3 (backbone floor --- mean image-AUROC
 $\ge 0.90$), K4 (audit headroom), K5 (calibration floor --- fires only if $\alpha_{\min}>0.10$ in
 $\ge 3$ categories), K6 (a citation re-scan for a prior certified triage), and K7 (a compute guard).
@@ -559,13 +592,18 @@ $\ge 3$ categories), K6 (a citation re-scan for a prior certified triage), and K
 
 Beyond validity, we ask whether standard thresholding practice earns deferral skill at all.
 For each practice --- B1 (global fixed threshold), B2 (per-category tuned), B3 (train-good quantile)
---- we compare its area-under-the-risk-coverage-curve against the closed-form random-deferral null
+--- we compare its area-under-the-risk--coverage curve (AURC) against the closed-form random-deferral null
 (evaluated in closed form, never Monte-Carlo'd), with the statistic in
 Equation~\eqref{eq:aurcstat}, using a matched-abstention,
 % closed-form random-deferral AURC null: relmetrics.aurc.random_aurc
 category-stratified permutation $p$-value ($2000$ permutations), a category-blocked bootstrap CI,
 and a roster-derived Holm~\citep{holm1979simple} correction. The verdict is symmetric: if no
 practice beats random the paper reports a debunking finding; if all do it reports a constructive one.
+Here $A_{\pi,\tau}(i)=\mathbf{1}\{\text{practice $\pi$ accepts image $i$ at threshold $\tau$}\}$ is the
+acceptance indicator, $L_i\in\{0,1\}$ is the 0--1 loss (defect miss or false reject, depending on
+the risk axis), and coverage $\widehat C_{\pi}$ reparameterizes the curve so the integrand runs
+over coverage $u\in[0,1]$ rather than the raw threshold $\tau$ (a Riemann sum against coverage
+increments in the implementation).
 \begin{equation}
 \begin{aligned}
 \widehat C_{\pi}(\tau)
@@ -575,7 +613,7 @@ practice beats random the paper reports a debunking finding; if all do it report
 {\sum_{i\in\mathcal E} A_{\pi,\tau}(i)},\\
 \widehat{\operatorname{AURC}}(\pi)
 &=\int_0^1 \widehat R_{\pi}(u)\,du,\\
-\widehat\Delta_{\text{AURC}}(\pi)
+\widehat{\Delta}_{\text{AURC}}(\pi)
 &=\widehat{\operatorname{AURC}}(\pi)
 -\widehat{\operatorname{AURC}}(\text{random deferral}).
 \end{aligned}
@@ -649,6 +687,15 @@ analysis pipeline --- a MVTec AD analysis stage, a stage-identical VisA analysis
 stage-identical MPDD analysis stage (with its own train-holdout rescue stage), and the
 G2-promotion stage, each emitting a frozen result summary; none is trusted from a training log or
 the literature.
+
+\paragraph{Results map.}
+Subsections~\ref{sec:repro}--\ref{sec:floors} establish the substrate (reproduction, seed
+stability, certifiability floors). The preregistered confirmatory path then continues at
+Sections~\ref{sec:v1res} (V1 tier-1), \ref{sec:c2} (C2 Holm excess-AURC), and
+\ref{sec:tier2verdict} (V1 tier-2 readout). Between floors and those confirmatory audits we
+report baselines and economics (Sections~\ref{sec:crcbaseline}--\ref{sec:latency}) and
+post-freeze exploratory arms (operating-point / budget sweeps, remedies, binding, exploratory
+AURC, drift); status tags in the headings mark which is which.
 % MVTec: analysis_2026-07-10/scripts/run_analysis.py -> analysis_2026-07-10/SUMMARY.json;
 % VisA: visa_results_2026-07-12/scripts/run_visa_analysis.py -> visa_results_2026-07-12/SUMMARY.json;
 % MPDD: mpdd_results_2026-07-13/scripts/run_mpdd_analysis.py -> SUMMARY.json;
@@ -798,6 +845,14 @@ MPDD's false-reject row is hatched throughout --- the visual complement of the s
   \label{fig:categorymap}
 \end{figure}
 
+\paragraph{Navigational bridge.}
+With substrate and floors in hand, a reader chasing the confirmatory story may skip ahead to
+Section~\ref{sec:v1res} (V1 tier-1 validity) and then Section~\ref{sec:c2} (C2 confirmatory
+excess-AURC), with the tier-2 readout in Section~\ref{sec:tier2verdict}. The intervening
+subsections are either baselines/economics (CRC, illustrative costs, latency) or explicitly
+tagged post-freeze / post-hoc / exploratory arms; they do not alter the confirmatory inferential
+path V1$\to$C2.
+
 \subsection{The operating-point frontier (post-freeze exploratory)}
 \label{sec:frontier}
 
@@ -885,7 +940,7 @@ degrade --- only the coverage does.
 % source: calfraction_sweep_2026-07-19/{results.json,RESULTS.md} (post-freeze
 % exploratory; 6/6 frozen-reproduction checks PASS, max abs diff 0.0 at frac 0.50)
 
-\subsection{How much calibration data buys a certificate: a planning curve}
+\subsection{Calibration-pool planning curve (post-freeze exploratory)}
 \label{sec:calplanning}
 
 The budget sweep above answers what happens when calibration data is taken \emph{away}. A plant
@@ -942,7 +997,7 @@ refusal instead of a quietly weaker certificate.
 % source: calplanning_2026-07-29/{results.json,RESULTS.md} (post-freeze exploratory,
 % analytic from frozen pool sizes; 6/6 operating-point reproduction checks PASS)
 
-\subsection{Comparison with a conformal single-threshold baseline}
+\subsection{CRC single-threshold baseline comparison}
 \label{sec:crcbaseline}
 
 The natural named baseline a reviewer would ask for is not a hand-picked straw man but the
@@ -1058,7 +1113,7 @@ pre-specified certificate at a chosen risk level --- so we report it as context 
 like-for-like comparison to Table~\ref{tab:crcbaseline}.
 % source: baseline_comparison_2026-07-15/results.json (selective_baseline, per-backbone aurc + risk_at_coverage[coverage=0.8])
 
-\subsection{Deployment cost analysis}
+\subsection{Illustrative deployment economics}
 \label{sec:opcost}
 
 Table~\ref{tab:crcbaseline} certifies the dual gate's rates but not their economic
@@ -1152,7 +1207,7 @@ Calibration is a one-time $2.4\,$ms per reset.}
 \end{figure}
 
 
-\subsection{Latency and deployment cost}
+\subsection{Latency overhead}
 \label{sec:latency}
 
 The gate is a thin decision layer on top of whatever detector already produces the anomaly score,
@@ -1235,7 +1290,7 @@ exchangeable) and screw additionally fails in seed $4$ --- each is reported
 audited-not-certified, never silently promoted, and the seed-$4$ screw case shows a category
 certified under the primary protocol can still be \emph{refused} under the holdout arm when
 exchangeability breaks. Toothbrush remains uncertifiable at $\alpha_{\text{fr}}=0.05$ under both
-arms, exactly as preregistered ($n^{\text{good}}$ too small in either pool). K1 is not tripped
+arms, exactly as preregistered ($n_{\text{cal}}^{\text{good}}$ too small in either pool). K1 is not tripped
 in any promoted seed aggregate.
 
 \paragraph{What the remedy costs and delivers (post-freeze pricing).} Figure~\ref{fig:g2delta} shows the per-category certification flip.
@@ -1323,7 +1378,7 @@ it --- exactly what a refusal-first design should do.
 %   floor-only prediction 5/6, tubes KS p_bh 1.2e-5, metal_plate n=11<19, min Spearman 0.9186,
 %   max|auroc_delta| 0.0399); run_mpdd_holdout_analysis.py
 
-\subsection{When a fixed threshold over-promises (post-hoc binding demonstration)}
+\subsection{Post-hoc binding demonstration (fixed-threshold over-promise)}
 \label{sec:binding}
 
 The excess-AURC audit of Section~\ref{sec:auditres} shows practice earns deferral skill, but it does not directly exhibit the
@@ -1382,7 +1437,7 @@ auto-rejects $96.8\%$ of good parts where the certified gate holds $3.7\%$.}
 \end{figure}
 
 
-\subsection{Validity audit V1 (tier-1) and the kill-gates}
+\subsection{V1 tier-1 validity and kill-gates}
 \label{sec:v1res}
 
 Per frozen amendment A3, tier-1 is reported \emph{per axis}, with the false-reject axis
@@ -1676,7 +1731,7 @@ train-holdout rescue arm rather than supporting a new confirmatory claim.
 
 \FloatBarrier
 
-\subsection{Corruption-drift stress test (post-freeze, exploratory)}
+\subsection{Corruption-drift stress test (post-freeze exploratory)}
 \label{sec:drift}
 
 The certificates above are within-distribution: they hold under exchangeability between the
@@ -1971,9 +2026,9 @@ labeled-defective pools (hundreds to thousands per category) that accrue from re
 logging over months of production (Section~\ref{sec:gate}), not the few dozen defective images an
 academic test split provides.
 
-% Flush the two preceding [t] floats (jointmon, xdet) within the Results section
-% so they land within one page of their citations instead of deferring past the
-% Conclusion into the appendix float pages.
+% Flush the two preceding [t] floats (jointmon, xdet) authored in Limitations
+% so they land near their citations rather than deferring past the Conclusion
+% into the appendix float pages.
 \FloatBarrier
 
 \section{Conclusion}
