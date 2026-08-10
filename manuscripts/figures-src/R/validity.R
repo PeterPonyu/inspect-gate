@@ -198,8 +198,8 @@ writeLines(lines_c, file.path(TEX_DIR, "validity-panel-c.tex"), useBytes = TRUE)
 # --- TikZ fragment: panel d (violation count bubbles) -----------------------
 # Cap mark size so axis-edge clusters (x≈0 / y≈0) stay inside the padded frame.
 # Annotate only major aggregates (n>=5); tiny satellites stay as marks only
-# (avoids clipped "157" and stray side labels 1/2). Counts sit in a small white
-# badge just above the mark so they stay readable on both vermillion and cyan.
+# (avoids clipped "157" and stray side labels 1/2). Count labels are plain
+# black (no fill box), parked just above/ beside the mark for readability.
 bubble_size <- function(n) round(2.0 + 2.4 * sqrt(n / 160.0), 2)  # n=160 → ~4.4pt
 viol$xr <- round(viol$x); viol$yr <- round(viol$y)
 n_esc <- sum(viol$kind == "escaped")
