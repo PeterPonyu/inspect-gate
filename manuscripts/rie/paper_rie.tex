@@ -77,7 +77,7 @@
 \begin{frontmatter}
 
 \title{A pre-deployment three-way triage gate for visual-inspection anomaly detectors:
-escaped-defect and false-reject guarantees on MVTec AD, VisA, and MPDD}
+finite-sample escaped-defect and false-reject certificates on academic AD benchmarks}
 
 % --- Author block: Elsevier elsarticle macros. ---
 \author[inst1]{Zeyu Fu\corref{cor1}\orcidlink{0009-0001-8329-0108}}
@@ -92,20 +92,24 @@ country={China}}
 % Abstract word count: mirrored to abstract.txt and PORTAL_PACK.txt.
 \noindent Anomaly detectors can rank defects well without defining a safe operating decision. We present
 \emph{inspect-gate}, a pre-deployment triage layer evaluated on two detector architectures and three
-industrial-inspection benchmarks. It converts anomaly scores into per-category auto-pass, auto-reject,
+academic industrial-inspection benchmarks. It converts anomaly scores into per-category auto-pass, auto-reject,
 and human-defer regions with finite-sample split-conformal bounds on escaped-defect and false-reject
 rates. Categories whose calibration pools cannot support a requested bound are reported as
-\emph{audited-not-certified} and routed to review. At the stated operating point
-($\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$), the gate reduces false rejects from $16.2\%$ to
-$3.0\%$ on VisA at equal escaped-defect protection, and from $36.9\%$ to $0.0\%$ on MPDD by
-deferring $73.1\%$ of images; these are high-review diagnostic operating points, not universal
-economic recommendations. Escaped-defect certification holds for all $15$ MVTec AD and $12$ VisA
-categories, whereas all $33$ benchmark categories refuse at $\alpha_{\text{miss}}=0.01$ because none
-has the required $99$ defective calibration examples. A synthetic corruption stress test finds that
-good-score drift screening misses $34\%$ of accepted PatchCore cells above the escaped-defect target;
-a defect-score marginal test catches only about $5\%$ of those residual cells. The evidence supports
-calibration-data requirements and explicit refusal, not production-line deployment: all three benchmarks
-are academic and temporal drift remains untested.
+\emph{audited-not-certified} and routed to review. On the confirmatory MVTec AD benchmark at the stated
+operating point ($\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$), escaped-defect certification
+holds for all $15$ categories, while false-reject certification holds in only $4/15$ under the primary
+protocol; pooled false-reject is $0.5\%$ at $54.4\%$ deferral, versus $3.1\%$ false-reject with no
+deferral under a single-threshold conformal risk control (CRC) baseline. Exploratory VisA and MPDD
+checks under the same protocol tag the complementary pool-size extremes: on VisA the gate reduces
+false rejects from $16.2\%$ to $3.0\%$ relative to CRC (realized escaped-defect $7.6\%$ vs.\ $9.5\%$),
+and on MPDD it reports $0.0\%$ false-reject only by deferring $73.1\%$ of images where the false-reject
+axis is refused in all six categories ($0/6$ G2-certifiable) --- a high-review diagnostic, not a
+dual-certificate success. Escaped-defect certification also holds for all $12$ VisA categories, whereas
+all $33$ benchmark categories refuse at $\alpha_{\text{miss}}=0.01$ because none has the required $99$
+defective calibration examples. A synthetic corruption stress test finds that good-score drift screening
+misses $34\%$ of accepted PatchCore cells above the escaped-defect target; a defect-score marginal test
+catches only about $5\%$ of those residual cells. The evidence supports a calibration/refusal protocol
+on academic AD benchmarks, not portable production-line deployment: temporal drift remains untested.
 \end{abstract}
 
 % Keywords: 1-7 English terms for RiE indexing. Preprint textwidth is only
@@ -162,9 +166,9 @@ This framing turns a benchmark score into an auditable decision and makes three 
 \begin{itemize}
   \item \textbf{A certified decision-knowledge layer for inspection.} The deliverable is a
         per-category \emph{certified operating envelope}: an explicit, machine-interpretable
-        representation of the plant's acceptance policy --- calibrated thresholds, certified
+        representation of a calibrated acceptance policy --- thresholds, certified
         error budgets on two axes (escaped-defect and false-reject), and refusal states ---
-        consumed downstream by the quality-control workflow. The contribution is not
+        that a quality-control workflow can consume. The contribution is not
         a new estimator --- both guarantees reduce exactly to split-conformal quantiles
         (Section~\ref{sec:gate}: false-reject directly, escaped-defect through a score-negation
         order-statistic identity) --- but the coupled system assembled from them: explicit
@@ -174,10 +178,11 @@ This framing turns a benchmark score into an auditable decision and makes three 
         Section~\ref{sec:crcbaseline} makes the coupled system's added value concrete rather than
         asserted: recomputed on the identical score dumps, the single-threshold construction our
         own escaped-defect certificate specializes (conformal risk control) pays $36.9\%$
-        false-reject on MPDD to hold the same escaped-defect rate our dual gate holds at $0.0\%$,
-        purely by auto-rejecting the ambiguous band instead of deferring it. We foreground the
-        ``no new math'' property deliberately: it is what makes the guarantees finite-sample-exact
-        and the tool a thin, testable wrapper rather than a heuristic.
+        false-reject on exploratory MPDD to match the dual gate's $6.6\%$ escaped-defect rate, while
+        the dual gate reports $0.0\%$ false-reject only by deferring $73.1\%$ of images after G2
+        refusal ($0/6$ categories certifiable) --- diagnostic high-review cost, not dual-certificate
+        skill. We foreground the ``no new math'' property deliberately: it is what makes the
+        guarantees finite-sample-exact and the tool a thin, testable wrapper rather than a heuristic.
   \item \textbf{Refusal as a first-class outcome, with teeth.} A per-category certifiability floor
         $\alpha_{\min}=1/(n_{\text{cal}}+1)$ makes ``we cannot certify this category at this rate''
         an explicit, reported state (audited-not-certified), never a silently loosened threshold.
@@ -226,18 +231,18 @@ MVTec AD is the confirmatory benchmark, while VisA and MPDD are exploratory addi
 under the same protocol. The frozen G2 train-holdout remedy is reported separately, and no
 uncomputed result is used in the claims.
 
-\subsection{A portable operating envelope for the inspection line}
-The gate's output is a deployable operating envelope: for every product
+\subsection{A calibration/refusal protocol on academic AD benchmarks}
+The gate's output is an auditable calibration/refusal protocol: for every product
 category it materialises explicit, machine-readable operating parameters --- the two calibrated
 thresholds $(\lambda_{\text{pass}}, \lambda_{\text{reject}})$, the certified error budgets
 $(\alpha_{\text{miss}}, \alpha_{\text{fr}})$ they enforce, and, where calibration data cannot
 support the request, an \emph{audited-not-certified} refusal state --- which downstream
-quality-control logic (routing, re-inspection staffing, audit trails) consumes directly. The
-envelope is backbone-agnostic and portable across lines: swapping the detector changes the
-scores, not the schema of the envelope, and the refusal state is an explicit operating signal
-rather than an implementation detail. The academic benchmarks used here validate this
-calibration-and-refusal machinery; deploying the same envelope schema on production-line data
-with temporal drift is the explicit next step (Section~\ref{sec:limitations}).
+quality-control logic (routing, re-inspection staffing, audit trails) can consume. The
+schema is backbone-agnostic: swapping the detector changes the scores, not the form of the
+envelope, and the refusal state is an explicit operating signal rather than an implementation
+detail. The academic benchmarks used here validate this calibration-and-refusal machinery on
+standard AD splits; applying the same schema to production-line data with temporal drift remains
+future work (Section~\ref{sec:limitations}).
 
 \section{Related work}
 \label{sec:related}
@@ -326,9 +331,11 @@ on MVTec AD with \emph{coupled} escaped-defect and false-reject guarantees and e
 per-category certifiability floors; the preregistered K6 scoop gate, run as a fresh pre-submission
 re-scan after the freeze, confirms this --- the closest published
 systems~\citep{kumar2025beyond,bai2025crcsgad,shen2025conformal} each differ on a load-bearing axis
-(substrate, estimand coupling, or the defer option), and two adjacent 2026 works (a selective-risk
-certificate on generic vision, and a conformal cyber-physical-systems detector on sensor
-time-series) target neither the image-inspection estimand nor the three-way route. That
+(substrate, estimand coupling, or the defer option), and two adjacent 2026 works ---
+Yu and Liu's selective-risk certificate on generic vision~\citep{yu2026selective} and
+Yuan et al.'s conformal cyber-physical-systems detector on sensor
+time-series~\citep{yuan2026conformal} --- target neither the image-inspection estimand nor the
+three-way route. That
 is the seam this paper occupies. Section~\ref{sec:crcbaseline} instantiates the single-threshold
 CRC construction~\citep{angelopoulos2022crc} as a quantitative baseline on our own canonical score
 dumps under the identical protocol, isolating what the three-way route and its coupled
@@ -394,7 +401,8 @@ D(s_i;c)=
 \end{equation}
 
 \paragraph{G2 --- certified false-reject, directly.} $t_{\text{hi}}(c)$ is the split-conformal
-upper quantile of the \emph{good} calibration scores at level $\alpha_{\text{fr}}$: with
+upper quantile of the \emph{good} calibration scores at level $\alpha_{\text{fr}}$
+~\citep{papadopoulos2002inductive,vovk2005algorithmic}: with
 $n_{\text{cal}}^{\text{good}}$ good calibration scores, Equation~\eqref{eq:g2quantile} sets it to
 the order statistic at rank
 $\lceil (n+1)(1-\alpha_{\text{fr}}) \rceil$, guaranteeing $P(s \ge t_{\text{hi}} \mid \text{good})
@@ -415,7 +423,7 @@ k_{\text{hi}}=\left\lceil \bigl(n_{\text{cal}}^{\text{good}}+1\bigr)
 
 \paragraph{G1 --- certified escaped-defect, by negation.} Bounding
 $P(s \le t_{\text{lo}} \mid \text{defective})$ is the mirror image: apply the same split-conformal
-construction to the \emph{negated} defective calibration scores $Y=-X$ at level
+construction~\citep{papadopoulos2002inductive} to the \emph{negated} defective calibration scores $Y=-X$ at level
 $\alpha_{\text{miss}}$, then map the resulting upper quantile back through the negation. The gate
 module proves the order-statistic identity in Equation~\eqref{eq:g1mirror}, and it is checked against the design's
 $\lfloor \alpha(n+1)\rfloor$ formula in the accompanying unit tests. No new
@@ -434,7 +442,7 @@ k_{\text{lo}}=\left\lceil \bigl(n_{\text{cal}}^{\text{def}}+1\bigr)
 % source: README.md "The gate: zero new math"; proof in inspect_gate/gate.py module docstring; checked in tests/test_gate.py
 
 \paragraph{Mondrian per-category stratification.} Calibration is stratified by category (a Mondrian
-conformal construction): each category gets its own $(t_{\text{lo}}, t_{\text{hi}})$, so the
+conformal construction~\citep{vovk2005algorithmic}): each category gets its own $(t_{\text{lo}}, t_{\text{hi}})$, so the
 guarantee is conditional on category, not marginal. An optional finer per-defect-type
 stratification is exploratory only (Section~\ref{sec:limitations}).
 
@@ -998,15 +1006,19 @@ auto-reject, not a deferral --- so its G2 column is structurally n/a.
 
 On MPDD, where the false-reject floor refuses G2 entirely (Section~\ref{sec:floors}), the contrast
 is starkest: CRC pays $36.9\%$ false-reject to hold the same $6.6\%$ escaped-defect rate our gate
-holds at $0.0\%$ false-reject, by deferring $73.1\%$ of images instead of auto-rejecting them. VisA
-and MVTec AD show the same direction at smaller magnitude ($16.2\%$ vs.\ $3.0\%$ false-reject on
-VisA; $3.1\%$ vs.\ $0.5\%$ on MVTec AD) --- CRC's realized escaped-defect rate is also somewhat
-higher on these two benchmarks ($9.5\%$ vs.\ $7.6\%$ on VisA, $8.5\%$ vs.\ $7.3\%$ on MVTec AD),
-consistent with both methods controlling the same risk to within realized-rate sampling noise
-across repeats rather than producing bit-identical per-repeat routes. The comparison isolates
-exactly what the dual-gate design buys over the nearest published single-threshold alternative:
-not a better escaped-defect guarantee (both share the same conformal construction) but a
-false-reject guarantee CRC cannot offer, purchased by turning auto-rejects into deferrals.
+holds at $0.0\%$ false-reject, by deferring $73.1\%$ of images instead of auto-rejecting them ---
+and that $0.0\%$ is not a dual-certificate win, because G2 is refused in every MPDD category under
+the primary protocol. VisA and MVTec AD show the same \emph{direction} at smaller magnitude
+($16.2\%$ vs.\ $3.0\%$ false-reject on VisA; $3.1\%$ vs.\ $0.5\%$ on MVTec AD), but not equal
+escaped-defect protection: CRC's realized escaped-defect rate is somewhat higher on these two
+benchmarks ($9.5\%$ vs.\ $7.6\%$ on VisA, $8.5\%$ vs.\ $7.3\%$ on MVTec AD). The crossed-threshold
+mechanism explains the gap without claiming bit-identical routes --- both methods control the same
+nominal $\alpha_{\text{miss}}$ risk, yet CRC collapses the ambiguous middle into auto-reject while
+the dual gate splits that mass into a certified reject band plus deferral --- so realized rates
+differ within sampling noise across repeats. The comparison isolates exactly what the dual-gate
+design buys over the nearest published single-threshold alternative: not a better escaped-defect
+guarantee (both share the same conformal construction) but a false-reject guarantee CRC cannot
+offer, purchased by turning auto-rejects into deferrals.
 Figure~\ref{fig:crcbaseline} plots the three rates for both methods side by side across all three
 benchmarks, making the MPDD contrast in particular immediately visible. A per-backbone breakdown
 (Appendix Table~\ref{tab:crcbackbone}) confirms the pooled contrast is not carried by one
@@ -1681,7 +1693,7 @@ the deployment error a plant makes when it calibrates once and the line then shi
 $3\times2\times4\times3=72$ configurations spanning $792$ (configuration, category) cells. Alongside
 the routed decisions we run a drift screen: a two-sample Kolmogorov--Smirnov test, per category,
 between the clean calibration good-score distribution and the corrupted good-score distribution, with
-Benjamini--Hochberg adjustment across the categories within each configuration and
+Benjamini--Hochberg adjustment~\citep{benjamini1995controlling} across the categories within each configuration and
 $\alpha_{\text{KS}}=0.05$. The screen only observes scores; it never changes a routing decision. We
 then evaluate the counterfactual overlay in which a detected shift forces refusal.
 
@@ -1794,8 +1806,8 @@ formal practice-skill discovery claim is the C2 excess-AURC audit, where the fam
 advance, category-stratified permutation tests are paired with category-blocked bootstrap intervals,
 and Holm adjustment is applied within each seed. That separation is important: V1 certifies the
 operating policy, C2 asks whether conventional threshold practices contain real deferral skill, and
-the VisA/MPDD additions test portability of the arithmetic without expanding the frozen MVTec
-confirmatory family after the fact.
+the VisA/MPDD additions test portability of the arithmetic on academic AD benchmarks without
+expanding the frozen MVTec confirmatory family after the fact.
 
 For Results in Engineering readers, the contribution is thus a pre-deployment engineering gate
 rather than a new anomaly detector. It specifies what data a line must collect, what finite-sample
@@ -1992,10 +2004,12 @@ in all five backbone seeds (Section~\ref{sec:c2}).
 
 \section*{Data availability}
 MVTec AD~\citep{bergmann2019mvtec}, VisA~\citep{zou2022spot}, and
-MPDD~\citep{jezek2021mpdd} are publicly available benchmarks. Code and supporting materials
-for this study are archived at Zenodo (concept DOI:
+MPDD~\citep{jezek2021mpdd} are publicly available benchmarks. Code, frozen analysis digests, and
+reproducibility manuals (including the preregistration freeze log) for this study are archived at
+Zenodo (concept DOI
 \href{https://doi.org/10.5281/zenodo.21392290}{\texttt{10.5281/zenodo.21392290}};
-version~0.4.1) and maintained at \url{https://github.com/PeterPonyu/inspect-gate}.
+version~0.4.1, record DOI \texttt{10.5281/zenodo.21854312}) and maintained at
+\url{https://github.com/PeterPonyu/inspect-gate}.
 
 \section*{Declaration of competing interest}
 The author declares no known competing financial interests or personal relationships
