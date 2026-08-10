@@ -68,7 +68,11 @@
 ]
 \addplot[gray!55, densely dotted, line width=0.7pt, forget plot, mark=none]
   coordinates {(0,0) (1,1)};
-\node[font=\tickfont, text=black, rotate=38, anchor=west] at (axis cs:0.58,0.58) {chance};
+% "chance" sits in the empty mid-diagonal band (clear of the ~0.67–0.92 cluster
+% and its grey connectors). Slightly above y=x so the dotted line does not
+% run through the letters; keep annotation chrome black / not bold.
+\node[font=\tickfont, text=black, rotate=38, anchor=west]
+  at (axis cs:0.30,0.36) {chance};
 \input{../out/jointmon-panel-b.tex}
 \end{axis}
 \panellabel{ax_b}{b}

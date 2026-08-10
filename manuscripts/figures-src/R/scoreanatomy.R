@@ -71,8 +71,13 @@ render_cell <- function(cell, side = c("left", "right")) {
     tag_adj <- 1.20
   }
 
+  # Size ladder vs cairo_pdf(pointsize=12): tick 7 / body 8 / axis+title 9
+  # (mirrors \tickfont / \figfont / \axislabelfont in inspect_style.tex).
+  tick_cex <- FIG_TICK_PT / 12
+  body_cex <- FIG_BODY_PT / 12
+  axis_cex <- FIG_AXIS_PT / 12
   plot(NA, xlim = limits, ylim = c(0, ymax), xlab = "", ylab = "images",
-       axes = FALSE, xaxs = "i", yaxs = "i")
+       axes = FALSE, xaxs = "i", yaxs = "i", cex.lab = axis_cex)
   if (!is.finite(lo) && !is.finite(hi)) {
     rect(limits[[1]], 0, limits[[2]], ymax, col = adjustcolor(defer_col, 0.16), border = NA)
   } else {
@@ -83,11 +88,8 @@ render_cell <- function(cell, side = c("left", "right")) {
   }
   plot(good_hist, add = TRUE, col = adjustcolor(pass_col, 0.72), border = NA)
   plot(defect_hist, add = TRUE, col = adjustcolor(defect_col, 0.62), border = NA)
-  tick_cex <- FIG_TICK_PT / 12
-  body_cex <- FIG_BODY_PT / 12
-  axis_cex <- FIG_AXIS_PT / 12
-  axis(1, cex.axis = axis_cex)
-  axis(2, las = 1, cex.axis = axis_cex)
+  axis(1, cex.axis = tick_cex)
+  axis(2, las = 1, cex.axis = tick_cex)
   box()
   # Stack / stagger when the defer band is narrow (panel d: ~0.008 vs span).
   close_thresholds <- is.finite(lo) && is.finite(hi) && ((hi - lo) < 0.08 * diff(limits))
@@ -150,6 +152,8 @@ text(x = c(0.26, 0.78), y = 0.70, labels = c("anomaly score", "anomaly score"),
      cex = FIG_AXIS_PT / 12, col = ANNOT_TEXT_COLOR, xpd = NA, adj = c(0.5, 0.5))
 par(mar = c(0, 0, 0, 0))
 plot.new()
+# Bottom strip legend: body 8 pt (TikZ in-axis legends use \tickfont 7 pt;
+# this shared horizontal legend needs the larger body size to stay readable).
 legend("center", legend = c("good (evaluation)", "defective (evaluation)", "defer region"),
        fill = c(adjustcolor(pass_col, 0.72), adjustcolor(defect_col, 0.62), adjustcolor(defer_col, 0.15)),
        border = NA, horiz = TRUE, bty = "n", cex = FIG_BODY_PT / 12,

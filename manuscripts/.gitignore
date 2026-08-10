@@ -42,3 +42,9 @@ figures-src/out/*-verify*.png
 # Keep submission packages and compiled paper PDFs tracked intentionally.
 # Ignore local one-off dumps:
 *.synctex(busy)
+
+# latexmk page/image dumps (do not commit)
+rie/paper_rie-*.jpg
+rie/paper_rie-*.png
+aei/paper_aei-*.jpg
+aei/paper_aei-*.png

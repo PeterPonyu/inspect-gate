@@ -24,9 +24,103 @@
 # titles, legends, score annotations, and other figure text stay plain.
 # ==========================================================================
 
-# Generic serif for Cairo (FreeSerif). Not a figure-only face like Latin
-# Modern — TikZ/LaTeX figures use Computer Modern defaults (no lmodern).
-INSPECT_FONT <- "FreeSerif"
+# Cairo typeface — closest available match to TikZ / elsarticle Computer Modern
+# (inspect_style.tex uses default CM, no lmodern):
+#   1. CMU Serif  — Computer Modern Unicode (TeXLive cm-unicode / cmunrm.otf).
+#                   Preferred: same design family as paper body CM, not Times.
+#   2. FreeSerif  — fallback when CMU is not on the fontconfig path.
+# Do NOT use TeX Gyre Termes / Times clones (paper body is CM, not Times).
+# Latin Modern is optically close but the manuscript deliberately omits
+# lmodern; CMU is the Unicode CM face for Cairo.
+#
+# Impact: samples.R (Fig 3) sources this file too — both R/Cairo figures stay
+# on the same face. Rebuild fig-samples.pdf whenever INSPECT_FONT changes.
+# Makefile R/Cairo recipes set FONTCONFIG_FILE=../fontconfig/fonts.conf so
+# TeXLive's cm-unicode dir is visible even when not registered system-wide.
+.inspect_figconst_dir <- function() {
+  # Directory containing this file when sourced (R/_figconst.R).
+  src <- NULL
+  if (sys.nframe() >= 1L) {
+    for (i in seq_len(sys.nframe())) {
+      of <- sys.frame(i)$ofile
+      if (!is.null(of)) src <- of
+    }
+  }
+  if (is.null(src)) {
+    return(NA_character_)
+  }
+  dirname(normalizePath(src, mustWork = FALSE))
+}
+
+.inspect_ensure_fontconfig <- function() {
+  # Makefile sets FONTCONFIG_FILE for `make fig-*.pdf`. Also wire it when
+  # scripts are sourced directly so Cairo can see TeXLive cm-unicode.
+  # Always normalize to an absolute path (relative paths break fc-match/Cairo).
+  cur <- Sys.getenv("FONTCONFIG_FILE", unset = "")
+  if (nzchar(cur)) {
+    abs <- suppressWarnings(normalizePath(cur, mustWork = FALSE))
+    if (nzchar(abs) && file.exists(abs)) {
+      Sys.setenv(FONTCONFIG_FILE = abs)
+      return(invisible(TRUE))
+    }
+  }
+  fig_dir <- .inspect_figconst_dir()
+  if (is.na(fig_dir)) {
+    return(invisible(FALSE))
+  }
+  cand <- normalizePath(
+    file.path(fig_dir, "..", "fontconfig", "fonts.conf"),
+    mustWork = FALSE
+  )
+  if (file.exists(cand)) {
+    Sys.setenv(FONTCONFIG_FILE = cand)
+    return(invisible(TRUE))
+  }
+  invisible(FALSE)
+}
+
+.inspect_fc_has_family <- function(family) {
+  # fc-match returns the best match; require the requested family name.
+  # Do not put a literal newline in -f (R "\n" breaks the argv).
+  out <- tryCatch(
+    suppressWarnings(
+      system2(
+        "fc-match",
+        args = c("-f", "%{family[0]}", family),
+        stdout = TRUE,
+        stderr = TRUE
+      )
+    ),
+    error = function(e) character()
+  )
+  if (!length(out)) {
+    return(FALSE)
+  }
+  # Drop fontconfig warnings; keep the last non-empty line as the family.
+  lines <- trimws(out)
+  lines <- lines[nzchar(lines) & !grepl("^Fontconfig", lines)]
+  length(lines) > 0L && identical(lines[[length(lines)]], family)
+}
+
+.inspect_pick_font <- function() {
+  .inspect_ensure_fontconfig()
+  # Prefer CMU Serif when fontconfig resolves it (local fonts.conf → TeXLive
+  # cm-unicode). Fall back to FreeSerif size ladder if CMU is unavailable.
+  if (.inspect_fc_has_family("CMU Serif")) {
+    return("CMU Serif")
+  }
+  cmu_otf <- "/usr/share/texlive/texmf-dist/fonts/opentype/public/cm-unicode/cmunrm.otf"
+  if (file.exists(cmu_otf) && nzchar(Sys.getenv("FONTCONFIG_FILE", unset = ""))) {
+    # fonts.conf is wired; trust TeXLive even if fc-match is noisy.
+    return("CMU Serif")
+  }
+  if (.inspect_fc_has_family("FreeSerif")) {
+    return("FreeSerif")
+  }
+  ""
+}
+
+INSPECT_FONT <- .inspect_pick_font()
 
 # The three certified-triage route colours (Okabe-Ito green/orange/vermillion).
 ROUTE_PASS   <- "#009E73"  # AUTO-PASS
@@ -47,8 +141,8 @@ panel_label_cex <- function(pointsize = 12) PANEL_LABEL_PT / pointsize
 # Non-panel figure text (annotations, zoom labels, scores): plain black.
 # Mirrors TikZ house style (prefer text=black, never grey35 / black!NN).
 ANNOT_TEXT_COLOR <- "black"
-# Approximate TikZ ladder for Cairo FreeSerif (pt):
-#   tick/legend ≈ 7, body/fig ≈ 8, axis/title/panel ≈ 9
+# TikZ ladder (inspect_style.tex) for Cairo:
+#   \tickfont / legend ≈ 7, \figfont / body ≈ 8, \axislabelfont / title / panel ≈ 9
 FIG_TICK_PT <- 7
 FIG_BODY_PT <- 8
 FIG_AXIS_PT <- 9

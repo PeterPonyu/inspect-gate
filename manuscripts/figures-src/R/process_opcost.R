@@ -135,43 +135,42 @@ for (hb in HBENCH) {
             hb$color, hb$mark, paste(coords, collapse = " ")),
     sprintf("\\addlegendentry{%s}", hb$label))
 }
-# Annotate every point. Stagger so low-vol (202x / 337x / 1833x) never stacks
-# into one illegible pile: VisA high above, MVTec mid-right, MPDD below its
-# marker. High-vol stays above the spine (ymin=0.1). 2026-08-09 panel-QA.
-for (hb in HBENCH) {
-  for (si in seq_along(SCEN)) {
-    row <- headroom_df[headroom_df$benchmark == hb$key & headroom_df$scenario == SCEN[si], ]
-    val <- round(row$headroom_multiple)
-    if (hb$key == "VisA") { xoff <- 0.10; yfac <- 1.55; anch <- "west" }
-    else if (hb$key == "MVTec-AD") { xoff <- 0.14; yfac <- 1.35; anch <- "west" }
-    else { xoff <- -0.10; yfac <- 1.42; anch <- "east" }
-    # low-vol: MPDD below marker; VisA slightly above (not into the spine);
-    # MVTec mid-right — three distinct vertical bands.
-    if (si == 1L) {
-      if (hb$key == "MPDD") { xoff <- 0.10; anch <- "north west"; yfac <- 0.48 }
-      else if (hb$key == "MVTec-AD") { xoff <- 0.18; anch <- "west"; yfac <- 1.18 }
-      else { xoff <- 0.00; anch <- "south"; yfac <- 1.55 }
-    }
-    # mid-vol: 61x vs 63x are nearly coincident — horizontal split.
-    if (si == 2L) {
-      if (hb$key == "MPDD") { xoff <- -0.12; anch <- "east"; yfac <- 1.55 }
-      else if (hb$key == "MVTec-AD") { xoff <- 0.14; anch <- "west"; yfac <- 0.72 }
-      else { xoff <- 0.10; anch <- "west"; yfac <- 1.55 }
-    }
-    # high-vol: inward + vertical stagger above the floor.
-    if (si == length(SCEN)) {
-      if (hb$key == "VisA") { xoff <- -0.10; anch <- "east"; yfac <- 1.55 }
-      else if (hb$key == "MVTec-AD") { xoff <- 0.10; anch <- "west"; yfac <- 2.10 }
-      else { xoff <- -0.10; anch <- "east"; yfac <- 2.40 }
-    }
-    panel_b <- c(panel_b, sprintf(
-      paste0(
-        "\\node[font=\\tickfont, text=black, ",
-        "anchor=%s] at (axis cs:%s,%s) {%dx};"
-      ),
-      anch, fmt2((si - 1L) + xoff), fmt2(row$headroom_multiple * yfac), val
-    ))
-  }
+# Annotate every point. Parking rule (verified via pdftotext -bbox):
+# never place a label at (x_midway, y_data) — that lands on descending
+# segments. VisA stays above its markers; coincident MPDD/MVTec pairs
+# park BELOW the markers with hard L/R xshift. Low-vol MVTec stays at
+# marker y (not above — above hits the VisA segment). No fill boxes.
+# 2026-08-10 panel-QA polish (post-outage rework).
+# cols: bench, si, y_place ("data" or numeric log-y), xshift, yshift, anchor
+lab_park <- list(
+  # low-vol: VisA above+right (clear 10^4 tick); MVTec right (not above —
+  # above hits VisA segment); MPDD right-below.
+  list("VisA", 1L, "data", "12pt", "6pt", "south"),
+  list("MVTec-AD", 1L, "data", "10pt", "-4pt", "west"),
+  list("MPDD", 1L, "data", "10pt", "-12pt", "west"),
+  # mid-vol: VisA above; 61x/63x below pair, small L/R (large right
+  # offset puts 63x on the mid→high descending segment).
+  list("VisA", 2L, "data", "0pt", "6pt", "south"),
+  list("MPDD", 2L, 10, "-8pt", "0pt", "east"),
+  list("MVTec-AD", 2L, 10, "8pt", "0pt", "west"),
+  # high-vol: VisA right-above; 17x/12x below pair, small L/R.
+  list("VisA", 3L, "data", "5pt", "6pt", "south west"),
+  list("MPDD", 3L, 2.5, "-8pt", "0pt", "east"),
+  list("MVTec-AD", 3L, 2.5, "8pt", "0pt", "west")
+)
+for (lp in lab_park) {
+  bkey <- lp[[1]]; si <- lp[[2]]
+  y_place <- lp[[3]]; xs <- lp[[4]]; ys <- lp[[5]]; anch <- lp[[6]]
+  row <- headroom_df[headroom_df$benchmark == bkey & headroom_df$scenario == SCEN[si], ]
+  val <- round(row$headroom_multiple)
+  y_tex <- if (identical(y_place, "data")) fmt2(row$headroom_multiple) else fmt2(as.numeric(y_place))
+  panel_b <- c(panel_b, sprintf(
+    paste0(
+      "\\node[font=\\tickfont, text=black, anchor=%s, ",
+      "xshift=%s, yshift=%s] at (axis cs:%d,%s) {%dx};"
+    ),
+    anch, xs, ys, si - 1L, y_tex, val
+  ))
 }
 # Break-even at 1x is the 10^0 y-tick (ymin<1). No full-width dashed guide:
 # when ymin was 1 the guide sat on the spine; a floating guide near the floor
