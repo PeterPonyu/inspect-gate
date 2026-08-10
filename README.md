@@ -86,7 +86,11 @@ latexmk -pdf paper_rie.tex
 ## Notes
 
 - Score convention: **HIGHER = MORE ANOMALOUS** (opposite of `asr-gate`).
-- `calfraction_sweep_2026-07-19/results.json` may be absent; committed CSV under
-  `manuscripts/figures-src/R/` remains the production input for that figure when
-  the JSON is missing.
+- `calfraction_sweep_2026-07-19/results.json` may be absent. When it is, FRACS
+  and the six `out/calfraction-*-{cert,def}.tex` fragments are regenerated from
+  the frozen SSOT `manuscripts/figures-src/data/frozen/calfraction_data.csv`
+  (copied into `R/calfraction_data.csv` by `process_calfraction.R`). That frozen
+  path sits outside `make clean-data`'s wipe of `R/*.csv` / `out/*.tex`. This is
+  a **calfraction-JSON-absent** rebuild path only — other `process_*.R`
+  generators still require their local JSON digests.
 - Sibling portfolio glue: `reliability-commons/tools/inspect-gate` → this repo.

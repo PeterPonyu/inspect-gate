@@ -31,12 +31,15 @@ CATTEX := $(addprefix data/categorymap_,$(addsuffix .tex,$(CATBENCH)))
 all: r-data $(ALL_PDFS)
 
 # ============================================================================
-# R data generation (CSV digests from frozen JSON)
+# R data generation (CSV digests from frozen JSON / frozen CSV)
 # out/*.tex fragments are GENERATED — edit R/*.R (or process_*.R), then
 # re-run this target. Do not hand-edit out/*.tex.
+# Calfraction: when ../../../calfraction_sweep_2026-07-19/results.json is
+# absent, process_calfraction.R loads data/frozen/calfraction_data.csv (outside
+# clean-data wipe) and regenerates out/calfraction-*-{cert,def}.tex.
 # ============================================================================
 r-data:
-	@echo "=== Generating R CSV digests from frozen JSON (pure R pipeline) ==="
+	@echo "=== Generating R CSV digests from frozen JSON/CSV (pure R pipeline) ==="
 	cd R && $(RSCRIPT) binding.R
 	cd R && $(RSCRIPT) deferral.R
 	cd R && $(RSCRIPT) jointmon.R
