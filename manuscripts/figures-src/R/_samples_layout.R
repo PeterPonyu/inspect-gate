@@ -22,7 +22,8 @@ tile_y_offset <- 0.016
 # top-right (after the title string, slightly above), enlarged, and must
 # clear the AUTO-PASS tile's top-left corner.
 label_text_x <- 0.012
-label_text_fontsize_pt <- 8.2
+# Align with TikZ \figfont / \panellabelfont ladder (see R/_figconst.R).
+label_text_fontsize_pt <- FIG_BODY_PT
 # Matches TikZ \panellabelfont (PANEL_LABEL_PT in _figconst.R).
 panel_letter_fontsize_pt <- PANEL_LABEL_PT
 panel_letter_gap_after_title_in <- 0.040
@@ -48,5 +49,5 @@ zoom_offset_y_npc <- (tile_size_in / 2 - zoom_size_in / 2 - zoom_padding_in) / c
 # "GT zoom" label sits just below the inset (outside the raster), not on top
 # of the defect crop. Negative = below the zoom centre.
 zoom_label <- "GT zoom"
-zoom_label_fontsize_pt <- 7.0
+zoom_label_fontsize_pt <- FIG_TICK_PT
 zoom_label_offset_y_npc <- -(zoom_size_in / 2 + 0.055) / canvas_height_in

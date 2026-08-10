@@ -46,9 +46,9 @@
 % yshift 0.26in→0.34in: clear a/b titles without crowding the standalone top border.
 \path (ax_mvtec_cert.north) -- (ax_mvtec_def.north)
   coordinate[pos=0.5, yshift=0.34in] (legpos);
-\node[anchor=south, font=\fontsize{9.5}{11}\selectfont] (leg) at (legpos) {%
-  {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
-  {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%
+\node[anchor=south, font=\tickfont, text=black] (leg) at (legpos) {%
+  \textcolor{cPatchcore}{$\bullet$}~PatchCore\quad
+  \textcolor{cDinomaly}{\rule[0.28ex]{1.45ex}{1.45ex}}~Dinomaly%
 };
 
 
@@ -98,7 +98,7 @@
   ymajorgrids, grid style={gray!15},
 ]
 \input{../out/calfraction-mpdd-cert.tex}
-\node[anchor=west, font=\tickfont, align=left, fill=white, fill opacity=0.9, text opacity=1]
+\node[anchor=west, font=\tickfont, align=left, text=black]
   at (axis cs:0.35,3.6) {both-cert.\ $=0$\\6/6 floor-refused};
 \end{axis}
 \panellabel{ax_mpdd_cert}{e}
@@ -116,7 +116,7 @@
   ymajorgrids, grid style={gray!15},
 ]
 \input{../out/calfraction-mpdd-def.tex}
-\node[anchor=west, font=\tickfont, align=left, fill=white, fill opacity=0.9, text opacity=1]
+\node[anchor=west, font=\tickfont, align=left, text=black]
   at (axis cs:1.6,0.38) {total refusal:\\0 silent decisions};
 \end{axis}
 \panellabel{ax_mpdd_def}{f}

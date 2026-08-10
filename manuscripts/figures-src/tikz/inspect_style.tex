@@ -30,6 +30,9 @@
 \newcommand{\axislabelfont}{\fontsize{9}{10}\selectfont}
 \newcommand{\titlefont}{\fontsize{9}{10}\selectfont}
 \newcommand{\tickfont}{\fontsize{7}{8}\selectfont}
+% Bold weight policy (house style): ONLY panel letters (a)/(b)/… may use
+% \bfseries. Axis titles, tick labels, legends, row/column headers, in-plot
+% annotations, and schematic stage titles stay medium/normal weight.
 % Panel-label house style (SSOT for all multi-panel Inspect figures):
 %   format  (a)  lowercase letter in parentheses
 %   font    Computer Modern / figure default, 9 pt, bold, black
@@ -50,18 +53,22 @@
 \newcommand{\panellabel}[2]{\panellabelshift{#1}{#2}{-8pt}{7pt}}
 
 % Standard axis styles. Titles centered above the plot box only.
+% Text colour policy: axis titles, tick labels, legend *words*, and (via
+% \panellabel) panel letters default to black — never grey / muted text.
+% Decorative markers/lines may still use muted greys or semantic colours.
 \pgfplotsset{
   inspect/centertitle/.style={
-    title style={at={(0.5,1.10)}, anchor=south, font=\titlefont},
+    title style={at={(0.5,1.10)}, anchor=south, font=\titlefont, text=black},
   },
   inspect default/.style={
     axis x line=bottom,
     axis y line=left,
-    xlabel style={font=\axislabelfont},
-    ylabel style={font=\axislabelfont},
+    xlabel style={font=\axislabelfont, text=black},
+    ylabel style={font=\axislabelfont, text=black},
     inspect/centertitle,
-    x tick label style={font=\tickfont},
-    y tick label style={font=\tickfont},
-    legend style={font=\tickfont, draw=none, fill=none},
+    x tick label style={font=\tickfont, text=black},
+    y tick label style={font=\tickfont, text=black},
+    legend style={font=\tickfont, text=black, draw=none, fill=none,
+      /tikz/every node/.append style={text=black}},
   }
 }

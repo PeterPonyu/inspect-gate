@@ -20,6 +20,8 @@
 #
 # Panel-label house style (must match tikz/inspect_style.tex):
 #   format (a), 9 pt, bold, black.
+# Bold weight policy: ONLY panel letters may be bold. Row/column headers,
+# titles, legends, score annotations, and other figure text stay plain.
 # ==========================================================================
 
 # Generic serif for Cairo (FreeSerif). Not a figure-only face like Latin
@@ -41,3 +43,12 @@ PANEL_LABEL_COLOR <- "black"
 panel_label_text <- function(letter) sprintf("(%s)", as.character(letter))
 # cex relative to the cairo_pdf/pdf pointsize (default 12 → 9 pt ⇒ 0.75).
 panel_label_cex <- function(pointsize = 12) PANEL_LABEL_PT / pointsize
+
+# Non-panel figure text (annotations, zoom labels, scores): plain black.
+# Mirrors TikZ house style (prefer text=black, never grey35 / black!NN).
+ANNOT_TEXT_COLOR <- "black"
+# Approximate TikZ ladder for Cairo FreeSerif (pt):
+#   tick/legend ≈ 7, body/fig ≈ 8, axis/title/panel ≈ 9
+FIG_TICK_PT <- 7
+FIG_BODY_PT <- 8
+FIG_AXIS_PT <- 9

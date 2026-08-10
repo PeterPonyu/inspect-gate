@@ -68,20 +68,20 @@
 ]
 \addplot[gray!55, densely dotted, line width=0.7pt, forget plot, mark=none]
   coordinates {(0,0) (1,1)};
-\node[font=\tickfont, text=black!45, rotate=38, anchor=west] at (axis cs:0.58,0.58) {chance};
+\node[font=\tickfont, text=black, rotate=38, anchor=west] at (axis cs:0.58,0.58) {chance};
 \input{../out/jointmon-panel-b.tex}
 \end{axis}
 \panellabel{ax_b}{b}
 
 % Shared a/b legend — above the title row (breathing room vs titles @1.015).
 % South anchor @26pt clears title tops (~10pt) without dropping onto the spine.
-\node[anchor=south, font=\tickfont, inner sep=0.5pt]
+\node[anchor=south, font=\tickfont, text=black, inner sep=0.5pt]
   at ($(ax_a.north)!0.5!(ax_b.north)+(0,26pt)$) {%
   filled\,=\,catch\quad open\,=\,FA\quad
-  {\color{cG1}$\bullet$}~G1\quad
-  {\color{cG2}$\bullet$}~G2\quad
-  {\color{black!70}$\circ$}/{\color{black!70}$\bullet$}~PC\quad
-  {\color{black!70}\tikz[baseline=-0.15ex]\draw[line width=0.45pt] (0,0) rectangle (1.05ex,1.05ex);}/{\color{black!70}\rule[0.15ex]{1.05ex}{1.05ex}}~DM%
+  \textcolor{cG1}{$\bullet$}~G1\quad
+  \textcolor{cG2}{$\bullet$}~G2\quad
+  \textcolor{black!70}{$\circ$}/\textcolor{black!70}{$\bullet$}~PC\quad
+  \textcolor{black!70}{\tikz[baseline=-0.15ex]\draw[line width=0.45pt] (0,0) rectangle (1.05ex,1.05ex);}/\textcolor{black!70}{\rule[0.15ex]{1.05ex}{1.05ex}}~DM%
 };
 
 % ── Panel c: per-cell signed-rank $z$ cloud ─────────────────────────────────
@@ -108,10 +108,12 @@
 \end{axis}
 \panellabel{ax_c}{c}
 % Same 26pt south-anchor offset as a/b shared legend (title stays near spine).
-\node[anchor=south, font=\tickfont, text=black!70, inner sep=0.5pt]
+% Marker colours only via \textcolor{…}{…} — never {\color{…}…}, which can
+% leak muted grey onto the following legend words inside a TikZ node.
+\node[anchor=south, font=\tickfont, text=black, inner sep=0.5pt]
   at ([yshift=26pt] ax_c.north) {%
-  {\color{cFalseAlarm}$\bullet$}~G1-exceeding accepted ($\alpha_{\mathrm{miss}}=0.10$)\quad
-  {\color{black!55}$\bullet$}~certified non-exceeding%
+  \textcolor{cFalseAlarm}{$\bullet$}~G1-exceeding accepted ($\alpha_{\mathrm{miss}}=0.10$)\quad
+  \textcolor{black!55}{$\bullet$}~certified non-exceeding%
 };
 
 % ── Panel d: joint-max catch vs FA by corruption × severity (heatmap) ───────

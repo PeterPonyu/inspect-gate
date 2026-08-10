@@ -30,10 +30,14 @@ __pycache__/
 # Figure build scratch
 figures-src/tikz/*.aux
 figures-src/tikz/*.log
+figures-src/tikz/test-panellabel.pdf
 figures-src/**/__pycache__/
 figures-src/review/
 figures-src/**/*-1.png
 figures-src/**/fig-*.png
+figures-src/out/crop_*.png
+figures-src/out/verify_*.png
+figures-src/out/*-verify*.png
 
 # Keep submission packages and compiled paper PDFs tracked intentionally.
 # Ignore local one-off dumps:

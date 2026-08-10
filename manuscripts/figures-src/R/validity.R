@@ -198,8 +198,8 @@ writeLines(lines_c, file.path(TEX_DIR, "validity-panel-c.tex"), useBytes = TRUE)
 # --- TikZ fragment: panel d (violation count bubbles) -----------------------
 # Cap mark size so axis-edge clusters (x≈0 / y≈0) stay inside the padded frame.
 # Annotate only major aggregates (n>=5); tiny satellites stay as marks only
-# (avoids clipped "157" and stray side labels 1/2). Counts sit in a small white
-# badge just above the mark so they stay readable on both vermillion and cyan.
+# (avoids clipped "157" and stray side labels 1/2). Count labels are plain
+# black (no fill box), parked just above/ beside the mark for readability.
 bubble_size <- function(n) round(2.0 + 2.4 * sqrt(n / 160.0), 2)  # n=160 → ~4.4pt
 viol$xr <- round(viol$x); viol$yr <- round(viol$y)
 n_esc <- sum(viol$kind == "escaped")
@@ -227,10 +227,10 @@ for (kc in list(c("escaped", "cReject"), c("fr", "cControl"))) {
     # Axis-edge bubbles: park the badge inward so it is not clipped.
     yshift <- if (agg$y[i] <= 2) 9 else if (agg$y[i] >= 100) -9 else 8
     xshift <- if (agg$x[i] <= 2) 8 else if (agg$x[i] >= 95) -8 else 0
+    # House style: count badges plain black, no fill box; \tickfont (7pt).
     lines_d <- c(lines_d, sprintf(
-      paste0("\\node[font=\\fontsize{6.5}{7.5}\\selectfont\\bfseries, anchor=center,",
-             " fill=white, fill opacity=0.90, text opacity=1, inner sep=1pt,",
-             " text=black] at (axis cs:%.1f,%.1f)",
+      paste0("\\node[font=\\tickfont, anchor=center, text=black, inner sep=0.5pt]",
+             " at (axis cs:%.1f,%.1f)",
              " [xshift=%dpt, yshift=%dpt] {%d};"),
       agg$x[i], agg$y[i], xshift, yshift, agg$n[i]))
   }

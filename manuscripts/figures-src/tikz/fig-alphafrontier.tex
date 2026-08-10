@@ -1,6 +1,8 @@
 % fig-alphafrontier: alpha sweep deferral and certification frontiers (3x2)
 % Data: R/alphafrontier_data.csv → out/alphafrontier-*-{deferral,cert}.tex
 % Slightly taller panels + raised shared legend (keep ~0.40in row gutters).
+% Panel width 2.45→2.70in and right-col 3.12→3.30in: wider axes + tighter
+% inter-column gap; paper include raised 0.70→0.92\linewidth.
 % Extra top border so raised legend is not clipped at the standalone edge.
 \documentclass[border={2pt 2pt 2pt 10pt}]{standalone}
 \input{inspect_style.tex}
@@ -12,7 +14,7 @@
 \begin{axis}[
   inspect default,
   name=ax_mvtec_d,
-  width=2.45in, height=1.82in,
+  width=2.70in, height=1.82in,
   at={(0.42in,4.49in)},
   xmode=log, x dir=reverse,
   xmin=0.008, xmax=0.25, ymin=0, ymax=1.0,
@@ -33,8 +35,8 @@
 \begin{axis}[
   inspect default,
   name=ax_mvtec_c,
-  width=2.45in, height=1.82in,
-  at={(3.12in,4.49in)},
+  width=2.70in, height=1.82in,
+  at={(3.30in,4.49in)},
   xmode=log, x dir=reverse,
   xmin=0.008, xmax=0.25, ymin=0, ymax=1.02,
   xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
@@ -51,9 +53,9 @@
 % yshift 0.26in→0.44in: clear a/b titles (longer than fig-calfraction) without top clip.
 \path (ax_mvtec_d.north) -- (ax_mvtec_c.north)
   coordinate[pos=0.5, yshift=0.44in] (legpos);
-\node[anchor=south, font=\fontsize{9.5}{11}\selectfont] (leg) at (legpos) {%
-  {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
-  {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%
+\node[anchor=south, font=\tickfont, text=black] (leg) at (legpos) {%
+  \textcolor{cPatchcore}{$\bullet$}~PatchCore\quad
+  \textcolor{cDinomaly}{\rule[0.28ex]{1.45ex}{1.45ex}}~Dinomaly%
 };
 
 
@@ -61,7 +63,7 @@
 \begin{axis}[
   inspect default,
   name=ax_visa_d,
-  width=2.45in, height=1.82in,
+  width=2.70in, height=1.82in,
   at={(0.42in,2.27in)},
   xmode=log, x dir=reverse,
   xmin=0.008, xmax=0.25, ymin=0, ymax=1.0,
@@ -80,8 +82,8 @@
 \begin{axis}[
   inspect default,
   name=ax_visa_c,
-  width=2.45in, height=1.82in,
-  at={(3.12in,2.27in)},
+  width=2.70in, height=1.82in,
+  at={(3.30in,2.27in)},
   xmode=log, x dir=reverse,
   xmin=0.008, xmax=0.25, ymin=0, ymax=1.02,
   xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
@@ -99,7 +101,7 @@
 \begin{axis}[
   inspect default,
   name=ax_mpdd_d,
-  width=2.45in, height=1.82in,
+  width=2.70in, height=1.82in,
   at={(0.42in,0.05in)},
   xmode=log, x dir=reverse,
   xmin=0.008, xmax=0.25, ymin=0, ymax=1.0,
@@ -118,8 +120,8 @@
 \begin{axis}[
   inspect default,
   name=ax_mpdd_c,
-  width=2.45in, height=1.82in,
-  at={(3.12in,0.05in)},
+  width=2.70in, height=1.82in,
+  at={(3.30in,0.05in)},
   xmode=log, x dir=reverse,
   xmin=0.008, xmax=0.25, ymin=0, ymax=1.02,
   xlabel={$\alpha_{\mathrm{miss}}$ (log, $\alpha_{\mathrm{fr}}=0.05$)},
@@ -130,7 +132,7 @@
 \draw[black, dashed, line width=0.8pt] (axis cs:0.10,0) -- (axis cs:0.10,1.02);
 \input{../out/alphafrontier-mpdd-cert.tex}
 % Flat zero is a measured floor refusal, not a plotting failure.
-\node[anchor=west, font=\tickfont, align=left, fill=white, fill opacity=0.9, text opacity=1]
+\node[anchor=west, font=\tickfont, align=left, text=black]
   at (axis cs:0.04,0.55) {floor refuse:\\ both-cert.\ $=0$};
 \end{axis}
 \panellabel{ax_mpdd_c}{f}

@@ -84,11 +84,11 @@
 \panellabelshift{ax_mpdd}{c}{-8pt}{2pt}
 
 % Shared legend just above the panel titles (LM-safe glyphs; no MSAM).
-\node[anchor=south, font=\fontsize{9.5}{11}\selectfont]
+\node[anchor=south, font=\tickfont, text=black]
   at ([yshift=3pt] title_visa.north) {%
-  {\color{cPatchcore}$\circ$}~PatchCore\quad
-  {\color{cDinomaly}\rule[0.28ex]{1.45ex}{1.45ex}}~Dinomaly\quad
-  {\color{gray!60}\raisebox{0.4ex}{\rule{1.35em}{0.4pt}}}~\textcolor{black}{\fontsize{8}{9}\selectfont K2 vacuity 0.80}%
+  \textcolor{cPatchcore}{$\circ$}~PatchCore\quad
+  \textcolor{cDinomaly}{\rule[0.28ex]{1.45ex}{1.45ex}}~Dinomaly\quad
+  \textcolor{gray!60}{\raisebox{0.4ex}{\rule{1.35em}{0.4pt}}}~K2 vacuity 0.80%
 };
 
 \end{tikzpicture}

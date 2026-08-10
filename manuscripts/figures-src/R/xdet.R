@@ -156,7 +156,7 @@ for (i in seq_len(nb)) {
               fmt(pct), fmt(x0), fmt(y - half), fmt(x1), fmt(y + half)),
       sprintf("\\draw[black!25, line width=0.35pt] (axis cs:%s,%s) rectangle (axis cs:%s,%s);",
               fmt(x0), fmt(y - half), fmt(x1), fmt(y + half)),
-      sprintf("\\node[font=\\fontsize{9.5}{11}\\selectfont] at (axis cs:%s,%s) {%d};",
+      sprintf("\\node[font=\\axislabelfont, text=black] at (axis cs:%s,%s) {%d};",
               fmt((x0 + x1) / 2), fmt(y), as.integer(count))
     )
   }
@@ -192,7 +192,7 @@ for (b_i in seq_along(BENCH)) {
   overlap <- ssd[[b]]$support_overlap$overlap_fraction_of_union
   # Overlap labels sit just under the top spine (axis ymax=1.10 in fig-xdet.tex).
   panel_c_tikz <- c(panel_c_tikz,
-    sprintf("\\node[anchor=south, font=\\tickfont, text=black!70] at (axis cs:%s,1.015) {ovlp %d\\%%};",
+    sprintf("\\node[anchor=south, font=\\tickfont, text=black] at (axis cs:%s,1.015) {ovlp %d\\%%};",
             fmt(bx), as.integer(round(overlap * 100))))
   for (det in DETS) {
     entry <- ssd[[b]][[det]]

@@ -137,7 +137,7 @@ mpdd_gate_fr <- a_df[a_df$benchmark == "MPDD" & a_df$metric == "False-reject", "
 pa_lines <- c(pa_lines,
   sprintf("\\draw[cFalseReject, thick, ->] (axis cs:%s,0.32) -- (axis cs:%s,0.05);",
           fmt4(mpdd_crc_fr), fmt4(mpdd_crc_fr)),
-  sprintf("\\node[font=\\fontsize{9}{10}\\selectfont, anchor=south] at (axis cs:%s,0.36) {$%.1f\\%%$ vs.\\ $%.1f\\%%$};",
+  sprintf("\\node[font=\\axislabelfont, text=black, anchor=south] at (axis cs:%s,0.36) {$%.1f\\%%$ vs.\\ $%.1f\\%%$};",
           fmt4(mpdd_crc_fr), mpdd_crc_fr, mpdd_gate_fr))
 writeLines(pa_lines, file.path(TEX_DIR, "crcbaseline-panel-a.tex"), useBytes=TRUE)
 
@@ -164,8 +164,8 @@ pb_lines <- c(pb_lines,
           fmt4(alpha_fr), fmt4(alpha_fr)),
   # Outside the right spine: in-axis NE sits on Dinomaly (cov≈1 risk>5%) and
   # under-line placement collides with the selective-risk series.
-  sprintf(paste0("\\node[anchor=west, font=\\fontsize{8}{9}\\selectfont,",
-                 " text=gray!60!black] at (axis cs:1.05,%s)",
+  sprintf(paste0("\\node[anchor=west, font=\\figfont,",
+                 " text=black] at (axis cs:1.05,%s)",
                  " {$\\alpha_{\\mathrm{fr}}=%.0f\\%%$};"),
           fmt4(alpha_fr), alpha_fr))
 writeLines(pb_lines, file.path(TEX_DIR, "crcbaseline-panel-b.tex"), useBytes=TRUE)

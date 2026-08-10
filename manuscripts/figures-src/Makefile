@@ -31,6 +31,8 @@ all: r-data $(ALL_PDFS)
 
 # ============================================================================
 # R data generation (CSV digests from frozen JSON)
+# out/*.tex fragments are GENERATED — edit R/*.R (or process_*.R), then
+# re-run this target. Do not hand-edit out/*.tex.
 # ============================================================================
 r-data:
 	@echo "=== Generating R CSV digests from frozen JSON (pure R pipeline) ==="
