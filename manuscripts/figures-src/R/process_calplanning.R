@@ -127,10 +127,11 @@ for (bench in BENCHES) {
   pa <- c(pa,
     sprintf("\\fill[%s, opacity=0.18] (axis cs:0.00055,%s) rectangle (axis cs:0.20,%s);",
             BENCH_COLORS[bench], fmt4(lo), fmt4(hi)),
-    # Far right of α_miss: requirement curve is below the bands there (n_cal≤6).
+    # Inside the band on the left (log-x headroom); avoids right-edge clip
+    # when legends sit inside and xmax is not padded for external labels.
     sprintf(paste0("\\node[anchor=west, font=\\fontsize{8}{9}\\selectfont,",
                    " color=%s, fill=white, fill opacity=0.92, text opacity=1,",
-                   " inner sep=1pt] at (axis cs:0.22,%s) {%s};"),
+                   " inner sep=1pt] at (axis cs:0.0007,%s) {%s};"),
             BENCH_COLORS[bench], fmt4(y_lab), bench))
 }
 pa <- c(pa,

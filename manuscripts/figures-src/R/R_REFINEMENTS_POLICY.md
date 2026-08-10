@@ -25,7 +25,7 @@
 | G3 | When two series coincide, keep both readable | Prefer hollow vs filled marks + slight x-dodge in categorical panels; never hide a series |
 | G4 | Log / categorical axes need readable tick labels | Emit explicit tick labels in CSV/TeX; never leave bare tick marks |
 | G5 | Benchmark strings are canonical | `MVTec AD`, `VisA`, `MPDD` — never `MVTec-AD` / `mvtec` / mixed case in one figure |
-| G6 | Panel letters `a,b,c,…` in left gutter, after axis ends | TikZ `\panellabel`; Cairo: `mtext(..., adj=0)` outside plot box |
+| G6 | Panel letters `(a),(b),…` 9 pt bold black in left gutter, after axis ends | TikZ `\panellabel` / `\panellabelshift`; Cairo: `panel_label_text()` + `PANEL_LABEL_PT` from `_figconst.R` |
 | G7 | Annotation contrast | Status / ovlp / callout text ≥ grey35; never near-white on white |
 | G8 | Color semantics are single-purpose per figure | Do not reuse “certified green” as a dataset color in the same multi-panel figure |
 | G9 | Percent rates stay in `[0, 100]` (or `[0, 1]` if fractional) with padding | `xlim` / `coord_cartesian` with pad; values exactly 100 must not sit on the spine |

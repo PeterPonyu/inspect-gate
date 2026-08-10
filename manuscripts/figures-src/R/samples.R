@@ -59,7 +59,6 @@ grid.newpage()
 column_labels <- c("AUTO-PASS", "DEFER", "AUTO-REJECT")
 route_colours <- ROUTE_COLORS
 tile_size <- unit(tile_size_in, "in")
-tile_y_offset <- 0.016
 
 for (j in seq_along(column_x)) {
   grid.text(
@@ -79,7 +78,8 @@ for (i in seq_along(rows)) {
     fontsize = label_text_fontsize_pt, fontface = "bold", fontfamily = font_family
   )
   letter_gp <- gpar(
-    fontsize = panel_letter_fontsize_pt, fontface = "bold", fontfamily = font_family
+    fontsize = panel_letter_fontsize_pt, fontface = PANEL_LABEL_FACE,
+    col = PANEL_LABEL_COLOR, fontfamily = font_family
   )
   grid.text(
     row$label,
@@ -91,7 +91,7 @@ for (i in seq_along(rows)) {
   title_w_npc <- convertWidth(
     grobWidth(textGrob(row$label, gp = title_gp)), "npc", valueOnly = TRUE
   )
-  panel_tag <- sprintf("(%s)", row$panel)
+  panel_tag <- panel_label_text(row$panel)
   letter_w_npc <- convertWidth(
     grobWidth(textGrob(panel_tag, gp = letter_gp)), "npc", valueOnly = TRUE
   )

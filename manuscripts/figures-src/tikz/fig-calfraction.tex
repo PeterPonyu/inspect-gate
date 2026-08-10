@@ -1,7 +1,7 @@
 % fig-calfraction: calibration budget sensitivity (3x2)
 % Data: R/calfraction_data.csv → out/calfraction-*-{cert,def}.tex
 % X positions 0..4 map to frozen fracs 0.5, 0.3, 0.2, 0.15, 0.1 (no 0.4 in sweep).
-\documentclass[border=2pt]{standalone}
+\documentclass[border={2pt 2pt 2pt 5pt}]{standalone}
 \input{inspect_style.tex}
 
 \begin{document}
@@ -43,8 +43,9 @@
 \panellabel{ax_mvtec_def}{b}
 
 % Shared legend on the a/b column centerline (not a fixed x that drifts left/right).
+% yshift 0.26in→0.34in: clear a/b titles without crowding the standalone top border.
 \path (ax_mvtec_cert.north) -- (ax_mvtec_def.north)
-  coordinate[pos=0.5, yshift=0.26in] (legpos);
+  coordinate[pos=0.5, yshift=0.34in] (legpos);
 \node[anchor=south, font=\fontsize{9.5}{11}\selectfont] (leg) at (legpos) {%
   {\color{cPatchcore}\large$\bullet$}~PatchCore\quad
   {\color{cDinomaly}$\rule[0.28ex]{1.45ex}{1.45ex}$}~Dinomaly%

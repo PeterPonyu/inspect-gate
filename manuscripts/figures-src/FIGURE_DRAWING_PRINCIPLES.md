@@ -76,6 +76,10 @@ record how each Inspect figure was brought into compliance.
   embedded.
 
 ### Panel-label / title rule (all multi-panel figures)
+- **House style (SSOT):** `(a)` lowercase + parentheses, **9 pt bold black** —
+  TikZ `\panellabelfont` / `\panellabel` in `tikz/inspect_style.tex`; R
+  `PANEL_LABEL_*` / `panel_label_text()` in `R/_figconst.R`. Custom gutter
+  offsets use `\panellabelshift{ax}{a}{x}{y}` (keep font/format from SSOT).
 - Panel letters via `\panellabel{axname}{a}` **after** `\end{axis}` (axis clip
   swallows in-axis nodes at `rel axis cs:…,1.1`).
 - Park letters in the **left gutter** of the axis frame; titles use

@@ -1,7 +1,7 @@
 % Standalone Figure 1: horizontal overview of the dual-gate inspection pipeline.
 % Authored near text width with ~8 mm arrow gutters so \linewidth placement
-% keeps flow arrows visibly long. Vertical span opened (~1.35x prior height)
-% so stage cards and outcome stack read taller when scaled to \linewidth.
+% keeps flow arrows visibly long. Vertical span opened so stage cards,
+% refusal annotation, and outcome stack read clearly when scaled to \linewidth.
 % Compile: pdflatex fig-overview.tex
 % Fonts: Computer Modern defaults (no lmodern / custom face).
 \documentclass[10pt,border=5pt]{standalone}
@@ -82,97 +82,102 @@
     align=center,inner sep=0pt},
   gate/.style={draw=FAgrid,line width=0.48pt,rounded corners=0.65mm,fill=white,
     align=center,inner sep=0pt},
-  heading/.style={font=\bfseries\large,text=FAink},
-  body/.style={font=\normalsize,text=FAinktwo},
-  strong/.style={font=\bfseries\large,text=FAink},
+  % Headings/box titles at \Large need ≥29 mm center gaps (BACKBONE ≈ 32.5 mm).
+  heading/.style={font=\bfseries\Large,text=FAink},
+  body/.style={font=\large,text=FAinktwo},
+  strong/.style={font=\bfseries\Large,text=FAink},
+  % Outcome labels stay \large so AUTO-REJECT fits the card without clipping.
   outcome/.style={font=\bfseries\large,text=FAink},
-  note/.style={font=\large,text=FAtick,
-    align=center,fill=white,inner xsep=0.6mm}
+  note/.style={font=\Large,text=FAtick,
+    align=center,fill=white,inner xsep=1.2mm,inner ysep=1.0mm}
 ]
 
-% Width held (~158 mm); height opened to ~118 mm (h/w ≈ 0.74 vs prior ~0.46)
-% so \linewidth scaling yields a clearly taller figure.
-\useasboundingbox (-1,-56) rectangle (158,56);
+% Width ~172 mm (modest vs prior 158) so \linewidth scaling keeps type larger;
+% height ~130 mm for refusal annotation clearance below the dashed bus.
+% Stage x-centers spaced for \bfseries\Large headings (esp. BACKBONE).
+\useasboundingbox (-1,-72) rectangle (186,60);
 
-\node[heading] at (7,50) {IMAGE};
-\node[heading] at (29,50) {BACKBONE};
-\node[heading] at (51,50) {FLOOR};
-\node[heading] at (74,50) {CERTIFY};
-\node[heading] at (98,50) {ROUTE};
-\node[heading] at (130,50) {OUTCOME};
+\node[heading] at (10,52) {IMAGE};
+\node[heading] at (40,52) {BACKBONE};
+\node[heading] at (70,52) {FLOOR};
+\node[heading] at (97,52) {CERTIFY};
+\node[heading] at (124,52) {ROUTE};
+\node[heading] at (158,52) {OUTCOME};
 
-\node[stage,minimum width=11mm,minimum height=36mm] (image) at (7,10) {};
+\node[stage,minimum width=14mm,minimum height=40mm] (image) at (10,10) {};
 \accentbar{image}{FAblue}
-\camera{7}{20.5}
-\node[strong] at (7,9.0) {Part};
-\node[body,text=FAtick] at (7,2.0) {stream};
+\camera{10}{22.0}
+\node[strong] at (10,9.0) {Part};
+\node[body,text=FAtick] at (10,1.5) {stream};
 
-\node[stage,minimum width=21mm,minimum height=40mm] (backbone) at (29,10) {};
+\node[stage,minimum width=28mm,minimum height=44mm] (backbone) at (40,10) {};
 \accentbar{backbone}{FAaqua}
-\gear{29}{22.0}
-\node[strong] at (29,10.2) {Frozen AD};
-\node[body] at (29,3.4) {PC/Dinomaly};
-\node[body,text=FAtick] at (29,-1.6) {swappable};
+\gear{40}{23.5}
+\node[strong] at (40,10.2) {Frozen AD};
+\node[body] at (40,2.8) {PC/Dinomaly};
+\node[body,text=FAtick] at (40,-2.4) {swappable};
 
-\node[stage,minimum width=10mm,minimum height=36mm] (floor) at (51,10) {};
+\node[stage,minimum width=14mm,minimum height=40mm] (floor) at (70,10) {};
 \accentbar{floor}{FAyellow}
-\flooricon{51}{20.5}
-\node[strong] at (51,9.0) {Floor};
-\node[body] at (51,2.0) {$\alpha$-min};
+\flooricon{70}{22.0}
+\node[strong] at (70,9.0) {Floor};
+\node[body] at (70,1.5) {$\alpha$-min};
 
-% G1/G2 stacked; taller certify stage for vertical breathing room.
-\node[stage,minimum width=20mm,minimum height=46mm] (certify) at (74,10) {};
+% G1/G2 stacked; gates ≥26 mm so \Large "G1 escaped" fits inside.
+\node[stage,minimum width=28mm,minimum height=52mm] (certify) at (97,10) {};
 \accentbar{certify}{FAorange}
-\node[gate,draw=FAblue!75!black,minimum width=17mm,minimum height=14.5mm] (g1) at (74.8,21.5)
-  {\textcolor{FAblue}{\large G1}~\large escaped\\[1.0pt]\large $t$-lo$(c)$};
-\node[gate,draw=FAorange!80!black,minimum width=17mm,minimum height=14.5mm] (g2) at (74.8,-1.5)
-  {\textcolor{FAorange!85!black}{\large G2}~\large false-rej.\\[1.0pt]\large $t$-hi$(c)$};
+\node[gate,draw=FAblue!75!black,minimum width=24mm,minimum height=17mm] (g1) at (97.9,23.0)
+  {\textcolor{FAblue}{\Large G1}~\Large escaped\\[1.4pt]\Large $t$-lo$(c)$};
+\node[gate,draw=FAorange!80!black,minimum width=24mm,minimum height=17mm] (g2) at (97.9,-3.0)
+  {\textcolor{FAorange!85!black}{\Large G2}~\Large false-rej.\\[1.4pt]\Large $t$-hi$(c)$};
 
-\node[stage,minimum width=18mm,minimum height=36mm] (route) at (98,10) {};
+\node[stage,minimum width=20mm,minimum height=40mm] (route) at (124,10) {};
 \accentbar{route}{FAviolet}
-\routeicon{98}{20.5}
-\node[strong] at (98,9.0) {Compare};
-\node[body,align=center] at (98,1.6) {$s(i)$ vs\\band};
+\routeicon{124}{22.0}
+\node[strong] at (124,9.0) {Compare};
+\node[body,align=center] at (124,1.0) {$s(i)$ vs\\band};
 
-% Outcome stack: centers ~18 mm apart.
-\foreach \name/\yy/\col in {pass/28.5/FApass,defer/10/FAdefer,reject/-8.5/FAreject}{
-  \node[gate,minimum width=31mm,minimum height=11mm] (\name) at (130,\yy) {};
+% Outcome stack: centers ~20 mm apart; ≥8 mm gutter after Compare for branch arrows.
+\foreach \name/\yy/\col in {pass/30/FApass,defer/10/FAdefer,reject/-10/FAreject}{
+  \node[gate,minimum width=36mm,minimum height=12.5mm] (\name) at (158,\yy) {};
   \fill[\col,rounded corners=0.25mm]
-    ([xshift=-15.5mm,yshift=5.5mm]\name.center) rectangle
-    ([xshift=-14.3mm,yshift=-5.5mm]\name.center);
+    ([xshift=-18.0mm,yshift=6.25mm]\name.center) rectangle
+    ([xshift=-16.6mm,yshift=-6.25mm]\name.center);
 }
-\checkicon{117.5}{28.5}{FApass}
-\node[outcome,anchor=west] at (119.8,28.5) {AUTO-PASS};
-\clockicon{117.5}{10}{FAdefer}
-\node[outcome,anchor=west] at (119.8,10) {DEFER};
-\crossicon{117.5}{-8.5}{FAreject}
-\node[outcome,anchor=west] at (119.8,-8.5) {AUTO-REJECT};
+\checkicon{144.0}{30}{FApass}
+\node[outcome,anchor=west] at (146.5,30) {AUTO-PASS};
+\clockicon{144.0}{10}{FAdefer}
+\node[outcome,anchor=west] at (146.5,10) {DEFER};
+\crossicon{144.0}{-10}{FAreject}
+\node[outcome,anchor=west] at (146.5,-10) {AUTO-REJECT};
 
 \draw[flow] (image.east) -- (backbone.west);
 \draw[flow] (backbone.east) -- (floor.west);
-\node[body] at ($(backbone.east)!0.5!(floor.west)+(0,3.6)$) {$s(i)$};
+\node[body] at ($(backbone.east)!0.5!(floor.west)+(0,4.0)$) {$s(i)$};
 \draw[flow] (floor.east) -- (certify.west);
 \draw[flow] (certify.east) -- (route.west);
-\coordinate (branch) at (109,10);
+\coordinate (branch) at (138,10);
 \draw[draw=FAinktwo,line width=0.5pt] (route.east) -- (branch);
 \draw[flow] (branch) |- (pass.west);
 \draw[flow] (branch) -- (defer.west);
 \draw[flow] (branch) |- (reject.west);
 
-% Refusal bus below outcome stack; audit lane further below.
-\coordinate (refusebus) at (109,-22.0);
+% Refusal bus at y=-20; two-line annotation at y=-42 (~22 mm clear of the rail).
+\coordinate (refusebus) at (138,-20.0);
 \draw[control] (floor.south) |- (refusebus);
 \draw[control,-{Latex[length=1.3mm,width=0.9mm]}]
-  (refusebus) -- (111.5,-22.0) -- (111.5,7.8) -- ([yshift=-2.0mm]defer.west);
-\lockicon{58}{-26.5}
-\node[note,anchor=west] at (60,-26.5)
-  {floor unmet: REFUSE \quad band $=\pm\infty$ \quad audited};
+  (refusebus) -- (141.0,-20.0) -- (141.0,7.5) -- ([yshift=-2.2mm]defer.west);
+\lockicon{74}{-42.0}
+\node[note,anchor=west,align=left] at (76.5,-42.0)
+  {floor unmet: REFUSE\\[3.5pt]band $=\pm\infty$ \quad audited};
 
-\draw[control] (0,-43.0) -- (155,-43.0);
-\draw[control] (155,-43.0) -- (155,28.5);
-\foreach \arm in {pass,defer,reject}{\draw[control] (\arm.east) -- (155,0 |- \arm.east);}
-\node[note] at (75,-50.0)
-  {AUDIT \quad same scorecard \quad frozen operating envelope};
+\draw[control] (0,-56.0) -- (182,-56.0);
+\draw[control] (182,-56.0) -- (182,30);
+\foreach \arm in {pass,defer,reject}{\draw[control] (\arm.east) -- (182,0 |- \arm.east);}
+% Bottom audit lane: separate nodes so labels do not crowd.
+\node[note] at (28,-64.0) {AUDIT};
+\node[note] at (86,-64.0) {same scorecard};
+\node[note] at (148,-64.0) {frozen operating envelope};
 
 \end{tikzpicture}
 \end{document}

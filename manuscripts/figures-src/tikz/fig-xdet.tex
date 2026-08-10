@@ -13,14 +13,14 @@
 
 \begin{tikzpicture}[font=\figfont]
 
-% Tall 2x2: ~1.2in axis-box gutter so panel-a slanted xticks + xlabel
-% clear panel-c title/legend chrome. Tops of a/b aligned.
+% Tall 2x2: ~0.68in axis-box gutter so panel-a slanted xticks + xlabel
+% clear panel-c title/legend chrome (tightened from ~1.2in). Tops of a/b aligned.
 
 % Panel a: certification rates (grouped bars)
 \begin{axis}[
   inspect default,
   name=ax_a,
-  width=2.60in, height=1.92in, at={(0.58in,3.05in)},
+  width=2.60in, height=1.92in, at={(0.58in,2.50in)},
   ybar=2pt,
   bar width=0.13in,
   xlabel={benchmark + direction},
@@ -49,7 +49,7 @@
 \begin{axis}[
   inspect default,
   name=ax_b,
-  width=2.60in, height=2.04in, at={(3.72in,2.93in)},
+  width=2.60in, height=2.04in, at={(3.72in,2.38in)},
   xlabel={violation count},
   ylabel={transfer direction},
   xmin=0, xmax=2.55,
@@ -93,10 +93,10 @@
 \input{../out/xdet-panel-c.tex}
 \end{axis}
 \panellabel{ax_c}{c}
-% PC/DM key ABOVE the centered title with ~24pt clear gap (title sits
+% PC/DM key ABOVE the centered title with ~12pt clear gap (title sits
 % ~11pt above spine) — inside panel-c footprint, clear of letter c.
 \node[anchor=south east, font=\tickfont, inner sep=1pt]
-  at ([yshift=36pt] ax_c.north east)
+  at ([yshift=24pt] ax_c.north east)
   {{\color{cPatchcore}$\bullet$}~PC\quad{\color{cDinomaly}\rule[0.1ex]{1.1ex}{1.1ex}}~DM};
 
 
