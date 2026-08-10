@@ -1,14 +1,15 @@
 % Paper-specific references for the inspect-gate manuscript (skeleton).
 % Citation-verification pass run 2026-07-11 (write-geo); re-audited 2026-08-09
 % against Crossref / arXiv / OpenAlex / DBLP / publisher landings. Corrections are
-% evidence-based only (no invented DOIs or page ranges). Holm issue number removed
-% (OpenAlex has no issue; doi.org record for 10.2307/4615733 unresolved). Learn then
+% evidence-based only (no invented DOIs or page ranges). Learn then
 % Test updated from arXiv-only to Annals of Applied Statistics 19(2), 2025 (Crossref
 % DOI 10.1214/24-AOAS1998; page numbers not provided by Crossref). IEEE Xplore page
 % ranges corrected for Bergmann 2020 / Li 2021 / DRAEM / Deng 2022.
 % Re-audit 2026-08-10 (RiE cite/ref hygiene): Kumar demoted to arXiv-only (arXiv
 % asserts COINS DOI 10.1109/COINS65080.2025.11125785 but Crossref/DBLP VoR title and
 % author list differ); VisA/PaDiM/You/Laxhammar/Vovk metadata filled from Crossref/DBLP/DiVA.
+% Bib hygiene 2026-08-10 (Ultragoal G001): arXiv article/inproceedings normalized to
+% misc+eprint; DOI notes promoted to doi=; Holm DOI + Laxhammar IEEE URL added.
 
 % ---- Industrial anomaly detection: backbones + benchmark ----
 @inproceedings{bergmann2019mvtec,
@@ -17,7 +18,7 @@
   booktitle= {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
   pages    = {9584--9592},
   year     = {2019},
-  note      = {{DOI} 10.1109/CVPR.2019.00982}
+  doi      = {10.1109/CVPR.2019.00982}
 }
 
 @inproceedings{roth2022patchcore,
@@ -26,7 +27,10 @@
   booktitle= {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
   pages    = {14298--14308},
   year     = {2022},
-  note      = {{DOI} 10.1109/CVPR52688.2022.01392; arXiv:2106.08265}
+  doi      = {10.1109/CVPR52688.2022.01392},
+  eprint   = {2106.08265},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
 }
 
 @inproceedings{guo2025dinomaly,
@@ -35,7 +39,10 @@
   booktitle= {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
   pages    = {20405--20415},
   year     = {2025},
-  note      = {{DOI} 10.1109/CVPR52734.2025.01900; arXiv:2405.14325}
+  doi      = {10.1109/CVPR52734.2025.01900},
+  eprint   = {2405.14325},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
 }
 
 @inproceedings{akcay2022anomalib,
@@ -44,7 +51,7 @@
   booktitle= {Proc. IEEE Int. Conf. Image Processing (ICIP)},
   pages    = {1706--1710},
   year     = {2022},
-  note      = {{DOI} 10.1109/ICIP46576.2022.9897283}
+  doi      = {10.1109/ICIP46576.2022.9897283}
 }
 
 @inproceedings{batzner2024efficientad,
@@ -53,7 +60,7 @@
   booktitle= {Proc. IEEE/CVF Winter Conf. Applications of Computer Vision (WACV)},
   pages    = {127--137},
   year     = {2024},
-  note      = {{DOI} 10.1109/WACV57701.2024.00020}
+  doi      = {10.1109/WACV57701.2024.00020}
 }
 
 
@@ -63,7 +70,7 @@
   author   = {Vovk, Vladimir and Gammerman, Alexander and Shafer, Glenn},
   publisher= {Springer},
   year     = {2005},
-  note      = {{DOI} 10.1007/b106715}
+  doi      = {10.1007/b106715}
 }
 
 @article{lei2018distribution,
@@ -74,7 +81,7 @@
   number   = {523},
   pages    = {1094--1111},
   year     = {2018},
-  note      = {{DOI} 10.1080/01621459.2017.1307116}
+  doi      = {10.1080/01621459.2017.1307116}
 }
 
 @article{bates2021rcps,
@@ -85,7 +92,7 @@
   number   = {6},
   pages    = {1--34},
   year     = {2021},
-  note      = {{DOI} 10.1145/3478535}
+  doi      = {10.1145/3478535}
 }
 
 @article{angelopoulos2021ltt,
@@ -95,7 +102,10 @@
   volume   = {19},
   number   = {2},
   year     = {2025},
-  note      = {{DOI} 10.1214/24-AOAS1998; arXiv:2110.01052}
+  doi      = {10.1214/24-AOAS1998},
+  eprint   = {2110.01052},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
 }
 
 @article{angelopoulos2023gentle,
@@ -106,7 +116,7 @@
   number   = {4},
   pages    = {494--591},
   year     = {2023},
-  note      = {{DOI} 10.1561/2200000101}
+  doi      = {10.1561/2200000101}
 }
 
 
@@ -119,7 +129,7 @@
   number   = {4},
   pages    = {404--413},
   year     = {1934},
-  note      = {{DOI} 10.1093/biomet/26.4.404}
+  doi      = {10.1093/biomet/26.4.404}
 }
 
 @article{holm1979simple,
@@ -128,7 +138,8 @@
   journal  = {Scandinavian Journal of Statistics},
   volume   = {6},
   pages    = {65--70},
-  year     = {1979}
+  year     = {1979},
+  doi      = {10.2307/4615733}
 }
 
 @article{benjamini1995controlling,
@@ -139,7 +150,7 @@
   number   = {1},
   pages    = {289--300},
   year     = {1995},
-  note      = {{DOI} 10.1111/j.2517-6161.1995.tb02031.x}
+  doi      = {10.1111/j.2517-6161.1995.tb02031.x}
 }
 
 
@@ -150,7 +161,9 @@
   booktitle= {Advances in Neural Information Processing Systems (NeurIPS)},
   pages    = {4878--4887},
   year     = {2017},
-  note      = {arXiv:1705.08500}
+  eprint   = {1705.08500},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
 }
 
 
@@ -161,7 +174,8 @@
   booktitle= {Proc. 14th Int. Conf. Information Fusion (FUSION)},
   pages    = {153--160},
   year     = {2011},
-  note      = {{IEEE} Xplore 5977571; proceedings pagination per DiVA / author self-cite}
+  url      = {https://ieeexplore.ieee.org/document/5977571/},
+  note      = {proceedings pagination per DiVA / author self-cite}
 }
 
 @article{laxhammar2015inductive,
@@ -172,7 +186,8 @@
   number   = {1--2},
   pages    = {67--94},
   year     = {2015},
-  note      = {{DOI} 10.1007/s10472-013-9381-7; online 2013-09-20, print issue 2015-06}
+  doi      = {10.1007/s10472-013-9381-7},
+  note      = {online 2013-09-20, print issue 2015-06}
 }
 
 @inproceedings{angelopoulos2022crc,
@@ -180,14 +195,19 @@
   author   = {Angelopoulos, Anastasios N. and Bates, Stephen and Fisch, Adam and Lei, Lihua and Schuster, Tal},
   booktitle= {Proc. Int. Conf. Learning Representations (ICLR)},
   year     = {2024},
-  note      = {arXiv:2208.02814}
+  eprint   = {2208.02814},
+  archivePrefix = {arXiv},
+  primaryClass  = {stat.ME}
 }
 
-@article{hennhofer2026nonconform,
+@misc{hennhofer2026nonconform,
   title    = {Conformal anomaly detection in {Python}: Moving beyond heuristic thresholds with \texttt{nonconform}},
   author   = {Hennh{\"o}fer, Oliver and Kirsch, Maximilian and Preisach, Christine},
-  journal  = {arXiv:2605.13642},
-  year     = {2026}
+  year     = {2026},
+  eprint   = {2605.13642},
+  archivePrefix = {arXiv},
+  primaryClass  = {stat.ML},
+  doi      = {10.48550/arXiv.2605.13642}
 }
 
 @article{shen2025conformal,
@@ -198,32 +218,44 @@
   number   = {15},
   pages    = {2430},
   year     = {2025},
-  note      = {{MDPI}; {DOI} 10.3390/math13152430; arXiv:2504.17721}
+  doi      = {10.3390/math13152430},
+  eprint   = {2504.17721},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
 }
 
-@article{bai2025crcsgad,
+@misc{bai2025crcsgad,
   title    = {{CRC-SGAD}: Conformal risk control for supervised graph anomaly detection},
   author   = {Bai, Songran and Zheng, Xiaolong and Zeng, Daniel Dajun},
-  journal  = {arXiv:2504.02248},
-  year     = {2025}
+  year     = {2025},
+  eprint   = {2504.02248},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  doi      = {10.48550/arXiv.2504.02248}
 }
 
 % Cite as arXiv: arXiv abs asserts COINS DOI 10.1109/COINS65080.2025.11125785, but
 % Crossref/DBLP VoR title is ``Uncertainty-Aware LiDAR-Camera Autonomy...'' with an
 % extra author (Vita Pi-Ho Hu). Do not merge until VoR/arXiv identity is resolved.
-@article{kumar2025beyond,
+@misc{kumar2025beyond,
   title    = {Beyond confidence: Adaptive abstention in dual-threshold conformal prediction for autonomous system perception},
   author   = {Kumar, Divake and Darabi, Nastaran and Tayebati, Sina and Trivedi, Amit Ranjan},
-  journal  = {arXiv:2502.07255},
-  year     = {2025}
+  year     = {2025},
+  eprint   = {2502.07255},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.RO},
+  doi      = {10.48550/arXiv.2502.07255}
 }
 
 % K6-adjacent 2026 works named in Related work (RiE claim-honesty P1).
-@article{yu2026selective,
+@misc{yu2026selective,
   title    = {A Joint Finite-Sample Certificate for Adaptive Selective Conformal Risk Control},
   author   = {Yu, Xiaoli and Liu, Jiamiao},
-  journal  = {arXiv:2606.08517},
-  year     = {2026}
+  year     = {2026},
+  eprint   = {2606.08517},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  doi      = {10.48550/arXiv.2606.08517}
 }
 
 @article{yuan2026conformal,
@@ -233,7 +265,7 @@
   volume   = {274},
   pages    = {112417},
   year     = {2026},
-  note      = {{DOI} 10.1016/j.ress.2026.112417}
+  doi      = {10.1016/j.ress.2026.112417}
 }
 
 @inproceedings{zou2022spot,
@@ -242,7 +274,11 @@
   booktitle= {Proc. Eur. Conf. Computer Vision (ECCV)},
   pages    = {392--408},
   year     = {2022},
-  note      = {VisA benchmark; {DOI} 10.1007/978-3-031-20056-4\_23; arXiv:2207.14315}
+  doi      = {10.1007/978-3-031-20056-4_23},
+  eprint   = {2207.14315},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note      = {VisA benchmark}
 }
 
 @inproceedings{you2022unified,
@@ -251,7 +287,10 @@
   booktitle= {Advances in Neural Information Processing Systems (NeurIPS)},
   pages    = {4571--4584},
   year     = {2022},
-  note      = {{DOI} 10.52202/068431-0330; arXiv:2206.03687}
+  doi      = {10.52202/068431-0330},
+  eprint   = {2206.03687},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
 }
 
 @inproceedings{jezek2021mpdd,
@@ -260,7 +299,8 @@
   booktitle= {Proc. 13th Int. Congr. Ultra Modern Telecommunications and Control Systems and Workshops (ICUMT)},
   pages    = {66--71},
   year     = {2021},
-  note      = {{MPDD} (Metal Parts Defect Detection) benchmark; {DOI} 10.1109/ICUMT54235.2021.9631567}
+  doi      = {10.1109/ICUMT54235.2021.9631567},
+  note      = {{MPDD} (Metal Parts Defect Detection) benchmark}
 }
 
 
@@ -272,7 +312,7 @@
   volume   = {58},
   pages    = {102161},
   year     = {2023},
-  note      = {{DOI} 10.1016/j.aei.2023.102161}
+  doi      = {10.1016/j.aei.2023.102161}
 }
 
 @article{shang2023defect,
@@ -282,7 +322,7 @@
   volume   = {55},
   pages    = {101882},
   year     = {2023},
-  note      = {{DOI} 10.1016/j.aei.2023.101882}
+  doi      = {10.1016/j.aei.2023.101882}
 }
 
 @article{tsai2021autoencoder,
@@ -292,7 +332,7 @@
   volume   = {48},
   pages    = {101272},
   year     = {2021},
-  note      = {{DOI} 10.1016/j.aei.2021.101272}
+  doi      = {10.1016/j.aei.2021.101272}
 }
 
 
@@ -305,7 +345,7 @@
   number   = {3},
   pages    = {759--776},
   year     = {2020},
-  note      = {{DOI} 10.1007/s10845-019-01476-x}
+  doi      = {10.1007/s10845-019-01476-x}
 }
 
 @article{liu2024survey,
@@ -316,7 +356,7 @@
   number   = {1},
   pages    = {104--135},
   year     = {2024},
-  note      = {{DOI} 10.1007/s11633-023-1459-z}
+  doi      = {10.1007/s11633-023-1459-z}
 }
 
 @article{czimmermann2020visual,
@@ -327,7 +367,7 @@
   number   = {5},
   pages    = {1459},
   year     = {2020},
-  note      = {{DOI} 10.3390/s20051459}
+  doi      = {10.3390/s20051459}
 }
 
 
@@ -338,14 +378,20 @@
   booktitle= {Proc. Int. Conf. Pattern Recognition (ICPR) Workshops},
   pages    = {475--489},
   year     = {2021},
-  note      = {{DOI} 10.1007/978-3-030-68799-1\_35; arXiv:2011.08785}
+  doi      = {10.1007/978-3-030-68799-1_35},
+  eprint   = {2011.08785},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
 }
 
-@inproceedings{cohen2020spade,
+@misc{cohen2020spade,
   title    = {Sub-image anomaly detection with deep pyramid correspondences},
   author   = {Cohen, Niv and Hoshen, Yedid},
-  booktitle= {arXiv:2005.02357},
   year     = {2020},
+  eprint   = {2005.02357},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi      = {10.48550/arXiv.2005.02357},
   note      = {SPADE}
 }
 
@@ -355,7 +401,7 @@
   booktitle= {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
   pages    = {4182--4191},
   year     = {2020},
-  note      = {{DOI} 10.1109/CVPR42600.2020.00424}
+  doi      = {10.1109/CVPR42600.2020.00424}
 }
 
 @inproceedings{li2021cutpaste,
@@ -364,7 +410,7 @@
   booktitle= {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
   pages    = {9659--9669},
   year     = {2021},
-  note      = {{DOI} 10.1109/CVPR46437.2021.00954}
+  doi      = {10.1109/CVPR46437.2021.00954}
 }
 
 @inproceedings{zavrtanik2021draem,
@@ -373,14 +419,17 @@
   booktitle= {Proc. IEEE/CVF Int. Conf. Computer Vision (ICCV)},
   pages    = {8310--8319},
   year     = {2021},
-  note      = {{DOI} 10.1109/ICCV48922.2021.00822}
+  doi      = {10.1109/ICCV48922.2021.00822}
 }
 
-@inproceedings{yu2021fastflow,
+@misc{yu2021fastflow,
   title    = {{FastFlow}: Unsupervised anomaly detection and localization via 2D normalizing flows},
   author   = {Yu, Jiawei and Zheng, Ye and Wang, Xiang and Li, Wei and Wu, Yushuang and Zhao, Rui and Wu, Liwei},
-  booktitle= {arXiv:2111.07677},
-  year     = {2021}
+  year     = {2021},
+  eprint   = {2111.07677},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi      = {10.48550/arXiv.2111.07677}
 }
 
 @inproceedings{deng2022reverse,
@@ -389,7 +438,7 @@
   booktitle= {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
   pages    = {9727--9736},
   year     = {2022},
-  note      = {{DOI} 10.1109/CVPR52688.2022.00951}
+  doi      = {10.1109/CVPR52688.2022.00951}
 }
 
 @inproceedings{liu2023simplenet,
@@ -398,7 +447,7 @@
   booktitle= {Proc. IEEE/CVF Conf. Computer Vision and Pattern Recognition (CVPR)},
   pages    = {20402--20411},
   year     = {2023},
-  note      = {{DOI} 10.1109/CVPR52729.2023.01954}
+  doi      = {10.1109/CVPR52729.2023.01954}
 }
 
 
@@ -410,7 +459,7 @@
   publisher= {Springer},
   pages    = {345--356},
   year     = {2002},
-  note      = {{DOI} 10.1007/3-540-36755-1\_29}
+  doi      = {10.1007/3-540-36755-1_29}
 }
 
 @article{sadinle2019least,
@@ -421,7 +470,7 @@
   number   = {525},
   pages    = {223--234},
   year     = {2019},
-  note      = {{DOI} 10.1080/01621459.2017.1395341}
+  doi      = {10.1080/01621459.2017.1395341}
 }
 
 @inproceedings{romano2020aps,
@@ -429,7 +478,9 @@
   author   = {Romano, Yaniv and Sesia, Matteo and Cand{\`e}s, Emmanuel J.},
   booktitle= {Advances in Neural Information Processing Systems (NeurIPS)},
   year     = {2020},
-  note      = {arXiv:2006.02544}
+  eprint   = {2006.02544},
+  archivePrefix = {arXiv},
+  primaryClass  = {stat.ME}
 }
 
 @inproceedings{tibshirani2019covariate,
@@ -437,7 +488,9 @@
   author   = {Tibshirani, Ryan J. and Barber, Rina Foygel and Cand{\`e}s, Emmanuel J. and Ramdas, Aaditya},
   booktitle= {Advances in Neural Information Processing Systems (NeurIPS)},
   year     = {2019},
-  note      = {arXiv:1904.06019}
+  eprint   = {1904.06019},
+  archivePrefix = {arXiv},
+  primaryClass  = {stat.ME}
 }
 
 
@@ -447,5 +500,7 @@
   author   = {Geifman, Yonatan and El-Yaniv, Ran},
   booktitle= {Proc. Int. Conf. Machine Learning (ICML)},
   year     = {2019},
-  note      = {arXiv:1901.09192}
+  eprint   = {1901.09192},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
 }
