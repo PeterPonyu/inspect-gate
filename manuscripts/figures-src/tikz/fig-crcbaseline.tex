@@ -13,10 +13,8 @@
 \definecolor{cDeferral}{HTML}{009E73}
 
 % Letter on the title row, parked in the left gutter (south-east → sits left of NW).
-\newcommand{\crclabel}[2]{%
-  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
-    at ([xshift=-16pt, yshift=11pt] #1.north west) {\textbf{#2}};%
-}
+% Wider/taller shift than default \panellabel — clears the 1.14 legend band.
+\newcommand{\crclabel}[2]{\panellabelshift{#1}{#2}{-16pt}{11pt}}
 
 \begin{document}
 \begin{tikzpicture}[font=\figfont]

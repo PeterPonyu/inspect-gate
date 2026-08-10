@@ -12,10 +12,7 @@
 
 % Letter in the left gutter on the title row; wider xshift so horizontal
 % legends starting near plot-left cannot cover it.
-\newcommand{\validitylabel}[2]{%
-  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
-    at ([xshift=-18pt, yshift=7pt] #1.north west) {\textbf{#2}};%
-}
+\newcommand{\validitylabel}[2]{\panellabelshift{#1}{#2}{-18pt}{7pt}}
 
 \pgfplotstableread[col sep=comma]{../R/validity_escaped_points_patchcore.csv}\escPtsPC
 \pgfplotstableread[col sep=comma]{../R/validity_escaped_points_dinomaly.csv}\escPtsDM

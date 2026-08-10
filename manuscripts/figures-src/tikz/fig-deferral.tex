@@ -35,8 +35,7 @@
 \end{axis}
 \node[anchor=south, font=\titlefont, inner sep=0.5pt, name=title_mvtec]
   at ([yshift=2pt] ax_mvtec.north) {MVTec AD};
-\node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
-  at ([xshift=-8pt, yshift=2pt] ax_mvtec.north west) {\textbf{a}};
+\panellabelshift{ax_mvtec}{a}{-8pt}{2pt}
 
 % ── VisA ────────────────────────────────────────────────────────────────────
 \begin{axis}[
@@ -59,8 +58,7 @@
 \end{axis}
 \node[anchor=south, font=\titlefont, inner sep=0.5pt, name=title_visa]
   at ([yshift=2pt] ax_visa.north) {VisA};
-\node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
-  at ([xshift=-8pt, yshift=2pt] ax_visa.north west) {\textbf{b}};
+\panellabelshift{ax_visa}{b}{-8pt}{2pt}
 
 % ── MPDD ────────────────────────────────────────────────────────────────────
 \begin{axis}[
@@ -83,15 +81,14 @@
 \end{axis}
 \node[anchor=south, font=\titlefont, inner sep=0.5pt, name=title_mpdd]
   at ([yshift=2pt] ax_mpdd.north) {MPDD};
-\node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
-  at ([xshift=-8pt, yshift=2pt] ax_mpdd.north west) {\textbf{c}};
+\panellabelshift{ax_mpdd}{c}{-8pt}{2pt}
 
 % Shared legend just above the panel titles (LM-safe glyphs; no MSAM).
 \node[anchor=south, font=\fontsize{9.5}{11}\selectfont]
   at ([yshift=3pt] title_visa.north) {%
   {\color{cPatchcore}$\circ$}~PatchCore\quad
   {\color{cDinomaly}\rule[0.28ex]{1.45ex}{1.45ex}}~Dinomaly\quad
-  {\color{gray!60}\raisebox{0.4ex}{\rule{1.35em}{0.4pt}}}~\textcolor{gray!55}{\fontsize{8}{9}\selectfont K2 vacuity 0.80}%
+  {\color{gray!60}\raisebox{0.4ex}{\rule{1.35em}{0.4pt}}}~\textcolor{black}{\fontsize{8}{9}\selectfont K2 vacuity 0.80}%
 };
 
 \end{tikzpicture}

@@ -135,29 +135,40 @@ for (hb in HBENCH) {
             hb$color, hb$mark, paste(coords, collapse = " ")),
     sprintf("\\addlegendentry{%s}", hb$label))
 }
-# Annotate every point. All labels sit ABOVE their markers so the high-vol
-# floor (~12x / ~17x) never drops onto the bottom spine (ymin=0.35 in
-# fig-opcost.tex; break-even dashed line at y=1 is above the axis). Series
-# are staggered horizontally; the last column flips inward. 2026-08-09 fix.
+# Annotate every point. Stagger so low-vol (202x / 337x / 1833x) never stacks
+# into one illegible pile: VisA high above, MVTec mid-right, MPDD below its
+# marker. High-vol stays above the spine (ymin=0.1). 2026-08-09 panel-QA.
 for (hb in HBENCH) {
   for (si in seq_along(SCEN)) {
     row <- headroom_df[headroom_df$benchmark == hb$key & headroom_df$scenario == SCEN[si], ]
     val <- round(row$headroom_multiple)
     if (hb$key == "VisA") { xoff <- 0.10; yfac <- 1.55; anch <- "west" }
-    else if (hb$key == "MVTec-AD") { xoff <- 0.12; yfac <- 1.48; anch <- "west" }
+    else if (hb$key == "MVTec-AD") { xoff <- 0.14; yfac <- 1.35; anch <- "west" }
     else { xoff <- -0.10; yfac <- 1.42; anch <- "east" }
-    # MPDD first point is near the y-axis / panel letter: label above-right.
-    if (hb$key == "MPDD" && si == 1L) { xoff <- 0.12; anch <- "west"; yfac <- 1.40 }
-    # End-of-line: keep labels inside the axis (inward) and well above markers
-    # so the high-vol floor (~12x / ~17x) never reads as sitting on the spine
-    # or the y=1 guide; stagger MPDD / MVTec vertically.
+    # low-vol: MPDD below marker; VisA slightly above (not into the spine);
+    # MVTec mid-right — three distinct vertical bands.
+    if (si == 1L) {
+      if (hb$key == "MPDD") { xoff <- 0.10; anch <- "north west"; yfac <- 0.48 }
+      else if (hb$key == "MVTec-AD") { xoff <- 0.18; anch <- "west"; yfac <- 1.18 }
+      else { xoff <- 0.00; anch <- "south"; yfac <- 1.55 }
+    }
+    # mid-vol: 61x vs 63x are nearly coincident — horizontal split.
+    if (si == 2L) {
+      if (hb$key == "MPDD") { xoff <- -0.12; anch <- "east"; yfac <- 1.55 }
+      else if (hb$key == "MVTec-AD") { xoff <- 0.14; anch <- "west"; yfac <- 0.72 }
+      else { xoff <- 0.10; anch <- "west"; yfac <- 1.55 }
+    }
+    # high-vol: inward + vertical stagger above the floor.
     if (si == length(SCEN)) {
       if (hb$key == "VisA") { xoff <- -0.10; anch <- "east"; yfac <- 1.55 }
       else if (hb$key == "MVTec-AD") { xoff <- 0.10; anch <- "west"; yfac <- 2.10 }
       else { xoff <- -0.10; anch <- "east"; yfac <- 2.40 }
     }
     panel_b <- c(panel_b, sprintf(
-      "\\node[font=\\fontsize{7}{8}\\selectfont, anchor=%s] at (axis cs:%s,%s) {%dx};",
+      paste0(
+        "\\node[font=\\fontsize{7}{8}\\selectfont, text=black, ",
+        "anchor=%s] at (axis cs:%s,%s) {%dx};"
+      ),
       anch, fmt2((si - 1L) + xoff), fmt2(row$headroom_multiple * yfac), val
     ))
   }
@@ -208,20 +219,20 @@ panel_d <- c(
     fmt3(gate_us)
   ),
   sprintf(
-    "\\node[font=\\fontsize{7}{8}\\selectfont, anchor=south] at (axis cs:0,%s) {$%.2f$ms};",
-    fmt3(bb1_us * 1.35), lat_df$ms[1]
+    "\\node[font=\\fontsize{7}{8}\\selectfont, text=black, anchor=south] at (axis cs:0,%s) {$%.2f$ms};",
+    fmt3(bb1_us * 1.10), lat_df$ms[1]
   ),
   sprintf(
-    "\\node[font=\\fontsize{7}{8}\\selectfont, anchor=south] at (axis cs:1,%s) {$%.2f$ms};",
-    fmt3(bb32_us * 1.35), lat_df$ms[2]
+    "\\node[font=\\fontsize{7}{8}\\selectfont, text=black, anchor=south] at (axis cs:1,%s) {$%.2f$ms};",
+    fmt3(bb32_us * 1.10), lat_df$ms[2]
   ),
   sprintf(
-    "\\node[font=\\fontsize{7}{8}\\selectfont, anchor=south] at (axis cs:2,%s) {$%.1f\\mu$s};",
+    "\\node[font=\\fontsize{7}{8}\\selectfont, text=black, anchor=south] at (axis cs:2,%s) {$%.1f\\mu$s};",
     fmt3(max(gate_us * 3.2, 8)), gate_us
   ),
   sprintf(
     paste0(
-      "\\node[anchor=east, font=\\fontsize{7}{8}\\selectfont, text=black!70, ",
+      "\\node[anchor=east, font=\\fontsize{7}{8}\\selectfont, text=black, ",
       "align=right] at (rel axis cs:0.97,0.52) {cal: $%.1f$ms\\\\(one-time)};"
     ),
     cal_ms

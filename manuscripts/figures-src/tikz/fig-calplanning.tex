@@ -1,6 +1,11 @@
 % fig-calplanning: calibration pool planning (2x2 grid)
 % Data: R/calplanning_*.csv  →  out/calplanning-panel-[a-d].tex
 % Panel letters via \panellabel after \end{axis}; titles centered over plot box.
+%
+% Layout (2026-08-09 panel-QA):
+%   - Equal panel widths; legends INSIDE (panel c was out-of-spine and
+%     visually broke the left-column axis alignment).
+%   - Compact column gutter; black legend text; 2-col legend in (c).
 \documentclass[border=2pt]{standalone}
 \input{inspect_style.tex}
 
@@ -9,34 +14,64 @@
 % rest of the paper.
 \definecolor{cGate}{HTML}{0072B2}
 
-% Unified out-of-spine legend: just right of the axis box (rel. coords),
-% never inside the plot frame. clip=false so the overhang is not swallowed.
 \pgfplotsset{
-  outlegend/.style={
-    legend style={at={(1.02,1.0)}, anchor=north west,
-                  font=\fontsize{#1}{9}\selectfont,
-                  draw=none, fill=white, fill opacity=0.92, text opacity=1,
-                  inner sep=2pt, row sep=0.5pt, legend cell align=left},
-    clip=false,
+  % Inside NE — clears curves/bars that occupy the lower/left plot body.
+  cal/legend inside ne/.style={
+    legend style={
+      at={(0.98,0.96)}, anchor=north east,
+      font=\fontsize{#1}{9}\selectfont, text=black, draw=none,
+      fill=white, fill opacity=0.92, text opacity=1,
+      inner sep=1.0pt, row sep=0.4pt, legend cell align=left,
+      /tikz/every even column/.append style={column sep=4pt},
+      /tikz/every node/.append style={text=black},
+    },
   },
-  outlegend/.default=8,
+  cal/legend inside ne/.default=7.5,
+  % Inside NW — panel b curves hug the top-right.
+  cal/legend inside nw/.style={
+    legend style={
+      at={(0.02,0.96)}, anchor=north west,
+      font=\fontsize{#1}{9}\selectfont, text=black, draw=none,
+      fill=white, fill opacity=0.92, text opacity=1,
+      inner sep=1.0pt, row sep=0.4pt, legend cell align=left,
+      /tikz/every node/.append style={text=black},
+    },
+  },
+  cal/legend inside nw/.default=7.5,
+  % Inside NE, single column — panel c: after x≈2 all series sit on ~0, so a
+  % narrow NE key clears the drop at x=1 without a wide 2-col block.
+  cal/legend inside ne narrow/.style={
+    legend style={
+      at={(0.99,0.98)}, anchor=north east,
+      font=\fontsize{#1}{8.5}\selectfont, text=black, draw=none,
+      fill=white, fill opacity=0.94, text opacity=1,
+      inner sep=0.8pt, row sep=0.2pt, legend cell align=left,
+      /tikz/every node/.append style={text=black},
+    },
+  },
+  cal/legend inside ne narrow/.default=6.5,
+  cal/title near/.style={
+    title style={
+      at={(0.5,1.0)}, anchor=south, yshift=8pt,
+      font=\titlefont, text=black,
+    },
+  },
 }
 
 \begin{document}
 \begin{tikzpicture}[font=\figfont]
 
-% Column gutter widened (~1.1 in) so left-column legends (esp. panel c's
-% six entries) sit clear of the right-column spines.
-
+% Equal widths; tight column gutter (no out-of-spine legend overhang).
 % Panel a: requirement curve + observed pools.
 \begin{axis}[
   inspect default,
-  name=axa, width=2.70in, height=2.35in, at={(0.40in,2.75in)},
+  cal/title near,
+  cal/legend inside ne=7.5,
+  name=axa, width=2.55in, height=2.20in, at={(0.55in,2.48in)},
   xmode=log, ymode=log,
   xmin=0.0004, xmax=0.50, ymin=3, ymax=1200,
   xlabel={target rate $\alpha$},
   ylabel={required $n_{\mathrm{cal}}$},
-  outlegend=8,
   title={required pool vs.\ $\alpha$},
 ]
 \input{../out/calplanning-panel-a.tex}
@@ -46,44 +81,46 @@
 % Panel b: attainment.
 \begin{axis}[
   inspect default,
-  name=axb, width=2.70in, height=2.35in, at={(4.55in,2.75in)},
+  cal/title near,
+  cal/legend inside nw=7.5,
+  name=axb, width=2.55in, height=2.20in, at={(3.65in,2.48in)},
   xmode=log, xmin=0.008, xmax=0.25, ymin=0, ymax=1.08,
   xlabel={target rate $\alpha$},
   ylabel={certifiable fraction},
-  outlegend=8,
   title={certifiable fraction vs.\ $\alpha$},
 ]
 \input{../out/calplanning-panel-b.tex}
 \end{axis}
 \panellabel{axb}{b}
 
-% Panel c: shortfall — legend outside; xmax tracks the data (no empty
-% right half reserved for an in-axis legend).
+% Panel c: shortfall — narrow single-col legend inside NE (clear of x=1 drop).
 \begin{axis}[
   inspect default,
-  name=axc, width=2.70in, height=2.35in, at={(0.40in,0.05in)},
-  xmin=0, xmax=4.8, ymin=-0.05, ymax=1.15,
+  cal/title near,
+  cal/legend inside ne narrow=6.5,
+  name=axc, width=2.55in, height=2.20in, at={(0.55in,0.05in)},
+  xmin=0, xmax=4.4, ymin=-0.05, ymax=1.15,
   xlabel={pool multiplier},
   ylabel={non-certifiable fraction},
   xtick={0,1,2,3,4},
-  outlegend=7.5,
+  legend columns=1,
   title={pool growth shortfall},
 ]
 \input{../out/calplanning-panel-c.tex}
 \end{axis}
 \panellabel{axc}{c}
 
-% Panel d: planning bars — legend outside so ymax need not reserve
-% headroom for an in-axis key.
+% Panel d: planning bars — legend inside NE above bar tops (ymax headroom).
 \begin{axis}[
   inspect default,
-  name=axd, width=2.70in, height=2.35in, at={(4.55in,0.05in)},
+  cal/title near,
+  cal/legend inside ne=7.5,
+  name=axd, width=2.55in, height=2.20in, at={(3.65in,0.05in)},
   ybar=2pt, bar width=6pt,
   xmin=-0.8, xmax=5.8, ymin=0, ymax=82,
   xlabel={benchmark},
   ylabel={observed pool median},
   xtick={0,2,4}, xticklabels={MVTec, VisA, MPDD},
-  outlegend=8,
   title={planning go/no-go},
 ]
 \input{../out/calplanning-panel-d.tex}

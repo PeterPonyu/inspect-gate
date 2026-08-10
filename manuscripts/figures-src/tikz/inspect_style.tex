@@ -30,16 +30,24 @@
 \newcommand{\axislabelfont}{\fontsize{9}{10}\selectfont}
 \newcommand{\titlefont}{\fontsize{9}{10}\selectfont}
 \newcommand{\tickfont}{\fontsize{7}{8}\selectfont}
+% Panel-label house style (SSOT for all multi-panel Inspect figures):
+%   format  (a)  lowercase letter in parentheses
+%   font    Computer Modern / figure default, 9 pt, bold, black
+%   park    left gutter at axis NW (default xshift=-8pt, yshift=7pt)
+% R/Cairo mirrors this via PANEL_LABEL_* in R/_figconst.R.
 \newcommand{\panellabelfont}{\fontsize{9}{10}\selectfont\bfseries}
+\newcommand{\panellabeltext}[1]{(#1)}
 
 % Panel label OUTSIDE the axis (axis clip would otherwise swallow it).
 % Usage after \end{axis}: \panellabel{axname}{a}
 % Parked in the left gutter at the top of the axis frame — NOT on the
 % title baseline — so titles can stay truly centered over the plot box.
-\newcommand{\panellabel}[2]{%
-  \node[anchor=south east, font=\panellabelfont, inner sep=0.5pt]
-    at ([xshift=-8pt, yshift=7pt] #1.north west) {\textbf{#2}};%
+% Custom gutter offsets: \panellabelshift{axname}{a}{-16pt}{11pt}
+\newcommand{\panellabelshift}[4]{%
+  \node[anchor=south east, font=\panellabelfont, text=black, inner sep=0.5pt]
+    at ([xshift=#3, yshift=#4] #1.north west) {\panellabeltext{#2}};%
 }
+\newcommand{\panellabel}[2]{\panellabelshift{#1}{#2}{-8pt}{7pt}}
 
 % Standard axis styles. Titles centered above the plot box only.
 \pgfplotsset{

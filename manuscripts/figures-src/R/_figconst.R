@@ -12,10 +12,14 @@
 #   the DEFER route colour          ROUTE_DEFER
 #   the AUTO-REJECT route colour    ROUTE_REJECT
 #   all three, in pass/defer/reject order  ROUTE_COLORS
+#   panel tag (a)/(b)/… style+size   PANEL_LABEL_*  (mirrors TikZ SSOT)
 #
 # NOTE: these scripts are base-R/grid, NOT ggplot.
 # Only the colour/font constants are shared; each script keeps its own
 # cairo_pdf render path.
+#
+# Panel-label house style (must match tikz/inspect_style.tex):
+#   format (a), 9 pt, bold, black.
 # ==========================================================================
 
 # Generic serif for Cairo (FreeSerif). Not a figure-only face like Latin
@@ -29,3 +33,11 @@ ROUTE_REJECT <- "#D55E00"  # AUTO-REJECT
 
 # Convenience vector in column order (AUTO-PASS, DEFER, AUTO-REJECT).
 ROUTE_COLORS <- c(ROUTE_PASS, ROUTE_DEFER, ROUTE_REJECT)
+
+# Panel tags — keep in lockstep with \panellabelfont / \panellabeltext.
+PANEL_LABEL_PT <- 9
+PANEL_LABEL_FACE <- "bold"
+PANEL_LABEL_COLOR <- "black"
+panel_label_text <- function(letter) sprintf("(%s)", as.character(letter))
+# cex relative to the cairo_pdf/pdf pointsize (default 12 → 9 pt ⇒ 0.75).
+panel_label_cex <- function(pointsize = 12) PANEL_LABEL_PT / pointsize

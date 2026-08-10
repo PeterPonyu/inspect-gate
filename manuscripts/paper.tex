@@ -352,11 +352,9 @@ per-image join against that split that refuses on any missing or extra image.
 % visa_results_2026-07-12/ADAPTER-REPORT.json (official_test_counts)
 \paragraph{Backbones (Branch A, $B=2$).} PatchCore~\citep{roth2022patchcore} via
 anomalib~\citep{akcay2022anomalib} (a Wide ResNet-50-2 backbone, features from the second and
-third stages, coreset ratio $0.10$)\footnote{The reproduction target $0.991$ is PatchCore's published
-\emph{25\%-coreset} mean image-AUROC (the paper's own headline is ``up to $99.6\%$''); our
-scoring uses the $10\%$-coreset configuration (PREREG D3), a different published operating point
-in the same paper. The frozen $\pm 0.02$ tolerance spans the gap and the gate passes with margin
-either way (Table~\ref{tab:repro}).} and Dinomaly~\citep{guo2025dinomaly} (canonical score dump,
+third stages, coreset ratio $0.10$)\footnote{Target $0.991$ is PatchCore's published
+$25\%$-coreset mean; we score the $10\%$-coreset point (PREREG~D3).
+See Table~\ref{tab:repro}.} and Dinomaly~\citep{guo2025dinomaly} (canonical score dump,
 its own eval script; on VisA, the reference repo's multi-class setting --- one model per seed for
 all $12$ categories --- which is the setting its published VisA figure reports). Both were
 confirmed present and reproduction-passing before any calibration, so the preregistered
@@ -633,13 +631,8 @@ realizes rates well below target, so passing validates the calibrate/route/evalu
 rather than demonstrating sharpness. Consequently K1 is not tripped (the A3 exclusion
 cannot change K1's count: excluded cells cannot fail) ($0$ violations in every
 (backbone, seed) aggregate, against the $5$-cell MVTec/VisA kill threshold and, on MPDD, against
-a proportionally-scaled $2$-cell threshold\footnote{At $n_{\text{cat}}=6$ the design's absolute
-kill thresholds (max $5$ violations, min $8$ categories) are vacuously un-trippable, so on MPDD
-they are scaled to the design's proportions --- $5/15\to\lceil 6/3\rceil=2$ for K1 and
-$8/15\to\lceil 6\cdot 8/15\rceil=4$ for K2 --- with the raw counts recorded so any threshold is
-re-derivable. The no-trip verdict is invariant to the rounding rule: any reasonable rounding of
-the proportional thresholds gives the same outcome ($0$ violations and $\le 2$ vacuous categories
-clear even the tightest rounding). These diagnostic kill-gates are never part of the confirmatory family.}) and K2 is
+a proportionally-scaled $2$-cell threshold\footnote{Absolute kill thresholds are un-trippable at
+$n_{\text{cat}}=6$, so MPDD uses proportional scales (K1$\to 2$, K2$\to 4$); diagnostic only.}) and K2 is
 not tripped (on MVTec/VisA at most $1$ vacuous category --- VisA/PatchCore/seed~$2$ --- against the
 $8$-category/$0.80$-deferral threshold; on MPDD at most $2$ vacuous categories per aggregate
 against the scaled $4$-category threshold), in all $30$ aggregates across the three

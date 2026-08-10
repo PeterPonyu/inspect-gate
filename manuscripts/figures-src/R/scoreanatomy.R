@@ -58,12 +58,14 @@ render_cell <- function(cell, side = c("left", "right")) {
   # Left column (a,c): tighter right margin + titles pulled left so they do not
   # reach into the gutter where (b)/(d) panel letters sit. Right column (b,d):
   # wider left margin so those letters clear the a/c titles.
+  # Slightly tighter top/bottom margins: less inter-row whitespace while
+  # keeping title + status lines clear of the plot box and each other.
   if (identical(side, "left")) {
-    par(mar = c(3.1, 3.45, 3.5, 0.25))
+    par(mar = c(2.7, 3.45, 3.05, 0.25))
     title_frac <- 0.04
     tag_adj <- 1.45
   } else {
-    par(mar = c(3.1, 2.85, 3.5, 0.70))
+    par(mar = c(2.7, 2.85, 3.05, 0.70))
     title_frac <- 0.18
     tag_adj <- 1.20
   }
@@ -97,15 +99,18 @@ render_cell <- function(cell, side = c("left", "right")) {
   backbone_label <- if (is.null(cell$backbone)) "" else sprintf(" / %s", cell$backbone)
   ttl <- sprintf("%s %s%s", cell$benchmark, cell$category, backbone_label)
   dx <- diff(par("usr")[1:2])
-  mtext(sprintf("(%s)", cell$panel), side = 3, line = 2.05, font = 2, cex = 1.05,
+  mtext(panel_label_text(cell$panel), side = 3, line = 1.70, font = 2,
+        cex = panel_label_cex(12), col = PANEL_LABEL_COLOR,
         at = par("usr")[1], adj = tag_adj)
-  mtext(ttl, side = 3, line = 2.05, adj = 0, cex = 0.90,
+  mtext(ttl, side = 3, line = 1.70, adj = 0, cex = 0.90,
         at = par("usr")[1] + title_frac * dx)
-  mtext(cell_status(cell), side = 3, line = 0.95, cex = 0.82, col = "grey35")
+  mtext(cell_status(cell), side = 3, line = 0.75, cex = 0.82, col = "grey35")
 }
 
 raw_pdf <- file.path(script_dir, "../review-scoreanatomy-build.pdf")
-cairo_pdf(raw_pdf, width = 5.7, height = 5.6, pointsize = 12, family = font_family)
+# Wider canvas (more landscape) + modest height trim → less vertical whitespace
+# when scaled to column width in the paper.
+cairo_pdf(raw_pdf, width = 6.3, height = 5.25, pointsize = 12, family = font_family)
 # Regions: 1=a 2=b 3=c 4=d 5=legend 6=column gutter (never plotted → blank gap),
 # which shifts b/d right relative to a/c.
 layout(
@@ -113,7 +118,7 @@ layout(
            3, 6, 4,
            5, 5, 5), nrow = 3, byrow = TRUE),
   widths = c(1, 0.32, 1),
-  heights = c(1, 1, 0.16)
+  heights = c(1, 1, 0.14)
 )
 par(oma = c(0, 1.05, 0, 0), mgp = c(2.0, 0.55, 0), tcl = -0.25, family = font_family)
 sides <- c("left", "right", "left", "right")
