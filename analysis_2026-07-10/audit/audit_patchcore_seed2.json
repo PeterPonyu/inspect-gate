@@ -47,7 +47,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.177854+00:00",
       "seeds": [
         2
@@ -107,7 +107,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.251667+00:00",
       "seeds": [
         2
@@ -167,7 +167,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.327095+00:00",
       "seeds": [
         2
@@ -227,7 +227,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.401922+00:00",
       "seeds": [
         2
@@ -287,7 +287,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.474905+00:00",
       "seeds": [
         2
@@ -347,7 +347,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.546453+00:00",
       "seeds": [
         2
@@ -407,7 +407,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.621022+00:00",
       "seeds": [
         2
@@ -467,7 +467,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.688594+00:00",
       "seeds": [
         2
@@ -527,7 +527,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.765572+00:00",
       "seeds": [
         2
@@ -587,7 +587,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.838333+00:00",
       "seeds": [
         2
@@ -647,7 +647,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.912251+00:00",
       "seeds": [
         2
@@ -707,7 +707,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:47.976436+00:00",
       "seeds": [
         2
@@ -767,7 +767,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:48.047457+00:00",
       "seeds": [
         2
@@ -827,7 +827,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:48.113383+00:00",
       "seeds": [
         2
@@ -887,7 +887,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "${REPO_ROOT}/inspect_gate/audit.py",
+      "script": "inspect_gate/audit.py",
       "timestamp_utc": "2026-07-11T01:37:48.187981+00:00",
       "seeds": [
         2

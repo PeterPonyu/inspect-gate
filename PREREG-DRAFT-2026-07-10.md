@@ -6,7 +6,7 @@ re-scan, (b) the Dinomaly branch resolution of §1, (c) sign-off on the three pr
 amendments in §9.
 
 Every count in this document is traced to a pilot artifact under
-`pilot_results_2026-07-10${AUTODL_TMP}/inspect_gate_pilot_results/` or derived by stated
+`pilot_results_2026-07-10/root/autodl-tmp/inspect_gate_pilot_results/` or derived by stated
 arithmetic from `phase0_staging.json`. Nothing is quoted from the design doc as measured fact.
 Genuinely unknown quantities are marked **[TO BE MEASURED AT MAIN RUN]**.
 

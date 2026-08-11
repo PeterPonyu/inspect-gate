@@ -18,6 +18,7 @@ median deferral within 1e-9 (asserted, per benchmark x backbone).
 from __future__ import annotations
 
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -25,9 +26,8 @@ from pathlib import Path
 import numpy as np
 
 
-def _portal_commons_root():
-    import os
-    from pathlib import Path
+def _portal_commons_root() -> Path | None:
+    """Optional reliability-commons checkout (see SECURITY-PATHS.md)."""
     for key in ("COMMONS_ROOT", "RELIABILITY_COMMONS"):
         v = os.environ.get(key)
         if v:
@@ -39,22 +39,25 @@ def _portal_commons_root():
         for cand in (parent / "reliability-commons", parent.parent / "reliability-commons"):
             if cand.is_dir():
                 return cand
-    raise RuntimeError(
-        "Set COMMONS_ROOT to the reliability-commons checkout (or place it as a sibling of this repo)."
-    )
+    return None
 
-def _portal_repo_root():
-    from pathlib import Path
+
+def _portal_repo_root() -> Path:
     here = Path(__file__).resolve().parent
     for p in [here, *here.parents]:
         if (p / ".git").exists() or (p / "pyproject.toml").exists() or (p / "README.md").exists():
             return p
     return here
 
-REPO_ROOT = _portal_commons_root()
+
+COMMONS_ROOT = _portal_commons_root()
 IG_ROOT = _portal_repo_root()
+# Standalone tip: inspect_gate lives in-repo; commons is optional path hygiene only.
 sys.path.insert(0, str(IG_ROOT))
-sys.path.insert(0, str(REPO_ROOT))
+if COMMONS_ROOT is not None:
+    sys.path.insert(0, str(COMMONS_ROOT))
+# Back-compat for any remaining REPO_ROOT references in this module.
+REPO_ROOT = COMMONS_ROOT if COMMONS_ROOT is not None else IG_ROOT
 
 from inspect_gate import io as _io
 from inspect_gate import gate as _gate
