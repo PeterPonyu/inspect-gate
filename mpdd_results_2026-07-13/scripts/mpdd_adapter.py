@@ -64,6 +64,31 @@ def _portal_repo_root():
             return p
     return here
 
+def _data_root():
+    import os
+    from pathlib import Path
+    return Path(os.environ.get("DATA_ROOT", Path.home() / "data")).expanduser()
+
+def _portfolio_root():
+    """Parent of theme repos when laid out as a portfolio sibling tree."""
+    from pathlib import Path
+    r = _portal_repo_root()
+    parent = r.parent
+    markers = ("reliability-commons", "inspect-gate", "materials-mlip-research", "asr-gate")
+    if any((parent / m).exists() for m in markers):
+        return parent
+    return parent
+
+def _autodl_tmp():
+    import os
+    from pathlib import Path
+    return Path(os.environ.get("AUTODL_TMP", "/tmp/autodl-tmp"))
+
+def _conda_root():
+    import os
+    from pathlib import Path
+    return Path(os.environ.get("CONDA_ROOT", Path.home() / "miniconda3")).expanduser()
+
 IG_ROOT = _portal_repo_root()
 sys.path.insert(0, str(IG_ROOT.parent.parent))  # reliability-commons on path
 sys.path.insert(0, str(IG_ROOT))
@@ -76,8 +101,7 @@ from inspect_gate import reproduction as _repro  # noqa: E402
 # pull path is only known once the box run lands, so it is an env/CLI knob).
 DEFAULT_PULL = os.environ.get(
     "MPDD_PULL",
-    "${PORTFOLIO_ROOT}/orchestration_2026-07-13"
-    "/mpdd_pull${AUTODL_TMP}/mpdd_brancha")
+    str(_portfolio_root() / "orchestration_2026-07-13" / "mpdd_pull" / "autodl-tmp" / "mpdd_brancha"))
 DEFAULT_MANIFEST = os.environ.get(
     "MPDD_MANIFEST", str(IG_ROOT / "mpdd_staging" / "mpdd_split_manifest.json"))
 OUT = IG_ROOT / "mpdd_results_2026-07-13"
