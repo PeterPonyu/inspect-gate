@@ -63,7 +63,7 @@ def _portal_repo_root():
     return here
 
 REPO_ROOT = _portal_commons_root()
-IG_ROOT = REPO_ROOT / "tools" / "inspect-gate"
+IG_ROOT = _portal_repo_root()
 sys.path.insert(0, str(REPO_ROOT))
 
 from inspect_gate import io as _io
