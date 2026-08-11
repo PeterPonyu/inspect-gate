@@ -1,6 +1,6 @@
 {
   "source": "MPDD (Metal Parts Defect Detection), native MVTec-AD layout",
-  "mpdd_root": "/root/autodl-tmp/MPDD",
+  "mpdd_root": "${AUTODL_TMP}/MPDD",
   "archive_sha256": "69f8da73eea4a31451a50251e5c261e83e0c53f2d1a39a7d4dfc78b5c434ddd6",
   "categories": [
     "bracket_black",

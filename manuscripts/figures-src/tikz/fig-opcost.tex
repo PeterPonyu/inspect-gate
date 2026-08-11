@@ -16,7 +16,9 @@
 % Panel letter via house \panellabelshift → (a) 9pt bold black.
 % Deep left + raised park clears long rotated ylabels (esp. panel d
 % "(lower=faster)" whose top sits near axis NW).
+% a/c keep -52pt; b/d nudged +12pt right (less deep into column gutter).
 \newcommand{\opcostlabel}[2]{\panellabelshift{#1}{#2}{-52pt}{32pt}}
+\newcommand{\opcostlabelBD}[2]{\panellabelshift{#1}{#2}{-40pt}{32pt}}
 
 \begin{document}
 \begin{tikzpicture}[font=\figfont]
@@ -105,7 +107,7 @@
   node[pos=0.16, below=9pt, font=\tickfont, text=black] {precision}
   node[pos=0.50, below=9pt, font=\tickfont, text=black] {general}
   node[pos=0.84, below=9pt, font=\tickfont, text=black] {commodity};
-\opcostlabel{axb}{b}
+\opcostlabelBD{axb}{b}
 
 % Panel c: four-method mid-vol
 \begin{axis}[
@@ -149,7 +151,7 @@
 ]
 \input{../out/opcost-panel-d.tex}
 \end{axis}
-\opcostlabel{axd}{d}
+\opcostlabelBD{axd}{d}
 
 \end{tikzpicture}
 \end{document}

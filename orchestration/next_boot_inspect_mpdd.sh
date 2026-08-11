@@ -36,9 +36,9 @@ RELIABILITY_COMMONS="${RELIABILITY_COMMONS:-/root/reliability-commons}"
 DINOMALY_HOME="${DINOMALY_HOME:-/root/Dinomaly}"
 
 # --- tunables (named defaults; no inline magic denominators) ----------------
-RESULTS_DIR="${RESULTS_DIR:-/root/autodl-tmp/mpdd_brancha}"
+RESULTS_DIR="${RESULTS_DIR:-${AUTODL_TMP}/mpdd_brancha}"
 MARKERS_DIR="$RESULTS_DIR/markers"
-MPDD_ROOT="${MPDD_ROOT:-/root/autodl-tmp/MPDD}"               # native MVTec layout root
+MPDD_ROOT="${MPDD_ROOT:-${AUTODL_TMP}/MPDD}"               # native MVTec layout root
 MPDD_LOCAL_ZIP="${MPDD_LOCAL_ZIP:-}"                          # preferred if set
 MPDD_ZIP_URL="${MPDD_ZIP_URL:-https://huggingface.co/datasets/meksamiao/mpdd/resolve/main/MPDD.zip}"
 MPDD_MANIFEST="${MPDD_MANIFEST:-$RESULTS_DIR/mpdd_split_manifest.json}"
@@ -144,19 +144,19 @@ if [ ! -d "$MPDD_ROOT/bracket_black/train/good" ]; then
   if [ -n "$MPDD_LOCAL_ZIP" ] && [ -s "$MPDD_LOCAL_ZIP" ]; then
     zip="$MPDD_LOCAL_ZIP"; echo "using local zip $zip"
   else
-    zip="/root/autodl-tmp/MPDD.zip"
+    zip="${AUTODL_TMP}/MPDD.zip"
     echo "downloading MPDD from $MPDD_ZIP_URL"
     curl -sSL -C - -o "$zip" "$MPDD_ZIP_URL" || echo "warning: MPDD download non-zero"
   fi
   mkdir -p "$MPDD_ROOT"
   # zip may wrap the 6 category dirs in a top-level MPDD/ -- extract then
   # normalise so $MPDD_ROOT holds the 6 category dirs directly.
-  tmpx="/root/autodl-tmp/_mpdd_extract"; rm -rf "$tmpx"; mkdir -p "$tmpx"
+  tmpx="${AUTODL_TMP}/_mpdd_extract"; rm -rf "$tmpx"; mkdir -p "$tmpx"
   unzip -q -o "$zip" -d "$tmpx" || echo "warning: unzip non-zero"
   if [ -d "$tmpx/MPDD/bracket_black" ]; then src="$tmpx/MPDD"; elif [ -d "$tmpx/bracket_black" ]; then src="$tmpx"; else src="$(dirname "$(find "$tmpx" -type d -name bracket_black | head -1)")"; fi
   [ -n "${src:-}" ] && cp -rn "$src"/* "$MPDD_ROOT"/ 2>/dev/null
 fi
-sha=$(sha256sum "${MPDD_LOCAL_ZIP:-/root/autodl-tmp/MPDD.zip}" 2>/dev/null | awk '{print $1}')
+sha=$(sha256sum "${MPDD_LOCAL_ZIP:-${AUTODL_TMP}/MPDD.zip}" 2>/dev/null | awk '{print $1}')
 if python3 "$ORCH/mpdd_prep.py" "$MPDD_ROOT" "$MPDD_MANIFEST" \
      --expect-train-good "$EXPECT_TRAIN_GOOD" --expect-test "$EXPECT_TEST" \
      --archive-sha256 "${sha:-unknown}" 2>&1 | tee "$RESULTS_DIR/mpdd_prep.log" | grep -q "MPDD_PREP_OK"; then
@@ -179,7 +179,7 @@ if [ "$(cat "$MARKERS_DIR/MPDD_STAGED.marker" 2>/dev/null)" = "OK" ]; then
         --seed "$s" --device cuda --out "$f" \
         || echo "warning: patchcore $c seed $s non-zero -- gate below authoritative"
       [ -s "$f" ] || pc_fail=1
-      rm -rf /root/autodl-tmp/anomalib_results/* 2>/dev/null   # anomalib fills the data disk otherwise
+      rm -rf ${AUTODL_TMP}/anomalib_results/* 2>/dev/null   # anomalib fills the data disk otherwise
     done
   done
   n_cells=$(find "$RESULTS_DIR/patchcore" -name "scores_*.jsonl" -size +0 | wc -l)
@@ -203,7 +203,7 @@ if [ "$HOLDOUT_ARM" = "1" ] && [ "$(cat "$MARKERS_DIR/MPDD_STAGED.marker" 2>/dev
     --seed "$SMOKE_SEED" --device cuda --holdout-frac "$HOLDOUT_FRAC" \
     --holdout-seed "$HOLDOUT_SEED" --out "$sf" \
     || echo "warning: holdout smoke non-zero -- gate below authoritative"
-  rm -rf /root/autodl-tmp/anomalib_results/* 2>/dev/null
+  rm -rf ${AUTODL_TMP}/anomalib_results/* 2>/dev/null
   # Content gate: scores present AND the provenance sidecar carries a
   # non-empty holdout_ids list (proves the partition + holdout predict ran).
   if [ -s "$sf" ] && python3 - "$sf" << 'PY'
@@ -233,7 +233,7 @@ PY
           --holdout-seed "$HOLDOUT_SEED" --out "$f" \
           || echo "warning: patchcore-holdout $c seed $s non-zero -- gate below authoritative"
         { [ -s "$f" ] && [ -s "${f%.jsonl}.holdout_provenance.json" ]; } || ho_fail=1
-        rm -rf /root/autodl-tmp/anomalib_results/* 2>/dev/null
+        rm -rf ${AUTODL_TMP}/anomalib_results/* 2>/dev/null
       done
     done
     n_ho=$(find "$RESULTS_DIR/patchcore_holdout" -name "scores_*.jsonl" -size +0 | wc -l)

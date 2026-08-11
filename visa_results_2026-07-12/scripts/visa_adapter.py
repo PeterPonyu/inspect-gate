@@ -3,7 +3,7 @@
 
 Two source schemas from the 2026-07-12 visa_brancha box run:
   * Dinomaly (dinomaly_visa_uni, Branch-A patch): per-category JSON dict
-    ``{"/root/autodl-tmp/VisA_pytorch_dino/1cls/<cat>/test/<good|bad>/<stem>.png":
+    ``{str(_autodl_tmp() / 'VisA_pytorch_dino' / '1cls' / '<cat>' / 'test' / '<good|bad>' / '<stem>.png'):
     score}`` -- needs full adaptation (path parse + label join).
   * PatchCore (anomalib on ROOT_A layout): per-category canonical JSONL
     already in the ``inspect_gate.io`` schema -- validated + merged only.
@@ -32,15 +32,66 @@ from typing import NoReturn
 
 import numpy as np
 
-IG_ROOT = Path("/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate")
+
+def _portal_commons_root():
+    import os
+    from pathlib import Path
+    for key in ("COMMONS_ROOT", "RELIABILITY_COMMONS"):
+        v = os.environ.get(key)
+        if v:
+            p = Path(v).expanduser().resolve()
+            if p.is_dir():
+                return p
+    here = Path(__file__).resolve()
+    for parent in [here.parent, *here.parents]:
+        for cand in (parent / "reliability-commons", parent.parent / "reliability-commons"):
+            if cand.is_dir():
+                return cand
+    raise RuntimeError(
+        "Set COMMONS_ROOT to the reliability-commons checkout (or place it as a sibling of this repo)."
+    )
+
+def _portal_repo_root():
+    from pathlib import Path
+    here = Path(__file__).resolve().parent
+    for p in [here, *here.parents]:
+        if (p / ".git").exists() or (p / "pyproject.toml").exists() or (p / "README.md").exists():
+            return p
+    return here
+
+def _data_root():
+    import os
+    from pathlib import Path
+    return Path(os.environ.get("DATA_ROOT", Path.home() / "data")).expanduser()
+
+def _portfolio_root():
+    """Parent of theme repos when laid out as a portfolio sibling tree."""
+    from pathlib import Path
+    r = _portal_repo_root()
+    parent = r.parent
+    markers = ("reliability-commons", "inspect-gate", "materials-mlip-research", "asr-gate")
+    if any((parent / m).exists() for m in markers):
+        return parent
+    return parent
+
+def _autodl_tmp():
+    import os
+    from pathlib import Path
+    return Path(os.environ.get("AUTODL_TMP", "/tmp/autodl-tmp"))
+
+def _conda_root():
+    import os
+    from pathlib import Path
+    return Path(os.environ.get("CONDA_ROOT", Path.home() / "miniconda3")).expanduser()
+
+IG_ROOT = _portal_repo_root()
 sys.path.insert(0, str(IG_ROOT.parent.parent))  # reliability-commons on path
 sys.path.insert(0, str(IG_ROOT))
 
 from inspect_gate import io as _io  # noqa: E402
 from inspect_gate import reproduction as _repro  # noqa: E402
 
-PULL = Path("/home/zeyufu/Desktop/ml-reliability-research/orchestration_2026-07-12"
-            "/visa_pull/root/autodl-tmp/visa_brancha")
+PULL = (_portfolio_root() / "orchestration_2026-07-12" / "visa_pull" / "autodl-tmp" / "visa_brancha")
 CSV_PATH = IG_ROOT / "visa_staging" / "1cls.csv"
 OUT = IG_ROOT / "visa_results_2026-07-12"
 CANON = OUT / "canonical"

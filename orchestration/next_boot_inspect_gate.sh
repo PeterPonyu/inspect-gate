@@ -58,12 +58,12 @@ RELIABILITY_COMMONS="${RELIABILITY_COMMONS:-/root/reliability-commons}"
 # Tunables (env-overridable, named defaults -- ABSOLUTE RULE: no hardcoded
 # paths/model IDs/statistical denominators inline in the stages below).
 # ---------------------------------------------------------------------------
-RESULTS_DIR="${RESULTS_DIR:-/root/autodl-tmp/inspect_gate_pilot_results}"
-# /root/autodl-tmp/mvtec_ad is what the staged box actually uses (verified
+RESULTS_DIR="${RESULTS_DIR:-${AUTODL_TMP}/inspect_gate_pilot_results}"
+# ${AUTODL_TMP}/mvtec_ad is what the staged box actually uses (verified
 # on-box 2026-07-10) -- THE named default, mirrored in phase0.py's
 # DEFAULT_DATA_ROOT and ig_fullscore.sh's DATA_ROOT; still env-overridable.
-DATA_ROOT="${INSPECT_GATE_DATA_ROOT:-/root/autodl-tmp/mvtec_ad}"
-AUTODL_PUB_MVTEC_PATH="${AUTODL_PUB_MVTEC_PATH:-/root/autodl-pub/mvtec_anomaly_detection.tar.xz}"
+DATA_ROOT="${INSPECT_GATE_DATA_ROOT:-${AUTODL_TMP}/mvtec_ad}"
+AUTODL_PUB_MVTEC_PATH="${AUTODL_PUB_MVTEC_PATH:-${AUTODL_PUB}/mvtec_anomaly_detection.tar.xz}"
 DEVICE="${DEVICE:-cuda}"
 
 PILOT_CATEGORIES="${PILOT_CATEGORIES:-bottle screw carpet}"  # design §7
@@ -78,7 +78,7 @@ AUDIT_N_PERM="${AUDIT_N_PERM:-2000}"
 DINOMALY_SCORES_DUMP_SEED0="${DINOMALY_SCORES_DUMP_SEED0:-}"  # operator-provided, see stage_2 header
 DINOMALY_SCORES_DUMP_SEED1="${DINOMALY_SCORES_DUMP_SEED1:-}"
 
-HF_HOME="${HF_HOME:-/root/autodl-tmp/hf-cache}"
+HF_HOME="${HF_HOME:-${AUTODL_TMP}/hf-cache}"
 INSPECT_GATE_LOG="${INSPECT_GATE_LOG:-/root/inspect_gate_pilot.log}"
 GPU_UTIL_LOG="${GPU_UTIL_LOG:-/root/gpu_util.log}"
 

@@ -11,6 +11,15 @@ input_path <- normalizePath(file.path(script_dir, "../data/frozen/scoreanatomy_p
 output_path <- file.path(script_dir, "../fig-scoreanatomy.pdf")
 source(file.path(script_dir, "_figconst.R"))  # INSPECT_FONT, ROUTE_* colours
 
+# Fig-scoreanatomy page-readability bump (scoped to this figure only).
+# House ladder in _figconst / TikZ remains tick 7 / body 8 / axis 9 / panel 9;
+# raise body text one step and speed up panel tags (a–d) more aggressively
+# so they stand out relative to ticks (panel/tick: 9/7 → 14/8).
+FIG_TICK_PT <- 8
+FIG_BODY_PT <- 9
+FIG_AXIS_PT <- 10.5
+PANEL_LABEL_PT <- 14
+
 if (!file.exists(input_path)) {
   stop(sprintf("FATAL: frozen score-anatomy input not found: %s", input_path))
 }
@@ -61,18 +70,19 @@ render_cell <- function(cell, side = c("left", "right")) {
   # X-axis title is drawn once per column in a dedicated strip below the grid
   # (not via plot xlab), so descenders are never clipped by the panel cell.
   if (identical(side, "left")) {
-    par(mar = c(1.90, 3.45, 3.05, 0.15))
-    title_frac <- 0.04
-    tag_adj <- 1.45
+    # Slightly taller top / wider left for larger panel tags + titles.
+    par(mar = c(1.90, 3.85, 3.35, 0.15))
+    title_frac <- 0.06
+    tag_adj <- 1.65
   } else {
     # Keep enough left margin for the "images" ylab after the narrow gutter.
-    par(mar = c(1.90, 2.55, 3.05, 0.55))
-    title_frac <- 0.18
-    tag_adj <- 1.20
+    par(mar = c(1.90, 2.95, 3.35, 0.55))
+    title_frac <- 0.22
+    tag_adj <- 1.40
   }
 
-  # Size ladder vs cairo_pdf(pointsize=12): tick 7 / body 8 / axis+title 9
-  # (mirrors \tickfont / \figfont / \axislabelfont in inspect_style.tex).
+  # Size ladder vs cairo_pdf(pointsize=12): tick / body / axis+title
+  # (Fig 2 overrides; see top-of-file FIG_* / PANEL_LABEL_PT).
   tick_cex <- FIG_TICK_PT / 12
   body_cex <- FIG_BODY_PT / 12
   axis_cex <- FIG_AXIS_PT / 12
@@ -126,9 +136,8 @@ render_cell <- function(cell, side = c("left", "right")) {
 }
 
 raw_pdf <- file.path(script_dir, "../review-scoreanatomy-build.pdf")
-# Wider canvas (more landscape) + modest height trim → less vertical whitespace
-# when scaled to column width in the paper.
-cairo_pdf(raw_pdf, width = 6.3, height = 5.55, pointsize = 12, family = font_family)
+# Slightly wider canvas so larger fonts keep readable at column width.
+cairo_pdf(raw_pdf, width = 6.5, height = 5.55, pointsize = 12, family = font_family)
 # Regions: 1=a 2=b 3=c 4=d 5=xlab strip 6=legend;
 # 7=row spacer (never plotted); 8=column gutter (never plotted).
 layout(
@@ -137,10 +146,10 @@ layout(
            3, 8, 4,
            5, 5, 5,
            6, 6, 6), nrow = 5, byrow = TRUE),
-  widths = c(1, 0.05, 1),
-  heights = c(1, 0.16, 1, 0.22, 0.14)
+  widths = c(1, 0.04, 1),
+  heights = c(1, 0.16, 1, 0.24, 0.16)
 )
-par(oma = c(0, 1.05, 0, 0), mgp = c(2.0, 0.55, 0), tcl = -0.25, family = font_family)
+par(oma = c(0, 1.15, 0, 0), mgp = c(2.0, 0.55, 0), tcl = -0.25, family = font_family)
 sides <- c("left", "right", "left", "right")
 for (i in seq_along(frozen$cells)) {
   render_cell(frozen$cells[[i]], side = sides[[i]])
@@ -152,8 +161,7 @@ text(x = c(0.26, 0.78), y = 0.70, labels = c("anomaly score", "anomaly score"),
      cex = FIG_AXIS_PT / 12, col = ANNOT_TEXT_COLOR, xpd = NA, adj = c(0.5, 0.5))
 par(mar = c(0, 0, 0, 0))
 plot.new()
-# Bottom strip legend: body 8 pt (TikZ in-axis legends use \tickfont 7 pt;
-# this shared horizontal legend needs the larger body size to stay readable).
+# Bottom strip legend: uses FIG_BODY_PT (raised for page readability).
 legend("center", legend = c("good (evaluation)", "defective (evaluation)", "defer region"),
        fill = c(adjustcolor(pass_col, 0.72), adjustcolor(defect_col, 0.62), adjustcolor(defer_col, 0.15)),
        border = NA, horiz = TRUE, bty = "n", cex = FIG_BODY_PT / 12,

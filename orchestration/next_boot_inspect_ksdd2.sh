@@ -41,10 +41,10 @@ RELIABILITY_COMMONS="${RELIABILITY_COMMONS:-/root/reliability-commons}"
 DINOMALY_HOME="${DINOMALY_HOME:-/root/Dinomaly}"
 
 # --- tunables (named defaults; no inline magic denominators) ----------------
-RESULTS_DIR="${RESULTS_DIR:-/root/autodl-tmp/ksdd2_brancha}"
+RESULTS_DIR="${RESULTS_DIR:-${AUTODL_TMP}/ksdd2_brancha}"
 MARKERS_DIR="$RESULTS_DIR/markers"
-KSDD2_NATIVE_ROOT="${KSDD2_NATIVE_ROOT:-/root/autodl-tmp/KSDD2}"          # flat train/ test/
-KSDD2_MVTEC_ROOT="${KSDD2_MVTEC_ROOT:-/root/autodl-tmp/KSDD2_mvtec}"      # built MVTec tree
+KSDD2_NATIVE_ROOT="${KSDD2_NATIVE_ROOT:-${AUTODL_TMP}/KSDD2}"          # flat train/ test/
+KSDD2_MVTEC_ROOT="${KSDD2_MVTEC_ROOT:-${AUTODL_TMP}/KSDD2_mvtec}"      # built MVTec tree
 KSDD2_LOCAL_ZIP="${KSDD2_LOCAL_ZIP:-}"                                    # preferred if set
 KSDD2_ZIP_URL="${KSDD2_ZIP_URL:-https://go.vicos.si/kolektorsdd2}"
 KSDD2_MANIFEST="${KSDD2_MANIFEST:-$RESULTS_DIR/ksdd2_split_manifest.json}"
@@ -139,21 +139,21 @@ if [ ! -d "$KSDD2_MVTEC_ROOT/kolektor_surface/train/good" ]; then
     if [ -n "$KSDD2_LOCAL_ZIP" ] && [ -s "$KSDD2_LOCAL_ZIP" ]; then
       zip="$KSDD2_LOCAL_ZIP"; echo "using local zip $zip"
     else
-      zip="/root/autodl-tmp/KolektorSDD2.zip"
+      zip="${AUTODL_TMP}/KolektorSDD2.zip"
       echo "downloading KSDD2 from $KSDD2_ZIP_URL"
       curl -sSL -C - -o "$zip" "$KSDD2_ZIP_URL" || echo "warning: KSDD2 download non-zero"
     fi
     mkdir -p "$KSDD2_NATIVE_ROOT"
     # zip may wrap train/ test/ in a top-level dir -- extract then normalise so
     # $KSDD2_NATIVE_ROOT holds train/ and test/ directly.
-    tmpx="/root/autodl-tmp/_ksdd2_extract"; rm -rf "$tmpx"; mkdir -p "$tmpx"
+    tmpx="${AUTODL_TMP}/_ksdd2_extract"; rm -rf "$tmpx"; mkdir -p "$tmpx"
     unzip -q -o "$zip" -d "$tmpx" || echo "warning: unzip non-zero"
     src=""
     if [ -d "$tmpx/train" ] && [ -d "$tmpx/test" ]; then src="$tmpx"
     else src="$(dirname "$(find "$tmpx" -type d -name train | head -1)")"; fi
     [ -n "${src:-}" ] && cp -rn "$src"/train "$src"/test "$KSDD2_NATIVE_ROOT"/ 2>/dev/null
   fi
-  sha=$(sha256sum "${KSDD2_LOCAL_ZIP:-/root/autodl-tmp/KolektorSDD2.zip}" 2>/dev/null | awk '{print $1}')
+  sha=$(sha256sum "${KSDD2_LOCAL_ZIP:-${AUTODL_TMP}/KolektorSDD2.zip}" 2>/dev/null | awk '{print $1}')
   if python3 "$ORCH/ksdd2_prep.py" "$KSDD2_NATIVE_ROOT" "$KSDD2_MVTEC_ROOT" "$KSDD2_MANIFEST" \
        --expect-train-good "$EXPECT_TRAIN_GOOD" --expect-test-good "$EXPECT_TEST_GOOD" \
        --expect-test-defect "$EXPECT_TEST_DEFECT" \
@@ -165,7 +165,7 @@ if [ ! -d "$KSDD2_MVTEC_ROOT/kolektor_surface/train/good" ]; then
   fi
 else
   echo "KSDD2 MVTec tree already present; re-freezing manifest (verify only)"
-  sha=$(sha256sum "${KSDD2_LOCAL_ZIP:-/root/autodl-tmp/KolektorSDD2.zip}" 2>/dev/null | awk '{print $1}')
+  sha=$(sha256sum "${KSDD2_LOCAL_ZIP:-${AUTODL_TMP}/KolektorSDD2.zip}" 2>/dev/null | awk '{print $1}')
   if python3 "$ORCH/ksdd2_prep.py" "$KSDD2_NATIVE_ROOT" "$KSDD2_MVTEC_ROOT" "$KSDD2_MANIFEST" \
        --expect-train-good "$EXPECT_TRAIN_GOOD" --expect-test-good "$EXPECT_TEST_GOOD" \
        --expect-test-defect "$EXPECT_TEST_DEFECT" \
@@ -205,7 +205,7 @@ if [ "$(cat "$MARKERS_DIR/KSDD2_STAGED.marker" 2>/dev/null)" = "OK" ]; then
         --seed "$s" --device cuda --out "$f" \
         || echo "warning: patchcore $c seed $s non-zero -- gate below authoritative"
       [ -s "$f" ] || pc_fail=1
-      rm -rf /root/autodl-tmp/anomalib_results/* 2>/dev/null   # anomalib fills the data disk otherwise
+      rm -rf ${AUTODL_TMP}/anomalib_results/* 2>/dev/null   # anomalib fills the data disk otherwise
     done
   done
   n_cells=$(find "$RESULTS_DIR/patchcore" -name "scores_*.jsonl" -size +0 | wc -l)
@@ -226,7 +226,7 @@ if [ "$HOLDOUT_ARM" = "1" ] && [ "$(cat "$MARKERS_DIR/KSDD2_STAGED.marker" 2>/de
     --seed "$SMOKE_SEED" --device cuda --holdout-frac "$HOLDOUT_FRAC" \
     --holdout-seed "$HOLDOUT_SEED" --out "$sf" \
     || echo "warning: holdout smoke non-zero -- gate below authoritative"
-  rm -rf /root/autodl-tmp/anomalib_results/* 2>/dev/null
+  rm -rf ${AUTODL_TMP}/anomalib_results/* 2>/dev/null
   # Content gate: scores present AND the provenance sidecar carries a
   # non-empty holdout_ids_by_category (proves the partition + holdout predict ran).
   if [ -s "$sf" ] && python3 - "$sf" << 'PY'
@@ -253,7 +253,7 @@ PY
           --holdout-seed "$HOLDOUT_SEED" --out "$f" \
           || echo "warning: patchcore-holdout $c seed $s non-zero -- gate below authoritative"
         { [ -s "$f" ] && [ -s "${f%.jsonl}.holdout_provenance.json" ]; } || ho_fail=1
-        rm -rf /root/autodl-tmp/anomalib_results/* 2>/dev/null
+        rm -rf ${AUTODL_TMP}/anomalib_results/* 2>/dev/null
       done
     done
     n_ho=$(find "$RESULTS_DIR/patchcore_holdout" -name "scores_*.jsonl" -size +0 | wc -l)

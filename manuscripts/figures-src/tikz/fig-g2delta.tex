@@ -5,7 +5,7 @@
 %   titles @ 1.015 — tight to the axis top; panel letters on this row in the gutter
 %   c/d legends — TikZ nodes @34pt above axis.north (south-anchored); clears titles
 %   a/b shared legend — TikZ node @26pt above the a/b midline
-%   a/b row @ 3.10in — clears c/d legend tops (~2.94) + a/b rotated x-labels
+%   a/b row @ 2.92in — clears c/d legend tops (~2.94) with x-labels tucked into gutter
 % Panel-d legend is a TikZ node (not pgfplots ybar legend — tall samples collided).
 \documentclass[border=2pt]{standalone}
 \input{inspect_style.tex}
@@ -30,11 +30,11 @@
 }
 
 % Panel a: MVTec tiles
-% a/b at 3.10in: c/d north=2.35; c/d legend south@34pt≈2.82; top≈2.96;
-% ~0.14in left for a/b rotated x-labels hanging into the row gutter.
+% a/b at 2.92in: c/d north=2.35; c/d legend south@34pt≈2.82; top≈2.96;
+% ~0.04in nominal axis-to-legend clearance; rotated x-labels tuck into the gutter.
 \begin{axis}[
   inspect default,
-  name=axa, width=2.55in, height=1.15in, at={(0.55in,3.10in)},
+  name=axa, width=2.55in, height=1.15in, at={(0.55in,2.92in)},
   xmin=0, xmax=15, ymin=0, ymax=2,
   xtick={0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5,13.5,14.5},
   xticklabels={bot,cab,cap,car,grd,haz,lea,nut,pil,scr,til,tbr,tra,woo,zip},
@@ -55,7 +55,7 @@
 % Panel b: MPDD tiles
 \begin{axis}[
   inspect default,
-  name=axb, width=1.70in, height=1.15in, at={(3.55in,3.10in)},
+  name=axb, width=1.70in, height=1.15in, at={(3.55in,2.92in)},
   xmin=0, xmax=6, ymin=0, ymax=2,
   xtick={0.5,1.5,2.5,3.5,4.5,5.5},
   xticklabels={b-blk,b-brn,b-wht,conn,plate,tubes},

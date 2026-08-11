@@ -1,4 +1,4 @@
-Wrote /home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/opcost_analysis_2026-07-16/results.json
+Wrote ${REPO_ROOT}/opcost_analysis_2026-07-16/results.json
 
 === MPDD ===
   gate rates: escaped=0.0663 fr=0.0000 defer=0.7309

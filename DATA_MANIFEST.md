@@ -8,11 +8,11 @@ types, pixel-level ground truth (unused by this package -- inspect-gate
 is image-level only, design §2.2).
 
 **Staged copy (this portfolio's convention, per
-`SOTA-REPRODUCTION-PLAN-2026-07-10.md` §5): the `/root/autodl-pub` mirror,
+`SOTA-REPRODUCTION-PLAN-2026-07-10.md` §5): the `${AUTODL_PUB}` mirror,
 `mvtec_anomaly_detection.tar.xz` (~5.3GB), zero download cost per
 container.** Override via `AUTODL_PUB_MVTEC_PATH` (default
-`/root/autodl-pub/mvtec_anomaly_detection.tar.xz`); extraction target via
-`INSPECT_GATE_DATA_ROOT` (default `/root/autodl-tmp/mvtec_anomaly_detection`,
+`${AUTODL_PUB}/mvtec_anomaly_detection.tar.xz`); extraction target via
+`INSPECT_GATE_DATA_ROOT` (default `${AUTODL_TMP}/mvtec_anomaly_detection`,
 the DATA disk, never the system disk -- standing portfolio rule).
 
 ## Checksum-at-Phase-0 convention

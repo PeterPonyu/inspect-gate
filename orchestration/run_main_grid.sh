@@ -46,8 +46,8 @@ EOF
 fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-RESULTS_DIR="${RESULTS_DIR:-/root/autodl-tmp/inspect_gate_main_results}"
-DATA_ROOT="${INSPECT_GATE_DATA_ROOT:-/root/autodl-tmp/mvtec_ad}"
+RESULTS_DIR="${RESULTS_DIR:-${AUTODL_TMP}/inspect_gate_main_results}"
+DATA_ROOT="${INSPECT_GATE_DATA_ROOT:-${AUTODL_TMP}/mvtec_ad}"
 DEVICE="${DEVICE:-cuda}"
 ALPHA_MISS="${ALPHA_MISS:-0.10}"
 ALPHA_FR="${ALPHA_FR:-0.05}"

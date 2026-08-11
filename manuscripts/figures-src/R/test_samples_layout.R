@@ -13,11 +13,11 @@ required <- c(
   "canvas_width_in", "canvas_height_in", "tile_size_in", "zoom_size_in",
   "zoom_padding_in", "zoom_offset_x_npc", "zoom_offset_y_npc",
   "zoom_label", "zoom_label_fontsize_pt", "zoom_label_offset_y_npc",
-  "column_x", "label_x", "label_text_x", "panel_letter_offset_y",
-  "label_text_offset_y", "panel_letter_fontsize_pt", "label_text_fontsize_pt",
-  "panel_letter_gap_after_title_in", "panel_letter_tile_clearance_in",
-  "tile_y_offset", "score_offset_y", "label_row_unit_mid_y",
-  "panel_letter_title_sep_y"
+  "column_x", "label_x", "label_text_x", "panel_letter_x",
+  "panel_letter_offset_y", "label_text_offset_y",
+  "panel_letter_fontsize_pt", "label_text_fontsize_pt",
+  "panel_letter_tile_clearance_in", "tile_y_offset", "score_offset_y",
+  "tile_half_npc"
 )
 missing <- required[!vapply(required, exists, logical(1), envir = layout_env, inherits = FALSE)]
 if (length(missing)) {
@@ -66,27 +66,45 @@ if (label_clearance_from_tile_bottom + 1e-9 < 0) {
   ))
 }
 
-# Widest row title + panel letter at its top-right must clear the
-# AUTO-PASS tile left edge. Empirical "MPDD - defect" @ 8.2 pt plain ≈ 0.90 in;
-# keep 0.95 in as a conservative upper bound. Panel letter @ PANEL_LABEL_PT
-# (9 pt) bold ≈ 0.16 in.
+# Widest row title at the left margin must clear the AUTO-PASS tile left edge.
+# Empirical "MPDD - defect" @ 8.2 pt plain ≈ 0.90 in; keep 0.95 in as a
+# conservative upper bound. Panel letter is short and shares the left margin.
 widest_label_in <- 0.95
-letter_w_in <- 0.16  # "(d)" @ 9 pt bold (house panel-label size)
 tile_left_in <- column_x[[1]] * canvas_width_in - half_tile
 title_right_in <- label_text_x * canvas_width_in + widest_label_in
-letter_right_in <- title_right_in + panel_letter_gap_after_title_in + letter_w_in
-label_tile_gap <- tile_left_in - letter_right_in
+label_tile_gap <- tile_left_in - title_right_in
 min_label_gap_in <- panel_letter_tile_clearance_in
 if (label_tile_gap + 1e-9 < min_label_gap_in) {
   stop(sprintf(
-    "FAIL: title+panel-letter collides with AUTO-PASS tile (gap %.4f in; required %.4f in)",
+    "FAIL: row title collides with AUTO-PASS tile (gap %.4f in; required %.4f in)",
     label_tile_gap, min_label_gap_in
+  ))
+}
+
+# Panel letter must sit on the row image midline (tile centre), not on a
+# combined letter+subtitle block mid.
+if (abs(panel_letter_offset_y - tile_y_offset) > 1e-9) {
+  stop(sprintf(
+    "FAIL: panel letter offset (%.4f) must equal tile_y_offset (%.4f) for image-midline centering",
+    panel_letter_offset_y, tile_y_offset
   ))
 }
 if (panel_letter_offset_y + 1e-9 < label_text_offset_y) {
   stop(sprintf(
-    "FAIL: panel letter offset (%.4f) must sit above title offset (%.4f)",
+    "FAIL: panel letter offset (%.4f) must sit above subtitle offset (%.4f)",
     panel_letter_offset_y, label_text_offset_y
+  ))
+}
+if (abs(label_text_offset_y - score_offset_y) > 1e-9) {
+  stop(sprintf(
+    "FAIL: subtitle offset (%.4f) must track score baseline (%.4f)",
+    label_text_offset_y, score_offset_y
+  ))
+}
+if (abs(panel_letter_x - label_text_x) > 1e-9) {
+  stop(sprintf(
+    "FAIL: panel letter x (%.4f) must share left gutter with subtitle x (%.4f)",
+    panel_letter_x, label_text_x
   ))
 }
 if (panel_letter_fontsize_pt + 1e-9 < label_text_fontsize_pt) {
@@ -96,25 +114,10 @@ if (panel_letter_fontsize_pt + 1e-9 < label_text_fontsize_pt) {
   ))
 }
 
-# Letter+title block mid must track the tile+score visual-unit mid.
-label_block_mid_y <- (panel_letter_offset_y + label_text_offset_y) / 2
-if (abs(label_block_mid_y - label_row_unit_mid_y) > 1e-9) {
-  stop(sprintf(
-    "FAIL: label block mid (%.4f) != row-unit mid (%.4f)",
-    label_block_mid_y, label_row_unit_mid_y
-  ))
-}
-if (abs((panel_letter_offset_y - label_text_offset_y) - panel_letter_title_sep_y) > 1e-9) {
-  stop(sprintf(
-    "FAIL: letter/title separation (%.4f) != panel_letter_title_sep_y (%.4f)",
-    panel_letter_offset_y - label_text_offset_y, panel_letter_title_sep_y
-  ))
-}
-
 cat(sprintf(
   paste0(
     "PASS: zoom contained (%.3f in pad); GT label below inset; ",
-    "title+letter/tile gap %.3f in; label block mid %.4f\n"
+    "title/tile gap %.3f in; letter on tile mid (%.4f); subtitle at score y (%.4f)\n"
   ),
-  zoom_padding_in, label_tile_gap, label_block_mid_y
+  zoom_padding_in, label_tile_gap, panel_letter_offset_y, label_text_offset_y
 ))
