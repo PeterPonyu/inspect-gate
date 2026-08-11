@@ -60,7 +60,7 @@
 \renewcommand{\topfraction}{0.90}
 \renewcommand{\bottomfraction}{0.70}
 \renewcommand{\textfraction}{0.08}
-\renewcommand{\floatpagefraction}{0.65}
+\renewcommand{\floatpagefraction}{0.80}
 \setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
 \setlength{\floatsep}{8pt plus 2pt minus 2pt}
 \setlength{\intextsep}{8pt plus 2pt minus 2pt}
@@ -200,8 +200,9 @@ Figure~\ref{fig:overview} summarizes the resulting pipeline, from a frozen backb
 score through the G1/G2 certificates and certifiability floor to the three-way auto-pass/defer/
 auto-reject route.
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
   \centering
+  % [!htb] (no p): forbid a dedicated float page for this mid-height overview.
   \includegraphics[width=0.8\linewidth]{../figures-src/fig-overview.pdf}
   \caption{Method overview. A frozen backbone (PatchCore or Dinomaly, interchangeable) scores each
   image; per-category calibration checks the certifiability floor
@@ -213,7 +214,9 @@ auto-reject route.
   $=\pm\infty$), defers, and is reported audited-not-certified.}
   \label{fig:overview}
 \end{figure}
-\FloatBarrier
+% No \FloatBarrier here: with [!htbp] a barrier after the overview figure strands it
+% on a near-empty float page and pushes the following body text later; let text share
+% the page with the figure (matches rie/paper_rie.tex).
 
 We are explicit about status. The preregistration was frozen on 2026-07-11 (sha256-pinned
 sign-off; Section~\ref{sec:limitations}); this manuscript reports the primary-protocol axes on
@@ -452,7 +455,7 @@ descriptive (recomputed mean $0.948$--$0.957$).
 % MPDD: mpdd_results_2026-07-13/SUMMARY.json["reproduction"] (+seed_stability_summary);
 %   ADAPTER-REPORT.json (auroc_xcheck max_abs_diff 4.9e-5; per-seed maxima 4.3/4.4/3.2/4.9/4.9e-5)
 
-\begin{table}[t]
+\begin{table}[!tbp]
   \centering
   \caption{Reproduction gate, $5$ seeds per backbone per benchmark. Mean image-AUROC range is
   over seeds; the weakest category is named. ``n/a'': no repo-confirmed published
@@ -512,7 +515,7 @@ calibrate/route/evaluate runs, which could have failed had the calibration or ro
 broken.
 % source: PREREG-DRAFT-2026-07-10.md §3 (floor table); SUMMARY.json["n_cal_count_mismatches_across_seeds"]=0; ANALYSIS-MEMO.md §3
 
-\begin{table}[t]
+\begin{table}[!tbp]
   \centering
   \small
   \caption{Per-category certifiability at $\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$
@@ -581,7 +584,7 @@ across all three benchmarks: VisA certifies both axes in every category, MVTec A
 row is hatched (refused) everywhere except the four categories in Table~\ref{tab:floors}, and
 MPDD's false-reject row is hatched throughout --- the visual complement of the same table.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\linewidth]{../figures-src/fig-categorymap.pdf}
   \caption{Per-category certification map for escaped-defect (G1) and false-reject (G2) at the
@@ -704,7 +707,7 @@ enough to certify every category.
 %   ["median_deferral_by_category"]: patchcore median 0.7407->74.1%, min bracket_brown 0.6184->61.8%,
 %   connector 1.0->100%; dinomaly median 0.7091->70.9%, min bracket_white 0.5333->53.3%, connector 1.0->100%
 
-\begin{table}[t]
+\begin{table}[!tbp]
   \centering
   \caption{V1 tier-1 (per axis, per frozen amendment A3) and kill-gates, aggregated over the
   $30$ (backbone, seed) cells across all three benchmarks. $^{\dagger}$False-reject evaluated only
@@ -809,7 +812,7 @@ across all five seeds (Holm $p=2\times10^{-3}$), with larger pooled excess-AURC 
 the headroom the near-saturated MVTec backbones deny (Table~\ref{tab:c2}, lower block).
 % source: c2_tier2_2026-07-13/c2_visa.json
 
-\begin{table}[t]\centering
+\begin{table}[!tbp]\centering
   \small
   \caption{Pooled excess-AURC audit (C2). Family $=\{$B1 fixed, B2 tuned$\}\times\{$PatchCore,
   Dinomaly$\}$, Holm $\alpha=0.05$. MVTec AD is the frozen confirmatory family: all four tests
@@ -902,7 +905,7 @@ in part, so that axis is partially gradeable there: escaped $17$ pass / $103$ fa
 $4$ pass / $66$ fail / $50$ underpowered (of $120$).
 % source: c2_tier2_2026-07-13/tier2_mvtec.json, tier2_visa.json
 
-\begin{table}[t]
+\begin{table}[!tbp]
   \centering
   \small
   \caption{V1 tier-2 grading, per category (expanded from the aggregate axis totals in the text;
@@ -976,7 +979,7 @@ main results. CRC has no mechanism to certify the false-reject side at all --- w
 every non-passed image is an auto-reject, not a deferral --- so its G2 column is structurally n/a.
 % source: baseline_comparison_2026-07-15/{results.json,RESULTS.md,runner.py}
 
-\begin{table}[t]
+\begin{table}[!tbp]
   \centering
   \small
   \caption{Our dual gate vs.\ a single-threshold CRC baseline controlling the same escaped-defect
@@ -1017,7 +1020,7 @@ false-reject guarantee CRC cannot offer, purchased by turning auto-rejects into 
 Figure~\ref{fig:crcbaseline} plots the three rates for both methods side by side across all three
 benchmarks, making the MPDD contrast in particular immediately visible.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.62\linewidth]{../figures-src/fig-crcbaseline.pdf}
   \caption{Escaped-defect, false-reject, and deferral rates for our dual gate versus the
@@ -1076,7 +1079,7 @@ CPU-vs-GPU or MVTec-vs-VisA backbone comparison, that the paper contributes.
 % frozen measurements support, so the 4-row table is load-bearing as-is (no merge partner
 % exists either -- no other latency table in the paper).
 
-\begin{table}[t]
+\begin{table}[!tbp]
   \centering
   \small
   \caption{Per-image latency and deployment cost. The two gate rows and the Dinomaly backbone row

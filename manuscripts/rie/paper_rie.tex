@@ -20,6 +20,8 @@
 % strand a large blank block above or below it. Placement only; no size,
 % content, or float choice changes.
 \usepackage{float}
+\floatplacement{figure}{!htbp}
+\floatplacement{table}{!htbp}
 % Pack dedicated floats-only pages from the top instead of vertically
 % centering/stretching them (kernel default \@fptop/\@fpsep/\@fpbot carry
 % "plus Nfil" stretch designed for that centering; zeroing the stretch above
@@ -39,7 +41,9 @@
 \renewcommand{\topfraction}{0.90}
 \renewcommand{\bottomfraction}{0.70}
 \renewcommand{\textfraction}{0.08}
-\renewcommand{\floatpagefraction}{0.65}
+% 0.80: mid-height figures (overview, etc.) must share a page with text instead
+% of claiming a sparse dedicated float page under [!htbp].
+\renewcommand{\floatpagefraction}{0.80}
 % Slightly tighter float/caption gaps (still within elsarticle norms) so
 % mid-height figures leave room for following text instead of orphaning it.
 \setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
@@ -209,8 +213,9 @@ Figure~\ref{fig:overview} summarizes the resulting pipeline, from a frozen backb
 score through the G1/G2 certificates and certifiability floor to the three-way auto-pass/defer/
 auto-reject route.
 
-\begin{figure}[htbp]
+\begin{figure}[!htb]
   \centering
+  % [!htb] (no p): forbid a dedicated float page for this mid-height overview.
   % Width widened vs. the canonical/JIM kits (0.8\linewidth there): elsarticle's
   \includegraphics[width=\linewidth]{figures/fig-overview.pdf}
   \caption{Horizontal method overview. A frozen, interchangeable PatchCore or Dinomaly backbone
@@ -351,7 +356,7 @@ Table~\ref{tab:glossary} collects the short-codes reused throughout
 Sections~\ref{sec:methods}--\ref{sec:limitations}, as a single reference point instead of a
 re-derivation on each reuse.
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \footnotesize
   \caption{Notation and short-code glossary. Every code below recurs at least twice in
@@ -386,7 +391,9 @@ re-derivation on each reuse.
     \bottomrule
   \end{tabular}}
 \end{table}
-\FloatBarrier
+% No \FloatBarrier here: the glossary table is taller than the residual space at the
+% Methods open, so a barrier forced a near-empty page 7 before the table could place.
+% With [!htbp], let following §3.1 text fill that page while the table floats nearby.
 
 \subsection{The three-way gate and its two certificates}
 \label{sec:gate}
@@ -515,7 +522,7 @@ This is the honesty rule that makes the floor table (Section~\ref{sec:floors}) a
 than a limitation.
 
 The gate's mechanism is made concrete on one repeat of the frozen protocol in Figure~\ref{fig:scoreanatomy}.
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.97\linewidth]{figures/fig-scoreanatomy.pdf}
 \caption{The gate's mechanism on real scores (seed $0$, repeat $0$; evaluation-half
@@ -643,7 +650,7 @@ score records are joined to those splits with refusal on any missing or extra im
 % visa_results_2026-07-12/ADAPTER-REPORT.json (official_test_counts)
 
 Figure~\ref{fig:samples} illustrates the three-way decisions on real parts across the route and ground-truth classes.
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.92\linewidth]{figures/fig-samples.pdf}
 \caption{Three-way decisions on real parts (PatchCore, seed 0, repeat-0 split;
@@ -727,7 +734,7 @@ descriptive (recomputed mean $0.948$--$0.957$).
 % MPDD: mpdd_results_2026-07-13/SUMMARY.json["reproduction"] (+seed_stability_summary);
 %   ADAPTER-REPORT.json (auroc_xcheck max_abs_diff 4.9e-5; per-seed maxima 4.3/4.4/3.2/4.9/4.9e-5)
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \caption{Reproduction gate, $5$ seeds per backbone per benchmark. Mean image-AUROC range is
   over seeds; the weakest category is named. ``n/a'': no repo-confirmed published
@@ -826,7 +833,7 @@ across all three benchmarks: VisA certifies both axes in every category, MVTec A
 row is hatched (refused) everywhere except the four categories in Table~\ref{tab:floors}, and
 MPDD's false-reject row is hatched throughout --- the visual complement of the same table.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\linewidth]{figures/fig-categorymap.pdf}
   \caption{Per-category certification map for escaped-defect (G1) and false-reject (G2) at the
@@ -857,7 +864,7 @@ path V1$\to$C2.
 \label{sec:frontier}
 
 The post-freeze operating-point sweep is shown in Figure~\ref{fig:alphafrontier}.
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.92\linewidth]{figures/fig-alphafrontier.pdf}
 \caption{The operating-point frontier on the frozen code path (post-freeze exploratory
@@ -899,7 +906,7 @@ $\alpha_{\text{miss}}=0.01$ collapse is shown, not asserted
 \label{sec:calfraction}
 
 The calibration-budget sensitivity is shown in Figure~\ref{fig:calfraction}.
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig-calfraction.pdf}
 \caption{Calibration-budget sensitivity at the paper's operating point
@@ -957,7 +964,7 @@ and above whatever pool the detector itself was fitted on. Figure~\ref{fig:calpl
 Equation~\eqref{eq:planning} into a procurement curve and prices the three benchmarks against it.
 % Place the float immediately after its citation so the long "Three readings"
 % paragraph cannot push it into a near-empty orphan page.
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=\linewidth]{figures/fig-calplanning.pdf}
   \caption{Calibration-pool planning curves from the frozen per-category pool sizes.
@@ -1030,7 +1037,7 @@ auto-reject, not a deferral --- so its G2 column is structurally n/a.
 \end{equation}
 % source: baseline_comparison_2026-07-15/{results.json,RESULTS.md,runner.py}
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Our dual gate vs.\ a single-threshold CRC baseline controlling the same escaped-defect
@@ -1081,7 +1088,7 @@ backbone, and exposes that CRC's VisA false-reject is itself strongly backbone-d
 ($28.8\%$ PatchCore vs.\ $3.7\%$ Dinomaly) --- the dual gate's deferral mechanism matters most
 exactly where the detector underneath is weakest.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
   \centering
   % Panels a-d generated by R/process_crcbaseline.R -> out/crcbaseline-panel-*.tex,
   % rendered via tikz/fig-crcbaseline.tex (R/CSV/TikZ pipeline).
@@ -1132,7 +1139,7 @@ in the released artifact set of the code-and-data deposit; Table~\ref{tab:opcost
 shows the mid-volume scenario.
 % source: opcost_analysis_2026-07-16/{script.py,results.json,RESULTS.md} (downstream cost-model transform of baseline_comparison_2026-07-15/results.json; no frozen number altered)
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Deployment cost analysis, mid-volume general industrial scenario ($600$
@@ -1188,7 +1195,7 @@ scenario-dependent by construction, while the throughput-invariant breakeven
 quantities above are the assumption-robust takeaway.
 
 Figure~\ref{fig:opcost} shows the deployment economics of the certified gate versus the CRC baseline.
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig-opcost.pdf}
 \caption{Deployment economics of the certified gate versus the CRC single-threshold
@@ -1243,7 +1250,7 @@ CPU-vs-GPU or MVTec-vs-VisA backbone comparison, that the paper contributes.
 % frozen measurements support, so the 4-row table is load-bearing as-is (no merge partner
 % exists either -- no other latency table in the paper).
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Per-image latency and deployment cost. The two gate rows and the Dinomaly backbone row
@@ -1295,7 +1302,7 @@ in any promoted seed aggregate.
 
 \paragraph{What the remedy costs and delivers (post-freeze pricing).} Figure~\ref{fig:g2delta} shows the per-category certification flip.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/fig-g2delta.pdf}
 \caption{The G2 train-holdout remedy (PatchCore; seeds $0$--$3$ identical, seed $4$ differs on
@@ -1414,7 +1421,7 @@ preregistered arm --- and is reported verdict-honestly: had no cell bound, we wo
 binding cell: in each row the naive threshold sits beyond the target line while the certified
 gate holds it, at the annotated deferral price.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth,height=0.42\textheight,keepaspectratio]{figures/fig-binding-escaped.pdf}
 \caption{Binding cells on the escaped-defect axis (post-hoc). Per (backbone, category)
@@ -1426,7 +1433,7 @@ dashed line is the $\alpha_{\text{miss}}=0.10$ target. MV $=$ MVTec AD, VA $=$ V
 \FloatBarrier
 
 Figure~\ref{fig:bindingfr} reports the corresponding false-reject binding cells under the same encoding.
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{figures/fig-binding-fr.pdf}
 \caption{Binding cells on the false-reject axis (post-hoc). Same encoding as
@@ -1475,7 +1482,7 @@ deferral is what the same gate, same code path, spends when the good pools are l
 certify every category.
 
 The per-repeat validity audit is shown in Figure~\ref{fig:validity}.
-\begin{figure}[tbp]
+\begin{figure}[!tbp]
 \centering
 \includegraphics[width=\linewidth,height=0.52\textheight,keepaspectratio]{figures/fig-validity.pdf}
 \caption{Per-repeat realized rates (frozen protocol; $6{,}400$ escaped-defect and $3{,}200$
@@ -1499,7 +1506,7 @@ not a validity breach (Section~\ref{sec:calfraction} shows the same invariance h
 a tenth of the calibration budget).
 
 Figure~\ref{fig:deferral} shows median deferral per category for both backbones.
-\begin{figure}[tbp]
+\begin{figure}[!tbp]
 \centering
 \includegraphics[width=\linewidth,height=0.48\textheight,keepaspectratio]{figures/fig-deferral.pdf}
 \caption{Median deferral per category, seeds $0$--$4$ (dot = seed 0, shaded band = seed
@@ -1516,7 +1523,7 @@ there.}
 %   ["median_deferral_by_category"]: patchcore median 0.7407->74.1%, min bracket_brown 0.6184->61.8%,
 %   connector 1.0->100%; dinomaly median 0.7091->70.9%, min bracket_white 0.5333->53.3%, connector 1.0->100%
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \caption{V1 tier-1 (per axis, per frozen amendment A3) and kill-gates, aggregated over the
   $30$ (backbone, seed) cells across all three benchmarks. $^{\dagger}$False-reject evaluated only
@@ -1625,7 +1632,7 @@ has no corresponding dump.
 % source: b3_patchcore_2026-07-13/results.json (primary + sensitivity + combined 5-member Holm)
 % source: c2_tier2_2026-07-13/c2_mvtec.json (per-seed raw, per-seed Holm, cross-seed rollup)
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Post-freeze train-side score availability. A cell is one (category, seed)
@@ -1660,7 +1667,7 @@ across all five seeds (Holm $p=2\times10^{-3}$), with larger pooled excess-AURC 
 the headroom the near-saturated MVTec backbones deny (Table~\ref{tab:c2}, lower block).
 % source: c2_tier2_2026-07-13/c2_visa.json
 
-\begin{table}[htbp]\centering
+\begin{table}[!htbp]\centering
   \small
   \caption{Pooled excess-AURC audit (C2). Family $=\{$B1 fixed, B2 tuned$\}\times\{$PatchCore,
   Dinomaly$\}$, Holm $\alpha=0.05$. MVTec AD is the frozen confirmatory family: all four tests
@@ -1774,7 +1781,7 @@ $13.3\%$, maximum $37.0\%$ on VisA \texttt{macaroni1}) and level-3 defocus ($13/
 maximum $33.3\%$ on MPDD \texttt{bracket\_white}). The worst accepted false-reject point estimate is
 $11.9\%$ (PatchCore, VisA \texttt{pcb3}, contrast level~3).
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Corruption-drift stress test (post-freeze exploratory). Thresholds are calibrated on
@@ -1938,7 +1945,7 @@ a rank-ordering-level statistic (e.g.\ a permutation test on the gate's certifie
 itself, or an AUC-level statistic across both pools) --- which is the required direction before
 any drift-facing deployment claim (Figure~\ref{fig:jointmon}).
 
-\begin{figure}[tbp]\centering
+\begin{figure}[!tbp]\centering
 \includegraphics[width=0.97\linewidth,height=0.55\textheight,keepaspectratio]{figures/fig-jointmon.pdf}
 \caption{The drift-monitor design space, tested (post-freeze exploratory, seed 0; frozen joint
 record). \textbf{a:} catch rate (filled) vs.\ false-alarm rate (open) per monitor variant and
@@ -1973,7 +1980,7 @@ architecture-controlled (Dinomaly is a single multi-class model across all twelv
 PatchCore per-category), so the transfer figures there are descriptive
 (Figure~\ref{fig:xdet}).
 
-\begin{figure}[tbp]\centering
+\begin{figure}[!tbp]\centering
 \includegraphics[width=\linewidth,height=0.55\textheight,keepaspectratio]{figures/fig-xdet.pdf}
 \caption{Calibrated gates do not transfer across detectors (post-freeze exploratory,
 seed-level; frozen transfer record). \textbf{a:} certification rate, transfer vs.\
@@ -2125,7 +2132,7 @@ Figures~\ref{fig:mondrian1}--\ref{fig:mondrian2} give the defect-type (Mondrian)
 coverage map for MVTec AD (VisA's public ground truth carries a single ``bad''
 stratum per category and MPDD is reported per category).
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Per-category certifiability at $\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$
@@ -2159,7 +2166,7 @@ stratum per category and MPDD is reported per category).
   \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Seed-$0$ median per-category deferral by benchmark and backbone
@@ -2183,7 +2190,7 @@ stratum per category and MPDD is reported per category).
   }
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{Per-backbone companion to Table~\ref{tab:crcbaseline}: our dual gate vs.\ the CRC
@@ -2214,7 +2221,7 @@ stratum per category and MPDD is reported per category).
   \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[!htbp]
   \centering
   \small
   \caption{V1 tier-2 grading, per category (expanded from the aggregate axis totals in the text;

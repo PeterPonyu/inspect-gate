@@ -75,6 +75,8 @@ for (j in seq_along(column_x)) {
 for (i in seq_along(rows)) {
   row <- rows[[i]]
   # House style: only panel letters are bold; row titles stay medium/plain.
+  # Letter and subtitle are separate nodes: letter on the row-image midline,
+  # subtitle in the lower-left (not a combined centered block).
   title_gp <- gpar(
     fontsize = label_text_fontsize_pt, fontface = "plain", fontfamily = font_family
   )
@@ -82,30 +84,16 @@ for (i in seq_along(rows)) {
     fontsize = panel_letter_fontsize_pt, fontface = PANEL_LABEL_FACE,
     col = PANEL_LABEL_COLOR, fontfamily = font_family
   )
+  panel_tag <- panel_label_text(row$panel)
+  grid.text(
+    panel_tag,
+    x = panel_letter_x, y = row_y[[i]] + panel_letter_offset_y, just = "left",
+    gp = letter_gp
+  )
   grid.text(
     row$label,
     x = label_text_x, y = row_y[[i]] + label_text_offset_y, just = "left",
     gp = title_gp
-  )
-  # Panel letter at the top-right of the title string; clamp so it never
-  # reaches the AUTO-PASS tile's top-left corner.
-  title_w_npc <- convertWidth(
-    grobWidth(textGrob(row$label, gp = title_gp)), "npc", valueOnly = TRUE
-  )
-  panel_tag <- panel_label_text(row$panel)
-  letter_w_npc <- convertWidth(
-    grobWidth(textGrob(panel_tag, gp = letter_gp)), "npc", valueOnly = TRUE
-  )
-  tile_left_npc <- column_x[[1]] - tile_size_in / (2 * canvas_width_in)
-  letter_x <- label_text_x + title_w_npc +
-    panel_letter_gap_after_title_in / canvas_width_in
-  max_letter_x <- tile_left_npc -
-    panel_letter_tile_clearance_in / canvas_width_in - letter_w_npc
-  if (letter_x > max_letter_x) letter_x <- max_letter_x
-  grid.text(
-    panel_tag,
-    x = letter_x, y = row_y[[i]] + panel_letter_offset_y, just = "left",
-    gp = letter_gp
   )
 
   for (j in seq_along(column_x)) {
