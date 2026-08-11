@@ -12,14 +12,14 @@ export CHAIN_LOG="${CHAIN_LOG:-/root/visa_brancha.log}"
 source /root/reliability-commons/tools/boxkit/chain_lib.sh
 chain_prologue
 
-RESULTS_DIR="${RESULTS_DIR:-/root/autodl-tmp/visa_brancha}"
+RESULTS_DIR="${RESULTS_DIR:-${AUTODL_TMP}/visa_brancha}"
 MARKERS_DIR="$RESULTS_DIR/markers"
 mkdir -p "$RESULTS_DIR" "$MARKERS_DIR"
-RAW="${VISA_RAW:-/root/autodl-tmp/visa_raw}"
-TAR="${VISA_TAR:-/root/autodl-tmp/VisA_20220922.tar}"
-CSV="${VISA_SPLIT_CSV:-/root/autodl-tmp/1cls.csv}"
-PYROOT_A="${VISA_PYROOT_A:-/root/autodl-tmp/VisA_pytorch/1cls}"        # anomalib naming (<stem>_mask.png)
-PYROOT_B="${VISA_PYROOT_B:-/root/autodl-tmp/VisA_pytorch_dino/1cls}"  # Dinomaly naming (<stem>/000.png)
+RAW="${VISA_RAW:-${AUTODL_TMP}/visa_raw}"
+TAR="${VISA_TAR:-${AUTODL_TMP}/VisA_20220922.tar}"
+CSV="${VISA_SPLIT_CSV:-${AUTODL_TMP}/1cls.csv}"
+PYROOT_A="${VISA_PYROOT_A:-${AUTODL_TMP}/VisA_pytorch/1cls}"        # anomalib naming (<stem>_mask.png)
+PYROOT_B="${VISA_PYROOT_B:-${AUTODL_TMP}/VisA_pytorch_dino/1cls}"  # Dinomaly naming (<stem>/000.png)
 CATS="candle capsules cashew chewinggum fryum macaroni1 macaroni2 pcb1 pcb2 pcb3 pcb4 pipe_fryum"
 SEEDS="${VISA_SEEDS:-0 1 2 3 4}"
 GPU_WAIT_S="${VISA_GPU_WAIT_S:-172800}"   # user flips the box to GPU mode
@@ -82,7 +82,7 @@ if [ "$(cat "$MARKERS_DIR/VISA_STAGED.marker")" = "OK" ]; then
       # (~500MB/cell); they are never consumed by this pipeline and filled the
       # 50GB data disk at 100% on 2026-07-12 (2nd occurrence of the 07-10
       # incident). Purge after every cell.
-      rm -rf /root/autodl-tmp/anomalib_results/* 2>/dev/null
+      rm -rf ${AUTODL_TMP}/anomalib_results/* 2>/dev/null
     done
   done
   n_cells=$(find "$RESULTS_DIR/patchcore" -name "scores_*.jsonl" -size +0 | wc -l)

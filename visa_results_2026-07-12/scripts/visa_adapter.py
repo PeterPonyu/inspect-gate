@@ -3,7 +3,7 @@
 
 Two source schemas from the 2026-07-12 visa_brancha box run:
   * Dinomaly (dinomaly_visa_uni, Branch-A patch): per-category JSON dict
-    ``{"/root/autodl-tmp/VisA_pytorch_dino/1cls/<cat>/test/<good|bad>/<stem>.png":
+    ``{"${AUTODL_TMP}/VisA_pytorch_dino/1cls/<cat>/test/<good|bad>/<stem>.png":
     score}`` -- needs full adaptation (path parse + label join).
   * PatchCore (anomalib on ROOT_A layout): per-category canonical JSONL
     already in the ``inspect_gate.io`` schema -- validated + merged only.
@@ -32,15 +32,15 @@ from typing import NoReturn
 
 import numpy as np
 
-IG_ROOT = Path("/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate")
+IG_ROOT = _portal_repo_root()
 sys.path.insert(0, str(IG_ROOT.parent.parent))  # reliability-commons on path
 sys.path.insert(0, str(IG_ROOT))
 
 from inspect_gate import io as _io  # noqa: E402
 from inspect_gate import reproduction as _repro  # noqa: E402
 
-PULL = Path("/home/zeyufu/Desktop/ml-reliability-research/orchestration_2026-07-12"
-            "/visa_pull/root/autodl-tmp/visa_brancha")
+PULL = Path("${PORTFOLIO_ROOT}/orchestration_2026-07-12"
+            "/visa_pull${AUTODL_TMP}/visa_brancha")
 CSV_PATH = IG_ROOT / "visa_staging" / "1cls.csv"
 OUT = IG_ROOT / "visa_results_2026-07-12"
 CANON = OUT / "canonical"

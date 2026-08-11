@@ -2,15 +2,15 @@
 # ingest_dinomaly_brancha.sh -- box-side: merge Branch-A per-category score
 # dumps per seed and ingest each into a canonical scores JSONL via
 # score_dinomaly.py --mode dump-ingest (full-path keys match the box's
-# /root/autodl-tmp/mvtec_ad layout). CPU-only, ~seconds per seed.
+# ${AUTODL_TMP}/mvtec_ad layout). CPU-only, ~seconds per seed.
 set -uo pipefail
 
 # Non-interactive ssh does not load conda; ingest is stdlib-only so base works.
 source /root/miniconda3/etc/profile.d/conda.sh 2>/dev/null && conda activate "${CHAIN_CONDA_ENV:-base}"
 
-BA=/root/autodl-tmp/dinomaly_branchA
+BA=${AUTODL_TMP}/dinomaly_branchA
 SD=/root/reliability-commons/tools/inspect-gate/orchestration/score_dinomaly.py
-DATA=/root/autodl-tmp/mvtec_ad
+DATA=${AUTODL_TMP}/mvtec_ad
 OUT="$BA/canonical"
 mkdir -p "$OUT"
 

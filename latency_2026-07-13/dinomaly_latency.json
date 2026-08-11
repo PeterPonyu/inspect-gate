@@ -4,7 +4,7 @@
   "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU",
   "torch": "2.12.0+cu130",
   "backbone": "Dinomaly (DINOv2-base ViT, reg4, patch14)",
-  "checkpoint": "/home/zeyufu/Desktop/ml-reliability-research/orchestration_2026-07-12/visa_pull/root/autodl-tmp/visa_brancha/dinomaly/seed_0/run/model.pth",
+  "checkpoint": "${PORTFOLIO_ROOT}/orchestration_2026-07-12/visa_pull${AUTODL_TMP}/visa_brancha/dinomaly/seed_0/run/model.pth",
   "checkpoint_setting": "VisA branch-A unified, seed 0",
   "images": {
     "source": "VisA candle test images",

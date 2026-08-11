@@ -36,7 +36,7 @@ from PIL import Image
 from torchvision import transforms
 
 DINOMALY_REPO = Path(
-    "/tmp/claude-1000/-home-zeyufu-Desktop-ml-reliability-research/"
+    "${PORTFOLIO_ROOT}/"
     "4bb1ca63-4f34-4dd0-abbc-323c01490703/scratchpad/Dinomaly"
 )
 sys.path.insert(0, str(DINOMALY_REPO))
@@ -48,11 +48,11 @@ from utils import cal_anomaly_maps, get_gaussian_kernel  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 CKPT = Path(
-    "/home/zeyufu/Desktop/ml-reliability-research/orchestration_2026-07-12/"
-    "visa_pull/root/autodl-tmp/visa_brancha/dinomaly/seed_0/run/model.pth"
+    "${PORTFOLIO_ROOT}/orchestration_2026-07-12/"
+    "visa_pull${AUTODL_TMP}/visa_brancha/dinomaly/seed_0/run/model.pth"
 )
 IMG_DIR = Path(
-    "/tmp/claude-1000/-home-zeyufu-Desktop-ml-reliability-research/"
+    "${PORTFOLIO_ROOT}/"
     "4bb1ca63-4f34-4dd0-abbc-323c01490703/scratchpad/visa_imgs/candle/Data/Images"
 )
 

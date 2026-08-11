@@ -262,8 +262,8 @@
     }
   },
   "sources": {
-    "mvtec_ad": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/analysis_2026-07-10",
-    "visa": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/visa_results_2026-07-12"
+    "mvtec_ad": "${REPO_ROOT}/analysis_2026-07-10",
+    "visa": "${REPO_ROOT}/visa_results_2026-07-12"
   },
   "notes": [
     "MVTec G2 primary-protocol counts; the 2026-07-12 G2 train-holdout promotion (g2_promotion_2026-07-12/, PatchCore only -- Dinomaly has no train-side score dump) lifts MVTec G2 to 12-13/15 and is reported separately in the paper.",

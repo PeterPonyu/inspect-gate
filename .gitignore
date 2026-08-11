@@ -52,3 +52,8 @@ drift_pulled_*/
 efficientad_exploratory_pulled_*/
 x1_results_*/
 drift_analysis_*/
+.cursor/
+.playwright-mcp/
+.env
+.env.*
+!.env.example

@@ -1,5 +1,5 @@
 {
-  "csv": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/visa_staging/1cls.csv",
+  "csv": "${REPO_ROOT}/visa_staging/1cls.csv",
   "official_test_counts": {
     "candle": 200,
     "capsules": 160,

@@ -47,7 +47,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "script": "${REPO_ROOT}/inspect_gate/audit.py",
       "timestamp_utc": "2026-07-14T08:30:05.499871+00:00",
       "seeds": [
         0
@@ -107,7 +107,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "script": "${REPO_ROOT}/inspect_gate/audit.py",
       "timestamp_utc": "2026-07-14T08:30:05.573961+00:00",
       "seeds": [
         0
@@ -167,7 +167,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "script": "${REPO_ROOT}/inspect_gate/audit.py",
       "timestamp_utc": "2026-07-14T08:30:05.648057+00:00",
       "seeds": [
         0
@@ -227,7 +227,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "script": "${REPO_ROOT}/inspect_gate/audit.py",
       "timestamp_utc": "2026-07-14T08:30:05.714654+00:00",
       "seeds": [
         0
@@ -287,7 +287,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "script": "${REPO_ROOT}/inspect_gate/audit.py",
       "timestamp_utc": "2026-07-14T08:30:05.787993+00:00",
       "seeds": [
         0
@@ -347,7 +347,7 @@
     ],
     "skipped": [],
     "provenance": {
-      "script": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/inspect_gate/audit.py",
+      "script": "${REPO_ROOT}/inspect_gate/audit.py",
       "timestamp_utc": "2026-07-14T08:30:05.862788+00:00",
       "seeds": [
         0

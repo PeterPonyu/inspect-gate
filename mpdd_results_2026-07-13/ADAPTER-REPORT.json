@@ -1,6 +1,6 @@
 {
-  "manifest": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/mpdd_pulled_2026-07-14/mpdd_split_manifest.json",
-  "pull": "/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate/mpdd_pulled_2026-07-14",
+  "manifest": "${REPO_ROOT}/mpdd_pulled_2026-07-14/mpdd_split_manifest.json",
+  "pull": "${REPO_ROOT}/mpdd_pulled_2026-07-14",
   "official_test_counts": {
     "bracket_black": 79,
     "bracket_brown": 77,

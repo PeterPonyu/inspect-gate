@@ -41,7 +41,7 @@ from pathlib import Path
 import numpy as np
 from scipy.stats import ks_2samp, spearmanr
 
-IG_ROOT = Path("/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate")
+IG_ROOT = _portal_repo_root()
 sys.path.insert(0, str(IG_ROOT.parent.parent))  # reliability-commons on path
 sys.path.insert(0, str(IG_ROOT))
 from inspect_gate import io as _io            # noqa: E402

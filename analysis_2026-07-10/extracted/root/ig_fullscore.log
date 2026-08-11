@@ -1,132 +1,132 @@
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_bottle_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_bottle_seed0.jsonl
 SCORE_bottle_s0_OK n=83
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_bottle_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_bottle_seed1.jsonl
 SCORE_bottle_s1_OK n=83
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_bottle_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_bottle_seed2.jsonl
 SCORE_bottle_s2_OK n=83
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_bottle_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_bottle_seed3.jsonl
 SCORE_bottle_s3_OK n=83
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_bottle_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_bottle_seed4.jsonl
 SCORE_bottle_s4_OK n=83
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_cable_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_cable_seed0.jsonl
 SCORE_cable_s0_OK n=150
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_cable_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_cable_seed1.jsonl
 SCORE_cable_s1_OK n=150
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_cable_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_cable_seed2.jsonl
 SCORE_cable_s2_OK n=150
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_cable_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_cable_seed3.jsonl
 SCORE_cable_s3_OK n=150
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_cable_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_cable_seed4.jsonl
 SCORE_cable_s4_OK n=150
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_capsule_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_capsule_seed0.jsonl
 SCORE_capsule_s0_OK n=132
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_capsule_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_capsule_seed1.jsonl
 SCORE_capsule_s1_OK n=132
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_capsule_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_capsule_seed2.jsonl
 SCORE_capsule_s2_OK n=132
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_capsule_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_capsule_seed3.jsonl
 SCORE_capsule_s3_OK n=132
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_capsule_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_capsule_seed4.jsonl
 SCORE_capsule_s4_OK n=132
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_carpet_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_carpet_seed0.jsonl
 SCORE_carpet_s0_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_carpet_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_carpet_seed1.jsonl
 SCORE_carpet_s1_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_carpet_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_carpet_seed2.jsonl
 SCORE_carpet_s2_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_carpet_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_carpet_seed3.jsonl
 SCORE_carpet_s3_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_carpet_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_carpet_seed4.jsonl
 SCORE_carpet_s4_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_grid_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_grid_seed0.jsonl
 SCORE_grid_s0_OK n=78
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_grid_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_grid_seed1.jsonl
 SCORE_grid_s1_OK n=78
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_grid_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_grid_seed2.jsonl
 SCORE_grid_s2_OK n=78
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_grid_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_grid_seed3.jsonl
 SCORE_grid_s3_OK n=78
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_grid_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_grid_seed4.jsonl
 SCORE_grid_s4_OK n=78
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_hazelnut_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_hazelnut_seed0.jsonl
 SCORE_hazelnut_s0_OK n=110
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_hazelnut_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_hazelnut_seed1.jsonl
 SCORE_hazelnut_s1_OK n=110
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_hazelnut_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_hazelnut_seed2.jsonl
 SCORE_hazelnut_s2_OK n=110
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_hazelnut_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_hazelnut_seed3.jsonl
 SCORE_hazelnut_s3_OK n=110
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_hazelnut_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_hazelnut_seed4.jsonl
 SCORE_hazelnut_s4_OK n=110
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_leather_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_leather_seed0.jsonl
 SCORE_leather_s0_OK n=124
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_leather_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_leather_seed1.jsonl
 SCORE_leather_s1_OK n=124
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_leather_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_leather_seed2.jsonl
 SCORE_leather_s2_OK n=124
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_leather_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_leather_seed3.jsonl
 SCORE_leather_s3_OK n=124
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_leather_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_leather_seed4.jsonl
 SCORE_leather_s4_OK n=124
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_metal_nut_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_metal_nut_seed0.jsonl
 SCORE_metal_nut_s0_OK n=115
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_metal_nut_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_metal_nut_seed1.jsonl
 SCORE_metal_nut_s1_OK n=115
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_metal_nut_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_metal_nut_seed2.jsonl
 SCORE_metal_nut_s2_OK n=115
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_metal_nut_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_metal_nut_seed3.jsonl
 SCORE_metal_nut_s3_OK n=115
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_metal_nut_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_metal_nut_seed4.jsonl
 SCORE_metal_nut_s4_OK n=115
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_pill_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_pill_seed0.jsonl
 SCORE_pill_s0_OK n=167
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_pill_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_pill_seed1.jsonl
 SCORE_pill_s1_OK n=167
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_pill_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_pill_seed2.jsonl
 SCORE_pill_s2_OK n=167
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_pill_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_pill_seed3.jsonl
 SCORE_pill_s3_OK n=167
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_pill_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_pill_seed4.jsonl
 SCORE_pill_s4_OK n=167
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_screw_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_screw_seed0.jsonl
 SCORE_screw_s0_OK n=160
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_screw_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_screw_seed1.jsonl
 SCORE_screw_s1_OK n=160
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_screw_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_screw_seed2.jsonl
 SCORE_screw_s2_OK n=160
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_screw_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_screw_seed3.jsonl
 SCORE_screw_s3_OK n=160
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_screw_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_screw_seed4.jsonl
 SCORE_screw_s4_OK n=160
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_tile_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_tile_seed0.jsonl
 SCORE_tile_s0_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_tile_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_tile_seed1.jsonl
 SCORE_tile_s1_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_tile_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_tile_seed2.jsonl
 SCORE_tile_s2_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_tile_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_tile_seed3.jsonl
 SCORE_tile_s3_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_tile_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_tile_seed4.jsonl
 SCORE_tile_s4_OK n=117
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_toothbrush_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_toothbrush_seed0.jsonl
 SCORE_toothbrush_s0_OK n=42
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_toothbrush_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_toothbrush_seed1.jsonl
 SCORE_toothbrush_s1_OK n=42
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_toothbrush_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_toothbrush_seed2.jsonl
 SCORE_toothbrush_s2_OK n=42
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_toothbrush_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_toothbrush_seed3.jsonl
 SCORE_toothbrush_s3_OK n=42
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_toothbrush_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_toothbrush_seed4.jsonl
 SCORE_toothbrush_s4_OK n=42
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_transistor_seed0.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_transistor_seed0.jsonl
 SCORE_transistor_s0_OK n=100
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_transistor_seed1.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_transistor_seed1.jsonl
 SCORE_transistor_s1_OK n=100
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_transistor_seed2.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_transistor_seed2.jsonl
 SCORE_transistor_s2_OK n=100
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_transistor_seed3.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_transistor_seed3.jsonl
 SCORE_transistor_s3_OK n=100
-skip existing (pre-count-check) /root/autodl-tmp/ig_scores_full/scores_patchcore_transistor_seed4.jsonl
+skip existing (pre-count-check) ${AUTODL_TMP}/ig_scores_full/scores_patchcore_transistor_seed4.jsonl
 SCORE_transistor_s4_OK n=100
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -160,7 +160,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3/3 0:00:09 • 0:00:00 0.22it/s 
 score_patchcore: category=wood n_scored=79 n_failed=0
-score_patchcore: DONE n_scored=79 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_wood_seed0.jsonl
+score_patchcore: DONE n_scored=79 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_wood_seed0.jsonl
 SCORE_wood_s0_OK n=79
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -194,7 +194,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3/3 0:00:07 • 0:00:00 0.28it/s 
 score_patchcore: category=wood n_scored=79 n_failed=0
-score_patchcore: DONE n_scored=79 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_wood_seed1.jsonl
+score_patchcore: DONE n_scored=79 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_wood_seed1.jsonl
 SCORE_wood_s1_OK n=79
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -228,7 +228,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3/3 0:00:07 • 0:00:00 0.27it/s 
 score_patchcore: category=wood n_scored=79 n_failed=0
-score_patchcore: DONE n_scored=79 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_wood_seed2.jsonl
+score_patchcore: DONE n_scored=79 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_wood_seed2.jsonl
 SCORE_wood_s2_OK n=79
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -262,7 +262,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3/3 0:00:10 • 0:00:00 0.20it/s 
 score_patchcore: category=wood n_scored=79 n_failed=0
-score_patchcore: DONE n_scored=79 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_wood_seed3.jsonl
+score_patchcore: DONE n_scored=79 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_wood_seed3.jsonl
 SCORE_wood_s3_OK n=79
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -296,7 +296,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3/3 0:00:09 • 0:00:00 0.22it/s 
 score_patchcore: category=wood n_scored=79 n_failed=0
-score_patchcore: DONE n_scored=79 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_wood_seed4.jsonl
+score_patchcore: DONE n_scored=79 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_wood_seed4.jsonl
 SCORE_wood_s4_OK n=79
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -330,7 +330,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5/5 0:00:10 • 0:00:00 0.39it/s 
 score_patchcore: category=zipper n_scored=151 n_failed=0
-score_patchcore: DONE n_scored=151 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_zipper_seed0.jsonl
+score_patchcore: DONE n_scored=151 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_zipper_seed0.jsonl
 SCORE_zipper_s0_OK n=151
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -364,7 +364,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5/5 0:00:08 • 0:00:00 0.47it/s 
 score_patchcore: category=zipper n_scored=151 n_failed=0
-score_patchcore: DONE n_scored=151 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_zipper_seed1.jsonl
+score_patchcore: DONE n_scored=151 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_zipper_seed1.jsonl
 SCORE_zipper_s1_OK n=151
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -398,7 +398,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5/5 0:00:10 • 0:00:00 0.39it/s 
 score_patchcore: category=zipper n_scored=151 n_failed=0
-score_patchcore: DONE n_scored=151 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_zipper_seed2.jsonl
+score_patchcore: DONE n_scored=151 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_zipper_seed2.jsonl
 SCORE_zipper_s2_OK n=151
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -432,7 +432,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5/5 0:00:11 • 0:00:00 0.36it/s 
 score_patchcore: category=zipper n_scored=151 n_failed=0
-score_patchcore: DONE n_scored=151 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_zipper_seed3.jsonl
+score_patchcore: DONE n_scored=151 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_zipper_seed3.jsonl
 SCORE_zipper_s3_OK n=151
 /root/miniconda3/lib/python3.12/site-packages/timm/models/layers/__init__.py:49: FutureWarning: Importing from timm.models.layers is deprecated, please import via timm.layers
   warnings.warn(f"Importing from {__name__} is deprecated, please import via timm.layers", FutureWarning)
@@ -466,7 +466,7 @@ The following callbacks returned in `LightningModule.configure_callbacks` will o
 LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
 Predicting ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5/5 0:00:10 • 0:00:00 0.39it/s 
 score_patchcore: category=zipper n_scored=151 n_failed=0
-score_patchcore: DONE n_scored=151 n_failed=0 -> /root/autodl-tmp/ig_scores_full/scores_patchcore_zipper_seed4.jsonl
+score_patchcore: DONE n_scored=151 n_failed=0 -> ${AUTODL_TMP}/ig_scores_full/scores_patchcore_zipper_seed4.jsonl
 SCORE_zipper_s4_OK n=151
 IG_FULLSCORE_ALL_CELLS_OK
 tar: Removing leading `/' from member names

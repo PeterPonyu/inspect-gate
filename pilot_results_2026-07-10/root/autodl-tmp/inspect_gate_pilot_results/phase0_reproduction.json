@@ -1,5 +1,5 @@
 {
-  "data_root": "/root/autodl-tmp/mvtec_anomaly_detection",
+  "data_root": "${AUTODL_TMP}/mvtec_anomaly_detection",
   "staging": {
     "skipped": true
   },

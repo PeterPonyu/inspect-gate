@@ -37,7 +37,7 @@ from typing import Any, Dict, NoReturn
 
 import numpy as np
 
-IG_ROOT = Path("/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate")
+IG_ROOT = _portal_repo_root()
 sys.path.insert(0, str(IG_ROOT.parent.parent))  # reliability-commons on path
 sys.path.insert(0, str(IG_ROOT))
 
@@ -49,8 +49,8 @@ from inspect_gate import reproduction as _repro  # noqa: E402
 # pull path is only known once the box run lands, so it is an env/CLI knob).
 DEFAULT_PULL = os.environ.get(
     "MPDD_PULL",
-    "/home/zeyufu/Desktop/ml-reliability-research/orchestration_2026-07-13"
-    "/mpdd_pull/root/autodl-tmp/mpdd_brancha")
+    "${PORTFOLIO_ROOT}/orchestration_2026-07-13"
+    "/mpdd_pull${AUTODL_TMP}/mpdd_brancha")
 DEFAULT_MANIFEST = os.environ.get(
     "MPDD_MANIFEST", str(IG_ROOT / "mpdd_staging" / "mpdd_split_manifest.json"))
 OUT = IG_ROOT / "mpdd_results_2026-07-13"

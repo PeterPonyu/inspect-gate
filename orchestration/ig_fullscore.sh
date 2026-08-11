@@ -11,17 +11,17 @@ RELIABILITY_COMMONS="${RELIABILITY_COMMONS:-/root/reliability-commons}"
 source "${RELIABILITY_COMMONS}/tools/boxkit/chain_lib.sh"
 source /root/miniconda3/etc/profile.d/conda.sh && conda activate base
 source /etc/network_turbo >/dev/null 2>&1 || true
-export HF_HOME=/root/autodl-tmp/hf-cache HF_ENDPOINT=https://hf-mirror.com HF_HUB_DISABLE_XET=1
+export HF_HOME=${AUTODL_TMP}/hf-cache HF_ENDPOINT=https://hf-mirror.com HF_HUB_DISABLE_XET=1
 L="${IG_LOG:-/root/ig_fullscore.log}"
 export CHAIN_LOG="$L"
 chain_prologue
 exec > >(tee -a "$L") 2>&1
 
-# /root/autodl-tmp/mvtec_ad is what the staged box actually uses (verified
+# ${AUTODL_TMP}/mvtec_ad is what the staged box actually uses (verified
 # on-box 2026-07-10) -- THE named default, mirrored in phase0.py's
 # DEFAULT_DATA_ROOT and next_boot_inspect_gate.sh's DATA_ROOT.
-DATA_ROOT="${MVTEC_DATA_ROOT:-/root/autodl-tmp/mvtec_ad}"
-OUT_DIR="${IG_SCORES_DIR:-/root/autodl-tmp/ig_scores_full}"
+DATA_ROOT="${MVTEC_DATA_ROOT:-${AUTODL_TMP}/mvtec_ad}"
+OUT_DIR="${IG_SCORES_DIR:-${AUTODL_TMP}/ig_scores_full}"
 SEEDS="${PC_SEEDS:-0 1 2 3 4}"
 # Train-holdout arm (prereg-NEUTRAL score caching; score_patchcore.py's
 # --holdout-frac, default 0.0 = byte-identical legacy behavior). When > 0,

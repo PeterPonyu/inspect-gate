@@ -6,7 +6,7 @@ re-scan, (b) the Dinomaly branch resolution of §1, (c) sign-off on the three pr
 amendments in §9.
 
 Every count in this document is traced to a pilot artifact under
-`pilot_results_2026-07-10/root/autodl-tmp/inspect_gate_pilot_results/` or derived by stated
+`pilot_results_2026-07-10${AUTODL_TMP}/inspect_gate_pilot_results/` or derived by stated
 arithmetic from `phase0_staging.json`. Nothing is quoted from the design doc as measured fact.
 Genuinely unknown quantities are marked **[TO BE MEASURED AT MAIN RUN]**.
 
@@ -232,7 +232,7 @@ degenerate (AUROC 1.0 ⇒ `aurc_method = aurc_random = 0.0`, excess 0, p = 1.0).
 
 ## 7. Analysis plan (order is binding)
 
-1. **Stage + verify.** Untar from `/root/autodl-pub`, confirm `tarball_sha256`, re-enumerate
+1. **Stage + verify.** Untar from `${AUTODL_PUB}`, confirm `tarball_sha256`, re-enumerate
    `category_counts`, assert equality with §3's table. Any mismatch halts the run.
 2. **Reproduction gate (binding, per SOTA-plan §3.3).** Score all 15 categories per backbone; gate on
    published MVTec image-AUROC within the frozen tolerance (PatchCore: 0.991 ± 0.02). A backbone that

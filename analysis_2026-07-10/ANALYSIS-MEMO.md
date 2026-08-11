@@ -74,7 +74,7 @@ identity) directly on the local canonical scores — never trusted from a log or
 
 My independent recomputation reproduces the Dinomaly training logs' own reported `Mean: I-Auroc`
 line **exactly**, seed-for-seed (0.9965/0.9960/0.9960/0.9960/0.9957 —
-`dinomaly_brancha_2026-07-10/root/autodl-tmp/dinomaly_branchA/train_seed{0..4}.log`), which is the
+`dinomaly_brancha_2026-07-10${AUTODL_TMP}/dinomaly_branchA/train_seed{0..4}.log`), which is the
 "0.9957–0.9965 across seeds" the task brief referenced. K3 (backbone floor, mean AUROC ≥ 0.90) is
 satisfied with wide margin for both backbones.
 

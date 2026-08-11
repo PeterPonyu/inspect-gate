@@ -1,8 +1,8 @@
 {
-  "data_root": "/root/autodl-tmp/mvtec_anomaly_detection",
+  "data_root": "${AUTODL_TMP}/mvtec_anomaly_detection",
   "staging": {
-    "tarball_path": "/root/autodl-pub/mvtec_anomaly_detection.tar.xz",
-    "data_root": "/root/autodl-tmp/mvtec_anomaly_detection",
+    "tarball_path": "${AUTODL_PUB}/mvtec_anomaly_detection.tar.xz",
+    "data_root": "${AUTODL_TMP}/mvtec_anomaly_detection",
     "already_staged": false,
     "tarball_sha256": "cf4313b13603bec67abb49ca959488f7eedce2a9f7795ec54446c649ac98cd3d"
   },

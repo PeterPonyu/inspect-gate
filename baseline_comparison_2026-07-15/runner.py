@@ -52,7 +52,7 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import numpy as np
 
-REPO_ROOT = Path("/home/zeyufu/Desktop/ml-reliability-research/reliability-commons")
+REPO_ROOT = _portal_commons_root()
 IG_ROOT = REPO_ROOT / "tools" / "inspect-gate"
 sys.path.insert(0, str(REPO_ROOT))
 sys.path.insert(0, str(IG_ROOT))

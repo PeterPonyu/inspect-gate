@@ -11,7 +11,7 @@ from pathlib import Path
 
 import numpy as np
 
-IG_ROOT = Path("/home/zeyufu/Desktop/ml-reliability-research/reliability-commons/tools/inspect-gate")
+IG_ROOT = _portal_repo_root()
 MV = IG_ROOT / "analysis_2026-07-10"
 VI = IG_ROOT / "visa_results_2026-07-12"
 OUT_JSON = VI / "MVTEC-VS-VISA.json"
