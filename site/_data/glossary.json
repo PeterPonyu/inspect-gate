@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "code": "G1",
+      "meaning": "Certified escaped-defect bound."
+    },
+    {
+      "code": "G2",
+      "meaning": "Certified false-reject bound."
+    },
+    {
+      "code": "CRC",
+      "meaning": "Conformal Risk Control, the single-threshold conformal baseline."
+    },
+    {
+      "code": "t_lo, t_hi",
+      "meaning": "Per-category auto-pass / auto-reject thresholds."
+    },
+    {
+      "code": "α_miss, α_fr",
+      "meaning": "Target escaped-defect / false-reject rates (frozen 0.10 / 0.05)."
+    },
+    {
+      "code": "α_min",
+      "meaning": "Certifiability floor 1/(n_cal+1)."
+    },
+    {
+      "code": "n_cal^def, n_cal^good",
+      "meaning": "Per-category defective / good calibration pool sizes."
+    },
+    {
+      "code": "refusal",
+      "meaning": "Audited-not-certified: the corresponding auto-action is emptied (threshold ±∞)."
+    },
+    {
+      "code": "Mondrian",
+      "meaning": "Per-category (primary) conformal stratification; per-defect-type is exploratory."
+    },
+    {
+      "code": "C2",
+      "meaning": "Confirmatory excess-AURC audit (pooled Holm family)."
+    }
+  ]
+}

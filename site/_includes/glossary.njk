@@ -1,0 +1,8 @@
+<dl class="glossary">
+  {% for item in glossary.items %}
+    <div>
+      <dt>{{ item.code }}</dt>
+      <dd>{{ item.meaning }}</dd>
+    </div>
+  {% endfor %}
+</dl>

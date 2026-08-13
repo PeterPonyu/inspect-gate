@@ -1,0 +1,91 @@
+{
+  "caption": "Corruption-drift stress test (post-freeze exploratory). Good-score KS screen; exceedances among accepted axis-certifiable cells.",
+  "tag": "post-freeze exploratory",
+  "residual": "Good-score KS misses 34% of accepted PatchCore cells above the escaped-defect target; defect-score marginal catches ~5% of those residual cells.",
+  "rows": [
+    {
+      "corruption": "Brightness",
+      "severity": 1,
+      "ks_refused": "4/66",
+      "escaped": "13/60",
+      "fr": "1/30"
+    },
+    {
+      "corruption": "Brightness",
+      "severity": 2,
+      "ks_refused": "5/66",
+      "escaped": "12/59",
+      "fr": "1/27"
+    },
+    {
+      "corruption": "Brightness",
+      "severity": 3,
+      "ks_refused": "28/66",
+      "escaped": "9/36",
+      "fr": "1/14"
+    },
+    {
+      "corruption": "Contrast",
+      "severity": 1,
+      "ks_refused": "2/66",
+      "escaped": "11/62",
+      "fr": "0/30"
+    },
+    {
+      "corruption": "Contrast",
+      "severity": 2,
+      "ks_refused": "8/66",
+      "escaped": "16/56",
+      "fr": "0/25"
+    },
+    {
+      "corruption": "Contrast",
+      "severity": 3,
+      "ks_refused": "28/66",
+      "escaped": "13/36",
+      "fr": "2/19"
+    },
+    {
+      "corruption": "Gaussian",
+      "severity": 1,
+      "ks_refused": "23/66",
+      "escaped": "10/41",
+      "fr": "0/18"
+    },
+    {
+      "corruption": "Gaussian",
+      "severity": 2,
+      "ks_refused": "41/66",
+      "escaped": "8/24",
+      "fr": "0/14"
+    },
+    {
+      "corruption": "Gaussian",
+      "severity": 3,
+      "ks_refused": "47/66",
+      "escaped": "11/19",
+      "fr": "1/11"
+    },
+    {
+      "corruption": "Defocus",
+      "severity": 1,
+      "ks_refused": "7/66",
+      "escaped": "10/57",
+      "fr": "0/26"
+    },
+    {
+      "corruption": "Defocus",
+      "severity": 2,
+      "ks_refused": "18/66",
+      "escaped": "8/46",
+      "fr": "0/20"
+    },
+    {
+      "corruption": "Defocus",
+      "severity": 3,
+      "ks_refused": "44/66",
+      "escaped": "13/21",
+      "fr": "2/10"
+    }
+  ]
+}

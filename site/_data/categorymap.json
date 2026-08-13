@@ -1,0 +1,349 @@
+{
+  "benchmarks": [
+    {
+      "id": "mvtec",
+      "label": "MVTec AD",
+      "tag": "confirmatory",
+      "categories": [
+        {
+          "id": "bottle",
+          "label": "bottle",
+          "g1_cert": true,
+          "g1_rate_pct": 7.56,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 32,
+          "alpha_min_g1": 0.0303,
+          "n_cal_good": 10,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "cable",
+          "label": "cable",
+          "g1_cert": true,
+          "g1_rate_pct": 3.65,
+          "g2_cert": true,
+          "g2_rate_pct": 1.19,
+          "n_cal_def": 46,
+          "alpha_min_g1": 0.0213,
+          "n_cal_good": 29,
+          "g2_floor": "OK"
+        },
+        {
+          "id": "capsule",
+          "label": "capsule",
+          "g1_cert": true,
+          "g1_rate_pct": 9.16,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 54,
+          "alpha_min_g1": 0.0182,
+          "n_cal_good": 12,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "carpet",
+          "label": "carpet",
+          "g1_cert": true,
+          "g1_rate_pct": 10.06,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 44,
+          "alpha_min_g1": 0.0222,
+          "n_cal_good": 14,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "grid",
+          "label": "grid",
+          "g1_cert": true,
+          "g1_rate_pct": 6.02,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 28,
+          "alpha_min_g1": 0.0345,
+          "n_cal_good": 10,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "hazelnut",
+          "label": "hazelnut",
+          "g1_cert": true,
+          "g1_rate_pct": 0.0,
+          "g2_cert": true,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 35,
+          "alpha_min_g1": 0.0278,
+          "n_cal_good": 20,
+          "g2_floor": "OK"
+        },
+        {
+          "id": "leather",
+          "label": "leather",
+          "g1_cert": true,
+          "g1_rate_pct": 7.1,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 46,
+          "alpha_min_g1": 0.0213,
+          "n_cal_good": 16,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "metal_nut",
+          "label": "metal nut",
+          "g1_cert": true,
+          "g1_rate_pct": 7.72,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 46,
+          "alpha_min_g1": 0.0213,
+          "n_cal_good": 11,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "pill",
+          "label": "pill",
+          "g1_cert": true,
+          "g1_rate_pct": 10.44,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 70,
+          "alpha_min_g1": 0.0141,
+          "n_cal_good": 13,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "screw",
+          "label": "screw",
+          "g1_cert": true,
+          "g1_rate_pct": 9.99,
+          "g2_cert": true,
+          "g2_rate_pct": 3.5,
+          "n_cal_def": 60,
+          "alpha_min_g1": 0.0164,
+          "n_cal_good": 20,
+          "g2_floor": "OK"
+        },
+        {
+          "id": "tile",
+          "label": "tile",
+          "g1_cert": true,
+          "g1_rate_pct": 8.81,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 42,
+          "alpha_min_g1": 0.0233,
+          "n_cal_good": 16,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "toothbrush",
+          "label": "toothbrush",
+          "g1_cert": true,
+          "g1_rate_pct": 5.5,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 15,
+          "alpha_min_g1": 0.0625,
+          "n_cal_good": 6,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "transistor",
+          "label": "transistor",
+          "g1_cert": true,
+          "g1_rate_pct": 5.1,
+          "g2_cert": true,
+          "g2_rate_pct": 2.15,
+          "n_cal_def": 20,
+          "alpha_min_g1": 0.0476,
+          "n_cal_good": 30,
+          "g2_floor": "OK"
+        },
+        {
+          "id": "wood",
+          "label": "wood",
+          "g1_cert": true,
+          "g1_rate_pct": 8.05,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 30,
+          "alpha_min_g1": 0.0323,
+          "n_cal_good": 10,
+          "g2_floor": "REFUSE"
+        },
+        {
+          "id": "zipper",
+          "label": "zipper",
+          "g1_cert": true,
+          "g1_rate_pct": 9.6,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0,
+          "n_cal_def": 60,
+          "alpha_min_g1": 0.0164,
+          "n_cal_good": 16,
+          "g2_floor": "REFUSE"
+        }
+      ]
+    },
+    {
+      "id": "visa",
+      "label": "VisA",
+      "tag": "exploratory",
+      "categories": [
+        {
+          "id": "candle",
+          "label": "candle",
+          "g1_cert": true,
+          "g1_rate_pct": 8.77,
+          "g2_cert": true,
+          "g2_rate_pct": 3.1
+        },
+        {
+          "id": "capsules",
+          "label": "capsules",
+          "g1_cert": true,
+          "g1_rate_pct": 8.32,
+          "g2_cert": true,
+          "g2_rate_pct": 3.1
+        },
+        {
+          "id": "cashew",
+          "label": "cashew",
+          "g1_cert": true,
+          "g1_rate_pct": 8.09,
+          "g2_cert": true,
+          "g2_rate_pct": 2.5
+        },
+        {
+          "id": "chewinggum",
+          "label": "chewinggum",
+          "g1_cert": true,
+          "g1_rate_pct": 3.09,
+          "g2_cert": true,
+          "g2_rate_pct": 0.3
+        },
+        {
+          "id": "fryum",
+          "label": "fryum",
+          "g1_cert": true,
+          "g1_rate_pct": 7.56,
+          "g2_cert": true,
+          "g2_rate_pct": 4.26
+        },
+        {
+          "id": "macaroni1",
+          "label": "macaroni1",
+          "g1_cert": true,
+          "g1_rate_pct": 9.16,
+          "g2_cert": true,
+          "g2_rate_pct": 3.73
+        },
+        {
+          "id": "macaroni2",
+          "label": "macaroni2",
+          "g1_cert": true,
+          "g1_rate_pct": 9.0,
+          "g2_cert": true,
+          "g2_rate_pct": 4.0
+        },
+        {
+          "id": "pcb1",
+          "label": "pcb1",
+          "g1_cert": true,
+          "g1_rate_pct": 8.66,
+          "g2_cert": true,
+          "g2_rate_pct": 4.22
+        },
+        {
+          "id": "pcb2",
+          "label": "pcb2",
+          "g1_cert": true,
+          "g1_rate_pct": 8.71,
+          "g2_cert": true,
+          "g2_rate_pct": 3.29
+        },
+        {
+          "id": "pcb3",
+          "label": "pcb3",
+          "g1_cert": true,
+          "g1_rate_pct": 7.56,
+          "g2_cert": true,
+          "g2_rate_pct": 3.07
+        },
+        {
+          "id": "pcb4",
+          "label": "pcb4",
+          "g1_cert": true,
+          "g1_rate_pct": 6.02,
+          "g2_cert": true,
+          "g2_rate_pct": 2.86
+        },
+        {
+          "id": "pipe_fryum",
+          "label": "pipe fryum",
+          "g1_cert": true,
+          "g1_rate_pct": 6.7,
+          "g2_cert": true,
+          "g2_rate_pct": 1.06
+        }
+      ]
+    },
+    {
+      "id": "mpdd",
+      "label": "MPDD",
+      "tag": "exploratory",
+      "categories": [
+        {
+          "id": "bracket_black",
+          "label": "bracket black",
+          "g1_cert": true,
+          "g1_rate_pct": 10.52,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0
+        },
+        {
+          "id": "bracket_brown",
+          "label": "bracket brown",
+          "g1_cert": true,
+          "g1_rate_pct": 6.32,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0
+        },
+        {
+          "id": "bracket_white",
+          "label": "bracket white",
+          "g1_cert": true,
+          "g1_rate_pct": 6.3,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0
+        },
+        {
+          "id": "connector",
+          "label": "connector",
+          "g1_cert": false,
+          "g1_rate_pct": 0.0,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0
+        },
+        {
+          "id": "metal_plate",
+          "label": "metal plate",
+          "g1_cert": true,
+          "g1_rate_pct": 8.83,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0
+        },
+        {
+          "id": "tubes",
+          "label": "tubes",
+          "g1_cert": true,
+          "g1_rate_pct": 7.81,
+          "g2_cert": false,
+          "g2_rate_pct": 0.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="840.710312pt" height="336.26pt" viewBox="0 0 840.710312 336.26" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-13T12:49:46.408584</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 336.26 
+L 840.710312 336.26 
+L 840.710312 0 
+L 0 0 
+z
+" style="fill: #f4f0e8"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 125.640313 296.44 
+L 833.510313 296.44 
+L 833.510313 7.2 
+L 125.640313 7.2 
+z
+" style="fill: #fffdf8"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 125.640313 22.925169 
+L 799.802217 22.925169 
+L 799.802217 25.503066 
+L 125.640313 25.503066 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 125.640313 30.981096 
+L 634.568731 30.981096 
+L 634.568731 33.558993 
+L 125.640313 33.558993 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 125.640313 39.037023 
+L 501.592907 39.037023 
+L 501.592907 41.61492 
+L 125.640313 41.61492 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 125.640313 47.09295 
+L 372.098124 47.09295 
+L 372.098124 49.670847 
+L 125.640313 49.670847 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 125.640313 55.148877 
+L 317.097652 55.148877 
+L 317.097652 57.726774 
+L 125.640313 57.726774 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 125.640313 63.204804 
+L 317.097652 63.204804 
+L 317.097652 65.782701 
+L 125.640313 65.782701 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 125.640313 71.260731 
+L 316.401444 71.260731 
+L 316.401444 73.838627 
+L 125.640313 73.838627 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 125.640313 79.316658 
+L 309.9308 79.316658 
+L 309.9308 81.894554 
+L 125.640313 81.894554 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 125.640313 87.372585 
+L 301.084856 87.372585 
+L 301.084856 89.950481 
+L 125.640313 89.950481 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 125.640313 95.428512 
+L 278.533161 95.428512 
+L 278.533161 98.006408 
+L 125.640313 98.006408 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 125.640313 103.484439 
+L 264.882014 103.484439 
+L 264.882014 106.062335 
+L 125.640313 106.062335 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 125.640313 111.540365 
+L 261.566735 111.540365 
+L 261.566735 114.118262 
+L 125.640313 114.118262 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 125.640313 119.596292 
+L 258.738998 119.596292 
+L 258.738998 122.174189 
+L 125.640313 122.174189 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 125.640313 127.652219 
+L 249.565427 127.652219 
+L 249.565427 130.230116 
+L 125.640313 130.230116 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 125.640313 135.708146 
+L 242.835411 135.708146 
+L 242.835411 138.286043 
+L 125.640313 138.286043 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 125.640313 143.764073 
+L 230.071589 143.764073 
+L 230.071589 146.34197 
+L 125.640313 146.34197 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 125.640313 151.82 
+L 223.109504 151.82 
+L 223.109504 154.397897 
+L 125.640313 154.397897 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 125.640313 159.875927 
+L 221.717087 159.875927 
+L 221.717087 162.453824 
+L 125.640313 162.453824 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 125.640313 167.931854 
+L 214.600288 167.931854 
+L 214.600288 170.50975 
+L 125.640313 170.50975 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 125.640313 175.987781 
+L 208.649788 175.987781 
+L 208.649788 178.565677 
+L 125.640313 178.565677 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 125.640313 184.043708 
+L 208.465118 184.043708 
+L 208.465118 186.621604 
+L 125.640313 186.621604 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 125.640313 192.099635 
+L 207.792916 192.099635 
+L 207.792916 194.677531 
+L 125.640313 194.677531 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 125.640313 200.155561 
+L 203.451852 200.155561 
+L 203.451852 202.733458 
+L 125.640313 202.733458 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 125.640313 208.211488 
+L 195.261163 208.211488 
+L 195.261163 210.789385 
+L 125.640313 210.789385 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 125.640313 216.267415 
+L 192.096579 216.267415 
+L 192.096579 218.845312 
+L 125.640313 218.845312 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 125.640313 224.323342 
+L 188.734208 224.323342 
+L 188.734208 226.901239 
+L 125.640313 226.901239 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 125.640313 232.379269 
+L 185.315327 232.379269 
+L 185.315327 234.957166 
+L 125.640313 234.957166 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 125.640313 240.435196 
+L 184.121827 240.435196 
+L 184.121827 243.013093 
+L 125.640313 243.013093 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 125.640313 248.491123 
+L 182.033202 248.491123 
+L 182.033202 251.06902 
+L 125.640313 251.06902 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 125.640313 256.54705 
+L 179.438243 256.54705 
+L 179.438243 259.124947 
+L 125.640313 259.124947 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_33">
+    <path d="M 125.640313 264.602977 
+L 174.374908 264.602977 
+L 174.374908 267.180873 
+L 125.640313 267.180873 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_34">
+    <path d="M 125.640313 272.658904 
+L 172.883033 272.658904 
+L 172.883033 275.2368 
+L 125.640313 275.2368 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_35">
+    <path d="M 125.640313 280.714831 
+L 167.412823 280.714831 
+L 167.412823 283.292727 
+L 125.640313 283.292727 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #d55e00"/>
+   </g>
+   <g id="patch_36">
+    <path d="M 125.640313 20.347273 
+L 151.167958 20.347273 
+L 151.167958 22.925169 
+L 125.640313 22.925169 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_37">
+    <path d="M 125.640313 28.4032 
+L 153.488653 28.4032 
+L 153.488653 30.981096 
+L 125.640313 30.981096 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_38">
+    <path d="M 125.640313 36.459127 
+L 156.273487 36.459127 
+L 156.273487 39.037023 
+L 125.640313 39.037023 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_39">
+    <path d="M 125.640313 44.515053 
+L 143.045525 44.515053 
+L 143.045525 47.09295 
+L 125.640313 47.09295 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_40">
+    <path d="M 125.640313 52.57098 
+L 125.640313 52.57098 
+L 125.640313 55.148877 
+L 125.640313 55.148877 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_41">
+    <path d="M 125.640313 60.626907 
+L 125.640313 60.626907 
+L 125.640313 63.204804 
+L 125.640313 63.204804 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_42">
+    <path d="M 125.640313 68.682834 
+L 152.096236 68.682834 
+L 152.096236 71.260731 
+L 125.640313 71.260731 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_43">
+    <path d="M 125.640313 76.738761 
+L 148.164705 76.738761 
+L 148.164705 79.316658 
+L 125.640313 79.316658 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_44">
+    <path d="M 125.640313 84.794688 
+L 155.577278 84.794688 
+L 155.577278 87.372585 
+L 125.640313 87.372585 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_45">
+    <path d="M 125.640313 92.850615 
+L 148.164705 92.850615 
+L 148.164705 95.428512 
+L 125.640313 95.428512 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_46">
+    <path d="M 125.640313 100.906542 
+L 156.273487 100.906542 
+L 156.273487 103.484439 
+L 125.640313 103.484439 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_47">
+    <path d="M 125.640313 108.962469 
+L 160.450738 108.962469 
+L 160.450738 111.540365 
+L 125.640313 111.540365 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_48">
+    <path d="M 125.640313 117.018396 
+L 132.465886 117.018396 
+L 132.465886 119.596292 
+L 125.640313 119.596292 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_49">
+    <path d="M 125.640313 125.074323 
+L 158.362112 125.074323 
+L 158.362112 127.652219 
+L 125.640313 127.652219 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_50">
+    <path d="M 125.640313 133.13025 
+L 140.72483 133.13025 
+L 140.72483 135.708146 
+L 125.640313 135.708146 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_51">
+    <path d="M 125.640313 141.186176 
+L 127.03273 141.186176 
+L 127.03273 143.764073 
+L 125.640313 143.764073 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_52">
+    <path d="M 125.640313 149.242103 
+L 125.640313 149.242103 
+L 125.640313 151.82 
+L 125.640313 151.82 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_53">
+    <path d="M 125.640313 157.29803 
+L 146.526568 157.29803 
+L 146.526568 159.875927 
+L 125.640313 159.875927 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_54">
+    <path d="M 125.640313 165.353957 
+L 125.640313 165.353957 
+L 125.640313 167.931854 
+L 125.640313 167.931854 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_55">
+    <path d="M 125.640313 173.409884 
+L 125.640313 173.409884 
+L 125.640313 175.987781 
+L 125.640313 175.987781 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_56">
+    <path d="M 125.640313 181.465811 
+L 125.640313 181.465811 
+L 125.640313 184.043708 
+L 125.640313 184.043708 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_57">
+    <path d="M 125.640313 189.521738 
+L 154.184861 189.521738 
+L 154.184861 192.099635 
+L 125.640313 192.099635 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_58">
+    <path d="M 125.640313 197.577665 
+L 157.037951 197.577665 
+L 157.037951 200.155561 
+L 125.640313 200.155561 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_59">
+    <path d="M 125.640313 205.633592 
+L 125.640313 205.633592 
+L 125.640313 208.211488 
+L 125.640313 208.211488 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_60">
+    <path d="M 125.640313 213.689519 
+L 125.640313 213.689519 
+L 125.640313 216.267415 
+L 125.640313 216.267415 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_61">
+    <path d="M 125.640313 221.745446 
+L 125.640313 221.745446 
+L 125.640313 224.323342 
+L 125.640313 224.323342 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_62">
+    <path d="M 125.640313 229.801373 
+L 125.640313 229.801373 
+L 125.640313 232.379269 
+L 125.640313 232.379269 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_63">
+    <path d="M 125.640313 237.857299 
+L 131.209981 237.857299 
+L 131.209981 240.435196 
+L 125.640313 240.435196 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_64">
+    <path d="M 125.640313 245.913226 
+L 151.400027 245.913226 
+L 151.400027 248.491123 
+L 125.640313 248.491123 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_65">
+    <path d="M 125.640313 253.969153 
+L 125.640313 253.969153 
+L 125.640313 256.54705 
+L 125.640313 256.54705 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_66">
+    <path d="M 125.640313 262.02508 
+L 125.640313 262.02508 
+L 125.640313 264.602977 
+L 125.640313 264.602977 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_67">
+    <path d="M 125.640313 270.081007 
+L 125.640313 270.081007 
+L 125.640313 272.658904 
+L 125.640313 272.658904 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="patch_68">
+    <path d="M 125.640313 278.136934 
+L 136.779649 278.136934 
+L 136.779649 280.714831 
+L 125.640313 280.714831 
+z
+" clip-path="url(#pfbea32e8ed)" style="fill: #3d8b7a"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="m25bdbcb175" d="M 0 0 
+L 0 3.5 
+" style="stroke: #1c1917; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m25bdbcb175" x="125.640313" y="296.44" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: middle; fill: #1c1917" x="125.640313" y="311.58" transform="rotate(-0 125.640313 311.58)">0.0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2">
+      <g>
+       <use xlink:href="#m25bdbcb175" x="264.882014" y="296.44" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: middle; fill: #1c1917" x="264.882014" y="311.58" transform="rotate(-0 264.882014 311.58)">0.2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m25bdbcb175" x="404.123715" y="296.44" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: middle; fill: #1c1917" x="404.123715" y="311.58" transform="rotate(-0 404.123715 311.58)">0.4</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m25bdbcb175" x="543.365417" y="296.44" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: middle; fill: #1c1917" x="543.365417" y="311.58" transform="rotate(-0 543.365417 311.58)">0.6</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m25bdbcb175" x="682.607118" y="296.44" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: middle; fill: #1c1917" x="682.607118" y="311.58" transform="rotate(-0 682.607118 311.58)">0.8</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m25bdbcb175" x="821.84882" y="296.44" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: middle; fill: #1c1917" x="821.84882" y="311.58" transform="rotate(-0 821.84882 311.58)">1.0</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 12px; font-family: 'IBM Plex Sans'; text-anchor: middle; fill: #1c1917" x="479.575312" y="326.66" transform="rotate(-0 479.575312 326.66)">false-reject rate</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_7">
+      <defs>
+       <path id="m461b90e1d8" d="M 0 0 
+L -3.5 0 
+" style="stroke: #1c1917; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="22.925169" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="26.995169" transform="rotate(-0 118.640313 26.995169)">patchcore:capsules</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="30.981096" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="35.051096" transform="rotate(-0 118.640313 35.051096)">patchcore:macaroni2</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_9">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="39.037023" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_10">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="43.107023" transform="rotate(-0 118.640313 43.107023)">patchcore:macaroni1</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="47.09295" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="51.16295" transform="rotate(-0 118.640313 51.16295)">dinomaly:pcb2</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="55.148877" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_12">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="59.218877" transform="rotate(-0 118.640313 59.218877)">dinomaly:toothbrush</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="63.204804" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_13">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="67.274804" transform="rotate(-0 118.640313 67.274804)">patchcore:toothbrush</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_13">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="71.260731" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_14">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="75.330731" transform="rotate(-0 118.640313 75.330731)">patchcore:cashew</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="79.316658" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_15">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="83.386658" transform="rotate(-0 118.640313 83.386658)">dinomaly:pcb3</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_15">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="87.372585" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_16">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="91.442585" transform="rotate(-0 118.640313 91.442585)">patchcore:pcb2</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="95.428512" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_17">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="99.498512" transform="rotate(-0 118.640313 99.498512)">patchcore:pcb3</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_17">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="103.484439" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_18">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="107.554439" transform="rotate(-0 118.640313 107.554439)">patchcore:fryum</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="111.540365" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_19">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="115.610365" transform="rotate(-0 118.640313 115.610365)">patchcore:screw</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_19">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="119.596292" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_20">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="123.666292" transform="rotate(-0 118.640313 123.666292)">dinomaly:pcb4</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_20">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="127.652219" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_21">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="131.722219" transform="rotate(-0 118.640313 131.722219)">patchcore:pcb1</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_21">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="135.708146" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_22">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="139.778146" transform="rotate(-0 118.640313 139.778146)">dinomaly:transistor</text>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_22">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="143.764073" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_23">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="147.834073" transform="rotate(-0 118.640313 147.834073)">dinomaly:pipe_fryum</text>
+     </g>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_23">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="151.82" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_24">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="155.89" transform="rotate(-0 118.640313 155.89)">dinomaly:chewinggum</text>
+     </g>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_24">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="159.875927" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_25">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="163.945927" transform="rotate(-0 118.640313 163.945927)">dinomaly:fryum</text>
+     </g>
+    </g>
+    <g id="ytick_19">
+     <g id="line2d_25">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="167.931854" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_26">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="172.001854" transform="rotate(-0 118.640313 172.001854)">dinomaly:wood</text>
+     </g>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_26">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="175.987781" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_27">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="180.057781" transform="rotate(-0 118.640313 180.057781)">patchcore:pill</text>
+     </g>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_27">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="184.043708" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_28">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="188.113708" transform="rotate(-0 118.640313 188.113708)">dinomaly:cable</text>
+     </g>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_28">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="192.099635" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_29">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="196.169635" transform="rotate(-0 118.640313 196.169635)">dinomaly:pcb1</text>
+     </g>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_29">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="200.155561" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_30">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="204.225561" transform="rotate(-0 118.640313 204.225561)">patchcore:pcb4</text>
+     </g>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_30">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="208.211488" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_31">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="212.281488" transform="rotate(-0 118.640313 212.281488)">patchcore:wood</text>
+     </g>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_31">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="216.267415" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_32">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="220.337415" transform="rotate(-0 118.640313 220.337415)">patchcore:grid</text>
+     </g>
+    </g>
+    <g id="ytick_26">
+     <g id="line2d_32">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="224.323342" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_33">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="228.393342" transform="rotate(-0 118.640313 228.393342)">patchcore:zipper</text>
+     </g>
+    </g>
+    <g id="ytick_27">
+     <g id="line2d_33">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="232.379269" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_34">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="236.449269" transform="rotate(-0 118.640313 236.449269)">dinomaly:carpet</text>
+     </g>
+    </g>
+    <g id="ytick_28">
+     <g id="line2d_34">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="240.435196" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_35">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="244.505196" transform="rotate(-0 118.640313 244.505196)">dinomaly:cashew</text>
+     </g>
+    </g>
+    <g id="ytick_29">
+     <g id="line2d_35">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="248.491123" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_36">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="252.561123" transform="rotate(-0 118.640313 252.561123)">patchcore:candle</text>
+     </g>
+    </g>
+    <g id="ytick_30">
+     <g id="line2d_36">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="256.54705" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_37">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="260.61705" transform="rotate(-0 118.640313 260.61705)">patchcore:capsule</text>
+     </g>
+    </g>
+    <g id="ytick_31">
+     <g id="line2d_37">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="264.602977" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_38">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="268.672977" transform="rotate(-0 118.640313 268.672977)">dinomaly:hazelnut</text>
+     </g>
+    </g>
+    <g id="ytick_32">
+     <g id="line2d_38">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="272.658904" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_39">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="276.728904" transform="rotate(-0 118.640313 276.728904)">patchcore:carpet</text>
+     </g>
+    </g>
+    <g id="ytick_33">
+     <g id="line2d_39">
+      <g>
+       <use xlink:href="#m461b90e1d8" x="125.640313" y="280.714831" style="fill: #1c1917; stroke: #1c1917; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_40">
+      <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: end; fill: #1c1917" x="118.640313" y="284.784831" transform="rotate(-0 118.640313 284.784831)">patchcore:pipe_fryum</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_40">
+    <path d="M 160.450738 296.44 
+L 160.450738 7.2 
+" clip-path="url(#pfbea32e8ed)" style="fill: none; stroke: #1c1917; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="patch_69">
+    <path d="M 125.640313 296.44 
+L 125.640313 7.2 
+" style="fill: none; stroke: #1c1917; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_70">
+    <path d="M 833.510313 296.44 
+L 833.510313 7.2 
+" style="fill: none; stroke: #1c1917; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_71">
+    <path d="M 125.640313 296.44 
+L 833.510312 296.44 
+" style="fill: none; stroke: #1c1917; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_72">
+    <path d="M 125.640313 7.2 
+L 833.510312 7.2 
+" style="fill: none; stroke: #1c1917; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="legend_1">
+    <g id="patch_73">
+     <path d="M 725.113906 268.367656 
+L 747.113906 268.367656 
+L 747.113906 260.667656 
+L 725.113906 260.667656 
+z
+" style="fill: #d55e00"/>
+    </g>
+    <g id="text_41">
+     <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: start; fill: #1c1917" x="755.913906" y="268.367656" transform="rotate(-0 755.913906 268.367656)">naive best-F1</text>
+    </g>
+    <g id="patch_74">
+     <path d="M 725.113906 284.207656 
+L 747.113906 284.207656 
+L 747.113906 276.507656 
+L 725.113906 276.507656 
+z
+" style="fill: #3d8b7a"/>
+    </g>
+    <g id="text_42">
+     <text style="font-size: 11px; font-family: 'IBM Plex Sans'; text-anchor: start; fill: #1c1917" x="755.913906" y="284.207656" transform="rotate(-0 755.913906 284.207656)">certified gate</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfbea32e8ed">
+   <rect x="125.640313" y="7.2" width="707.87" height="289.24"/>
+  </clipPath>
+ </defs>
+</svg>

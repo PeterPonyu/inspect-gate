@@ -1,0 +1,35 @@
+{
+  "wordmark": "inspect-gate",
+  "title": "A pre-deployment three-way triage gate for visual-inspection anomaly detectors: finite-sample escaped-defect and false-reject certificates on academic AD benchmarks",
+  "shortTitle": "Three-way triage gate for visual-inspection AD.",
+  "venue": "Results in Engineering",
+  "submitted": "2026-08-13",
+  "author": "Zeyu Fu",
+  "corresponding": true,
+  "orcid": "0009-0001-8329-0108",
+  "email": "fuzeyu09@gmail.com",
+  "affiliation": "State Key Laboratory of Trauma and Chemical Poisoning, Institute of Combined Injury, Army Medical University, Chongqing, China",
+  "license": "MIT",
+  "github": "https://github.com/PeterPonyu/inspect-gate",
+  "pagesUrl": "https://peterponyu.github.io/inspect-gate/",
+  "zenodoConcept": "10.5281/zenodo.21392290",
+  "zenodoVersion": "10.5281/zenodo.21854312",
+  "evidence": "academic AD · not a production line",
+  "keywords": [
+    "Industrial visual inspection",
+    "conformal prediction",
+    "anomaly detection",
+    "selective prediction",
+    "MVTec AD"
+  ],
+  "nav": [
+    {"href": "/", "label": "Datasheet"},
+    {"href": "/gate/", "label": "Gate"},
+    {"href": "/certificate/", "label": "Certificate"},
+    {"href": "/envelope/", "label": "Envelope"},
+    {"href": "/baseline/", "label": "Baseline"},
+    {"href": "/honesty/", "label": "Honesty"},
+    {"href": "/reproduce/", "label": "Reproduce"},
+    {"href": "/paper/", "label": "Paper"}
+  ]
+}

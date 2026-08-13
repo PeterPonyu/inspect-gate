@@ -1,0 +1,108 @@
+{
+  "caption": "Three-way decisions on real parts (PatchCore, seed 0). Insets and contours are dataset ground truth, not model localization. Connector defer is floor refusal: escaped-defect cannot certify, so every image defers.",
+  "protocol": "MPDD uses the train-holdout rescue arm; VisA uses the primary protocol. Exploratory MPDD / VisA tiles.",
+  "tiles": [
+    {
+      "row": "MPDD · good",
+      "route": "AUTO-PASS",
+      "file": "inspect-sample-mpdd-good-pass.png",
+      "score": 0.02,
+      "gt": false,
+      "note": null
+    },
+    {
+      "row": "MPDD · good",
+      "route": "DEFER",
+      "file": "inspect-sample-mpdd-good-defer.png",
+      "score": 0.0,
+      "gt": false,
+      "note": null
+    },
+    {
+      "row": "MPDD · good",
+      "route": "AUTO-REJECT",
+      "file": "inspect-sample-mpdd-good-reject.png",
+      "score": 0.57,
+      "gt": false,
+      "note": null
+    },
+    {
+      "row": "MPDD · defect",
+      "route": "AUTO-PASS",
+      "file": "inspect-sample-mpdd-def-pass.png",
+      "zoom": "inspect-sample-mpdd-def-pass-gt.png",
+      "score": 0.32,
+      "gt": true,
+      "note": null
+    },
+    {
+      "row": "MPDD · defect",
+      "route": "DEFER",
+      "file": "inspect-sample-mpdd-def-defer.png",
+      "zoom": "inspect-sample-mpdd-def-defer-gt.png",
+      "score": 0.52,
+      "gt": true,
+      "note": "floor refusal"
+    },
+    {
+      "row": "MPDD · defect",
+      "route": "AUTO-REJECT",
+      "file": "inspect-sample-mpdd-def-reject.png",
+      "zoom": "inspect-sample-mpdd-def-reject-gt.png",
+      "score": 0.57,
+      "gt": true,
+      "note": null
+    },
+    {
+      "row": "VisA · good",
+      "route": "AUTO-PASS",
+      "file": "inspect-sample-visa-good-pass.png",
+      "score": 0.29,
+      "gt": false,
+      "note": null
+    },
+    {
+      "row": "VisA · good",
+      "route": "DEFER",
+      "file": "inspect-sample-visa-good-defer.png",
+      "score": 0.44,
+      "gt": false,
+      "note": null
+    },
+    {
+      "row": "VisA · good",
+      "route": "AUTO-REJECT",
+      "file": "inspect-sample-visa-good-reject.png",
+      "score": 0.68,
+      "gt": false,
+      "note": null
+    },
+    {
+      "row": "VisA · defect",
+      "route": "AUTO-PASS",
+      "file": "inspect-sample-visa-def-pass.png",
+      "zoom": "inspect-sample-visa-def-pass-gt.png",
+      "score": 0.42,
+      "gt": true,
+      "note": null
+    },
+    {
+      "row": "VisA · defect",
+      "route": "DEFER",
+      "file": "inspect-sample-visa-def-defer.png",
+      "zoom": "inspect-sample-visa-def-defer-gt.png",
+      "score": 0.49,
+      "gt": true,
+      "note": null
+    },
+    {
+      "row": "VisA · defect",
+      "route": "AUTO-REJECT",
+      "file": "inspect-sample-visa-def-reject.png",
+      "zoom": "inspect-sample-visa-def-reject-gt.png",
+      "score": 0.57,
+      "gt": true,
+      "note": null
+    }
+  ]
+}
