@@ -65,7 +65,7 @@ scripts:
 <p class="prose"><em>{{ samples.caption }} {{ samples.protocol }}</em></p>
 
 <dialog class="lb">
-  <img alt="" />
+  <img alt="" hidden />
   <p data-lb-cap></p>
   <form method="dialog"><button>Close</button></form>
 </dialog>
