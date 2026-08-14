@@ -388,6 +388,8 @@ dialog.lb {
   max-width: min(92vw, 48rem);
 }
 dialog.lb img { width: 100%; height: auto; }
+dialog.lb img:not([src]),
+dialog.lb img[hidden] { display: none; }
 dialog.lb::backdrop { background: rgb(28 25 23 / 0.55); }
 
 .map-grid {
