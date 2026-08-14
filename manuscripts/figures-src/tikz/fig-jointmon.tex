@@ -6,7 +6,8 @@
 %   a|b top row (tight horizontal gap), c full-width middle, d full-width heatmap
 % Chrome: gutter \panellabel; shared a/b legend above titles; titles near axes.
 % Legend↔title gap uses ~26pt above axis-north (titles stay @1.015).
-% Height budget: a|b taller share (~1.80in); c/d shorter; legends @26pt;
+% Height budget: a|b ~1.80in; c/d modestly taller (~1.18 / ~1.08) so the
+% wide bottom stack shares more vertical space; legends @26pt;
 % ~0.16in between c-legend south and a/b axis-south (xlabel clearance).
 \documentclass[border=2pt]{standalone}
 \input{inspect_style.tex}
@@ -32,7 +33,7 @@
 \begin{axis}[
   inspect default,
   name=ax_a,
-  width=2.58in, height=1.80in, at={(0.66in,2.78in)},
+  width=2.58in, height=1.80in, at={(0.66in,2.98in)},
   xmin=-0.02, xmax=1.05,
   ymin=-4.20, ymax=0.20,
   xlabel={rate},
@@ -54,7 +55,7 @@
 \begin{axis}[
   inspect default,
   name=ax_b,
-  width=2.58in, height=1.80in, at={(3.22in,2.78in)},
+  width=2.58in, height=1.80in, at={(3.22in,2.98in)},
   xmin=-0.03, xmax=1.03,
   ymin=-0.03, ymax=1.03,
   xlabel={false-alarm (non-exceeding)},
@@ -93,7 +94,7 @@
 \begin{axis}[
   inspect default,
   name=ax_c,
-  width=5.14in, height=1.08in, at={(0.66in,1.18in)},
+  width=5.14in, height=1.18in, at={(0.66in,1.28in)},
   xmin=-9.5, xmax=11.0,
   ymin=-9.5, ymax=9.5,
   xlabel={$z$ defect-score shift},
@@ -124,7 +125,7 @@
 \begin{axis}[
   inspect default,
   name=ax_d,
-  width=5.14in, height=0.98in, at={(0.66in,0.02in)},
+  width=5.14in, height=1.08in, at={(0.66in,0.02in)},
   xmin=0, xmax=12, ymin=0, ymax=2,
   xlabel={corruption + level},
   xtick={0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5},

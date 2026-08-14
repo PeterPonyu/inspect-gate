@@ -47,7 +47,7 @@
   name=ax_esc,
   width=2.48in, height=1.72in, at={(0.58in,2.32in)},
   xlabel={benchmark}, ylabel={realized escaped-defect rate},
-  ymin=0, ymax=0.15, xmin=-0.6, xmax=2.6,
+  ymin=0, ymax=0.15, xmin=-1.05, xmax=2.6,
   xtick={0,1,2}, xticklabels={MVTec AD, VisA, MPDD},
   clip=true,
 ]
@@ -59,8 +59,10 @@
   table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\escMeansPC};
 \addplot[cDinomaly, only marks, mark=square, line width=1.0pt, mark size=2.6pt]
   table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\escMeansDM};
-\draw[black, dashed, line width=0.8pt] (axis cs:-0.6,0.10) -- (axis cs:2.6,0.10);
-\node[anchor=south east, font=\tickfont, text=black] at (axis cs:2.58,0.102) {$\alpha_{\mathrm{miss}}$};
+\draw[black, dashed, line width=0.8pt] (axis cs:-1.05,0.10) -- (axis cs:2.6,0.10);
+% Left pad (xmin=-1.05): α_miss sits on the target line clear of all columns/means.
+\node[anchor=south west, font=\axislabelfont, text=black]
+  at (axis cs:-1.00,0.104) {$\alpha_{\mathrm{miss}}$};
 \end{axis}
 \validitylabel{ax_esc}{a}
 
@@ -83,7 +85,9 @@
 \addplot[cDinomaly, only marks, mark=square, line width=1.0pt, mark size=2.6pt]
   table[x expr=\thisrow{x_pos}+0.15*(\thisrow{j_offset}-0.5), y=mean_val]{\frMeansDM};
 \draw[black, dashed, line width=0.8pt] (axis cs:-0.6,0.05) -- (axis cs:2.6,0.05);
-\node[anchor=south east, font=\tickfont, text=black] at (axis cs:2.58,0.052) {$\alpha_{\mathrm{fr}}$};
+% Empty MPDD column — keep at right end, slightly above the line.
+\node[anchor=south east, font=\axislabelfont, text=black, fill=white, fill opacity=0.92, text opacity=1, inner sep=1.2pt]
+  at (axis cs:2.58,0.054) {$\alpha_{\mathrm{fr}}$};
 \node[anchor=north east, font=\tickfont, text=black, align=right]
   at (axis cs:2.55,0.145) {G2: 0/6\\refused};
 \end{axis}
@@ -101,17 +105,20 @@
   name=ax_md,
   width=2.48in, height=1.72in, at={(0.58in,0.14in)},
   xlabel={realized escaped (\%)}, ylabel={realized false-reject (\%)},
-  xmin=-0.6, xmax=15, ymin=-0.4, ymax=8.4,
+  xmin=-0.6, xmax=15, ymin=-0.4, ymax=8.9,
   xtick={0,5,10,15}, ytick={0,2,4,6,8},
   validity/title near axis,
   validity/legend above,
   title={matched diagonal},
   clip=true,
 ]
-\draw[black, dashed, line width=0.6pt] (axis cs:10,-0.4) -- (axis cs:10,8.4);
-\node[anchor=north, font=\tickfont, text=black] at (axis cs:10,7.7) {$\alpha_{\mathrm{miss}}$};
+% Pad ymax; α_miss right of x=10 above VisA; α_fr at left end (clear of x≈12 outliers).
+\draw[black, dashed, line width=0.6pt] (axis cs:10,-0.4) -- (axis cs:10,8.9);
+\node[anchor=south west, font=\axislabelfont, text=black, fill=white, fill opacity=0.92, text opacity=1, inner sep=1.2pt]
+  at (axis cs:10.45,8.15) {$\alpha_{\mathrm{miss}}$};
 \draw[black, dashed, line width=0.6pt] (axis cs:-0.6,5) -- (axis cs:15,5);
-\node[anchor=east, font=\tickfont, text=black] at (axis cs:14.7,5.35) {$\alpha_{\mathrm{fr}}$};
+\node[anchor=south west, font=\axislabelfont, text=black, fill=white, fill opacity=0.92, text opacity=1, inner sep=1.2pt]
+  at (axis cs:-0.35,5.22) {$\alpha_{\mathrm{fr}}$};
 \input{../out/validity-panel-c.tex}
 \end{axis}
 \validitylabel{ax_md}{c}

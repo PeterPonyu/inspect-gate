@@ -13,6 +13,7 @@ required <- c(
   "canvas_width_in", "canvas_height_in", "tile_size_in", "zoom_size_in",
   "zoom_padding_in", "zoom_offset_x_npc", "zoom_offset_y_npc",
   "zoom_label", "zoom_label_fontsize_pt", "zoom_label_offset_y_npc",
+  "zoom_label_color",
   "column_x", "label_x", "label_text_x", "panel_letter_x",
   "panel_letter_offset_y", "label_text_offset_y",
   "panel_letter_fontsize_pt", "label_text_fontsize_pt",
@@ -81,24 +82,23 @@ if (label_tile_gap + 1e-9 < min_label_gap_in) {
   ))
 }
 
-# Panel letter must sit on the row image midline (tile centre), not on a
-# combined letter+subtitle block mid.
-if (abs(panel_letter_offset_y - tile_y_offset) > 1e-9) {
+# Panel letter at the top of the row image band; subtitle on the tile mid.
+if (abs(panel_letter_offset_y - (tile_y_offset + tile_half_npc)) > 1e-9) {
   stop(sprintf(
-    "FAIL: panel letter offset (%.4f) must equal tile_y_offset (%.4f) for image-midline centering",
-    panel_letter_offset_y, tile_y_offset
+    "FAIL: panel letter offset (%.4f) must equal tile top (%.4f)",
+    panel_letter_offset_y, tile_y_offset + tile_half_npc
+  ))
+}
+if (abs(label_text_offset_y - tile_y_offset) > 1e-9) {
+  stop(sprintf(
+    "FAIL: subtitle offset (%.4f) must equal tile_y_offset (%.4f) for image-midline centering",
+    label_text_offset_y, tile_y_offset
   ))
 }
 if (panel_letter_offset_y + 1e-9 < label_text_offset_y) {
   stop(sprintf(
     "FAIL: panel letter offset (%.4f) must sit above subtitle offset (%.4f)",
     panel_letter_offset_y, label_text_offset_y
-  ))
-}
-if (abs(label_text_offset_y - score_offset_y) > 1e-9) {
-  stop(sprintf(
-    "FAIL: subtitle offset (%.4f) must track score baseline (%.4f)",
-    label_text_offset_y, score_offset_y
   ))
 }
 if (abs(panel_letter_x - label_text_x) > 1e-9) {
@@ -114,10 +114,30 @@ if (panel_letter_fontsize_pt + 1e-9 < label_text_fontsize_pt) {
   ))
 }
 
+# Bottom canvas must stay tight under row-(d) scores (caption hug).
+score_center_from_bottom_in <- (row_y[[length(row_y)]] + score_offset_y) * canvas_height_in
+score_half_in <- label_text_fontsize_pt / 72 / 2
+bottom_pad_in <- score_center_from_bottom_in - score_half_in
+if (bottom_pad_in < 0.04 || bottom_pad_in > 0.22) {
+  stop(sprintf(
+    "FAIL: bottom pad under scores is %.3f in (want ~0.04--0.22 in; was ~0.72 in)",
+    bottom_pad_in
+  ))
+}
+if (!identical(zoom_label_color, "white")) {
+  stop(sprintf("FAIL: GT zoom label color must be white, got %s", zoom_label_color))
+}
+if (exists("zoom_label_halo_color", inherits = FALSE) ||
+    exists("zoom_label_halo_pt", inherits = FALSE)) {
+  stop("FAIL: GT zoom must be plain white with no outline/halo variables")
+}
+
 cat(sprintf(
   paste0(
     "PASS: zoom contained (%.3f in pad); GT label below inset; ",
-    "title/tile gap %.3f in; letter on tile mid (%.4f); subtitle at score y (%.4f)\n"
+    "title/tile gap %.3f in; letter at tile top (%.4f); subtitle at tile mid (%.4f); ",
+    "bottom pad %.3f in; GT zoom %s (no outline)\n"
   ),
-  zoom_padding_in, label_tile_gap, panel_letter_offset_y, label_text_offset_y
+  zoom_padding_in, label_tile_gap, panel_letter_offset_y, label_text_offset_y,
+  bottom_pad_in, zoom_label_color
 ))

@@ -2,10 +2,11 @@
 % Data: R/g2delta_*.csv → out/g2delta-*.tex
 %
 % Chrome (jointmon-style pt offsets, not axis-relative legend@1.xx):
-%   titles @ 1.015 — tight to the axis top; panel letters on this row in the gutter
-%   c/d legends — TikZ nodes @34pt above axis.north (south-anchored); clears titles
+%   titles @ 1.0+1pt — tight to the axis top; panel letters on this row in the gutter
+%   c/d legends — TikZ nodes @24pt above axis.north (south-anchored); ~6–8pt air over titles
 %   a/b shared legend — TikZ node @26pt above the a/b midline
-%   a/b row @ 2.92in — clears c/d legend tops (~2.94) with x-labels tucked into gutter
+%   a/b row @ 3.22in — clears raised c/d legend tops + rotated x-labels (scale only axis)
+% Column walls: scale only axis so `at`/`width` are the plot box; a|c and b|d share x.
 % Panel-d legend is a TikZ node (not pgfplots ybar legend — tall samples collided).
 \documentclass[border=2pt]{standalone}
 \input{inspect_style.tex}
@@ -17,7 +18,7 @@
 
 % Letter on the title row, parked in the left gutter (south-east → sits left of NW).
 % Name must not start with \g<digit> (TeX accent primitive).
-\newcommand{\gtwolabel}[2]{\panellabelshift{#1}{#2}{-12pt}{10pt}}
+\newcommand{\gtwolabel}[2]{\panellabelshift{#1}{#2}{-12pt}{5pt}}
 
 \begin{document}
 \begin{tikzpicture}[font=\figfont]
@@ -25,16 +26,25 @@
 
 \pgfplotsset{
   g2/title near axis/.style={
-    title style={at={(0.5,1.015)}, anchor=south, font=\titlefont, text=black},
+    title style={at={(0.5,1.0)}, anchor=south, yshift=1pt, font=\titlefont, text=black},
+  },
+  % Plot-box geometry: `at` is the axis-box SW; labels hang outside.
+  g2/panel box/.style={
+    scale only axis,
   },
 }
 
+% Geometry (scale only axis — column walls = shared `at` x + matched widths):
+%   left  col a|c: at x=0.58in, width=2.45in → east=3.03in
+%   right col b|d: at x=3.58in, width=2.20in → east=5.78in
+%   inter-col gap 0.55in clears panel-d ylabel
+%   a/b at y=3.22in (c/d north=2.35; legend@24pt≈2.68; ~0.43in for rotated xticks)
+
 % Panel a: MVTec tiles
-% a/b at 2.92in: c/d north=2.35; c/d legend south@34pt≈2.82; top≈2.96;
-% ~0.04in nominal axis-to-legend clearance; rotated x-labels tuck into the gutter.
 \begin{axis}[
   inspect default,
-  name=axa, width=2.55in, height=1.15in, at={(0.55in,2.92in)},
+  g2/panel box,
+  name=axa, width=2.45in, height=1.15in, at={(0.58in,3.22in)},
   xmin=0, xmax=15, ymin=0, ymax=2,
   xtick={0.5,1.5,2.5,3.5,4.5,5.5,6.5,7.5,8.5,9.5,10.5,11.5,12.5,13.5,14.5},
   xticklabels={bot,cab,cap,car,grd,haz,lea,nut,pil,scr,til,tbr,tra,woo,zip},
@@ -55,7 +65,8 @@
 % Panel b: MPDD tiles
 \begin{axis}[
   inspect default,
-  name=axb, width=1.70in, height=1.15in, at={(3.55in,2.92in)},
+  g2/panel box,
+  name=axb, width=2.20in, height=1.15in, at={(3.58in,3.22in)},
   xmin=0, xmax=6, ymin=0, ymax=2,
   xtick={0.5,1.5,2.5,3.5,4.5,5.5},
   xticklabels={b-blk,b-brn,b-wht,conn,plate,tubes},
@@ -85,7 +96,8 @@
 % Panel c: remedy deferral — ytick labels expanded from meta macros
 \begin{axis}[
   inspect default,
-  name=axc, width=2.45in, height=2.35in, at={(0.42in,0)},
+  g2/panel box,
+  name=axc, width=2.45in, height=2.35in, at={(0.58in,0)},
   xmin=-2, xmax=118,
   ymin=-0.6, ymax=\GtwoDeltaCN-0.4,
   xlabel={deferral rate (\%)},
@@ -98,9 +110,9 @@
 \input{../out/g2delta-panel-c.tex}
 \end{axis}
 \gtwolabel{axc}{c}
-% Legend as TikZ node (not pgfplots) — same 34pt offset as a/b shared key.
+% Legend as TikZ node (not pgfplots) — 24pt clears title tops (~1+9pt) with ~6–8pt air.
 \node[anchor=south, font=\tickfont, text=black, inner sep=0.5pt]
-  at ([yshift=34pt] axc.north) {%
+  at ([yshift=24pt] axc.north) {%
   \textcolor{cRefuseFloor}{$\bullet$}~primary\quad
   \textcolor{cCertified}{\rule{1.1ex}{1.1ex}}~remedy%
 };
@@ -108,7 +120,8 @@
 % Panel d: per-seed n_G2
 \begin{axis}[
   inspect default,
-  name=axd, width=2.45in, height=2.35in, at={(3.15in,0)},
+  g2/panel box,
+  name=axd, width=2.20in, height=2.35in, at={(3.58in,0)},
   ybar=2pt, bar width=6pt,
   xmin=-0.6, xmax=4.6, ymin=-0.5, ymax=15.5,
   xlabel={seed},
@@ -124,7 +137,7 @@
 % Flat-square TikZ legend — avoids ybar's tall pgfplots legend samples colliding
 % with the title (the previous legend@1.16 + ybar image height stacked on title).
 \node[anchor=south, font=\tickfont, text=black, inner sep=0.5pt]
-  at ([yshift=34pt] axd.north) {%
+  at ([yshift=24pt] axd.north) {%
   \textcolor{cGate}{\rule{1.1ex}{1.1ex}}~MVTec AD\quad
   \textcolor{cAccept}{\rule{1.1ex}{1.1ex}}~MPDD%
 };

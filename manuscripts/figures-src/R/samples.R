@@ -75,8 +75,8 @@ for (j in seq_along(column_x)) {
 for (i in seq_along(rows)) {
   row <- rows[[i]]
   # House style: only panel letters are bold; row titles stay medium/plain.
-  # Letter and subtitle are separate nodes: letter on the row-image midline,
-  # subtitle in the lower-left (not a combined centered block).
+  # Letter and subtitle are separate nodes: letter at upper-left of the row
+  # image band; subtitle vertically centered on the row of images.
   title_gp <- gpar(
     fontsize = label_text_fontsize_pt, fontface = "plain", fontfamily = font_family
   )
@@ -87,7 +87,8 @@ for (i in seq_along(rows)) {
   panel_tag <- panel_label_text(row$panel)
   grid.text(
     panel_tag,
-    x = panel_letter_x, y = row_y[[i]] + panel_letter_offset_y, just = "left",
+    x = panel_letter_x, y = row_y[[i]] + panel_letter_offset_y,
+    just = c("left", "top"),
     gp = letter_gp
   )
   grid.text(
@@ -120,9 +121,14 @@ for (i in seq_along(rows)) {
         gp = gpar(fill = NA, col = "white", lwd = 0.9)
       )
       # Label below the inset so it never occludes the GT crop.
+      # Plain white only (no outline/halo).
+      zoom_label_y <- zoom_y + zoom_label_offset_y_npc
       grid.text(
-        zoom_label, x = zoom_x, y = zoom_y + zoom_label_offset_y_npc,
-        gp = gpar(fontsize = zoom_label_fontsize_pt, fontfamily = font_family, col = ANNOT_TEXT_COLOR)
+        zoom_label, x = zoom_x, y = zoom_label_y,
+        gp = gpar(
+          fontsize = zoom_label_fontsize_pt, fontfamily = font_family,
+          col = zoom_label_color
+        )
       )
     }
 

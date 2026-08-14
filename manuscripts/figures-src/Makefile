@@ -107,11 +107,11 @@ fig-mondrian-1.pdf: tikz/fig-mondrian-1.tex tikz/mondrian_common.tex out/mondria
 fig-mondrian-2.pdf: tikz/fig-mondrian-2.tex tikz/mondrian_common.tex out/mondrian-2-rows.tex
 	cd tikz && $(PDFLATEX) fig-mondrian-2.tex && mv fig-mondrian-2.pdf ../$@
 
-fig-opcost.pdf: tikz/fig-opcost.tex R/opcost_grid.csv R/opcost_headroom.csv R/opcost_fourmethod.csv R/opcost_latency.csv out/opcost-panel-b.tex out/opcost-panel-c.tex out/opcost-panel-d.tex tikz/inspect_style.tex
+fig-opcost.pdf: tikz/fig-opcost.tex R/opcost_grid.csv R/opcost_headroom.csv R/opcost_fourmethod.csv R/opcost_latency.csv out/opcost-panel-a.tex out/opcost-panel-b.tex out/opcost-panel-b-values.tex out/opcost-panel-c.tex out/opcost-panel-d.tex tikz/inspect_style.tex
 	cd tikz && $(PDFLATEX) fig-opcost.tex && mv fig-opcost.pdf ../$@
 
-# Opcost panel fragments (b/c/d) are emitted by process_opcost.R.
-out/opcost-panel-b.tex out/opcost-panel-c.tex out/opcost-panel-d.tex &: R/process_opcost.R
+# Opcost panel fragments (a–d + b value strip) are emitted by process_opcost.R.
+out/opcost-panel-a.tex out/opcost-panel-b.tex out/opcost-panel-b-values.tex out/opcost-panel-c.tex out/opcost-panel-d.tex &: R/process_opcost.R
 	cd R && $(RSCRIPT) process_opcost.R
 
 fig-validity.pdf: tikz/fig-validity.tex out/validity-panel-c.tex out/validity-panel-d.tex R/validity_escaped_points_patchcore.csv R/validity_escaped_points_dinomaly.csv R/validity_fr_points_patchcore.csv R/validity_fr_points_dinomaly.csv R/validity_escaped_means_patchcore.csv R/validity_escaped_means_dinomaly.csv R/validity_fr_means_patchcore.csv R/validity_fr_means_dinomaly.csv tikz/inspect_style.tex

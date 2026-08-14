@@ -11,14 +11,16 @@ input_path <- normalizePath(file.path(script_dir, "../data/frozen/scoreanatomy_p
 output_path <- file.path(script_dir, "../fig-scoreanatomy.pdf")
 source(file.path(script_dir, "_figconst.R"))  # INSPECT_FONT, ROUTE_* colours
 
-# Fig-scoreanatomy page-readability bump (scoped to this figure only).
-# House ladder in _figconst / TikZ remains tick 7 / body 8 / axis 9 / panel 9;
-# raise body text one step and speed up panel tags (a–d) more aggressively
-# so they stand out relative to ticks (panel/tick: 9/7 → 14/8).
-FIG_TICK_PT <- 8
-FIG_BODY_PT <- 9
-FIG_AXIS_PT <- 10.5
-PANEL_LABEL_PT <- 14
+# Fig-scoreanatomy page-readability ladder (scoped to this figure only).
+# House ladder in _figconst / TikZ remains tick 7 / body 8 / axis 9 / panel 9.
+# Aim for a coherent ~9–11 pt family after include scale: modest bump on
+# ticks/body, titles one step up, panel tags bold but not huge vs body.
+# layout() resets par("cex") to ~0.66 — we force cex=1 after layout so
+# axis/text/legend (cex-relative) match mtext (absolute) sizes.
+FIG_TICK_PT <- 9.5
+FIG_BODY_PT <- 9.5
+FIG_AXIS_PT <- 10
+PANEL_LABEL_PT <- 11
 
 if (!file.exists(input_path)) {
   stop(sprintf("FATAL: frozen score-anatomy input not found: %s", input_path))
@@ -52,6 +54,20 @@ score_limits <- function(good, defect, lo, hi) {
   c(max(0, min(values) - padding), min(1, max(values) + padding))
 }
 
+# White halo under annotation text so dashed/dotted spines and bar tops do not
+# strike through t_lo / t_hi labels.
+halo_text <- function(x, y, labels, ..., col = ANNOT_TEXT_COLOR, halo = "white",
+                      r_frac = 0.018) {
+  usr <- par("usr")
+  rx <- r_frac * diff(usr[1:2])
+  ry <- r_frac * diff(usr[3:4])
+  angles <- seq(0, 2 * pi, length.out = 17L)[-17L]
+  for (a in angles) {
+    text(x + cos(a) * rx, y + sin(a) * ry, labels, ..., col = halo)
+  }
+  text(x, y, labels, ..., col = col)
+}
+
 render_cell <- function(cell, side = c("left", "right")) {
   side <- match.arg(side)
   good <- as.numeric(unlist(cell$eval_scores$good))
@@ -62,7 +78,13 @@ render_cell <- function(cell, side = c("left", "right")) {
   breaks <- seq(limits[[1]], limits[[2]], length.out = 25L)
   good_hist <- hist(good, breaks = breaks, plot = FALSE)
   defect_hist <- hist(defect, breaks = breaks, plot = FALSE)
-  ymax <- max(c(good_hist$counts, defect_hist$counts, 1)) * 1.22
+  # Extra headroom when the defer band is narrow (panel d): labels sit above
+  # tall bars instead of crowding bar tops / spines.
+  close_thresholds <- is.finite(lo) && is.finite(hi) && ((hi - lo) < 0.08 * diff(limits))
+  ymax <- max(c(good_hist$counts, defect_hist$counts, 1)) * if (close_thresholds) 1.55 else 1.28
+  x_span <- diff(limits)
+  # Data-coord gap so label glyphs clear the spine (pos/offset=~char-width is too tight).
+  spine_gap <- if (close_thresholds) 0.055 * x_span else 0.045 * x_span
 
   # Left column (a,c): tighter right margin + titles pulled left so they do not
   # reach into the gutter where (b)/(d) panel letters sit. Right column (b,d):
@@ -70,13 +92,14 @@ render_cell <- function(cell, side = c("left", "right")) {
   # X-axis title is drawn once per column in a dedicated strip below the grid
   # (not via plot xlab), so descenders are never clipped by the panel cell.
   if (identical(side, "left")) {
-    # Slightly taller top / wider left for larger panel tags + titles.
-    par(mar = c(1.90, 3.85, 3.35, 0.15))
+    # Wider left for full-size "images" ylab after cex=1; top for titles/tags.
+    # Bottom mar kept modest so C/D sit closer to the xlab strip + legend.
+    par(mar = c(1.55, 4.15, 3.20, 0.15))
     title_frac <- 0.06
     tag_adj <- 1.65
   } else {
     # Keep enough left margin for the "images" ylab after the narrow gutter.
-    par(mar = c(1.90, 2.95, 3.35, 0.55))
+    par(mar = c(1.55, 3.25, 3.20, 0.55))
     title_frac <- 0.22
     tag_adj <- 1.40
   }
@@ -101,27 +124,29 @@ render_cell <- function(cell, side = c("left", "right")) {
   axis(1, cex.axis = tick_cex)
   axis(2, las = 1, cex.axis = tick_cex)
   box()
-  # Stack / stagger when the defer band is narrow (panel d: ~0.008 vs span).
-  close_thresholds <- is.finite(lo) && is.finite(hi) && ((hi - lo) < 0.08 * diff(limits))
+  # t_lo / t_hi use axis size (matches titles); expression() subscripts read a
+  # touch smaller optically, so do not drop to tick size.
+  # Before: a/b pos offset=0.28 @ ymax*0.96 (flush to spines); d adj (1.45/-0.35),
+  # hi @ ymax*0.28. After: explicit spine_gap in data coords + halo; panel d
+  # both labels in raised headroom (ymax×1.55), outward of their spines.
   if (is.finite(lo)) {
     abline(v = lo, lty = 2, lwd = 1.1)
     if (close_thresholds) {
-      text(lo, ymax * 0.97, expression(t[lo]),
-           adj = c(1.45, 0.5), cex = body_cex, col = ANNOT_TEXT_COLOR, xpd = NA)
+      halo_text(lo - spine_gap, ymax * 0.93, expression(t[lo]),
+                adj = c(1, 0.5), cex = axis_cex, xpd = NA)
     } else {
-      text(lo, ymax * 0.96, expression(t[lo]),
-           pos = 2, offset = 0.28, cex = axis_cex, col = ANNOT_TEXT_COLOR)
+      halo_text(lo - spine_gap, ymax * 0.96, expression(t[lo]),
+                adj = c(1, 0.5), cex = axis_cex)
     }
   }
   if (is.finite(hi)) {
     abline(v = hi, lty = 3, lwd = 1.1)
     if (close_thresholds) {
-      # Drop into the lower third and push right of the line to avoid collision.
-      text(hi, ymax * 0.28, expression(t[hi]),
-           adj = c(-0.35, 0.5), cex = body_cex, col = ANNOT_TEXT_COLOR, xpd = NA)
+      halo_text(hi + spine_gap, ymax * 0.82, expression(t[hi]),
+                adj = c(0, 0.5), cex = axis_cex, xpd = NA)
     } else {
-      text(hi, ymax * 0.96, expression(t[hi]),
-           pos = 4, offset = 0.28, cex = axis_cex, col = ANNOT_TEXT_COLOR)
+      halo_text(hi + spine_gap, ymax * 0.96, expression(t[hi]),
+                adj = c(0, 0.5), cex = axis_cex)
     }
   }
   backbone_label <- if (is.null(cell$backbone)) "" else sprintf(" / %s", cell$backbone)
@@ -137,7 +162,8 @@ render_cell <- function(cell, side = c("left", "right")) {
 
 raw_pdf <- file.path(script_dir, "../review-scoreanatomy-build.pdf")
 # Slightly wider canvas so larger fonts keep readable at column width.
-cairo_pdf(raw_pdf, width = 6.5, height = 5.55, pointsize = 12, family = font_family)
+# Slightly shorter canvas after tightening row spacer + plot-to-legend band.
+cairo_pdf(raw_pdf, width = 6.5, height = 5.30, pointsize = 12, family = font_family)
 # Regions: 1=a 2=b 3=c 4=d 5=xlab strip 6=legend;
 # 7=row spacer (never plotted); 8=column gutter (never plotted).
 layout(
@@ -147,9 +173,14 @@ layout(
            5, 5, 5,
            6, 6, 6), nrow = 5, byrow = TRUE),
   widths = c(1, 0.04, 1),
-  heights = c(1, 0.16, 1, 0.24, 0.16)
+  # heights: panels | row-gap | panels | xlab | legend
+  # Tighten inter-row (was 0.16) and plot→legend band (xlab 0.26→0.18, legend 0.18→0.16).
+  heights = c(1, 0.08, 1, 0.18, 0.16)
 )
-par(oma = c(0, 1.15, 0, 0), mgp = c(2.0, 0.55, 0), tcl = -0.25, family = font_family)
+# layout() drops cex to ~0.66; restore 1 so FIG_*_PT / 12 maps to true pt
+# for axis / text / legend (mtext cex is already absolute).
+par(oma = c(0, 1.15, 0, 0), mgp = c(2.0, 0.55, 0), tcl = -0.25,
+    family = font_family, cex = 1)
 sides <- c("left", "right", "left", "right")
 for (i in seq_along(frozen$cells)) {
   render_cell(frozen$cells[[i]], side = sides[[i]])
@@ -157,7 +188,7 @@ for (i in seq_along(frozen$cells)) {
 # One "anomaly score" label per column, with full descender clearance.
 par(mar = c(0, 0, 0, 0))
 plot.new()
-text(x = c(0.26, 0.78), y = 0.70, labels = c("anomaly score", "anomaly score"),
+text(x = c(0.26, 0.78), y = 0.55, labels = c("anomaly score", "anomaly score"),
      cex = FIG_AXIS_PT / 12, col = ANNOT_TEXT_COLOR, xpd = NA, adj = c(0.5, 0.5))
 par(mar = c(0, 0, 0, 0))
 plot.new()

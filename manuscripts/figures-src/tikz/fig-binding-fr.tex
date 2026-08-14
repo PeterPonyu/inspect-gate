@@ -6,9 +6,10 @@
 % type when included at \linewidth on elsarticle preprint.
 % Keep axis width near the prior 4.85in so \linewidth does not shrink type;
 % grow height instead. CM discrete sizes only (no half-pt substitution).
-\renewcommand{\figfont}{\fontsize{12}{14}\selectfont}
-\renewcommand{\axislabelfont}{\fontsize{12}{14}\selectfont}
-\renewcommand{\tickfont}{\fontsize{10}{12}\selectfont}
+% Second modest bump (user feedback): 12/12/10 → 14/14/11.
+\renewcommand{\figfont}{\fontsize{14}{16}\selectfont}
+\renewcommand{\axislabelfont}{\fontsize{14}{16}\selectfont}
+\renewcommand{\tickfont}{\fontsize{11}{13}\selectfont}
 
 \definecolor{C_BASE}{HTML}{D55E00}
 \definecolor{C_GATE}{HTML}{009E73}
@@ -30,7 +31,7 @@
     % Width held near prior 4.85in (slightly tighter) so paper \linewidth
     % does not shrink the larger type back down.
     width=4.70in,
-    height=9.50in,
+    height=10.25in,
     xmin=0, xmax=1.0,
     ymin=-0.6, ymax=32.8,
     xlabel={realized false-reject rate},
