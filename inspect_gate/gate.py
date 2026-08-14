@@ -9,8 +9,12 @@ Score convention (see ``io.py``): HIGHER score = MORE anomalous.
 
 G2 (false-reject), directly
     Design: "t_hi(c) = conformal upper quantile of GOOD calibration
-    scores in stratum c at level alpha_fr; auto-reject region {s >= t_hi}
-    ==> P(auto-reject | good, c) <= alpha_fr." This is EXACTLY
+    scores in stratum c at level alpha_fr." Classical non-randomized
+    split conformal guarantees the *open* inequality
+    ``P(new > t_hi) <= alpha_fr`` (marginal over the exchangeable
+    calibration+test good scores). Routing uses the closed comparison
+    ``s >= t_hi``; under continuous scores without atoms the closed and
+    open events are measure-equivalent (paper §gate). This is EXACTLY
     ``SplitConformal(alpha=alpha_fr, randomize=False).fit(good_scores)``:
     that class's ``.threshold`` is defined as the
     ``ceil((n+1)(1-alpha))``-th smallest calibration score, giving
@@ -21,14 +25,16 @@ G2 (false-reject), directly
 G1 (escaped-defect), via negation
     Design: "t_lo(c) = conformal lower quantile of DEFECTIVE calibration
     scores in stratum c at level alpha_miss (order statistic
-    k = floor(alpha_miss * (n_def+1))); auto-pass region {s <= t_lo} ==>
-    P(auto-pass | defective, c) <= alpha_miss." Let X be the defective
-    calibration scores (size n), Y = -X. ``SplitConformal(alpha_miss,
-    randomize=False).fit(Y).threshold`` is Y's ``rank_Y``-th smallest
-    value, ``rank_Y = ceil((n+1)(1 - alpha_miss))``. Order-statistic
-    identity: for any real array of size n, the k-th smallest value of X
-    equals the negative of the ``(n-k+1)``-th smallest value of ``-X``.
-    So it suffices to show ``n - k + 1 == rank_Y`` where
+    k = floor(alpha_miss * (n_def+1)))." Classical guarantee is the open
+    inequality ``P(new < t_lo) <= alpha_miss``; closed auto-pass routing
+    ``s <= t_lo`` is measure-equivalent under continuous scores. Let X be
+    the defective calibration scores (size n), Y = -X.
+    ``SplitConformal(alpha_miss, randomize=False).fit(Y).threshold`` is
+    Y's ``rank_Y``-th smallest value,
+    ``rank_Y = ceil((n+1)(1 - alpha_miss))``. Order-statistic identity
+    (exact arithmetic): for any real array of size n, the k-th smallest
+    value of X equals the negative of the ``(n-k+1)``-th smallest value
+    of ``-X``. So it suffices to show ``n - k + 1 == rank_Y`` where
     ``k = floor(alpha_miss*(n+1))``:
 
         n - k + 1 = (n+1) - k = (n+1) - floor(alpha_miss*(n+1))
@@ -40,13 +46,17 @@ G1 (escaped-defect), via negation
     Hence ``t_lo = X_(k) = -(Y_(n-k+1)) = -(Y_(rank_Y))
     = -SplitConformal(alpha_miss, randomize=False).fit(-defective_scores)
         .threshold``.
-    This is an exact algebraic identity (not an approximation), so G1 is
-    implemented as a single negated call into the same
-    ``relmetrics.conformal.SplitConformal`` class used for G2 -- see
-    :func:`_g1_threshold` / :func:`_g2_threshold` below, both one-liners.
-    ``randomize=False`` is used throughout (the design's formulas are the
-    plain/conservative order-statistic construction, not the randomized-
-    tie-breaking exact-coverage variant relmetrics also offers).
+    This is an exact algebraic identity over the reals (not an
+    approximation), so G1 is implemented as a single negated call into
+    the same ``relmetrics.conformal.SplitConformal`` class used for G2 --
+    see :func:`_g1_threshold` / :func:`_g2_threshold` below, both
+    one-liners. ``randomize=False`` is used throughout (the design's
+    formulas are the plain/conservative order-statistic construction,
+    not the randomized-tie-breaking exact-coverage variant relmetrics
+    also offers). ``SplitConformal.threshold`` uses the stable rank
+    ``(n+1) - floor((n+1)*alpha)`` (= ``ceil((n+1)(1-alpha))`` in exact
+    arithmetic), so the floor/ceil identity above holds in float64 even
+    for exotic alphas such as ``1/3`` that make a naive ``ceil`` overshoot.
 
 Certifiability floor, for free
     ``SplitConformal.threshold`` returns ``+inf`` whenever
@@ -59,11 +69,12 @@ Certifiability floor, for free
     threshold arithmetic; :func:`calibrate_gate` only adds the loud
     banner/printed floor the design requires on top of this.
 
-Mondrian stratification reuses ``relmetrics.conformal.MondrianConformal``
-the same way, per-category (default) or per-(category, defect_type) when
-requested and the defect-type cell has enough calibration defectives
-(design §2.3: "defect-type Mondrian stratum with n_def < 10 -> defect-
-type certificate refused, falls back to category-level").
+Mondrian stratification applies the same ``SplitConformal`` call
+per-category (default) or per-(category, defect_type) when requested and
+the defect-type cell has enough calibration defectives (design §2.3:
+"defect-type Mondrian stratum with n_def < 10 -> defect-type certificate
+refused, falls back to category-level"). :func:`route_gate` consumes the
+per-defect-type ``t_lo`` when present.
 """
 
 from __future__ import annotations
@@ -451,9 +462,20 @@ def route_gate(
 
         s = strata[cat]
         t_lo, t_hi = s["t_lo"], s["t_hi"]
+        # Defect-type Mondrian (exploratory): override G1's t_lo when this
+        # image's defect_type has a calibrated cell. Goods keep category-level
+        # t_lo (they only interact with G1 via the auto-pass cut; G2's t_hi
+        # is always category-level). Fallback cells already store the
+        # category-level t_lo in defect_type_thresholds[dt]["t_lo"].
+        dt_thresholds = s.get("defect_type_thresholds")
+        if dt_thresholds is not None:
+            dt = r.get("defect_type")
+            if dt is not None and dt in dt_thresholds:
+                t_lo = dt_thresholds[dt]["t_lo"]
         if t_lo >= t_hi:
-            # Crossed thresholds: the overlap band always defers, both
-            # guarantees survive (design §2.2).
+            # Finite crossed/equal thresholds only (refusal uses ±inf and
+            # stays in the ordered branch below): the overlap band always
+            # defers, both guarantees survive (design §2.2).
             if score < t_hi:
                 action = "auto-pass"
             elif score > t_lo:
@@ -461,6 +483,9 @@ def route_gate(
             else:
                 action = "defer"
         else:
+            # Ordered band, including refusal via empty regions:
+            # G1 refused => t_lo=-inf (never auto-pass); G2 refused =>
+            # t_hi=+inf (never auto-reject); both => always defer.
             if score <= t_lo:
                 action = "auto-pass"
             elif score >= t_hi:

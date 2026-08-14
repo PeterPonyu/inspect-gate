@@ -187,6 +187,51 @@ def test_route_gate_crossed_thresholds_defer_the_overlap():
     assert actions["c"] == "auto-reject"  # above t_lo=5.0
 
 
+def test_route_gate_uses_defect_type_t_lo_when_present():
+    """Exploratory Mondrian: per-defect-type t_lo must affect routing, not
+    only sit unused in the calibrated gate dict."""
+    gate = {
+        "categories_seen": ["bottle"],
+        "strata": {
+            "bottle": {
+                "t_lo": 1.0,
+                "t_hi": 5.0,
+                "g2_certified": True,
+                "defect_type_thresholds": {
+                    "scratch": {"t_lo": 3.0, "n_cal_defect": 12, "certified": True, "fallback_reason": None},
+                },
+            },
+        },
+    }
+    records = [
+        # score=2.0: above category t_lo=1 but at/below scratch t_lo=3 -> pass under dt override
+        {"image_id": "d1", "category": "bottle", "score": 2.0, "label": "defect", "defect_type": "scratch", "split": "test"},
+        # unknown defect type keeps category t_lo=1 -> defer (1 < 2 < 5)
+        {"image_id": "d2", "category": "bottle", "score": 2.0, "label": "defect", "defect_type": "poke", "split": "test"},
+        # goods ignore defect_type map (no "good" cell) and use category t_lo
+        {"image_id": "g1", "category": "bottle", "score": 0.5, "label": "good", "defect_type": "good", "split": "test"},
+    ]
+    result = _gate.route_gate(gate, records)
+    actions = {d["image_id"]: d["action"] for d in result["decisions"]}
+    assert actions["d1"] == "auto-pass"
+    assert actions["d2"] == "defer"
+    assert actions["g1"] == "auto-pass"
+
+
+def test_g1_threshold_matches_floor_form_for_third_alpha():
+    """Regression: alpha=1/3 must follow floor(alpha*(n+1)), not a naive ceil
+    overshoot on the negated SplitConformal path."""
+    rng = np.random.default_rng(2)
+    scores = rng.normal(size=8)
+    alpha = 1.0 / 3.0
+    n = scores.size
+    k = math.floor(alpha * (n + 1))
+    expected = float(np.sort(scores)[k - 1])
+    t_lo, n_out = _gate._g1_threshold(scores, alpha)
+    assert n_out == n
+    assert t_lo == pytest.approx(expected)
+
+
 def test_calibrate_gate_train_holdout_ks_gate_downgrades_g2_on_shift():
     all_recs = make_synthetic_scores(
         categories=("bottle",), n_train_good=200, n_test_good=100, n_test_defect=100, separation=3.0,

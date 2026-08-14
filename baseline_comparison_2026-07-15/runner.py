@@ -221,12 +221,11 @@ def read_published_gate(gate_dir: Path, categories: List[str]) -> Dict[str, Any]
 def _crc_threshold(cal_defect_scores: np.ndarray, alpha_miss: float) -> Tuple[float, int]:
     """CRC operating point for the 0/1 escaped-defect (miss) loss.
 
-    For the monotone 0/1 miss loss, the Angelopoulos-CRC threshold coincides
-    exactly with our G1 split-conformal threshold t_lo (equivalence proved in
-    inspect_gate/gate.py). We reuse the tested library routine and rely on
-    the run-time self-check (see :func:`_selfcheck_crc_equals_g1`) rather than
-    re-deriving the order statistic here. Returns ``(tau, n_cal_defect)``;
-    ``tau`` is ``-inf`` iff the stratum floor 1/(n+1) exceeds ``alpha_miss``
+    Angelopoulos et al. (CRC, §2.3) show that for the 0/1 miscoverage loss CRC
+    reduces to split conformal; our G1 threshold is that quantile under the
+    nested-set parameterization for escaped defects, so we reuse
+    ``gate._g1_threshold``. Returns ``(tau, n_cal_defect)``; ``tau`` is
+    ``-inf`` iff the stratum floor 1/(n+1) exceeds ``alpha_miss``
     (CRC cannot certify -> pass region empty)."""
     return _gate._g1_threshold(np.asarray(cal_defect_scores, dtype=float), alpha_miss)
 
