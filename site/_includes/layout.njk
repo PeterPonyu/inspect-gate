@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ title or site.wordmark }} · {{ site.wordmark }}</title>
+    <title>{{ title or site.shortTitle }}</title>
     <meta name="description" content="{{ description or site.shortTitle }}" />
     <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml" />
     <link rel="stylesheet" href="{{ '/assets/css/inspect.css' | url }}" />
@@ -21,7 +21,7 @@
           Zenodo concept
           <a href="{{ site.zenodoConcept | doiHref }}">{{ site.zenodoConcept }}</a>
           ·
-          <a href="{{ site.github }}">GitHub</a>
+          <a href="{{ site.github }}">Code</a>
         </p>
         <p>{{ site.author }} (corresponding) · ORCID {{ site.orcid }}</p>
         <details>
