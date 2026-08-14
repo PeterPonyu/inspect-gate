@@ -38,17 +38,20 @@
 % CURRENT page when it fits there, instead of forcing a page break that
 % leaves the preceding text page mostly blank; lowering \textfraction and
 % \floatpagefraction admits the same floats without requiring a fuller page.
-\renewcommand{\topfraction}{0.90}
-\renewcommand{\bottomfraction}{0.70}
-\renewcommand{\textfraction}{0.08}
-% 0.80: mid-height figures (overview, etc.) must share a page with text instead
-% of claiming a sparse dedicated float page under [!htbp].
-\renewcommand{\floatpagefraction}{0.80}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.05}
+% 0.88: mid-height figures (overview, etc.) must share a page with text instead
+% of claiming a sparse dedicated float page under [!htbp]. Prior 0.80 still
+% admitted float-only pages ~55--60\% full (Fig.~14 / appendix tables).
+\renewcommand{\floatpagefraction}{0.88}
 % Slightly tighter float/caption gaps (still within elsarticle norms) so
 % mid-height figures leave room for following text instead of orphaning it.
-\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
-\setlength{\floatsep}{8pt plus 2pt minus 2pt}
-\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+% Zero the "plus" stretch on float seps so underfull pages cannot reopen
+% multi-inch holes between a top float and following text.
+\setlength{\textfloatsep}{10pt plus 0pt minus 2pt}
+\setlength{\floatsep}{8pt plus 0pt minus 2pt}
+\setlength{\intextsep}{8pt plus 0pt minus 2pt}
 \setlength{\abovecaptionskip}{5pt}
 \setlength{\belowcaptionskip}{2pt}
 % elsarticle loads natbib itself; the numbered elsarticle-num style below
@@ -73,10 +76,15 @@
 
 
 \journal{Results in Engineering}
-\date{5 August 2026}
+\date{11 August 2026}
 
 \emergencystretch=3em
 \begin{document}
+% [!htbp] only guides *where* a float may sit. elsarticle still ships pages
+% under \flushbottom-like stretch when a float is deferred, opening multi-inch
+% holes. Ragged bottoms for this preprint stop that rubber glue (same remedy
+% as materials JCP). Keep after \begin{document} so class hooks cannot override.
+\raggedbottom
 
 \begin{frontmatter}
 
@@ -93,36 +101,34 @@ country={China}}
 \cortext[cor1]{Corresponding author.}
 
 \begin{abstract}
-% Abstract word count: mirrored to abstract.txt and PORTAL_PACK.txt.
+% Abstract word count: portal paste target <=248 (safe under RiE 250).
+% Mirrored to abstract.txt and PORTAL_PACK.txt (plain text, no LaTeX).
 \noindent Anomaly detectors can rank defects well without defining a safe operating decision. We present
-\emph{inspect-gate}, a pre-deployment triage layer evaluated on two detector architectures and three
-academic industrial-inspection benchmarks. It converts anomaly scores into per-category auto-pass, auto-reject,
-and human-defer regions with finite-sample split-conformal bounds on escaped-defect and false-reject
-rates. Categories whose calibration pools cannot support a requested bound are reported as
-\emph{audited-not-certified} and routed to review. On the confirmatory MVTec AD benchmark at the stated
-operating point ($\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$), escaped-defect certification
-holds for all $15$ categories, while false-reject certification holds in only $4/15$ under the primary
-protocol; pooled false-reject is $0.5\%$ at $54.4\%$ deferral, versus $3.1\%$ false-reject with no
-deferral under a single-threshold conformal risk control (CRC) baseline (as on MPDD, refused G2
-cells contribute structural zeros to the pooled false-reject rate via an empty auto-reject band).
-Exploratory VisA and MPDD checks under the same protocol tag the complementary pool-size extremes:
-on VisA the gate reduces false rejects from $16.2\%$ to $3.0\%$ relative to CRC (realized
-escaped-defect $7.6\%$ vs.\ $9.5\%$), and on MPDD it reports $0.0\%$ false-reject only by deferring
-$73.1\%$ of images where the false-reject axis is refused in all six categories ($0/6$
-G2-certifiable) --- a high-review diagnostic, not a dual-certificate success. Escaped-defect certification also holds for all $12$ VisA categories, whereas
-all $33$ benchmark categories refuse at $\alpha_{\text{miss}}=0.01$ because none has the required $99$
-defective calibration examples. A synthetic corruption stress test finds that good-score drift screening
-misses $34\%$ of accepted PatchCore cells above the escaped-defect target; a defect-score marginal test
-catches only about $5\%$ of those residual cells. The evidence supports a calibration/refusal protocol
-on academic AD benchmarks, not portable production-line deployment: temporal drift remains untested.
+\emph{inspect-gate}, a pre-deployment triage layer on two detector architectures and three academic
+industrial-inspection benchmarks. It maps anomaly scores to per-category auto-pass, auto-reject, and
+human-defer regions with finite-sample split-conformal bounds on escaped-defect and false-reject
+rates. Categories whose calibration pools cannot support a requested bound are
+\emph{audited-not-certified} and routed to review. On confirmatory MVTec AD at
+$\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$, escaped-defect certification holds for all
+$15$ categories, while false-reject holds in only $4/15$ under the primary protocol; pooled
+false-reject is $0.5\%$ at $54.4\%$ deferral, versus $3.1\%$ with no deferral under single-threshold
+conformal risk control (CRC) (as on MPDD, refused G2 cells contribute structural zeros via an empty
+auto-reject band). Exploratory VisA and MPDD checks tag complementary pool-size extremes: on VisA
+the gate reduces false rejects from $16.2\%$ to $3.0\%$ relative to CRC (escaped-defect $7.6\%$
+vs.\ $9.5\%$), and on MPDD it reports $0.0\%$ false-reject only by deferring $73.1\%$ where the
+false-reject axis is refused in all six categories ($0/6$ G2-certifiable) --- a high-review
+diagnostic, not a dual-certificate success. Escaped-defect also holds for all $12$ VisA categories;
+all $33$ categories refuse at $\alpha_{\text{miss}}=0.01$ for lack of $99$ defective calibration
+examples. A synthetic corruption stress test finds good-score drift screening misses $34\%$ of
+accepted PatchCore cells above the escaped-defect target; a defect-score marginal test catches only
+about $5\%$ of those residual cells. Evidence supports a calibration/refusal protocol on academic AD
+benchmarks, not portable production-line deployment: temporal drift remains untested.
 \end{abstract}
 
-% Keywords: 1-7 English terms for RiE indexing. Preprint textwidth is only
-% 360pt, so six full phrases cannot share one line at \normalsize; keep the
-% indexing set and let elsarticle's \raggedright keyword box wrap naturally.
+% Keywords: RiE portal limit 5. Drop VisA (still in title/abstract); keep selective prediction.
 \begin{keyword}
-industrial inspection \sep conformal prediction \sep anomaly detection \sep
-selective prediction \sep MVTec AD \sep VisA
+industrial visual inspection \sep conformal prediction \sep anomaly detection \sep
+selective prediction \sep MVTec AD
 \end{keyword}
 
 \end{frontmatter}
@@ -226,8 +232,9 @@ auto-reject route.
   $\Pr\{s\!<\!t_{\text{lo}}\}\le\alpha_{\text{miss}}$ on defective scores (marginal over the
   calibration--test exchangeable pool; Section~\ref{sec:gate}). Comparing $s_i$ with this band
   routes the part to auto-pass, defer, or auto-reject. The dashed floor-control branch is distinct
-  from that data path: an unmet floor refuses the axis (band $=\pm\infty$), records
-  audited-not-certified, and forces defer rather than auto-reject. All three outcomes feed the
+  from that data path: an unmet floor refuses that axis ($t_{\text{lo}}=-\infty$ and/or
+  $t_{\text{hi}}=+\infty$), records audited-not-certified, and empties the corresponding
+  auto-action (no uncertified auto-pass / auto-reject). All three outcomes feed the
   same audit scorecard and frozen operating envelope; the schematic makes no claim that either
   backbone is superior.}
   \label{fig:overview}
@@ -401,9 +408,14 @@ re-derivation on each reuse.
 Each image $i$ in category $c$ has an anomaly score $s_i$ with the convention \emph{higher
 $=$ more anomalous}. The gate is a calibrated pair of per-category thresholds
 $(t_{\text{lo}}(c), t_{\text{hi}}(c))$: when $t_{\text{lo}} < t_{\text{hi}}$ the ordered rule
-below applies; when $t_{\text{lo}} \ge t_{\text{hi}}$ (refusal or crossed thresholds) the overlap
-band always defers and both guarantees still hold because each auto-action set can only shrink
-(Section~\ref{sec:crcbaseline}).
+below applies (this branch also covers axis refusal via empty regions:
+$t_{\text{lo}}=-\infty$ and/or $t_{\text{hi}}=+\infty$; Section~\ref{sec:floor}); when
+$t_{\text{lo}} \ge t_{\text{hi}}$ for finite crossed or equal thresholds the overlap
+band always defers and both open-tail guarantees still hold by set inclusion relative to the
+ordered open events,
+$\{s < t_{\text{hi}}\} \subseteq \{s < t_{\text{lo}}\}$ and
+$\{s > t_{\text{lo}}\} \subseteq \{s > t_{\text{hi}}\}$
+(each auto-action set can only shrink).
 
 Equation~\eqref{eq:threewaydecision} reports the decision for image $i$, matching the
 implemented router:
@@ -438,18 +450,22 @@ good scores in category $c$ (the probability is \emph{marginal} over the random 
 split and the new score, not conditional on the realized threshold). Routing uses the closed
 comparison $s \ge t_{\text{hi}}$ (Equation~\eqref{eq:threewaydecision}); under continuous scores
 without atoms the closed and open events are measure-equivalent, and score ties are rare in
-practice. This is exactly the split-conformal upper-quantile construction applied to the good
+practice. With atoms the elementary bound
+$\Pr\{s\ge t_{\text{hi}}\}\le\alpha_{\text{fr}}+\Pr\{s=t_{\text{hi}}\}$
+remains, so any excess over $\alpha_{\text{fr}}$ is at most the atom mass at the threshold.
+This is exactly the split-conformal upper-quantile construction applied to the good
 scores.
 \begin{equation}
 t_{\text{hi}}(c)=S^{\text{good}}_{(k_{\text{hi}})},\qquad
 k_{\text{hi}}=\left\lceil (n_{\text{cal}}^{\text{good}}+1)
-(1-\alpha_{\text{fr}})\right\rceil ,
+(1-\alpha_{\text{fr}})\right\rceil
+=(n_{\text{cal}}^{\text{good}}+1)
+-\bigl\lfloor\alpha_{\text{fr}}(n_{\text{cal}}^{\text{good}}+1)\bigr\rfloor ,
 \label{eq:g2quantile}
 \end{equation}
 \begin{equation}
 \Pr\!\bigl\{s_{n+1} > t_{\text{hi}}(c)\bigr\}
-\le \alpha_{\text{fr}}
-\qquad\text{(marginal over calibration$+$test; good scores in $c$).}
+\le \alpha_{\text{fr}}.
 \label{eq:g2guarantee}
 \end{equation}
 % implemented by the split-conformal routine relmetrics.conformal.SplitConformal
@@ -458,23 +474,29 @@ k_{\text{hi}}=\left\lceil (n_{\text{cal}}^{\text{good}}+1)
 scores is the mirror image: apply the same split-conformal
 construction~\citep{papadopoulos2002inductive} to the \emph{negated} defective calibration scores $Y=-X$ at level
 $\alpha_{\text{miss}}$, then map the resulting upper quantile back through the negation. The gate
-module proves the order-statistic identity in Equation~\eqref{eq:g1mirror}, equivalently the
-design floor form $k=\lfloor\alpha_{\text{miss}}(n_{\text{cal}}^{\text{def}}+1)\rfloor$, and both
-are checked in the accompanying unit tests. No new estimator is introduced; both certificates are
-the same conformal quantile. As with G2, the classical guarantee is the open inequality below
-(marginal over calibration$+$test); closed auto-pass routing $s\le t_{\text{lo}}$ is
-measure-equivalent under continuous scores.
+module proves the order-statistic identity in Equation~\eqref{eq:g1mirror}: with
+$N=n_{\text{cal}}^{\text{def}}+1$, the exact-arithmetic relation
+$\lceil N(1-\alpha_{\text{miss}})\rceil=N-\lfloor N\alpha_{\text{miss}}\rfloor$
+equates the negated upper-quantile rank to the design floor form
+$k=\lfloor\alpha_{\text{miss}}N\rfloor$, and both are checked in the accompanying unit tests
+(the implementation uses the floor-stable rank so the identity holds in floating point). No new
+estimator is introduced; both certificates are the same conformal quantile. As with G2, the
+classical guarantee is the open inequality below (marginal over the calibration$+$test
+exchangeable pool of defective scores in category~$c$); closed auto-pass routing
+$s\le t_{\text{lo}}$ is measure-equivalent under continuous scores, and with atoms
+$\Pr\{s\le t_{\text{lo}}\}\le\alpha_{\text{miss}}+\Pr\{s=t_{\text{lo}}\}$.
 \begin{equation}
 \begin{aligned}
+&k=\bigl\lfloor\alpha_{\text{miss}}(n_{\text{cal}}^{\text{def}}+1)\bigr\rfloor ,\\
+&\text{refuse G1 (set $t_{\text{lo}}=-\infty$) when $k=0$; otherwise}\\
 &t_{\text{lo}}(c)=-Y_{(k_{\text{lo}})}=X^{\text{def}}_{(k)},\qquad
 Y=-X,\\
 &k_{\text{lo}}=\left\lceil (n_{\text{cal}}^{\text{def}}+1)
-(1-\alpha_{\text{miss}})\right\rceil ,\qquad
-k=\bigl\lfloor\alpha_{\text{miss}}(n_{\text{cal}}^{\text{def}}+1)\bigr\rfloor ,\\
-&\text{refuse G1 (set $t_{\text{lo}}=-\infty$) when $k=0$},\\[2pt]
+(1-\alpha_{\text{miss}})\right\rceil
+= (n_{\text{cal}}^{\text{def}}+1)
+-\bigl\lfloor\alpha_{\text{miss}}(n_{\text{cal}}^{\text{def}}+1)\bigr\rfloor ,\\[2pt]
 &\Pr\!\bigl\{s_{n+1} < t_{\text{lo}}(c)\bigr\}
-\le \alpha_{\text{miss}}
-\qquad\text{(marginal over calibration$+$test; defective scores in $c$).}
+\le \alpha_{\text{miss}}.
 \end{aligned}
 \label{eq:g1mirror}
 \end{equation}
@@ -482,9 +504,12 @@ k=\bigl\lfloor\alpha_{\text{miss}}(n_{\text{cal}}^{\text{def}}+1)\bigr\rfloor ,\
 
 \paragraph{Mondrian per-category stratification.} Calibration is stratified by category (a Mondrian
 conformal construction~\citep{vovk2005algorithmic}): each category gets its own $(t_{\text{lo}}, t_{\text{hi}})$, so the
-guarantee is category-conditional (not pooled across categories); within a category it remains
-marginal over that category's calibration--test exchangeable pool. An optional finer per-defect-type
-stratification is exploratory only (Section~\ref{sec:limitations}).
+guarantee is per-category (Mondrian / group-conditional: not pooled across categories); within a
+category it remains marginal over that category's calibration--test exchangeable pool, not
+conditional on the realized thresholds. An optional finer per-defect-type stratification is
+exploratory only (Section~\ref{sec:limitations}): thin cells fall back to the category-level
+$t_{\text{lo}}$ and are marked uncertified at the defect-type grain, so the displayed maps are
+empirical diagnostics rather than additional certificates.
 
 \paragraph{Where the labeled defectives come from.} G1 calibrates on labeled \emph{defective}
 images per category ($n_{\text{cal}}^{\text{def}}$ in Table~\ref{tab:floors}) --- a requirement
@@ -526,11 +551,14 @@ The gate's mechanism is made concrete on one repeat of the frozen protocol in Fi
 \centering
 \includegraphics[width=0.97\linewidth]{figures/fig-scoreanatomy.pdf}
 \caption{The gate's mechanism on real scores (seed $0$, repeat $0$; evaluation-half
-histograms, thresholds calibrated on the calibration half). \textbf{a:}~MVTec AD screw
+histograms, thresholds calibrated on the calibration half). Green bars are good
+evaluation scores, orange bars defective evaluation scores; the beige band is the defer
+region between dashed $t_{\text{lo}}$ and dotted $t_{\text{hi}}$. \textbf{a:}~MVTec AD screw
 (PatchCore): both certificates, defer band absorbs the overlap region. \textbf{b:}~VisA
 pcb1 (PatchCore): both certified with a wider band. \textbf{c:}~MPDD connector
 (PatchCore): separation looks clean to the eye yet the gate refuses --- pools too small
-for the $1/(n_{\text{cal}}+1)$ floors, both thresholds at $\pm\infty$. \textbf{d:}~VisA
+for the $1/(n_{\text{cal}}+1)$ floors, both thresholds at $\pm\infty$ (entire support
+deferred). \textbf{d:}~VisA
 pcb1 under \emph{Dinomaly} (contrast with b): same category, different scorer; both G1
 and G2 certify with a narrow band ($t_{\text{lo}}=0.072$, $t_{\text{hi}}=0.080$), showing
 that a different detector with cleaner score separation can close the defer band
@@ -540,10 +568,11 @@ substantially.}
 
 Figure~\ref{fig:scoreanatomy} makes the mechanism concrete on one repeat of the frozen protocol:
 where the two score masses are well separated the band is narrow and both certificates issue
-(panel a); where they overlap the band widens to cover the overlap and deferral rises (panel b);
-and where calibration pools are too thin the gate refuses outright (panel c) --- the refusal
+(Fig.~\ref{fig:scoreanatomy}(a)); where they overlap the band widens to cover the overlap and deferral rises (Fig.~\ref{fig:scoreanatomy}(b));
+and where calibration pools are too thin the gate refuses outright (Fig.~\ref{fig:scoreanatomy}(c)) --- the refusal
 reads the pool sizes, not the apparent separability, which is precisely why a threshold picked
-by eye on panel c would be an uncertified decision the gate declines to automate.
+by eye on Fig.~\ref{fig:scoreanatomy}(c) would be an uncertified decision the gate declines to automate.
+Fig.~\ref{fig:scoreanatomy}(d) shows the same VisA pcb1 category under Dinomaly with a much narrower certified band.
 
 \subsection{Validity audit (V1) and kill-gates (K1--K7)}
 \label{sec:v1}
@@ -599,7 +628,8 @@ $\ge 3$ categories), K6 (a citation re-scan for a prior certified triage), and K
 
 Beyond validity, we ask whether standard thresholding practice earns deferral skill at all.
 For each practice --- B1 (global fixed threshold), B2 (per-category tuned), B3 (train-good quantile)
---- we compare its area-under-the-risk--coverage curve (AURC) against the closed-form random-deferral null
+--- we compare its area-under-the-risk--coverage curve
+(AURC)~\citep{geifman2017selective} against the closed-form random-deferral null
 (evaluated in closed form, never Monte-Carlo'd), with the statistic in
 Equation~\eqref{eq:aurcstat}, using a matched-abstention,
 % closed-form random-deferral AURC null: relmetrics.aurc.random_aurc
@@ -608,9 +638,10 @@ and a roster-derived Holm~\citep{holm1979simple} correction. The verdict is symm
 practice beats random the paper reports a debunking finding; if all do it reports a constructive one.
 Here $A_{\pi,\tau}(i)=\mathbf{1}\{\text{practice $\pi$ accepts image $i$ at threshold $\tau$}\}$ is the
 acceptance indicator, $L_i\in\{0,1\}$ is the 0--1 loss (defect miss or false reject, depending on
-the risk axis), and coverage $\widehat C_{\pi}$ reparameterizes the curve so the integrand runs
-over coverage $u\in[0,1]$ rather than the raw threshold $\tau$ (a Riemann sum against coverage
-increments in the implementation).
+the risk axis), and coverage $\widehat C_{\pi}$ reparameterizes the risk curve: writing
+$\widehat R_{\pi}^{\text{cov}}(u)$ for risk at coverage level $u$, the integrand runs over
+$u\in[0,1]$ rather than the raw threshold $\tau$ (a Riemann sum against coverage increments in
+the implementation).
 \begin{equation}
 \begin{aligned}
 \widehat C_{\pi}(\tau)
@@ -619,7 +650,7 @@ increments in the implementation).
 &=\frac{\sum_{i\in\mathcal E} L_i A_{\pi,\tau}(i)}
 {\sum_{i\in\mathcal E} A_{\pi,\tau}(i)},\\
 \widehat{\operatorname{AURC}}(\pi)
-&=\int_0^1 \widehat R_{\pi}(u)\,du,\\
+&=\int_0^1 \widehat R_{\pi}^{\text{cov}}(u)\,du,\\
 \widehat{\Delta}_{\text{AURC}}(\pi)
 &=\widehat{\operatorname{AURC}}(\pi)
 -\widehat{\operatorname{AURC}}(\text{random deferral}).
@@ -652,15 +683,16 @@ score records are joined to those splits with refusal on any missing or extra im
 Figure~\ref{fig:samples} illustrates the three-way decisions on real parts across the route and ground-truth classes.
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.92\linewidth]{figures/fig-samples.pdf}
+\includegraphics[width=0.96\linewidth]{figures/fig-samples.pdf}
 \caption{Three-way decisions on real parts (PatchCore, seed 0, repeat-0 split;
-illustrative, not a new experiment). Columns show auto-pass, defer, and
-auto-reject; rows show MPDD good, MPDD defective, VisA good, and VisA
-defective examples. Border color encodes the route and each tile gives its
-anomaly score. Insets and yellow contours use dataset ground truth to locate
+illustrative, not a new experiment). Columns are auto-pass, defer, and
+auto-reject; rows are (a)~MPDD good, (b)~MPDD defective, (c)~VisA good, and
+(d)~VisA defective. Tile borders encode the route (green $=$ auto-pass,
+gold $=$ defer, brown $=$ auto-reject); each tile reports its anomaly score $s$.
+Insets and yellow contours use dataset ground truth to locate
 defects and are not model localization. MPDD uses the train-holdout rescue arm
 (Section~\ref{sec:mpddholdout}); VisA uses the primary protocol. The connector defer tile
-is marked \emph{floor refusal}: connector's escaped-defect side cannot certify at
+in (a) is marked \emph{floor refusal}: connector's escaped-defect side cannot certify at
 $\alpha_{\text{miss}}=0.10$ ($\alpha_{\min}=0.125$), so $t_{\text{lo}}=-\infty$ and every image
 defers --- a different decision class from a within-band defer, which the tile now names
 explicitly. Together the
@@ -671,9 +703,7 @@ and escaped-defect cases.}
 
 \paragraph{Backbones (Branch A, $B=2$).} PatchCore~\citep{roth2022patchcore} via
 anomalib~\citep{akcay2022anomalib} (a Wide ResNet-50-2 backbone, features from the second and
-third stages, coreset ratio $0.10$)\footnote{Target $0.991$ is PatchCore's published
-$25\%$-coreset mean; we score the $10\%$-coreset point (PREREG~D3).
-See Table~\ref{tab:repro}.} and Dinomaly~\citep{guo2025dinomaly} (canonical score dump,
+third stages, coreset ratio $0.10$) and Dinomaly~\citep{guo2025dinomaly} (canonical score dump,
 its own eval script; on VisA, the reference repo's multi-class setting --- one model per seed for
 all $12$ categories --- which is the setting its published VisA figure reports). Both were
 confirmed present and reproduction-passing before any calibration, so the preregistered
@@ -714,6 +744,9 @@ AURC, drift); status tags in the headings mark which is which.
 
 On all three benchmarks the gate recomputes image-AUROC (Mann--Whitney rank-sum identity) directly
 from the local scores and compares it against a named published target (Table~\ref{tab:repro}).
+For PatchCore on MVTec AD that target is $0.991$, Roth et al.'s published $25\%$-coreset mean; we
+score the $10\%$-coreset configuration of Section~\ref{sec:setup} (published $10\%$-coreset mean:
+$0.990$).
 On MVTec AD both backbones pass in all $5$ seeds, and K3 (mean AUROC $\ge 0.90$) holds with wide
 margin. On VisA, Dinomaly passes in all $5$ seeds against its own published VisA figure
 ($0.987$, multi-class setting), and our recomputation again reproduces its reported per-seed
@@ -864,9 +897,11 @@ path V1$\to$C2.
 \label{sec:frontier}
 
 The post-freeze operating-point sweep is shown in Figure~\ref{fig:alphafrontier}.
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
 \centering
-\includegraphics[width=0.92\linewidth]{figures/fig-alphafrontier.pdf}
+% Wider native aspect (panel 3.20in) so width=\linewidth binds under the height
+% budget; 0.55→0.58\textheight is a modest headroom bump (same-page body text).
+\includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{figures/fig-alphafrontier.pdf}
 \caption{The operating-point frontier on the frozen code path (post-freeze exploratory
 sweep; the construction reproduces every frozen artifact exactly at the paper's
 operating point). Rows are MVTec AD (a,b), VisA (c,d), and MPDD (e,f). Left panels
@@ -890,12 +925,12 @@ through the byte-identical frozen calibration and routing code
 readings. First, VisA has real headroom: both axes certify in all $12$ categories down to
 $\alpha_{\text{miss}}=0.02$ --- Dinomaly's deferral rises only $6.5\%\to12.9\%$ --- before
 certification collapses to $0/12$ at $0.01$, exactly where the floor arithmetic
-($n_{\text{cal}}^{\text{def}}\ge99$) predicts. Second, MVTec AD's binding constraint is
+($n_{\text{cal}}^{\text{def}}\ge99$) predicts (Fig.~\ref{fig:alphafrontier}(c)--(d)). Second, MVTec AD's binding constraint is
 pool size, not tolerance: the both-axis certified fraction is pinned at $4/15$ across
 $\alpha_{\text{miss}}\ge0.05$ (the good-pool floors Section~\ref{sec:g2promo}'s remedy
-addresses), and deferral worsens smoothly to $0.80$--$0.83$ at $0.02$. Third, MPDD
+addresses), and deferral worsens smoothly to $0.80$--$0.83$ at $0.02$ (Fig.~\ref{fig:alphafrontier}(a)--(b)). Third, MPDD
 confirms the stingy extreme, certifying nothing at any grid point on the primary protocol
-and saturating at $100\%$ deferral from $\alpha_{\text{miss}}=0.02$ down. The sweep turns
+and saturating at $100\%$ deferral from $\alpha_{\text{miss}}=0.02$ down (Fig.~\ref{fig:alphafrontier}(e)--(f)). The sweep turns
 the single-point headline into a priced menu a deployment can choose from, and the
 $\alpha_{\text{miss}}=0.01$ collapse is shown, not asserted
 (Section~\ref{sec:limitations}).
@@ -913,12 +948,14 @@ The calibration-budget sensitivity is shown in Figure~\ref{fig:calfraction}.
 ($\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$; $R=20$, five seeds;
 post-freeze exploratory). Rows are MVTec AD (a,b), VisA (c,d), and MPDD (e,f).
 Left panels show categories certified on both axes as the calibration fraction shrinks;
-right panels show mean deferral. Shaded bands span seed minima to maxima. Lost budget
+right panels show mean deferral. Solid circles denote PatchCore and dashed squares
+Dinomaly; shaded bands span seed minima to maxima. Lost budget
 is absorbed by deferral, never by silent error: at fraction $0.10$ MPDD refuses
-everything (deferral exactly $1.0$, zero silent decisions). The flat zero in panel (e)
+everything (deferral exactly $1.0$, zero silent decisions). The flat zero in panel~(e)
 for MPDD at fraction $0.10$ is a measured refusal across all $20$ repeats and five
 seeds --- the floors refuse all six categories, so both-certified is identically zero
-and deferral saturates at $1.0$ rather than crossing into silent mis-coverage.}
+and deferral saturates at $1.0$ rather than crossing into silent mis-coverage
+(panel~(f)).}
 \label{fig:calfraction}
 \end{figure}
 
@@ -936,8 +973,8 @@ $\sim$14-defective cells), the expected finite-$n$ fluctuation of a marginal gua
 not a validity breach. Second, certification collapses exactly where the floor arithmetic
 predicts: VisA's both-axis certification holds $12/12$ down to fraction $0.30$--$0.20$
 and falls to $0$ at $0.15$ as per-category calibration pools cross below the
-$1/(n_{\text{cal}}+1)$ floors; MVTec AD's four G2-certified categories are lost already
-at fraction $0.30$ (its good pools are the smaller pools), while its G1 side degrades
+$1/(n_{\text{cal}}+1)$ floors (Fig.~\ref{fig:calfraction}(c)); MVTec AD's four G2-certified categories are lost already
+at fraction $0.30$ (its good pools are the smaller pools; Fig.~\ref{fig:calfraction}(a)), while its G1 side degrades
 gracefully $15\to8$ of $15$ at fraction $0.10$. Third, the degradation is into deferral,
 never into silent error --- at fraction $0.10$ MPDD defers $100\%$ of images on both
 backbones, the loudest possible refusal, with zero uncertified automated decisions. The
@@ -968,13 +1005,15 @@ Equation~\eqref{eq:planning} into a procurement curve and prices the three bench
   \centering
   \includegraphics[width=\linewidth]{figures/fig-calplanning.pdf}
   \caption{Calibration-pool planning curves from the frozen per-category pool sizes.
-  (a)~Required $n_{\text{cal}}$ vs.\ target rate $\alpha$ (Equation~\eqref{eq:planning}); shaded
-  bands are observed defective-pool ranges, and the dashed line marks
-  $\alpha_{\text{miss}}=0.10$. (b)~Certifiable category fraction vs.\ $\alpha$ (G1 escaped-defect,
-  solid; G2 false-reject, dashed), averaged over both backbones. (c)~Pool-growth shortfall at the
-  operating point as the \emph{non}-certifiable fraction (zero $=$ already fully certified).
-  (d)~Go/no-go check: bars are observed median pool sizes; dashed segments are the required
-  $n_{\text{cal}}$ on each axis.}
+  (a)~Required $n_{\text{cal}}$ vs.\ target rate $\alpha$ (Equation~\eqref{eq:planning});
+  the dashed line marks $\alpha_{\text{miss}}=0.10$, and the outside key lists
+  observed per-category defective-pool extents (frozen min--max counts; not
+  uncertainty intervals). (b)~Certifiable category fraction vs.\ $\alpha$
+  (G1 escaped-defect, solid; G2 false-reject, dashed), averaged over both
+  backbones. (c)~Pool-growth shortfall at the operating point as the \emph{non}-certifiable
+  fraction (zero $=$ already fully certified). (d)~Go/no-go check: bars are observed median
+  pool sizes; horizontal dashed/dotted lines are the required $n_{\text{cal}}$ on each
+  axis (thresholds, not uncertainty intervals).}
   \label{fig:calplanning}
 \end{figure}
 The arithmetic is analytic, but we verify it against the frozen artifacts: at the paper's
@@ -987,15 +1026,15 @@ $\alpha_{\text{fr}}=0.05$ costs $19$ good ones. Consequently the G2 refusals rep
 throughout --- MPDD $0/6$, MVTec AD $11/15$ --- are not a deep obstruction but a shortfall of
 roughly a factor of two in test-split allocation: holding the protocol fixed and only doubling
 each category's good pool takes MPDD from certifying nothing to certifying \emph{all} six
-categories, and MVTec AD from $4/15$ to $14/15$ (Figure~\ref{fig:calplanning}(b); $4\times$
+categories, and MVTec AD from $4/15$ to $14/15$ (Fig.~\ref{fig:calplanning}(b)--(c); $4\times$
 completes MVTec AD at $15/15$). MPDD's per-category test-good pools are $26$--$32$ images,
-about half of the $38$ that a $50/50$ split would need to clear $19$. Second, the
+about half of the $38$ that a $50/50$ split would need to clear $19$ (Fig.~\ref{fig:calplanning}(d)). Second, the
 escaped-defect axis is already nearly paid for: MVTec AD and VisA clear the $\alpha_{\text{miss}}$
 floor in every category as collected, and MPDD misses only connector, whose $14$ test-defective
-images yield $n_{\text{cal}}^{\text{def}}=7<9$. Third, the expense is concentrated entirely in
+images yield $n_{\text{cal}}^{\text{def}}=7<9$ (Fig.~\ref{fig:calplanning}(a),(d)). Third, the expense is concentrated entirely in
 the tight rates a safety-critical line would actually want: $\alpha=0.01$ requires $99$ per
 category and $\alpha=0.001$ requires $999$, which is $5$--$50\times$ what any of these
-benchmarks supply. That is the quantitative form of the scope boundary we state in
+benchmarks supply (Fig.~\ref{fig:calplanning}(a)). That is the quantitative form of the scope boundary we state in
 Section~\ref{sec:limitations}: on data of this scale the demonstrable object is the refusal
 discipline, and reaching a $1\%$-escape certificate is a data-collection problem rather than a
 methodological one. We state the planning rule in that form --- Equation~\eqref{eq:planning} is a
@@ -1010,10 +1049,11 @@ refusal instead of a quietly weaker certificate.
 The natural named baseline a reviewer would ask for is not a hand-picked straw man but the
 single-threshold construction our own G1 certificate specializes: split-conformal Conformal Risk
 Control (CRC)~\citep{angelopoulos2022crc}, applied with one per-category threshold at
-$\alpha_{\text{miss}}=0.10$ and no defer option. For the $0/1$ miss loss this threshold is exactly
-our G1 split-conformal threshold (an identity proved in the gate module's implementation), so CRC and our gate
-share the same finite-sample escaped-defect guarantee and certify the same cells; the only degree
-of freedom is what each does with the ambiguous middle. We recompute CRC on the identical
+$\alpha_{\text{miss}}=0.10$ and no defer option. For the $0/1$ miss loss, that construction reduces
+to split conformal (Angelopoulos et al., Sec.~2.3); under the same nested-set parameterization
+the quantile is exactly our G1 threshold, so CRC and our gate share the same finite-sample
+escaped-defect guarantee and certify the same cells; the only degree of freedom is what each does
+with the ambiguous middle. We recompute CRC on the identical
 canonical score dumps, under the identical protocol ($\alpha_{\text{miss}}=0.10$,
 $\alpha_{\text{fr}}=0.05$, $R=20$ repeated stratified $50/50$ calibration/evaluation splits, five
 seeds, both backbones), so every cell in Table~\ref{tab:crcbaseline} is apples-to-apples with the
@@ -1081,33 +1121,39 @@ differ within sampling noise across repeats. The comparison isolates exactly wha
 design buys over the nearest published single-threshold alternative: not a better escaped-defect
 guarantee (both share the same conformal construction) but a false-reject guarantee CRC cannot
 offer, purchased by turning auto-rejects into deferrals.
-Figure~\ref{fig:crcbaseline} plots the three rates for both methods side by side across all three
+Figure~\ref{fig:crcbaseline}(a) plots the three rates for both methods side by side across all three
 benchmarks, making the MPDD contrast in particular immediately visible. A per-backbone breakdown
 (Appendix Table~\ref{tab:crcbackbone}) confirms the pooled contrast is not carried by one
 backbone, and exposes that CRC's VisA false-reject is itself strongly backbone-dependent
-($28.8\%$ PatchCore vs.\ $3.7\%$ Dinomaly) --- the dual gate's deferral mechanism matters most
+($28.8\%$ PatchCore vs.\ $3.7\%$ Dinomaly; Fig.~\ref{fig:crcbaseline}(b) separates the backbones on VisA risk--coverage) --- the dual gate's deferral mechanism matters most
 exactly where the detector underneath is weakest.
 
 \begin{figure}[!htbp]
   \centering
   % Panels a-d generated by R/process_crcbaseline.R -> out/crcbaseline-panel-*.tex,
   % rendered via tikz/fig-crcbaseline.tex (R/CSV/TikZ pipeline).
-  \includegraphics[width=\linewidth]{figures/fig-crcbaseline.pdf}
+  % Height-capped: at full linewidth the graphic+long caption (~350pt) exceeds the
+  % residual column after the CRC prose (~330pt), so [!htbp] alone deferred the float.
+  \includegraphics[width=\linewidth,height=0.24\textheight,keepaspectratio]{figures/fig-crcbaseline.pdf}
   \caption{Dual gate versus single-threshold CRC baseline, pooled over both backbones and five seeds
-  (Table~\ref{tab:crcbaseline}). \textbf{a:} Escaped-defect, false-reject, and deferral rates
-  side by side across all three benchmarks. CRC has no deferral mechanism, so every non-passed
+  (Table~\ref{tab:crcbaseline}). \textbf{a:} Escaped-defect (open circles), false-reject (open
+  squares), and deferral (open triangles) rates side by side across all three benchmarks;
+  filled markers highlight CRC where it diverges. CRC has no deferral mechanism, so every non-passed
   image becomes an auto-reject; on MPDD this drives its false-reject rate to $36.9\%$ against
   $0.0\%$ for our gate at the same escaped-defect rate. \textbf{b:} Selective-prediction
-  risk-at-coverage curves per backbone on VisA --- the CRC baseline specializes to per-category
+  risk-at-coverage curves on VisA (PatchCore circles, Dinomaly squares); the horizontal
+  dashed line is $\alpha_{\text{fr}}=0.05$. The CRC baseline specializes to per-category
   selective classification with confidence-based abstention, but no coverage level reaches the
-  $5\%$ false-reject guarantee the gate certifies. \textbf{c:} Per-backbone G2 certification:
+  $5\%$ false-reject guarantee the gate certifies. \textbf{c:} Per-backbone G2 certification
+  (PatchCore blue bars, Dinomaly orange bars):
   the gate certifies both backbones on VisA (60/60 cells each), one on MVTec AD (20/75 each),
   and neither on MPDD (0/30 each); CRC certifies zero cells on every benchmark and backbone
   (0/75 MVTec AD, 0/60 VisA, 0/30 MPDD, per backbone) --- it cannot deliver the
   false-reject guarantee at any coverage.}
   \label{fig:crcbaseline}
 \end{figure}
-\FloatBarrier
+% No \FloatBarrier here: a barrier after Fig.~\ref{fig:crcbaseline} ships the float to the
+% next page and leaves the residual CRC page blank; following text must be free to fill it.
 
 As a second, non-conformal reference line we also compute the field-standard selective-prediction
 risk-coverage curve~\citep{geifman2017selective} (per-category best-F1 threshold, margin-based
@@ -1201,14 +1247,18 @@ Figure~\ref{fig:opcost} shows the deployment economics of the certified gate ver
 \caption{Deployment economics of the certified gate versus the CRC single-threshold
 baseline at frozen rates. Scenario groups: low-volume precision ($100$ parts/hour),
 mid-volume general ($600$), high-volume commodity ($3{,}000$); scenarios are assumed
-illustrative inputs. \textbf{a:}~Total hourly cost (gate vs.\ CRC) across all nine
-benchmark--scenario cells: the gate is cheaper in every cell. \textbf{b:}~Review-cost
+illustrative inputs. \textbf{a:}~Total hourly cost across all nine
+benchmark--scenario cells (blue $=$ gate, orange $=$ CRC): the gate is cheaper in every cell.
+\textbf{b:}~Review-cost
 headroom --- the multiple by which the assumed review cost can rise before the gate stops
-being cheaper: $12\times$--$1833\times$ (log; break-even at $1\times$). \textbf{c:}~Four-method
-total hourly cost at mid-volume general, including the original B1 binding-demo arm (no
-deferral, post-hoc, unavailable for MPDD); the gate is cheapest on MVTec AD and VisA.
-\textbf{d:}~Routing latency: the gate adds $2.8\,\mu$s per image amortised (right bar),
-against $18.9\,$ms backbone inference at batch size 1 and $17.0\,$ms batched (left bars).
+being cheaper: $12\times$--$1833\times$ (log; break-even at $1\times$); lines are
+benchmarks (circle MPDD, square VisA, triangle MVTec~AD). \textbf{c:}~Four-method
+total hourly cost at mid-volume general (blue gate, orange CRC, gold B1 no-deferral,
+teal all-human), including the original B1 binding-demo arm (no
+deferral, post-hoc, unavailable for MPDD); the gate is cheapest on MVTec AD and VisA among
+automated methods.
+\textbf{d:}~Routing latency: the gate adds $2.8\,\mu$s per image amortised (blue right bar),
+against $18.9\,$ms backbone inference at batch size 1 and $17.0\,$ms batched (orange left bars).
 Calibration is a one-time $2.4\,$ms per reset.}
 \label{fig:opcost}
 \end{figure}
@@ -1278,8 +1328,10 @@ CPU-vs-GPU or MVTec-vs-VisA backbone comparison, that the paper contributes.
     \bottomrule
   \end{tabular}
 \end{table}
-\FloatBarrier
-
+% No \FloatBarrier here: Table~\ref{tab:latency} is taller than the residual space
+% after §5.9, so a barrier deferred the float and left page 27 half-empty before
+% §5.10 could start. With [!htbp], let following §5.10 text fill that page while
+% the table floats nearby (same remedy as the glossary table at Methods open).
 
 \subsection{G2 train-holdout promotion on MVTec AD (frozen remedy arm)}
 \label{sec:g2promo}
@@ -1292,15 +1344,15 @@ checkpoint-dependent and do not provide the independent held-out pool required f
 promotion calibration. The remedy arm therefore remains single-backbone by evidence eligibility,
 disclosed here rather than implied otherwise. It behaves as preregistered: G2-certifiable categories rise from
 $4/15$ to $13/15$ in seeds $0$--$3$ and $12/15$ in seed $4$. The KS gate does real work rather than rubber-stamping:
-leather fails it in all five seeds (its train-good and test-good score distributions are not
-exchangeable) and screw additionally fails in seed $4$ --- each is reported
+leather fails it in all five seeds (BH-adjusted KS rejects the exchangeability null for its
+train-good vs.\ test-good scores) and screw additionally fails in seed $4$ --- each is reported
 audited-not-certified, never silently promoted, and the seed-$4$ screw case shows a category
-certified under the primary protocol can still be \emph{refused} under the holdout arm when
-exchangeability breaks. Toothbrush remains uncertifiable at $\alpha_{\text{fr}}=0.05$ under both
+certified under the primary protocol can still be \emph{refused} under the holdout arm when the
+screen fires. Non-rejection is only a screen, not a proof of exchangeability. Toothbrush remains uncertifiable at $\alpha_{\text{fr}}=0.05$ under both
 arms, exactly as preregistered ($n_{\text{cal}}^{\text{good}}$ too small in either pool). K1 is not tripped
 in any promoted seed aggregate.
 
-\paragraph{What the remedy costs and delivers (post-freeze pricing).} Figure~\ref{fig:g2delta} shows the per-category certification flip.
+\paragraph{What the remedy costs and delivers (post-freeze pricing).} Figure~\ref{fig:g2delta}(a)--(b) shows the per-category certification flip.
 
 \begin{figure}[!htbp]
 \centering
@@ -1308,8 +1360,9 @@ in any promoted seed aggregate.
 \caption{The G2 train-holdout remedy (PatchCore; seeds $0$--$3$ identical, seed $4$ differs on
 screw). \textbf{a:}~MVTec AD: $4/15\to13/15$, leather KS-refused every seed.
 \textbf{b:}~MPDD: $0/6\to4/6$. Category codes --- MVTec AD: bot/cab/cap/car/grd/haz/lea/nut/pil/scr/til/tbr/tra/woo/zip;
-MPDD: b-blk/b-brn/b-wht/conn/plate/tubes. Tiles: certified (green), refused at floor (grey), refused by KS (amber).
-\textbf{c:}~Remedy deferral cost per rescued category: promotion opens the auto-reject region and
+MPDD: b-blk/b-brn/b-wht/conn/plate/tubes. Tiles: certified (green), refused at floor (grey), refused by KS (amber);
+each panel stacks primary (top) vs.\ promoted (bottom) rows.
+\textbf{c:}~Remedy deferral cost per rescued category (primary vs.\ promoted bars): promotion opens the auto-reject region and
 \emph{reduces} deferral for most categories; connector (MPDD) remains near-vacuous at $71.7\%$.
 \textbf{d:}~Per-seed $n_{\mathrm{G2\,certified}}$ under the promoted arm: $13/15$ stable in seeds
 $0$--$3$ (screw degrades to $12/15$ in seed $4$ when KS fails); MPDD holdout certifies $4/6$ in
@@ -1319,7 +1372,7 @@ all five seeds.}
 
 Pricing the flip on the
 frozen post-hoc remedy-pricing artifacts qualifies it in both directions. On the cost
-side, certification is \emph{not} bought with more deferral: opening the auto-reject region
+side, certification is \emph{not} bought with more deferral (Fig.~\ref{fig:g2delta}(c)): opening the auto-reject region
 (a finite $t_{\text{hi}}$ where the primary protocol refused) \emph{reduces} deferral in every
 rescued category --- capsule certifies at $3.9\%$ mean deferral (from $75.1\%$ under refusal),
 bottle $6.1\%$, tile $7.5\%$, metal\_nut $7.7\%$; the most expensive rescue is carpet at
@@ -1327,7 +1380,7 @@ $45.2\%$. On the honesty side, two flags travel with the headline. First, the al
 screw \emph{degrades} under the promotion arm: its realized false-reject mean rises to $8.8\%$
 (range $4.8$--$12.1\%$ across seeds, above the $5\%$ target in four of five seeds and above the
 $+3$\,pp tier-1 tolerance in three) before it KS-fails outright in seed $4$ --- the $13/15$
-figure is therefore strictly a seeds-$0$--$3$ statement, and the promotion arm is a per-category
+figure is therefore strictly a seeds-$0$--$3$ statement (Fig.~\ref{fig:g2delta}(d)), and the promotion arm is a per-category
 choice, not a global upgrade. Second, grid, zipper, and pill realize false-reject marginally
 above the $5\%$ point target in some seeds (max $6.8\%$/$5.6\%$/$7.7\%$ respectively) though
 always inside the tier-1 tolerance. G1 is structurally unaffected by the arm; every rescued
@@ -1430,12 +1483,14 @@ vs.\ the certified gate (bluish green), with the gate's deferral annotated at ri
 dashed line is the $\alpha_{\text{miss}}=0.10$ target. MV $=$ MVTec AD, VA $=$ VisA.}
 \label{fig:bindingesc}
 \end{figure}
-\FloatBarrier
+% No \FloatBarrier here: a barrier after Fig.~\ref{fig:bindingesc} ships it alone and
+% leaves the residual page blank before the one-sentence bridge to Fig.~\ref{fig:bindingfr}.
 
 Figure~\ref{fig:bindingfr} reports the corresponding false-reject binding cells under the same encoding.
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
 \centering
-\includegraphics[width=\linewidth]{figures/fig-binding-fr.pdf}
+% Native aspect ~9.2in at linewidth — uncapped it forced a near-empty float page.
+\includegraphics[width=\linewidth,height=0.58\textheight,keepaspectratio]{figures/fig-binding-fr.pdf}
 \caption{Binding cells on the false-reject axis (post-hoc). Same encoding as
 Figure~\ref{fig:bindingesc}; the dashed line is the $\alpha_{\text{fr}}=0.05$ target.
 The VisA PatchCore capsules cell (top) is the extreme case: a global threshold
@@ -1464,8 +1519,8 @@ realizes rates well below target, so passing validates the calibrate/route/evalu
 rather than demonstrating sharpness. Consequently K1 is not tripped (the A3 exclusion
 cannot change K1's count: excluded cells cannot fail) ($0$ violations in every
 (backbone, seed) aggregate, against the $5$-cell MVTec/VisA kill threshold and, on MPDD, against
-a proportionally-scaled $2$-cell threshold\footnote{Absolute kill thresholds are un-trippable at
-$n_{\text{cat}}=6$, so MPDD uses proportional scales (K1$\to 2$, K2$\to 4$); diagnostic only.}) and K2 is
+a proportionally-scaled $2$-cell threshold --- the absolute $\ge 5$/$\ge 8$ cuts are un-trippable at
+$n_{\text{cat}}=6$, so MPDD uses diagnostic K1$\to 2$, K2$\to 4$ scales) and K2 is
 not tripped (on MVTec/VisA at most $1$ vacuous category --- VisA/PatchCore/seed~$2$ --- against the
 $8$-category/$0.80$-deferral threshold; on MPDD at most $2$ vacuous categories per aggregate
 against the scaled $4$-category threshold), in all $30$ aggregates across the three
@@ -1498,17 +1553,19 @@ violations; the two violation types separate cleanly by direction.}
 \label{fig:validity}
 \end{figure}
 
-Figure~\ref{fig:validity} opens up the tier-1 aggregates above to the per-repeat level: the
+Figure~\ref{fig:validity}(a)--(b) opens up the tier-1 aggregates above to the per-repeat level: the
 certified clouds sit at or below target on the overwhelming majority of repeats, the
 per-(benchmark, backbone) means sit below target everywhere, and the visible excursions are
 single repeats on small cells --- the fluctuation the marginal certificate semantics predict,
 not a validity breach (Section~\ref{sec:calfraction} shows the same invariance holds down to
-a tenth of the calibration budget).
+a tenth of the calibration budget). Fig.~\ref{fig:validity}(c)--(d) place the same-detector
+diagonal against the transfer-violation cloud from the cross-detector experiment.
 
-Figure~\ref{fig:deferral} shows median deferral per category for both backbones.
-\begin{figure}[!tbp]
+Figure~\ref{fig:deferral} shows median deferral per category for both backbones
+(Fig.~\ref{fig:deferral}(a)~MVTec~AD, (b)~VisA, (c)~MPDD).
+\begin{figure}[!htb]
 \centering
-\includegraphics[width=\linewidth,height=0.48\textheight,keepaspectratio]{figures/fig-deferral.pdf}
+\includegraphics[width=\linewidth,height=0.42\textheight,keepaspectratio]{figures/fig-deferral.pdf}
 \caption{Median deferral per category, seeds $0$--$4$ (dot = seed 0, shaded band = seed
 $0$--$4$ min--max; $R=20$), both backbones. \textbf{a:}~MVTec AD. \textbf{b:}~VisA.
 \textbf{c:}~MPDD. Deferral is strongly category-heterogeneous and tracks certifiability
@@ -1558,7 +1615,10 @@ there.}
   \end{tabular}%
   }
 \end{table}
-\FloatBarrier
+% No \FloatBarrier here: Fig.~\ref{fig:deferral} leaves a residual band that is too
+% short for Table~\ref{tab:v1}, so a barrier deferred the table and left that page
+% blank before §5.14 could start. With [!htbp], let following §5.14 text fill the
+% band while the table floats to the next page top (same remedy as tab:latency).
 
 \subsection{Exploratory excess-AURC audit}
 \label{sec:auditres}
@@ -1701,7 +1761,10 @@ the headroom the near-saturated MVTec backbones deny (Table~\ref{tab:c2}, lower 
   }
   % source: c2_tier2_2026-07-13/c2_mvtec.json, c2_tier2_2026-07-13/c2_visa.json
 \end{table}
-\FloatBarrier
+% No \FloatBarrier here: after Table~\ref{tab:x1trainside} and the VisA bridge
+% paragraph, the residual band is shorter than Table~\ref{tab:c2}, so a barrier
+% deferred C2 and left that page blank before §5.16. With [!htbp], let following
+% §5.16 text fill the band while the table floats nearby.
 
 \subsection{V1 tier-2 verdict}
 \label{sec:tier2verdict}
@@ -1819,7 +1882,10 @@ $11.9\%$ (PatchCore, VisA \texttt{pcb3}, contrast level~3).
     \bottomrule
   \end{tabular}
 \end{table}
-\FloatBarrier
+% No \FloatBarrier here: the load-bearing paragraph citing Table~\ref{tab:drift} leaves
+% a residual band shorter than the table, so a barrier deferred the float and blanked
+% that page before the caveats paragraph / Discussion could start. With [!htbp], let
+% following text fill the band while the table floats nearby.
 
 \paragraph{What this does and does not license.} Two caveats bound the reading. First, the KS
 screen here is heuristic rather than a calibrated type-I-error test: the corrupted good set contains
@@ -1866,10 +1932,10 @@ $330$-cell V1 grid as a finite-sample uncertainty map, with power exclusions and
 interval logic rather than treating every pass/fail cell as an independent discovery. The only
 formal practice-skill discovery claim is the C2 excess-AURC audit, where the family is named in
 advance, category-stratified permutation tests are paired with category-blocked bootstrap intervals,
-and Holm adjustment is applied within each seed. That separation is important: V1 certifies the
-operating policy, C2 asks whether conventional threshold practices contain real deferral skill, and
-the VisA/MPDD additions test portability of the arithmetic on academic AD benchmarks without
-expanding the frozen MVTec confirmatory family after the fact.
+and Holm adjustment is applied within each seed. That separation is important: V1 audits realized
+rates of the operating policy against the conformal targets, C2 asks whether conventional threshold
+practices contain real deferral skill, and the VisA/MPDD additions test portability of the arithmetic
+on academic AD benchmarks without expanding the frozen MVTec confirmatory family after the fact.
 
 For Results in Engineering readers, the contribution is thus a pre-deployment engineering gate
 rather than a new anomaly detector. It specifies what data a line must collect, what finite-sample
@@ -1939,8 +2005,9 @@ $29/34$ (Dinomaly) of the accepted-but-exceeding cells, but fires on $88.8\%$ an
 certified non-exceeding cells respectively --- catch rate $\approx$ false-alarm rate, an
 indiscriminate ``any corruption present'' detector. Score locations always shift under
 corruption; what a deployable monitor must detect is the re-ranking of good against defect
-scores. The tested design space therefore has three levels: marginal tests ($\le 5\%$ catch),
-pairing-respecting joint location tests (indiscriminate), and the remaining candidate ---
+scores. The tested design space therefore has three levels: marginal tests ($\le 5\%$ catch;
+Fig.~\ref{fig:jointmon}(a)--(b)),
+pairing-respecting joint location tests (indiscriminate; Fig.~\ref{fig:jointmon}(c)--(d)), and the remaining candidate ---
 a rank-ordering-level statistic (e.g.\ a permutation test on the gate's certified coverage
 itself, or an AUC-level statistic across both pools) --- which is the required direction before
 any drift-facing deployment claim (Figure~\ref{fig:jointmon}).
@@ -1968,10 +2035,12 @@ not cosmetic. Calibrating on
 PatchCore's calibration-half scores and applying the thresholds to Dinomaly's evaluation-half
 scores --- the identical images, labels, and stratified partition, so the only change is the
 scoring function --- violates the escaped-defect guarantee in $160/165$ cells across the three
-benchmarks (up to $+87$ points above the $\alpha_{\text{miss}}$ tolerance); the reverse
+benchmarks (up to $+87$ points above the $\alpha_{\text{miss}}$ tolerance; Fig.~\ref{fig:xdet}(b)); the reverse
 direction violates the false-reject guarantee in $80/165$ cells. The same-detector diagonal
 reproduces the frozen certification records exactly ($30/30$ cells, with a perturbation
-negative control), so the failure is the transfer, not the harness. This is a model-shift axis,
+negative control; Fig.~\ref{fig:xdet}(a)), so the failure is the transfer, not the harness.
+Fig.~\ref{fig:xdet}(c)--(d) locate the mechanism in non-overlapping score supports and the
+per-cell rate inversion. This is a model-shift axis,
 complementary to --- and easier than --- the temporal threshold-transfer across production
 periods named above as future work: even swapping the scoring function on fixed data breaks the
 certificate. A deployed gate must therefore be recalibrated against the detector it guards, and
@@ -2132,7 +2201,7 @@ Figures~\ref{fig:mondrian1}--\ref{fig:mondrian2} give the defect-type (Mondrian)
 coverage map for MVTec AD (VisA's public ground truth carries a single ``bad''
 stratum per category and MPDD is reported per category).
 
-\begin{table}[!htbp]
+\begin{table}[H]
   \centering
   \small
   \caption{Per-category certifiability at $\alpha_{\text{miss}}=0.10$, $\alpha_{\text{fr}}=0.05$
@@ -2166,7 +2235,7 @@ stratum per category and MPDD is reported per category).
   \end{tabular}
 \end{table}
 
-\begin{table}[!htbp]
+\begin{table}[H]
   \centering
   \small
   \caption{Seed-$0$ median per-category deferral by benchmark and backbone
@@ -2190,7 +2259,7 @@ stratum per category and MPDD is reported per category).
   }
 \end{table}
 
-\begin{table}[!htbp]
+\begin{table}[H]
   \centering
   \small
   \caption{Per-backbone companion to Table~\ref{tab:crcbaseline}: our dual gate vs.\ the CRC
@@ -2221,7 +2290,7 @@ stratum per category and MPDD is reported per category).
   \end{tabular}
 \end{table}
 
-\begin{table}[!htbp]
+\begin{table}[H]
   \centering
   \small
   \caption{V1 tier-2 grading, per category (expanded from the aggregate axis totals in the text;

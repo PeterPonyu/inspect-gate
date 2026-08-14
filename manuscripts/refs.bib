@@ -3,13 +3,14 @@
 % against Crossref / arXiv / OpenAlex / DBLP / publisher landings. Corrections are
 % evidence-based only (no invented DOIs or page ranges). Learn then
 % Test updated from arXiv-only to Annals of Applied Statistics 19(2), 2025 (Crossref
-% DOI 10.1214/24-AOAS1998; page numbers not provided by Crossref). IEEE Xplore page
-% ranges corrected for Bergmann 2020 / Li 2021 / DRAEM / Deng 2022.
+% DOI 10.1214/24-AOAS1998). IEEE Xplore page ranges corrected for Bergmann 2020 /
+% Li 2021 / DRAEM / Deng 2022.
 % Re-audit 2026-08-10 (RiE cite/ref hygiene): Kumar demoted to arXiv-only (arXiv
 % asserts COINS DOI 10.1109/COINS65080.2025.11125785 but Crossref/DBLP VoR title and
 % author list differ); VisA/PaDiM/You/Laxhammar/Vovk metadata filled from Crossref/DBLP/DiVA.
 % Bib hygiene 2026-08-10 (Ultragoal G001): arXiv article/inproceedings normalized to
 % misc+eprint; DOI notes promoted to doi=; Holm DOI + Laxhammar IEEE URL added.
+% Re-audit 2026-08-11: LTT pages 1641--1662 from Project Euclid / Ann. Appl. Stat.
 
 % ---- Industrial anomaly detection: backbones + benchmark ----
 @inproceedings{bergmann2019mvtec,
@@ -101,6 +102,7 @@
   journal  = {Annals of Applied Statistics},
   volume   = {19},
   number   = {2},
+  pages    = {1641--1662},
   year     = {2025},
   doi      = {10.1214/24-AOAS1998},
   eprint   = {2110.01052},
@@ -137,9 +139,10 @@
   author   = {Holm, Sture},
   journal  = {Scandinavian Journal of Statistics},
   volume   = {6},
+  number   = {2},
   pages    = {65--70},
   year     = {1979},
-  doi      = {10.2307/4615733}
+  note     = {{JSTOR} 4615733; no resolvable DOI is registered for this article}
 }
 
 @article{benjamini1995controlling,
@@ -175,7 +178,7 @@
   pages    = {153--160},
   year     = {2011},
   url      = {https://ieeexplore.ieee.org/document/5977571/},
-  note      = {proceedings pagination per DiVA / author self-cite}
+  note      = {pages 153--160 per DiVA and author self-cite in Laxhammar \& Falkman 2015; no Crossref DOI}
 }
 
 @article{laxhammar2015inductive,
@@ -224,14 +227,16 @@
   primaryClass  = {cs.LG}
 }
 
-@misc{bai2025crcsgad,
-  title    = {{CRC-SGAD}: Conformal risk control for supervised graph anomaly detection},
+@inproceedings{bai2025crcsgad,
+  title    = {{CRC-SGAD}: Conformal Risk Control for Supervised Graph Anomaly Detection},
   author   = {Bai, Songran and Zheng, Xiaolong and Zeng, Daniel Dajun},
+  booktitle= {2025 IEEE International Conference on Intelligence and Security Informatics (ISI)},
+  pages    = {151--156},
   year     = {2025},
+  doi      = {10.1109/ISI65680.2025.11201206},
   eprint   = {2504.02248},
   archivePrefix = {arXiv},
-  primaryClass  = {cs.LG},
-  doi      = {10.48550/arXiv.2504.02248}
+  primaryClass  = {cs.LG}
 }
 
 % Cite as arXiv: arXiv abs asserts COINS DOI 10.1109/COINS65080.2025.11125785, but
@@ -477,6 +482,8 @@
   title    = {Classification with valid and adaptive coverage},
   author   = {Romano, Yaniv and Sesia, Matteo and Cand{\`e}s, Emmanuel J.},
   booktitle= {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume   = {33},
+  pages    = {3581--3591},
   year     = {2020},
   eprint   = {2006.02544},
   archivePrefix = {arXiv},
@@ -487,6 +494,8 @@
   title    = {Conformal prediction under covariate shift},
   author   = {Tibshirani, Ryan J. and Barber, Rina Foygel and Cand{\`e}s, Emmanuel J. and Ramdas, Aaditya},
   booktitle= {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume   = {32},
+  pages    = {2526--2536},
   year     = {2019},
   eprint   = {1904.06019},
   archivePrefix = {arXiv},
@@ -499,6 +508,7 @@
   title    = {{SelectiveNet}: A deep neural network with an integrated reject option},
   author   = {Geifman, Yonatan and El-Yaniv, Ran},
   booktitle= {Proc. Int. Conf. Machine Learning (ICML)},
+  pages    = {2151--2159},
   year     = {2019},
   eprint   = {1901.09192},
   archivePrefix = {arXiv},
