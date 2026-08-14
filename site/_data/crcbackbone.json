@@ -1,5 +1,5 @@
 {
-  "caption": "Per-backbone companion to the pooled CRC table. CRC has no deferral and no G2 certificate.",
+  "caption": "Per-backbone breakdown of the pooled CRC table. CRC has no deferral and no G2 certificate.",
   "rows": [
     {
       "benchmark": "MPDD",

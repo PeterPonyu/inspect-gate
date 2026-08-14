@@ -8,7 +8,7 @@ permalink: /reproduce/
 <div class="prose">
   <h1>Reproduce</h1>
   <p>
-    Scientific interface, not a product quickstart. The protocol listing is how the certificates are issued, not a deploy-to-line invitation.
+    Frozen scores and digests are in the public archive. The objects are the three-way gate, the G1/G2 certificates, and the refusal rule — not a line-side installer.
   </p>
 
   <h2>Archives</h2>
@@ -24,18 +24,8 @@ permalink: /reproduce/
     Staging trees for VisA and MPDD, and weight trees, are not in the public archive.
   </p>
 
-  <h2>Protocol verbs</h2>
-  <p>Score convention: higher = more anomalous. The issued objects are:</p>
-</div>
-
-<pre class="cli">fit         (t_lo, t_hi) or refuse an axis
-route       scores to auto-pass / defer / auto-reject
-audit       realized rates against the issued certificates
-certify     pool certificates across seeds
-report      human-readable digest</pre>
-
-<div class="prose">
+  <h2>Checks</h2>
   <p>
-    Tests are CPU-only and do not require a deep-learning runtime. That is a reproducibility fact, not a product claim.
+    Tests are CPU-only and do not require a deep-learning runtime. Score convention: higher = more anomalous.
   </p>
 </div>

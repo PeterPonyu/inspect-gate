@@ -17,8 +17,8 @@
     const n = required(a);
     out.textContent = String(n);
     let extra = "";
-    if (Math.abs(a - 0.1) < 1e-9) extra = " Paper reading: α_miss = 0.10 costs 9 defectives.";
-    if (Math.abs(a - 0.05) < 1e-9) extra = " Paper reading: α_fr = 0.05 costs 19 goods.";
+    if (Math.abs(a - 0.1) < 1e-9) extra = " At α_miss = 0.10 the floor costs 9 defectives.";
+    if (Math.abs(a - 0.05) < 1e-9) extra = " At α_fr = 0.05 the floor costs 19 goods.";
     note.textContent = `n_cal ≥ ⌈1/α⌉ − 1. Floor α_min = 1/(n_cal+1).${extra} This calculator does not invent plant throughputs.`;
   };
 

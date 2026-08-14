@@ -329,7 +329,7 @@ def plot_crc() -> None:
         ax.plot(xs, ys, color=color, ls=ls, marker="o", label=backbone)
     ax.set_xlabel("coverage")
     ax.set_ylabel("selective risk (%)")
-    ax.set_title("VisA risk–coverage companion [exploratory]", loc="left")
+    ax.set_title("VisA risk–coverage [exploratory]", loc="left")
     ax.legend()
     panel_label(ax, "b")
 

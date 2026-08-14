@@ -178,7 +178,7 @@ def main() -> None:
     write_json(
         "crcbackbone.json",
         {
-            "caption": "Per-backbone companion to the pooled CRC table. CRC has no deferral and no G2 certificate.",
+            "caption": "Per-backbone breakdown of the pooled CRC table. CRC has no deferral and no G2 certificate.",
             "rows": [
                 {"benchmark": "MPDD", "backbone": "PatchCore", "method": "gate", "escaped": "7.1%", "fr": "0.0%", "deferral": "75.1%"},
                 {"benchmark": "MPDD", "backbone": "PatchCore", "method": "crc", "escaped": "7.1%", "fr": "41.9%", "deferral": "0.0%"},

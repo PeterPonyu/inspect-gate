@@ -45,7 +45,7 @@ permalink: /baseline/
 <figure class="exhibit">
   <img src="{{ '/figures-web/inspect-fig-crcbaseline-web.svg' | url }}" alt="Stacked CRC comparison: pooled rates, VisA risk-coverage, and both-axis certified fraction." width="1200" height="900" />
   <figcaption>
-    Dual gate versus CRC at the same escaped-defect target. Panel (a) pooled rates; (b) VisA risk–coverage companion; (c) both-axis certified fraction (CRC has no G2). Web panels are stacked at readable height; the print figure was height-capped.
+    Dual gate versus CRC at the same escaped-defect target. Panel (a) pooled rates; (b) VisA risk–coverage; (c) both-axis certified fraction (CRC has no G2).
   </figcaption>
 </figure>
 

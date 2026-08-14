@@ -11,7 +11,7 @@ scripts:
 <div class="prose">
   <h1>Operating envelope</h1>
   <p>
-    Every exhibit on this page is <strong>post-freeze exploratory</strong>. The paper operating point remains α<sub>miss</sub>=0.10, α<sub>fr</sub>=0.05.
+    Every exhibit on this page is <strong>post-freeze exploratory</strong>. The operating point remains α<sub>miss</sub>=0.10, α<sub>fr</sub>=0.05.
   </p>
 </div>
 
@@ -19,7 +19,7 @@ scripts:
   <span class="tag">post-freeze exploratory</span>
   <img src="{{ '/figures-web/inspect-fig-alphafrontier-web.svg' | url }}" alt="Deferral and both-axis certified fraction versus alpha_miss, small multiples by benchmark." width="1200" height="720" />
   <figcaption>
-    Deferral versus α<sub>miss</sub>, and the fraction of categories with both axes certified. The paper operating point α<sub>miss</sub>=0.10 is marked. At α<sub>miss</sub>=0.01 every category refuses.
+    Deferral versus α<sub>miss</sub>, and the fraction of categories with both axes certified. The operating point α<sub>miss</sub>=0.10 is marked. At α<sub>miss</sub>=0.01 every category refuses.
   </figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ scripts:
   <span class="tag">post-freeze exploratory</span>
   <img src="{{ '/figures-web/inspect-fig-calplanning-web.svg' | url }}" alt="Required calibration pool versus alpha, with G2 shortfall marked non-certifiable." width="1200" height="560" />
   <figcaption>
-    Planning curve: n<sub>cal</sub> ≥ ⌈1/α⌉ − 1. α<sub>miss</sub>=0.10 costs 9 defectives; α<sub>fr</sub>=0.05 costs 19 goods. G2 refusals are a pool-allocation shortfall, not a deep obstruction. Panel reading of non-certifiable shortfall is unchanged from the paper.
+    Planning curve: n<sub>cal</sub> ≥ ⌈1/α⌉ − 1. α<sub>miss</sub>=0.10 costs 9 defectives; α<sub>fr</sub>=0.05 costs 19 goods. G2 refusals are a pool-allocation shortfall, not a deep obstruction. The non-certifiable shortfall reading is unchanged.
   </figcaption>
 </figure>
 

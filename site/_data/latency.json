@@ -1,5 +1,5 @@
 {
-  "caption": "Per-image latency. Gate rows measured on this work's hardware. PatchCore backbone row is the authors' published figure, not measured here.",
+  "caption": "Per-image latency. Gate rows measured on this work's hardware. PatchCore backbone row is the authors' reported figure, not measured here.",
   "hedge": "this work's hardware",
   "rows": [
     {

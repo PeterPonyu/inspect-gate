@@ -2,8 +2,6 @@
   "wordmark": "Triage gate",
   "title": "A pre-deployment three-way triage gate for visual-inspection anomaly detectors: finite-sample escaped-defect and false-reject certificates on academic AD benchmarks",
   "shortTitle": "Three-way triage gate for visual-inspection AD",
-  "venue": "Results in Engineering",
-  "submitted": "2026-08-13",
   "author": "Zeyu Fu",
   "corresponding": true,
   "orcid": "0009-0001-8329-0108",
@@ -29,6 +27,6 @@
     {"href": "/baseline/", "label": "Baseline"},
     {"href": "/honesty/", "label": "Honesty"},
     {"href": "/reproduce/", "label": "Reproduce"},
-    {"href": "/paper/", "label": "Paper"}
+    {"href": "/cite/", "label": "Cite"}
   ]
 }

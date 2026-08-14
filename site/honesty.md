@@ -10,7 +10,7 @@ scripts:
 <div class="prose">
   <h1>Negative results are the point</h1>
   <p>
-    These exhibits are why the companion is scientific: monitors fail, gates do not transfer, and remedies are not the primary protocol.
+    These exhibits are the negative results: monitors fail, gates do not transfer, and remedies are not the primary protocol.
     Calibrated gates do not transfer across detectors. Synthetic drift screening misses a large share of accepted cells above the escaped-defect target. Temporal production drift is untested.
   </p>
 </div>

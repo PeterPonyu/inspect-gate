@@ -8,7 +8,7 @@ permalink: /
 <div class="title-block">
   <p class="full-title">{{ site.title }}</p>
   <p class="short">{{ site.shortTitle }}</p>
-  <p class="meta">{{ site.venue }} · submitted {{ site.submitted }} · {{ site.author }} · ORCID {{ site.orcid }}</p>
+  <p class="meta">{{ site.author }} · ORCID {{ site.orcid }}</p>
 </div>
 
 <div class="prose">
@@ -63,6 +63,6 @@ permalink: /
     <a href="{{ '/envelope/' | url }}">Envelope</a> ·
     <a href="{{ '/honesty/' | url }}">Honesty</a> ·
     <a href="{{ '/reproduce/' | url }}">Reproduce</a> ·
-    <a href="{{ '/paper/' | url }}">Paper</a>.
+    <a href="{{ '/cite/' | url }}">Cite</a>.
   </p>
 </div>
