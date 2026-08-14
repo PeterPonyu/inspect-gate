@@ -13,7 +13,7 @@ from datetime import date
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-BUILD_DATE = date(2026, 8, 10)
+BUILD_DATE = date(2026, 8, 11)
 STAMP = (*BUILD_DATE.timetuple()[:3], 12, 0, 0)
 STEM = f"inspect_rie_submission_source_{BUILD_DATE.isoformat()}"
 

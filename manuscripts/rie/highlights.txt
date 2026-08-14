@@ -1,0 +1,7 @@
+Highlights
+
+- Anomaly detectors rank defects; they do not define a safe operating decision.
+- inspect-gate: per-category pass/reject/defer with finite-sample certificates.
+- Refusal is first-class: audited-not-certified when the cal pool is too small.
+- MVTec: escaped-defect certified in 15/15; false-reject only 4/15 primary.
+- Evidence is for academic AD benchmarks, not portable production-line use.
