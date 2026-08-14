@@ -1,0 +1,20 @@
+{
+  "name": "triage-gate-companion",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "data": "python3 figures-web-src/export_frozen_data.py",
+    "figures": "python3 figures-web-src/render_web_figures.py",
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/ibm-plex-sans": "^5.2.8",
+    "@fontsource/source-serif-4": "^5.2.8"
+  }
+}

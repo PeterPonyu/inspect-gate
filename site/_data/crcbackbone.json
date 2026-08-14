@@ -1,0 +1,101 @@
+{
+  "caption": "Per-backbone breakdown of the pooled CRC table. CRC has no deferral and no G2 certificate.",
+  "rows": [
+    {
+      "benchmark": "MPDD",
+      "backbone": "PatchCore",
+      "method": "gate",
+      "escaped": "7.1%",
+      "fr": "0.0%",
+      "deferral": "75.1%"
+    },
+    {
+      "benchmark": "MPDD",
+      "backbone": "PatchCore",
+      "method": "crc",
+      "escaped": "7.1%",
+      "fr": "41.9%",
+      "deferral": "0.0%"
+    },
+    {
+      "benchmark": "MPDD",
+      "backbone": "Dinomaly",
+      "method": "gate",
+      "escaped": "6.1%",
+      "fr": "0.0%",
+      "deferral": "71.1%"
+    },
+    {
+      "benchmark": "MPDD",
+      "backbone": "Dinomaly",
+      "method": "crc",
+      "escaped": "6.1%",
+      "fr": "31.8%",
+      "deferral": "0.0%"
+    },
+    {
+      "benchmark": "VisA",
+      "backbone": "PatchCore",
+      "method": "gate",
+      "escaped": "8.8%",
+      "fr": "3.7%",
+      "deferral": "26.3%"
+    },
+    {
+      "benchmark": "VisA",
+      "backbone": "PatchCore",
+      "method": "crc",
+      "escaped": "9.7%",
+      "fr": "28.8%",
+      "deferral": "0.0%"
+    },
+    {
+      "benchmark": "VisA",
+      "backbone": "Dinomaly",
+      "method": "gate",
+      "escaped": "6.5%",
+      "fr": "2.2%",
+      "deferral": "6.5%"
+    },
+    {
+      "benchmark": "VisA",
+      "backbone": "Dinomaly",
+      "method": "crc",
+      "escaped": "9.3%",
+      "fr": "3.7%",
+      "deferral": "0.0%"
+    },
+    {
+      "benchmark": "MVTec AD",
+      "backbone": "PatchCore",
+      "method": "gate",
+      "escaped": "7.7%",
+      "fr": "0.7%",
+      "deferral": "54.8%"
+    },
+    {
+      "benchmark": "MVTec AD",
+      "backbone": "PatchCore",
+      "method": "crc",
+      "escaped": "8.4%",
+      "fr": "5.2%",
+      "deferral": "0.0%"
+    },
+    {
+      "benchmark": "MVTec AD",
+      "backbone": "Dinomaly",
+      "method": "gate",
+      "escaped": "6.9%",
+      "fr": "0.3%",
+      "deferral": "53.9%"
+    },
+    {
+      "benchmark": "MVTec AD",
+      "backbone": "Dinomaly",
+      "method": "crc",
+      "escaped": "8.7%",
+      "fr": "0.9%",
+      "deferral": "0.0%"
+    }
+  ]
+}

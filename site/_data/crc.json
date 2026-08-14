@@ -1,0 +1,103 @@
+{
+  "caption": "Dual gate vs single-threshold CRC at the same escaped-defect risk (alpha_miss=0.10), pooled over both backbones and five seeds.",
+  "published": [
+    {
+      "benchmark": "MPDD",
+      "method": "gate",
+      "g1": "50/60",
+      "g2": "0/60",
+      "escaped": "6.6%",
+      "fr": "0.0%",
+      "deferral": "73.1%"
+    },
+    {
+      "benchmark": "MPDD",
+      "method": "crc",
+      "g1": "50/60",
+      "g2": "n/a",
+      "escaped": "6.6%",
+      "fr": "36.9%",
+      "deferral": "0.0%"
+    },
+    {
+      "benchmark": "VisA",
+      "method": "gate",
+      "g1": "120/120",
+      "g2": "120/120",
+      "escaped": "7.6%",
+      "fr": "3.0%",
+      "deferral": "16.4%"
+    },
+    {
+      "benchmark": "VisA",
+      "method": "crc",
+      "g1": "120/120",
+      "g2": "n/a",
+      "escaped": "9.5%",
+      "fr": "16.2%",
+      "deferral": "0.0%"
+    },
+    {
+      "benchmark": "MVTec AD",
+      "method": "gate",
+      "g1": "150/150",
+      "g2": "40/150",
+      "escaped": "7.3%",
+      "fr": "0.5%",
+      "deferral": "54.4%"
+    },
+    {
+      "benchmark": "MVTec AD",
+      "method": "crc",
+      "g1": "150/150",
+      "g2": "n/a",
+      "escaped": "8.5%",
+      "fr": "3.1%",
+      "deferral": "0.0%"
+    }
+  ],
+  "raw": [
+    {
+      "benchmark": "MPDD",
+      "method": "gate",
+      "escaped_pct": 6.63,
+      "false_reject_pct": 0,
+      "deferral_pct": 73.09
+    },
+    {
+      "benchmark": "MPDD",
+      "method": "crc",
+      "escaped_pct": 6.63,
+      "false_reject_pct": 36.85,
+      "deferral_pct": 0
+    },
+    {
+      "benchmark": "VisA",
+      "method": "gate",
+      "escaped_pct": 7.64,
+      "false_reject_pct": 2.96,
+      "deferral_pct": 16.39
+    },
+    {
+      "benchmark": "VisA",
+      "method": "crc",
+      "escaped_pct": 9.49,
+      "false_reject_pct": 16.24,
+      "deferral_pct": 0
+    },
+    {
+      "benchmark": "MVTec",
+      "method": "gate",
+      "escaped_pct": 7.25,
+      "false_reject_pct": 0.46,
+      "deferral_pct": 54.36
+    },
+    {
+      "benchmark": "MVTec",
+      "method": "crc",
+      "escaped_pct": 8.55,
+      "false_reject_pct": 3.06,
+      "deferral_pct": 0
+    }
+  ]
+}

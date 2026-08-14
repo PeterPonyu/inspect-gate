@@ -1,0 +1,133 @@
+{
+  "caption": "Per-category certifiability at alpha_miss=0.10, alpha_fr=0.05 (backbone-invariant; MVTec test split). G1 15/15, G2 4/15 (cable, hazelnut, screw, transistor).",
+  "g1_ok": "15/15",
+  "g2_ok": "4/15",
+  "g2_ok_categories": [
+    "cable",
+    "hazelnut",
+    "screw",
+    "transistor"
+  ],
+  "rows": [
+    {
+      "category": "bottle",
+      "n_cal_def": 32,
+      "alpha_min_g1": 0.0303,
+      "g1": "OK",
+      "n_cal_good": 10,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "cable",
+      "n_cal_def": 46,
+      "alpha_min_g1": 0.0213,
+      "g1": "OK",
+      "n_cal_good": 29,
+      "g2": "OK"
+    },
+    {
+      "category": "capsule",
+      "n_cal_def": 54,
+      "alpha_min_g1": 0.0182,
+      "g1": "OK",
+      "n_cal_good": 12,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "carpet",
+      "n_cal_def": 44,
+      "alpha_min_g1": 0.0222,
+      "g1": "OK",
+      "n_cal_good": 14,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "grid",
+      "n_cal_def": 28,
+      "alpha_min_g1": 0.0345,
+      "g1": "OK",
+      "n_cal_good": 10,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "hazelnut",
+      "n_cal_def": 35,
+      "alpha_min_g1": 0.0278,
+      "g1": "OK",
+      "n_cal_good": 20,
+      "g2": "OK"
+    },
+    {
+      "category": "leather",
+      "n_cal_def": 46,
+      "alpha_min_g1": 0.0213,
+      "g1": "OK",
+      "n_cal_good": 16,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "metal_nut",
+      "n_cal_def": 46,
+      "alpha_min_g1": 0.0213,
+      "g1": "OK",
+      "n_cal_good": 11,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "pill",
+      "n_cal_def": 70,
+      "alpha_min_g1": 0.0141,
+      "g1": "OK",
+      "n_cal_good": 13,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "screw",
+      "n_cal_def": 60,
+      "alpha_min_g1": 0.0164,
+      "g1": "OK",
+      "n_cal_good": 20,
+      "g2": "OK"
+    },
+    {
+      "category": "tile",
+      "n_cal_def": 42,
+      "alpha_min_g1": 0.0233,
+      "g1": "OK",
+      "n_cal_good": 16,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "toothbrush",
+      "n_cal_def": 15,
+      "alpha_min_g1": 0.0625,
+      "g1": "OK",
+      "n_cal_good": 6,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "transistor",
+      "n_cal_def": 20,
+      "alpha_min_g1": 0.0476,
+      "g1": "OK",
+      "n_cal_good": 30,
+      "g2": "OK"
+    },
+    {
+      "category": "wood",
+      "n_cal_def": 30,
+      "alpha_min_g1": 0.0323,
+      "g1": "OK",
+      "n_cal_good": 10,
+      "g2": "REFUSE"
+    },
+    {
+      "category": "zipper",
+      "n_cal_def": 60,
+      "alpha_min_g1": 0.0164,
+      "g1": "OK",
+      "n_cal_good": 16,
+      "g2": "REFUSE"
+    }
+  ]
+}

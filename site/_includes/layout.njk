@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title or site.shortTitle }}</title>
+    <meta name="description" content="{{ description or site.shortTitle }}" />
+    <link rel="icon" href="{{ '/assets/favicon.svg' | url }}" type="image/svg+xml" />
+    <link rel="stylesheet" href="{{ '/assets/css/inspect.css' | url }}" />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    {% include "chrome.njk" %}
+    <main id="content" class="wrap">
+      {{ content | safe }}
+    </main>
+    <footer class="site">
+      <div class="wrap">
+        <p>
+          {{ site.license }} ·
+          Zenodo concept
+          <a href="{{ site.zenodoConcept | doiHref }}">{{ site.zenodoConcept }}</a>
+          ·
+          <a href="{{ site.github }}">Code</a>
+        </p>
+        <p>{{ site.author }} (corresponding) · ORCID {{ site.orcid }}</p>
+        <details>
+          <summary>Glossary</summary>
+          {% include "glossary.njk" %}
+        </details>
+      </div>
+    </footer>
+    {% if scripts %}
+      {% for src in scripts %}
+        <script src="{{ src | url }}"></script>
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>

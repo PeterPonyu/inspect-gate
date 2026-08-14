@@ -1,0 +1,59 @@
+{
+  "caption": "Seed-0 median per-category deferral. Coverage is not a certificate: MVTec median ~70% because G2 refusal empties auto-reject; VisA drops because G2 is live.",
+  "rows": [
+    {
+      "benchmark": "MVTec AD",
+      "backbone": "PatchCore",
+      "median": "70.0%",
+      "mean": "55.1%",
+      "max": "pill 78.0%",
+      "min": "transistor 2.0%",
+      "tag": "confirmatory"
+    },
+    {
+      "benchmark": "MVTec AD",
+      "backbone": "Dinomaly",
+      "median": "69.5%",
+      "mean": "54.2%",
+      "max": "capsule 77.3%",
+      "min": "screw 3.1%",
+      "tag": "confirmatory"
+    },
+    {
+      "benchmark": "VisA",
+      "backbone": "PatchCore",
+      "median": "18.7%",
+      "mean": "—",
+      "max": "macaroni2 72.5%",
+      "min": "chewinggum 2.0%",
+      "tag": "exploratory"
+    },
+    {
+      "benchmark": "VisA",
+      "backbone": "Dinomaly",
+      "median": "4.2%",
+      "mean": "—",
+      "max": "capsules 21.9%",
+      "min": "candle 2.5%",
+      "tag": "exploratory"
+    },
+    {
+      "benchmark": "MPDD",
+      "backbone": "PatchCore",
+      "median": "74.1%",
+      "mean": "—",
+      "max": "connector 100%",
+      "min": "bracket brown 61.8%",
+      "tag": "exploratory"
+    },
+    {
+      "benchmark": "MPDD",
+      "backbone": "Dinomaly",
+      "median": "70.9%",
+      "mean": "—",
+      "max": "connector 100%",
+      "min": "bracket white 53.3%",
+      "tag": "exploratory"
+    }
+  ]
+}

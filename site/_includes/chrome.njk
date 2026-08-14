@@ -1,0 +1,19 @@
+<header class="chrome">
+  <div class="chrome-inner">
+    <a class="wordmark" href="{{ '/' | url }}">{{ site.wordmark }}</a>
+    <p class="stamp-meta">{{ site.author }} · ORCID {{ site.orcid }}</p>
+    {% include "legend.njk" %}
+    <div class="chips">
+      <span class="chip">{{ site.evidence }}</span>
+      {% if evidenceTag %}
+        <span class="chip">{{ evidenceTag }}</span>
+      {% endif %}
+    </div>
+    <nav class="primary" aria-label="Primary">
+      {% for item in site.nav %}
+        {% set itemUrl = item.href | url %}
+        <a href="{{ itemUrl }}"{% if page.url == item.href or page.url == itemUrl %} aria-current="page"{% endif %}>{{ item.label }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

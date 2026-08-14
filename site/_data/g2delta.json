@@ -1,0 +1,135 @@
+{
+  "caption": "G2 train-holdout remedy (PatchCore-only). Not the primary protocol. KS-refused cells stay refused.",
+  "tag": "post-hoc · PatchCore-only",
+  "summary": "MVTec 4/15 → 13/15 (leather KS-refused); MPDD 0/6 → 4/6.",
+  "mvtec": [
+    {
+      "category": "bottle",
+      "short": "bot",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "cable",
+      "short": "cab",
+      "primary_status": "certified",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "capsule",
+      "short": "cap",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "carpet",
+      "short": "car",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "grid",
+      "short": "grd",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "hazelnut",
+      "short": "haz",
+      "primary_status": "certified",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "leather",
+      "short": "lea",
+      "primary_status": "refused-floor",
+      "promoted_status": "refused-KS"
+    },
+    {
+      "category": "metal_nut",
+      "short": "nut",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "pill",
+      "short": "pil",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "screw",
+      "short": "scr",
+      "primary_status": "certified",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "tile",
+      "short": "til",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "toothbrush",
+      "short": "tbr",
+      "primary_status": "refused-floor",
+      "promoted_status": "refused-floor"
+    },
+    {
+      "category": "transistor",
+      "short": "tra",
+      "primary_status": "certified",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "wood",
+      "short": "woo",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "zipper",
+      "short": "zip",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    }
+  ],
+  "mpdd": [
+    {
+      "category": "bracket_black",
+      "short": "b-blk",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "bracket_brown",
+      "short": "b-brn",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "bracket_white",
+      "short": "b-wht",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "connector",
+      "short": "conn",
+      "primary_status": "refused-floor",
+      "promoted_status": "certified"
+    },
+    {
+      "category": "metal_plate",
+      "short": "plate",
+      "primary_status": "refused-floor",
+      "promoted_status": "refused-floor"
+    },
+    {
+      "category": "tubes",
+      "short": "tubes",
+      "primary_status": "refused-floor",
+      "promoted_status": "refused-KS"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+<figure class="exhibit">
+  {% if tag %}<span class="tag">{{ tag }}</span>{% endif %}
+  <img src="{{ src | url }}" alt="{{ alt }}" width="1200" height="640" />
+  <figcaption>{{ caption }}</figcaption>
+</figure>
