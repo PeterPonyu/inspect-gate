@@ -1,5 +1,5 @@
 {
-  "name": "inspect-gate-companion",
+  "name": "triage-gate-companion",
   "private": true,
   "type": "module",
   "engines": {

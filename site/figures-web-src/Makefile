@@ -1,4 +1,4 @@
-# Web-only figures. Does not overwrite manuscripts/figures-src/*.pdf
+# Web-only figures. Does not overwrite print figure PDFs.
 PYTHON ?= python3
 
 .PHONY: all data figures

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Render inspect-gate web figures from committed frozen tables.
+"""Render web figures from committed frozen tables.
 
-Writes SVG/PNG under site/figures-web/. Never writes manuscript PDFs.
+Writes SVG/PNG under site/figures-web/. Never writes print PDFs.
 """
 
 from __future__ import annotations

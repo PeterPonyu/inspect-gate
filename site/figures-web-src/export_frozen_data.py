@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Export committed figure-src tables into site/_data JSON.
 
-Reads only files tracked on this branch under manuscripts/figures-src/.
-Does not read dirty working-tree PDFs or uncommitted digests.
+Reads only committed table sources on this branch.
+Does not read uncommitted PDFs or digests.
 """
 
 from __future__ import annotations

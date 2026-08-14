@@ -470,15 +470,6 @@ dialog.lb::backdrop { background: rgb(28 25 23 / 0.55); }
   font-size: 1.2rem;
 }
 
-.cli {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.85rem;
-  background: var(--card);
-  border: 1px solid var(--rule);
-  padding: 0.7rem 0.85rem;
-  overflow-x: auto;
-}
-
 .heat {
   overflow-x: auto;
 }
