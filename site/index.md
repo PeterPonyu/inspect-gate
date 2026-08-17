@@ -1,6 +1,6 @@
 ---
 layout: layout.njk
-title: Datasheet
+title: Three-way triage gate for visual-inspection AD
 description: Three-way triage gate with escaped-defect and false-reject certificates on academic AD benchmarks.
 permalink: /
 ---

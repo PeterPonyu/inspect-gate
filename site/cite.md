@@ -7,6 +7,7 @@ permalink: /cite/
 
 <div class="prose">
   <h1>Cite</h1>
+  <p>Record status: frozen science. Code and reserved DOI. Not a venue package.</p>
   <p class="full-title"><strong>{{ site.title }}</strong></p>
   <p>{{ site.author }} (corresponding) · ORCID <a href="https://orcid.org/{{ site.orcid }}">{{ site.orcid }}</a></p>
   <p>{{ site.affiliation }}</p>

@@ -20,7 +20,7 @@
     "MVTec AD"
   ],
   "nav": [
-    {"href": "/", "label": "Datasheet"},
+    {"href": "/", "label": "Report"},
     {"href": "/gate/", "label": "Gate"},
     {"href": "/certificate/", "label": "Certificate"},
     {"href": "/envelope/", "label": "Envelope"},
