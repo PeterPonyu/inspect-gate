@@ -1,96 +1,56 @@
-# inspect-gate
+# Three-way defect triage gate
 
-Inspect / dual-gate reliability research theme: package code, orchestration,
-tests, frozen experiment statistics, and manuscripts needed to regenerate the
-writeup and figures.
+Anomaly detectors rank defects; they do not define a safe operating decision.
 
-Code archive: Zenodo DOI [10.5281/zenodo.21392291](https://doi.org/10.5281/zenodo.21392291)
-(reserved; draft record, activates on publish).
+This repository holds the protocol and frozen records for a pre-deployment
+**three-way gate** on visual-inspection anomaly scores: auto-pass, human-defer,
+or auto-reject. Two finite-sample split-conformal certificates travel with the
+band.
 
-A conformal three-way triage gate for industrial visual inspection on
-MVTec AD, VisA, and MPDD. Given per-image anomaly scores from any backbone,
-`inspect-gate` routes each image to `{auto-pass, auto-reject, defer}` with a
-**certified escaped-defect rate** (P(auto-pass | truly defective) ≤ alpha_miss)
-and a **certified false-reject rate** (P(auto-reject | truly good) ≤ alpha_fr),
-plus an excess-AURC audit of whether field-standard threshold practice beats
-honest random deferral.
+- **G1 (escaped-defect):** P(auto-pass | defective) ≤ α_miss.
+- **G2 (false-reject):** P(auto-reject | good) ≤ α_fr.
 
-This repository is the theme home (same pattern as `materials-mlip-research`).
-`reliability-commons` may symlink here for portfolio glue; it does not own the
-Inspect manuscript statistics.
+When the calibration floor α_min = 1/(n_cal+1) is unmet, that auto-action is
+emptied and the axis is **audited-not-certified**. Refusal is a result, not an
+empty cell. Score convention: higher = more anomalous.
 
-## Layout
+Frozen archive: Zenodo concept
+[10.5281/zenodo.21392290](https://doi.org/10.5281/zenodo.21392290)
+(v0.4.1 record [10.5281/zenodo.21854312](https://doi.org/10.5281/zenodo.21854312)).
+Code license: MIT.
 
-| Path | Contents |
-|------|----------|
-| `inspect_gate/` | Python package (calibrate / route / audit / certify / report) |
-| `orchestration/` | Pilot and full-score runners |
-| `tests/` | CPU-only pytest suite (no torch/anomalib required) |
-| `manuscripts/rie/` | RiE venue manuscript |
-| `manuscripts/aei/` | AEI mirror |
-| `manuscripts/jim/` | JIM venue variant |
-| `manuscripts/figures-src/` | Pure R + TikZ figure SSOT (`make all`) |
-| `*_YYYY-MM-DD/` | Frozen `results.json` / analysis slices used by figures and tables |
+## Confirmatory evidence (MVTec AD)
 
-Large staging trees and model weights (`visa_staging`, `mpdd_staging`, Dinomaly
-weight dumps) are **not** tracked here. See `DATA_MANIFEST.md` for external
-inputs.
+Primary protocol, α_miss = 0.10, α_fr = 0.05:
 
-Desktop portfolio shortcuts (under `ml-reliability-research/papers/`):
+| Quantity | Value |
+| --- | --- |
+| G1 certified | 15/15 categories |
+| G2 certified | 4/15 (cable, hazelnut, screw, transistor) |
+| Dual-gate pooled | escaped 7.3% · false-reject 0.5% · deferral 54.4% |
+| Single-threshold CRC | escaped 8.5% · false-reject 3.1% · deferral 0% |
+| α_miss = 0.01 | 0/33 categories certified (need n_cal^def ≥ 99) |
 
-- `inspect-canonical` → `inspect-gate/manuscripts`
-- `inspect-rie` → `inspect-gate/manuscripts/rie`
-- `inspect-aei` → `inspect-gate/manuscripts/aei`
+G2 is the scarce certificate: the good-pool floor is tighter than the defect
+pool. Coverage (deferral %) is a staffing number, not a quality badge.
 
-## Quickstart (package)
+## Exploratory pool-size extremes
 
-```bash
-# From this repo root (sibling of reliability-commons):
-python3 -m venv .venv && source .venv/bin/activate
-pip install -e ../reliability-commons   # provides relmetrics
-pip install -e .
-pip install -e '.[test]'
+VisA and MPDD are tagged exploratory. They are not a second confirmatory claim.
 
-python -m pytest   # torch/anomalib-free, no GPU
-```
+- **VisA:** both-axis certification 12/12; gate false-reject 3.0% at 16.4%
+  deferral versus CRC 16.2% (escaped-defect 7.6% vs 9.5%).
+- **MPDD:** G2 0/6 under the primary protocol. Reported 0.0% false-reject at
+  73.1% deferral is a high-review diagnostic (empty auto-reject band), not a
+  dual-certificate success.
 
-```bash
-inspect-gate calibrate --scores cal.jsonl --alpha-miss 0.10 --alpha-fr 0.05 -o gate.json
-inspect-gate route     --gate gate.json --scores new.jsonl -o routing.json
-inspect-gate audit     --cal-scores cal.jsonl --eval-scores eval.jsonl \
-                        --train-good-scores train_good.jsonl --gate gate.json -o audit.json
-inspect-gate certify   --pairs gate0.json:eval0.jsonl gate1.json:eval1.jsonl ... -o certify.json
-inspect-gate report    --gate gate.json --audit audit.json --certify certify.json -o report.md
-```
+## Honesty
 
-Box-side pilot chain: `orchestration/next_boot_inspect_gate.sh`.
+Calibrated gates do not transfer across detectors (160/165 G1 violations
+PatchCore → Dinomaly; same-detector diagonal 30/30). Synthetic good-score
+drift screening misses 34% of accepted PatchCore cells above the escaped-defect
+target; a defect-score marginal test catches about 5% of those residual cells.
+Temporal production drift is untested.
 
-## Build figures / manuscript
-
-```bash
-cd manuscripts/figures-src
-make r-data
-make all
-make sync-rie sync-aei
-```
-
-R scripts resolve frozen JSON via `../../../<artifact>/results.json` from
-`figures-src/R/`.
-
-```bash
-cd manuscripts/rie
-ln -sfn ../refs.bib refs.bib
-latexmk -pdf paper_rie.tex
-```
-
-## Notes
-
-- Score convention: **HIGHER = MORE ANOMALOUS** (opposite of `asr-gate`).
-- `calfraction_sweep_2026-07-19/results.json` may be absent. When it is, FRACS
-  and the six `out/calfraction-*-{cert,def}.tex` fragments are regenerated from
-  the frozen SSOT `manuscripts/figures-src/data/frozen/calfraction_data.csv`
-  (copied into `R/calfraction_data.csv` by `process_calfraction.R`). That frozen
-  path sits outside `make clean-data`'s wipe of `R/*.csv` / `out/*.tex`. This is
-  a **calfraction-JSON-absent** rebuild path only — other `process_*.R`
-  generators still require their local JSON digests.
-- Sibling portfolio glue: `reliability-commons/tools/inspect-gate` → this repo.
+Evidence supports a calibration/refusal protocol on academic AD benchmarks,
+not a portable production-line certificate.
