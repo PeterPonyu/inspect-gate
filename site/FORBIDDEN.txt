@@ -1,0 +1,19 @@
+# Private/local paths and other papers' identifiers must not enter the built site.
+/home/
+/root/
+.omx/
+.omc/
+checkpoint-
+manuscripts/
+cover_letter
+COPY_READY
+paper_rie
+paper_isprs
+paper_pr
+paper_kbs
+paper_adv
+geospatial-fm-reliability-research
+rotcert
+asr-gate
+structured-data-fm-reliability-research
+uip-abstention-audit
